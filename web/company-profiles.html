@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>公司介绍库 | Global Medical Aesthetics Intelligence Dashboard</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css?v=20260517-company-profiles-v1" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="./index.html" aria-label="返回全球医美地图">
+          <span class="dot"></span>
+          <span class="bilingual"><span class="bilingual-zh">全球医美地图</span><span class="bilingual-en">Global Aesthetics Map</span></span>
+        </a>
+        <nav class="material-nav" aria-label="页面导航">
+          <a href="./index.html"><span class="bilingual"><span class="bilingual-zh">总览</span><span class="bilingual-en">Overview</span></span></a>
+          <a class="active" href="./company-profiles.html"><span class="bilingual"><span class="bilingual-zh">公司介绍</span><span class="bilingual-en">Company Profiles</span></span></a>
+          <a href="./company-analysis.html"><span class="bilingual"><span class="bilingual-zh">公司分析</span><span class="bilingual-en">Company Analysis</span></span></a>
+          <a href="./topic.html?segment=injectables"><span class="bilingual"><span class="bilingual-zh">注射材料</span><span class="bilingual-en">Injectables</span></span></a>
+          <a href="./topic.html?segment=ebd"><span class="bilingual"><span class="bilingual-zh">光电设备</span><span class="bilingual-en">EBD</span></span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell integrated-shell dashboard-shell">
+      <aside class="function-rail" aria-label="功能板块 / Functional sections">
+        <div class="rail-kicker"><span class="bilingual"><span class="bilingual-zh">功能板块</span><span class="bilingual-en">Menu</span></span></div>
+        <nav>
+          <a href="./index.html"><span class="bilingual"><span class="bilingual-zh">总览</span><span class="bilingual-en">Overview</span></span></a>
+          <a href="./track-structure.html"><span class="bilingual"><span class="bilingual-zh">赛道结构</span><span class="bilingual-en">Track Structure</span></span></a>
+          <a href="./analysis-lenses.html"><span class="bilingual"><span class="bilingual-zh">分析视角</span><span class="bilingual-en">Analysis Lenses</span></span></a>
+          <a href="./company-profiles.html" class="active"><span class="bilingual"><span class="bilingual-zh">公司介绍</span><span class="bilingual-en">Company Profiles</span></span></a>
+          <a href="./company-analysis.html"><span class="bilingual"><span class="bilingual-zh">公司分析</span><span class="bilingual-en">Company Analysis</span></span></a>
+          <a href="./evidence-status.html"><span class="bilingual"><span class="bilingual-zh">证据状态</span><span class="bilingual-en">Evidence Status</span></span></a>
+          <a href="./company-matrix.html"><span class="bilingual"><span class="bilingual-zh">企业矩阵</span><span class="bilingual-en">Company Matrix</span></span></a>
+        </nav>
+      </aside>
+
+      <div class="dashboard-content company-profile-content">
+        <section class="subpage-hero company-profile-index-hero">
+          <div class="eyebrow">2026</div>
+          <h1><span class="bilingual"><span class="bilingual-zh">公司介绍库</span><span class="bilingual-en">Company Profile Library</span></span></h1>
+          <p class="company-page-lede">
+            <span class="bilingual"><span class="bilingual-zh">按字母组织全球医美企业，每家公司进入独立页面；复杂产品组合再展开成组合热力图。</span><span class="bilingual-en">Alphabetical company pages with compact profiles and portfolio heatmaps for complex product lines.</span></span>
+          </p>
+        </section>
+
+        <section id="companyProfileSummary" class="company-profile-summary"></section>
+        <section id="companyAlphabet" class="alphabet-strip" aria-label="公司字母索引"></section>
+        <section id="companyProfileList" class="company-profile-list" aria-label="公司列表"></section>
+      </div>
+    </main>
+
+    <script src="./company-profiles-data.js?v=20260517-company-profiles-v1"></script>
+    <script src="./company-profiles.js?v=20260517-company-profiles-v1"></script>
+  </body>
+</html>

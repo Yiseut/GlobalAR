@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>全球医美赛道分析</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css?v=20260517-no-source-search-v1" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html">
+        <span class="dot"></span>
+        <span>全球医美产业地图 / Global Aesthetics Map</span>
+      </a>
+      <nav class="material-nav" aria-label="一级赛道导航">
+        <a href="./index.html">总览 / Overview</a>
+        <a href="./company-profiles.html"><span class="bilingual"><span class="bilingual-zh">公司介绍</span><span class="bilingual-en">Company Profiles</span></span></a>
+        <a href="./company-analysis.html"><span class="bilingual"><span class="bilingual-zh">公司分析</span><span class="bilingual-en">Company Analysis</span></span></a>
+        <a data-group="injectables" data-segment="injectables" href="./topic.html?segment=injectables">注射材料 / Injectables</a>
+        <a data-group="ebd" data-segment="ebd" href="./topic.html?segment=ebd">光电设备 / EBD</a>
+        <a data-group="regenerative" data-segment="regenerative" href="./topic.html?segment=regenerative">再生修复 / Regenerative</a>
+        <a data-group="toxin" data-segment="botulinum" href="./topic.html?segment=botulinum">肉毒 / Neurotoxin</a>
+        <a data-group="threads" data-segment="threads" href="./topic.html?segment=threads">线材 / Threads</a>
+        <a data-group="mesotherapy" data-segment="mesotherapy" href="./topic.html?segment=mesotherapy">中胚层 / Mesotherapy</a>
+      </nav>
+    </header>
+
+    <main class="shell integrated-shell">
+      <section class="hero dashboard-hero" id="overview">
+        <div>
+          <div class="eyebrow">赛道情报 · 2026</div>
+          <h1><span id="topicTitle">材料赛道</span><br /><span class="gradient">全球格局</span></h1>
+          <p id="topicSubtitle" class="lede"></p>
+          <div id="topicKeyRead" class="hero-insight-strip topic-key-read-inline" aria-label="格局速读"></div>
+        </div>
+      </section>
+
+      <section id="subtrackExplorer" class="subtrack-explorer" aria-label="二级子赛道"></section>
+
+      <section class="grid grid-4 kpi-section">
+        <article class="card kpi lift"><div class="label">产品线</div><div class="value" id="topicProducts">0</div><div class="delta">结构化记录</div></article>
+        <article class="card kpi lift tone-ocean"><div class="label">企业</div><div class="value" id="topicCompanies">0</div><div class="delta">品牌/集团归集</div></article>
+        <article class="card kpi lift tone-gold"><div class="label">品牌</div><div class="value" id="topicBrands">0</div><div class="delta">品牌名去重</div></article>
+        <article class="card kpi lift tone-sage"><div class="label">国家</div><div class="value" id="topicCountries">0</div><div class="delta">来源地覆盖</div></article>
+        <article class="card kpi lift"><div class="label">子赛道</div><div class="value" id="topicSubtracks">0</div><div class="delta">产品形态/技术归类</div></article>
+        <article class="card kpi lift tone-ocean"><div class="label">适应症标签</div><div class="value" id="topicIndications">0</div><div class="delta">产品定位归类</div></article>
+        <article class="card kpi lift tone-plum"><div class="label">区域</div><div class="value" id="topicRegionsKpi">0</div><div class="delta">区域覆盖</div></article>
+        <article class="card kpi lift tone-rose"><div class="label">监管线索</div><div class="value" id="topicRegulatory">0</div><div class="delta">线索/证据</div></article>
+      </section>
+
+      <section class="grid grid-12 analysis-block">
+        <article class="card lift span-4 analytic-card">
+          <div class="card-title"><h3>本专题证据状态</h3><span class="sub">本页口径</span></div>
+          <div id="topicEvidenceFunnel" class="funnel-list"></div>
+        </article>
+        <article class="card lift span-4 analytic-card">
+          <div class="card-title"><h3>本专题监管线索</h3><span class="sub">已合并 / 候选</span></div>
+          <div id="topicRegulatoryMix" class="bar-list compact"></div>
+        </article>
+        <article class="card lift span-4 analytic-card">
+          <div class="card-title"><h3>本专题准入年份</h3><span class="sub">仅本页证据</span></div>
+          <div id="topicApprovalTimeline" class="timeline-bars"></div>
+        </article>
+      </section>
+
+      <section class="grid grid-12 analysis-block">
+        <article class="card lift span-12 analytic-card">
+          <div class="card-title"><h3>产品级证据完整度</h3><span class="sub">主表 / 官网 / 规格 / 注册 / 官方适应症</span></div>
+          <div id="topicProductEvidenceAudit" class="matrix-wrap audit-wrap"></div>
+        </article>
+      </section>
+
+      <section class="grid grid-12 analysis-block">
+        <article class="card lift heatmap-card span-12 signal-heatmap-card">
+          <div class="card-title"><h3>公司 × 子赛道</h3><span class="sub">组合宽度</span></div>
+          <div id="topicCompanySubtrackMatrix" class="matrix-wrap glass-matrix-wrap signal-heatmap"></div>
+        </article>
+        <article class="card lift heatmap-card span-12 signal-heatmap-card">
+          <div class="card-title"><h3>国家 × 子赛道</h3><span class="sub">区域渗透</span></div>
+          <div id="topicCountrySubtrackMatrix" class="matrix-wrap glass-matrix-wrap signal-heatmap"></div>
+        </article>
+      </section>
+
+      <section class="section-head compact-head">
+        <h2>格局信号补充</h2>
+      </section>
+      <section class="grid grid-12 analysis-block topic-additive-analysis">
+        <article class="card lift span-4">
+          <div class="topic-card-title">
+            <div><h3>集中度</h3><span>CR5 / CR10 / HHI</span></div>
+            <div id="topicConcentrationInsight" class="topic-insight"></div>
+          </div>
+          <div id="topicConcentration"></div>
+        </article>
+        <article class="card lift span-8">
+          <div class="topic-card-title">
+            <div><h3>头部公司 Top 10</h3><span>在原代表公司榜基础上补充集中度读法</span></div>
+            <div id="topicTopCompaniesInsight" class="topic-insight"></div>
+          </div>
+          <div id="topicTopCompanies" class="topic-top-companies"></div>
+        </article>
+        <article class="card lift span-6">
+          <div class="topic-card-title">
+            <div><h3>价值链位置</h3><span>原料 / 制造 / 品牌 / 分销 / 服务</span></div>
+            <div id="topicValueChainInsight" class="topic-insight"></div>
+          </div>
+          <div id="topicValueChain"></div>
+        </article>
+        <article class="card lift span-6">
+          <div class="topic-card-title">
+            <div><h3>子赛道生命周期</h3><span>规模 × 近 3 年动能 × 企业数</span></div>
+            <div id="topicLifecycleInsight" class="topic-insight"></div>
+          </div>
+          <div id="topicLifecycleMatrix"></div>
+        </article>
+      </section>
+
+      <section class="section-head compact-head">
+        <h2>时间动能补充</h2>
+      </section>
+      <section class="grid grid-12 analysis-block topic-additive-analysis">
+        <article class="card lift span-8">
+          <div class="topic-card-title">
+            <div><h3>准入时间线</h3><span>原年份条形图的补充视角</span></div>
+            <div id="topicAccessInsight" class="topic-insight"></div>
+          </div>
+          <div id="topicAccessTimeline"></div>
+        </article>
+        <article class="card lift span-4">
+          <div class="topic-card-title">
+            <div><h3>近 12 个月新进入者</h3><span>有日期证据时展示</span></div>
+            <div id="topicRecentInsight" class="topic-insight"></div>
+          </div>
+          <div id="topicRecentEntrants"></div>
+        </article>
+      </section>
+
+      <section class="grid grid-12 analysis-block">
+        <article class="card lift span-4">
+          <div class="card-title"><h3>业务角色</h3><span class="sub">Company Role</span></div>
+          <div id="topicBusinessRoles" class="bar-list compact"></div>
+        </article>
+        <article class="card lift span-4">
+          <div class="card-title"><h3>公司属性</h3><span class="sub">Ownership</span></div>
+          <div id="topicOwnershipMix" class="bar-list compact"></div>
+        </article>
+        <article class="card lift span-4">
+          <div class="card-title"><h3>技术/产品类型</h3><span class="sub">Tech Type</span></div>
+          <div id="topicTechTypeMix" class="bar-list compact"></div>
+        </article>
+      </section>
+
+      <section class="section-head compact-head">
+        <h2>适应症热力图</h2>
+      </section>
+      <section class="grid grid-12 analysis-block">
+        <article class="card lift heatmap-card span-12 signal-heatmap-card">
+          <div class="card-title"><h3>官方获批适应症 × 监管机构</h3><span class="sub">hover 看注册证/PMA/IFU 原文</span></div>
+          <div id="topicOfficialIndicationHeatmap" class="matrix-wrap glass-matrix-wrap signal-heatmap"></div>
+        </article>
+        <article class="card lift heatmap-card span-12 signal-heatmap-card">
+          <div class="card-title"><h3>产品定位适应症标签 × 区域</h3><span class="sub">分类标签 / 不等同获批</span></div>
+          <div id="topicIndicationHeatmap" class="matrix-wrap glass-matrix-wrap signal-heatmap"></div>
+        </article>
+        <article class="card lift heatmap-card span-12 signal-heatmap-card">
+          <div class="card-title"><h3>子赛道 × 区域</h3><span class="sub">产品形态/技术</span></div>
+          <div id="topicSubtrackHeatmap" class="matrix-wrap glass-matrix-wrap signal-heatmap"></div>
+        </article>
+      </section>
+
+      <section class="grid grid-12 analysis-block" id="distribution">
+        <article class="card lift span-6">
+          <div class="card-title"><h3>区域分布</h3><span class="sub">Region</span></div>
+          <div id="topicRegions" class="bar-list"></div>
+        </article>
+        <article class="card lift span-6">
+          <div class="card-title"><h3>国家分布</h3><span class="sub">Country</span></div>
+          <div id="topicCountriesBars" class="bar-list compact"></div>
+        </article>
+      </section>
+
+      <section class="grid grid-12 analysis-block" id="competition">
+        <article class="card lift span-6">
+          <div class="card-title"><h3>代表公司</h3><span class="sub">按产品线数量</span></div>
+          <div id="topicCompaniesBars" class="bar-list"></div>
+        </article>
+        <article class="card lift span-6">
+          <div class="card-title"><h3>代表品牌</h3><span class="sub">按品牌出现频次</span></div>
+          <div id="topicBrandsBars" class="bar-list"></div>
+        </article>
+      </section>
+
+      <section class="section-head compact-head" id="records">
+        <h2>产品线索</h2>
+      </section>
+      <section class="card lift records-card">
+        <div class="records-head topic-record-controls">
+          <select id="topicSubtrackFilter" aria-label="按子赛道筛选"></select>
+          <select id="topicCountryFilter" aria-label="按国家筛选"></select>
+          <select id="topicValueChainFilter" aria-label="按价值链筛选"></select>
+          <button id="topicExportCsv" class="topic-export-button" type="button">导出 CSV</button>
+        </div>
+        <div id="topicProductsTable" class="records-table-wrap"></div>
+      </section>
+    </main>
+
+    <div id="resultOverlay" class="result-overlay" hidden>
+      <div class="result-backdrop" data-close-overlay></div>
+      <section class="result-panel" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+        <button class="result-close" type="button" data-close-overlay aria-label="关闭">×</button>
+        <h2 id="resultTitle">详情 / Details</h2>
+        <div id="resultBody" class="result-body"></div>
+      </section>
+    </div>
+
+    <script src="./app-data.js?v=20260517-no-source-search-v1"></script>
+    <script src="./topic.js?v=20260517-no-source-search-v1"></script>
+  </body>
+</html>

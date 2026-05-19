@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>证据状态 | Global Medical Aesthetics Intelligence Dashboard</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css?v=20260517-no-source-search-v1" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="./index.html" aria-label="返回全球医美地图">
+          <span class="dot"></span>
+          <span>全球医美地图 / Global Aesthetics Map</span>
+        </a>
+        <nav class="material-nav" aria-label="材料赛道 / Material track navigation">
+          <a href="./topic.html?segment=injectables">注射材料 / Injectables</a>
+          <a href="./topic.html?segment=ebd">光电设备 / EBD</a>
+          <a href="./topic.html?segment=regenerative">再生修复 / Regenerative</a>
+          <a href="./topic.html?segment=botulinum">肉毒 / Neurotoxin</a>
+          <a href="./topic.html?segment=threads">线材 / Threads</a>
+          <a href="./topic.html?segment=mesotherapy">中胚层 / Mesotherapy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell integrated-shell dashboard-shell">
+      <aside class="function-rail" aria-label="功能板块 / Functional sections">
+        <div class="rail-kicker">功能板块 / Menu</div>
+        <nav>
+          <a href="./index.html"><span>总览 / Overview</span></a>
+          <a href="./track-structure.html"><span>赛道结构 / Track Structure</span></a>
+          <a href="./analysis-lenses.html"><span>分析视角 / Analysis Lenses</span></a>
+          <a href="./company-profiles.html"><span class="bilingual"><span class="bilingual-zh">公司介绍</span><span class="bilingual-en">Company Profiles</span></span></a>
+          <a href="./company-analysis.html"><span>公司分析 / Company Analysis</span></a>
+          <a href="./evidence-status.html"><span>证据状态 / Evidence Status</span></a>
+          <a href="./company-matrix.html"><span>企业矩阵 / Company Matrix</span></a>
+        </nav>
+      </aside>
+
+      <div class="dashboard-content">
+        <section class="subpage-hero">
+          <div class="eyebrow">2026</div>
+          <h1><span class="bilingual"><span class="bilingual-zh">证据状态</span><span class="bilingual-en">Evidence Status</span></span></h1>
+        </section>
+        <section class="grid grid-12 analysis-block">
+          <article class="card lift span-4 analytic-card">
+            <div class="card-title"><h3><span class="bilingual"><span class="bilingual-zh">证据漏斗</span><span class="bilingual-en">Evidence Funnel</span></span></h3></div>
+            <div id="globalEvidenceFunnel" class="funnel-list"></div>
+          </article>
+          <article class="card lift span-4 analytic-card">
+            <div class="card-title"><h3><span class="bilingual"><span class="bilingual-zh">监管线索</span><span class="bilingual-en">Regulatory Mix</span></span></h3></div>
+            <div id="globalRegulatoryMix" class="bar-list compact"></div>
+          </article>
+          <article class="card lift span-4 analytic-card">
+            <div class="card-title"><h3><span class="bilingual"><span class="bilingual-zh">产品准入趋势</span><span class="bilingual-en">Product Entry Trend</span></span></h3></div>
+            <div id="globalApprovalTimeline" class="timeline-bars"></div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <div id="resultOverlay" class="result-overlay" hidden>
+      <div class="result-backdrop" data-close-overlay></div>
+      <section class="result-panel" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+        <button class="result-close" type="button" data-close-overlay aria-label="关闭">×</button>
+        <h2 id="resultTitle">详情 / Details</h2>
+        <div id="resultBody" class="result-body"></div>
+      </section>
+    </div>
+
+    <script src="./app-data.js?v=20260517-no-source-search-v1"></script>
+    <script src="./app.js?v=20260517-no-source-search-v1"></script>
+  </body>
+</html>

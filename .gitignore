@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+.playwright-cli/
+.pytest_cache/
+
+# Runtime and generated bulk artifacts.
+output/
+visual-check/
+assets/company_media/
+assets/official_media/
+
+# Continuous verification data is large and changes while the runner is active.
+data/*
+!data/audits/
+!data/audits/**
+!data/company_logo_manifest.csv
+!data/company_logo_report.md
+
+# Generated dashboard data snapshots are rebuilt from source data.
+web/app-data.js
+
+# Copied profile/product imagery can be regenerated from local asset sources.
+web/assets/company_profiles/
+!web/assets/company_logos/
+!web/assets/company_logos/**

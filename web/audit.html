@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>数据完整度审计 | 全球医美赛道分析</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css?v=20260517-no-source-search-v1" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html">
+        <span class="dot"></span>
+        <span>全球医美产业地图 / Global Aesthetics Map</span>
+      </a>
+      <nav class="material-nav" aria-label="一级赛道导航">
+        <a href="./index.html">总览 / Overview</a>
+        <a data-group="injectables" data-segment="injectables" href="./topic.html?segment=injectables">注射材料 / Injectables</a>
+        <a data-group="ebd" data-segment="ebd" href="./topic.html?segment=ebd">光电设备 / EBD</a>
+        <a data-group="regenerative" data-segment="regenerative" href="./topic.html?segment=regenerative">再生修复 / Regenerative</a>
+        <a data-group="toxin" data-segment="botulinum" href="./topic.html?segment=botulinum">肉毒 / Neurotoxin</a>
+        <a data-group="threads" data-segment="threads" href="./topic.html?segment=threads">线材 / Threads</a>
+        <a data-group="mesotherapy" data-segment="mesotherapy" href="./topic.html?segment=mesotherapy">中胚层 / Mesotherapy</a>
+      </nav>
+    </header>
+
+    <main class="shell integrated-shell topic-redesign-shell audit-shell">
+      <section class="topic-hero audit-hero" id="overview">
+        <div class="topic-hero-head">
+          <div class="topic-hero-titles">
+            <div class="eyebrow">研究后台 · 数据完整度审计</div>
+            <h1 id="topicTitle">材料赛道</h1>
+            <p id="topicSubtitle" class="lede"></p>
+          </div>
+          <a id="topicBackLink" class="topic-audit-badge" href="./topic.html">
+            <span class="topic-audit-dot"></span>
+            <span>返回格局页</span>
+            <em>查看分析 →</em>
+          </a>
+        </div>
+      </section>
+
+      <section class="topic-section-head">
+        <span>AUDIT</span>
+        <h2>证据与质检视图</h2>
+        <p>这里保留研究后台需要看的证据状态、监管线索混合和产品级完整度，不再占用读者首页。</p>
+      </section>
+
+      <section class="grid grid-12 analysis-block audit-grid">
+        <article class="card lift span-6 analytic-card">
+          <div class="card-title"><h3>本专题证据状态</h3><span class="sub">本页口径</span></div>
+          <div id="topicEvidenceFunnel" class="funnel-list"></div>
+        </article>
+        <article class="card lift span-6 analytic-card">
+          <div class="card-title"><h3>本专题监管线索</h3><span class="sub">已合并 / 候选</span></div>
+          <div id="topicRegulatoryMix" class="bar-list compact"></div>
+        </article>
+      </section>
+
+      <section class="card lift records-card audit-records-card">
+        <div class="card-title"><h3>产品级证据完整度</h3><span class="sub">主表 / 官网 / 规格 / 注册 / 官方适应症</span></div>
+        <div id="topicProductEvidenceAudit" class="matrix-wrap audit-wrap"></div>
+      </section>
+    </main>
+
+    <div id="resultOverlay" class="result-overlay" hidden>
+      <div class="result-backdrop" data-close-overlay></div>
+      <section class="result-panel" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+        <button class="result-close" type="button" data-close-overlay aria-label="关闭">×</button>
+        <h2 id="resultTitle">详情 / Details</h2>
+        <div id="resultBody" class="result-body"></div>
+      </section>
+    </div>
+
+    <script src="./app-data.js?v=20260517-no-source-search-v1"></script>
+    <script src="./topic.js?v=20260517-no-source-search-v1"></script>
+  </body>
+</html>
