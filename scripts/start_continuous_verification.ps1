@@ -25,8 +25,8 @@ $PythonArgs = @(
     "--fda-companies", "4",
     "--mdr-plan-companies", "120",
     "--mdr-families-per-company", "8",
-    "--media-websites", "8",
-    "--media-page-fetches", "8",
+    "--media-websites", "0",
+    "--media-page-fetches", "0",
     "--media-images-per-site", "2",
     "--media-pages-per-site", "2",
     "--search-results", "6",
@@ -40,7 +40,8 @@ $PythonArgs = @(
     "--media-stage-timeout", "900",
     "--media-timeout", "10",
     "--media-sleep", "0.2",
-    "--download-logos-only",
+    "--skip-media-assets",
+    "--product-gap-audit",
     "--build-timeout", "480",
     "--excel-timeout", "480"
 )

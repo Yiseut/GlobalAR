@@ -170,6 +170,9 @@ def batch_progress_units(batch_record: dict[str, Any]) -> int:
 def build_commands(args: argparse.Namespace) -> list[dict[str, Any]]:
     py = sys.executable
     commands: list[dict[str, Any]] = []
+    media_websites = 0 if args.skip_media_assets else args.media_websites
+    media_page_fetches = 0 if args.skip_media_assets else args.media_page_fetches
+    skip_image_downloads = args.skip_image_downloads or args.skip_media_assets
     if not args.skip_briefing_sync:
         commands.append(
             {
@@ -278,22 +281,22 @@ def build_commands(args: argparse.Namespace) -> list[dict[str, Any]]:
                 py,
                 "scripts\\build_company_media_assets.py",
                 "--limit-websites",
-                str(args.media_websites),
+                str(media_websites),
                 "--max-images-per-site",
                 str(args.media_images_per_site),
                 "--max-pages-per-site",
                 str(args.media_pages_per_site),
                 "--max-page-fetches",
-                str(args.media_page_fetches),
+                str(media_page_fetches),
                 "--timeout",
                 str(args.media_timeout),
                 "--sleep",
                 str(args.media_sleep),
             ]
-            + (["--skip-image-downloads"] if args.skip_image_downloads else [])
+            + (["--skip-image-downloads"] if skip_image_downloads else [])
             + (["--download-logos-only"] if args.download_logos_only else []),
-            # Product photos can explode the asset queue. Logo-only mode keeps
-            # dashboard branding assets moving without reopening broad image crawl.
+            # Product photos and broad page fetches can explode the queue. Product-gap
+            # mode keeps generated official/spec tables current without crawling.
             "timeout": args.media_stage_timeout,
             "required": False,
         },
@@ -311,6 +314,15 @@ def build_commands(args: argparse.Namespace) -> list[dict[str, Any]]:
         },
         ]
     )
+    if args.product_gap_audit:
+        commands.append(
+            {
+                "name": "audit_product_gap_queue",
+                "command": [py, "scripts\\audit_product_gap_queue.py", "--output-stem", "latest"],
+                "timeout": 180,
+                "required": False,
+            }
+        )
     if not args.skip_excel_sync:
         commands.append(
             {
@@ -494,8 +506,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--media-timeout", type=int, default=6)
     parser.add_argument("--media-sleep", type=float, default=0.02)
     parser.add_argument("--media-stage-timeout", type=int, default=180)
+    parser.add_argument("--skip-media-assets", action="store_true", help="Keep generated official/spec tables but skip broad website media/page crawling.")
     parser.add_argument("--skip-image-downloads", action="store_true")
     parser.add_argument("--download-logos-only", action="store_true")
+    parser.add_argument("--product-gap-audit", action="store_true", help="Write the latest product verification gap queue after each batch.")
     parser.add_argument("--news-limit", type=int, default=45)
     parser.add_argument("--news-stage-timeout", type=int, default=180)
     parser.add_argument("--build-timeout", type=int, default=300)

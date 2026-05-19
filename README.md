@@ -25,6 +25,14 @@ http://127.0.0.1:8790/
 4. 自动采集只进入 `evidence_staging` 和 `registration_evidence`，状态保持 `needs_review`。
 5. 人工审核通过后，才应合并到 `company_master`、`product_master` 或正式注册事实字段。
 
+当前默认补缺方向是产品核验，而不是继续大规模下载网页/产品图片：
+
+```powershell
+python scripts\audit_product_gap_queue.py --output-stem latest
+```
+
+该脚本会生成 `data\audits\product_gap_queue_latest.csv` 和 `data\audits\product_gap_summary_latest.md`，用于按 P0/P1/P2/P3 顺序校对产品线、官方产品页、规格、注册/证书/IFU 证据缺口。`start_continuous_verification.ps1` 的默认启动参数已切换为跳过 broad media/page crawl，并在批次后刷新 `product_gap_queue_latest.csv`。
+
 ## 源表清洗
 
 原始 Excel 可以作为后续项目继续复用，但修改前必须先备份。确定性清洗统一走脚本：

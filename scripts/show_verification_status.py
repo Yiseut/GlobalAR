@@ -176,6 +176,13 @@ def arg_value(args: dict[str, Any], key: str, default: int) -> int:
         return default
 
 
+def bool_arg(args: dict[str, Any], key: str) -> bool:
+    value = args.get(key.replace("-", "_"), args.get(key, False))
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in {"1", "true", "yes", "on"}
+
+
 def pending_counts() -> dict[str, Any]:
     official_plan = read_csv(DATA_DIR / "company_official_source_plan.csv")
     official_ev, official_bad = read_jsonl(DATA_DIR / "company_official_source_evidence.jsonl")
@@ -301,10 +308,12 @@ def build_report() -> tuple[str, dict[str, Any]]:
     official_limit = arg_value(args, "official_limit", 8)
     mdr_limit = arg_value(args, "mdr_limit", 8)
     media_limit = arg_value(args, "media_websites", 4)
+    media_skipped = bool_arg(args, "skip_media_assets")
+    media_batches = 0 if media_skipped else math.ceil(counts["media"]["pending"] / media_limit)
     remaining_batches = max(
         math.ceil(counts["official"]["pending"] / official_limit),
         math.ceil(counts["mdr_ce"]["pending"] / mdr_limit),
-        math.ceil(counts["media"]["pending"] / media_limit),
+        media_batches,
     )
     pause_seconds = float(args.get("pause_seconds") or 0)
     eta_seconds = remaining_batches * ((avg_seconds or 0) + pause_seconds) if avg_seconds else None
@@ -368,7 +377,8 @@ def build_report() -> tuple[str, dict[str, Any]]:
         "## Pending Queue Estimate",
         f"- Official-source queue: {counts['official']['covered']} / {counts['official']['total']} covered; {counts['official']['pending']} pending",
         f"- MDR/CE queue: {counts['mdr_ce']['covered']} / {counts['mdr_ce']['total']} covered; {counts['mdr_ce']['pending']} pending",
-        f"- Media/spec website queue: {counts['media']['covered']} / {counts['media']['total']} covered; {counts['media']['pending']} pending",
+        f"- Media/spec website queue: {counts['media']['covered']} / {counts['media']['total']} covered; {counts['media']['pending']} pending"
+        + (" (skipped by current run mode)" if media_skipped else ""),
         f"- Estimated batches remaining at current limits: {remaining_batches}",
         f"- Average recent batch duration: {fmt_duration(avg_seconds)}",
         f"- Rough ETA at current limits: {fmt_duration(eta_seconds)}",
