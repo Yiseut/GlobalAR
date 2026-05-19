@@ -37,6 +37,27 @@ function profileHref(profile) {
   return `./company-profile.html?company=${encodeURIComponent(profile.company)}`;
 }
 
+function companyInitials(profile) {
+  const words = String(profile.company || "")
+    .replace(/[^A-Za-z0-9\s]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (!words.length) return "#";
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return words.slice(0, 2).map((word) => word[0]).join("").toUpperCase();
+}
+
+function renderCompanyLogo(profile, className) {
+  const logo = profile.media?.logo || "";
+  const initials = companyInitials(profile);
+  return `
+    <span class="${className} company-logo-mark ${logo ? "has-logo" : "is-placeholder"}" aria-hidden="true">
+      ${logo ? `<img src="${escapeHtml(logo)}" alt="" />` : `<span>${escapeHtml(initials)}</span>`}
+    </span>
+  `;
+}
+
 function compactText(value, fallback = "-") {
   const text = String(value || "").trim();
   return text || fallback;
@@ -75,7 +96,7 @@ function initDirectory() {
   summaryNode.innerHTML = [
     ["企业", "Companies", summary.companies],
     ["已生成介绍", "Profiles Ready", summary.briefing_ready],
-    ["含图片", "With Images", summary.with_images],
+    ["含 Logo", "With Logos", summary.with_logos || 0],
     ["复杂组合", "Complex Portfolios", summary.complex_portfolios],
   ]
     .map(
@@ -127,13 +148,17 @@ function initDirectory() {
 
 function renderDirectoryCard(profile) {
   const hasImage = profile.media?.covers?.length || profile.media?.products?.length;
+  const hasLogo = Boolean(profile.media?.logo);
   const badge = profile.briefing_ready ? "A-Z" : profile.portfolio_complex ? "Matrix" : "";
   return `
-    <a class="company-directory-card ${hasImage ? "has-media" : ""}" href="${profileHref(profile)}">
-      <div>
-        <span class="company-card-kicker">${escapeHtml(profile.primary_track || profile.region || "Company")}</span>
-        <h3>${escapeHtml(profile.company)}</h3>
-        <p>${escapeHtml([profile.country, profile.region].filter(Boolean).join(" · ") || profile.location || "")}</p>
+    <a class="company-directory-card ${hasImage ? "has-media" : ""} ${hasLogo ? "has-logo" : ""}" href="${profileHref(profile)}">
+      <div class="company-card-head">
+        ${renderCompanyLogo(profile, "company-card-logo")}
+        <div class="company-card-title">
+          <span class="company-card-kicker">${escapeHtml(profile.primary_track || profile.region || "Company")}</span>
+          <h3>${escapeHtml(profile.company)}</h3>
+          <p>${escapeHtml([profile.country, profile.region].filter(Boolean).join(" · ") || profile.location || "")}</p>
+        </div>
       </div>
       <div class="company-card-bottom">
         <span>${fmt(profile.product_count)} ${escapeHtml(profile.product_count === 1 ? "line" : "lines")}</span>
@@ -175,8 +200,13 @@ function renderCompanyHero(profile) {
   return `
     <section class="company-detail-hero">
       <div class="company-detail-copy">
-        <div class="eyebrow">${escapeHtml(profile.letter)} · 2026</div>
-        <h1>${escapeHtml(profile.company)}</h1>
+        <div class="company-detail-brand-row">
+          ${renderCompanyLogo(profile, "company-hero-logo")}
+          <div class="company-detail-title">
+            <div class="eyebrow">${escapeHtml(profile.letter)} · 2026</div>
+            <h1>${escapeHtml(profile.company)}</h1>
+          </div>
+        </div>
         <p class="profile-intro"><span>${escapeHtml(intro.zh || "")}</span><span>${escapeHtml(intro.en || "")}</span></p>
         <div class="profile-chip-row">
           ${profile.briefing_ready ? `<span>${label("专栏已生成", "Column Ready")}</span>` : ""}

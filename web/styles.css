@@ -7591,6 +7591,53 @@ iframe.skiptranslate,
   background: radial-gradient(circle, rgba(217, 119, 87, 0.16), transparent 68%);
 }
 
+.company-card-head {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  padding-right: 46px;
+}
+
+.company-card-title {
+  min-width: 0;
+}
+
+.company-logo-mark {
+  display: inline-grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(34, 28, 22, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-1);
+}
+
+.company-logo-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.company-logo-mark.is-placeholder {
+  color: var(--brand-deep);
+  background: var(--brand-soft);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.company-card-logo {
+  width: 56px;
+  height: 56px;
+  padding: 5px;
+  border-radius: 14px;
+}
+
+.company-card-logo.is-placeholder {
+  padding: 0;
+}
+
 .company-directory-card:hover,
 .company-directory-card:focus-visible {
   transform: translateY(-2px);
@@ -7598,7 +7645,16 @@ iframe.skiptranslate,
   box-shadow: var(--shadow-hover);
 }
 
-.company-card-kicker,
+.company-card-kicker {
+  display: block;
+  max-width: 100%;
+  color: var(--brand-deep);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .company-product-card span {
   display: block;
   max-width: calc(100% - 46px);
@@ -7610,7 +7666,7 @@ iframe.skiptranslate,
 }
 
 .company-directory-card h3 {
-  max-width: calc(100% - 46px);
+  max-width: 100%;
   margin: 12px 0 6px;
   font-size: 22px;
   line-height: 1.16;
@@ -7649,8 +7705,32 @@ iframe.skiptranslate,
     rgba(255, 255, 255, 0.82);
 }
 
+.company-detail-brand-row {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.company-detail-title {
+  min-width: 0;
+}
+
+.company-hero-logo {
+  width: 84px;
+  height: 84px;
+  flex: 0 0 84px;
+  padding: 7px;
+  border-radius: 18px;
+}
+
+.company-hero-logo.is-placeholder {
+  padding: 0;
+  font-size: 22px;
+}
+
 .company-detail-copy h1 {
-  margin: 14px 0 14px;
+  margin: 12px 0 0;
   font-size: clamp(42px, 6vw, 76px);
   line-height: 1.02;
 }
@@ -8023,6 +8103,28 @@ iframe.skiptranslate,
 
   .company-detail-copy h1 {
     font-size: 42px;
+  }
+
+  .company-card-head {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+    padding-right: 40px;
+  }
+
+  .company-card-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .company-detail-brand-row {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .company-hero-logo {
+    width: 68px;
+    height: 68px;
+    flex-basis: 68px;
   }
 
   .company-product-card {

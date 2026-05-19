@@ -1,0 +1,373 @@
+﻿company,company_slug,status,web_path,output_path,source_asset_id,source_role,source_scope,source_url,source_local_path,source_ext,source_width,source_height,background_status,notes,generated_at
+1st SurgiConcept,1st-surgiconcept,ok,./assets/company_logos/1st-surgiconcept.png,web\assets\company_logos\1st-surgiconcept.png,asset_a5e94a5e1388,favicon_or_touch_icon,operating_company,https://beyondmedicalaesthetics.uk/wp-content/uploads/2023/01/cropped-Beyond-medical-aesthetics-icon-192x192.png,assets\official_media\operating_company\1st_surgiconcept\logo\logo_candidate_65b6e008b2.png,.png,192,192,alpha_preserved,asset_b9a7a4153760:unsupported_extension:.svg; asset_5486d2073133:unsupported_extension:.svg; asset_bd95a6a019e5:unsupported_extension:.svg,2026-05-19T13:49:51
+54gene,54gene,ok,./assets/company_logos/54gene.png,web\assets\company_logos\54gene.png,asset_a82f9ab9ad7f,operating_company_logo_img,operating_company,https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/59745cf1-4630-449f-96f6-82c8a42e4c75.png?w=3840,assets\official_media\operating_company\54gene\logo\logo_candidate_45b4ee9cf9.png,.png,1000,246,light_background_removed,asset_c8d7b78dc6f7:unsupported_extension:.svg; asset_2bbf8f597b84:unsupported_extension:.svg; asset_19bfee055810:unsupported_extension:.svg,2026-05-19T13:49:51
+A.A.M.S.,a-a-m-s,ok,./assets/company_logos/a-a-m-s.png,web\assets\company_logos\a-a-m-s.png,asset_a6edeb338635,favicon_or_touch_icon,operating_company,https://oleapharma.com/img/logo_op.png,assets\official_media\operating_company\a_a_m_s\logo\logo_candidate_875d2255b8.png,.png,500,500,alpha_preserved,,2026-05-19T13:49:51
+ABG Lab LLC,abg-lab-llc,ok,./assets/company_logos/abg-lab-llc.png,web\assets\company_logos\abg-lab-llc.png,asset_6d3a16fb0ef1,operating_company_logo_img,operating_company,https://repository.usmf.md/image/usmf_logo_672x239.png,assets\official_media\operating_company\abg_lab_llc\logo\logo_candidate_b35cbc7e52.png,.png,672,239,alpha_preserved,asset_7444b6140af9:unsupported_extension:.svg; asset_3e80b16c1e03:unsupported_extension:.svg,2026-05-19T13:49:51
+Abio Materials,abio-materials,ok,./assets/company_logos/abio-materials.png,web\assets\company_logos\abio-materials.png,asset_a713406827fc,favicon_or_touch_icon,operating_company,https://articlexpress.co.uk/wp-content/uploads/2020/02/cropped-AX200.png,assets\official_media\operating_company\abio_materials\logo\logo_candidate_475e9af160.png,.png,512,512,alpha_preserved,asset_6f950e547a12:UnidentifiedImageError; asset_629686265370:unsupported_extension:.svg; asset_dc8448813158:UnidentifiedImageError; asset_e8a5e53dd42c:UnidentifiedImageError; asset_6670df0dc56d:unsupported_extension:.svg,2026-05-19T13:49:51
+Across,across,ok,./assets/company_logos/across.png,web\assets\company_logos\across.png,asset_75f4e4d89051,operating_company_logo_img,operating_company,https://nordicmss.com/Admin/Public/GetImage.ashx?height=400&width=1000&crop=5&Compression=99&image=%2fFiles%2fImages%2fNMSS%2fNMSS+Mobil%2fNMSS+logoer+mobil%2fHeader+Logo+Mobile+v5.png,assets\official_media\operating_company\across\logo\logo_candidate_c79a826a12.png,.png,1000,267,alpha_preserved,,2026-05-19T13:49:51
+Adoderm,adoderm,ok,./assets/company_logos/adoderm.png,web\assets\company_logos\adoderm.png,asset_c0f23b7054fa,operating_company_logo_img,operating_company,https://www.cirugiadeavanzada.com/img/logo-blanco.png,assets\official_media\operating_company\adoderm\logo\logo_candidate_05c8bf42fc.png,.png,643,456,alpha_preserved,asset_48d5a1c42006:unsupported_extension:.svg; asset_e7b697a55cb1:unsupported_extension:.svg; asset_124ab8625c3f:unsupported_extension:.svg,2026-05-19T13:49:51
+Advance Esthetic,advance-esthetic,ok,./assets/company_logos/advance-esthetic.png,web\assets\company_logos\advance-esthetic.png,asset_11f9dce44606,favicon_or_touch_icon,operating_company,https://beudamed.com/assets/favicon-0218ba5c.png,assets\official_media\operating_company\advance_esthetic\logo\logo_candidate_41db3f26e9.png,.png,512,512,alpha_preserved,asset_0cd64725b4f9:unsupported_extension:.svg; asset_af8f0b44cb72:unsupported_extension:.svg; asset_e6e3ca688bf4:unsupported_extension:.svg; asset_a09c31c7f6fc:unsupported_extension:.svg; asset_2ee82cd49282:unsupported_extension:.svg,2026-05-19T13:49:51
+Advanced Aesthetic,advanced-aesthetic,ok,./assets/company_logos/advanced-aesthetic.png,web\assets\company_logos\advanced-aesthetic.png,asset_9324c10fec35,operating_company_logo_img,operating_company,https://www.algeness.com/ass3ts/template/ALGENESS/img/logo/algeness-logo-gold.png,assets\official_media\operating_company\advanced_aesthetic\logo\logo_candidate_30f916e946.png,.png,421,108,alpha_preserved,asset_136468c8599d:unsupported_extension:.svg,2026-05-19T13:49:51
+Aerolase,aerolase,ok,./assets/company_logos/aerolase.png,web\assets\company_logos\aerolase.png,asset_62f47b4f0dd2,operating_company_logo_img,operating_company,https://aestheticmedicalpractitioner.com.au/wp-content/uploads/2014/10/AestheticMedicalPractioner_LOGO.jpg,assets\official_media\operating_company\aerolase\logo\logo_candidate_42c5b40897.jpg,.jpg,2325,612,light_background_removed,asset_9e249aa9b6f8:unsupported_extension:.svg; asset_bbe79bbbc9f1:unsupported_extension:.svg,2026-05-19T13:49:51
+Agnes Medical,agnes-medical,ok,./assets/company_logos/agnes-medical.png,web\assets\company_logos\agnes-medical.png,asset_4c580cec8331,operating_company_logo_img,operating_company,https://fliphtml5.com/images/header/logo.png,assets\official_media\operating_company\agnes_medical\logo\logo_candidate_36c3969b9d.png,.png,307,40,alpha_preserved,asset_4fddcc19f885:unsupported_extension:.svg,2026-05-19T13:49:51
+Allergan,allergan,ok,./assets/company_logos/allergan.png,web\assets\company_logos\allergan.png,asset_1a430ca63650,operating_company_logo_img,operating_company,http://pertento.fda.moph.go.th/FDA_SEARCH_DRUG/DESIGN_DETAIL/imgs/logo@2x.png,assets\official_media\operating_company\allergan\logo\logo_candidate_b8a2be0300.png,.png,460,461,alpha_preserved,asset_3d3de3416c18:unsupported_extension:.svg; asset_945af36432e8:unsupported_extension:.svg; asset_c4f4fe1f1262:unsupported_extension:.svg; asset_d4ce3d4f6c26:unsupported_extension:.svg; asset_b80c23266153:unsupported_extension:.svg,2026-05-19T13:49:51
+Alma Lasers,alma-lasers,ok,./assets/company_logos/alma-lasers.png,web\assets\company_logos\alma-lasers.png,asset_e000bcd268da,operating_company_logo_img,operating_company,https://almalasers.kz/upload/medialibrary/fa6/almalogo.jpeg,assets\official_media\operating_company\alma_lasers\logo\logo_candidate_da0dd8be8e.jpg,.jpg,1280,506,light_background_removed,asset_208a790f8713:unsupported_extension:.svg; asset_758f78dcda36:unsupported_extension:.svg; asset_31d3c5dae1b6:unsupported_extension:.svg; asset_b1c69f0bef5a:unsupported_extension:.svg; asset_65316132fe6d:unsupported_extension:.svg,2026-05-19T13:49:51
+Alta Care,alta-care,ok,./assets/company_logos/alta-care.png,web\assets\company_logos\alta-care.png,asset_cc047c3231ff,operating_company_logo_img,operating_company,https://derma-st.com.ua/wp-content/uploads/2018/09/cropped-Dermastir-alta-care-logo.png,assets\official_media\operating_company\alta_care\logo\logo_candidate_9840c470bb.png,.png,1366,408,alpha_preserved,,2026-05-19T13:49:51
+Altis Biologics,altis-biologics,ok,./assets/company_logos/altis-biologics.png,web\assets\company_logos\altis-biologics.png,asset_61cc0e99e89a,favicon_or_touch_icon,operating_company,https://pharmaboardroom.com/wp-content/themes/pharma/img/favicon.png,assets\official_media\operating_company\altis_biologics\logo\logo_candidate_6180600079.png,.png,512,512,alpha_preserved,asset_a2a692a4f8d6:unsupported_extension:.svg; asset_619686490dbb:unsupported_extension:.svg,2026-05-19T13:49:51
+Alvi Prague,alvi-prague,ok,./assets/company_logos/alvi-prague.png,web\assets\company_logos\alvi-prague.png,asset_70fb0ce26d54,operating_company_logo_img,operating_company,https://alviprague.kz/image/catalog/logo-alvi.png,assets\official_media\operating_company\alvi_prague\logo\logo_candidate_ce36f812cd.png,.png,230,97,alpha_preserved,,2026-05-19T13:49:51
+APS,aps,ok,./assets/company_logos/aps.png,web\assets\company_logos\aps.png,asset_f47cb37a1853,operating_company_logo_img,operating_company,https://www.apolomed.com/wp-content/themes/apolomed-theme/images/logo-footer.png,assets\official_media\operating_company\aps\logo\logo_candidate_c6810d8645.png,.png,1462,352,alpha_preserved,asset_21b51cacfc73:unsupported_extension:.svg; asset_6cefd4a2ede2:unsupported_extension:.svg; asset_65f3ebc8f09d:unsupported_extension:.svg; asset_b24db3912320:unsupported_extension:.svg; asset_617dab7c5aeb:unsupported_extension:.svg,2026-05-19T13:49:51
+Aptos,aptos,ok,./assets/company_logos/aptos.png,web\assets\company_logos\aptos.png,asset_627578002603,operating_company_logo_img,operating_company,https://allianova.ru/bitrix/templates/sotbit_b2c/assets/image/100x100xicon-512x512.png.pagespeed.ic.RQbFfAMzTv.png,assets\official_media\operating_company\aptos\logo\logo_candidate_cbb6c65a1e.png,.png,100,100,alpha_preserved,asset_f0f0bad4ac55:unsupported_extension:.svg; asset_d3e46d357e77:UnidentifiedImageError; asset_81557f17cdf3:UnidentifiedImageError; asset_ce61e0f6850b:unsupported_extension:.svg; asset_7499520f0fa9:unsupported_extension:.svg,2026-05-19T13:49:51
+Apyx Medical,apyx-medical,ok,./assets/company_logos/apyx-medical.png,web\assets\company_logos\apyx-medical.png,asset_cc5b9e28ab09,operating_company_logo_img,operating_company,https://renuvionfinder.com/wp-content/uploads/2023/01/logo-no-tag.webp,assets\official_media\operating_company\apyx_medical\logo\logo_candidate_ace8fb3682.webp,.webp,500,80,alpha_preserved,asset_f3d286de7fc9:unsupported_extension:.svg; asset_a566322b78a7:unsupported_extension:.svg; asset_7fde7bee0aa6:unsupported_extension:.svg; asset_e418ac9e640e:unsupported_extension:.svg; asset_06d2e7537bf9:unsupported_extension:.svg,2026-05-19T13:49:51
+Aquavit Pharmaceuticals,aquavit-pharmaceuticals,ok,./assets/company_logos/aquavit-pharmaceuticals.png,web\assets\company_logos\aquavit-pharmaceuticals.png,asset_444779b0bbb8,operating_company_logo_img,operating_company,"https://static.wixstatic.com/media/42851a_e1725ec5314044e2a43a20585ad85c92~mv2.png/v1/fill/w_152,h_50,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/aquavit%20logo%20v1.png",assets\official_media\operating_company\aquavit_pharmaceuticals\logo\logo_candidate_5d4fb79226.png,.png,152,50,alpha_preserved,,2026-05-19T13:49:51
+Archidemia,archidemia,ok,./assets/company_logos/archidemia.png,web\assets\company_logos\archidemia.png,asset_84469482fc6c,favicon_or_touch_icon,operating_company,https://archidemia.com/wp-content/uploads/2019/08/cropped-ARCHIDEMIA512--192x192.png,assets\official_media\operating_company\archidemia\logo\logo_candidate_34a61936dd.png,.png,192,192,alpha_preserved,,2026-05-19T13:49:51
+Arion,arion,ok,./assets/company_logos/arion.png,web\assets\company_logos\arion.png,asset_c24ca0385876,operating_company_logo_img,operating_company,https://www.laboratoires-arion.fr/templates/itl_hudson/images/logo.png,assets\official_media\operating_company\arion\logo\logo_candidate_424cc3aaa7.png,.png,200,75,alpha_preserved,,2026-05-19T13:49:51
+Arkana Cosmetics,arkana-cosmetics,ok,./assets/company_logos/arkana-cosmetics.png,web\assets\company_logos\arkana-cosmetics.png,asset_0637e27e784c,operating_company_logo_img,operating_company,http://arkanacosmetics.com.mx/wp-content/uploads/2023/12/arkana_logo.png,assets\official_media\operating_company\arkana_cosmetics\logo\logo_candidate_54017dfc59.png,.png,300,73,alpha_preserved,asset_60959ccefa29:unsupported_extension:.svg; asset_d44ef755b86e:unsupported_extension:.svg; asset_cddfd6100555:unsupported_extension:.svg; asset_0fdfefb3c73b:unsupported_extension:.svg; asset_509f9036c0a7:unsupported_extension:.svg,2026-05-19T13:49:51
+Arthrex,arthrex,ok,./assets/company_logos/arthrex.png,web\assets\company_logos\arthrex.png,asset_0cefa17afcc1,operating_company_logo_img,operating_company,https://www.arthrexsa.co.za/wp-content/uploads/2025/01/674474d57241d75a33b35093_BR1-005754-en-US_A_Arthrex-Aesthetics_Logo_Titanium-Gold-_1_.png,assets\official_media\operating_company\arthrex\logo\logo_candidate_024c7c3e31.png,.png,5879,548,alpha_preserved,,2026-05-19T13:49:51
+Asclepion,asclepion,ok,./assets/company_logos/asclepion.png,web\assets\company_logos\asclepion.png,asset_2fd17fa724b1,favicon_or_touch_icon,operating_company,https://beudamed.com/assets/favicon-0218ba5c.png,assets\official_media\operating_company\asclepion\logo\logo_candidate_41db3f26e9.png,.png,512,512,alpha_preserved,asset_a661fa18ddc5:unsupported_extension:.svg; asset_b3e751a4024e:unsupported_extension:.svg; asset_351cbce8b925:unsupported_extension:.svg; asset_0e37af79472d:unsupported_extension:.svg; asset_70135e9eecb1:unsupported_extension:.svg,2026-05-19T13:49:51
+Asclepion Laser,asclepion-laser,ok,./assets/company_logos/asclepion-laser.png,web\assets\company_logos\asclepion-laser.png,asset_a14a1d3217e4,operating_company_logo_img,operating_company,https://asclepion.com.ua/img/core-img/logo.png,assets\official_media\operating_company\asclepion_laser\logo\logo_candidate_6c04972cbe.png,.png,2164,1339,alpha_preserved,asset_e3c57b6e01e1:unsupported_extension:.svg; asset_944d6afb9df4:unsupported_extension:.svg; asset_02bd80fb1357:unsupported_extension:.svg; asset_1e75e0111fe1:unsupported_extension:.svg; asset_cd7c863904bf:unsupported_extension:.svg,2026-05-19T13:49:51
+Aspen Pharmacare,aspen-pharmacare,ok,./assets/company_logos/aspen-pharmacare.png,web\assets\company_logos\aspen-pharmacare.png,asset_b1797e5d09f7,favicon_or_touch_icon,operating_company,https://aspenpharma.ca/wp-content/uploads/2016/04/cropped-aspen-square-300x300.png,assets\official_media\operating_company\aspen_pharmacare\logo\logo_candidate_b2a99650ff.png,.png,300,300,alpha_preserved,asset_4f94cd514fb1:unsupported_extension:.svg,2026-05-19T13:49:51
+Asterasys,asterasys,ok,./assets/company_logos/asterasys.png,web\assets\company_logos\asterasys.png,asset_07950bcff44d,operating_company_logo_img,operating_company,https://medicskin-wp-uat.s3.ap-southeast-1.amazonaws.com/uploads/2021/04/Medicskin-Logo-1.png,assets\official_media\operating_company\asterasys\logo\logo_candidate_14c86dffcf.png,.png,234,43,alpha_preserved,asset_8f68fab3a5d5:unsupported_extension:.svg; asset_980c5d07d350:unsupported_extension:.svg; asset_bdba4bbbfaa6:unsupported_extension:.svg; asset_04117c5096a6:unsupported_extension:.svg; asset_29256f48ab61:unsupported_extension:.svg,2026-05-19T13:49:51
+Aurora Medical,aurora-medical,ok,./assets/company_logos/aurora-medical.png,web\assets\company_logos\aurora-medical.png,asset_8aaafc0e4a2d,operating_company_logo_img,operating_company,https://www.aurorabiomed.com.cn/wp-content/uploads/2022/02/WHO-logo-150x150.png,assets\official_media\operating_company\aurora_medical\logo\logo_candidate_4016a8dfe3.png,.png,150,150,alpha_preserved,,2026-05-19T13:49:51
+Bayer,bayer,ok,./assets/company_logos/bayer.png,web\assets\company_logos\bayer.png,asset_9d4b08a10fcc,operating_company_logo_img,operating_company,https://dati.zva.gov.lv/zalu-registrs/assets/laake75_logo_en_rgb_2017.png,assets\official_media\operating_company\bayer\logo\logo_candidate_1200b25bf3.png,.png,1258,615,alpha_preserved,asset_2baf384a9ea2:unsupported_extension:.svg; asset_280f730f6b24:unsupported_extension:.svg; asset_6dea79c69ccb:unsupported_extension:.svg; asset_df05c46398a2:unsupported_extension:.svg,2026-05-19T13:49:51
+Baz Biomedic,baz-biomedic,ok,./assets/company_logos/baz-biomedic.png,web\assets\company_logos\baz-biomedic.png,asset_f50aba28d155,operating_company_logo_img,operating_company,https://rebeauinc.com/cdn/shop/files/3_3f4e3eb4-4ef0-4402-bdcf-bc2ac4adfe3c.png?v=1763601007&width=400,assets\official_media\operating_company\baz_biomedic\logo\logo_candidate_9291c997cc.png,.png,400,400,light_background_removed,,2026-05-19T13:49:51
+Be Aes Labs,be-aes-labs,ok,./assets/company_logos/be-aes-labs.png,web\assets\company_logos\be-aes-labs.png,asset_3dca4fcc7141,operating_company_logo_img,operating_company,https://www.fibroblastusa.com/cdn/shop/files/fibroblast_logo_plateado_Mesa_de_trabajo_1_copia.png?v=1763578688&width=230,assets\official_media\operating_company\be_aes_labs\logo\logo_candidate_0bf4285cbe.png,.png,230,36,alpha_preserved,,2026-05-19T13:49:51
+Beamed,beamed,ok,./assets/company_logos/beamed.png,web\assets\company_logos\beamed.png,asset_38f5c894d46f,operating_company_logo_img,operating_company,https://www.apolomed.com/wp-content/themes/apolomed-theme/images/logo-footer.png,assets\official_media\operating_company\beamed\logo\logo_candidate_c6810d8645.png,.png,1462,352,alpha_preserved,asset_c81fa0aa4bdc:unsupported_extension:.svg; asset_8ccc4592efd8:unsupported_extension:.svg,2026-05-19T13:49:51
+Beauty Health,beauty-health,ok,./assets/company_logos/beauty-health.png,web\assets\company_logos\beauty-health.png,asset_5331575cf24c,operating_company_logo_img,operating_company,https://skin.hydrafacial.com/hubfs/BHC_001_02b_LogoForLegal_TM-01.png,assets\official_media\operating_company\beauty_health\logo\logo_candidate_07db88fbf7.png,.png,8000,4500,alpha_preserved,,2026-05-19T13:49:51
+BeautyBio,beautybio,ok,./assets/company_logos/beautybio.png,web\assets\company_logos\beautybio.png,asset_61fb150019a9,operating_company_logo_img,operating_company,https://m.media-amazon.com/images/I/21W-6KXULzL.jpg,assets\official_media\operating_company\beautybio\logo\logo_candidate_941c05cf29.jpg,.jpg,660,66,light_background_removed,asset_b99d5677ae47:unsupported_extension:.svg; asset_b8048434e9b0:unsupported_extension:.svg,2026-05-19T13:49:51
+Benev,benev,ok,./assets/company_logos/benev.png,web\assets\company_logos\benev.png,asset_bf789f095aeb,operating_company_logo_img,operating_company,https://www.eskinstore.com/ProductCart/PC/images/eskinstore-logo-vertical-green-256x129.png,assets\official_media\operating_company\benev\logo\logo_candidate_cd6e039c09.png,.png,256,129,alpha_preserved,,2026-05-19T13:49:51
+BenQ,benq,ok,./assets/company_logos/benq.png,web\assets\company_logos\benq.png,asset_18d348ab6d96,operating_company_logo_img,operating_company,https://www.benq.eu/etc/designs/g6/clientlib-site/img/header-icon/nav-icon-benq-logo.png,assets\official_media\operating_company\benq\logo\logo_candidate_958bbe72b2.png,.png,512,352,alpha_preserved,asset_8d872abc1db6:unsupported_extension:.svg; asset_add75377942e:unsupported_extension:.svg,2026-05-19T13:49:51
+Bio-Therapeutic,bio-therapeutic,ok,./assets/company_logos/bio-therapeutic.png,web\assets\company_logos\bio-therapeutic.png,asset_36b97185fd70,product_line_logo_img,product_line,https://bio-therapeutic.com/cdn/shop/files/Harpers-Bazaar-logo-80pxtall.png?v=1752072798&width=1020,assets\official_media\product_line\bio_therapeutic\microexfoliation_nano_needling\logo\logo_candidate_0cbb181e2a.png,.png,322,80,alpha_preserved,,2026-05-19T13:49:51
+Biocyte,biocyte,ok,./assets/company_logos/biocyte.png,web\assets\company_logos\biocyte.png,asset_0dfa5a94d9f3,favicon_or_touch_icon,operating_company,https://www.biocyte.com/cdn/shop/files/android-chrome-512x512.png?v=1742974868&width=180,assets\official_media\operating_company\biocyte\logo\logo_candidate_088c316b4a.png,.png,180,180,alpha_preserved,asset_a9e8d1202c09:unsupported_extension:.svg,2026-05-19T13:49:51
+BioElectronics,bioelectronics,ok,./assets/company_logos/bioelectronics.png,web\assets\company_logos\bioelectronics.png,asset_f327e82b3b7e,operating_company_logo_img,operating_company,https://rdtc.nhs.uk/wp-content/uploads/2024/12/rdtclogo-3.png,assets\official_media\operating_company\bioelectronics\logo\logo_candidate_f925a9d874.png,.png,500,375,alpha_preserved,,2026-05-19T13:49:51
+BioFormula,bioformula,ok,./assets/company_logos/bioformula.png,web\assets\company_logos\bioformula.png,asset_5fc06ab40c60,favicon_or_touch_icon,operating_company,https://bioformula.it/wp-content/uploads/2025/05/favicon-180.png,assets\official_media\operating_company\bioformula\logo\logo_candidate_ccab5b545c.png,.png,180,180,alpha_preserved,asset_09a0164ffc42:unsupported_extension:.svg; asset_775860ef13bd:unsupported_extension:.svg; asset_a825c588d786:unsupported_extension:.svg,2026-05-19T13:49:51
+Biopark Medical,biopark-medical,ok,./assets/company_logos/biopark-medical.png,web\assets\company_logos\biopark-medical.png,asset_7e8b0e6e5393,favicon_or_touch_icon,operating_company,https://bioparkmedical.com/android-chrome-192x192.png,assets\official_media\operating_company\biopark_medical\logo\logo_candidate_6e5e320ee7.png,.png,192,192,alpha_preserved,,2026-05-19T13:49:51
+BioPlus,bioplus,ok,./assets/company_logos/bioplus.png,web\assets\company_logos\bioplus.png,asset_befd8a29b160,operating_company_logo_img,operating_company,https://d26hl16wewjnds.cloudfront.net/icons/logo.png,assets\official_media\operating_company\bioplus\logo\logo_candidate_a8fde393d2.png,.png,4500,1510,alpha_preserved,asset_c8090c1208d5:unsupported_extension:.svg; asset_ac23ef652c1f:unsupported_extension:.svg; asset_6ddf65cf172f:unsupported_extension:.svg; asset_42b3db1d7e43:unsupported_extension:.svg; asset_b122835b4fe1:unsupported_extension:.svg,2026-05-19T13:49:51
+BioScience,bioscience,ok,./assets/company_logos/bioscience.png,web\assets\company_logos\bioscience.png,asset_faa345a8581d,favicon_or_touch_icon,operating_company,https://cutismedical.com/wp-content/uploads/2020/06/cropped-imgpsh_fullsize_anim-510x510.png,assets\official_media\operating_company\bioscience\logo\logo_candidate_25931e5de8.png,.png,510,510,light_background_removed,asset_c6ead213abd9:unsupported_extension:.svg,2026-05-19T13:49:51
+Biotec,biotec,ok,./assets/company_logos/biotec.png,web\assets\company_logos\biotec.png,asset_bb2f3b3bb38a,favicon_or_touch_icon,operating_company,https://biotecitaliauk.co.uk/wp-content/uploads/2022/01/cropped-favicon-1-192x192.png,assets\official_media\operating_company\biotec\logo\logo_candidate_d22103c414.png,.png,192,192,alpha_preserved,,2026-05-19T13:49:51
+Biotekne,biotekne,ok,./assets/company_logos/biotekne.png,web\assets\company_logos\biotekne.png,asset_ef05e85198f4,favicon_or_touch_icon,operating_company,https://e-fillers.com/images/icons/icon-512x512.png,assets\official_media\operating_company\biotekne\logo\logo_candidate_5211e51d6c.png,.png,512,512,light_background_removed,,2026-05-19T13:49:51
+Biovico,biovico,ok,./assets/company_logos/biovico.png,web\assets\company_logos\biovico.png,asset_efcb2bfbc53a,operating_company_logo_img,operating_company,https://biovico.com/images/Asset-11.png,assets\official_media\operating_company\biovico\logo\logo_candidate_84c6b58b5b.png,.png,397,44,alpha_preserved,,2026-05-19T13:49:51
+Bioxis Pharmaceuticals,bioxis-pharmaceuticals,ok,./assets/company_logos/bioxis-pharmaceuticals.png,web\assets\company_logos\bioxis-pharmaceuticals.png,asset_16bc6546c37e,operating_company_logo_img,operating_company,https://bioxis.com/Local/bioxis_en/img/Region-Auvergne-Rhone-Alpes-logo.png,assets\official_media\operating_company\bioxis_pharmaceuticals\logo\logo_candidate_43e572d821.png,.png,98,33,alpha_preserved,,2026-05-19T13:49:51
+Bison Medical,bison-medical,ok,./assets/company_logos/bison-medical.png,web\assets\company_logos\bison-medical.png,asset_3a132cb10a24,favicon_or_touch_icon,operating_company,https://www.bisonmedical.fr/wp-content/uploads/2024/05/cropped-bison-2-192x192.png,assets\official_media\operating_company\bison_medical\logo\logo_candidate_38e87a3b86.png,.png,192,192,alpha_preserved,,2026-05-19T13:49:51
+Blue Moon,blue-moon,ok,./assets/company_logos/blue-moon.png,web\assets\company_logos\blue-moon.png,asset_9282d1cbcb1f,favicon_or_touch_icon,operating_company,https://blueneem.com/wp-content/themes/blueneem/assets/img/blueneem_favicon.png,assets\official_media\operating_company\blue_moon\logo\logo_candidate_fe99182adf.png,.png,512,512,alpha_preserved,asset_097a0ffbb3c6:unsupported_extension:.svg,2026-05-19T13:49:51
+Bluecore,bluecore,ok,./assets/company_logos/bluecore.png,web\assets\company_logos\bluecore.png,asset_ead21c1bd334,operating_company_logo_img,operating_company,https://bluecoreaesthetic.com/assets/images/logo.png,assets\official_media\operating_company\bluecore\logo\logo_candidate_260958621f.png,.png,91,116,alpha_preserved,,2026-05-19T13:49:51
+BMED,bmed,ok,./assets/company_logos/bmed.png,web\assets\company_logos\bmed.png,asset_95a32ba49c5b,operating_company_logo_img,operating_company,https://www.mpmmedicalsupply.com/cdn/shop/files/mpm-logo-wh-wide_520x80.png?v=1614291807,assets\official_media\operating_company\bmed\logo\logo_candidate_a0b26bedf0.png,.png,520,80,alpha_preserved,asset_de8d3c0f5445:unsupported_extension:.svg; asset_f5585ff31ef2:unsupported_extension:.svg; asset_f5fba37936d8:unsupported_extension:.svg; asset_dcff9a0477cf:unsupported_extension:.svg; asset_361e57053045:unsupported_extension:.svg,2026-05-19T13:49:51
+BNC Korea,bnc-korea,ok,./assets/company_logos/bnc-korea.png,web\assets\company_logos\bnc-korea.png,asset_504f744ba999,operating_company_logo_img,operating_company,https://cdn.shopify.com/oxygen-v2/24234/8381/16995/1095814/build/_assets/logo-2SRNETME.png,assets\official_media\operating_company\bnc_korea\logo\logo_candidate_e79130e9f2.png,.png,600,200,alpha_preserved,asset_ec65ede57461:unsupported_extension:.svg; asset_a482f9ced598:unsupported_extension:.svg,2026-05-19T13:49:51
+Body Health,body-health,ok,./assets/company_logos/body-health.png,web\assets\company_logos\body-health.png,asset_f0b242e4e7ef,operating_company_logo_img,operating_company,https://www.bodyhealthbrasil.com/wp-content/uploads/2025/04/cropped-BodyHealth-by-Contourline-251x54.png,assets\official_media\operating_company\body_health\logo\logo_candidate_e956116b1c.png,.png,251,54,alpha_preserved,asset_d55b1dc10d04:unsupported_extension:.svg; asset_778fe44ae54c:unsupported_extension:.svg; asset_2dff48bd12f1:unsupported_extension:.svg; asset_2d61b0d0a7ca:unsupported_extension:.svg; asset_a4debc0f581f:unsupported_extension:.svg,2026-05-19T13:49:51
+Bomtech Electronics,bomtech-electronics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+BR Pharm,br-pharm,ok,./assets/company_logos/br-pharm.png,web\assets\company_logos\br-pharm.png,asset_bcb66f1c8734,operating_company_logo_img,operating_company,https://bndbiollc.com/wp-content/uploads/elementor/thumbs/new-logo-r48hz0j7onv787priq7zlmoeoc0v6hmxsx3lh4y4lo.png,assets\official_media\operating_company\br_pharm\logo\logo_candidate_ca38f97b27.png,.png,200,46,alpha_preserved,asset_2e1b6ed119b6:unsupported_extension:.svg; asset_0fa5bf400a69:unsupported_extension:.svg,2026-05-19T13:49:51
+BRERA Medical,brera-medical,ok,./assets/company_logos/brera-medical.png,web\assets\company_logos\brera-medical.png,asset_60b6e5ed978f,favicon_or_touch_icon,product_line,https://h-m-i.gr/wp-content/uploads/2016/01/cropped-311-192x192.gif,assets\official_media\product_line\brera_medical\rf_ultrasound\logo\logo_candidate_6419db6296.gif,.gif,192,192,light_background_removed,,2026-05-19T13:49:51
+Brymill,brymill,ok,./assets/company_logos/brymill.png,web\assets\company_logos\brymill.png,asset_3a161b5fc9b1,favicon_or_touch_icon,operating_company,http://www.brymill.com/favicon.ico,assets\official_media\operating_company\brymill\logo\logo_candidate_ea26e3d64f.ico,.ico,16,16,light_background_removed,,2026-05-19T13:49:51
+BTL,btl,ok,./assets/company_logos/btl.png,web\assets\company_logos\btl.png,asset_6118b3e186cb,operating_company_logo_img,operating_company,https://www.lyvin.com.my/data/admctrlpnl/1740799012_lyvincolor1021.png,assets\official_media\operating_company\btl\logo\logo_candidate_b4fa58971a.png,.png,520,240,alpha_preserved,asset_e6f6ebc2050b:unsupported_extension:.svg; asset_0a19c3f80bf4:unsupported_extension:.svg; asset_5306272757ae:unsupported_extension:.svg; asset_b5c1df3a1e72:UnidentifiedImageError; asset_e468363c815b:UnidentifiedImageError,2026-05-19T13:49:51
+Candela,candela,ok,./assets/company_logos/candela.png,web\assets\company_logos\candela.png,asset_75f10f68520b,favicon_or_touch_icon,operating_company,https://daltonmedical.nl/wp-content/uploads/2024/07/cropped-Dalton-FAV-2-192x192.png,assets\official_media\operating_company\candela\logo\logo_candidate_fcf8e3f8df.png,.png,192,192,alpha_preserved,asset_07db36c1dd6b:UnidentifiedImageError; asset_2247785cc558:UnidentifiedImageError; asset_3f875c31a2d1:UnidentifiedImageError; asset_6c8104eb6c5c:UnidentifiedImageError,2026-05-19T13:49:51
+Candela Medical,candela-medical,ok,./assets/company_logos/candela-medical.png,web\assets\company_logos\candela-medical.png,asset_e7010115230f,favicon_or_touch_icon,operating_company,https://daltonmedical.nl/wp-content/uploads/2024/07/cropped-Dalton-FAV-2-192x192.png,assets\official_media\operating_company\candela_medical\logo\logo_candidate_fcf8e3f8df.png,.png,192,192,alpha_preserved,asset_73d3f14a5ff0:UnidentifiedImageError; asset_14a3cd9b9bc0:UnidentifiedImageError; asset_ebd36714ddef:UnidentifiedImageError; asset_3257e68f9b96:UnidentifiedImageError; asset_fdc486459321:UnidentifiedImageError,2026-05-19T13:49:51
+Canfield Scientific,canfield-scientific,no_usable_raster_logo,,,,,,,,,,,,asset_3ed6b6470739:unsupported_extension:.svg; asset_0a46ad7c7ee9:unsupported_extension:.svg; asset_8bcb878015e3:unsupported_extension:.svg; asset_2292fd5fbbcd:unsupported_extension:.svg,2026-05-19T13:49:51
+Caregen,caregen,ok,./assets/company_logos/caregen.png,web\assets\company_logos\caregen.png,asset_8b6cbdc550d7,favicon_or_touch_icon,operating_company,https://www.cbinsights.com/wp-content/uploads/2025/10/cropped-black_white_stroke_256x256-min.png?x51649,assets\official_media\operating_company\caregen\logo\logo_candidate_1ab3cb87e3.png,.png,256,256,alpha_preserved,,2026-05-19T13:49:51
+Celling Biosciences,celling-biosciences,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+CGBIO / Cell Growth Bio,cgbio-cell-growth-bio,ok,./assets/company_logos/cgbio-cell-growth-bio.png,web\assets\company_logos\cgbio-cell-growth-bio.png,asset_44e1472d0d56,operating_company_logo_img,operating_company,https://fliphtml5.com/images/header/logo.png,assets\official_media\operating_company\cgbio_cell_growth_bio\logo\logo_candidate_36c3969b9d.png,.png,307,40,alpha_preserved,,2026-05-19T13:49:51
+Cha Meditech,cha-meditech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Chaeum Pharma,chaeum-pharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Christina Cosmeceuticals,christina-cosmeceuticals,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Classys,classys,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Cliniccare,cliniccare,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+CMed Aesthetics,cmed-aesthetics,ok,./assets/company_logos/cmed-aesthetics.png,web\assets\company_logos\cmed-aesthetics.png,asset_c8f8f6f92c37,favicon_or_touch_icon,operating_company,https://cmedaesthetics.com/wp-content/uploads/2023/01/secondary_logo_trans_blue-e1771856700546.png,assets\official_media\operating_company\cmed_aesthetics\logo\logo_candidate_5e946e0770.png,.png,348,366,alpha_preserved,,2026-05-19T13:49:51
+Cocoon Medical,cocoon-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Collagen Matrix / Regenity Biosciences,collagen-matrix-regenity-biosciences,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Contura,contura,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Croma Pharma,croma-pharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Crown,crown,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Cryoalfa,cryoalfa,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Cutera,cutera,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Cynosure,cynosure,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Daejoo,daejoo,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Daewoong,daewoong,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Daeyang Medical,daeyang-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Decomedical,decomedical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+DEKA,deka,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Deleo,deleo,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dermaceutic,dermaceutic,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dermakor,dermakor,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dermalux,dermalux,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+DermapenWorld,dermapenworld,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dermaroller,dermaroller,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+DermEden,dermeden,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dermoaroma,dermoaroma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dexlevo,dexlevo,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+DFK Biolab,dfk-biolab,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dives Med,dives-med,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dongbang Medical,dongbang-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dongkook Pharma,dongkook-pharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Doum,doum,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dr. Babor,dr-babor,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dr. Korman,dr-korman,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Dr. PRP,dr-prp,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+DSD Pharm,dsd-pharm,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+DTS MG,dts-mg,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+e Sebbin,e-sebbin,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+E.I.C.O.,e-i-c-o,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Eberlin,eberlin,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Eclipse,eclipse,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+El.En.,el-en,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Eltech,eltech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Eltech K-Laser,eltech-k-laser,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Ema Aesthetics,ema-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+EmCyte,emcyte,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+EndyMed Medical,endymed-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Eneomey,eneomey,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Energist,energist,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Enhel,enhel,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Establishment Labs,establishment-labs,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Eufoton Medical Lasers,eufoton-medical-lasers,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Eunsung,eunsung,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+European Wellness Biomedical,european-wellness-biomedical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Euroresearch,euroresearch,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Evolus,evolus,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+ExoCoBio,exocobio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Fagron Genomics,fagron-genomics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+FB Dermatology,fb-dermatology,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Fidia Farmaceutici,fidia-farmaceutici,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Fijie,fijie,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Fillmed,fillmed,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+FineMEC,finemec,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+FotoFinder Systems,fotofinder-systems,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Fotona d.o.o.,fotona-d-o-o,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Fusion Meso,fusion-meso,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Galderma,galderma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+GANA,gana,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+GC Aesthetics,gc-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+GCS,gcs,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+General Project,general-project,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Genoss,genoss,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Germaine de Capuccini,germaine-de-capuccini,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Glyance,glyance,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+GME German Medical Engineering,gme-german-medical-engineering,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+GMV,gmv,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Gold Collagen,gold-collagen,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+GPQ Srl,gpq-srl,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Grand Aespio,grand-aespio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+GTG Wellness,gtg-wellness,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Haim Aesthetics,haim-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Halozyme Therapeutics,halozyme-therapeutics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+HansBiomed.,hansbiomed,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Hanson Medical,hanson-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Healux,healux,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Hironic,hironic,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+HJorations,hjorations,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+HOYA ConBio,hoya-conbio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Hugel,hugel,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Human Med AG,human-med-ag,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Huons Meditech,huons-meditech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Hyalure,hyalure,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Hydrinity Skin Science,hydrinity-skin-science,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Hyundae Meditech,hyundae-meditech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+IBSA Derma,ibsa-derma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+IDS / Innovative Device Solutions,ids-innovative-device-solutions,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Ilooda,ilooda,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Image Skincare,image-skincare,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Implantech Associates,implantech-associates,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Indiba,indiba,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Induction Therapies,induction-therapies,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+InMode,inmode,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Innea Aesthetics,innea-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Innoaesthetics,innoaesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Innolux,innolux,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Institute BCN,institute-bcn,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Intraceuticals,intraceuticals,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Ipsen Pharma,ipsen-pharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Iskra Medical,iskra-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+ItalFarmacia,italfarmacia,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+ITC,itc,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Japan Bio Products / JBP,japan-bio-products-jbp,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Jaysean / J Syeon,jaysean-j-syeon,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+JDBIO,jdbio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Jeisys Medical,jeisys-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Jetema,jetema,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+JeuDerm,jeuderm,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Jion Meditech,jion-meditech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+JMBiotech,jmbiotech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Johnson & Johnson,johnson-johnson,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Jskbiomed,jskbiomed,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Julphar,julphar,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Juvaplus,juvaplus,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+JYSUNG Meditech,jysung-meditech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+K-Surgery / Ksurgery MED,k-surgery-ksurgery-med,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+K1 Med,k1-med,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Kai,kai,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Kaizen Endustri,kaizen-endustri,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Kamedis,kamedis,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Kaneka Corporation,kaneka-corporation,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Korman Laboratories,korman-laboratories,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Koru Pharma,koru-pharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Korust,korust,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Kylane,kylane,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Kysense,kysense,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+L'Esthétic,l-esth-tic,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+L'Oréal,l-or-al,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Laboratoire Nouveau Visage,laboratoire-nouveau-visage,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Laboratoire Skin France,laboratoire-skin-france,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lameditech,lameditech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lemi,lemi,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+LG Chem,lg-chem,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lipoelastic,lipoelastic,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lira Clinical,lira-clinical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+London Regenerative Institute,london-regenerative-institute,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Love Cosmedical,love-cosmedical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+LPG Systems,lpg-systems,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lumenis,lumenis,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lumibird,lumibird,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lutronic / Cynosure Lutronic,lutronic-cynosure-lutronic,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Lynton Lasers,lynton-lasers,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Matex Lab,matex-lab,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Maxigen Biotech / MBI,maxigen-biotech-mbi,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+MD Skin Solutions,md-skin-solutions,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Meddrop BMT,meddrop-bmt,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Medency,medency,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Medians,medians,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Medikan International,medikan-international,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Medixa,medixa,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+MedixSysteme,medixsysteme,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Medytox,medytox,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Melsmon Pharmaceutical,melsmon-pharmaceutical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Merz,merz,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Mesoestetic Pharma,mesoestetic-pharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Mesotech,mesotech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Meta Biomed,meta-biomed,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+MI Medical,mi-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+MicroAire Surgical Instruments,microaire-surgical-instruments,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Milesman,milesman,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+MR Innovation,mr-innovation,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+My Med Aesthetics,my-med-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Möller Medical,m-ller-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+N-Finders,n-finders,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+NCRI,ncri,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Needle Concept,needle-concept,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+NeoDr,neodr,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Neogenesis,neogenesis,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Newpong,newpong,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Nexgen Bio,nexgen-bio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Nexgen Biopharma,nexgen-biopharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Next Biosciences,next-biosciences,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+NOBAMEDI,nobamedi,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Nordberg Medical,nordberg-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Norseld,norseld,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Novartis,novartis,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Novasonix Technology,novasonix-technology,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Novoxel,novoxel,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Nunii Laboratoire,nunii-laboratoire,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Obagi,obagi,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+OEO Firenze,oeo-firenze,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Onetech,onetech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Only Toujours,only-toujours,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Opatra London,opatra-london,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Orbio Innovations,orbio-innovations,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Oreon Life Science,oreon-life-science,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Osteopore,osteopore,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Ostin Bio,ostin-bio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Palomar Medical,palomar-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+PCA Skin,pca-skin,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+PharmaResearch / PR Bio,pharmaresearch-pr-bio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Pharmely,pharmely,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Phiderma,phiderma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Physioquanta,physioquanta,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Planmeca,planmeca,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Pollogen,pollogen,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Polytech Health & Aesthetics,polytech-health-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Primoris International,primoris-international,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Prodermis,prodermis,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Professional Derma,professional-derma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Professional Skin Solutions,professional-skin-solutions,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Prollenium,prollenium,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Prollenium Medical,prollenium-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Promoitalia,promoitalia,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Protect-Laserschutz,protect-laserschutz,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Purlés,purl-s,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Q-Med AB,q-med-ab,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Q3 Medical Devices,q3-medical-devices,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Qosmedix,qosmedix,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Quanta System,quanta-system,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Quantificare,quantificare,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Reanzen,reanzen,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+RecensMedical,recensmedical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Receptura Apotheke,receptura-apotheke,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Recros Medica,recros-medica,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Refine,refine,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Regen Biotech,regen-biotech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Regen Lab SA,regen-lab-sa,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Relife,relife,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Reneve,reneve,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Revance Therapeutics,revance-therapeutics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Reveal Lasers,reveal-lasers,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Revitacare,revitacare,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+RFBio,rfbio,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Rion Aesthetics,rion-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Rohrer Aesthetics,rohrer-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+S. Thepharm,s-thepharm,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Samyang Holdings,samyang-holdings,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Sciton,sciton,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+SciVision Biotech,scivision-biotech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Senté Labs,sent-labs,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Seoulin Medicare,seoulin-medicare,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Sesderma,sesderma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+SharpLight,sharplight,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+ShenB,shenb,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Sinclair Pharma,sinclair-pharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Skin Tech,skin-tech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Skinderma Medical,skinderma-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+SkinDNA,skindna,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Skinedit Nutricosmetics,skinedit-nutricosmetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+SkinQRI,skinqri,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Skymedic,skymedic,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Sofwave Medical,sofwave-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Solawave,solawave,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Solta Medical,solta-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+SR Biotek,sr-biotek,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Storz Medical,storz-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Stratpharma,stratpharma,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Suisselle,suisselle,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Sunekos,sunekos,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Suneva Medical,suneva-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Swiss Scientific Lab,swiss-scientific-lab,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Sylton,sylton,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Symatese,symatese,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Tav-Tech,tav-tech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Tavger,tavger,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Tema Medicina,tema-medicina,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Tentech,tentech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Teoxane Laboratories,teoxane-laboratories,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Tesslift,tesslift,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+The Skin Lounge,the-skin-lounge,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Theraderm,theraderm,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Tiger Aesthetics,tiger-aesthetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Toskani,toskani,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+TransLite,translite,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+TRIA Beauty,tria-beauty,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+TSK Laboratory,tsk-laboratory,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+U.SK / Under Skin,u-sk-under-skin,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Ubio Biotechnology,ubio-biotechnology,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Ultra V,ultra-v,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Union Medical,union-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Universal IPS,universal-ips,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Utsukusy Cosmetics,utsukusy-cosmetics,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Vaim,vaim,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Vampire Facial,vampire-facial,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Venus Concept,venus-concept,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+ViOL,viol,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+VIVACY,vivacy,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+VLCC Personal Care,vlcc-personal-care,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+VSoft Lift,vsoft-lift,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Vydence Medical,vydence-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+W.L. Gore & Associates,w-l-gore-associates,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Waldencast,waldencast,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Wells Johnson,wells-johnson,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Wonder Technology,wonder-technology,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Wontech,wontech,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Woorhi Mecha,woorhi-mecha,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+World Dermic,world-dermic,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Xcelens,xcelens,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Xcite,xcite,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Ycellbio Medical,ycellbio-medical,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Youthera,youthera,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Zenix Professional,zenix-professional,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Zepter,zepter,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Zero Gravity,zero-gravity,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Zimmer MedizinSysteme,zimmer-medizinsysteme,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51
+Zishel,zishel,missing_downloaded_logo,,,,,,,,,,,,,2026-05-19T13:49:51

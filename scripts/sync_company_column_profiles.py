@@ -11,6 +11,7 @@ import json
 import re
 import shutil
 import sqlite3
+import csv
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -24,6 +25,7 @@ DB_PATH = DATA_DIR / "global_aesthetics.db"
 OUT_JSON = DATA_DIR / "company_profiles_bridge.json"
 OUT_JS = WEB_DIR / "company-profiles-data.js"
 ASSET_OUT = WEB_DIR / "assets" / "company_profiles"
+COMPANY_LOGO_MANIFEST = DATA_DIR / "company_logo_manifest.csv"
 
 BRIEFING_ROOT = Path("E:/shared/code/briefing_v6")
 BRIEFING_DATA = BRIEFING_ROOT / "data"
@@ -38,6 +40,13 @@ def read_json(path: Path, default: Any) -> Any:
     if not path.exists():
         return default
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def read_csv(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
 
 
 def clean_text(value: Any) -> str:
@@ -65,6 +74,11 @@ def norm_key(value: str) -> str:
 
 def rel_web_path(path: Path) -> str:
     return "./" + path.relative_to(WEB_DIR).as_posix()
+
+
+def write_text_lf(path: Path, text: str) -> None:
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(text)
 
 
 def copy_asset(src: Path, company_slug: str) -> str:
@@ -157,6 +171,16 @@ def load_briefing_caches() -> tuple[dict[str, dict[str, Any]], dict[str, dict[st
     return caches, suggestions, stems
 
 
+def load_logo_manifest() -> dict[str, str]:
+    logos: dict[str, str] = {}
+    for row in read_csv(COMPANY_LOGO_MANIFEST):
+        company = clean_text(row.get("company"))
+        web_path = clean_text(row.get("web_path"))
+        if clean_text(row.get("status")) == "ok" and company and web_path:
+            logos[norm_key(company)] = web_path
+    return logos
+
+
 def load_dashboard_companies() -> tuple[list[dict[str, Any]], dict[str, list[dict[str, Any]]]]:
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -213,6 +237,7 @@ def build_profile(
     caches: dict[str, dict[str, Any]],
     suggestions: dict[str, dict[str, Any]],
     stems: dict[str, str],
+    logos: dict[str, str],
 ) -> dict[str, Any]:
     name = clean_text(company.get("company"))
     key = norm_key(name)
@@ -224,6 +249,7 @@ def build_profile(
     source_count = len(cache.get("sources") or [])
     high_suggestions = sum(1 for item in suggestion_items if clean_text(item.get("confidence")).lower() == "high")
     media = collect_assets(name, cache_stem)
+    media["logo"] = logos.get(key, "")
     summary = product_summary(products)
     profile_company = {**company}
     for field in ["country", "region", "location", "ownership", "business_role", "status", "parent_company", "stock_code", "primary_track"]:
@@ -281,10 +307,11 @@ def build_profile(
 def main() -> None:
     schedule, db_paths = load_briefing_state()
     caches, suggestions, stems = load_briefing_caches()
+    logos = load_logo_manifest()
     companies, products_by_company = load_dashboard_companies()
 
     profiles = [
-        build_profile(company, products_by_company.get(clean_text(company.get("company")), []), schedule, db_paths, caches, suggestions, stems)
+        build_profile(company, products_by_company.get(clean_text(company.get("company")), []), schedule, db_paths, caches, suggestions, stems, logos)
         for company in companies
         if clean_text(company.get("company"))
     ]
@@ -296,27 +323,30 @@ def main() -> None:
         "source": {
             "dashboard_db": str(DB_PATH),
             "briefing_root": str(BRIEFING_ROOT),
+            "company_logo_manifest": str(COMPANY_LOGO_MANIFEST),
         },
         "summary": {
             "companies": len(profiles),
             "briefing_ready": sum(1 for item in profiles if item["briefing_ready"]),
             "with_images": sum(1 for item in profiles if item["media"]["covers"] or item["media"]["products"]),
+            "with_logos": sum(1 for item in profiles if item["media"].get("logo")),
             "complex_portfolios": sum(1 for item in profiles if item["portfolio_complex"]),
         },
         "letters": dict(sorted(letter_groups.items())),
         "companies": profiles,
     }
 
-    OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    OUT_JS.write_text(
+    write_text_lf(OUT_JSON, json.dumps(payload, ensure_ascii=False, indent=2))
+    write_text_lf(
+        OUT_JS,
         "window.COMPANY_PROFILE_DATA = "
         + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
         + ";\n",
-        encoding="utf-8",
     )
     print(f"company profiles: {len(profiles)}")
     print(f"briefing-ready: {payload['summary']['briefing_ready']}")
     print(f"with images: {payload['summary']['with_images']}")
+    print(f"with logos: {payload['summary']['with_logos']}")
     print(f"wrote: {OUT_JSON}")
     print(f"wrote: {OUT_JS}")
 
