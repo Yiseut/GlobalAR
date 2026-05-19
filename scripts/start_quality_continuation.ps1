@@ -36,7 +36,7 @@ $PythonArgs = @(
     "scripts\run_continuous_verification_batch.py",
     "--continuous",
     "--max-batches", "400",
-    "--stop-after-stalled-batches", "10",
+    "--stop-after-stalled-batches", "1",
     "--pause-seconds", "30",
     "--official-limit", "8",
     "--mdr-limit", "4",

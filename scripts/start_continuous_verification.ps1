@@ -1,6 +1,6 @@
 param(
     [int]$MaxBatches = 400,
-    [int]$StopAfterStalledBatches = 10
+    [int]$StopAfterStalledBatches = 1
 )
 
 $ErrorActionPreference = "Stop"
