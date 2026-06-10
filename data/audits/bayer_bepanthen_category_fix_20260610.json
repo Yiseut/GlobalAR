@@ -1,0 +1,87 @@
+{
+  "tag": "bayer_bepanthen_category_fix_20260610",
+  "checked_at": "2026-06-10T22:19:43+08:00",
+  "db": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
+  "reason": "Daily briefing found Bayer post-procedure repair cream classified as EBD device; local source DB confirmed mismatch.",
+  "before": {
+    "products": {
+      "record_id": "REC_0072",
+      "company": "Bayer",
+      "brand": "Bepanthen / Bepanthol",
+      "core_product": "Post-Procedure Repair",
+      "category_l1": "EBD",
+      "category_l2": "Microneedling",
+      "tech_type_std": "Microneedling",
+      "segments": "ebd",
+      "primary_segment": "ebd",
+      "verified_product_type_cn": "",
+      "material_taxonomy_path_cn": "功效性护肤品 > 医学护肤活性 > 功效活性成分",
+      "backfill_audit": "[v4_material_review_closure] non-hold backlog closed as accepted"
+    },
+    "product_master": {
+      "product_id": "prod_ec8160515d34",
+      "seed_record_id": "REC_0072",
+      "company": "Bayer",
+      "brand": "Bepanthen / Bepanthol",
+      "core_product": "Post-Procedure Repair",
+      "commercial_path_l1": "EBD",
+      "commercial_path_l2": "Microneedling",
+      "technology_path_l1": "Microneedling",
+      "technology_path_l2": "",
+      "material_or_energy_source": "Microneedling",
+      "feature_tags": "EBD, Microneedling, Laser, Cannula/needle",
+      "classification_layer": "{\"commercial\": \"EBD > Microneedling\", \"material_taxonomy\": \"功效性护肤品 > 医学护肤活性 > 功效活性成分\", \"material_taxonomy_detail\": {\"l1\": \"功效性护肤品\", \"l2\": \"医学护肤活性\", \"l3\": \"功效活性成分\", \"path\": \"功效性护肤品 > 医学护肤活性 > 功效活性成分\", \"source\": \"rule:topical_cosmeceutical\", \"confidence\": \"medium\", \"review_status\": \"accepted\", \"note\": \"topical/skincare commercial context | v4 closure: accepted current taxonomy path for usable database; no hold taxonomy decision required\", \"family\": \"功效活性成分\", \"inclusion_status\": \"active\", \"backfill_audit\": \"[v4_material_review_closure] non-hold backlog closed as accepted\"}, \"material_family\": \"功效活性成分\", \"inclusion_status\": \"active\", \"technology\": \"Microneedling\", \"regulatory\": \"pending_registration_evidence\", \"source_review\": \"official_document_cross_checked\"}"
+    },
+    "companies": {
+      "company": "Bayer",
+      "primary_track": "EBD"
+    },
+    "company_master": {
+      "canonical_name": "Bayer",
+      "primary_track": "EBD",
+      "product_count": 1,
+      "brand_count": 1
+    }
+  },
+  "after": {
+    "products": {
+      "record_id": "REC_0072",
+      "company": "Bayer",
+      "brand": "Bepanthen / Bepanthol",
+      "core_product": "Post-Procedure Repair",
+      "category_l1": "Skincare",
+      "category_l2": "Cosmeceutical",
+      "tech_type_std": "Dexpanthenol / Barrier Repair",
+      "segments": "skincare",
+      "primary_segment": "skincare",
+      "verified_product_type_cn": "泛醇修复霜 / 术后屏障修复",
+      "material_taxonomy_path_cn": "功效性护肤品 > 医学护肤活性 > 功效活性成分",
+      "backfill_audit": "[v4_material_review_closure] non-hold backlog closed as accepted; bayer_bepanthen_category_fix_20260610: corrected Bayer Bepanthen/Bepanthol Post-Procedure Repair from EBD/Microneedling to Skincare/Cosmeceutical; topical dexpanthenol post-procedure repair cream, not an energy device."
+    },
+    "product_master": {
+      "product_id": "prod_ec8160515d34",
+      "seed_record_id": "REC_0072",
+      "company": "Bayer",
+      "brand": "Bepanthen / Bepanthol",
+      "core_product": "Post-Procedure Repair",
+      "commercial_path_l1": "Skincare",
+      "commercial_path_l2": "Cosmeceutical",
+      "technology_path_l1": "Cosmeceutical",
+      "technology_path_l2": "Dexpanthenol / Barrier Repair",
+      "material_or_energy_source": "Dexpanthenol",
+      "feature_tags": "Skincare, Cosmeceutical, Dexpanthenol, Post-procedure repair",
+      "classification_layer": "{\"commercial\": \"Skincare > Cosmeceutical\", \"material_taxonomy\": \"功效性护肤品 > 医学护肤活性 > 功效活性成分\", \"material_taxonomy_detail\": {\"l1\": \"功效性护肤品\", \"l2\": \"医学护肤活性\", \"l3\": \"功效活性成分\", \"path\": \"功效性护肤品 > 医学护肤活性 > 功效活性成分\", \"source\": \"rule:topical_cosmeceutical\", \"confidence\": \"medium\", \"review_status\": \"accepted\", \"note\": \"topical/skincare commercial context | v4 closure: accepted current taxonomy path for usable database; no hold taxonomy decision required\", \"family\": \"功效活性成分\", \"inclusion_status\": \"active\", \"backfill_audit\": \"[v4_material_review_closure] non-hold backlog closed as accepted\"}, \"material_family\": \"功效活性成分\", \"inclusion_status\": \"active\", \"technology\": \"Dexpanthenol / Barrier Repair\", \"regulatory\": \"pending_registration_evidence\", \"source_review\": \"official_document_cross_checked\", \"correction_note\": \"bayer_bepanthen_category_fix_20260610: corrected Bayer Bepanthen/Bepanthol Post-Procedure Repair from EBD/Microneedling to Skincare/Cosmeceutical; topical dexpanthenol post-procedure repair cream, not an energy device.\"}"
+    },
+    "companies": {
+      "company": "Bayer",
+      "primary_track": "Skincare"
+    },
+    "company_master": {
+      "canonical_name": "Bayer",
+      "primary_track": "Skincare",
+      "product_count": 1,
+      "brand_count": 1
+    }
+  },
+  "note": "bayer_bepanthen_category_fix_20260610: corrected Bayer Bepanthen/Bepanthol Post-Procedure Repair from EBD/Microneedling to Skincare/Cosmeceutical; topical dexpanthenol post-procedure repair cream, not an energy device."
+}

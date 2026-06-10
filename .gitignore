@@ -5,6 +5,7 @@ __pycache__/
 
 .playwright-cli/
 .pytest_cache/
+.wrangler/
 node_modules/
 video-demo/node_modules/
 

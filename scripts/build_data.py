@@ -118,6 +118,22 @@ PRODUCT_FACT_OVERRIDES = {
         "_segments": "other",
         "_note": "Moved out of PCL/Injectables; wrong GOURI evidence was quarantined in the source workbook.",
     },
+    # Bepanthen / Bepanthol is a topical dexpanthenol post-procedure repair
+    # cream. The seed row had been carried as EBD/Microneedling even though
+    # its material taxonomy already placed it under functional skincare.
+    "REC_0072": {
+        "Category_L1": "Skincare",
+        "Category_L2": "Cosmeceutical",
+        "Tech_Type_Std": "Dexpanthenol / Barrier Repair",
+        "Tech_Type_Original": "Topical dexpanthenol repair cream",
+        "Core_Product": "Post-Procedure Repair",
+        "Feature_Tags": "skincare, cosmeceutical, dexpanthenol, post-procedure-repair",
+        "Verified_Product_Type_CN": "泛醇修复霜 / 术后屏障修复",
+        "Market_Channel": "professional skincare / post-procedure care",
+        "Data_Source": "manual_correction:bayer_bepanthen_not_ebd",
+        "_segments": "skincare",
+        "_note": "Corrected from EBD/Microneedling; topical B5/dexpanthenol repair cream, not an energy device.",
+    },
     # DermaShine Duo RF is an RF/drug-delivery device. Its official launch text
     # says it can deliver viscous polymers such as PLLA/PCL, but that does not
     # make the device itself a PCL product.

@@ -1,144 +1,16 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Global Medical Aesthetics Intelligence Dashboard</title>
-    <link rel="icon" href="data:," />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      crossorigin=""
-    />
-    <link rel="stylesheet" href="./styles.css?v=20260519-country-leaflet-card-v7" />
-  </head>
-  <body>
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a class="brand" href="./index.html" aria-label="全球医美地图 / Global medical aesthetics home">
-          <span class="dot"></span>
-          <span>全球医美地图 / Global Aesthetics Map</span>
-        </a>
-        <nav class="material-nav" aria-label="材料赛道 / Material track navigation">
-          <a href="./topic.html?segment=injectables">注射材料 / Injectables</a>
-          <a href="./topic.html?segment=ebd">光电设备 / EBD</a>
-          <a href="./topic.html?segment=regenerative">再生修复 / Regenerative</a>
-          <a href="./topic.html?segment=botulinum">肉毒毒素</a>
-          <a href="./topic.html?segment=threads">线材 / Threads</a>
-          <a href="./topic.html?segment=mesotherapy">中胚层 / Mesotherapy</a>
-        </nav>
-      </div>
-    </header>
-
-    <main class="shell integrated-shell dashboard-shell">
-      <aside class="function-rail" aria-label="功能板块 / Functional sections">
-        <div class="rail-kicker">功能板块 / Menu</div>
-        <nav>
-          <a href="./index.html"><span>总览 / Overview</span></a>
-          <a href="./track-structure.html"><span>赛道结构 / Track Structure</span></a>
-          <a href="./analysis-lenses.html"><span>分析视角 / Analysis Lenses</span></a>
-          <a href="./company-profiles.html"><span class="bilingual"><span class="bilingual-zh">公司介绍</span><span class="bilingual-en">Company Profiles</span></span></a>
-          <a href="./company-analysis.html"><span>公司分析 / Company Analysis</span></a>
-          <a href="./company-matrix.html"><span>企业矩阵 / Company Matrix</span></a>
-        </nav>
-      </aside>
-
-      <div class="dashboard-content">
-      <section class="hero dashboard-hero" id="overview">
-        <div>
-          <div class="eyebrow">2026</div>
-          <h1>全球医美产业图谱<br /><span class="gradient">Global Medical Aesthetics Landscape</span></h1>
-          <div class="meta">
-            <span class="updated-label">更新时间 / Updated time</span>
-            <time id="generatedAt">-</time>
-          </div>
-        </div>
-        <section class="grid grid-4 kpi-section dashboard-kpis" aria-label="Core metrics">
-          <article class="card kpi lift">
-            <div class="label"><span class="bilingual"><span class="bilingual-zh">产品线</span><span class="bilingual-en">Product lines</span></span></div>
-            <div class="value" id="kpiProducts">0</div>
-          </article>
-          <article class="card kpi lift tone-ocean">
-            <div class="label"><span class="bilingual"><span class="bilingual-zh">上游企业</span><span class="bilingual-en">Upstream companies</span></span></div>
-            <div class="value" id="kpiCompanies">0</div>
-          </article>
-          <article class="card kpi lift tone-gold">
-            <div class="label"><span class="bilingual"><span class="bilingual-zh">品牌</span><span class="bilingual-en">Brands</span></span></div>
-            <div class="value" id="kpiBrands">0</div>
-          </article>
-          <article class="card kpi lift tone-sage">
-            <div class="label"><span class="bilingual"><span class="bilingual-zh">国家/地区</span><span class="bilingual-en">Countries / Regions</span></span></div>
-            <div class="value" id="kpiCountries">0</div>
-          </article>
-          <article class="card kpi lift">
-            <div class="label"><span class="bilingual"><span class="bilingual-zh">适应症</span><span class="bilingual-en">Indications</span></span></div>
-            <div class="value" id="kpiIndications">0</div>
-          </article>
-          <article class="card kpi lift tone-ocean">
-            <div class="label"><span class="bilingual"><span class="bilingual-zh">产品形态与材料技术</span><span class="bilingual-en">Product form & material technology</span></span></div>
-            <div class="value" id="kpiSubtracks">0</div>
-          </article>
-          <article class="card kpi lift tone-plum">
-            <div class="label"><span class="bilingual"><span class="bilingual-zh">上市主体</span><span class="bilingual-en">Listed entities</span></span></div>
-            <div class="value" id="kpiPublic">0</div>
-          </article>
-        </section>
-        <section class="global-map-stage" aria-label="全球企业地理分布">
-          <div class="map-heading">
-            <span>全球企业地理分布</span>
-            <strong>全球医美企业星图</strong>
-            <div class="map-mode" aria-label="地图圆点大小">
-              <button class="active" type="button" data-geo-metric="products">按产品线</button>
-              <button type="button" data-geo-metric="companies">按企业数</button>
-            </div>
-          </div>
-            <div class="map-filters" aria-label="地图筛选">
-              <select id="geoTrackFilter" aria-label="赛道筛选"></select>
-              <select id="geoRegionFilter" aria-label="区域筛选"></select>
-              <select id="geoListingFilter" aria-label="上市状态筛选"></select>
-              <select id="geoEvidenceFilter" aria-label="监管证据筛选"></select>
-            </div>
-          <div id="geoMapStage" class="geo-map-stage">
-            <div id="leafletGeoMap" class="leaflet-geo-map" aria-label="全球医美企业地图"></div>
-            <svg id="worldMapSvg" class="world-map-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" role="img" aria-label="世界地图"></svg>
-            <div class="map-grid-lines" aria-hidden="true"></div>
-            <div id="geoPointLayer" class="geo-point-layer" aria-label="企业位置"></div>
-            <div id="geoLabelLayer" class="geo-label-layer" aria-hidden="true"></div>
-            <div id="geoTooltip" class="geo-tooltip" hidden></div>
-          </div>
-          <div id="geoTrackLegend" class="map-track-legend" aria-label="产品赛道图例"></div>
-          <div class="map-stat-strip" aria-label="地图数据摘要">
-            <span>
-              <span class="geo-mini-stat geo-mini-company" aria-hidden="true"><i></i></span>
-              <strong id="geoMappedCompanies">0</strong>
-              <em class="bilingual"><span class="bilingual-zh">企业</span><span class="bilingual-en">Companies</span></em>
-            </span>
-            <span>
-              <span class="geo-mini-stat geo-mini-city" aria-hidden="true"><i></i></span>
-              <strong id="geoUniquePoints">0</strong>
-              <em class="bilingual"><span class="bilingual-zh">城市</span><span class="bilingual-en">Cities</span></em>
-            </span>
-          </div>
-        </section>
-      </section>
-
-      </div>
-    </main>
-
-    <div id="resultOverlay" class="result-overlay" hidden>
-      <div class="result-backdrop" data-close-overlay></div>
-      <section class="result-panel" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
-        <button class="result-close" type="button" data-close-overlay aria-label="关闭">×</button>
-        <h2 id="resultTitle">详情 / Details</h2>
-        <div id="resultBody" class="result-body"></div>
-      </section>
-    </div>
-
-    <script src="./app-data.js?v=20260517-no-source-search-v1"></script>
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      crossorigin=""
-    ></script>
-    <script src="./app.js?v=20260519-country-leaflet-card-v7"></script>
-  </body>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<meta http-equiv="refresh" content="0; url=/v3/" />
+<title>GlobalAR</title>
+<script>
+  window.location.replace("/v3/");
+</script>
+</head>
+<body>
+  <a href="/v3/">Open GlobalAR</a>
+</body>
 </html>
