@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-06-01T18:26:47+08:00",
+  "e_group_products": 0,
+  "already_had_indication_products": 0,
+  "candidate_rows_scanned": 0,
+  "candidate_products_with_extract": 0,
+  "auto_promoted_products": 0,
+  "new_manual_indication_rows_added": 0,
+  "uncertain_products": 0,
+  "no_extract_products": 0,
+  "by_status": {},
+  "uncertain_reason_top": {},
+  "auto_by_track": {},
+  "manual_indication_backup": "",
+  "outputs": {
+    "candidates_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_indication_extraction_candidates_latest.csv",
+    "uncertain_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_indication_extraction_uncertain_latest.csv",
+    "html_report": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_indication_extraction_review_latest.html"
+  }
+}

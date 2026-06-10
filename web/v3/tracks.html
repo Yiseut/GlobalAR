@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>赛道结构 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Intelligence · Track structure</div>
+      <h1>
+        赛道结构
+        <span class="h1-en">Track Structure</span>
+      </h1>
+      <p class="lede">973 款产品在 9 个商业 L1 × 60 个 L2 × 235 个技术分类上的真实分布 — 一张矩阵看清医美产业的「真」segmentation。<br><small style="opacity:0.65;font-style:italic;">Services 类已排除（独立准入机制 + 商业模式不同）。</small></p>
+      <div class="stat-row">
+        <span><span class="num" data-count-up="9">9</span> 个一级商业赛道 · <span class="num" data-count-up="60">60</span> 个二级</span>
+        <span><span class="num" data-count-up="235">235</span> 个技术分类 · 跨 <span class="num" data-count-up="367">367</span> 家企业</span>
+        <span>头部赛道 EBD <span class="num" data-count-up="480">480</span> · 头部技术 HA <span class="num" data-count-up="184">184</span></span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="cn">· 产业结构</span><span class="en">Headline numbers</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede has-wash w-rose-deep">
+          <div class="label">
+            <span class="en">Total products</span>
+            <span class="zh">产品线总数</span>
+          </div>
+          <span class="value" id="kpi-total">975</span>
+          <span class="delta">across 9 commercial L1 categories</span>
+        </article>
+        <article class="kpi-cell has-wash w-slate">
+          <div class="label"><span class="en">L1 categories</span><span class="zh">一级商业赛道</span></div>
+          <span class="value" id="kpi-l1">9</span>
+          <span class="delta">EBD / Injectables / Cosmeceutical / ...</span>
+        </article>
+        <article class="kpi-cell has-wash w-peach">
+          <div class="label"><span class="en">L2 sub-tracks</span><span class="zh">二级子赛道</span></div>
+          <span class="value" id="kpi-l2">62</span>
+          <span class="delta">avg 6 per L1</span>
+        </article>
+        <article class="kpi-cell has-wash w-sand">
+          <div class="label"><span class="en">Tech codes</span><span class="zh">技术细分</span></div>
+          <span class="value" id="kpi-tech">239</span>
+          <span class="delta">material / energy source taxonomy</span>
+        </article>
+        <article class="kpi-cell value-text has-wash w-plum">
+          <div class="label"><span class="en">Top L1</span><span class="zh">头部赛道</span></div>
+          <span class="value" id="kpi-top-l1">EBD</span>
+          <span class="delta" id="kpi-top-l1-n">480 products</span>
+        </article>
+        <article class="kpi-cell value-text has-wash w-rose">
+          <div class="label"><span class="en">Top tech</span><span class="zh">头部技术</span></div>
+          <span class="value" id="kpi-top-tech">HA</span>
+          <span class="delta" id="kpi-top-tech-n">184 products</span>
+        </article>
+        <article class="kpi-cell has-wash w-sage">
+          <div class="label"><span class="en">Products / company</span><span class="zh">单家产品数</span></div>
+          <span class="value" id="kpi-ppc">2.63</span>
+          <span class="delta">platform vs single-product mix</span>
+        </article>
+        <article class="kpi-cell has-wash w-lavender">
+          <div class="label"><span class="en">Companies covered</span><span class="zh">覆盖企业</span></div>
+          <span class="value" id="kpi-companies">371</span>
+          <span class="delta">upstream brand owners</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>材料 taxonomy 全景</h2>
+        <span class="cn">· L1 → L2 → L3 三级结构</span><span class="en">Material taxonomy landscape</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title" id="trk-ml-headline">— 个材料一级赛道 · — 个二级 · 共 — 款产品</div>
+        <div class="chart-sub">每张卡片是一个 material L1。<strong style="color:var(--accent-2);">点击 L1 卡片</strong>看 L2 panel 详情（KPI + L3 pills），<strong style="color:var(--accent-2);">点击 L2 子卡片</strong>直接进 L2 详情（L3 + 公司 + 产品）。</div>
+        <div class="ml-grid" id="trk-ml-grid"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>L1 × L2 分布</h2>
+        <span class="cn">· 商业 taxonomy</span><span class="en">L1 × L2 distribution</span>
+      </div>
+      <div class="chart-card tracks-l1l2">
+        <div class="chart-title">每一级赛道的二级构成</div>
+        <div class="chart-sub">每行一个 L1 商业赛道；条段是 L2 子分类，按产品数从大到小排列。同 L1 内段色用赛道主色的不同明度交替，宽段直接显示 L2 名；窄段悬停看 tooltip。<strong style="color:var(--accent-2);">点击任意段</strong>打开 L2 drawer（含公司/产品/注册）。</div>
+        <div id="l1l2-bars"></div>
+        <div class="l1l2-pin" id="l1l2-pin"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>L1 内部技术构成</h2>
+        <span class="cn">· 技术霸主 vs 混战</span><span class="en">Tech mix per L1</span>
+      </div>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">同一个商业 L1 下技术路线可能高度集中（注射 = HA 主导），也可能极度分散（EBD 没有单一霸主，10+ 技术并存）。这决定了下钻的方法：单霸主用 L1 视角，混战用 technology_path 视角。</p>
+      <div class="l1-card-grid" id="l1-tech-cards"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>监管准入分布</h2>
+        <span class="cn">· 主流通道</span><span class="en">Regulatory pathway mix</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每个 L1 在五大监管通道的证据数</div>
+        <div class="chart-sub">FDA 510(k) · CE-MDR (含 EUDAMED / Notified Body) · NMPA · Manufacturer IFU · 其它。每个单元格深色程度反映强度（同行内归一化）。FDA 是 EBD 的主战场，注射类则 IFU + FDA 并重。</div>
+        <div class="reg-matrix" id="reg-matrix"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>适应症 × 赛道</h2>
+        <span class="cn">· 热力分布</span><span class="en">Indication × track</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">官方认证适应症在各 L1 的覆盖</div>
+        <div class="chart-sub">取官方适应症数据 (official_indication_evidence) 出现频率 Top 10 的适应症桶。色块越深表示该 L1 在该适应症上的覆盖越多。注射赛道在「祛皱」「面部组织缺陷」上一骑绝尘，EBD 主要在「皱纹/皮肤年轻化」。</div>
+        <div class="ind-heatmap" id="ind-heatmap"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>各赛道时间发展</h2>
+        <span class="cn">· 2010–2026</span><span class="en">Track evolution timeline</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">按监管证据 approval_date 推断的赛道节奏</div>
+        <div class="chart-sub">每张小卡片是一个 L1 赛道，曲线高度代表该年获得监管证据（FDA 510(k) / CE / IFU 等）的产品数。受底库覆盖度影响，注射类的早期数据稀疏（多数没有公开 approval_date），EBD 数据最完整。这个角度看到的是「监管节奏」而非「产品上市节奏」。</div>
+        <div class="timeseries-grid" id="ts-grid"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>全球技术排名</h2>
+        <span class="cn">· Top 15 · 跨赛道</span><span class="en">Top technologies · global</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">最热门的 15 个技术 / 材料</div>
+        <div class="chart-sub">不分商业赛道，纯按 technology_path 维度聚合。HA 一枝独秀（几乎全在注射赛道），Diode / HIFU / CO2 / RF 等光电技术虽然单家不大但加起来撑起 EBD。</div>
+        <div class="tech-ranking-list" id="tech-ranking"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>产品密度</h2>
+        <span class="cn">· 平台 vs 单品</span><span class="en">Products per company</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">单家公司平均做几款产品 = 赛道是否「平台化」</div>
+        <div class="chart-sub">高 ppc → 平台型公司（同家做多款）；低 ppc → 单品型公司（每家专做一款）。EBD/Injectables 的 ppc 反映了行业整合程度。</div>
+        <div class="density-list" id="density-bars"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row" id="finding-cards"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 赛道结构 Track Structure · 975 products · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260524"></script>
+<script src="./v3-tracks.js?v=20260524"></script>
+<script src="./v3-product-tree.js?v=20260604"></script>
+<script src="./v3-company-detail.js?v=20260604"></script>
+<script src="./v3-l2-detail.js?v=20260604"></script>
+<script src="./v3-l2-drawer.js?v=20260604"></script>
+<script src="./v3-material-landscape.js?v=20260604"></script>
+<script src="./v3-material-drawer.js?v=20260604"></script>
+<script src="./_nav.js" data-active="tracks"></script>
+
+<!-- ============================================================
+     Material taxonomy landscape — added 2026-06-04 per user:
+     L1 click → V3MaterialDrawer (L1 mode = L2 panel grid)
+     L2 sub-card click → V3MaterialDrawer (L2 mode = L3 + companies + products)
+     ============================================================ -->
+<script>
+  (function () {
+    const data = window.V3_MATERIAL_LANDSCAPE;
+    const grid = document.getElementById("trk-ml-grid");
+    const headline = document.getElementById("trk-ml-headline");
+    if (!data || !grid) return;
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+    })[ch]);
+    const s = data.summary;
+    headline.textContent = `${s.l1_count} 个材料一级赛道 · ${s.l2_count} 个二级 · 共 ${s.total_products_classified} 款分类产品`;
+    const maxL2N = Math.max(1, ...data.l1_cards.flatMap(c => c.l2_list.map(x => x.n_products)));
+    grid.innerHTML = data.l1_cards.map(c => {
+      const color = TRACK_COLORS[c.dom_commercial_l1] || "var(--accent-2)";
+      const l2Html = c.l2_list.map(l2 => {
+        const intensity = Math.min(1, l2.n_products / maxL2N);
+        return `
+          <button class="ml-l2 ml-l2-clickable" type="button"
+                  data-l1="${esc(c.name)}" data-l2="${esc(l2.name)}"
+                  style="--accent:${color}; --intensity:${intensity.toFixed(2)};"
+                  title="${esc(l2.name)} · ${l2.n_products} 款 · L3 + 公司 + 产品">
+            <span class="ml-l2-name">${esc(l2.name)}</span>
+            <span class="ml-l2-n">${l2.n_products}</span>
+          </button>
+        `;
+      }).join("");
+      return `
+        <article class="ml-l1 ml-l1-clickable" style="--accent:${color};"
+                 data-l1="${esc(c.name)}" tabindex="0" role="button"
+                 aria-label="打开 ${esc(c.name)} L2 panel 详情">
+          <header class="ml-l1-head">
+            <div>
+              <h3 class="ml-l1-name">${esc(c.name)}</h3>
+              <div class="ml-l1-meta"><span class="ml-l1-meta-n">${c.l2_count}</span> 个二级赛道</div>
+            </div>
+            <div class="ml-l1-total">
+              <span class="ml-l1-total-n">${c.n_products}</span>
+              <span class="ml-l1-total-k">款产品</span>
+            </div>
+          </header>
+          <div class="ml-l2-grid">${l2Html}</div>
+          <div class="ml-l1-foot">
+            <span class="ml-l1-drill">点 L1 看 L2 panel · 点 L2 直入 L3+公司+产品 →</span>
+          </div>
+        </article>
+      `;
+    }).join("");
+    grid.querySelectorAll(".ml-l2-clickable").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const l1 = btn.getAttribute("data-l1");
+        const l2 = btn.getAttribute("data-l2");
+        if (l1 && l2 && window.V3MaterialDrawer) window.V3MaterialDrawer.show({ l1, l2 });
+      });
+    });
+    grid.querySelectorAll(".ml-l1-clickable").forEach(card => {
+      const open = () => {
+        const l1 = card.getAttribute("data-l1");
+        if (l1 && window.V3MaterialDrawer) window.V3MaterialDrawer.show({ l1 });
+      };
+      card.addEventListener("click", (e) => {
+        if (e.target.closest(".ml-l2-clickable")) return; // L2 button takes precedence
+        open();
+      });
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      });
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    const d = window.GLOBAL_AESTHETICS_DATA;
+    if (d && d.generated_at) {
+      const s = d.generated_at.slice(0,10).replace(/-/g,"·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+  })();
+
+  (function renderTracks () {
+    const data = window.V3_TRACKS_DATA;
+    if (!data) { console.warn("[v3 tracks] V3_TRACKS_DATA missing"); return; }
+
+    const TRACK_COLORS = {
+      "EBD":          "#8E3A3A",
+      "Injectables":  "#6B5A75",
+      "Skincare":     "#D9AE91",
+      "Regenerative": "#A8B59A",
+      "Consumables":  "#5A6878",
+      "Implants":     "#CFB58E",
+      "Diagnostics":  "#C76B68",
+      "Surgical":     "#8C7B91",
+      "Pharma":       "#EC9B73",
+      "Services":     "#C8B8D0",
+    };
+    const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
+
+    const s = data.summary;
+    // numeric KPIs use count-up animation
+    countUp(document.getElementById("kpi-total"), s.total_products);
+    countUp(document.getElementById("kpi-l1"), s.l1_count);
+    countUp(document.getElementById("kpi-l2"), s.l2_count);
+    countUp(document.getElementById("kpi-tech"), s.tech_count);
+    setText("kpi-top-l1", displayL1(s.top_l1));
+    setText("kpi-top-l1-n", `${fmt(s.top_l1_products)} products`);
+    setText("kpi-top-tech", String(s.top_tech || "—"));
+    setText("kpi-top-tech-n", `${fmt(s.top_tech_products)} products`);
+    setText("kpi-ppc", s.avg_products_per_company);
+    countUp(document.getElementById("kpi-companies"), 367);
+
+    // ---- L1 × L2 stacked bars ----
+    // Use HSL lightness alternation for max contrast within a single L1 row.
+    // Pattern: full / lighter / darker / much-lighter / medium-dark / very-light / dark / medium-light
+    const SHADE_PATTERN = [
+      { dl:   0, ds:   0 },
+      { dl: +22, ds: -18 },
+      { dl: -10, ds:   0 },
+      { dl: +34, ds: -28 },
+      { dl: -20, ds:  -5 },
+      { dl: +48, ds: -38 },
+      { dl: -28, ds: -10 },
+      { dl: +14, ds: -10 },
+    ];
+    function shadeColor (hex, i) {
+      const { h, s, l } = hexToHsl(hex);
+      const v = SHADE_PATTERN[i % SHADE_PATTERN.length];
+      const nl = Math.max(18, Math.min(90, l + v.dl));
+      const ns = Math.max(10, Math.min(100, s + v.ds));
+      return hslToHex(h, ns, nl);
+    }
+    function isLightColor (hex) {
+      const { l } = hexToHsl(hex);
+      return l > 62;
+    }
+    function hexToHsl (hex) {
+      const c = hex.replace("#", "");
+      const r = parseInt(c.slice(0,2), 16) / 255;
+      const g = parseInt(c.slice(2,4), 16) / 255;
+      const b = parseInt(c.slice(4,6), 16) / 255;
+      const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+      let h = 0, s = 0; const l = (mx + mn) / 2;
+      if (mx !== mn) {
+        const d = mx - mn;
+        s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+        switch (mx) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        }
+        h /= 6;
+      }
+      return { h: h * 360, s: s * 100, l: l * 100 };
+    }
+    function hslToHex (h, s, l) {
+      h /= 360; s /= 100; l /= 100;
+      let r, g, b;
+      if (s === 0) { r = g = b = l; }
+      else {
+        const hue2rgb = (p, q, t) => {
+          if (t < 0) t += 1;
+          if (t > 1) t -= 1;
+          if (t < 1/6) return p + (q - p) * 6 * t;
+          if (t < 1/2) return q;
+          if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+          return p;
+        };
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+      }
+      const toHex = x => Math.round(x * 255).toString(16).padStart(2, "0");
+      return "#" + toHex(r) + toHex(g) + toHex(b);
+    }
+
+    const wrap = document.getElementById("l1l2-bars");
+    wrap.innerHTML = data.l1_x_l2.map(row => {
+      const baseColor = TRACK_COLORS[row.l1] || "#888";
+      const segs = row.segments.map((seg, i) => {
+        const segColor = shadeColor(baseColor, i);
+        const showLabel = (seg.n / row.total) >= 0.10; // 10% width threshold for inline label
+        const labelClass = isLightColor(segColor) ? "dark" : "light";
+        const labelHtml = showLabel
+          ? `<span class="seg-label ${labelClass}">${esc(abbr(seg.l2, 16))}<span class="n">${seg.n}</span></span>`
+          : "";
+        return `<div class="bar-seg"
+          data-l1="${esc(row.l1)}"
+          data-l2-idx="${i}"
+          style="background:${segColor}; flex:${seg.n}">
+          ${labelHtml}
+          <span class="seg-tip">${esc(seg.l2)} · ${seg.n}</span>
+        </div>`;
+      }).join("");
+      const breakdown = data.l1_breakdown.find(b => b.l1 === row.l1) || {};
+      return `
+        <div class="bar-row" data-l1="${esc(row.l1)}">
+          <div class="label">
+            <span class="sw" style="background:${baseColor}"></span>
+            <div>
+              <span class="en">${esc(displayL1(row.l1))}</span>
+              <small>${row.segments.length} sub-tracks · ${breakdown.companies || 0} companies</small>
+            </div>
+          </div>
+          <div class="bar-track">${segs}</div>
+          <div class="bar-total">${row.total}</div>
+        </div>
+      `;
+    }).join("");
+
+    // Click handler: open in-place L2 drawer (companies → brands → products → reg).
+    // Pin element kept in DOM for layout but no longer used; click escalates to V3L2Drawer.
+    wrap.querySelectorAll(".bar-seg").forEach(seg => {
+      seg.addEventListener("click", () => {
+        const l1 = seg.getAttribute("data-l1");
+        const idx = parseInt(seg.getAttribute("data-l2-idx"), 10);
+        const row = data.l1_x_l2.find(r => r.l1 === l1);
+        if (!row || !row.segments[idx]) return;
+        const s = row.segments[idx];
+        wrap.querySelectorAll(".bar-seg.active").forEach(s => s.classList.remove("active"));
+        seg.classList.add("active");
+        if (window.V3L2Drawer) {
+          window.V3L2Drawer.show({ l1, l2: s.l2 });
+        }
+      });
+    });
+
+    // ---- L1 internal tech cards ----
+    const cardsWrap = document.getElementById("l1-tech-cards");
+    cardsWrap.innerHTML = data.l1_breakdown.map(b => {
+      const color = TRACK_COLORS[b.l1] || "#888";
+      const topTechs = (b.tech_top || []).slice(0, 4);
+      const localMax = topTechs.length ? topTechs[0][1] : 1;
+      const techRows = topTechs.map(([name, n]) => {
+        const pct = (n / localMax) * 100;
+        return `
+          <div class="tech-row">
+            <span class="nm">
+              <span class="label">${esc(abbr(name, 22))}</span>
+              <span class="bar-mini" style="width:${(pct * 0.55).toFixed(0)}%"></span>
+            </span>
+            <span class="n">${n}</span>
+          </div>
+        `;
+      }).join("");
+      return `
+        <article class="l1-card" style="--card-track-color: ${color};">
+          <div class="l1-card-head">
+            <h4>${esc(displayL1(b.l1))}</h4>
+            <span class="total">${b.products}</span>
+          </div>
+          <div class="l1-card-meta">
+            <span>Companies<span class="v">${b.companies}</span></span>
+            <span>Brands<span class="v">${b.brands}</span></span>
+            <span>ppc<span class="v">${b.products_per_company}</span></span>
+          </div>
+          <div class="tech-bar">${techRows || '<div style="font-size:11px;color:var(--muted);">—</div>'}</div>
+        </article>
+      `;
+    }).join("");
+
+    // ---- Global tech ranking ----
+    const rankWrap = document.getElementById("tech-ranking");
+    const top15 = (data.tech_ranking || []).slice(0, 15);
+    const maxTop = top15.length ? top15[0].n : 1;
+    const techL1Owner = {};
+    data.l1_breakdown.forEach(b => {
+      (b.tech_top || []).forEach(([t, n]) => {
+        if (!techL1Owner[t] || techL1Owner[t].n < n) techL1Owner[t] = { l1: b.l1, n };
+      });
+    });
+    rankWrap.innerHTML = top15.map((t, i) => {
+      const owner = techL1Owner[t.name] || {};
+      const color = TRACK_COLORS[owner.l1] || "#888";
+      const pct = (t.n / maxTop) * 100;
+      return `
+        <div class="tech-ranking-row" style="--bar-color:${color};">
+          <span class="rank">${String(i + 1).padStart(2, "0")}</span>
+          <span class="name">
+            ${esc(abbr(t.name, 30))}
+            <span class="track-l1">· ${esc(displayL1(owner.l1 || "—"))}</span>
+            <span class="bar" style="width:${pct.toFixed(0)}%"></span>
+          </span>
+          <span class="n">${t.n}</span>
+        </div>
+      `;
+    }).join("");
+
+    // ---- Density bar ----
+    const denseWrap = document.getElementById("density-bars");
+    const sortedDense = (data.density || []).slice().sort((a, b) => b.ppc - a.ppc);
+    const maxPpc = sortedDense.length ? sortedDense[0].ppc : 1;
+    denseWrap.innerHTML = sortedDense.map(d => {
+      const color = TRACK_COLORS[d.l1] || "#888";
+      const pct = (d.ppc / maxPpc) * 100;
+      return `
+        <div class="bar-row">
+          <div class="label">
+            <span class="sw" style="background:${color}"></span>
+            <div>
+              <span class="en">${esc(displayL1(d.l1))}</span>
+              <small>${d.companies} cos · ${d.products} products</small>
+            </div>
+          </div>
+          <div class="ppc-bar" style="--bar-color:${color}; --bar-pct:${pct.toFixed(0)}%;"></div>
+          <div class="bar-total">${d.ppc}</div>
+        </div>
+      `;
+    }).join("");
+
+    // ---- Findings ----
+    const findWrap = document.getElementById("finding-cards");
+    findWrap.innerHTML = (data.findings || []).map(f => `
+      <article class="editorial-block has-wash ${f.wash} wash-bottom-left">
+        <span class="stamp">${esc(f.stamp)}</span>
+        <div class="lead">${f.lead}</div>
+        <div class="num-pair">
+          <span class="num">${esc(String(f.num_pair.num))}</span>
+          <span class="unit">${esc(f.num_pair.unit)}</span>
+        </div>
+        <div class="body">${f.body}</div>
+      </article>
+    `).join("");
+
+    // ---- Regulatory matrix ----
+    const regWrap = document.getElementById("reg-matrix");
+    if (data.regulatory_mix && regWrap) {
+      const headers = ["L1 · 赛道", "FDA", "CE-MDR", "NMPA", "IFU", "Other", "Total"];
+      const headHtml = headers.map((h, i) => `<div class="reg-cell reg-head">${esc(h)}</div>`).join("");
+      const rowsHtml = data.regulatory_mix.map(row => {
+        const color = TRACK_COLORS[row.l1] || "#888";
+        const maxN = Math.max(1, ...row.buckets.map(b => b.n));
+        const cells = row.buckets.map(b => {
+          const intensity = b.n / maxN;
+          if (!b.n) return `<div class="reg-cell reg-val zero"><span class="v">—</span></div>`;
+          return `<div class="reg-cell reg-val" data-intensity style="--intensity:${intensity.toFixed(2)}"><span class="v">${b.n}</span></div>`;
+        }).join("");
+        return `
+          <div class="reg-cell reg-row-label" style="--row-color:${color};">${esc(displayL1(row.l1))}</div>
+          ${cells}
+          <div class="reg-cell reg-total">${row.total || "—"}</div>
+        `;
+      }).join("");
+      regWrap.innerHTML = headHtml + rowsHtml;
+    }
+
+    // ---- Indication heatmap ----
+    const indWrap = document.getElementById("ind-heatmap");
+    if (data.indication_heatmap && indWrap && data.indication_heatmap.rows.length) {
+      const cols = data.indication_heatmap.columns;
+      const totalCols = cols.length + 2; // L1 label + cols + total
+      indWrap.style.gridTemplateColumns = `140px repeat(${cols.length}, 1fr) 70px`;
+      const headHtml = `<div class="ind-cell ind-head">L1 · 赛道</div>` +
+        cols.map(c => `<div class="ind-cell ind-head">${esc(c)}</div>`).join("") +
+        `<div class="ind-cell ind-head">Total</div>`;
+      const maxCellN = Math.max(1, ...data.indication_heatmap.rows.flatMap(r => Object.values(r.values)));
+      const rowsHtml = data.indication_heatmap.rows.map(row => {
+        const color = TRACK_COLORS[row.l1] || "#888";
+        const cells = cols.map(c => {
+          const n = row.values[c] || 0;
+          const intensity = n / maxCellN;
+          if (!n) return `<div class="ind-cell ind-val zero">—</div>`;
+          return `<div class="ind-cell ind-val" style="--intensity:${intensity.toFixed(2)}">${n}</div>`;
+        }).join("");
+        return `
+          <div class="ind-cell ind-row-label" style="--row-color:${color};">${esc(displayL1(row.l1))}</div>
+          ${cells}
+          <div class="ind-cell ind-total">${row.total}</div>
+        `;
+      }).join("");
+      indWrap.innerHTML = headHtml + rowsHtml;
+    } else if (indWrap) {
+      indWrap.innerHTML = `<div class="ind-cell" style="grid-column:1/-1; padding:24px; color:var(--muted); font-style:italic;">official_indication_evidence 数据稀疏，下一批补全后此图会自动填充</div>`;
+    }
+
+    // ---- Timeseries small multiples ----
+    function miniSmoothPath(points) {
+      if (points.length < 2) return "";
+      let d = `M ${points[0].x} ${points[0].y}`;
+      for (let i = 0; i < points.length - 1; i++) {
+        const p0 = points[i - 1] || points[i];
+        const p1 = points[i];
+        const p2 = points[i + 1];
+        const p3 = points[i + 2] || p2;
+        const c1x = p1.x + (p2.x - p0.x) / 6;
+        const c1y = p1.y + (p2.y - p0.y) / 6;
+        const c2x = p2.x - (p3.x - p1.x) / 6;
+        const c2y = p2.y - (p3.y - p1.y) / 6;
+        d += ` C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${p2.x} ${p2.y}`;
+      }
+      return d;
+    }
+    function miniTrendSvg(years, values, color, globalMax) {
+      const width = 240;
+      const height = 76;
+      const pad = { top: 10, right: 8, bottom: 18, left: 8 };
+      const step = (width - pad.left - pad.right) / Math.max(1, values.length - 1);
+      const points = values.map((v, i) => ({
+        year: years[i],
+        value: v,
+        x: Math.round(pad.left + i * step),
+        y: Math.round(pad.top + (1 - (v / globalMax)) * (height - pad.top - pad.bottom)),
+      }));
+      const path = miniSmoothPath(points);
+      const area = `${path} L ${points[points.length - 1].x} ${height - pad.bottom} L ${points[0].x} ${height - pad.bottom} Z`;
+      const peak = points.reduce((best, point) => point.value > best.value ? point : best, points[0] || { value: 0, x: 0, y: 0 });
+      const last = points[points.length - 1];
+      const nodes = points.map((point, i) => {
+        const visible = point.value && (point === peak || point === last || i === 0);
+        return `<circle class="ts-line-point${visible ? ' visible' : ''}" cx="${point.x}" cy="${point.y}" r="${visible ? 3.2 : 2}" title="${point.year} · ${point.value}"></circle>`;
+      }).join("");
+      return `
+        <svg class="ts-line-svg" viewBox="0 0 ${width} ${height}" style="--card-track-color:${color};" role="img" aria-label="年度趋势曲线">
+          <line class="ts-line-axis" x1="${pad.left}" x2="${width - pad.right}" y1="${height - pad.bottom}" y2="${height - pad.bottom}"></line>
+          <path class="ts-line-area" d="${area}"></path>
+          <path class="ts-line-path" d="${path}" pathLength="1"></path>
+          ${nodes}
+          <text class="ts-line-label" x="${pad.left}" y="${height - 4}" text-anchor="start">'${String(years[0]).slice(2)}</text>
+          <text class="ts-line-label" x="${width - pad.right}" y="${height - 4}" text-anchor="end">'${String(years[years.length - 1]).slice(2)}</text>
+        </svg>
+      `;
+    }
+    const tsWrap = document.getElementById("ts-grid");
+    if (data.timeseries && tsWrap) {
+      const ts = data.timeseries;
+      const globalMax = Math.max(1, ...ts.series.flatMap(s => s.data));
+      tsWrap.innerHTML = ts.series.map(serie => {
+        const color = TRACK_COLORS[serie.l1] || "#888";
+        return `
+          <article class="ts-card" style="--card-track-color:${color};">
+            <div class="ts-card-head">
+              <h5>${esc(serie.l1)}</h5>
+              <span class="ttotal">${serie.total}</span>
+            </div>
+            <div class="ts-line-chart">${miniTrendSvg(ts.years, serie.data, color, globalMax)}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    // ---- Count-up animation utility ----
+    function countUp (el, target) {
+      if (!el) return;
+      const tgt = Number(target);
+      if (!Number.isFinite(tgt)) { el.textContent = target; return; }
+      const isInt = Number.isInteger(tgt);
+      const duration = 1200; // ms
+      const startTime = performance.now();
+      el.classList.add("counting");
+      function frame (now) {
+        const p = Math.min(1, (now - startTime) / duration);
+        // ease-out cubic
+        const eased = 1 - Math.pow(1 - p, 3);
+        const v = tgt * eased;
+        el.textContent = isInt ? Math.round(v).toLocaleString("en-US") : v.toFixed(1);
+        if (p < 1) requestAnimationFrame(frame);
+        else { el.classList.remove("counting"); el.textContent = isInt ? tgt.toLocaleString("en-US") : tgt.toFixed(2); }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    // Animate inline numeric stats in stat-row via data-count-up
+    document.querySelectorAll("[data-count-up]").forEach(el => {
+      const tgt = el.getAttribute("data-count-up");
+      countUp(el, tgt);
+    });
+
+    // ---- IntersectionObserver for block stagger fade-in ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    document.querySelectorAll(".block, .page-hero, .kpi-cell, .editorial-block, .l1-card")
+      .forEach(el => observer.observe(el));
+
+    // helpers
+    function setText (id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
+    function fmt (n) { return typeof n === "number" ? n.toLocaleString("en-US") : n; }
+    function esc (s) {
+      return String(s || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
+    }
+    function abbr (s, len) {
+      const t = String(s || "");
+      if (t.length > (len || 26)) return t.slice(0, (len || 26) - 1) + "…";
+      return t;
+    }
+  })();
+</script>
+
+</body>
+</html>

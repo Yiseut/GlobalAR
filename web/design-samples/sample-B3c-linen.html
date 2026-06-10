@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>路 3 · 亚麻质感 · 全球医美仪表盘</title>
+<link rel="stylesheet" href="./_shared.css" />
+<style>
+body {
+  /* paper-2 平铺 + SVG fractal noise 颗粒（3% 不透明度），无任何渐变 */
+  background-color: #EBE3D8;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.137 0 0 0 0 0.196 0 0 0 0 0.27 0 0 0 0.30 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed;
+}
+/* 让卡片底色再亮一档（背景已有颗粒，卡片更"飘"） */
+.kpi-cell {
+  background: rgba(252, 247, 239, 0.72);
+}
+.editorial-block {
+  background: rgba(252, 247, 239, 0.72);
+}
+.kpi-cell.dusk {
+  /* dusk lede 在亚麻底上也带一点同样的颗粒，但叠在暗色上 */
+  background-color: rgba(35, 50, 69, 0.88);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.88 0 0 0 0 0.84 0 0 0 0 0.79 0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+</style>
+</head>
+<body>
+<main class="shell">
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">2026 · Vol. 02 · Global Snapshot</div>
+      <h1>全球医美产业图谱</h1>
+      <div class="h1-en">Global Medical Aesthetics Landscape</div>
+    </div>
+    <div class="hero-meta">
+      <span class="label">Updated</span>
+      <time>2026·05·19</time>
+    </div>
+  </header>
+
+  <section class="kpi-section">
+    <div class="section-head">
+      <h2>核心指标</h2>
+      <span class="en">CORE METRICS · N = 977 / 372</span>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-cell dusk">
+        <span class="label"><span class="en">PRODUCT LINES</span><span class="zh">产品线 · 全球覆盖</span></span>
+        <span class="value">977</span>
+        <span class="delta">38 countries · 10 categories</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">UPSTREAM CO.</span><span class="zh">上游企业</span></span>
+        <span class="value">372</span>
+        <span class="delta">manufacturers · brand owners</span>
+      </div>
+      <div class="kpi-cell accent">
+        <span class="label"><span class="en">LISTED ENTITIES</span><span class="zh">上市主体</span></span>
+        <span class="value">61</span>
+        <span class="delta">across 15 exchanges</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">BRANDS</span><span class="zh">品牌</span></span>
+        <span class="value">946</span>
+        <span class="delta">881 product · 96 corporate</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">INDICATION SIGNALS</span><span class="zh">适应症信号</span></span>
+        <span class="value">958</span>
+        <span class="delta">cross-ref product master</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">REG. EVIDENCE</span><span class="zh">监管注册证据</span></span>
+        <span class="value">410</span>
+        <span class="delta">FDA 321 · CE/EU 49</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">PRODUCT SPECS</span><span class="zh">产品规格证据</span></span>
+        <span class="value">31,736</span>
+        <span class="delta">362 companies covered</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="kpi-section">
+    <div class="section-head">
+      <h2>编辑视角</h2>
+      <span class="en">EDITORIAL · NEW LENSES FROM EXCEL RE-SCAN</span>
+    </div>
+    <div class="editorial-row">
+      <article class="editorial-block">
+        <span class="stamp">LENS 01 · REGULATORY PULSE</span>
+        <div class="lead">FDA clearance 节奏 2022 后翻倍。</div>
+        <div class="num-pair"><span class="num">69</span><span class="unit">CLEARANCES · 2022–2026</span></div>
+        <div class="body">同期 CE/MDR 仅 24 条；中国 NMPA 由独立项目覆盖。</div>
+      </article>
+      <article class="editorial-block">
+        <span class="stamp">LENS 02 · KOREA FACTOR</span>
+        <div class="lead">韩国占全球上游企业 28%。</div>
+        <div class="num-pair"><span class="num">105</span><span class="unit">COMPANIES · 274 PRODUCTS</span></div>
+        <div class="body">远超美国 60 / 意大利 36；上市仅 22 家，私营出口集群。</div>
+      </article>
+      <article class="editorial-block">
+        <span class="stamp">LENS 03 · CAPITAL BAND SKEW</span>
+        <div class="lead">已上市 64 家，半数小盘。</div>
+        <div class="num-pair"><span class="num">30</span><span class="unit">SMALL CAP · 3 MEGA CAP</span></div>
+        <div class="body">大市值集中在 NASDAQ；KRX 22 家小盘构成韩股板块。</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="footnote">
+    <span>路 3 · 亚麻质感 · SVG NOISE 颗粒</span>
+    <span>Aesthetic Reflections · 研美思维</span>
+  </div>
+</main>
+</body>
+</html>

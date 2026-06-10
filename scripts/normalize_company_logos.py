@@ -11,6 +11,7 @@ import argparse
 import csv
 import json
 import re
+import urllib.parse
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -35,11 +36,80 @@ SUPPORTED_RASTER = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".ico", ".avif"}
 ROLE_PRIORITY = {
     "operating_company_logo_img": 0,
     "listed_parent_logo_img": 1,
-    "product_line_logo_img": 2,
-    "favicon_or_touch_icon": 3,
+    "favicon_or_touch_icon": 2,
+    "product_line_logo_img": 3,
 }
 SCOPE_PRIORITY = {"operating_company": 0, "listed_parent": 1, "product_line": 2}
 EXT_PRIORITY = {".png": 0, ".webp": 1, ".jpg": 2, ".jpeg": 2, ".ico": 3, ".gif": 4, ".avif": 4}
+DISPLAY_ALLOWED_SCOPES = {"operating_company", "listed_parent"}
+DISPLAY_ALLOWED_ROLES = {"operating_company_logo_img", "listed_parent_logo_img", "favicon_or_touch_icon"}
+TRUSTED_DISPLAY_STATUSES = {"trusted_display", "approved_display"}
+GENERIC_COMPANY_TOKENS = {
+    "aesthetic",
+    "aesthetics",
+    "beauty",
+    "bio",
+    "biotech",
+    "company",
+    "corp",
+    "corporation",
+    "derma",
+    "dermatology",
+    "group",
+    "holding",
+    "holdings",
+    "inc",
+    "international",
+    "lab",
+    "laboratoire",
+    "laboratories",
+    "ltd",
+    "medical",
+    "medicine",
+    "pharma",
+    "pharmaceutical",
+    "pharmaceuticals",
+    "srl",
+    "technology",
+    "technologies",
+}
+BLOCKED_TEXT_HINTS = {
+    "amazon",
+    "bazaar",
+    "bloomberg",
+    "cbinsights",
+    "daltonmedical",
+    "fda_search_drug",
+    "fliphtml5",
+    "harper",
+    "harpers",
+    "linkedin",
+    "marketplace",
+    "marketscreener",
+    "medicalexpo",
+    "moph.go.th",
+    "pharmaboardroom",
+    "pitchbook",
+    "repository.usmf",
+    "wikipedia",
+}
+NON_COMPANY_HOST_HINTS = (
+    "amazon.",
+    "bloomberg.",
+    "cbinsights.",
+    "facebook.",
+    "fda.moph.go.th",
+    "fliphtml5.",
+    "instagram.",
+    "linkedin.",
+    "marketscreener.",
+    "medicalexpo.",
+    "pharmaboardroom.",
+    "pitchbook.",
+    "repository.usmf.",
+    "wikipedia.",
+    "youtube.",
+)
 
 
 @dataclass
@@ -59,6 +129,100 @@ def url_slug(value: str) -> str:
     text = clean(value).lower()
     text = re.sub(r"[^a-z0-9]+", "-", text)
     return text.strip("-") or "company"
+
+
+def compact_text(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", clean(value).lower())
+
+
+def text_tokens(value: str) -> list[str]:
+    return [token for token in re.split(r"[^a-z0-9]+", clean(value).lower()) if len(token) >= 3]
+
+
+def host_from_url(value: str) -> str:
+    parsed = urllib.parse.urlparse(clean(value))
+    host = (parsed.netloc or "").lower().split("@")[-1].split(":")[0]
+    if host.startswith("www."):
+        host = host[4:]
+    return host
+
+
+def unique_list(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for value in values:
+        if value and value not in seen:
+            seen.add(value)
+            out.append(value)
+    return out
+
+
+def company_identity_tokens(company: str) -> list[str]:
+    compact = compact_text(company)
+    tokens = [token for token in text_tokens(company) if token not in GENERIC_COMPANY_TOKENS]
+    values = []
+    if len(compact) >= 4:
+        values.append(compact)
+    values.extend(token for token in tokens if len(token) >= 3)
+    return unique_list(values)
+
+
+def candidate_public_text(row: dict[str, str]) -> str:
+    # Do not include local_path here: it contains the company folder and would
+    # make every downloaded candidate appear to match the company.
+    fields = [
+        clean(row.get("source_page_url")),
+        clean(row.get("image_url")),
+        clean(row.get("notes")),
+        clean(row.get("file_name")),
+    ]
+    return " ".join(field for field in fields if field)
+
+
+def blocked_logo_candidate(row: dict[str, str]) -> bool:
+    text = candidate_public_text(row).lower()
+    return any(hint in text for hint in BLOCKED_TEXT_HINTS)
+
+
+def source_matches_company(row: dict[str, str], company: str) -> bool:
+    tokens = company_identity_tokens(company)
+    if not tokens:
+        return False
+    host_text = compact_text(
+        " ".join(
+            [
+                host_from_url(clean(row.get("source_page_url"))),
+                host_from_url(clean(row.get("image_url"))),
+            ]
+        )
+    )
+    public_text = compact_text(candidate_public_text(row))
+    return any(token in host_text or token in public_text for token in tokens)
+
+
+def non_company_host(row: dict[str, str]) -> bool:
+    hosts = [
+        host_from_url(clean(row.get("source_page_url"))),
+        host_from_url(clean(row.get("image_url"))),
+    ]
+    text = " ".join(host for host in hosts if host)
+    return any(hint in text for hint in NON_COMPANY_HOST_HINTS)
+
+
+def classify_logo_display(company: str, row: dict[str, str]) -> tuple[str, str]:
+    scope = clean(row.get("entity_scope"))
+    role = clean(row.get("asset_role"))
+    if scope not in DISPLAY_ALLOWED_SCOPES:
+        return "candidate_hidden", "not_company_level_logo"
+    if role not in DISPLAY_ALLOWED_ROLES:
+        return "candidate_hidden", "not_company_display_role"
+    if blocked_logo_candidate(row):
+        return "candidate_hidden", "blocked_third_party_or_media_logo_hint"
+    if not source_matches_company(row, company):
+        return "candidate_hidden", "source_does_not_match_company_identity"
+    if non_company_host(row) and not source_matches_company(row, company):
+        return "candidate_hidden", "non_company_source_host"
+    return "trusted_display", "company_identity_match"
 
 
 def rel_web_path(path: Path) -> str:
@@ -213,8 +377,10 @@ def normalize_image(src: Path, dest: Path) -> tuple[str, int, int]:
     return background_status, src_width, src_height
 
 
-def select_logo(candidates: list[dict[str, str]]) -> tuple[dict[str, str] | None, ImageInfo | None, list[str]]:
-    inspected: list[tuple[dict[str, str], ImageInfo]] = []
+def select_logo(
+    company: str, candidates: list[dict[str, str]]
+) -> tuple[dict[str, str] | None, ImageInfo | None, list[str], str, str]:
+    inspected: list[tuple[dict[str, str], ImageInfo, str, str]] = []
     errors: list[str] = []
     for row in candidates:
         path = resolve_asset_path(clean(row.get("local_path")))
@@ -225,11 +391,14 @@ def select_logo(candidates: list[dict[str, str]]) -> tuple[dict[str, str] | None
         if info.error:
             errors.append(f"{clean(row.get('asset_id'))}:{info.error}")
             continue
-        inspected.append((row, info))
+        display_status, display_reason = classify_logo_display(company, row)
+        inspected.append((row, info, display_status, display_reason))
     if not inspected:
-        return None, None, errors
-    row, info = sorted(inspected, key=lambda pair: image_key(pair[0], pair[1]))[0]
-    return row, info, errors
+        return None, None, errors, "", ""
+    trusted = [item for item in inspected if item[2] in TRUSTED_DISPLAY_STATUSES]
+    pool = trusted or inspected
+    row, info, display_status, display_reason = sorted(pool, key=lambda item: image_key(item[0], item[1]))[0]
+    return row, info, errors, display_status, display_reason
 
 
 def build_report(rows: list[dict[str, Any]], generated_at: str) -> str:
@@ -239,7 +408,11 @@ def build_report(rows: list[dict[str, Any]], generated_at: str) -> str:
         status_counts[clean(row.get("status"))] = status_counts.get(clean(row.get("status")), 0) + 1
     success = status_counts.get("ok", 0)
     skipped = total - success
+    display_counts: dict[str, int] = {}
+    for row in rows:
+        display_counts[clean(row.get("display_status"))] = display_counts.get(clean(row.get("display_status")), 0) + 1
     status_text = ", ".join(f"{key}={value}" for key, value in sorted(status_counts.items()))
+    display_text = ", ".join(f"{key}={value}" for key, value in sorted(display_counts.items()))
     return "\n".join(
         [
             "# Company Logo Normalization Report",
@@ -250,6 +423,7 @@ def build_report(rows: list[dict[str, Any]], generated_at: str) -> str:
             f"- Normalized logos: {success}",
             f"- Missing or skipped: {skipped}",
             f"- Status mix: {status_text}",
+            f"- Display mix: {display_text}",
             f"- Output size: {CANVAS_SIZE}x{CANVAS_SIZE} PNG, transparent canvas, artwork scaled proportionally.",
             f"- Manifest: `{MANIFEST_PATH.relative_to(ROOT)}`",
             f"- Logo directory: `{LOGO_OUT_DIR.relative_to(ROOT)}`",
@@ -274,7 +448,7 @@ def main() -> None:
 
     for company in companies:
         company_candidates = candidates.get(company, [])
-        selected, info, errors = select_logo(company_candidates)
+        selected, info, errors, display_status, display_reason = select_logo(company, company_candidates)
         slug = url_slug(company)
         output_path = LOGO_OUT_DIR / f"{slug}.png"
         row: dict[str, Any] = {
@@ -286,12 +460,15 @@ def main() -> None:
             "source_asset_id": "",
             "source_role": "",
             "source_scope": "",
+            "source_page_url": "",
             "source_url": "",
             "source_local_path": "",
             "source_ext": "",
             "source_width": "",
             "source_height": "",
             "background_status": "",
+            "display_status": "not_available",
+            "display_reason": "",
             "notes": "; ".join(errors[:5]),
             "generated_at": generated_at,
         }
@@ -308,12 +485,15 @@ def main() -> None:
                         "source_asset_id": clean(selected.get("asset_id")),
                         "source_role": clean(selected.get("asset_role")),
                         "source_scope": clean(selected.get("entity_scope")),
+                        "source_page_url": clean(selected.get("source_page_url")),
                         "source_url": clean(selected.get("image_url")),
                         "source_local_path": clean(selected.get("local_path")),
                         "source_ext": info.path.suffix.lower(),
                         "source_width": src_width,
                         "source_height": src_height,
                         "background_status": background_status,
+                        "display_status": display_status or "candidate_hidden",
+                        "display_reason": display_reason,
                     }
                 )
             except Exception as exc:  # noqa: BLE001 - keep processing other companies.
@@ -331,12 +511,15 @@ def main() -> None:
         "source_asset_id",
         "source_role",
         "source_scope",
+        "source_page_url",
         "source_url",
         "source_local_path",
         "source_ext",
         "source_width",
         "source_height",
         "background_status",
+        "display_status",
+        "display_reason",
         "notes",
         "generated_at",
     ]

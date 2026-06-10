@@ -1,0 +1,20 @@
+{
+  "run_ts": "20260602_004051",
+  "backups": {
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\briefing_update_candidates.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_update_candidates.backup_before_briefing_status_residuals_20260602_004051.csv",
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\briefing_verified_update_events.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_verified_update_events.backup_before_briefing_status_residuals_20260602_004051.csv",
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_product_gap_candidates_latest.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_product_gap_candidates_latest.backup_before_briefing_status_residuals_20260602_004051.csv",
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_evidence_promotion_log.backup_before_briefing_status_residuals_20260602_004051.csv"
+  },
+  "changes": {
+    "candidates": {
+      "bimini_gap_closed": 0,
+      "solta_promoted_to_log": 0,
+      "solta_rejected_event_class": 2,
+      "fulltext_closed_nonactionable": 0
+    },
+    "verified_events_closed": 0,
+    "product_gaps_closed": 0
+  },
+  "closed_product_gaps": []
+}

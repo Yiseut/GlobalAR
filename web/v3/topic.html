@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>子赛道下钻 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content" id="topic-content">
+    <!-- rendered dynamically based on ?segment= URL param -->
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260524"></script>
+<script src="./v3-tracks.js?v=20260524"></script>
+<script src="./v3-companies.js?v=20260524"></script>
+<script src="./v3-topic-deep.js?v=20260526"></script>
+<script src="./v3-product-tree.js?v=20260526"></script>
+<script src="./v3-company-detail.js?v=20260526"></script>
+<script src="./v3-l2-detail.js?v=20260604"></script>
+<script src="./v3-l2-drawer.js?v=20260604"></script>
+<style>
+  #topco-tbody tr.co-row { cursor: pointer; transition: background-color .12s ease; }
+  #topco-tbody tr.co-row:hover { background-color: rgba(184,89,87,0.06); }
+
+  /* ============ Concentration block ============ */
+  .conc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.4fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .conc-card {
+    background: var(--surface-3);
+    border: 1px solid var(--hairline-2);
+    border-radius: 6px;
+    padding: 18px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .conc-card .k {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .conc-card .v {
+    display: block;
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-size: 42px;
+    line-height: 1;
+    margin: 8px 0 4px;
+    color: var(--accent-2);
+    font-weight: 500;
+  }
+  .conc-card .label {
+    font-family: var(--f-body);
+    font-size: 12.5px;
+    color: var(--ink-2);
+    font-style: italic;
+  }
+  .conc-card .class-chip {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 99px;
+    border: 1px solid currentColor;
+  }
+  .conc-card .class-chip.fragmented { color: #5a7a4a; background: rgba(168,181,154,0.18); }
+  .conc-card .class-chip.moderate   { color: #b87a3a; background: rgba(236,155,115,0.18); }
+  .conc-card .class-chip.concentrated { color: var(--accent-2); background: rgba(184,89,87,0.18); }
+  .conc-top10 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .conc-top10 .row {
+    display: grid;
+    grid-template-columns: 22px 1fr 1fr 56px;
+    gap: 8px;
+    align-items: center;
+    font-family: var(--f-body);
+    font-size: 12px;
+    color: var(--ink);
+    padding: 4px 0;
+    cursor: pointer;
+    border-bottom: 1px dashed var(--hairline-2);
+  }
+  .conc-top10 .row:last-child { border-bottom: none; }
+  .conc-top10 .row:hover { background: rgba(184,89,87,0.05); }
+  .conc-top10 .row .rk { font-family: var(--f-mono); font-size: 10px; color: var(--muted); }
+  .conc-top10 .row .nm { font-weight: 500; }
+  .conc-top10 .row .bar {
+    height: 7px; background: var(--surface); border-radius: 99px; overflow: hidden;
+  }
+  .conc-top10 .row .bar .fill { height: 100%; background: var(--bar-color, var(--accent)); border-radius: 99px; }
+  .conc-top10 .row .pct {
+    font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-2); text-align: right;
+  }
+
+  /* ============ Value chain ============ */
+  .vc-bars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vc-bar {
+    display: grid;
+    grid-template-columns: 140px 1fr 60px;
+    gap: 12px;
+    align-items: center;
+    font-family: var(--f-body);
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .vc-bar .role { font-weight: 500; }
+  .vc-bar .track {
+    height: 18px;
+    background: var(--surface);
+    border-radius: 99px;
+    overflow: hidden;
+    border: 1px solid var(--hairline-2);
+  }
+  .vc-bar .track .fill {
+    height: 100%;
+    background: var(--vc-color, var(--accent));
+    border-radius: 99px;
+    transition: width .3s ease;
+  }
+  .vc-bar .n {
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--ink-2);
+    text-align: right;
+  }
+
+  /* ============ Lifecycle scatter ============ */
+  .lc-scatter {
+    position: relative;
+    background:
+      linear-gradient(180deg, transparent 49.5%, var(--hairline-2) 49.5%, var(--hairline-2) 50.5%, transparent 50.5%),
+      linear-gradient(90deg, transparent 49.5%, var(--hairline-2) 49.5%, var(--hairline-2) 50.5%, transparent 50.5%);
+    background-size: 25% 25%;
+    background-color: var(--surface-3);
+    border: 1px solid var(--hairline-2);
+    border-radius: 6px;
+    width: 100%;
+    height: 380px;
+    margin-top: 12px;
+  }
+  .lc-axis {
+    position: absolute;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .lc-axis.x-label { bottom: 6px; right: 14px; }
+  .lc-axis.y-label { top: 14px; left: 14px; writing-mode: vertical-rl; transform: rotate(180deg); }
+  .lc-quadrant-label {
+    position: absolute;
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-size: 11px;
+    color: var(--muted);
+    opacity: 0.7;
+    padding: 2px 6px;
+    border: 1px dashed var(--hairline);
+    border-radius: 99px;
+    background: var(--surface-2);
+  }
+  .lc-dot {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, 50%);
+    transition: transform .15s ease, box-shadow .15s ease;
+    background: var(--dot-color, var(--accent));
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(58,51,64,0.18);
+  }
+  .lc-dot:hover {
+    transform: translate(-50%, 50%) scale(1.15);
+    box-shadow: 0 6px 14px rgba(58,51,64,0.28);
+    z-index: 10;
+  }
+  .lc-dot-label {
+    position: absolute;
+    font-family: var(--f-body);
+    font-size: 11px;
+    color: var(--ink-2);
+    background: var(--surface-3);
+    padding: 1px 6px;
+    border-radius: 3px;
+    border: 1px solid var(--hairline-2);
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translate(-50%, -120%);
+  }
+
+  /* ============ Indication × regulator heatmap ============ */
+  .ir-mini-row {
+    display: grid;
+    grid-template-columns: 200px repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 6px;
+    align-items: center;
+  }
+  .ir-mini-row.head {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .ir-mini-row .bk-label {
+    font-family: var(--f-body);
+    font-size: 13px;
+    color: var(--ink);
+    padding-right: 8px;
+  }
+  .ir-mini-row .bk-label small {
+    display: block;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 1px;
+  }
+  .ir-mini-cell {
+    background: var(--surface-3);
+    border: 1px solid var(--hairline-2);
+    border-radius: 4px;
+    padding: 8px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .12s ease;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    color: var(--ink-2);
+  }
+  .ir-mini-cell.has { background: linear-gradient(135deg, rgba(184,89,87, calc(var(--cv,0)*0.55)) 0%, rgba(107,90,117, calc(var(--cv,0)*0.35)) 100%); }
+  .ir-mini-cell.has:hover { transform: scale(1.04); box-shadow: 0 3px 10px rgba(58,51,64,0.15); }
+  .ir-mini-cell.zero { opacity: 0.4; cursor: default; }
+  .ir-mini-cell .v { font-family: var(--f-serif-it); font-style: italic; font-size: 17px; color: var(--ink); display: block; font-weight: 500; }
+
+  /* ============ Recent entrants ============ */
+  .entrants-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .entrants-col {
+    background: var(--surface-3);
+    border: 1px solid var(--hairline-2);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .entrants-col h4 {
+    font-family: var(--f-display);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .entrants-col .head-sub {
+    font-family: var(--f-body);
+    font-style: italic;
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .entrants-col .e-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 90px 38px;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--hairline-2);
+    cursor: pointer;
+  }
+  .entrants-col .e-row:last-child { border-bottom: none; }
+  .entrants-col .e-row:hover { background: rgba(184,89,87,0.05); }
+  .entrants-col .e-row .date {
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .entrants-col .e-row .nm {
+    font-family: var(--f-body);
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .entrants-col .e-row .nm small {
+    display: block;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .entrants-col .e-row .own {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    text-align: center;
+    color: var(--ink-2);
+    padding: 2px 4px;
+    border: 1px solid var(--hairline);
+    border-radius: 3px;
+  }
+  .entrants-col .e-row .badge {
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--accent-2);
+    text-align: right;
+    font-weight: 500;
+  }
+  .entrants-col .e-empty {
+    padding: 28px 0;
+    text-align: center;
+    color: var(--muted);
+    font-style: italic;
+    font-family: var(--f-body);
+    font-size: 12px;
+  }
+
+  /* ============ Country × L2 cross-matrix ============ */
+  .cl-matrix {
+    display: grid;
+    border: 1px solid var(--hairline-2);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--surface-3);
+  }
+  .cl-cell, .cl-head {
+    padding: 8px 6px;
+    border-right: 1px solid var(--hairline-2);
+    border-bottom: 1px solid var(--hairline-2);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cl-cell:last-child, .cl-head:last-child { border-right: none; }
+  .cl-head { background: var(--surface); color: var(--ink); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .cl-row-label {
+    background: var(--surface-2);
+    border-right: 2px solid var(--rose-dust);
+    align-items: flex-start;
+    padding-left: 12px;
+    text-align: left;
+    font-family: var(--f-body);
+    font-size: 12.5px;
+    color: var(--ink);
+  }
+  .cl-cell.has-data {
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(184,89,87, calc(var(--cv,0)*0.45)) 0%, rgba(107,90,117, calc(var(--cv,0)*0.30)) 100%);
+    transition: transform .12s ease;
+  }
+  .cl-cell.has-data:hover { transform: scale(1.06); z-index: 5; }
+  .cl-cell.zero { color: var(--subtle); opacity: 0.45; }
+  .cl-cell .n { font-family: var(--f-serif-it); font-style: italic; font-size: 17px; color: var(--ink); font-weight: 500; }
+
+  /* ============ Drill-down panel (reuses xa-drill from cross-analysis aesthetic) ============ */
+  .td-drill {
+    position: fixed; top: 0; right: 0; height: 100vh;
+    width: min(440px, 92vw);
+    background: var(--surface-2);
+    color: var(--ink);
+    border-left: 1px solid var(--hairline);
+    box-shadow: -10px 0 36px rgba(58,51,64,0.18);
+    transform: translateX(100%);
+    transition: transform .26s cubic-bezier(.4,0,.2,1);
+    z-index: 9100;
+    display: flex; flex-direction: column;
+    font-family: var(--f-body);
+  }
+  .td-drill.show { transform: translateX(0); }
+  .td-drill .head {
+    padding: 22px 26px 14px;
+    border-bottom: 1px solid var(--hairline-2);
+    position: relative;
+  }
+  .td-drill .head .stamp {
+    font-family: var(--f-mono); font-size: 10.5px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted);
+    padding: 3px 10px;
+    border: 1px solid var(--hairline);
+    border-radius: 99px;
+    display: inline-block;
+  }
+  .td-drill .head h3 {
+    font-family: var(--f-display);
+    font-size: 22px; line-height: 1.2;
+    margin: 10px 0 4px; font-weight: 400;
+    color: var(--ink);
+  }
+  .td-drill .head .sub {
+    font-style: italic; font-size: 12.5px; color: var(--muted);
+  }
+  .td-drill .close-btn {
+    position: absolute; top: 18px; right: 20px;
+    width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--hairline); background: transparent;
+    color: var(--ink); font-size: 16px; cursor: pointer;
+  }
+  .td-drill .close-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .td-drill .body { flex: 1; overflow-y: auto; padding: 14px 22px 26px; }
+  .td-drill .body .row {
+    display: flex; gap: 10px; align-items: center;
+    padding: 8px 4px;
+    border-bottom: 1px dashed var(--hairline-2);
+    cursor: pointer;
+  }
+  .td-drill .body .row:hover { background: rgba(184,89,87,0.04); }
+  .td-drill .body .row .sw {
+    width: 6px; height: 26px; border-radius: 2px; flex-shrink: 0;
+    background: var(--row-color, var(--accent));
+  }
+  .td-drill .body .row .nm {
+    flex: 1; font-family: var(--f-body); font-size: 13px;
+    color: var(--ink); font-weight: 500;
+  }
+  .td-drill .body .row .nm small {
+    display: block; font-family: var(--f-mono); font-size: 10px;
+    color: var(--muted); letter-spacing: 0.04em; margin-top: 2px;
+  }
+  .td-drill-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(58,51,64,0.22);
+    backdrop-filter: blur(1.5px);
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s ease;
+    z-index: 9099;
+  }
+  .td-drill-backdrop.show { opacity: 1; pointer-events: auto; }
+
+  /* Smaller screens */
+  @media (max-width: 900px) {
+    .conc-grid { grid-template-columns: 1fr 1fr; }
+    .entrants-wrap { grid-template-columns: 1fr; }
+  }
+</style>
+<script>
+  // Dynamically set data-active on the _nav.js include so the rail highlights
+  // the correct sub-track based on ?segment URL param
+  (function () {
+    const seg = (new URLSearchParams(location.search).get("segment") || "ebd").toLowerCase();
+    const SLUG_TO_TOPIC = {
+      "ebd":"topic-ebd","injectables":"topic-injectables",
+      "regenerative":"topic-regenerative","regen":"topic-regenerative",
+      "skincare":"topic-skincare",
+    };
+    const s = document.createElement("script");
+    s.src = "./_nav.js";
+    s.dataset.active = SLUG_TO_TOPIC[seg] || "topic-ebd";
+    document.currentScript.parentNode.insertBefore(s, document.currentScript);
+  })();
+</script>
+<script>
+  (function () {
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73",
+    };
+    const TRACK_PILL_CLASS = {
+      "EBD":"pill-ebd","Injectables":"pill-injectables","Skincare":"pill-skincare",
+      "Regenerative":"pill-regen","Consumables":"pill-consumables","Implants":"pill-implants",
+      "Diagnostics":"pill-diagnostics","Surgical":"pill-surgical","Pharma":"pill-pharma",
+    };
+    const SLUG_TO_L1 = {
+      "ebd":          "EBD",
+      "injectables":  "Injectables",
+      "skincare":     "Skincare",
+      "regenerative": "Regenerative",
+      "regen":        "Regenerative",
+      "consumables":  "Consumables",
+      "implants":     "Implants",
+      "diagnostics":  "Diagnostics",
+      "surgical":     "Surgical",
+      "pharma":       "Pharma",
+    };
+    const L1_TAGLINE = {
+      "EBD":          { en: "Energy-Based Devices", zh: "能量光电赛道", note: "10+ technology families competing — no single tech wins. Diode / HIFU / CO2 / RF / IPL." },
+      "Injectables":  { en: "Injectables", zh: "注射赛道", note: "HA 占 55% — 注射赛道事实上的平台技术。Botulinum / PLLA / PCL / Polynucleotide 分剩下的 45%。" },
+      "Skincare":     { en: "Cosmeceutical", zh: "功能性护肤品", note: "院线功效护肤 / 专业焕肤 / 术后修复 / 疤痕管理 / 医生渠道护肤。只保留医美机构、医生渠道或治疗周期相关产品，排除大众超市/药店消费线。" },
+      "Regenerative": { en: "Regenerative", zh: "再生赛道", note: "外泌体 / 干细胞 / PRP — 监管路径分散、技术新兴，待观察期。" },
+      "Consumables":  { en: "Consumables", zh: "耗材赛道", note: "针 / 探头 / 麻 / 凝胶 — 用量大但单价低，B2B 模式。" },
+      "Implants":     { en: "Implants", zh: "植入物赛道", note: "Class III 高风险但样本稀疏。胸部 / 提拉线 / 鼻整形材料。" },
+      "Diagnostics":  { en: "Diagnostics", zh: "诊断赛道", note: "皮肤分析仪 / AI 诊断 — 上游小但战略入口位。" },
+      "Surgical":     { en: "Surgical", zh: "外科赛道", note: "手术工具 + 缝合 + 微创外科设备。" },
+      "Pharma":       { en: "Pharma", zh: "药物赛道", note: "口服 / 局部药物形态。多数被监管划分到非医美。" },
+    };
+
+    const segment = (new URLSearchParams(location.search).get("segment") || "ebd").toLowerCase();
+    const L1 = SLUG_TO_L1[segment];
+    const root = document.getElementById("topic-content");
+
+    if (!L1) {
+      root.innerHTML = `
+        <section class="page-hero">
+          <div class="eyebrow-chip"><span class="dot"></span>Drill-down · invalid segment</div>
+          <h1>选择一个赛道</h1>
+          <p class="lede">URL 参数 <code style="font-family:var(--f-mono);">?segment=ebd|injectables|skincare|regenerative|consumables|implants|diagnostics|surgical|pharma</code></p>
+          <div class="filter-row">
+            ${Object.entries(SLUG_TO_L1).filter(([s,l]) => l !== "Regenerative" || s === "regen").map(([slug, l1]) =>
+              `<a class="filter-pill" href="?segment=${slug}" style="--cd-color:${TRACK_COLORS[l1]};">${esc(l1)}</a>`
+            ).join("")}
+          </div>
+        </section>
+      `;
+      return;
+    }
+
+    const tracks = window.V3_TRACKS_DATA;
+    const companiesData = window.V3_COMPANIES_DATA;
+    const appData = window.GLOBAL_AESTHETICS_DATA;
+    if (!tracks || !companiesData || !appData) {
+      root.innerHTML = `<p style="padding:60px; color:var(--muted); font-style:italic;">数据加载失败 · 检查 app-data.js / v3-tracks.js / v3-companies.js</p>`;
+      return;
+    }
+
+    const breakdown = tracks.l1_breakdown.find(b => b.l1 === L1);
+    if (!breakdown) {
+      root.innerHTML = `<p style="padding:60px; color:var(--muted); font-style:italic;">${esc(L1 === "Skincare" ? "Cosmeceutical" : L1)} · 暂无聚合数据</p>`;
+      return;
+    }
+
+    const baseColor = TRACK_COLORS[L1] || "#888";
+    const tagline = L1_TAGLINE[L1] || { en: L1, zh: L1, note: "" };
+    const displayL1 = tagline.en || L1;
+
+    // L1 × L2 segments (with brands for the "click for detail" UX)
+    const l1l2Row = tracks.l1_x_l2.find(r => r.l1 === L1) || { segments: [] };
+
+    // Companies in this L1
+    const l1Companies = companiesData.companies.filter(c => c.primary_track === L1);
+    const topCompanies = l1Companies.slice(0, 12);
+
+    // Geo aggregation for this L1
+    const geoForL1 = (appData.geo_companies || []).filter(c => c.primary_track === L1);
+    const countryAgg = {};
+    geoForL1.forEach(c => {
+      const k = c.country;
+      if (!k) return;
+      if (!countryAgg[k]) countryAgg[k] = { country: k, region: c.region, companies: 0, products: 0 };
+      countryAgg[k].companies += 1;
+      countryAgg[k].products += c.products || 0;
+    });
+    const topCountries = Object.values(countryAgg)
+      .sort((a, b) => b.companies - a.companies)
+      .slice(0, 8);
+
+    // Regulatory mix for this L1
+    const regForL1 = (tracks.regulatory_mix || []).find(r => r.l1 === L1);
+
+    // Build page
+    root.innerHTML = `
+      <section class="page-hero">
+        <div class="eyebrow-chip" style="color:${baseColor};"><span class="dot" style="background:${baseColor};"></span>Drill-down · ${esc(tagline.en)}</div>
+        <h1>
+          ${esc(tagline.zh)}
+          <span class="h1-en">${esc(tagline.en)}</span>
+        </h1>
+        <p class="lede">${esc(tagline.note)}</p>
+        <div class="stat-row">
+          <span><span class="num" data-count-up="${breakdown.products}">${breakdown.products}</span> 款产品 · <span class="num" data-count-up="${breakdown.companies}">${breakdown.companies}</span> 家公司</span>
+          <span><span class="num" data-count-up="${breakdown.brands}">${breakdown.brands}</span> 个品牌 · ppc <span class="num">${breakdown.products_per_company}</span></span>
+          <span>${l1l2Row.segments.length} 个 L2 子赛道 · ${breakdown.tech_top.length} 个主要技术</span>
+        </div>
+        <div class="filter-row" style="margin-top:22px;">
+          ${Object.entries(SLUG_TO_L1)
+            .filter(([s, l], i, arr) => arr.findIndex(([ss, ll]) => ll === l) === i)
+            .map(([slug, l1]) => {
+              const active = l1 === L1 ? " active" : "";
+              return `<a class="filter-pill${active}" href="?segment=${slug}" style="${active ? `background:${TRACK_COLORS[l1]}; border-color:${TRACK_COLORS[l1]};` : ""}">${esc(l1)}</a>`;
+            }).join("")}
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="section-head">
+          <h2>核心读数</h2>
+          <span class="cn">· ${esc(displayL1)} 赛道</span><span class="en">Headline numbers</span>
+        </div>
+        <div class="kpi-grid">
+          <article class="kpi-cell lede has-wash w-rose-deep">
+            <div class="label"><span class="en">Products</span><span class="zh">产品线</span></div>
+            <span class="value">${breakdown.products}</span>
+            <span class="delta">across ${l1l2Row.segments.length} L2 sub-tracks</span>
+          </article>
+          <article class="kpi-cell has-wash w-slate">
+            <div class="label"><span class="en">Companies</span><span class="zh">上游企业</span></div>
+            <span class="value">${breakdown.companies}</span>
+            <span class="delta">manufacturers + brand owners</span>
+          </article>
+          <article class="kpi-cell has-wash w-peach">
+            <div class="label"><span class="en">Brands</span><span class="zh">品牌</span></div>
+            <span class="value">${breakdown.brands}</span>
+            <span class="delta">product + corporate</span>
+          </article>
+          <article class="kpi-cell has-wash w-sand">
+            <div class="label"><span class="en">Products / company</span><span class="zh">单家产品数</span></div>
+            <span class="value">${breakdown.products_per_company}</span>
+            <span class="delta">platform-density signal</span>
+          </article>
+          <article class="kpi-cell value-text has-wash w-plum">
+            <div class="label"><span class="en">Top L2</span><span class="zh">头部 L2</span></div>
+            <span class="value">${esc(breakdown.l2_top[0] ? breakdown.l2_top[0][0] : "—")}</span>
+            <span class="delta">${breakdown.l2_top[0] ? breakdown.l2_top[0][1] : 0} products</span>
+          </article>
+          <article class="kpi-cell value-text has-wash w-rose">
+            <div class="label"><span class="en">Top tech</span><span class="zh">头部技术</span></div>
+            <span class="value">${esc(breakdown.tech_top[0] ? breakdown.tech_top[0][0] : "—")}</span>
+            <span class="delta">${breakdown.tech_top[0] ? breakdown.tech_top[0][1] : 0} products</span>
+          </article>
+          <article class="kpi-cell value-text has-wash w-sage">
+            <div class="label"><span class="en">Top region</span><span class="zh">主导区域</span></div>
+            <span class="value">${esc((breakdown.region_mix[0] || [])[0] || "—")}</span>
+            <span class="delta">${(breakdown.region_mix[0] || [])[1] || 0} products</span>
+          </article>
+          <article class="kpi-cell has-wash w-lavender">
+            <div class="label"><span class="en">FDA evidence</span><span class="zh">监管证据</span></div>
+            <span class="value">${regForL1 ? (regForL1.buckets.find(b => b.name === "FDA") || {}).n || 0 : 0}</span>
+            <span class="delta">FDA records (510k + label + IFU)</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="section-head">
+          <h2>L2 子赛道</h2>
+          <span class="cn">· ${l1l2Row.segments.length} 个子分类</span><span class="en">L2 sub-tracks</span>
+        </div>
+        <p class="lede" style="margin-bottom:18px;font-size:13.5px;">每张卡片是一个 L2 子赛道：产品数 / 注册企业 / 适应症数三个核心指标 + 最新申报年份。同赛道主色逐档减淡，share 角标显示该 L2 占 L1 的比例。</p>
+        <div class="l2-cards-grid" id="l2-cards"></div>
+      </section>
+
+      <!-- ============ Concentration (CR5/CR10/HHI) ============ -->
+      <section class="block">
+        <div class="section-head">
+          <h2>集中度</h2>
+          <span class="cn">· CR5 / CR10 / HHI</span><span class="en">Concentration · CR5 / CR10 / HHI</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">头部 5 / 10 公司占赛道产品的比重 · HHI 指数判断市场结构</div>
+          <div class="chart-sub" id="conc-narrative">—</div>
+          <div class="conc-grid" id="conc-grid"></div>
+          <div id="conc-top10" class="conc-top10"></div>
+        </div>
+      </section>
+
+      <!-- ============ Value chain position ============ -->
+      <section class="block">
+        <div class="section-head">
+          <h2>价值链位置</h2>
+          <span class="cn">· business_role within ${esc(displayL1)}</span><span class="en">Value chain position</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">${esc(displayL1)} 内企业的角色分布 — 制造 / 品牌 / R&D-OEM / 生物科技</div>
+          <div class="chart-sub">条形长度归一化到 L1 头部角色。看出本赛道是制造驱动还是品牌驱动。</div>
+          <div class="vc-bars" id="vc-bars"></div>
+        </div>
+      </section>
+
+      <!-- ============ Lifecycle scatter ============ -->
+      <section class="block">
+        <div class="section-head">
+          <h2>子赛道生命周期</h2>
+          <span class="cn">· 规模 × 3 年动能 × 企业数</span><span class="en">Sub-track lifecycle</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">每个 L2 是一个圆点 — 横轴近 3 年动能 / 纵轴企业数 / 圆点大小 = 产品数</div>
+          <div class="chart-sub">右上 = 高动能 + 高企业数 (生长期) · 左上 = 老成熟期 · 右下 = 新兴未拥挤 · 左下 = 衰退或冷门。<strong style="color:var(--accent-2);">点击</strong>圆点跳到该 L2 的代表公司列表。</div>
+          <div class="lc-scatter" id="lc-scatter">
+            <div class="lc-axis x-label">→ 近 3 年动能 %</div>
+            <div class="lc-axis y-label">→ 企业数</div>
+            <div class="lc-quadrant-label" style="top:14px; right:14px;">生长 Growth</div>
+            <div class="lc-quadrant-label" style="top:14px; left:50px;">成熟 Mature</div>
+            <div class="lc-quadrant-label" style="bottom:38px; right:14px;">新兴 Emerging</div>
+            <div class="lc-quadrant-label" style="bottom:38px; left:50px;">冷门 Niche</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Indication × Regulator heatmap ============ -->
+      <section class="block">
+        <div class="section-head">
+          <h2>官方适应症 × 监管机构</h2>
+          <span class="cn">· ${esc(displayL1)} 内 official_indication × regulator</span><span class="en">Official indication × Regulator</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">${esc(displayL1)} 内官方获批适应症在四大监管通道的分布</div>
+          <div class="chart-sub">单元格 = 该 (适应症桶, 监管) 内的产品级证据条数 · 单元格底色越深越集中 · <strong style="color:var(--accent-2);">点击</strong>看产品列表。<small style="color:var(--muted);font-style:italic;">L1 覆盖率仍低，部分赛道为空属正常。</small></div>
+          <div id="ind-heatmap"></div>
+        </div>
+      </section>
+
+      <!-- ============ Recent entrants ============ -->
+      <section class="block">
+        <div class="section-head">
+          <h2>近 24 月新进入者 + 活跃者</h2>
+          <span class="cn">· 2024-05 至今 · ${esc(displayL1)} 内</span><span class="en">New entrants + active · last 24 mo</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">谁在过去 24 月真正"动起来" — 新进入 vs 多频次申报</div>
+          <div class="chart-sub">左侧 = 首次在 ${esc(displayL1)} 提交注册的全新公司（按时间倒序）· 右侧 = 同一窗口内提交次数最多的活跃公司（无论是否新入）。</div>
+          <div class="entrants-wrap">
+            <div class="entrants-col">
+              <h4>新进入 New entrants</h4>
+              <div class="head-sub">first ${esc(displayL1)} approval ≥ 2024-05</div>
+              <div id="new-entrants-list"></div>
+            </div>
+            <div class="entrants-col">
+              <h4>活跃 Active filers</h4>
+              <div class="head-sub">most filings in last 24 months</div>
+              <div id="recent-active-list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="section-head">
+          <h2>头部公司</h2>
+          <span class="cn">· Top 12 by products</span><span class="en">Top companies</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">${esc(displayL1)} 赛道做产品最多的 12 家公司</div>
+          <div class="chart-sub">按产品数降序，点击公司去公司画像。Ownership 徽章揭示资本属性。</div>
+          <div class="table-card" style="padding:0;">
+            <table class="companies-table">
+              <thead>
+                <tr>
+                  <th style="width:40px;">#</th>
+                  <th>公司 · Company</th>
+                  <th>HQ</th>
+                  <th>Role</th>
+                  <th class="num">Products</th>
+                  <th class="num">Brands</th>
+                  <th>Ownership</th>
+                </tr>
+              </thead>
+              <tbody id="topco-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="section-head">
+          <h2>技术构成</h2>
+          <span class="cn">· top 8 within ${esc(displayL1)}</span><span class="en">Tech composition</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">${esc(displayL1)} 用了哪些技术</div>
+          <div class="chart-sub">条形按产品数归一化到 L1 头部技术。${breakdown.tech_top.length > 1 && breakdown.tech_top[0][1] / breakdown.products < 0.5 ? "技术分散 — 没有单一技术霸主，赛道是「多技术混战」。" : "技术集中 — 头部技术占据主导。"}</div>
+          <div class="tech-list" id="tech-list"></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="section-head">
+          <h2>国家分布</h2>
+          <span class="cn">· top 8</span><span class="en">Country distribution</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">${esc(displayL1)} 企业的国家分布</div>
+          <div class="chart-sub">Top 8 国家按公司数排序；产品数显示在右侧。${topCountries[0] ? `${esc(topCountries[0].country)} 一国就占 ${((topCountries[0].companies / breakdown.companies) * 100).toFixed(0)}% 企业数。` : ""}</div>
+          <div class="country-list" id="topic-country-list"></div>
+        </div>
+      </section>
+
+      <!-- ============ Country × L2 cross-matrix ============ -->
+      <section class="block">
+        <div class="section-head">
+          <h2>国家 × L2 子赛道</h2>
+          <span class="cn">· top 8 国 × top 6 L2</span><span class="en">Country × L2</span>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">每个主要国家在本赛道的子分类渗透 — 谁专精谁全面</div>
+          <div class="chart-sub">行 = 国家、列 = L2 子赛道、单元格 = 产品数。色深 = 高产品集中度。<strong style="color:var(--accent-2);">点击</strong>看具体公司列表。</div>
+          <div id="cl-matrix-wrap"></div>
+        </div>
+      </section>
+
+      <div class="footnote">
+        <span>v3 · drill-down · ${esc(displayL1)} · ${breakdown.products} products</span>
+        <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+      </div>
+    `;
+
+    // L2 cards grid (per 图 20 — 注册数 / 注册企业 / 适应症 + 最新获批时间)
+    const l2Wrap = document.getElementById("l2-cards");
+    const l2Total = breakdown.products;
+    l2Wrap.innerHTML = l1l2Row.segments.map((seg, i) => {
+      const pct = (seg.n / l2Total) * 100;
+      const opacity = Math.max(0.55, 1 - i * 0.08);
+      // Make L2 color darker → lighter from i=0
+      const l2Color = baseColor;
+      const dateStr = seg.latest_year ? `最新获批 ${seg.latest_year}年` : "暂无 approval 数据";
+      const brandsHtml = (seg.sample_brands || []).slice(0, 4).map(b =>
+        `<span class="brand">${esc(b)}</span>`
+      ).join("");
+      // 整张卡可点击 → 就地展开 L2 drawer（不跳页面）。
+      // 数据来源 v3-l2-detail.js → window.V3_L2_DETAIL[L1][L2].
+      const hasDrill = (seg.company_ids && seg.company_ids.length) ? true : false;
+      return `
+        <article class="l2-card${hasDrill ? " l2-card-clickable" : ""}" style="--l2-color: ${l2Color}; --card-opacity:${opacity};"${hasDrill ? ` data-l2="${esc(seg.l2)}" tabindex="0" role="button" aria-label="查看${esc(seg.l2)}的${seg.companies}家公司详情"` : ""}>
+          <div class="l2-card-head">
+            <h4>${esc(seg.l2)}</h4>
+            <span class="share">${pct.toFixed(1)}%</span>
+          </div>
+          <div class="l2-metrics">
+            <div class="l2-metric"><span class="v">${seg.n}</span><span class="k">注册数</span></div>
+            <div class="l2-metric"><span class="v">${seg.companies}</span><span class="k">注册企业</span></div>
+            <div class="l2-metric"><span class="v">${seg.indications || 0}</span><span class="k">适应症</span></div>
+          </div>
+          ${brandsHtml ? `<div class="l2-brands">${brandsHtml}</div>` : ""}
+          <div class="l2-foot">
+            <span class="date">${dateStr}</span>
+            <span class="l2-arrow" aria-hidden="true">→</span>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    // 卡片就地展开 L2 drawer（替代旧的页面跳转）。
+    l2Wrap.querySelectorAll(".l2-card-clickable").forEach(card => {
+      const open = () => {
+        const l2 = card.getAttribute("data-l2");
+        if (l2 && window.V3L2Drawer) {
+          window.V3L2Drawer.show({ l1: L1, l2 });
+        }
+      };
+      card.addEventListener("click", open);
+      card.addEventListener("keydown", e => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      });
+    });
+
+    // Top companies table
+    document.getElementById("topco-tbody").innerHTML = topCompanies.map((c, i) => {
+      const ownCls = (c.ownership || "").toLowerCase();
+      const cid = c.company_id || c.id || "";
+      return `
+        <tr class="co-row" data-company-id="${esc(cid)}" data-company-name="${esc(c.name)}">
+          <td>${String(i + 1).padStart(2, "0")}</td>
+          <td><strong style="font-family:var(--f-body); color:var(--ink);">${esc(c.name)}</strong>${c.city ? `<br><small style="color:var(--muted); font-size:10.5px;">${esc(c.city)}</small>` : ""}</td>
+          <td>${esc(c.country || "—")}</td>
+          <td><span class="role-badge ${c.business_role.toLowerCase().replace(/[^a-z]/g, "-")}">${esc(c.business_role)}</span></td>
+          <td class="num">${c.products}</td>
+          <td class="num">${c.brands}</td>
+          <td><span class="ownership-badge ${ownCls}">${esc(c.ownership)}</span></td>
+        </tr>
+      `;
+    }).join("");
+    if (window.V3CompanyDetail) {
+      window.V3CompanyDetail.attachToTable("#topco-tbody tr.co-row", { nameCellSelector: "td:nth-child(2)" });
+    }
+
+    // Tech list (top 8)
+    const techWrap = document.getElementById("tech-list");
+    const techMax = breakdown.tech_top[0] ? breakdown.tech_top[0][1] : 1;
+    techWrap.innerHTML = breakdown.tech_top.slice(0, 8).map(([name, n], i) => {
+      const pct = (n / techMax) * 100;
+      return `
+        <div class="bar-row" style="grid-template-columns: 200px 1fr 60px;">
+          <div class="label">
+            <span class="sw" style="background:${baseColor};"></span>
+            <div><span class="en">${esc(abbr(name, 26))}</span><small>${((n / breakdown.products) * 100).toFixed(1)}% of ${L1}</small></div>
+          </div>
+          <div class="country-bar-track" style="height:16px;">
+            <div class="country-bar-fill" style="--cd-color:${baseColor}; width:${pct.toFixed(0)}%;"></div>
+          </div>
+          <div class="bar-total" style="font-size:20px;">${n}</div>
+        </div>
+      `;
+    }).join("");
+
+    // Country list
+    const countryWrap = document.getElementById("topic-country-list");
+    const maxCompanies = topCountries[0] ? topCountries[0].companies : 1;
+    countryWrap.innerHTML = topCountries.map(c => {
+      const pct = (c.companies / maxCompanies) * 100;
+      return `
+        <div class="bar-row" style="grid-template-columns: 180px 1fr 110px;">
+          <div class="label">
+            <span class="sw" style="background:${baseColor};"></span>
+            <div>
+              <span class="en">${esc(c.country)}</span>
+              <small>${esc(c.region || "")}</small>
+            </div>
+          </div>
+          <div class="country-bar-track">
+            <div class="country-bar-fill" style="--cd-color:${baseColor}; width:${pct.toFixed(0)}%;"></div>
+          </div>
+          <div class="stats">
+            <span class="n">${c.companies}</span>
+            <span class="sub">${c.products} products</span>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    // ================ Deep-dive sections (Pack C) ================
+    const deep = (window.V3_TOPIC_DEEP_DATA && window.V3_TOPIC_DEEP_DATA.per_l1 && window.V3_TOPIC_DEEP_DATA.per_l1[L1]) || null;
+    if (deep) {
+      renderConcentration(deep.concentration);
+      renderValueChain(deep.value_chain);
+      renderLifecycle(deep.lifecycle);
+      renderIndicationHeatmap(deep.indication_heatmap);
+      renderEntrants(deep.new_entrants, deep.recent_active);
+      renderCountryL2Matrix(deep.country_l2_matrix);
+    }
+
+    function renderConcentration (c) {
+      const narrative = (
+        c.hhi_class === "fragmented"
+          ? `分散市场 — HHI ${c.hhi.toFixed(0)} < 1500，头部 5 公司只占 ${c.cr5}%，没有真正的霸主。`
+          : c.hhi_class === "moderate"
+            ? `中度集中 — HHI ${c.hhi.toFixed(0)}（1500-2500 区间），头部 5 公司占 ${c.cr5}%，已现寡头雏形。`
+            : `高度集中 — HHI ${c.hhi.toFixed(0)} ≥ 2500，头部 5 公司占 ${c.cr5}%，是被少数玩家主导的市场。`
+      );
+      document.getElementById("conc-narrative").textContent = narrative;
+      const classChip = `<span class="class-chip ${c.hhi_class}">${
+        c.hhi_class === "fragmented" ? "分散" :
+        c.hhi_class === "moderate" ? "中度集中" : "高度集中"
+      }</span>`;
+      document.getElementById("conc-grid").innerHTML = `
+        <div class="conc-card">
+          <span class="k">CR5</span>
+          <span class="v">${c.cr5}<span style="font-size:18px;color:var(--muted);">%</span></span>
+          <span class="label">头部 5 公司产品占比</span>
+        </div>
+        <div class="conc-card">
+          <span class="k">CR10</span>
+          <span class="v">${c.cr10}<span style="font-size:18px;color:var(--muted);">%</span></span>
+          <span class="label">头部 10 公司产品占比</span>
+        </div>
+        <div class="conc-card">
+          <span class="k">HHI</span>
+          <span class="v">${Math.round(c.hhi)}</span>
+          <span class="label">Herfindahl–Hirschman index</span>
+          ${classChip}
+        </div>
+        <div class="conc-card">
+          <span class="k">Universe</span>
+          <span class="v">${c.n_companies}</span>
+          <span class="label">${c.n_products} 款产品分布在</span>
+        </div>
+      `;
+      // Top 10 list
+      const top10wrap = document.getElementById("conc-top10");
+      const max = c.top10[0] ? c.top10[0].share_pct : 1;
+      top10wrap.innerHTML = `<div style="font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin:10px 0 4px;">Top 10 头部公司份额 · click for portfolio</div>`
+        + c.top10.map((co, i) => {
+          const pct = (co.share_pct / max) * 100;
+          return `
+            <div class="row" data-company-id="${esc(co.company_id || "")}" data-company-name="${esc(co.company)}">
+              <span class="rk">${String(i + 1).padStart(2, "0")}</span>
+              <span class="nm">${esc(co.company)}<small style="display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);">${esc(co.country || "—")} · ${esc(co.ownership || "—")} · ${co.products} prod</small></span>
+              <div class="bar"><div class="fill" style="--bar-color:${baseColor}; background:${baseColor}; width:${pct.toFixed(0)}%;"></div></div>
+              <span class="pct">${co.share_pct}%</span>
+            </div>
+          `;
+        }).join("");
+      if (window.V3CompanyDetail) {
+        window.V3CompanyDetail.attachToTable("#conc-top10 .row", { nameCellSelector: ".nm" });
+      }
+    }
+
+    function renderValueChain (rows) {
+      const wrap = document.getElementById("vc-bars");
+      if (!rows || !rows.length) {
+        wrap.innerHTML = `<div style="font-style:italic;color:var(--muted);padding:18px 0;">暂无 business_role 数据</div>`;
+        return;
+      }
+      const max = rows[0].n;
+      const colorMap = {
+        "Manufacturer": "#8E3A3A",
+        "Brand Owner":  "#D9AE91",
+        "R&D/OEM":      "#A8B59A",
+        "Biotech":      "#A8B59A",
+        "Service":      "#C8B8D0",
+        "Supplier":     "#5A6878",
+      };
+      const total = rows.reduce((s, r) => s + r.n, 0);
+      wrap.innerHTML = rows.map(r => {
+        const pct = (r.n / max) * 100;
+        const sharePct = (r.n / total * 100).toFixed(1);
+        const color = colorMap[r.role] || baseColor;
+        return `
+          <div class="vc-bar">
+            <span class="role">${esc(r.role)}</span>
+            <div class="track"><div class="fill" style="--vc-color:${color}; background:${color}; width:${pct.toFixed(0)}%;"></div></div>
+            <span class="n">${r.n} · ${sharePct}%</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderLifecycle (lifecycle) {
+      const scatter = document.getElementById("lc-scatter");
+      if (!lifecycle || !lifecycle.length) {
+        scatter.innerHTML += `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-style:italic;color:var(--muted);">暂无生命周期数据</div>`;
+        return;
+      }
+      const W = scatter.clientWidth || 760;
+      const H = 380;
+      const PAD_L = 60, PAD_R = 26, PAD_T = 36, PAD_B = 50;
+      const xMin = 0, xMax = 100;
+      const yMax = Math.max(2, ...lifecycle.map(l => l.companies));
+      const sizeMax = Math.max(1, ...lifecycle.map(l => l.products));
+
+      // Detect collisions: bucket lifecycle entries by (rounded x, rounded y) and
+      // spread them apart along the x-axis. This is the only way two L2s with
+      // momentum_pct=null (both → x=0) and same company count don't stack.
+      const positionedKeys = new Map();   // key → next slot index
+      const dotPositions = lifecycle.map(l => {
+        const xRaw = (l.momentum_pct == null ? 0 : l.momentum_pct);
+        const yRaw = l.companies;
+        const key = `${Math.round(xRaw / 5)}|${yRaw}`;
+        const slot = positionedKeys.get(key) || 0;
+        positionedKeys.set(key, slot + 1);
+        return { ...l, xRaw, yRaw, slot };
+      });
+      // For each colliding bucket, fan dots out by adding a horizontal offset
+      // proportional to slot index. 5% per slot.
+      const bucketSlotCount = new Map();
+      dotPositions.forEach(d => {
+        const key = `${Math.round(d.xRaw / 5)}|${d.yRaw}`;
+        bucketSlotCount.set(key, positionedKeys.get(key));
+      });
+
+      // Render largest dots first so smaller ones land on top (avoids
+      // interception of clicks by larger underlying dots)
+      dotPositions
+        .slice()
+        .sort((a, b) => b.products - a.products)
+        .forEach(l => {
+          const key = `${Math.round(l.xRaw / 5)}|${l.yRaw}`;
+          const slotCount = bucketSlotCount.get(key) || 1;
+          // Fan slots from -offset to +offset around xRaw
+          const offsetSpread = 6;   // % units
+          const offset = slotCount > 1 ? ((l.slot - (slotCount - 1) / 2) * offsetSpread) : 0;
+          const x = Math.max(xMin, Math.min(xMax, l.xRaw + offset));
+          const y = l.yRaw;
+          const xPx = PAD_L + ((x - xMin) / (xMax - xMin)) * (W - PAD_L - PAD_R);
+          const yPx = H - PAD_B - (y / yMax) * (H - PAD_T - PAD_B);
+          const r = Math.max(8, Math.min(36, Math.sqrt(l.products / sizeMax) * 32 + 6));
+          const dot = document.createElement("div");
+          dot.className = "lc-dot";
+          dot.style.cssText = `left:${xPx}px; top:${yPx}px; width:${r}px; height:${r}px; --dot-color:${baseColor}; background:${baseColor};`;
+          dot.title = `${l.l2} · ${l.products} 产品 · ${l.companies} 家 · 动能 ${l.momentum_pct == null ? "— (无 approval 数据)" : l.momentum_pct + "%"} · 最近 ${l.latest_year || "—"}`;
+          dot.dataset.l2 = l.l2;
+          dot.addEventListener("click", () => openL2Drill(l));
+          scatter.appendChild(dot);
+          if (l.products >= 5) {
+            const lbl = document.createElement("div");
+            lbl.className = "lc-dot-label";
+            lbl.style.left = xPx + "px";
+            lbl.style.top = (yPx - r/2) + "px";
+            lbl.textContent = abbr(l.l2, 18);
+            scatter.appendChild(lbl);
+          }
+        });
+
+      // Axis labels (tick marks)
+      [0, 25, 50, 75, 100].forEach(v => {
+        const xPx = PAD_L + ((v - xMin) / (xMax - xMin)) * (W - PAD_L - PAD_R);
+        const tick = document.createElement("div");
+        tick.style.cssText = `position:absolute; left:${xPx}px; bottom:30px; transform:translateX(-50%); font-family:var(--f-mono); font-size:9.5px; color:var(--muted);`;
+        tick.textContent = v + "%";
+        scatter.appendChild(tick);
+      });
+      [0, Math.ceil(yMax / 2), yMax].forEach(v => {
+        const yPx = H - PAD_B - (v / yMax) * (H - PAD_T - PAD_B);
+        const tick = document.createElement("div");
+        tick.style.cssText = `position:absolute; top:${yPx}px; left:14px; transform:translateY(-50%); font-family:var(--f-mono); font-size:9.5px; color:var(--muted);`;
+        tick.textContent = v;
+        scatter.appendChild(tick);
+      });
+    }
+
+    function openL2Drill (l) {
+      // Find companies in this L2 in our companiesData
+      const inL2 = (window.V3_TRACKS_DATA.l1_x_l2.find(r => r.l1 === L1) || {segments:[]})
+        .segments.find(s => s.l2 === l.l2);
+      // Use the topCompanies list but filter by L2 — actually we need product-level join.
+      // Approximation: surface sample_brands as a hint, link cohort by brand → company.
+      const brands = inL2 ? inL2.sample_brands : [];
+      const companies = l1Companies.filter(co => {
+        // proxy: company has at least one product in this L2 → not available offline, so skip
+        return brands.some(b => (co.name || "").toLowerCase().includes(b.toLowerCase()) ||
+                                b.toLowerCase().includes((co.name || "").toLowerCase().split(" ")[0]));
+      });
+      openTopicDrill({
+        stamp: `L2 lifecycle · ${L1}`,
+        title: `${l.l2}`,
+        sub: `${l.products} 产品 · ${l.companies} 家 · 动能 ${l.momentum_pct == null ? "—" : l.momentum_pct + "%"} · 最近 ${l.latest_year || "—"}`,
+        rows: (companies.length ? companies : l1Companies.slice(0, 10)).map(co => ({
+          company_id: co.company_id || co.id,
+          name: co.name,
+          hint: `${co.country || "—"} · ${co.ownership || "—"} · ${co.products} prod`,
+          color: baseColor,
+        })),
+      });
+    }
+
+    function renderIndicationHeatmap (ih) {
+      const wrap = document.getElementById("ind-heatmap");
+      if (!ih.buckets.length) {
+        wrap.innerHTML = `<div style="padding:24px 0;text-align:center;font-style:italic;color:var(--muted);">本赛道暂无官方适应症证据 — 等下一轮 backfill</div>`;
+        return;
+      }
+      // max across all cells
+      let max = 1;
+      ih.rows.forEach(r => Object.values(r.values).forEach(v => { if (v > max) max = v; }));
+
+      let html = `<div class="ir-mini-row head">
+        <span class="bk-label">Indication bucket</span>
+        ${ih.regulators.map(r => `<span style="text-align:center;">${esc(r)}</span>`).join("")}
+      </div>`;
+      ih.rows.forEach(row => {
+        html += `<div class="ir-mini-row">
+          <span class="bk-label">${esc(row.bucket)}<small>${row.total} 条 · 全 regulators</small></span>
+          ${ih.regulators.map(reg => {
+            const v = row.values[reg] || 0;
+            if (!v) return `<div class="ir-mini-cell zero">—</div>`;
+            const cv = v / max;
+            return `<div class="ir-mini-cell has" style="--cv:${cv.toFixed(2)};" data-bucket="${esc(row.bucket)}" data-regulator="${esc(reg)}">
+              <span class="v">${v}</span>
+            </div>`;
+          }).join("")}
+        </div>`;
+      });
+      wrap.innerHTML = html;
+      wrap.querySelectorAll(".ir-mini-cell.has").forEach(el => {
+        el.addEventListener("click", () => {
+          const bucket = el.getAttribute("data-bucket");
+          const reg = el.getAttribute("data-regulator");
+          const row = ih.rows.find(r => r.bucket === bucket);
+          const items = (row && row.product_ids[reg]) || [];
+          openTopicDrill({
+            stamp: `${L1} · indication × regulator`,
+            title: `${bucket} × ${reg}`,
+            sub: `${items.length} 条产品级证据`,
+            rows: items.map(p => ({
+              company_id: p.company_id,
+              name: p.company || p.product_id,
+              hint: `${p.country || "—"} · product_id ${p.product_id}`,
+              color: baseColor,
+            })),
+          });
+        });
+      });
+    }
+
+    function renderEntrants (newEntrants, recentActive) {
+      const newWrap = document.getElementById("new-entrants-list");
+      const actWrap = document.getElementById("recent-active-list");
+      if (!newEntrants.length) {
+        newWrap.innerHTML = `<div class="e-empty">近 24 月本赛道没有捕捉到全新公司</div>`;
+      } else {
+        newWrap.innerHTML = newEntrants.map(e => `
+          <div class="e-row" data-company-id="${esc(e.company_id || "")}" data-company-name="${esc(e.company)}">
+            <span class="date">${esc(e.first_approval)}</span>
+            <span class="nm">${esc(e.company)}<small>${esc(e.country || "—")}</small></span>
+            <span class="own">${esc(e.ownership || "—")}</span>
+            <span class="badge">${e.approvals_24m}</span>
+          </div>
+        `).join("");
+        if (window.V3CompanyDetail) {
+          window.V3CompanyDetail.attachToTable("#new-entrants-list .e-row", { nameCellSelector: ".nm" });
+        }
+      }
+      if (!recentActive.length) {
+        actWrap.innerHTML = `<div class="e-empty">近 24 月无活跃记录</div>`;
+      } else {
+        actWrap.innerHTML = recentActive.map(e => `
+          <div class="e-row" data-company-id="${esc(e.company_id || "")}" data-company-name="${esc(e.company)}">
+            <span class="date">${esc(e.latest_date)}</span>
+            <span class="nm">${esc(e.company)}<small>${esc(e.country || "—")}${e.is_new_entrant ? " · <em style='color:var(--accent-2);font-style:italic;'>new</em>" : ""}</small></span>
+            <span class="own">${esc(e.ownership || "—")}</span>
+            <span class="badge">${e.approvals_24m}</span>
+          </div>
+        `).join("");
+        if (window.V3CompanyDetail) {
+          window.V3CompanyDetail.attachToTable("#recent-active-list .e-row", { nameCellSelector: ".nm" });
+        }
+      }
+    }
+
+    function renderCountryL2Matrix (m) {
+      const wrap = document.getElementById("cl-matrix-wrap");
+      if (!m.countries.length || !m.l2s.length) {
+        wrap.innerHTML = `<div style="padding:18px 0;font-style:italic;color:var(--muted);">该赛道国家/L2 数据不足以构建矩阵</div>`;
+        return;
+      }
+      const grid = document.createElement("div");
+      grid.className = "cl-matrix";
+      grid.style.cssText = `display:grid; grid-template-columns: 160px repeat(${m.l2s.length}, 1fr);`;
+      // find max for intensity
+      let max = 1;
+      m.cells.forEach(cellRow => {
+        Object.values(cellRow.values).forEach(v => { if (v.n > max) max = v.n; });
+      });
+      let html = `<div class="cl-head">Country</div>`;
+      m.l2s.forEach(l2 => html += `<div class="cl-head">${esc(abbr(l2, 16))}</div>`);
+      m.cells.forEach(cellRow => {
+        html += `<div class="cl-cell cl-row-label"><span style="font-weight:500;">${esc(cellRow.country)}</span></div>`;
+        m.l2s.forEach(l2 => {
+          const v = cellRow.values[l2];
+          if (!v || v.n === 0) {
+            html += `<div class="cl-cell zero">—</div>`;
+            return;
+          }
+          const cv = v.n / max;
+          html += `<div class="cl-cell has-data" style="--cv:${cv.toFixed(2)};" data-country="${esc(cellRow.country)}" data-l2="${esc(l2)}">
+            <span class="n">${v.n}</span>
+          </div>`;
+        });
+      });
+      grid.innerHTML = html;
+      wrap.innerHTML = "";
+      wrap.appendChild(grid);
+      grid.querySelectorAll(".cl-cell.has-data").forEach(el => {
+        el.addEventListener("click", () => {
+          const country = el.getAttribute("data-country");
+          const l2 = el.getAttribute("data-l2");
+          const cellRow = m.cells.find(c => c.country === country);
+          const cell = cellRow.values[l2] || {n:0, company_ids:[]};
+          const cids = cell.company_ids;
+          openTopicDrill({
+            stamp: `${L1} · country × L2`,
+            title: `${country} × ${l2}`,
+            sub: `${cell.n} 款产品 · ${cids.length} 家企业`,
+            rows: cids.map(cid => {
+              const co = companiesData.companies.find(x => x.company_id === cid);
+              return {
+                company_id: cid,
+                name: (co && co.name) || cid,
+                hint: co ? `${co.country || "—"} · ${co.ownership || "—"} · ${co.products} prod` : "",
+                color: baseColor,
+              };
+            }),
+          });
+        });
+      });
+    }
+
+    // ============ Topic drill-down panel ============
+    let drillEl = document.getElementById("td-drill");
+    let drillBg = document.getElementById("td-drill-bg");
+    if (!drillEl) {
+      drillBg = document.createElement("div");
+      drillBg.id = "td-drill-bg";
+      drillBg.className = "td-drill-backdrop";
+      document.body.appendChild(drillBg);
+      drillEl = document.createElement("aside");
+      drillEl.id = "td-drill";
+      drillEl.className = "td-drill";
+      drillEl.innerHTML = `
+        <div class="head">
+          <button class="close-btn" type="button" aria-label="关闭">×</button>
+          <span class="stamp" id="td-stamp">—</span>
+          <h3 id="td-title">—</h3>
+          <div class="sub" id="td-sub">—</div>
+        </div>
+        <div class="body" id="td-body"></div>
+      `;
+      document.body.appendChild(drillEl);
+      drillBg.addEventListener("click", closeTopicDrill);
+      drillEl.querySelector(".close-btn").addEventListener("click", closeTopicDrill);
+      document.addEventListener("keydown", e => { if (e.key === "Escape") closeTopicDrill(); });
+    }
+
+    function openTopicDrill (cfg) {
+      document.getElementById("td-stamp").textContent = cfg.stamp;
+      document.getElementById("td-title").textContent = cfg.title;
+      document.getElementById("td-sub").textContent = cfg.sub;
+      const body = document.getElementById("td-body");
+      if (!cfg.rows.length) {
+        body.innerHTML = `<div style="padding:24px 0;text-align:center;font-style:italic;color:var(--muted);">暂无明细</div>`;
+      } else {
+        body.innerHTML = cfg.rows.map(r => `
+          <div class="row" data-company-id="${esc(r.company_id || "")}">
+            <span class="sw" style="--row-color:${r.color || baseColor}; background:${r.color || baseColor};"></span>
+            <span class="nm">${esc(r.name)}<small>${esc(r.hint || "")}</small></span>
+          </div>
+        `).join("");
+        body.querySelectorAll(".row").forEach(row => {
+          row.addEventListener("click", () => {
+            const cid = row.getAttribute("data-company-id");
+            if (cid && window.V3CompanyDetail) window.V3CompanyDetail.show(cid);
+          });
+        });
+      }
+      drillEl.classList.add("show");
+      drillBg.classList.add("show");
+    }
+    function closeTopicDrill () {
+      if (drillEl) drillEl.classList.remove("show");
+      if (drillBg) drillBg.classList.remove("show");
+    }
+
+    // helpers
+    function esc (s) {
+      return String(s || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
+    }
+    function abbr (s, len) {
+      const t = String(s || "");
+      return t.length > (len || 20) ? t.slice(0, (len || 20) - 1) + "…" : t;
+    }
+  })();
+</script>
+
+</body>
+</html>

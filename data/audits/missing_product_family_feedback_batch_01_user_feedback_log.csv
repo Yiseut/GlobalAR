@@ -1,0 +1,35 @@
+﻿batch_no,decision,merge_into_product_id,final_company_brand_product,note
+MISS-001,新增为产品线,,Bimini Health Tech / Dermapose / Dermapose Fat Transfer Product Suite,用户确认：Dermapose 为微小体积自体脂肪移植一体化封闭系统，契合医美上游器械与耗材，具备独立产品线层级。
+MISS-002,新增为产品线,,Bimini Health Tech / Puregraft / Puregraft Fat Transfer Product Suite,用户确认：Puregraft 为成熟脂肪过滤和纯化系统，与 Dermapose 同属 Bimini 姊妹产品，应作为独立产品线收录。
+MISS-003,并入现有产品,prod_34f1bcd4274c,Huons Meditech / DermaShine / Premium 9-Pin Needle,用户确认：Premium 9-Pin Needle 是 DermaShine 水光仪配套 9 针针头，应并入 DermaShine 耗材/针具线，不单独建线。
+MISS-004,排除-非医美/非上游,,Gold Collagen / Gold Collagen,用户确认：口服美容补剂不作为医美上游产品线收录。
+MISS-005,排除-非医美/非上游,,Novartis / Cosentyx,用户确认：银屑病生物制剂，属于传统严肃皮肤科处方药，不纳入医美上游产品线。
+MISS-007,新增为产品线,,Ubio Biotechnology / Olidia / Olidia,用户确认：Olidia 为 PLLA 胶原蛋白生物刺激剂，属于医美注射类核心耗材，应新增。
+MISS-008,排除-非医美/非上游,,Biocyte / Collagen Express,用户确认：口服美容补剂不作为医美上游产品线收录。
+MISS-010,排除-非医美/非上游,,Biocyte / Keratine Forte,用户确认：口服防脱/口服补剂不作为医美上游产品线收录。
+MISS-011,新增为产品线,,Kylane / MaiLi / MaiLi HA Filler,用户确认：MaiLi 为高端 HA 填充剂，应作为独立产品线；入库前需核对当前主库已有 Sinclair Pharma / MaiLi 与 Kylane / Kysense 的公司归属及去重关系。
+MISS-012,排除-非医美/非上游,,Galderma / Mirvaso,用户确认：红斑痤疮治疗处方药，属于传统严肃皮肤科用药，不纳入医美上游产品线。
+MISS-013,新增为产品线,,Japan Bio Products (JBP) / Laennec / Curacen,用户确认：Laennec / Curacen 为亚洲市场高占有率人胎盘提取物（水光/中胚层疗法耗材），应新增产品线。
+MISS-014,排除-非医美/非上游,,OEO Firenze / OEO,用户确认：医美专业书籍/出版物品牌，不是实体器械或耗材产品线。
+MISS-015,改公司/品牌后再看,,Crown Aesthetics / SkinPen / SkinPen Microneedling Device,用户确认：SkinPen 是重磅微针设备，但公司映射应从 Revance 修正为 Crown Aesthetics；修正归属后新增为独立产品线。
+MISS-016,排除-非医美/非上游,,Bayer / Priorin,用户确认：口服防脱产品不作为医美上游产品线收录。
+MISS-017,排除-非医美/非上游,,Galderma / Soolantra,用户确认：玫瑰痤疮治疗处方药，属于传统严肃皮肤科用药，不纳入医美上游产品线。
+MISS-018,新增为产品线,,Skymedic / Skymedic / Skymedic EBD and Fotoskinox portfolio,用户确认：Skymedic 提供光电类设备及配套医疗级护肤品，具备独立产品线特征。
+MISS-019,排除-非医美/非上游,,Vampire Facial / Vampire Facial,用户确认：Vampire Facial 是 PRP 技术注册商标疗程/服务名称，不是具体实体器械产品。
+MISS-020,排除-非医美/非上游,,Galderma / Epiduo / Epiduo Forte,用户确认：寻常痤疮治疗处方药，属于传统严肃皮肤科用药，不纳入医美上游产品线。
+MISS-021,新增为产品线,,Eltech / K-Laser / K-Laser,用户确认：K-Laser 为专业激光类能量源设备，属于典型医美声光电设备上游，应新增。
+MISS-022,新增为产品线,,Kylane / MaiLi / MaiLi HA Filler,用户确认：MaiLi 为高端 HA 填充剂，应作为独立产品线；与 MISS-011 同向，入库前需处理现有 Sinclair Pharma / MaiLi 与 Kylane / Kysense 的归属/去重。
+MISS-023,排除-非医美/非上游,,Galderma / Aklief,用户确认：寻常痤疮治疗处方药，属于传统严肃皮肤科用药，不纳入医美上游产品线。
+MISS-024,排除-非医美/非上游,,Lemi / Lemi,用户确认：高端医疗美容床/椅家具制造商，不属于临床治疗核心器械或耗材产品线。
+MISS-025,排除-非医美/非上游,,Collagen Matrix / Regenity Biosciences / NeuroMatrix / NeuroMend,用户确认：神经与口腔/骨修复生物材料，属于跨界医疗，不纳入本医美上游产品线。
+MISS-027,排除-非医美/非上游,,BTL / EXOMIND,用户确认：治疗抑郁症设备，不属于医美上游产品线。
+MISS-028,排除-非医美/非上游,,BioElectronics / ActiPatch,用户确认：镇痛设备，不属于医美上游产品线。
+MISS-029,新增为产品线,,Skinedit Nutricosmetics / KeraFactor / KeraFactor,用户确认：KeraFactor 面向头皮抗衰与生发的专业精华及光电联合治疗方案，符合医美向毛发健康延伸趋势，应新增。
+MISS-030,排除-非医美/非上游,,Altis Biologics / Altis OBM,用户确认：骨科生物制剂，不属于医美上游产品线。
+MISS-031,排除-非医美/非上游,,Next Biosciences / Netcells,用户确认：干细胞存储库/服务，不属于具体医美上游产品线。
+MISS-032,新增为产品线,,Nunii Laboratoire / Nunii / Professional Peels and Pigmentation Treatment,用户确认：Nunii 专注化学剥脱和色素沉着治疗专业线产品，属于医美机构常备耗材，应新增。
+MISS-033,排除-非医美/非上游,,Collagen Matrix / Regenity Biosciences / MatrixDerm / MatrixMem,用户确认：神经/口腔/骨修复相关生物材料，属于跨界医疗，不纳入本医美上游产品线。
+MISS-034,排除-非医美/非上游,,Orbio Innovations / Orbio,用户确认：骨科生物制剂/骨修复方向，不属于医美上游产品线。
+MISS-006,新增为产品线,,Melsmon Pharmaceutical / Melsmon / Melsmon,用户确认：Melsmon 为日本代表性人胎盘提取物，在亚洲医美市场用于中胚层疗法/水光注射等抗衰项目，具备院内操作属性和商业价值，应新增。
+MISS-009,排除-非医美/非上游,,Alta Care / Altaflora,用户确认：Altaflora 为益生菌/肠道健康食品补充剂，属于口服保健品，按口服类规则排除。
+MISS-026,排除-非医美/非上游,,London Regenerative Institute / LRI,用户确认：LRI 是再生医学/抗衰老服务型下游临床机构，提供 IV Drips、HBOT、PRP 等疗程，不是上游核心器械或注射材料制造商。

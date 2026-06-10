@@ -1,0 +1,507 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_user_reg_indications_b3_20260601_024828.xlsx",
+  "workbook_changes": 74,
+  "manual_official_indication_rows_added": 20,
+  "manual_product_fact_rows_added": 11,
+  "target_record_ids": [
+    "REC_0039",
+    "REC_0040",
+    "REC_0294",
+    "REC_0307",
+    "REC_0353",
+    "REC_0459",
+    "REC_0487",
+    "REC_0532",
+    "REC_0676",
+    "REC_0692",
+    "REC_0721",
+    "REC_0775"
+  ],
+  "korea_confirmed_record_ids": [
+    "REC_0294",
+    "REC_0353",
+    "REC_0487",
+    "REC_0532",
+    "REC_0692",
+    "REC_0721",
+    "REC_0775"
+  ],
+  "ce_confirmed_record_ids": [
+    "REC_0039",
+    "REC_0040",
+    "REC_0307",
+    "REC_0353",
+    "REC_0459",
+    "REC_0487",
+    "REC_0532",
+    "REC_0676",
+    "REC_0692",
+    "REC_0721",
+    "REC_0775"
+  ],
+  "classification_corrected_record_ids": [
+    "REC_0039",
+    "REC_0040",
+    "REC_0294",
+    "REC_0307",
+    "REC_0353",
+    "REC_0459",
+    "REC_0487",
+    "REC_0532",
+    "REC_0676",
+    "REC_0692",
+    "REC_0721",
+    "REC_0775"
+  ],
+  "known_residual_notes": [
+    "Dexlevo GOURI and Miracle have user-confirmed CE rows only; Korea MFDS/KFDA remains unconfirmed unless supplied separately.",
+    "Reanzen has user-confirmed KFDA/CE rows, but no strong official product URL was captured in local/web evidence during this batch.",
+    "Nexgen Spider Web currently uses a corporate URL rather than a direct product URL."
+  ],
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_0307",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0307",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "Solubilized PCL"
+    },
+    {
+      "record_id": "REC_0307",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Dexlevo"
+    },
+    {
+      "record_id": "REC_0307",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Dexlevo"
+    },
+    {
+      "record_id": "REC_0307",
+      "field": "Backfill_Audit",
+      "old": "[orig:注射类 > 胶原刺激剂 > PCL 聚己内酯] GOURI液态PCL胶原刺激剂",
+      "new": "[orig:注射类 > 胶原刺激剂 > PCL 聚己内酯] GOURI液态PCL胶原刺激剂; user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0459",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0459",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "Solubilized PCL / HA"
+    },
+    {
+      "record_id": "REC_0459",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Dexlevo"
+    },
+    {
+      "record_id": "REC_0459",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Dexlevo"
+    },
+    {
+      "record_id": "REC_0459",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0039",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0039",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "P(LA/CL) Fine Thread"
+    },
+    {
+      "record_id": "REC_0039",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Aptos"
+    },
+    {
+      "record_id": "REC_0039",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Aptos"
+    },
+    {
+      "record_id": "REC_0039",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0040",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE and multi-country registrations confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0040",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "Polypropylene Thread"
+    },
+    {
+      "record_id": "REC_0040",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Aptos"
+    },
+    {
+      "record_id": "REC_0040",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Aptos"
+    },
+    {
+      "record_id": "REC_0040",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0692",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0692",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0692",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "3D Mesh Thread"
+    },
+    {
+      "record_id": "REC_0692",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Tesslift"
+    },
+    {
+      "record_id": "REC_0692",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Tesslift"
+    },
+    {
+      "record_id": "REC_0692",
+      "field": "Backfill_Audit",
+      "old": "[orig:埋线提升 > 可吸收线 > PCL 线] Tesslift PCL网管线,归埋线",
+      "new": "[orig:埋线提升 > 可吸收线 > PCL 线] Tesslift PCL网管线,归埋线; user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0676",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0676",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0676",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "Spider Web Smooth Thread"
+    },
+    {
+      "record_id": "REC_0676",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Nexgen Biopharma"
+    },
+    {
+      "record_id": "REC_0676",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Nexgen Biopharma"
+    },
+    {
+      "record_id": "REC_0676",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; some NMPA models confirmed, numbers pending."
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "NMPA_Status",
+      "old": "",
+      "new": "Partial NMPA registration confirmed by user; exact model/certificate number pending."
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "PDO / Cog Thread"
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Ultra V"
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Ultra V"
+    },
+    {
+      "record_id": "REC_0721",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA 510(k) clearance confirmed by user; 510(k) number pending."
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS, CE and FDA 510(k) confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "PDO Thread"
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Healux"
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Healux"
+    },
+    {
+      "record_id": "REC_0353",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0775",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0775",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0775",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0775",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "PDO / PLLA / PCL Molding Cog Thread"
+    },
+    {
+      "record_id": "REC_0775",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Grand Aespio"
+    },
+    {
+      "record_id": "REC_0775",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Grand Aespio"
+    },
+    {
+      "record_id": "REC_0775",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0487",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0487",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0487",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0487",
+      "field": "Tech_Type_Std",
+      "old": "PLLA",
+      "new": "PDO Thread"
+    },
+    {
+      "record_id": "REC_0487",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Reanzen"
+    },
+    {
+      "record_id": "REC_0487",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Reanzen"
+    },
+    {
+      "record_id": "REC_0487",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "Tech_Type_Std",
+      "old": "PCL",
+      "new": "PDO / PCL Thread"
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "Core_Product",
+      "old": "Consumables",
+      "new": "PDO / PCL Threads"
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Dermakor"
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Dermakor"
+    },
+    {
+      "record_id": "REC_0532",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0294",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0294",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "GCS"
+    },
+    {
+      "record_id": "REC_0294",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "GCS"
+    },
+    {
+      "record_id": "REC_0294",
+      "field": "Backfill_Audit",
+      "old": "category_dictionary_feedback_20260601: mapped Absorbable Threads to Injectables > Thread Lift",
+      "new": "category_dictionary_feedback_20260601: mapped Absorbable Threads to Injectables > Thread Lift; user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    }
+  ]
+}

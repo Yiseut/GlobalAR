@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-06-01T00:44:36",
+  "category_path_not_in_dictionary": 0,
+  "decisions_total": 8,
+  "add_to_dictionary": 4,
+  "map_to_existing": 3,
+  "excluded": 1,
+  "rebuilt_db": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
+  "rebuilt_snapshot": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\web\\app-data.js",
+  "updated_overview": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\source_database_other_issues_overview_20260601_after_category_feedback.csv",
+  "smoke_test_json": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\smoke_test_category_feedback_20260601.json",
+  "smoke_test_note": "smoke_test exits 1 because strict pre-existing checks expect archived/empty planning artifacts; targeted category checks pass and mismatches is empty."
+}

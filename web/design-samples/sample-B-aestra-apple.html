@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>样例 B · Aestra + Apple · 全球医美仪表盘</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Special+Elite&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --font-title: 'Noto Serif SC', 'Songti SC', 'Source Han Serif SC', serif;
+  --font-subtitle: 'Special Elite', 'Courier Prime', monospace;
+  --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --font-number: 'Space Mono', 'JetBrains Mono', monospace;
+
+  --c-oxblood: #520E0D;
+  --c-oxblood-soft: #9B5856;
+  --c-slate: #233245;
+  --c-slate-2: #303F54;
+  --c-slate-3: #485670;
+  --c-sand: #CEB59C;
+  --c-sand-1: #BCA078;
+  --c-bone: #E0D6CA;
+  --c-paper: #E8DFD3;        /* slightly lifted bone for Apple-y warmth */
+  --c-paper-light: #F0E9DD;
+  --c-paper-soft: #FAF6EE;   /* near-white card surface */
+  --c-paper-dark: #D3C7B7;
+  --c-ink-3: #5A6678;
+  --c-ink-4: #8A93A1;
+  --c-hairline: rgba(35, 50, 69, 0.10);
+  --c-hairline-strong: rgba(35, 50, 69, 0.18);
+
+  --r-card: 14px;
+  --r-chip: 999px;
+  --shadow-card: 0 1px 2px rgba(35, 50, 69, 0.04), 0 8px 28px -16px rgba(35, 50, 69, 0.14);
+  --shadow-hover: 0 4px 16px rgba(35, 50, 69, 0.06), 0 18px 40px -22px rgba(35, 50, 69, 0.22);
+  --ease-quiet: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background:
+    radial-gradient(70% 55% at 8% -10%, rgba(82, 14, 13, 0.05), transparent 60%),
+    radial-gradient(60% 45% at 100% 0%, rgba(35, 50, 69, 0.05), transparent 65%),
+    var(--c-paper);
+  background-attachment: fixed;
+  color: var(--c-slate);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 56px 48px 96px;
+}
+
+/* ========== Hero header ========== */
+.eyebrow {
+  font-family: var(--font-subtitle);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-oxblood);
+  font-weight: 400;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 32px;
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-weight: 200;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin: 14px 0 4px;
+  color: var(--c-slate);
+}
+.hero .h1-en {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0;
+  color: var(--c-ink-3);
+  margin-top: 8px;
+}
+
+.hero-meta {
+  text-align: right;
+}
+.hero-meta .label {
+  font-family: var(--font-subtitle);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+}
+.hero-meta time {
+  display: block;
+  font-family: var(--font-number);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--c-slate);
+  margin-top: 6px;
+}
+
+/* ========== Section ========== */
+section.kpi-section {
+  margin-top: 36px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.section-head h2 {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: -0.005em;
+  margin: 0;
+  color: var(--c-slate);
+}
+.section-head .en {
+  font-family: var(--font-subtitle);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+}
+
+/* ========== KPI grid · soft cards, 14px radius, gentle shadow ========== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.kpi-cell {
+  position: relative;
+  padding: 22px 22px 24px;
+  background: var(--c-paper-soft);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 220ms var(--ease-quiet), box-shadow 220ms var(--ease-quiet);
+}
+.kpi-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.kpi-cell .label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.kpi-cell .label .en {
+  font-family: var(--font-subtitle);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  font-weight: 400;
+}
+.kpi-cell .label .zh {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-slate);
+  letter-spacing: -0.005em;
+}
+
+.kpi-cell .value {
+  font-family: var(--font-number);
+  font-weight: 700;
+  font-size: 44px;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  color: var(--c-slate);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi-cell .delta {
+  font-size: 12px;
+  color: var(--c-ink-3);
+  font-weight: 500;
+}
+
+/* The single accent card */
+.kpi-cell.accent {
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(82, 14, 13, 0.10), transparent 60%),
+    var(--c-paper-soft);
+}
+.kpi-cell.accent .value {
+  color: var(--c-oxblood);
+}
+
+/* Dusk hero card — first KPI is a featured "lede" */
+.kpi-cell.dusk {
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(82, 14, 13, 0.22), transparent 60%),
+    var(--c-slate);
+  color: var(--c-bone);
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.kpi-cell.dusk .label .en { color: var(--c-sand); }
+.kpi-cell.dusk .label .zh { color: var(--c-bone); }
+.kpi-cell.dusk .value { color: var(--c-bone); font-size: 64px; }
+.kpi-cell.dusk .delta { color: var(--c-sand); }
+
+/* ========== Editorial mini-cards ========== */
+.editorial-row {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.editorial-block {
+  position: relative;
+  padding: 22px 22px 24px;
+  background: var(--c-paper-soft);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 220ms var(--ease-quiet), box-shadow 220ms var(--ease-quiet);
+}
+.editorial-block:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+.editorial-block .stamp {
+  font-family: var(--font-subtitle);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-oxblood);
+}
+.editorial-block .lead {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--c-slate);
+  margin-top: 4px;
+  letter-spacing: -0.005em;
+}
+.editorial-block .num-pair {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 6px;
+}
+.editorial-block .num-pair .num {
+  font-family: var(--font-number);
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.025em;
+  color: var(--c-slate);
+}
+.editorial-block .num-pair .unit {
+  font-family: var(--font-subtitle);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+}
+.editorial-block .body {
+  font-size: 13px;
+  color: var(--c-slate-2);
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+.footnote {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-hairline);
+  font-family: var(--font-subtitle);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-4);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 960px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-cell.dusk { grid-column: span 2; }
+  .editorial-row { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="shell">
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">2026 · Vol. 02 · Global Snapshot</div>
+      <h1>全球医美产业图谱</h1>
+      <div class="h1-en">Global Medical Aesthetics Landscape</div>
+    </div>
+    <div class="hero-meta">
+      <span class="label">Updated</span>
+      <time>2026·05·19</time>
+    </div>
+  </header>
+
+  <section class="kpi-section">
+    <div class="section-head">
+      <h2>核心指标</h2>
+      <span class="en">CORE METRICS · N = 977 / 372</span>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-cell dusk">
+        <span class="label"><span class="en">PRODUCT LINES</span><span class="zh">产品线 · 全球覆盖</span></span>
+        <span class="value">977</span>
+        <span class="delta">38 countries · 10 categories</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">UPSTREAM CO.</span><span class="zh">上游企业</span></span>
+        <span class="value">372</span>
+        <span class="delta">manufacturers · brand owners</span>
+      </div>
+      <div class="kpi-cell accent">
+        <span class="label"><span class="en">LISTED ENTITIES</span><span class="zh">上市主体</span></span>
+        <span class="value">61</span>
+        <span class="delta">15 exchanges</span>
+      </div>
+
+      <div class="kpi-cell">
+        <span class="label"><span class="en">BRANDS</span><span class="zh">品牌</span></span>
+        <span class="value">946</span>
+        <span class="delta">881 product · 96 corporate</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">INDICATION SIGNALS</span><span class="zh">适应症信号</span></span>
+        <span class="value">958</span>
+        <span class="delta">cross-ref product master</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">REG. EVIDENCE</span><span class="zh">监管注册证据</span></span>
+        <span class="value">410</span>
+        <span class="delta">FDA 321 · CE/EU 49</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">PRODUCT SPECS</span><span class="zh">产品规格证据</span></span>
+        <span class="value">31,736</span>
+        <span class="delta">362 companies covered</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="kpi-section">
+    <div class="section-head">
+      <h2>编辑视角</h2>
+      <span class="en">EDITORIAL · NEW LENSES FROM EXCEL RE-SCAN</span>
+    </div>
+
+    <div class="editorial-row">
+      <article class="editorial-block">
+        <span class="stamp">LENS 01 · REGULATORY PULSE</span>
+        <div class="lead">FDA clearance 节奏 2022 后翻倍。</div>
+        <div class="num-pair">
+          <span class="num">69</span>
+          <span class="unit">CLEARANCES · 2022–2026</span>
+        </div>
+        <div class="body">同期 CE/MDR 仅 24 条；中国 NMPA 由独立项目覆盖。</div>
+      </article>
+
+      <article class="editorial-block">
+        <span class="stamp">LENS 02 · KOREA FACTOR</span>
+        <div class="lead">韩国占全球上游企业 28%。</div>
+        <div class="num-pair">
+          <span class="num">105</span>
+          <span class="unit">COMPANIES · 274 PRODUCTS</span>
+        </div>
+        <div class="body">远超美国 60 / 意大利 36；上市仅 22 家，私营出口集群。</div>
+      </article>
+
+      <article class="editorial-block">
+        <span class="stamp">LENS 03 · CAPITAL BAND SKEW</span>
+        <div class="lead">已上市 64 家，半数小盘。</div>
+        <div class="num-pair">
+          <span class="num">30</span>
+          <span class="unit">SMALL CAP · 3 MEGA CAP</span>
+        </div>
+        <div class="body">大市值集中在 NASDAQ；KRX 22 家小盘构成韩股板块。</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="footnote">
+    <span>SAMPLE B · AESTRA × APPLE · 14px RADII · SOFT SHADOW · DUSK LEDE</span>
+    <span>Aesthetic Reflections · 研美思维</span>
+  </div>
+
+</main>
+</body>
+</html>

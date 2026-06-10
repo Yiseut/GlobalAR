@@ -1,5 +1,7 @@
 param(
-    [switch]$NoOpen
+    [switch]$NoOpen,
+    [switch]$Rebuild,
+    [int]$Port = 8790
 )
 
 $ErrorActionPreference = "Stop"
@@ -15,6 +17,7 @@ $BuildErr = Join-Path $DataDir "dashboard_hidden_build.err.log"
 $ServerLog = Join-Path $DataDir "dashboard_hidden_server.log"
 $ServerErr = Join-Path $DataDir "dashboard_hidden_server.err.log"
 $RunInfo = Join-Path $DataDir "dashboard_server_run.json"
+$DbPath = Join-Path $DataDir "global_aesthetics.db"
 
 function Get-PythonPath {
     $Bundled = "C:\Users\gisel\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
@@ -34,7 +37,7 @@ function Get-PythonPath {
 
 function Test-DashboardServer {
     try {
-        $Response = Invoke-WebRequest -Uri "http://127.0.0.1:8790/" -UseBasicParsing -TimeoutSec 2
+        $Response = Invoke-WebRequest -Uri "http://127.0.0.1:$Port/" -UseBasicParsing -TimeoutSec 2
         return $Response.StatusCode -ge 200 -and $Response.StatusCode -lt 500
     }
     catch {
@@ -45,20 +48,22 @@ function Test-DashboardServer {
 $Python = Get-PythonPath
 
 if (-not (Test-DashboardServer)) {
-    $Build = Start-Process -FilePath $Python `
-        -ArgumentList @("scripts\build_data.py") `
-        -WorkingDirectory $ProjectDir `
-        -WindowStyle Hidden `
-        -RedirectStandardOutput $BuildLog `
-        -RedirectStandardError $BuildErr `
-        -Wait `
-        -PassThru
-    if ($Build.ExitCode -ne 0) {
-        throw "Dashboard data build failed. See $BuildLog and $BuildErr"
+    if ($Rebuild -or -not (Test-Path $DbPath)) {
+        $Build = Start-Process -FilePath $Python `
+            -ArgumentList @("scripts\build_data.py") `
+            -WorkingDirectory $ProjectDir `
+            -WindowStyle Hidden `
+            -RedirectStandardOutput $BuildLog `
+            -RedirectStandardError $BuildErr `
+            -Wait `
+            -PassThru
+        if ($Build.ExitCode -ne 0) {
+            throw "Dashboard data build failed. See $BuildLog and $BuildErr"
+        }
     }
 
     $Server = Start-Process -FilePath $Python `
-        -ArgumentList @("server.py", "--port", "8790") `
+        -ArgumentList @("server.py", "--port", "$Port") `
         -WorkingDirectory $ProjectDir `
         -WindowStyle Hidden `
         -RedirectStandardOutput $ServerLog `
@@ -69,7 +74,7 @@ if (-not (Test-DashboardServer)) {
         started_at = (Get-Date -Format o)
         pid = $Server.Id
         project_dir = $ProjectDir
-        url = "http://127.0.0.1:8790/"
+        url = "http://127.0.0.1:$Port/"
         stdout_log = $ServerLog
         stderr_log = $ServerErr
     } | ConvertTo-Json -Depth 4 | Set-Content -Path $RunInfo -Encoding UTF8
@@ -78,5 +83,5 @@ if (-not (Test-DashboardServer)) {
 }
 
 if (-not $NoOpen) {
-    Start-Process "http://127.0.0.1:8790/"
+    Start-Process "http://127.0.0.1:$Port/"
 }

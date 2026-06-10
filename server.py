@@ -685,7 +685,10 @@ class DashboardHandler(BaseHTTPRequestHandler):
         if WEB_DIR not in target.parents and target != WEB_DIR:
             self.send_error(403)
             return
-        if not target.exists() or target.is_dir():
+        if target.is_dir():
+            nested_index = target / "index.html"
+            target = nested_index if nested_index.exists() else WEB_DIR / "index.html"
+        elif not target.exists():
             target = WEB_DIR / "index.html"
         content = target.read_bytes()
         mime = mimetypes.guess_type(str(target))[0] or "application/octet-stream"

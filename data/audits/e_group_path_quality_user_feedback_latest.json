@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-06-01T15:55:54+08:00",
+  "new_manual_indication_rows_added": 17,
+  "indication_decisions": 17,
+  "excluded_seed_rows": 6,
+  "deferred_seed_rows": 3,
+  "manual_backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_official_indication_evidence_backup_before_e_group_path_quality_20260601_155554.csv",
+  "workbook_backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_e_group_path_exclusions_20260601_155554.xlsx",
+  "workbook_changes": 18,
+  "evidence_unlink_total_rows": 252,
+  "evidence_unlink_changes": [
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence_backup_before_e_group_path_excluded_unlink_20260601_155554.csv",
+      "rows_unlinked": 89,
+      "by_original_product_id": {
+        "prod_14e9b740531f": 12,
+        "prod_b3ddb0a7078e": 11,
+        "prod_147bcefb8ca0": 27,
+        "prod_7add158f2714": 5,
+        "prod_2d8dbd0394b6": 11,
+        "prod_d8647af9b2a5": 23
+      }
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log_backup_before_e_group_path_excluded_unlink_20260601_155554.csv",
+      "rows_unlinked": 85,
+      "by_original_product_id": {
+        "prod_14e9b740531f": 12,
+        "prod_b3ddb0a7078e": 10,
+        "prod_147bcefb8ca0": 26,
+        "prod_7add158f2714": 5,
+        "prod_2d8dbd0394b6": 11,
+        "prod_d8647af9b2a5": 21
+      }
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence_backup_before_e_group_path_excluded_unlink_20260601_155554.csv",
+      "rows_unlinked": 78,
+      "by_original_product_id": {
+        "prod_14e9b740531f": 2,
+        "prod_b3ddb0a7078e": 3,
+        "prod_147bcefb8ca0": 26,
+        "prod_7add158f2714": 1,
+        "prod_2d8dbd0394b6": 6,
+        "prod_d8647af9b2a5": 40
+      }
+    }
+  ],
+  "outputs": {
+    "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_path_quality_user_feedback_applied_latest.csv",
+    "excluded_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_path_quality_user_feedback_excluded_latest.csv",
+    "deferred_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_path_quality_user_feedback_deferred_latest.csv"
+  }
+}

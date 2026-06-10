@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-01T01:21:31",
+  "source_workbook": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.xlsx",
+  "backup_workbook": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4_backup_before_brand_portfolio_count_sync_20260601_012038.xlsx",
+  "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\brand_portfolio_company_count_sync_20260601.csv",
+  "changes_by_type": {
+    "fix_extra_brand_row": 1,
+    "add_brand_portfolio": 23,
+    "update_company_counts": 6
+  },
+  "total_changes": 30
+}

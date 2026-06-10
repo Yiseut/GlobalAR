@@ -1,0 +1,36 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_bimini_user_confirmed_product_evidence_20260601_033602.xlsx",
+  "workbook_changes": 4,
+  "manual_product_fact_rows_added": 2,
+  "target_record_ids": [
+    "REC_1056",
+    "REC_1057"
+  ],
+  "source_url": "https://www.prnewswire.com/news-releases/bimini-health-tech-achieves-eu-mdr-certification-302770477.html",
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_1056",
+      "field": "Data_Source",
+      "old": "user_confirmed_missing_product_family_feedback; PRNewswire company announcement 2026-05-13",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "REC_1056",
+      "field": "Backfill_Audit",
+      "old": "missing_product_family_feedback_20260601: added by user-confirmed missing-product feedback (MISS-001).",
+      "new": "missing_product_family_feedback_20260601: added by user-confirmed missing-product feedback (MISS-001).; bimini_user_confirmed_product_evidence_20260601: user-confirmed missing product-family feedback and company announcement attached as product identity evidence."
+    },
+    {
+      "record_id": "REC_1057",
+      "field": "Data_Source",
+      "old": "user_confirmed_missing_product_family_feedback; PRNewswire company announcement 2026-05-13",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "REC_1057",
+      "field": "Backfill_Audit",
+      "old": "missing_product_family_feedback_20260601: added by user-confirmed missing-product feedback (MISS-002).",
+      "new": "missing_product_family_feedback_20260601: added by user-confirmed missing-product feedback (MISS-002).; bimini_user_confirmed_product_evidence_20260601: user-confirmed missing product-family feedback and company announcement attached as product identity evidence."
+    }
+  ]
+}

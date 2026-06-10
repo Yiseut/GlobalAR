@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-06-01T18:24:58+08:00",
+  "review_pack_rows": 349,
+  "applied_rows": 349,
+  "skipped_rows": 0,
+  "applied_by_group": {
+    "A_not_explicit_user_rewrite": 71,
+    "C_bad_url_mentions_other_brand": 99,
+    "E_other_quality_blocker": 2,
+    "B_need_new_official_ifu_or_product_page": 177
+  },
+  "backup_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_official_indication_evidence_backup_before_no_public_indication_closure_20260601_182458.csv",
+  "status": "unavailable_verified_no_public_indication_after_exa_api_search",
+  "outputs": {
+    "summary_json": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_no_public_indication_closure_latest.json",
+    "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_no_public_indication_closure_applied_latest.csv",
+    "skipped_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_no_public_indication_closure_skipped_latest.csv"
+  }
+}

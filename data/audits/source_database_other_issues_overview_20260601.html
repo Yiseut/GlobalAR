@@ -1,0 +1,89 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>源数据库其他问题总览</title>
+<style>
+:root{--bg:#f6f7f4;--ink:#202620;--muted:#667066;--line:#d9dfd6;--panel:#fff;--green:#2e6a4d;--amber:#8b5b17}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.58 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif}main{max-width:1240px;margin:0 auto;padding:24px}h1{font-size:28px;margin:0 0 6px;letter-spacing:0}h2{font-size:18px;margin:20px 0 8px}.muted{color:var(--muted)}.top{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}.notice{background:#fff8eb;border:1px solid #ead6b8;border-radius:8px;padding:12px;margin:12px 0;color:#513a17}.cards{display:grid;grid-template-columns:1fr;gap:10px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px}.card.user{border-color:#d7b05c;background:#fffdf4}.head{display:flex;gap:10px;align-items:center}.head b{font-size:16px}.head span:last-child{margin-left:auto;color:var(--muted);font-size:12px}.gid{font-weight:800;color:#fff;background:var(--green);border-radius:999px;padding:3px 8px}.count{font-weight:760;color:#1f3f31}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}th,td{border-bottom:1px solid #e8ece6;padding:8px;text-align:left;vertical-align:top}th{background:#eef3ee}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:800px){main{padding:16px}.twocol{grid-template-columns:1fr}}
+</style></head><body><main>
+<div class="top"><h1>源数据库其他问题总览</h1><p class="muted">生成时间：2026-06-01 00:23:48。这份只列“产品缺口以外”的剩余问题，已排除刚才 34 条缺口候选的重复噪音。</p></div>
+<div class="notice"><b>结论先说：</b>没有高危断裂；全库行都有状态和负责人。下一批最适合人工确认的是 <b>OTH-02 分类字典缺口</b>。其他多数是我可以直接修或继续跑证据核验的机器工作。</div>
+<section class="cards">
+    <article class="card user">
+      <div class="head"><span class="gid">OTH-01</span><b>上一批产品缺口的入库动作待执行</b><span>medium</span></div>
+      <p class="count">6 新增 + 1 并入 + 4 映射确认 + 1 待查证</p>
+      <p>你已确认 MAP-01 到 MAP-04；MAP-05 KeraFactor 先查证。MISS-001/002/006/013/018/032 可新增，MISS-003 可并入 DermaShine。</p>
+      <p><strong>下一步：</strong>先应用可确定项；KeraFactor 单独查证 SkinQRI 与 Skinedit Nutricosmetics 的主体关系。</p>
+      <p class="muted"><strong>依据：</strong>missing_product_family_* 文件；mapping_followup_groups_user_decisions.csv</p>
+    </article>
+    
+    <article class="card user">
+      <div class="head"><span class="gid">OTH-02</span><b>分类字典缺口</b><span>medium</span></div>
+      <p class="count">12</p>
+      <p>Product_Lines 里有 12 条分类路径不在 Category_Definitions 中，集中在 Thread Lift、Breast Reconstruction、Professional Treatment、Shockwave、Injection Devices、Surgical Implant 等。</p>
+      <p><strong>下一步：</strong>做一个小批次让你判断：这些分类是新增到字典，还是映射到已有标准分类，或排除。</p>
+      <p class="muted"><strong>依据：</strong>seed_integrity_issues.csv / category_path_not_in_dictionary</p>
+    </article>
+    
+    <article class="card auto">
+      <div class="head"><span class="gid">OTH-03</span><b>品牌组合与公司计数不同步</b><span>medium/low</span></div>
+      <p class="count">24 缺品牌组合 + 1 多余品牌组合 + 12 公司计数不一致</p>
+      <p>Brand_Portfolio 与 Product_Lines/Companies 之间不同步，典型包括 Allergan Juvéderm 子线、Galderma Restylane 子线、Skin Tech 新增品牌线。</p>
+      <p><strong>下一步：</strong>机械重建/同步 Brand_Portfolio 与 Companies 的 product_count、brand_count。</p>
+      <p class="muted"><strong>依据：</strong>seed_integrity_issues.csv</p>
+    </article>
+    
+    <article class="card auto">
+      <div class="head"><span class="gid">OTH-04</span><b>P0/P1 产品证据补齐队列</b><span>medium</span></div>
+      <p class="count">93 条 P0/P1；P0 33，P1 60</p>
+      <p>重点产品仍缺直接官网产品页、规格候选、注册证据或官方适应症。Top 公司包括 Advance Esthetic、Skin Tech、Allergan、Galderma、BTL。</p>
+      <p><strong>下一步：</strong>机器按 product_gap_queue 继续补官网/IFU/规格/注册证据；只在遇到范围判断时再问你。</p>
+      <p class="muted"><strong>依据：</strong>product_gap_queue_20260601_002020.csv</p>
+    </article>
+    
+    <article class="card auto">
+      <div class="head"><span class="gid">OTH-05</span><b>CaHA 小赛道证据缺口</b><span>medium</span></div>
+      <p class="count">3 个产品有缺口</p>
+      <p>FACETEM/CGBIO、FACETEM/Daewoong 缺注册和官方适应症；Neauvia Stimulate 缺官方适应症，且官网/规格直连为空。Radiesse 与 HArmonyCa 已较完整。</p>
+      <p><strong>下一步：</strong>优先补 FACETEM 与 Neauvia Stimulate 的官方 IFU/注册/适应症证据。</p>
+      <p class="muted"><strong>依据：</strong>caha_lane_audit.md</p>
+    </article>
+    
+    <article class="card auto">
+      <div class="head"><span class="gid">OTH-06</span><b>规格证据仍有映射队列</b><span>low/medium</span></div>
+      <p class="count">pending family mapping 6286；pending product mapping 1688；pending SKU split 484</p>
+      <p>大量规格候选已经被筛过，但还有不少只到品牌/家族层，未落到具体 product_id 或 SKU。</p>
+      <p><strong>下一步：</strong>按高优先产品先映射，不把弱候选自动提升为主事实。</p>
+      <p class="muted"><strong>依据：</strong>product_specification_evidence / data_usability_row_status_latest.csv</p>
+    </article>
+    
+    <article class="card auto">
+      <div class="head"><span class="gid">OTH-07</span><b>媒体/图片资产抓取失败</b><span>low</span></div>
+      <p class="count">3918</p>
+      <p>失败都集中在 media_asset_retry，属于图片/媒体资产抓取重试问题，不影响主数据事实判断。</p>
+      <p><strong>下一步：</strong>重试抓取或标记 unavailable，避免长期显示为 error。</p>
+      <p class="muted"><strong>依据：</strong>data_usability_row_status_latest.csv</p>
+    </article>
+    
+    <article class="card auto">
+      <div class="head"><span class="gid">OTH-08</span><b>连续核验任务未运行 / MDR-CE 队列仍有挂起</b><span>low/medium</span></div>
+      <p class="count">MDR/CE 估算 pending 1604；runtime not running</p>
+      <p>show_verification_status 显示后台连续核验未运行。MDR/CE 队列还显示挂起，但我们刚刚新增了 CE/MDR 无公开号码的处理规则，后续应先按新规则降噪。</p>
+      <p><strong>下一步：</strong>先把已确认规则写入队列过滤，再决定是否恢复连续核验。</p>
+      <p class="muted"><strong>依据：</strong>show_verification_status.py 输出</p>
+    </article>
+    
+    <article class="card auto">
+      <div class="head"><span class="gid">OTH-09</span><b>验收自检 NMPA 项异常</b><span>low</span></div>
+      <p class="count">1 个自检项未通过</p>
+      <p>C3 未通过不是因为源库还有 prod_NEW 或 pending link，而是自检脚本期望的 nmpa_supplement_product_line_apply_latest.csv 已被按你的清理要求移到 archive。归档文件里有 19 条动作记录。</p>
+      <p><strong>下一步：</strong>修正自检读取归档/manifest，或生成一个轻量证明文件；不需要重新人工审 NMPA。</p>
+      <p class="muted"><strong>依据：</strong>_archive/audits_verified_intermediate_20260531_235306/nmpa_supplement_product_line_apply_latest.csv</p>
+    </article>
+    </section>
+<h2>分类字典缺口明细</h2>
+<table><thead><tr><th>当前分类路径</th><th>行数</th><th>样例产品</th><th>需要判断</th></tr></thead><tbody><tr><td>Implants &gt; Breast Reconstruction</td><td>3</td><td>Johnson &amp; Johnson / Mentor / ARTOURA PLUS Breast Tissue Expanders；Johnson &amp; Johnson / Mentor / CPX4 Breast Tissue Expanders；Johnson &amp; Johnson / Mentor / CPX4 Plus Enhance Breast Tissue Expander</td><td>新增分类 / 映射到已有分类 / 排除</td></tr><tr><td>Skincare &gt; Professional Treatment</td><td>3</td><td>Skin Tech / Aesthetic Dermal / Aesthetic Dermal；Skin Tech / HAPPY intim / HAPPY intim；Skin Tech / Reparestim / Reparestim</td><td>新增分类 / 映射到已有分类 / 排除</td></tr><tr><td>Thread Lift &gt; Absorbable Threads</td><td>1</td><td>GCS / GCS / The Lift / PLLA Threads</td><td>新增分类 / 映射到已有分类 / 排除</td></tr><tr><td>Consumables &gt; Surgical Accessories</td><td>1</td><td>Johnson &amp; Johnson / Mentor / Volume Sizing System</td><td>新增分类 / 映射到已有分类 / 排除</td></tr><tr><td>Implants &gt; Bioresorbable Bone Scaffold</td><td>1</td><td>Osteopore / Osteopore / Osteomesh / Osteoplug / aXOpore</td><td>新增分类 / 映射到已有分类 / 排除</td></tr><tr><td>EBD &gt; Shockwave</td><td>1</td><td>Storz Medical / Storz / Cellactor / D-Actor</td><td>新增分类 / 映射到已有分类 / 排除</td></tr><tr><td>EBD &gt; Injection Devices</td><td>1</td><td>Tav-Tech / JetPeel / JetPro / JetPeel-3</td><td>新增分类 / 映射到已有分类 / 排除</td></tr><tr><td>Implants &gt; Surgical Implant</td><td>1</td><td>Universal IPS / U.IPS / Surgical Implants</td><td>新增分类 / 映射到已有分类 / 排除</td></tr></tbody></table>
+<div class="twocol">
+<section><h2>P0/P1 证据队列 Top 公司</h2><table><thead><tr><th>公司</th><th>P0/P1 数</th></tr></thead><tbody><tr><td>Advance Esthetic</td><td>8</td></tr><tr><td>Skin Tech</td><td>6</td></tr><tr><td>Allergan</td><td>5</td></tr><tr><td>Galderma</td><td>5</td></tr><tr><td>BTL</td><td>4</td></tr><tr><td>ABG Lab LLC</td><td>4</td></tr><tr><td>Johnson &amp; Johnson</td><td>4</td></tr><tr><td>Advanced Aesthetic</td><td>3</td></tr><tr><td>Doum</td><td>3</td></tr><tr><td>Zepter</td><td>3</td></tr><tr><td>Medytox</td><td>2</td></tr><tr><td>Sinclair Pharma</td><td>2</td></tr></tbody></table></section>
+<section><h2>P0/P1 常见缺口</h2><table><thead><tr><th>缺口</th><th>次数</th></tr></thead><tbody><tr><td>no_registration_evidence</td><td>92</td></tr><tr><td>no_official_indication</td><td>92</td></tr><tr><td>no_direct_official_product_or_family_url</td><td>63</td></tr><tr><td>has_review_leads</td><td>62</td></tr><tr><td>master_unverified_seed</td><td>59</td></tr><tr><td>no_direct_spec_candidate</td><td>51</td></tr><tr><td>priority_company</td><td>39</td></tr><tr><td>no_reviewed_differentiator</td><td>22</td></tr></tbody></table></section>
+</div>
+<p class="muted">CSV 同步文件：source_database_other_issues_overview_20260601.csv</p>
+</main></body></html>

@@ -1,0 +1,3 @@
+﻿action,product_id,seed_record_id,company,brand,jurisdiction,regulator,registration_no,source_key_before,source_key_after,review_status_after,confidence_after,has_official_description,checked_at
+inserted_manual_resolution,prod_3707a90c6115,REC_1056,Bimini Health Tech,Dermapose,EU,European Commission / Notified Body,,workbook_ce_seed,manual_needs_review_resolution:workbook_ce_seed,needs_source_followup,seed_certificate_number_confirmed,yes,2026-06-01T01:45:12+08:00
+inserted_manual_resolution,prod_25cdeaba7107,REC_1057,Bimini Health Tech,Puregraft,EU,European Commission / Notified Body,,workbook_ce_seed,manual_needs_review_resolution:workbook_ce_seed,needs_source_followup,seed_certificate_number_confirmed,yes,2026-06-01T01:45:12+08:00

@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-01T01:14:03",
+  "source_workbook": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.xlsx",
+  "backup_workbook": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4_backup_before_missing_product_family_feedback_20260601_011309.xlsx",
+  "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\missing_product_family_feedback_batch_01_applied.csv",
+  "counts_by_status": {
+    "applied": 18,
+    "resolved_no_source_write": 21
+  },
+  "counts_by_effect": {
+    "+1 active product line": 6,
+    "no product-count increase": 26,
+    "resolved without product-count increase": 6,
+    "-1 active product line": 1
+  },
+  "active_product_delta_expected": "+5 net active product lines (2 added + 4 activated - 1 oral/nutricosmetic excluded)",
+  "bimini_new_record_ids": [
+    "REC_1056",
+    "REC_1057"
+  ],
+  "kera_factor_map05_conclusion": "Resolved to existing SkinQRI / KeraFactor; Skinedit Nutricosmetics treated as unrelated/weak nutricosmetic signal, no duplicate added."
+}

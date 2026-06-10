@@ -1,0 +1,14 @@
+{
+  "applied_at": "20260601_001419",
+  "total_rows": 34,
+  "updated_rows_latest": 3,
+  "decision_rows_total": 34,
+  "remaining_rows": 0,
+  "remaining_batch_nos": [],
+  "decision_counts": {
+    "新增为产品线": 11,
+    "并入现有产品": 1,
+    "排除-非医美/非上游": 21,
+    "改公司/品牌后再看": 1
+  }
+}

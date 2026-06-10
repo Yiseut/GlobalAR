@@ -1,0 +1,30 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_user_reg_indications_b2_20260601_023349.xlsx",
+  "workbook_changes": 0,
+  "manual_official_indication_rows_added": 0,
+  "manual_product_fact_rows_added": 0,
+  "target_record_ids": [
+    "REC_0037",
+    "REC_0156",
+    "REC_0196",
+    "REC_0291",
+    "REC_0359",
+    "REC_0367",
+    "REC_0402",
+    "REC_0515",
+    "REC_0548",
+    "REC_0591",
+    "REC_0677",
+    "REC_0823",
+    "REC_1049"
+  ],
+  "category_corrected_record_ids": [
+    "REC_0037",
+    "REC_0156",
+    "REC_0359",
+    "REC_0548",
+    "REC_0591",
+    "REC_0677"
+  ],
+  "changed_fields_sample": []
+}

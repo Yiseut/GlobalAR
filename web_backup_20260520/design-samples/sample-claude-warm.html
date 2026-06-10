@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>原色板 · Claude 暖橙优化版</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200;6..72,300;6..72,400;6..72,500&family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --font-title:  'Newsreader', 'Source Serif Pro', 'Songti SC', serif;
+  --font-body:   'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', sans-serif;
+  --font-number: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+
+  /* —— 沿用原色板，但裁掉 rose/plum/sage 这些打架的辅色 —— */
+  --c-bg:        #FAF6EE;     /* paper warmest */
+  --c-bg-1:      #F4ECDC;     /* paper lifted */
+  --c-bg-2:      #ECDEC6;     /* paper warmer */
+  --c-ink:       #1F1B17;     /* near-black warm */
+  --c-ink-2:     #3D3631;
+  --c-ink-3:     #6E6760;
+  --c-ink-4:     #9D958C;
+  --c-brand:     #D97757;     /* Claude orange · the single accent */
+  --c-brand-deep:#B85B36;
+  --c-brand-soft:#F4D4BE;
+  --c-brand-mist:#FCEEE0;
+  --c-gold:      #B5915A;     /* secondary warm metal — 仅在 dusk 段用 */
+  --c-deepwood:  #2A2018;     /* dusk warm-black */
+  --c-deepwood-2:#3A2E22;
+
+  --c-hairline:  rgba(31, 27, 23, 0.10);
+  --c-hairline-warm: rgba(217, 119, 87, 0.22);
+
+  --r-card: 16px;
+  --shadow-soft: 0 1px 2px rgba(31, 27, 23, 0.04),  0 8px 24px -14px rgba(31, 27, 23, 0.18);
+  --shadow-lift: 0 2px 8px rgba(31, 27, 23, 0.06),  0 22px 42px -22px rgba(31, 27, 23, 0.28);
+  --shadow-dusk: 0 2px 6px rgba(0, 0, 0, 0.22),     0 26px 56px -22px rgba(0, 0, 0, 0.38);
+  --ease-quiet:  cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  min-height: 100vh;
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  background: var(--c-bg);
+}
+
+/* ========== Band layout ========== */
+.band {
+  padding: 56px clamp(28px, 5vw, 80px);
+}
+.band-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.band-paper { background: var(--c-bg-1); }
+.band-paper + .band-paper { border-top: 1px solid var(--c-hairline); }
+.band-dusk {
+  background: var(--c-deepwood);
+  color: var(--c-bg);
+}
+
+/* ========== Hero ========== */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-brand-deep);
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 36px;
+}
+.hero h1 {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin: 14px 0 4px;
+  color: var(--c-ink);
+}
+.hero h1 .accent {
+  color: var(--c-brand-deep);
+  font-weight: 400;
+  font-style: italic;
+}
+.hero .h1-en {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--c-ink-3);
+  margin-top: 6px;
+}
+.hero-meta { text-align: right; }
+.hero-meta .label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+}
+.hero-meta time {
+  display: block;
+  font-family: var(--font-number);
+  font-weight: 400;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink);
+  margin-top: 6px;
+}
+
+/* ========== Section heads ========== */
+section.kpi-section { margin-top: 40px; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.section-head h2 {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: -0.008em;
+  margin: 0;
+  color: var(--c-ink);
+}
+.section-head .en {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+}
+
+/* ========== KPI grid ========== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.kpi-cell {
+  position: relative;
+  padding: 22px 22px 24px;
+  border-radius: var(--r-card);
+  background: rgba(255, 252, 244, 0.92);
+  border: 1px solid var(--c-hairline);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(8px) saturate(120%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 280ms var(--ease-quiet), box-shadow 280ms var(--ease-quiet), background 280ms var(--ease-quiet);
+  overflow: hidden;
+}
+.kpi-cell:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 252, 244, 0.98);
+  box-shadow: var(--shadow-lift);
+}
+.kpi-cell .label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.kpi-cell .label .zh {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-ink);
+}
+.kpi-cell .label .en {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+}
+.kpi-cell .value {
+  font-family: var(--font-number);
+  font-weight: 300;
+  font-size: 52px;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
+  color: var(--c-ink);
+  font-variant-numeric: tabular-nums;
+}
+.kpi-cell .delta {
+  font-size: 12px;
+  color: var(--c-ink-3);
+}
+
+/* Accent KPI · 暖橙 wash */
+.kpi-cell.accent {
+  background:
+    radial-gradient(140% 100% at 0% 0%, rgba(217, 119, 87, 0.18), transparent 55%),
+    rgba(255, 252, 244, 0.92);
+}
+.kpi-cell.accent .value {
+  color: var(--c-brand-deep);
+  font-weight: 400;
+  font-style: italic;
+  font-family: var(--font-title);
+  font-size: 56px;
+  letter-spacing: -0.02em;
+}
+
+/* Dusk lede KPI */
+.kpi-cell.dusk {
+  grid-column: span 2;
+  background:
+    radial-gradient(140% 100% at 0% 0%, rgba(217, 119, 87, 0.32), transparent 60%),
+    rgba(42, 32, 24, 0.88);
+  color: var(--c-bg);
+  border: 1px solid rgba(217, 119, 87, 0.24);
+  box-shadow: var(--shadow-dusk);
+  backdrop-filter: blur(22px) saturate(150%);
+}
+.kpi-cell.dusk .label .zh { color: var(--c-bg); }
+.kpi-cell.dusk .label .en { color: var(--c-brand-soft); }
+.kpi-cell.dusk .value {
+  color: var(--c-bg);
+  font-size: 76px;
+  font-weight: 200;
+}
+.kpi-cell.dusk .delta { color: var(--c-brand-mist); }
+
+/* ========== Editorial blocks (dusk section) ========== */
+.editorial-row {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.editorial-block {
+  position: relative;
+  padding: 24px 22px;
+  border-radius: var(--r-card);
+  background: rgba(58, 46, 34, 0.62);
+  border: 1px solid rgba(217, 119, 87, 0.18);
+  box-shadow: var(--shadow-dusk);
+  backdrop-filter: blur(18px) saturate(140%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 280ms var(--ease-quiet), box-shadow 280ms var(--ease-quiet), background 280ms var(--ease-quiet);
+  overflow: hidden;
+}
+.editorial-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 220, 190, 0.04), transparent 40%);
+  border-radius: inherit;
+}
+.editorial-block:hover {
+  transform: translateY(-2px);
+  background: rgba(58, 46, 34, 0.78);
+}
+.editorial-block > * { position: relative; }
+
+.editorial-block .stamp {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-brand-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.editorial-block .stamp::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: var(--c-brand);
+}
+.editorial-block .lead {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.28;
+  color: var(--c-bg);
+  margin-top: 6px;
+  letter-spacing: -0.008em;
+}
+.editorial-block .num-pair {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 10px;
+}
+.editorial-block .num-pair .num {
+  font-family: var(--font-number);
+  font-weight: 300;
+  font-size: 32px;
+  letter-spacing: -0.035em;
+  color: var(--c-bg);
+  font-variant-numeric: tabular-nums;
+}
+.editorial-block .num-pair .unit {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-brand-soft);
+}
+.editorial-block .body {
+  font-size: 13px;
+  color: var(--c-brand-mist);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+.band-dusk .section-head h2 { color: var(--c-bg); font-weight: 300; }
+.band-dusk .section-head .en { color: var(--c-brand-soft); }
+
+.band-dusk-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-brand-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.band-dusk-eyebrow .dot {
+  width: 22px; height: 22px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--c-brand), var(--c-brand-deep));
+  box-shadow: 0 4px 12px rgba(217, 119, 87, 0.45);
+}
+
+.footnote {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(217, 119, 87, 0.22);
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-brand-soft);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 960px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-cell.dusk { grid-column: span 2; }
+  .editorial-row { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="band band-paper">
+  <div class="band-inner">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">2026 · Vol. 02 · Global Snapshot</div>
+        <h1>全球医美 <span class="accent">产业图谱</span></h1>
+        <div class="h1-en">Global Medical Aesthetics Landscape</div>
+      </div>
+      <div class="hero-meta">
+        <span class="label">Updated</span>
+        <time>2026·05·19</time>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="band band-paper">
+  <div class="band-inner">
+    <section class="kpi-section" style="margin-top:0;">
+      <div class="section-head">
+        <h2>核心指标</h2>
+        <span class="en">CORE METRICS · N = 977 / 372</span>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-cell dusk">
+          <span class="label"><span class="en">PRODUCT LINES</span><span class="zh">产品线 · 全球覆盖</span></span>
+          <span class="value">977</span>
+          <span class="delta">38 countries · 10 categories</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">UPSTREAM CO.</span><span class="zh">上游企业</span></span>
+          <span class="value">372</span>
+          <span class="delta">manufacturers · brand owners</span>
+        </div>
+        <div class="kpi-cell accent">
+          <span class="label"><span class="en">LISTED ENTITIES</span><span class="zh">上市主体</span></span>
+          <span class="value">61</span>
+          <span class="delta">across 15 exchanges</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">BRANDS</span><span class="zh">品牌</span></span>
+          <span class="value">946</span>
+          <span class="delta">881 product · 96 corporate</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">INDICATION SIGNALS</span><span class="zh">适应症信号</span></span>
+          <span class="value">958</span>
+          <span class="delta">cross-ref product master</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">REG. EVIDENCE</span><span class="zh">监管注册证据</span></span>
+          <span class="value">410</span>
+          <span class="delta">FDA 321 · CE/EU 49</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">PRODUCT SPECS</span><span class="zh">产品规格证据</span></span>
+          <span class="value">31,736</span>
+          <span class="delta">362 companies covered</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="band band-dusk">
+  <div class="band-inner">
+    <section class="kpi-section" style="margin-top:0;">
+      <div class="section-head">
+        <h2>编辑视角</h2>
+        <span class="band-dusk-eyebrow">
+          <span class="dot"></span>
+          EDITORIAL · NEW LENSES FROM EXCEL
+        </span>
+      </div>
+      <div class="editorial-row">
+        <article class="editorial-block">
+          <span class="stamp">LENS 01 · REGULATORY PULSE</span>
+          <div class="lead">FDA clearance 节奏 2022 后翻倍。</div>
+          <div class="num-pair"><span class="num">69</span><span class="unit">CLEARANCES · 2022–2026</span></div>
+          <div class="body">同期 CE/MDR 仅 24 条；中国 NMPA 由独立项目覆盖。</div>
+        </article>
+        <article class="editorial-block">
+          <span class="stamp">LENS 02 · KOREA FACTOR</span>
+          <div class="lead">韩国占全球上游企业 28%。</div>
+          <div class="num-pair"><span class="num">105</span><span class="unit">COMPANIES · 274 PRODUCTS</span></div>
+          <div class="body">远超美国 60 / 意大利 36；上市仅 22 家，私营出口集群。</div>
+        </article>
+        <article class="editorial-block">
+          <span class="stamp">LENS 03 · CAPITAL BAND SKEW</span>
+          <div class="lead">已上市 64 家，半数小盘。</div>
+          <div class="num-pair"><span class="num">30</span><span class="unit">SMALL CAP · 3 MEGA CAP</span></div>
+          <div class="body">大市值集中在 NASDAQ；KRX 22 家小盘构成韩股板块。</div>
+        </article>
+      </div>
+      <div class="footnote">
+        <span>原色板 · CLAUDE 暖橙优化版 · 板块切换 + serif 标题</span>
+        <span>Global Aesthetics Map</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>

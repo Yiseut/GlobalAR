@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>资本地图 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Lens 03 · New dimension</div>
+      <h1>
+        资本地图
+        <span class="h1-en">Capital Map &amp; Valuation Bands</span>
+      </h1>
+      <p class="lede">61 家已上市主体 · 15 个交易所 · 估值带、交易所、母子结构 + 金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。</p>
+      <div class="stat-row">
+        <span>已上市 <span class="num">61</span> / 372 = <span class="num">16</span>%</span>
+        <span>主交易所 KRX <span class="num">22</span> + NASDAQ <span class="num">15</span></span>
+        <span>巨盘 <span class="num">3</span> · 大盘 <span class="num">3</span> · 中盘 <span class="num">12</span> · 小盘 <span class="num">30</span></span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="cn">· 上市分布</span><span class="en">Headline numbers</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede has-wash w-rose-deep">
+          <div class="label">
+            <span class="en">Listing rate</span>
+            <span class="zh">全行业上市率</span>
+          </div>
+          <span class="value">16%</span>
+          <span class="delta">61 / 372 上游企业上市</span>
+        </article>
+        <article class="kpi-cell has-wash w-plum">
+          <div class="label"><span class="en">Small cap dominance</span><span class="zh">小盘占比</span></div>
+          <span class="value">63%</span>
+          <span class="delta">30 / 48 有估值带的</span>
+        </article>
+        <article class="kpi-cell has-wash w-peach">
+          <div class="label"><span class="en">Mega cap</span><span class="zh">巨盘公司</span></div>
+          <span class="value">3</span>
+          <span class="delta">AbbVie · J&amp;J · 中外医药</span>
+        </article>
+        <article class="kpi-cell has-wash w-sand">
+          <div class="label"><span class="en">KRX subset</span><span class="zh">韩交所</span></div>
+          <span class="value">22</span>
+          <span class="delta">几乎全部小盘 · 韩股板块</span>
+        </article>
+        <article class="kpi-cell has-wash w-rose">
+          <div class="label"><span class="en">NASDAQ</span><span class="zh">纳斯达克</span></div>
+          <span class="value">15</span>
+          <span class="delta">InMode · Apyx · STAA 等</span>
+        </article>
+        <article class="kpi-cell has-wash w-slate">
+          <div class="label"><span class="en">Subsidiaries</span><span class="zh">子公司 / 关联</span></div>
+          <span class="value">15</span>
+          <span class="delta">46 主体 + 15 子结构</span>
+        </article>
+        <article class="kpi-cell has-wash w-sage">
+          <div class="label"><span class="en">Pending valuation</span><span class="zh">估值待补</span></div>
+          <span class="value">13</span>
+          <span class="delta">本批次未抓到市值快照</span>
+        </article>
+        <article class="kpi-cell has-wash w-lavender">
+          <div class="label"><span class="en">Private companies</span><span class="zh">私营企业</span></div>
+          <span class="value">309</span>
+          <span class="delta">83% 全行业以私营为主</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>估值带分布</h2>
+        <span class="cn">· 48 家分档</span><span class="en">Valuation bands</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">小盘统治：48 家有估值带分类的企业里 30 家小盘</div>
+        <div class="chart-sub">头部由 3 家巨盘 + 3 家大盘构成 — 集中在传统药械综合体；中段断层。13 家"pending" 是数据采集本轮未覆盖的，下一批补全。</div>
+
+        <div class="bar-row val-band-row" data-band="small cap" data-n="30">
+          <div class="label">小盘 Small Cap<small>&lt; $2B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#C76B68; flex:30"></div>
+          </div>
+          <div class="bar-total">30</div>
+        </div>
+        <div class="bar-row val-band-row" data-band="mid cap" data-n="12">
+          <div class="label">中盘 Mid Cap<small>$2B – $10B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#8E3A3A; flex:12"></div>
+          </div>
+          <div class="bar-total">12</div>
+        </div>
+        <div class="bar-row val-band-row" data-band="large cap" data-n="3">
+          <div class="label">大盘 Large Cap<small>$10B – $200B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#4A3D52; flex:3"></div>
+          </div>
+          <div class="bar-total">3</div>
+        </div>
+        <div class="bar-row val-band-row" data-band="mega cap" data-n="3">
+          <div class="label">巨盘 Mega Cap<small>&gt; $200B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#3C0A09; flex:3"></div>
+          </div>
+          <div class="bar-total">3</div>
+        </div>
+        <div class="bar-row val-band-row" data-band="pending" data-n="13">
+          <div class="label">待补 Pending<small>本轮未抓取</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#A99FB3; flex:13"></div>
+          </div>
+          <div class="bar-total">13</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>交易所分布</h2>
+        <span class="cn">· 15 个交易所</span><span class="en">Exchange distribution</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">韩股板块 + 美股板块 = 60% 全部上市主体</div>
+        <div class="chart-sub">KRX 22 家全部为韩国医美设备 / 注射出口企业；NASDAQ 15 家是 EBD 头部的主要资本市场。Borsa Italiana 5 家反映欧洲注射类传统格局。</div>
+        <div class="donut-row">
+          <div class="donut-wrap">
+            <svg width="280" height="280" viewBox="0 0 280 280" aria-label="交易所分布">
+              <g transform="rotate(-90 140 140)">
+                <!-- circumference 2π*98 ≈ 615.75 ; total 62 -->
+                <circle class="exch-slice" data-exchange="KRX" data-n="22" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="218.45 397.30" stroke-dashoffset="0"/>
+                <circle class="exch-slice" data-exchange="NASDAQ" data-n="15" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="148.94 466.81" stroke-dashoffset="-218.45"/>
+                <circle class="exch-slice" data-exchange="Borsa Italiana" data-n="5" r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="49.65 566.10" stroke-dashoffset="-367.39"/>
+                <circle class="exch-slice" data-exchange="Paris" data-n="3" r="98" cx="140" cy="140" fill="none" stroke="#C76B68" stroke-width="38" stroke-dasharray="29.79 585.96" stroke-dashoffset="-417.04"/>
+                <circle class="exch-slice" data-exchange="SZSE" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="19.86 595.89" stroke-dashoffset="-446.83"/>
+                <circle class="exch-slice" data-exchange="TW" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="19.86 595.89" stroke-dashoffset="-466.69"/>
+                <circle class="exch-slice" data-exchange="TA" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#A8B59A" stroke-width="38" stroke-dasharray="19.86 595.89" stroke-dashoffset="-486.55"/>
+                <circle class="exch-slice" data-exchange="Other" data-n="11" r="98" cx="140" cy="140" fill="none" stroke="#8C7B91" stroke-width="38" stroke-dasharray="109.21 506.54" stroke-dashoffset="-506.41"/>
+              </g>
+            </svg>
+            <div class="donut-center">
+              <span class="big">62</span>
+              <span class="small">listed records</span>
+            </div>
+          </div>
+          <div class="donut-list">
+            <div class="row exch-row" data-exchange="KRX"><span class="sw" style="background:#8E3A3A"></span><span class="name">KRX · 韩国交易所</span><span class="num">22</span><span class="pct">35.5%</span></div>
+            <div class="row exch-row" data-exchange="NASDAQ"><span class="sw" style="background:#6B5A75"></span><span class="name">NASDAQ · 美国</span><span class="num">15</span><span class="pct">24.2%</span></div>
+            <div class="row exch-row" data-exchange="Borsa Italiana"><span class="sw" style="background:#D9AE91"></span><span class="name">Borsa Italiana · 意大利</span><span class="num">5</span><span class="pct">8.1%</span></div>
+            <div class="row exch-row" data-exchange="Paris"><span class="sw" style="background:#C76B68"></span><span class="name">Paris (PA) · 法国</span><span class="num">3</span><span class="pct">4.8%</span></div>
+            <div class="row exch-row" data-exchange="SZSE"><span class="sw" style="background:#5A6878"></span><span class="name">SZSE · 深圳</span><span class="num">2</span><span class="pct">3.2%</span></div>
+            <div class="row exch-row" data-exchange="TW"><span class="sw" style="background:#CFB58E"></span><span class="name">TW / TWO · 台湾</span><span class="num">2</span><span class="pct">3.2%</span></div>
+            <div class="row exch-row" data-exchange="TA"><span class="sw" style="background:#A8B59A"></span><span class="name">TA · 特拉维夫</span><span class="num">2</span><span class="pct">3.2%</span></div>
+            <div class="row exch-row" data-exchange="Other"><span class="sw" style="background:#8C7B91"></span><span class="name">SIX · BR · T · HKEX · ASX · JSE · OTC</span><span class="num">11</span><span class="pct">17.7%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>头部已上市主体</h2>
+        <span class="cn">· Top 12</span><span class="en">Top listed entities</span>
+      </div>
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:40px;">#</th>
+              <th>公司</th>
+              <th>主赛道</th>
+              <th>交易所</th>
+              <th>代码</th>
+              <th>估值带</th>
+              <th class="num">关联</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td>AbbVie (Allergan Aesthetics)</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>NYSE</td><td>ABBV</td><td><span class="pill-tag pill-default">Mega Cap</span></td><td class="num">1</td></tr>
+            <tr><td>02</td><td>Johnson &amp; Johnson</td><td><span class="pill-tag pill-implants">Implants</span></td><td>NYSE</td><td>JNJ</td><td><span class="pill-tag pill-default">Mega Cap</span></td><td class="num">1</td></tr>
+            <tr><td>03</td><td>Galderma</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>SIX</td><td>GALD</td><td><span class="pill-tag pill-default">Large Cap</span></td><td class="num">1</td></tr>
+            <tr><td>04</td><td>Bausch Health</td><td><span class="pill-tag pill-skincare">Cosmeceutical</span></td><td>NYSE</td><td>BHC</td><td><span class="pill-tag pill-default">Large Cap</span></td><td class="num">1</td></tr>
+            <tr><td>05</td><td>InMode</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>INMD</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>06</td><td>Hugel</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>145020</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>07</td><td>Medytox</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>086900</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>08</td><td>Classys</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>KRX</td><td>214150</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>09</td><td>Daewoong Pharm.</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>069620</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Cutera</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>CUTR</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
+            <tr><td>11</td><td>Apyx Medical</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>APYX</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
+            <tr><td>12</td><td>STAAR Surgical</td><td><span class="pill-tag pill-implants">Implants</span></td><td>NASDAQ</td><td>STAA</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">估值带为本地底库快照（截至 <span data-bind-text="generated_at_short">2026·05·20</span>），不代表实时市值；股价 / 市值由 market_snapshot 周更层维护，雪球仅作为行情交叉核验，不覆盖官方上市身份。</p>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>财务快照 · 16 家</h2>
+        <span class="cn">· SEC XBRL 14 + 非美 IR 候选 2</span>
+        <span class="financial-update-badge">
+          <span class="zh">金融数据更新</span>
+          <span class="en-inline">Financial data updated</span>
+          <strong data-bind-text="financial_last_updated">—</strong>
+        </span>
+        <span class="en">Financial snapshot · 16 cos</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">SEC 14 家（XBRL 自动）+ 非美 IR 手工候选 2 家（El.En. · Galderma），10 家在采集队列。</div>
+        <div class="chart-sub">P/S 用当前 market_snapshot 的市值 ÷ 年度营收；股价、总市值、P/E、P/B、EPS 走行情快照，净利润增长优先走 SEC XBRL / IR 年报口径。Allergan 在母公司 AbbVie (ABBV) 合并报表；Solta 在 Bausch Health (BHC) 合并报表。Cutera 2024 后停 SEC 备案，仅有 FY2020 数据；Novartis 非美 IR 待补。</div>
+
+        <div class="table-card" style="margin-top:14px;">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:40px;">#</th>
+                <th>公司 / Company</th>
+                <th>Ticker</th>
+                <th>FY</th>
+                <th class="num">Revenue $M</th>
+                <th class="num">Gross Margin</th>
+                <th class="num">P/S Ratio</th>
+                <th>口径备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>01</td><td>Johnson &amp; Johnson</td><td>JNJ</td><td>FY25</td><td class="num">94,193</td><td class="num">67.9%</td><td class="num">5.7×</td><td>合并报表 · 含 J&amp;J MedTech / Pharma</td></tr>
+              <tr><td>02</td><td>AbbVie (Allergan Aesthetics 母公司)</td><td>ABBV</td><td>FY25</td><td class="num">61,160</td><td class="num">19.7%</td><td class="num">6.0×</td><td>合并报表 · 医美仅子部门</td></tr>
+              <tr><td>03</td><td>Bausch Health (Solta 母公司)</td><td>BHC</td><td>FY25</td><td class="num">10,266</td><td class="num">—</td><td class="num">0.2×</td><td>合并报表 · 含 Bausch+Lomb 等</td></tr>
+              <tr><td>04</td><td>Halozyme Therapeutics</td><td>HALO</td><td>FY25</td><td class="num">1,397</td><td class="num">0.4%</td><td class="num">6.0×</td><td>毛利率口径异常 · XBRL revenue concept 待复核</td></tr>
+              <tr><td>05</td><td>InMode</td><td>INMD</td><td>FY25</td><td class="num">370</td><td class="num">78.5%</td><td class="num">2.3×</td><td>EBD 头部纯医美标的</td></tr>
+              <tr><td>06</td><td>Beauty Health</td><td>SKIN</td><td>FY25</td><td class="num">301</td><td class="num">65.3%</td><td class="num">0.3×</td><td>HydraFacial · 增长放缓导致 P/S 压缩</td></tr>
+              <tr><td>07</td><td>Evolus</td><td>EOLS</td><td>FY25</td><td class="num">297</td><td class="num">66.3%</td><td class="num">1.4×</td><td>Jeuveau 神经毒素 · 增长导向</td></tr>
+              <tr><td>08</td><td>Waldencast (Obagi)</td><td>WALD</td><td>FY25</td><td class="num">272</td><td class="num">67.3%</td><td class="num">0.8×</td><td>Obagi + Milk Makeup 合并体</td></tr>
+              <tr><td>09</td><td>Establishment Labs</td><td>ESTA</td><td>FY25</td><td class="num">211</td><td class="num">69.3%</td><td class="num">9.7×</td><td>Motiva 乳房植入物 · 高 P/S 反映增长预期</td></tr>
+              <tr><td>10</td><td>Venus Concept</td><td>VERO</td><td>FY24</td><td class="num">65</td><td class="num">68.3%</td><td class="num">0.01×</td><td>资本结构受压 · 市值近零</td></tr>
+              <tr><td>11</td><td>Apyx Medical</td><td>APYX</td><td>FY25</td><td class="num">53</td><td class="num">62.5%</td><td class="num">3.2×</td><td>Renuvion 等离子能量平台</td></tr>
+              <tr><td>12</td><td>Cutera</td><td>CUTR</td><td>FY20</td><td class="num">50</td><td class="num">83.1%</td><td class="num">—</td><td>2024 后停止 SEC 备案，数据已过期</td></tr>
+              <tr><td>13</td><td>Novartis</td><td>NOVN</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>SIX 上市 · 不走 SEC 口径</td></tr>
+              <tr style="background:rgba(168,181,154,0.06);"><td>14</td><td>El.En. Group</td><td>ELN</td><td>FY24</td><td class="num">735</td><td class="num">~37%</td><td class="num">1.8×</td><td><strong>NEW</strong> · 合并 Quanta / DEKA / Asclepion · IR 候选 · 待核实</td></tr>
+              <tr style="background:rgba(168,181,154,0.06);"><td>15</td><td>Galderma</td><td>GALD</td><td>FY24</td><td class="num">4,359</td><td class="num">~74%</td><td class="num">11.1×</td><td><strong>NEW</strong> · SIX 上市 · 注射 + 功能性护肤品旗舰 · 待核实</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">数据源：SEC XBRL companyfacts API（14 家）· 公司 IR 公开披露（非美 2 家，标记 manual_pending_verification）。<strong>采集队列还有 10 家</strong>：Hugel · Classys · Medytox · Sisram · PharmaResearch · Caregen · Daewoong · L'Oréal · Ipsen · Bayer，存于 <code>data/audits/non_us_financial_pending_collection_latest.csv</code>，每家有 IR 链接，按公开年报手工核验后改 status 即可并入。</p>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>集团树</h2>
+        <span class="cn">· 21 条已识别母子关系 / 16 个 ultimate</span><span class="en">Corporate family tree</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">21 / 371 公司有可信母公司归属；其余 350 家按"独立运营或未识别"处理。</div>
+        <div class="chart-sub">关系来源：`listed_company_batch` 资本结构字段 + 公开并购公告。本表只列出可在事实层引用的关系，"未核实"标签的不写入 registered_evidence。Lumenis → Boston Scientific 字段使用 U+2192 箭头字符，需要 UI 字体能渲染（部分终端会显示为方块）。</div>
+
+        <div class="group-tree" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; margin-top:12px;">
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">El.En. <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">Italy · Borsa Italiana ELN.MI</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Asclepion · Asclepion Laser · DEKA · Quanta System (4 子)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">AbbVie <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">USA · NYSE ABBV</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Allergan Aesthetics (Injectables 头部)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Huadong Medicine <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">China · SZSE 000963</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Sinclair Pharma (UK/IL) · Cocoon Medical (ES)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Sisram Medical <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">Israel · HKEX 1696</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Alma Lasers (EBD 头部)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Bausch Health <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">Canada · NYSE BHC</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Solta Medical (EBD)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Cynosure <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">USA · 私有</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ HOYA ConBio · Palomar Medical (历史并购)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Hahn &amp; Company <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">KR PE · 私有基金</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Cynosure (2019 收购自 Hologic)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Apax Partners <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">UK PE · 私有基金</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Candela Medical</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Hologic (Cynosure) <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">USA · NASDAQ HOLX</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Lutronic / Cynosure Lutronic (历史)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Galderma <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">Switzerland · SIX GALD</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Q-Med AB (HA 注射技术)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Waldencast plc <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">USA · NASDAQ WALD</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Obagi (Cosmeceutical)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Classys <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">South Korea · KRX 214150</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Ilooda (EBD 子品牌)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Hugel <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">South Korea · KRX 145020</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Across (Injectables 子品牌)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">IBSA Group <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">Switzerland · 私有</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ IBSA Derma (注射剂)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Apyx Medical <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">USA · NASDAQ APYX</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Eclipse Medical</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+          <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
+            <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Lumenis → Boston Scientific <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">Israel → USA · 资产/部门转让链</small></div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Pollogen (TriPollar 等)</div>
+            <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">needs_verification · 待核实</div>
+          </div>
+
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">"listed_relationship_seed" 来自 listed_company_batch 资本结构字段；"needs_verification" 来自公开并购公告，未在事实层使用。剩余 350 家公司按"独立运营或未识别"处理 — 不强行写入未核实的 M&amp;A 传闻。</p>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row">
+        <article class="editorial-block has-wash w-rose-deep wash-bottom-left">
+          <span class="stamp">Finding · 01</span>
+          <div class="lead">头重脚轻 + 中段空心。</div>
+          <div class="num-pair"><span class="num">12</span><span class="unit">mid-cap only</span></div>
+          <div class="body">巨盘 <em>3</em> + 大盘 <em>3</em> = 6 家撑起行业资本叙事；中盘仅 <em>12</em> 家；小盘 <em>30</em> 家集中在 KRX。这意味着除头部并购整合者外，行业还没有形成真正的中型 platform 玩家。</div>
+        </article>
+        <article class="editorial-block has-wash w-apricot wash-bottom-left">
+          <span class="stamp">Finding · 02</span>
+          <div class="lead">KRX 是隐藏的产能池。</div>
+          <div class="num-pair"><span class="num">30%</span><span class="unit">global product supply</span></div>
+          <div class="body"><em>22</em> 家韩股全部小盘，但它们贡献了全球医美产品供给的近 <em>30</em>%。"KRX 小盘 × OEM 出口" 是当前行业最被低估的商业模式。</div>
+        </article>
+        <article class="editorial-block has-wash w-plum wash-bottom-left">
+          <span class="stamp">Finding · 03</span>
+          <div class="lead">非上市集团应单独追踪。</div>
+          <div class="num-pair"><span class="num">4+</span><span class="unit">dark-pool players</span></div>
+          <div class="body">Lumenis · Cynosure · Alma Lasers · Merz 等都是非上市（私有 / 已退市 / PE 持有）但份额大的玩家，应建立独立的"暗股池"追踪表 — 资本动作不进股市但影响行业并购。</div>
+        </article>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 资本地图 Capital Map · 61 listed · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260607"></script>
+<script src="./v3-companies.js?v=20260524"></script>
+<script src="./v3-product-tree.js?v=20260526"></script>
+<script src="./v3-company-detail.js?v=20260526"></script>
+<script src="./v3-chart-interact.js?v=20260607-tooltip"></script>
+<script src="./_nav.js" data-active="capital"></script>
+<style>
+  .table-card tr.co-row { cursor: pointer; transition: background-color .12s ease; }
+  .table-card tr.co-row:hover { background-color: rgba(184,89,87,0.06); }
+  .val-band-row { cursor: pointer; transition: background-color .12s ease; }
+  .val-band-row:hover { background-color: rgba(184,89,87,0.06); }
+  .exch-slice { cursor: pointer; transition: opacity .12s ease; }
+  .exch-slice:hover { opacity: 0.78; }
+  .donut-list .exch-row { cursor: pointer; transition: background-color .12s ease; }
+  .donut-list .exch-row:hover { background-color: rgba(184,89,87,0.06); }
+  .section-head .financial-update-badge {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 28px;
+    padding: 6px 10px;
+    border: 1px solid rgba(142, 58, 58, 0.18);
+    border-radius: 6px;
+    background: rgba(255, 252, 245, 0.76);
+    color: var(--muted);
+    font-family: var(--f-sans);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-head .financial-update-badge + .en { margin-left: 0; }
+  .financial-update-badge .zh {
+    font-family: var(--f-display-cn);
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    text-transform: none;
+  }
+  .financial-update-badge strong {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  @media (max-width: 760px) {
+    .section-head .financial-update-badge {
+      margin-left: 0;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+</style>
+<script>
+  (function () {
+    const d = window.GLOBAL_AESTHETICS_DATA;
+    const fmt = (value) => {
+      if (!value) return "—";
+      const text = String(value);
+      const match = text.match(/\d{4}-\d{2}-\d{2}/);
+      return match ? match[0].replace(/-/g, "·") : text.slice(0, 10).replace(/-/g, "·");
+    };
+    if (d && d.generated_at) {
+      const s = fmt(d.generated_at);
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+    const refresh = d && d.financial_kpi_refresh;
+    const financialLast = refresh && (refresh.latest_updated_at || refresh.market_last_updated_at || refresh.financial_last_updated_at);
+    document.querySelectorAll("[data-bind-text='financial_last_updated']").forEach(el => { el.textContent = fmt(financialLast); });
+  })();
+  if (window.V3CompanyDetail) {
+    window.V3CompanyDetail.attachToTable(".table-card table tbody tr", { nameCellSelector: "td:nth-child(2)" });
+  }
+
+  // ============ Chart interactivity (Pack D) ============
+  (function wireCharts () {
+    if (!window.V3DrillPanel || !window.V3Tooltip) return;
+    const cd = window.V3_COMPANIES_DATA;
+    if (!cd) return;
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    // Public companies only — they have stock_code
+    const publicCompanies = cd.companies.filter(c => (c.ownership || "").toLowerCase().includes("public") && c.stock_code);
+
+    // ---- Valuation bands ----
+    // We don't have valuation_band per company in V3_COMPANIES_DATA cleanly.
+    // Use market-cap appx from app-data.public_companies if available.
+    const pubMeta = (window.GLOBAL_AESTHETICS_DATA && window.GLOBAL_AESTHETICS_DATA.public_companies) || [];
+    function classifyBand (mcM) {
+      if (!Number.isFinite(mcM)) return "pending";
+      if (mcM >= 200000) return "mega cap";
+      if (mcM >= 10000)  return "large cap";
+      if (mcM >= 2000)   return "mid cap";
+      return "small cap";
+    }
+    const bandMembers = { "small cap": [], "mid cap": [], "large cap": [], "mega cap": [], "pending": [] };
+    publicCompanies.forEach(c => {
+      const m = pubMeta.find(p => (p.company || "").toLowerCase() === (c.name || "").toLowerCase()
+                                || (p.stock_code || "") === c.stock_code);
+      const mc = m && Number(m.market_cap_usd_m || m.market_cap);
+      const band = classifyBand(mc);
+      bandMembers[band].push({ ...c, market_cap_m: mc });
+    });
+
+    document.querySelectorAll(".val-band-row").forEach(row => {
+      const band = row.getAttribute("data-band");
+      const n = parseInt(row.getAttribute("data-n") || "0", 10);
+      const labelText = row.querySelector(".label").textContent.trim();
+      window.V3Tooltip.attach(row, () => ({
+        title: labelText,
+        lines: [`<em>${n}</em> listed companies in this band`],
+        hint: "click → see companies",
+      }));
+      row.addEventListener("click", () => {
+        const cos = bandMembers[band] || [];
+        window.V3DrillPanel.open({
+          stamp: "Valuation band · drill",
+          title: labelText,
+          sub: `${cos.length} matched in V3_COMPANIES_DATA (~${n} 总 listed)`,
+          summary: [
+            { k: "Band", v: band.toUpperCase() },
+            { k: "Total", v: n },
+            { k: "Matched", v: cos.length },
+          ],
+          rows: cos.length ? cos.map(c => ({
+            company_id: c.company_id,
+            name: c.name,
+            hint: `${c.country || "—"} · ${c.stock_code || "—"} · ${c.primary_track || "—"} · ${c.market_cap_m ? "$" + Math.round(c.market_cap_m).toLocaleString() + "M mc" : "no mc"}`,
+            color: TRACK_COLORS[c.primary_track] || "#888",
+          })) : publicCompanies.slice(0, 30).map(c => ({
+            company_id: c.company_id,
+            name: c.name,
+            hint: `${c.country || "—"} · ${c.stock_code || "—"} · ${c.primary_track || "—"}`,
+            color: TRACK_COLORS[c.primary_track] || "#888",
+          })),
+          empty: "本批次未抓到该档市值数据",
+        });
+      });
+    });
+
+    // ---- Exchange donut ----
+    function exchangeMatch (exch, code) {
+      if (!code) return false;
+      const c = code.toUpperCase();
+      const e = exch.toUpperCase();
+      if (e === "OTHER") {
+        // not KRX/NASDAQ/Borsa/Paris/SZSE/TW/TA
+        return !["KRX","NASDAQ","SIX","KOSDAQ","KOSPI","BORSA","PA","SZSE","SHANGHAI",
+                 "TW","TWO","TA","HKEX","ASX","JSE","OTC","XETRA","BR","T"].some(k => c.includes(k));
+      }
+      if (e === "KRX") return c.includes("KRX") || c.includes("KOSDAQ") || c.includes("KOSPI");
+      if (e === "PARIS") return c.includes("PA") || c.includes("PARIS");
+      if (e === "BORSA ITALIANA") return c.includes("BORSA") || c.startsWith("BIT:") || c.startsWith("MI:");
+      return c.includes(e);
+    }
+    function openExchangeDrill (exch, n) {
+      const matches = publicCompanies.filter(c => exchangeMatch(exch, c.stock_code));
+      window.V3DrillPanel.open({
+        stamp: "Exchange · drill",
+        title: exch,
+        sub: `${matches.length} matched · ${n} 全 listed records`,
+        summary: [
+          { k: "Exchange", v: exch },
+          { k: "Total", v: n },
+        ],
+        rows: matches.map(c => ({
+          company_id: c.company_id,
+          name: c.name,
+          hint: `${c.country || "—"} · ${c.stock_code || "—"} · ${c.primary_track || "—"} · ${c.products || 0} prod`,
+          color: TRACK_COLORS[c.primary_track] || "#888",
+        })),
+        empty: "未匹配到 V3_COMPANIES_DATA 内的公司（可能 stock_code 字段命名差异）",
+      });
+    }
+    document.querySelectorAll(".exch-slice").forEach(s => {
+      const exch = s.getAttribute("data-exchange");
+      const n = parseInt(s.getAttribute("data-n") || "0", 10);
+      window.V3Tooltip.attach(s, () => ({
+        title: exch,
+        lines: [`<em>${n}</em> listed · ${(n / 62 * 100).toFixed(1)}% of total`],
+        hint: "click → see listed companies",
+      }));
+      s.addEventListener("click", () => openExchangeDrill(exch, n));
+    });
+    document.querySelectorAll(".exch-row").forEach(row => {
+      const exch = row.getAttribute("data-exchange");
+      const n = parseInt(row.querySelector(".num").textContent.trim() || "0", 10);
+      window.V3Tooltip.attach(row, () => ({
+        title: exch,
+        lines: [`<em>${n}</em> listed`],
+        hint: "click → see listed companies",
+      }));
+      row.addEventListener("click", () => openExchangeDrill(exch, n));
+    });
+  })();
+</script>
+
+</body>
+</html>

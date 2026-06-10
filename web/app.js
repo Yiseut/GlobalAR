@@ -1,6 +1,8 @@
 const DATA = window.GLOBAL_AESTHETICS_DATA || {};
 const RAW_SEGMENTS = DATA.segments || [];
+const MATERIAL_TAXONOMY = DATA.material_taxonomy_structure || {};
 const $ = (id) => document.getElementById(id);
+let activeTaxonomyL1Id = "";
 
 const MATERIAL_LABELS = {
   ha: "玻尿酸 / HA",
@@ -9,7 +11,7 @@ const MATERIAL_LABELS = {
   caha: "CaHA",
   pn_pdrn: "PN / PDRN",
   exosome: "外泌体 / Exosomes",
-  botulinum: "肉毒毒素 / Neurotoxin",
+  botulinum: "肉毒毒素",
   ebd: "光电设备 / EBD",
   threads: "线材 / Threads",
   mesotherapy: "中胚层 / Mesotherapy",
@@ -58,8 +60,8 @@ const TRACK_GROUPS = [
   },
   {
     id: "toxin",
-    name: "肉毒毒素 / Neurotoxin",
-    note: "Neurotoxin",
+    name: "肉毒毒素",
+    note: "Botulinum toxin",
     blockNote: "冻干粉针 · 即用液体 · 长效/新剂型",
     insight: "准入门槛高，真正的差异来自剂型、持续时间、生产体系与地区注册路径。",
     color: "#B87333",
@@ -592,6 +594,393 @@ function percent(part, total) {
   return clamp(Math.round((Number(part || 0) / denominator) * 100), 0, 100);
 }
 
+function taxonomyL1Rows() {
+  return (MATERIAL_TAXONOMY.l1 || []).filter((item) => item && Number(item.products || item.value || 0) > 0);
+}
+
+function hasMaterialTaxonomyStructure() {
+  return taxonomyL1Rows().length > 0;
+}
+
+function selectedTaxonomyL1() {
+  const rows = taxonomyL1Rows();
+  if (!rows.length) return null;
+  const query = new URLSearchParams(window.location.search);
+  const requested = query.get("l1");
+  if (!activeTaxonomyL1Id && requested && rows.some((item) => item.id === requested)) {
+    activeTaxonomyL1Id = requested;
+  }
+  if (!activeTaxonomyL1Id || !rows.some((item) => item.id === activeTaxonomyL1Id)) {
+    activeTaxonomyL1Id = rows[0].id;
+  }
+  return rows.find((item) => item.id === activeTaxonomyL1Id) || rows[0];
+}
+
+function updateTaxonomyUrl(l1Id) {
+  if (!l1Id || !window.history?.replaceState) return;
+  const url = new URL(window.location.href);
+  url.searchParams.set("l1", l1Id);
+  window.history.replaceState({}, "", url);
+}
+
+function activateTaxonomyL1(l1Id, options = {}) {
+  if (!l1Id) return;
+  activeTaxonomyL1Id = l1Id;
+  updateTaxonomyUrl(l1Id);
+  renderSegments();
+  renderSegmentDeepDive();
+  applyBilingualLayout($("segmentGrid"));
+  applyBilingualLayout($("segmentDeepDive"));
+  if (options.scroll) {
+    window.requestAnimationFrame(() => scrollToHashTarget("#segmentDeepDive", "smooth"));
+  }
+}
+
+function taxonomyShareLabel(value, total) {
+  return `${percent(value, total)}%`;
+}
+
+function taxonomyProductTitle(item) {
+  return [item.brand, item.product].filter(Boolean).join(" / ") || item.company || item.record_id || "Product";
+}
+
+function taxonomyShortText(value, limit = 150) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  return text.length > limit ? `${text.slice(0, limit)}...` : text;
+}
+
+function taxonomyFeatureTags(item) {
+  const raw = [item.feature_tags]
+    .filter(Boolean)
+    .join(",");
+  const seen = new Set();
+  return raw
+    .split(/[,;，；|]/)
+    .map((tag) => {
+      const value = tag.trim();
+      if (value === "Neurotoxin") return "肉毒毒素";
+      if (value.includes("Neurotoxin") && value.includes("零复合蛋白肉毒")) return "零复合蛋白肉毒";
+      return value;
+    })
+    .filter((tag) => {
+      const key = tag.toLowerCase();
+      if (!tag || seen.has(key) || key === "needs_verification") return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, 5);
+}
+
+function taxonomySampleMarkup(samples = []) {
+  const rows = samples || [];
+  return (
+    rows
+      .map((item) => {
+        const meta = [item.company, item.country, item.l3 || item.family, item.market_channel].filter(Boolean).join(" / ");
+        const note = taxonomyShortText(item.differentiator || item.intro || "", 150);
+        const tags = taxonomyFeatureTags(item);
+        return `
+          <div class="taxonomy-sample-row">
+            <strong>${escapeHtml(taxonomyProductTitle(item))}</strong>
+            <span>${escapeHtml(meta)}</span>
+            ${note ? `<p>${escapeHtml(note)}</p>` : ""}
+            ${tags.length ? `<div class="taxonomy-sample-tags">${tags.map((tag) => `<em>${escapeHtml(tag)}</em>`).join("")}</div>` : ""}
+          </div>
+        `;
+      })
+      .join("") || `<p class="empty-state small">暂无样例产品</p>`
+  );
+}
+
+function taxonomyCompactName(value = "") {
+  const text = String(value || "").trim();
+  if (!text) return "未分类";
+  const arrow = text.split(/\s*(?:→|>)\s*/).pop();
+  return (arrow || text).trim();
+}
+
+function taxonomyItemL3(item) {
+  return item.l3 || item.family || item.product_type_cn || "未分类";
+}
+
+function taxonomyFilteredSamples(row, activeL3 = "") {
+  const rows = row?.samples || [];
+  if (!activeL3) return rows;
+  return rows.filter((item) => taxonomyItemL3(item) === activeL3);
+}
+
+function taxonomyCountRows(samples = [], getter, limit = 8) {
+  const counts = new Map();
+  samples.forEach((item) => {
+    const value = getter(item);
+    if (!value) return;
+    counts.set(value, (counts.get(value) || 0) + 1);
+  });
+  return Array.from(counts.entries())
+    .map(([name, value]) => ({ name, value }))
+    .sort((a, b) => Number(b.value || 0) - Number(a.value || 0) || a.name.localeCompare(b.name, "zh-CN"))
+    .slice(0, limit);
+}
+
+function taxonomyDistinctCount(samples = [], getter) {
+  return new Set(samples.map(getter).filter(Boolean)).size;
+}
+
+function taxonomyL3Rows(row) {
+  const explicit = (row?.top_l3 || []).filter((item) => item?.name && Number(item.value || 0) > 0);
+  if (explicit.length) return explicit;
+  return taxonomyCountRows(row?.samples || [], taxonomyItemL3, 12);
+}
+
+function taxonomyRankMarkup(rows = [], options = {}) {
+  const items = rows.filter((item) => Number(item.value || 0) > 0).slice(0, options.limit || 8);
+  const max = maxValue(items);
+  const total = Number(options.total || 0) || items.reduce((sum, item) => sum + Number(item.value || 0), 0) || 1;
+  return (
+    items
+      .map((item) => {
+        const width = Math.max(4, (Number(item.value || 0) / max) * 100);
+        const share = percent(item.value, total);
+        const label = options.compact ? taxonomyCompactName(item.name) : item.name;
+        const attrs = options.tab ? ` type="button" data-taxonomy-l3-tab="${escapeHtml(item.name)}"` : "";
+        const tag = options.tab ? "button" : "div";
+        return `
+          <${tag} class="taxonomy-rank-row${options.active === item.name ? " is-active" : ""}"${attrs} title="${escapeHtml(item.name)} / ${fmt(item.value)}">
+            <span>${escapeHtml(label)}</span>
+            <i><b style="width:${width}%"></b></i>
+            <strong>${fmt(item.value)}<em>${share}%</em></strong>
+          </${tag}>
+        `;
+      })
+      .join("") || `<p class="empty-state small">${escapeHtml(options.empty || "暂无结构信号")}</p>`
+  );
+}
+
+function taxonomyTagCloudRows(samples = [], limit = 14) {
+  const counts = new Map();
+  samples.forEach((item) => {
+    taxonomyFeatureTags(item).forEach((tag) => counts.set(tag, (counts.get(tag) || 0) + 1));
+  });
+  return Array.from(counts.entries())
+    .map(([name, value]) => ({ name, value }))
+    .sort((a, b) => Number(b.value || 0) - Number(a.value || 0) || a.name.localeCompare(b.name, "zh-CN"))
+    .slice(0, limit);
+}
+
+function taxonomyTagKey(value = "") {
+  return String(value || "").trim().toLowerCase();
+}
+
+function taxonomySamplesByTag(samples = [], tag = "") {
+  const key = taxonomyTagKey(tag);
+  if (!key) return samples;
+  return samples.filter((item) => taxonomyFeatureTags(item).some((value) => taxonomyTagKey(value) === key));
+}
+
+function taxonomyTagCloudMarkup(rows = [], activeTag = "") {
+  const activeKey = taxonomyTagKey(activeTag);
+  return (
+    rows
+      .map(
+        (item) => `
+          <button class="taxonomy-tag-button${taxonomyTagKey(item.name) === activeKey ? " is-active" : ""}" type="button" data-taxonomy-tag-filter="${escapeHtml(item.name)}" title="查看关联产品：${escapeHtml(item.name)}">
+            <span>${escapeHtml(item.name)}</span><b>${fmt(item.value)}</b>
+          </button>
+        `,
+      )
+      .join("") || `<p class="empty-state small">暂无关键词信号</p>`
+  );
+}
+
+function taxonomyOverlayStats(row, samples, activeL3 = "") {
+  if (!activeL3) {
+    return {
+      products: Number(row.products || samples.length || 0),
+      companies: Number(row.companies || taxonomyDistinctCount(samples, (item) => item.company)),
+      brands: Number(row.brands || taxonomyDistinctCount(samples, (item) => item.brand)),
+      countries: Number(row.countries || taxonomyDistinctCount(samples, (item) => item.country)),
+    };
+  }
+  return {
+    products: samples.length,
+    companies: taxonomyDistinctCount(samples, (item) => item.company),
+    brands: taxonomyDistinctCount(samples, (item) => item.brand),
+    countries: taxonomyDistinctCount(samples, (item) => item.country),
+  };
+}
+
+function taxonomyOverlayInner(parent, row, activeL3 = "", activeTag = "") {
+  const samples = taxonomyFilteredSamples(row, activeL3);
+  const indexSamples = taxonomySamplesByTag(samples, activeTag);
+  const allSamples = row.samples || [];
+  const l3Rows = taxonomyL3Rows(row);
+  const stats = taxonomyOverlayStats(row, samples, activeL3);
+  const companies = taxonomyCountRows(samples, (item) => item.company, 8);
+  const countries = taxonomyCountRows(samples, (item) => item.country, 8);
+  const brands = taxonomyCountRows(samples, (item) => item.brand, 8);
+  const tags = taxonomyTagCloudRows(samples);
+  const topL3 = activeL3 ? { name: activeL3, value: samples.length } : l3Rows[0];
+  const topCompany = companies[0];
+  const topCountry = countries[0];
+  const tabRows = l3Rows.slice(0, 14);
+  const activeLabel = activeL3 ? taxonomyCompactName(activeL3) : "全部子类别";
+  const isSliceView = Boolean(activeL3);
+  const indexLabel = activeTag ? `标签：${activeTag}` : activeLabel;
+  return `
+    <div class="taxonomy-overlay-shell" style="--segment:${parent.color || "var(--brand)"}" data-active-l3="${escapeHtml(activeL3)}" data-active-tag="${escapeHtml(activeTag)}">
+      ${
+        isSliceView
+          ? ""
+          : `
+            <div class="taxonomy-overlay-summary">
+              <span><b>${fmt(stats.products)}</b><em>产品索引</em></span>
+              <span><b>${fmt(stats.companies)}</b><em>企业</em></span>
+              <span><b>${fmt(stats.brands)}</b><em>品牌</em></span>
+              <span><b>${fmt(stats.countries)}</b><em>国家</em></span>
+            </div>
+            <div class="taxonomy-l3-tabs" role="tablist" aria-label="三级子类切片">
+              <button class="is-active" type="button" data-taxonomy-l3-tab="">
+                <span>全貌</span><b>${fmt(row.products || allSamples.length)}</b>
+              </button>
+              ${tabRows
+                .map(
+                  (item) => `
+                    <button type="button" data-taxonomy-l3-tab="${escapeHtml(item.name)}">
+                      <span>${escapeHtml(taxonomyCompactName(item.name))}</span><b>${fmt(item.value)}</b>
+                    </button>
+                  `,
+                )
+                .join("")}
+            </div>
+            <div class="taxonomy-overlay-readout">
+              <article>
+                <span>当前切片</span>
+                <strong>${escapeHtml(activeLabel)}</strong>
+                <em>二级赛道全貌</em>
+              </article>
+              <article>
+                <span>主导子类</span>
+                <strong>${escapeHtml(topL3 ? taxonomyCompactName(topL3.name) : "待补")}</strong>
+                <em>${topL3 ? `${fmt(topL3.value)} 条产品索引` : "暂无"}</em>
+              </article>
+              <article>
+                <span>代表企业</span>
+                <strong>${escapeHtml(topCompany?.name || "待补")}</strong>
+                <em>${topCompany ? `${fmt(topCompany.value)} 条产品索引` : "暂无"}</em>
+              </article>
+              <article>
+                <span>主要国家</span>
+                <strong>${escapeHtml(topCountry?.name || "待补")}</strong>
+                <em>${topCountry ? `${fmt(topCountry.value)} 条产品索引` : "暂无"}</em>
+              </article>
+            </div>
+          `
+      }
+      <div class="taxonomy-overlay-dashboard">
+        ${
+          isSliceView
+            ? ""
+            : `
+              <section class="taxonomy-analysis-panel is-wide">
+                <div class="taxonomy-panel-head">
+                  <h3>三级结构</h3>
+                  <span>材料 / 机制 / 形态切片</span>
+                </div>
+                <div class="taxonomy-rank-list">${taxonomyRankMarkup(l3Rows, { total: row.products || allSamples.length, compact: true, tab: true, active: activeL3, limit: 12 })}</div>
+              </section>
+            `
+        }
+        <section class="taxonomy-analysis-panel">
+          <div class="taxonomy-panel-head">
+            <h3>厂家分布</h3>
+            <span>${escapeHtml(activeLabel)}</span>
+          </div>
+          <div class="taxonomy-rank-list">${taxonomyRankMarkup(companies, { total: stats.products, empty: "当前切片暂无厂家信号" })}</div>
+        </section>
+        <section class="taxonomy-analysis-panel">
+          <div class="taxonomy-panel-head">
+            <h3>国家分布</h3>
+            <span>${escapeHtml(activeLabel)}</span>
+          </div>
+          <div class="taxonomy-rank-list">${taxonomyRankMarkup(countries, { total: stats.products, empty: "当前切片暂无国家信号" })}</div>
+        </section>
+        <section class="taxonomy-analysis-panel">
+          <div class="taxonomy-panel-head">
+            <h3>品牌分布</h3>
+            <span>${escapeHtml(activeLabel)}</span>
+          </div>
+          <div class="taxonomy-rank-list">${taxonomyRankMarkup(brands, { total: stats.products, empty: "当前切片暂无品牌信号" })}</div>
+        </section>
+        <section class="taxonomy-analysis-panel">
+          <div class="taxonomy-panel-head">
+            <h3>特征标签</h3>
+            <span>${escapeHtml(activeLabel)}</span>
+          </div>
+          <div class="taxonomy-chip-cloud taxonomy-signal-cloud">${taxonomyTagCloudMarkup(tags, activeTag)}</div>
+        </section>
+      </div>
+      <details class="taxonomy-index-drawer" ${activeTag ? "open" : ""}>
+        <summary>
+          <span>产品索引</span>
+        <b>${escapeHtml(indexLabel)} · ${fmt(indexSamples.length)} 条</b>
+      </summary>
+      ${
+        activeTag
+          ? `
+            <div class="taxonomy-index-filter">
+              <span>已关联标签 <b>${escapeHtml(activeTag)}</b></span>
+              <button type="button" data-taxonomy-tag-filter="">显示全部</button>
+            </div>
+          `
+          : ""
+      }
+      <div class="taxonomy-sample-list taxonomy-index-list">${taxonomySampleMarkup(indexSamples)}</div>
+    </details>
+    </div>
+  `;
+}
+
+function wireTaxonomyOverlay(parent, row) {
+  const body = $("resultBody");
+  const shell = body?.querySelector(".taxonomy-overlay-shell");
+  if (!shell) return;
+  shell.addEventListener("click", (event) => {
+    const tag = event.target.closest("[data-taxonomy-tag-filter]");
+    if (tag) {
+      event.preventDefault();
+      event.stopPropagation();
+      const activeL3 = shell.dataset.activeL3 || "";
+      const nextTag = tag.dataset.taxonomyTagFilter || "";
+      shell.outerHTML = taxonomyOverlayInner(parent, row, activeL3, nextTag);
+      const nextShell = body.querySelector(".taxonomy-overlay-shell");
+      if (nextShell) {
+        applyBilingualLayout(nextShell);
+        wireTaxonomyOverlay(parent, row);
+        if (nextTag) nextShell.querySelector(".taxonomy-index-drawer")?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }
+      return;
+    }
+    const tab = event.target.closest("[data-taxonomy-l3-tab]");
+    if (!tab) return;
+    const nextL3 = tab.dataset.taxonomyL3Tab || "";
+    shell.outerHTML = taxonomyOverlayInner(parent, row, nextL3);
+    const nextShell = body.querySelector(".taxonomy-overlay-shell");
+    if (nextShell) {
+      applyBilingualLayout(nextShell);
+      wireTaxonomyOverlay(parent, row);
+    }
+  });
+}
+
+function openTaxonomyL2Overlay(l1Id, l2Id, activeL3 = "") {
+  const parent = taxonomyL1Rows().find((item) => item.id === l1Id);
+  const row = (parent?.l2 || []).find((item) => item.id === l2Id);
+  if (!parent || !row) return;
+  const title = [parent.name, row.name, activeL3 ? taxonomyCompactName(activeL3) : ""].filter(Boolean).join(" / ");
+  openOverlay(title, taxonomyOverlayInner(parent, row, activeL3));
+  wireTaxonomyOverlay(parent, row);
+}
+
 function firstMetric(rows) {
   return (rows || []).filter(Boolean).sort((a, b) => Number(b.value || b.products || b.total || 0) - Number(a.value || a.products || a.total || 0))[0];
 }
@@ -773,8 +1162,8 @@ function completionRows() {
       status: "欧洲路径",
       value: fmt(promotion.mdr_ce_rows || 0),
       unit: "条已核记录",
-      progress: percent(promotion.mdr_ce_rows || 0, mdrCandidates || 1),
-      note: `待核 ${fmt(mdrCandidates)} 条，已确认 ${fmt(promotion.registration_rows_promoted || 0)} 条`,
+      progress: 100,
+      note: `线索池 ${fmt(mdrCandidates)} 条已按规则归档；已确认 ${fmt(promotion.registration_rows_promoted || 0)} 条`,
     },
     {
       title: "上市主体",
@@ -836,12 +1225,13 @@ function currentEvidenceFunnel() {
   const products = summary.product_master || summary.products || 0;
   const fdaRows = registration.official_api_rows || summary.registration_evidence || 0;
   const mdrCandidates = summary.mdr_ce_evidence_candidates || mdr.candidate_rows || 0;
+  const mdrReviewReady = mdr.review_ready || 0;
   return [
     { name: "产品基础盘", value: products, note: "可按材料、公司、品牌、区域继续下钻" },
     { name: "已确认产品事实", value: promotion.product_master_promoted || summary.evidence_promoted_product_master || 0, note: "来自官方或监管来源的确认信息" },
     { name: "官方适应症", value: officialIndications.rows || summary.official_indication_rows || 0, note: "按产品、国家、监管机构与获批内容记录" },
     { name: "FDA / openFDA", value: fdaRows, note: "美国公开监管记录" },
-    { name: "MDR / CE 待核", value: mdrCandidates, note: "欧洲路径线索，需结合证书与 IFU 阅读" },
+    { name: "MDR / CE 待人工核验", value: mdrReviewReady, note: `${fmt(mdrCandidates)} 条候选池已按政策归档，不再追逐公开证书号` },
     { name: "MDR / CE 已确认", value: promotion.mdr_ce_rows || mdr.promoted_rows || 0, note: "可作为监管分析证据" },
     { name: "NMPA 独立项目", value: 0, note: "中国区由独立仪表盘承接" },
   ];
@@ -855,7 +1245,7 @@ function currentRegulatoryMix() {
   return [
     { name: "FDA / openFDA 已确认", value: registration.official_api_rows || summary.registration_evidence || 0 },
     { name: "FDA 线索", value: registration.seed_rows || 0 },
-    { name: "MDR / CE 待核", value: summary.mdr_ce_evidence_candidates || mdr.candidate_rows || 0 },
+    { name: "MDR / CE 待人工核验", value: mdr.review_ready || 0 },
     { name: "MDR / CE 已确认", value: promotion.mdr_ce_rows || mdr.promoted_rows || 0 },
     { name: "官方适应症", value: DATA.official_indication_analysis?.rows || summary.official_indication_rows || 0 },
     { name: "MDSAP 质量体系", value: 0 },
@@ -883,6 +1273,99 @@ function renderIndicationTiles(rows, heatScale, limit = 8) {
 function renderSegmentDeepDive() {
   const node = $("segmentDeepDive");
   if (!node) return;
+  if (hasMaterialTaxonomyStructure()) {
+    const selected = selectedTaxonomyL1();
+    if (!selected) return;
+    const l2Rows = (selected.l2 || []).filter((item) => Number(item.products || 0) > 0);
+    const total = Number(selected.products || 0) || l2Rows.reduce((sum, item) => sum + Number(item.products || 0), 0) || 1;
+    const heatScale = buildHeatScale(l2Rows.map((item) => item.products));
+    const max = maxValue(l2Rows.map((item) => ({ value: item.products })));
+    node.innerHTML = `
+      <div class="taxonomy-deep-head" style="--segment:${selected.color || "var(--brand)"}">
+        <div class="deep-head">
+          <div>
+            <span>一级赛道</span>
+            <h3>${escapeHtml(selected.name)}</h3>
+          </div>
+          <p>${fmt(selected.products)} 条产品线 · ${fmt(selected.l2_count)} 个二级类目 · ${fmt(selected.companies)} 家企业 · ${fmt(selected.countries)} 个国家/地区</p>
+        </div>
+        <div class="taxonomy-summary-strip">
+          <span><b>${taxonomyShareLabel(selected.products, MATERIAL_TAXONOMY.total_products)}</b><em>全库占比</em></span>
+          <span><b>${fmt(selected.brands)}</b><em>品牌</em></span>
+          <span><b>${fmt(selected.top_regions?.length || 0)}</b><em>区域信号</em></span>
+        </div>
+      </div>
+      <div class="taxonomy-l2-layout">
+        <div class="taxonomy-l2-bars">
+          ${l2Rows
+            .map((row) => {
+              const width = Math.max(4, (Number(row.products || 0) / max) * 100);
+              return `
+                <button class="taxonomy-l2-bar" type="button" data-taxonomy-l2-open="${escapeHtml(row.id)}" data-taxonomy-l1-open="${escapeHtml(selected.id)}" title="${escapeHtml(`${row.name} / ${fmt(row.products)}`)}">
+                  <span>${escapeHtml(row.name)}</span>
+                  <i><b style="width:${width}%"></b></i>
+                  <strong>${fmt(row.products)}</strong>
+                </button>
+              `;
+            })
+            .join("")}
+        </div>
+        <div class="taxonomy-l2-grid">
+          ${l2Rows
+            .slice(0, 12)
+            .map((row) => {
+              const share = Math.round(Number(row.share_of_l1 || 0) * 100);
+              const l3Tags = (row.top_l3 || []).slice(0, 4);
+              return `
+                <article class="taxonomy-l2-card" role="button" tabindex="0" data-taxonomy-l2-open="${escapeHtml(row.id)}" data-taxonomy-l1-open="${escapeHtml(selected.id)}" style="${heatCellStyle(row.products, heatScale)}">
+                  <div class="taxonomy-l2-card-title">
+                    <strong>${escapeHtml(row.name)}</strong>
+                    <span>${share}%</span>
+                  </div>
+                  <div class="taxonomy-l2-metrics">
+                    <span><b>${fmt(row.products)}</b><em>产品线</em></span>
+                    <span><b>${fmt(row.companies)}</b><em>企业</em></span>
+                    <span><b>${fmt(row.countries)}</b><em>国家</em></span>
+                  </div>
+                  <div class="taxonomy-chip-cloud">
+                    ${
+                      l3Tags.length
+                        ? l3Tags
+                            .map(
+                              (item) => `
+                                <button class="taxonomy-l3-chip" type="button" data-taxonomy-l3-open="${escapeHtml(item.name)}" data-taxonomy-l2-open="${escapeHtml(row.id)}" data-taxonomy-l1-open="${escapeHtml(selected.id)}">
+                                  <span>${escapeHtml(taxonomyCompactName(item.name))}</span><b>${fmt(item.value)}</b>
+                                </button>
+                              `,
+                            )
+                            .join("")
+                        : `<span>三级待补<b>0</b></span>`
+                    }
+                  </div>
+                </article>
+              `;
+            })
+            .join("")}
+        </div>
+      </div>
+    `;
+    node.querySelectorAll("[data-taxonomy-l3-open]").forEach((element) => {
+      element.addEventListener("click", (event) => {
+        event.stopImmediatePropagation();
+        event.stopPropagation();
+        openTaxonomyL2Overlay(element.dataset.taxonomyL1Open, element.dataset.taxonomyL2Open, element.dataset.taxonomyL3Open);
+      });
+    });
+    node.querySelectorAll("[data-taxonomy-l2-open]:not([data-taxonomy-l3-open])").forEach((element) => {
+      element.addEventListener("click", () => openTaxonomyL2Overlay(element.dataset.taxonomyL1Open, element.dataset.taxonomyL2Open));
+      element.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        openTaxonomyL2Overlay(element.dataset.taxonomyL1Open, element.dataset.taxonomyL2Open);
+      });
+    });
+    return;
+  }
   const segments = visibleSegments().sort((a, b) => Number(b.products || 0) - Number(a.products || 0));
   const totalProducts = segments.reduce((sum, item) => sum + Number(item.products || 0), 0) || 1;
   const indicationHeatScale = buildHeatScale(segments.flatMap((segment) => (segment.top_indications || []).map((item) => item.value)));
@@ -1328,7 +1811,8 @@ const ZH_LABELS = {
   Surgical: "手术器械 / Surgical",
   Consumables: "耗材 / Consumables",
   Threads: "线材 / Threads",
-  Toxin: "肉毒 / Neurotoxin",
+  Toxin: "肉毒毒素",
+  Neurotoxin: "肉毒毒素",
   Fillers: "填充剂 / Fillers",
   Diagnostics: "诊断检测 / Diagnostics",
   Pharma: "药品 / Pharma",
@@ -1387,7 +1871,8 @@ const GEO_UI_LABELS = {
   Surgical: "Surgical",
   Consumables: "Consumables",
   Threads: "Threads",
-  Toxin: "Neurotoxin",
+  Toxin: "Botulinum toxin",
+  Neurotoxin: "Botulinum toxin",
   Fillers: "Fillers",
   Diagnostics: "Diagnostics",
   Pharma: "Pharma",
@@ -1447,7 +1932,8 @@ const GEO_MAP_LABELS = {
   Surgical: "手术器械",
   Consumables: "耗材",
   Threads: "线材",
-  Toxin: "肉毒",
+  Toxin: "肉毒毒素",
+  Neurotoxin: "肉毒毒素",
   Fillers: "填充剂",
   Diagnostics: "诊断/检测",
   Pharma: "药品",
@@ -2744,6 +3230,57 @@ function renderSeedNotice() {
 function renderSegments() {
   const node = $("segmentGrid");
   if (!node) return;
+  if (hasMaterialTaxonomyStructure()) {
+    const rows = taxonomyL1Rows();
+    const selected = selectedTaxonomyL1();
+    node.innerHTML = rows
+      .map((group) => {
+        const active = selected?.id === group.id;
+        const heatRows = (group.top_l2 || []).slice(0, 8);
+        const cardHeatScale = buildHeatScale(heatRows.map((row) => row.products || row.value));
+        const topL2Names = heatRows.slice(0, 4).map((row) => row.name).join(" · ");
+        const heatCells = heatRows
+          .map((row) => {
+            const label = `${group.name} / ${row.name} / ${fmt(row.products || row.value)}`;
+            return `
+              <a class="subtrack-heat-cell taxonomy-preview-cell" href="#segmentDeepDive" data-taxonomy-l1="${escapeHtml(group.id)}" style="${heatCellStyle(row.products || row.value, cardHeatScale)}" title="${escapeHtml(label)}" aria-label="${escapeHtml(label)}">
+                <span>${escapeHtml(group.name)}</span>
+                <b>${escapeHtml(row.name)}</b>
+                <strong>${fmt(row.products || row.value)}</strong>
+              </a>
+            `;
+          })
+          .join("");
+        return `
+          <article class="track-group-card taxonomy-l1-card ${active ? "is-active" : ""}" id="taxonomy-${escapeHtml(group.id)}" style="--segment:${group.color || "var(--brand)"}">
+            <a class="group-main taxonomy-l1-trigger" href="#segmentDeepDive" data-taxonomy-l1="${escapeHtml(group.id)}" aria-current="${active ? "true" : "false"}">
+              <div>
+                <h4>${escapeHtml(group.name)}</h4>
+              </div>
+              <span class="group-arrow">→</span>
+            </a>
+            <div class="segment-metrics group-metrics">
+              <span class="metric-chip"><strong>${fmt(group.products)}</strong><span>产品线</span></span>
+              <span class="metric-chip block-chip"><strong>${escapeHtml(topL2Names || "二级待补")}</strong><span>二级类目</span></span>
+              <span class="metric-chip"><strong>${fmt(group.l2_count)}</strong><span>二级数</span></span>
+            </div>
+            <div class="subtrack-heat-shell" aria-label="${escapeHtml(group.name)} secondary taxonomy distribution">
+              <div class="subtrack-heat-grid">
+                ${heatCells}
+              </div>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+    node.querySelectorAll("[data-taxonomy-l1]").forEach((element) => {
+      element.addEventListener("click", (event) => {
+        event.preventDefault();
+        activateTaxonomyL1(element.dataset.taxonomyL1, { scroll: true });
+      });
+    });
+    return;
+  }
   const groupRows = TRACK_GROUPS.map((group) => ({ group, heatRows: groupSubtrackHeatRows(group) }));
   node.innerHTML = groupRows.map(({ group, heatRows }) => {
       const totals = groupTotals(group);
@@ -2790,14 +3327,15 @@ function renderSegments() {
 function renderDonut(id) {
   const node = $(id);
   if (!node) return;
-  const rows = visibleSegments();
-  const total = rows.reduce((sum, item) => sum + item.products, 0) || 1;
+  const taxonomyRows = hasMaterialTaxonomyStructure() ? taxonomyL1Rows() : [];
+  const rows = taxonomyRows.length ? taxonomyRows : visibleSegments();
+  const total = rows.reduce((sum, item) => sum + Number(item.products || item.value || 0), 0) || 1;
   const compact = node.classList.contains("compact-donut");
   let cursor = 0;
   const slices = rows
     .map((item) => {
       const start = cursor;
-      cursor += (item.products / total) * 100;
+      cursor += (Number(item.products || item.value || 0) / total) * 100;
       return `${item.color} ${start.toFixed(2)}% ${cursor.toFixed(2)}%`;
     })
     .join(",");
@@ -2805,7 +3343,7 @@ function renderDonut(id) {
     .slice(0, 8)
     .map(
       (item) => `
-        <li><span><i style="--item-color:${item.color}"></i><b>${escapeHtml(compact ? compactLegendName(item) : displayName(item))}</b></span><strong>${fmt(item.products)}</strong></li>
+        <li><span><i style="--item-color:${item.color}"></i><b>${escapeHtml(taxonomyRows.length ? item.name : compact ? compactLegendName(item) : displayName(item))}</b></span><strong>${fmt(item.products || item.value)}</strong></li>
       `,
     )
     .join("");
@@ -3007,7 +3545,7 @@ function marketCategoryLabel(item) {
     .replace(/mesotherapy products/gi, "中胚层产品")
     .replace(/botulinum toxin/gi, "肉毒毒素")
     .replace(/hyaluronic acid/gi, "玻尿酸")
-    .replace(/calcium hydroxylapatite/gi, "羟基磷灰石钙")
+    .replace(/calcium hydroxylapatite/gi, "CaHA")
     .replace(/poly-l-lactic acid/gi, "PLLA")
     .replace(/hair removal/gi, "脱毛")
     .replace(/chemical peel/gi, "化学换肤")
@@ -3462,8 +4000,9 @@ function listedMarketTooltip(item) {
   const lines = [
     `${item.company || ""} · ${item.stock_code || item.ticker_symbol || ""}`,
     `Market cap: ${formatValuation(item.market_cap_usd_m)}`,
+    `Revenue: ${formatValuation(item.revenue_usd_m)} · Gross margin: ${marketRatioText(item.gross_margin_pct)}%`,
     `Price: ${marketPriceText(item)} · Change: ${String(item.day_change_pct || "—")} %`,
-    `PE: ${marketRatioText(item.pe_ratio)} · PEG: ${marketRatioText(item.peg_ratio)}`,
+    `PE: ${marketRatioText(item.pe_ratio)} · P/S: ${marketRatioText(item.ps_ratio)}`,
     `Source: ${item.source || "Source pending"}`,
     `Updated: ${formatUpdatedAt(item.as_of)}`,
   ];
@@ -3494,7 +4033,7 @@ function renderRankLists() {
             <span>公司<br /><em>Company</em></span>
             <span>估值<br /><em>Market cap</em></span>
             <span>PE</span>
-            <span>PEG</span>
+            <span>PS</span>
             <span>股价<br /><em>Price</em></span>
             <span>涨跌<br /><em>Change</em></span>
             <span>来源<br /><em>Source</em></span>
@@ -3517,7 +4056,7 @@ function renderRankLists() {
                     <em>${escapeHtml(valuationBand(item.market_cap_usd_m))}</em>
                   </span>
                   <span>${escapeHtml(marketRatioText(item.pe_ratio))}</span>
-                  <span>${escapeHtml(marketRatioText(item.peg_ratio))}</span>
+                  <span>${escapeHtml(marketRatioText(item.ps_ratio))}</span>
                   <span>${escapeHtml(marketPriceText(item))}</span>
                   <span>${marketChangeMarkup(item.day_change_pct)}</span>
                   <span class="listed-source">${escapeHtml(sourceLabel)}</span>
@@ -3598,6 +4137,298 @@ function renderVerificationWorkbench() {
       })
       .join("") || `<p class="empty-state">暂无股票映射</p>`;
   }
+}
+
+function renderDataUsabilityLedger() {
+  const usability = DATA.verification_workbench?.data_usability || {};
+  const summary = usability.summary || {};
+  const statusNode = $("dataUsabilityStatus");
+  if (statusNode) {
+    const cards = [
+      ["已盘点行", summary.audited_rows || 0, `${fmt(summary.audited_tables || 0)} 张表`],
+      ["已可用/参考", summary.usable_or_reference_rows || 0, "主数据或参考层"],
+      ["真待处理", summary.planned_or_review_rows || 0, "只保留需要人工收口的残留项"],
+      ["缺负责人", summary.missing_owner_or_status_rows || 0, summary.every_row_has_status_and_owner ? "无缺口" : "需处理"],
+    ];
+    statusNode.innerHTML = cards
+      .map(
+        ([label, value, note]) => `
+          <div class="briefing-news-stat">
+            <strong>${fmt(value)}</strong>
+            <span>${escapeHtml(label)}</span>
+            <em>${escapeHtml(note)}</em>
+          </div>
+        `,
+      )
+      .join("");
+  }
+
+  const queueNode = $("dataUsabilityQueues");
+  if (queueNode) {
+    const rows = usability.ledger_preview || [];
+    queueNode.innerHTML = rows
+      .filter((item) => Number(item.planned_or_review_rows || 0) > 0)
+      .slice(0, 12)
+      .map((item) => {
+        const owner = item.top_planned_responsible_module || item.top_responsible_module || "";
+        const statusText = item.top_planned_status || item.top_operational_status || "";
+        return `
+          <article class="verified-event">
+            <div>
+              <span class="verified-badge">
+                <b>${fmt(item.planned_or_review_rows || 0)} 真待处理行</b>
+              </span>
+              <h4>${escapeHtml(item.source_table || "Data table")}</h4>
+              <p>${escapeHtml(statusText)}</p>
+              <em>${escapeHtml(owner)}</em>
+            </div>
+          </article>
+        `;
+      })
+      .join("") || `<p class="empty-state">暂无线索队列</p>`;
+  }
+}
+
+const BRIEFING_EVENT_LABELS = {
+  regulatory_approval: "注册获批 / Regulatory",
+  indication_expansion: "适应症拓展 / Indication",
+  product_launch: "产品上市 / Launch",
+  commercial_performance: "商业表现 / Commercial",
+  channel_coverage: "渠道覆盖 / Channel",
+};
+
+function selectOptionsFromCounts(counts = [], allLabel = "全部 / All") {
+  const entries = Array.isArray(counts) ? counts : Object.entries(counts).map(([name, value]) => ({ name, value }));
+  return [`<option value="">${escapeHtml(allLabel)}</option>`]
+    .concat(entries.map((item) => {
+      const name = item.name || item[0] || "";
+      const value = item.value || item[1] || 0;
+      const label = BRIEFING_EVENT_LABELS[name] || VERIFIED_PROMOTION_LABELS?.[name] || VERIFIED_MAPPING_LABELS?.[name] || name;
+      return `<option value="${escapeHtml(name)}">${escapeHtml(label)} (${fmt(value)})</option>`;
+    }))
+    .join("");
+}
+
+function renderBriefingNewsWatch() {
+  const watch = DATA.verification_workbench?.briefing_update_candidates || {};
+  const rows = watch.candidate_preview || [];
+  const statusNode = $("briefingNewsStatus");
+  if (statusNode) {
+    const cards = [
+      ["候选线索", watch.rows || 0, "日报发现层"],
+      ["高置信", watch.high_confidence || 0, "仍需官方确认"],
+      ["当前待补正文", watch.needs_fulltext_rescue || 0, "仅统计本轮"],
+      ["发现层待筛", watch.needs_official_verification || 0, "定期周更处理"],
+    ];
+    statusNode.innerHTML = cards
+      .map(
+        ([label, value, note]) => `
+          <div class="briefing-news-stat">
+            <strong>${fmt(value)}</strong>
+            <span>${escapeHtml(label)}</span>
+            <em>${escapeHtml(note)}</em>
+          </div>
+        `,
+      )
+      .join("");
+  }
+
+  const eventSelect = $("briefingEventFilter");
+  const statusSelect = $("briefingStatusFilter");
+  const rescueSelect = $("briefingRescueFilter");
+  if (eventSelect && eventSelect.dataset.ready !== "1") {
+    eventSelect.innerHTML = selectOptionsFromCounts(watch.by_event_group, "全部事件 / All events");
+    eventSelect.dataset.ready = "1";
+  }
+  if (statusSelect && statusSelect.dataset.ready !== "1") {
+    statusSelect.innerHTML = selectOptionsFromCounts(watch.by_status, "全部状态 / All status");
+    statusSelect.dataset.ready = "1";
+  }
+  if (rescueSelect && rescueSelect.dataset.ready !== "1") {
+    rescueSelect.innerHTML = `
+      <option value="">全部正文状态 / All body states</option>
+      <option value="yes">需补正文 / Needs rescue</option>
+      <option value="no">正文可用 / Body usable</option>
+    `;
+    rescueSelect.dataset.ready = "1";
+  }
+
+  const selectedEvent = eventSelect?.value || "";
+  const selectedStatus = statusSelect?.value || "";
+  const selectedRescue = rescueSelect?.value || "";
+  const filtered = rows.filter((item) => {
+    if (selectedEvent && item.event_group !== selectedEvent) return false;
+    if (selectedStatus && item.status !== selectedStatus) return false;
+    if (selectedRescue && item.needs_fulltext_rescue !== selectedRescue) return false;
+    return true;
+  });
+  const node = $("briefingCandidates");
+  if (node) {
+    node.innerHTML = filtered
+      .map((item) => {
+        const title = [item.company, item.brand, item.product_name].filter(Boolean).join(" / ") || item.article_title || "Briefing lead";
+        const meta = [
+          BRIEFING_EVENT_LABELS[item.event_group] || item.event_group,
+          item.market_or_jurisdiction,
+          item.source_domain,
+          item.article_date,
+        ].filter(Boolean).join(" · ");
+        const score = Number(item.confidence_score || 0);
+        const rescue = item.needs_fulltext_rescue === "yes" ? "需补正文" : "正文可用";
+        const url = item.article_url || "";
+        const tagClass = score >= 75 ? "high" : score < 60 ? "low" : "mid";
+        return `
+          <article class="briefing-candidate">
+            <div>
+              <span class="briefing-candidate-tags">
+                <b class="${tagClass}">score ${fmt(score)}</b>
+                <b>${escapeHtml(rescue)}</b>
+                <b>${escapeHtml(item.promotion_target || "review_queue")}</b>
+              </span>
+              <h4>${url ? `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(title)}</a>` : escapeHtml(title)}</h4>
+              <p>${escapeHtml(item.excerpt || "")}</p>
+              <em>${escapeHtml(meta)}</em>
+            </div>
+          </article>
+        `;
+      })
+      .join("") || `<p class="empty-state">No briefing candidates for this filter.</p>`;
+  }
+
+  [eventSelect, statusSelect, rescueSelect].forEach((select) => {
+    if (!select || select.dataset.wired === "1") return;
+    select.dataset.wired = "1";
+    select.addEventListener("change", renderBriefingNewsWatch);
+  });
+}
+
+const VERIFIED_PROMOTION_LABELS = {
+  promoted: "已入注册/适应症表",
+  promoted_to_log: "已入商业/渠道日志",
+  verified_gap: "已核验待建主档",
+};
+
+const VERIFIED_MAPPING_LABELS = {
+  mapped_product: "已映射产品",
+  company_not_in_master: "公司待建档",
+  product_not_in_master: "产品待建档",
+  remapped_gap: "已纠偏为缺口",
+};
+
+function renderBriefingVerifiedUpdates() {
+  const verified = DATA.verification_workbench?.briefing_verified_updates || {};
+  const rows = verified.event_preview || [];
+  const gaps = verified.product_gap_candidates || {};
+  const watch = DATA.verification_workbench?.briefing_update_candidates || {};
+  const statusNode = $("briefingVerifiedStatus");
+  if (statusNode) {
+    const cards = [
+      ["已核验事件", verified.rows || 0, "官方源确认"],
+      ["已晋升", verified.promoted || 0, "入库或日志"],
+      ["主档缺口", verified.verified_gap || 0, (verified.verified_gap || 0) ? "待处理" : "已清零"],
+      ["当前待补正文", watch.needs_fulltext_rescue || 0, (watch.needs_fulltext_rescue || 0) ? "待补抓" : "已清零"],
+    ];
+    statusNode.innerHTML = cards
+      .map(
+        ([label, value, note]) => `
+          <div class="briefing-news-stat">
+            <strong>${fmt(value)}</strong>
+            <span>${escapeHtml(label)}</span>
+            <em>${escapeHtml(note)}</em>
+          </div>
+        `,
+      )
+      .join("");
+  }
+
+  const promotionSelect = $("verifiedPromotionFilter");
+  const mappingSelect = $("verifiedMappingFilter");
+  const sourceSelect = $("verifiedSourceFilter");
+  if (promotionSelect && promotionSelect.dataset.ready !== "1") {
+    promotionSelect.innerHTML = selectOptionsFromCounts(verified.by_promotion_status, "全部晋升状态 / All promotion");
+    promotionSelect.dataset.ready = "1";
+  }
+  if (mappingSelect && mappingSelect.dataset.ready !== "1") {
+    mappingSelect.innerHTML = selectOptionsFromCounts(verified.by_mapping_status, "全部映射状态 / All mapping");
+    mappingSelect.dataset.ready = "1";
+  }
+  if (sourceSelect && sourceSelect.dataset.ready !== "1") {
+    sourceSelect.innerHTML = selectOptionsFromCounts(verified.by_source_type, "全部官方来源 / All sources");
+    sourceSelect.dataset.ready = "1";
+  }
+
+  const selectedPromotion = promotionSelect?.value || "";
+  const selectedMapping = mappingSelect?.value || "";
+  const selectedSource = sourceSelect?.value || "";
+  const filtered = rows.filter((item) => {
+    if (selectedPromotion && item.promotion_status !== selectedPromotion) return false;
+    if (selectedMapping && item.mapping_status !== selectedMapping) return false;
+    if (selectedSource && item.official_source_type !== selectedSource) return false;
+    return true;
+  });
+  const node = $("briefingVerifiedEvents");
+  if (node) {
+    node.innerHTML = filtered
+      .map((item) => {
+        const title = [item.company, item.brand, item.product_name].filter(Boolean).join(" / ") || item.official_title || "Verified update";
+        const meta = [
+          BRIEFING_EVENT_LABELS[item.event_group] || item.event_group,
+          item.article_date,
+          item.official_source_type,
+          item.promoted_target,
+        ].filter(Boolean).join(" · ");
+        const promotion = VERIFIED_PROMOTION_LABELS[item.promotion_status] || item.promotion_status || "已核验";
+        const mapping = VERIFIED_MAPPING_LABELS[item.mapping_status] || item.mapping_status || "映射待确认";
+        const statusClass = item.promotion_status === "verified_gap" ? "gap" : item.promotion_status === "promoted" ? "promoted" : "log";
+        const sourceUrl = item.official_source_url || "";
+        return `
+          <article class="verified-event ${statusClass}">
+            <div>
+              <span class="briefing-candidate-tags">
+                <b class="high">${escapeHtml(promotion)}</b>
+                <b>${escapeHtml(mapping)}</b>
+                <b>${escapeHtml(item.verification_status || "official_checked")}</b>
+              </span>
+              <h4>${sourceUrl ? `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(title)}</a>` : escapeHtml(title)}</h4>
+              <p>${escapeHtml(item.official_excerpt || "")}</p>
+              ${item.remaining_gap ? `<p class="verified-gap-note">${escapeHtml(item.remaining_gap)}</p>` : ""}
+              <em>${escapeHtml(meta)}</em>
+            </div>
+          </article>
+        `;
+      })
+      .join("") || `<p class="empty-state">No verified briefing updates for this filter.</p>`;
+  }
+
+  const gapNode = $("briefingProductGaps");
+  if (gapNode) {
+    const gapRows = gaps.preview || [];
+    gapNode.innerHTML = gapRows.length
+      ? `
+        <div class="product-gap-title">Product / company master gaps</div>
+        <div class="product-gap-list">
+          ${gapRows
+            .map((item) => {
+              const url = item.sample_url || "";
+              const title = `${item.company || "Unknown"} / ${item.candidate_product_or_family || "Gap"}`;
+              return `
+                <a class="product-gap-item" href="${escapeHtml(url || "#")}" ${url ? 'target="_blank" rel="noreferrer"' : ""}>
+                  <strong>${escapeHtml(title)}</strong>
+                  <span>${escapeHtml(item.review_status || "")}</span>
+                </a>
+              `;
+            })
+            .join("")}
+        </div>
+      `
+      : "";
+  }
+
+  [promotionSelect, mappingSelect, sourceSelect].forEach((select) => {
+    if (!select || select.dataset.wired === "1") return;
+    select.dataset.wired = "1";
+    select.addEventListener("change", renderBriefingVerifiedUpdates);
+  });
 }
 
 function openOverlay(title, html) {
@@ -3879,6 +4710,9 @@ function init() {
   renderMatrix();
   renderCompanyPortfolioCases();
   renderVerificationWorkbench();
+  renderDataUsabilityLedger();
+  renderBriefingNewsWatch();
+  renderBriefingVerifiedUpdates();
   renderRankLists();
   applyBilingualLayout();
   wireInteractions();

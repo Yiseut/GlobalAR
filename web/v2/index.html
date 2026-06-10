@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>全球医美情报 · 总览 · v2</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>全球情报 · 2026 Vol. 02</div>
+      <h1>
+        全球医美产业图谱
+        <span class="h1-en">Global Medical Aesthetics Landscape</span>
+      </h1>
+      <p class="lede">注射 · 光电 · 再生 · 护肤 · 植入物 · 耗材 — 上游品牌、监管、规格与官方源的一体化情报。</p>
+
+      <div class="stat-row" id="statRow">
+        <span>全球 <span class="num" data-bind="companies">372</span> 家上游企业 · <span class="num" data-bind="products">977</span> 款产品线</span>
+        <span>覆盖 <span class="num" data-bind="countries">38</span> 个国家 / 地区</span>
+        <span>监管证据 <span class="num" data-bind="registration_evidence">410</span> 条 · FDA 主导</span>
+      </div>
+
+      <div class="filter-row" role="tablist" aria-label="赛道筛选">
+        <button class="filter-pill active">全部 <small>977</small></button>
+        <a class="filter-pill" href="./topic.html?segment=ebd">光电 EBD <small>480</small></a>
+        <a class="filter-pill" href="./topic.html?segment=injectables">注射 Injectables <small>328</small></a>
+        <a class="filter-pill" href="./topic.html?segment=skincare">护肤 Skincare <small>79</small></a>
+        <a class="filter-pill" href="./topic.html?segment=regenerative">再生 Regen <small>28</small></a>
+        <a class="filter-pill" href="./topic.html?segment=implants">植入物 Implants <small>19</small></a>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心指标</h2>
+        <span class="en">CORE METRICS · NORMALIZED</span>
+      </div>
+
+      <div class="kpi-grid">
+        <article class="kpi-cell lede w-peach">
+          <span class="label">
+            <span class="en">PRODUCT LINES</span>
+            <span class="zh">产品线 · 全球覆盖</span>
+          </span>
+          <span class="value" data-bind="products">977</span>
+          <span class="delta">38 countries · 10 L1 categories</span>
+        </article>
+        <article class="kpi-cell w-blue-ice">
+          <span class="label"><span class="en">UPSTREAM CO.</span><span class="zh">上游企业</span></span>
+          <span class="value" data-bind="companies">372</span>
+          <span class="delta">manufacturers · brand owners</span>
+        </article>
+        <article class="kpi-cell w-gold-warm">
+          <span class="label"><span class="en">LISTED ENTITIES</span><span class="zh">上市主体</span></span>
+          <span class="value" data-bind="listed_company_batch">61</span>
+          <span class="delta">15 exchanges · KRX leads</span>
+        </article>
+
+        <article class="kpi-cell w-cream">
+          <span class="label"><span class="en">BRANDS</span><span class="zh">品牌</span></span>
+          <span class="value" data-bind="brands">946</span>
+          <span class="delta">881 product · 96 corporate</span>
+        </article>
+        <article class="kpi-cell w-blue-mute">
+          <span class="label"><span class="en">INDICATION SIGNALS</span><span class="zh">适应症信号</span></span>
+          <span class="value" data-bind="indication_signals">958</span>
+          <span class="delta">cross-ref product master</span>
+        </article>
+        <article class="kpi-cell w-rose">
+          <span class="label"><span class="en">REG. EVIDENCE</span><span class="zh">监管注册证据</span></span>
+          <span class="value" data-bind="registration_evidence">410</span>
+          <span class="delta">FDA 321 · CE/EU 49</span>
+        </article>
+        <article class="kpi-cell w-khaki">
+          <span class="label"><span class="en">PRODUCT SPECS</span><span class="zh">产品规格证据</span></span>
+          <span class="value" data-bind="product_specification_evidence">31,736</span>
+          <span class="delta">362 companies covered</span>
+        </article>
+        <article class="kpi-cell w-gold-soft">
+          <span class="label"><span class="en">OFFICIAL SOURCES</span><span class="zh">官方源</span></span>
+          <span class="value" data-bind="official_website_master">19,992</span>
+          <span class="delta">deduped to 372 domains</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>编辑视角</h2>
+        <span class="en">EDITORIAL · NEW LENSES FROM RE-SCAN</span>
+      </div>
+      <div class="editorial-row">
+        <article class="editorial-block w-peach">
+          <span class="stamp">LENS 01 · REGULATORY PULSE</span>
+          <div class="lead">FDA clearance 节奏 2022 后翻倍。</div>
+          <div class="num-pair"><span class="num">69</span><span class="unit">CLEARANCES · 2022–2026</span></div>
+          <div class="body">同期 CE/MDR 仅 24 条；中国 NMPA 由独立项目覆盖。</div>
+          <a class="cta" href="./regulatory-pulse.html">展开监管脉搏</a>
+        </article>
+        <article class="editorial-block w-gold-warm">
+          <span class="stamp">LENS 02 · KOREA FACTOR</span>
+          <div class="lead">韩国占全球上游企业 28%。</div>
+          <div class="num-pair"><span class="num">105</span><span class="unit">COMPANIES · 274 PRODUCTS</span></div>
+          <div class="body">远超美国 60 / 意大利 36；上市仅 22 家，私营出口集群。</div>
+          <a class="cta" href="./geo-deep-dive.html?country=KR">展开韩国画像</a>
+        </article>
+        <article class="editorial-block w-blue-mute">
+          <span class="stamp">LENS 03 · CAPITAL BAND SKEW</span>
+          <div class="lead">已上市 64 家，半数为小盘。</div>
+          <div class="num-pair"><span class="num">30</span><span class="unit">SMALL CAP · 3 MEGA CAP</span></div>
+          <div class="body">大市值集中在 NASDAQ；KRX 22 家小盘构成韩股板块。</div>
+          <a class="cta" href="./capital-map.html">展开资本地图</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>赛道分布</h2>
+        <span class="en">L1 TRACK SHARE · 977 PRODUCT LINES</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">10 个一级赛道的产品线分布</div>
+        <div class="chart-sub">按产品线数从大到小，色板派生自 Aestra 五色 — 陶红 / 蓝灰 / 沙金三族跨家族交替排列以最大化相邻区分度。</div>
+        <div class="donut-row">
+          <div class="donut-wrap">
+            <svg width="240" height="240" viewBox="0 0 240 240" aria-label="L1 赛道产品线分布">
+              <g transform="translate(120,120) rotate(-90)">
+                <!-- circumference 2πr at r=84 ≈ 527.79 ; total 985 -->
+                <circle r="84" fill="none" stroke="#520E0D" stroke-width="36" stroke-dasharray="257.0 527.79" stroke-dashoffset="0"/>
+                <circle r="84" fill="none" stroke="#233245" stroke-width="36" stroke-dasharray="175.8 527.79" stroke-dashoffset="-257.0"/>
+                <circle r="84" fill="none" stroke="#BCA078" stroke-width="36" stroke-dasharray="42.3 527.79" stroke-dashoffset="-432.8"/>
+                <circle r="84" fill="none" stroke="#8B3F3E" stroke-width="36" stroke-dasharray="15.0 527.79" stroke-dashoffset="-475.1"/>
+                <circle r="84" fill="none" stroke="#485670" stroke-width="36" stroke-dasharray="12.3 527.79" stroke-dashoffset="-490.1"/>
+                <circle r="84" fill="none" stroke="#D7C0A6" stroke-width="36" stroke-dasharray="10.2 527.79" stroke-dashoffset="-502.4"/>
+                <circle r="84" fill="none" stroke="#C99B99" stroke-width="36" stroke-dasharray="4.8 527.79" stroke-dashoffset="-512.6"/>
+                <circle r="84" fill="none" stroke="#6B7891" stroke-width="36" stroke-dasharray="4.3 527.79" stroke-dashoffset="-517.4"/>
+                <circle r="84" fill="none" stroke="#94A0B5" stroke-width="36" stroke-dasharray="3.8 527.79" stroke-dashoffset="-521.7"/>
+                <circle r="84" fill="none" stroke="#CEB59C" stroke-width="36" stroke-dasharray="2.1 527.79" stroke-dashoffset="-525.5"/>
+              </g>
+            </svg>
+            <div class="donut-center">
+              <span class="big">985</span>
+              <span class="small">PRODUCT LINES</span>
+            </div>
+          </div>
+          <div class="donut-list">
+            <div class="row"><span class="sw" style="background:#520E0D"></span><span class="name">EBD · 光电</span><span class="num">480</span><span class="pct">48.7%</span></div>
+            <div class="row"><span class="sw" style="background:#233245"></span><span class="name">Injectables · 注射</span><span class="num">328</span><span class="pct">33.3%</span></div>
+            <div class="row"><span class="sw" style="background:#BCA078"></span><span class="name">Skincare · 护肤</span><span class="num">79</span><span class="pct">8.0%</span></div>
+            <div class="row"><span class="sw" style="background:#8B3F3E"></span><span class="name">Regenerative · 再生</span><span class="num">28</span><span class="pct">2.8%</span></div>
+            <div class="row"><span class="sw" style="background:#485670"></span><span class="name">Consumables · 耗材</span><span class="num">23</span><span class="pct">2.3%</span></div>
+            <div class="row"><span class="sw" style="background:#D7C0A6"></span><span class="name">Implants · 植入物</span><span class="num">19</span><span class="pct">1.9%</span></div>
+            <div class="row"><span class="sw" style="background:#C99B99"></span><span class="name">Diagnostics · 诊断</span><span class="num">9</span><span class="pct">0.9%</span></div>
+            <div class="row"><span class="sw" style="background:#6B7891"></span><span class="name">Surgical · 外科</span><span class="num">8</span><span class="pct">0.8%</span></div>
+            <div class="row"><span class="sw" style="background:#94A0B5"></span><span class="name">Pharma · 药物</span><span class="num">7</span><span class="pct">0.7%</span></div>
+            <div class="row"><span class="sw" style="background:#CEB59C"></span><span class="name">Services · 服务</span><span class="num">4</span><span class="pct">0.4%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v2 · LIGHT PAPER · AESTRA-DERIVED 10-COLOR · 数据更新 <span data-bind-text="generated_at_short">—</span></span>
+      <span>Aesthetic Reflections · 研美思维</span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260520"></script>
+<script src="./_nav.js" data-active="overview"></script>
+<script>
+  // —— bind summary values from GLOBAL_AESTHETICS_DATA.summary —— //
+  (function () {
+    const data = window.GLOBAL_AESTHETICS_DATA;
+    if (!data) return;
+    const fmt = (n) => (typeof n === "number" ? n.toLocaleString("en-US") : n);
+    document.querySelectorAll("[data-bind]").forEach(el => {
+      const key = el.getAttribute("data-bind");
+      const val = data.summary && data.summary[key];
+      if (val !== undefined && val !== null) el.textContent = fmt(val);
+    });
+    const stamp = data.generated_at;
+    if (stamp) {
+      const short = stamp.slice(0, 10).replace(/-/g, "·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = short; });
+    }
+  })();
+</script>
+
+</body>
+</html>

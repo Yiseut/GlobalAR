@@ -1,0 +1,1818 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>全球医美情报 · 总览 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero page-hero-slim">
+      <h1>
+        全球医美产业图谱
+        <span class="h1-en">Global Medical Aesthetics Landscape</span>
+      </h1>
+      <div class="globe-stat-strip" id="globeStatStrip">
+        <div class="strip-scope">
+          <span class="dot"></span>
+          <span class="label" id="strip-scope-label">Global</span>
+          <span class="back hidden" id="strip-back">← Global · 全局</span>
+        </div>
+        <div class="strip-cells">
+          <div class="cell"><span class="k" id="strip-k-1">Companies · 企业</span><span class="v" id="strip-v-1" data-bind="companies">359</span><span class="lab" id="strip-l-1">Active · 活跃</span></div>
+          <div class="cell"><span class="k" id="strip-k-2">Countries · 国家</span><span class="v" id="strip-v-2" data-bind="countries">36</span><span class="lab" id="strip-l-2">Total · 总计</span></div>
+          <div class="cell"><span class="k" id="strip-k-3">Products · 产品</span><span class="v" id="strip-v-3" data-bind="products">975</span><span class="lab" id="strip-l-3">L1 × 9</span></div>
+          <div class="cell"><span class="k" id="strip-k-4">Cities · 城市</span><span class="v" id="strip-v-4">—</span><span class="lab" id="strip-l-4">Mapped · 已映射</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block globe-section globe-section-hero">
+      <div class="section-head">
+        <h2>全球分布</h2>
+        <span class="cn">· 359 家上游企业</span>
+      </div>
+
+      <div class="globe-controls">
+        <div class="filter-row">
+          <button class="filter-pill active" data-track="all"><i class="dot"></i>全部 All <small id="ct-all">359</small></button>
+          <button class="filter-pill" data-track="EBD" style="--track-color:#8E3A3A"><i class="dot"></i>光电 EBD <small id="ct-EBD">—</small></button>
+          <button class="filter-pill" data-track="Injectables" style="--track-color:#6B5A75"><i class="dot"></i>注射 Injectables <small id="ct-Injectables">—</small></button>
+          <button class="filter-pill" data-track="Skincare" style="--track-color:#D9AE91"><i class="dot"></i>功能性护肤品 Cosmeceutical <small id="ct-Skincare">—</small></button>
+          <button class="filter-pill" data-track="Regenerative" style="--track-color:#A8B59A"><i class="dot"></i>再生 Regenerative <small id="ct-Regenerative">—</small></button>
+          <button class="filter-pill" data-track="Implants" style="--track-color:#CFB58E"><i class="dot"></i>植入物 Implants <small id="ct-Implants">—</small></button>
+          <button class="filter-pill" data-track="Consumables" style="--track-color:#5A6878"><i class="dot"></i>耗材 Consumables <small id="ct-Consumables">—</small></button>
+          <button class="filter-pill" data-track="Diagnostics" style="--track-color:#C76B68"><i class="dot"></i>诊断 Diagnostics <small id="ct-Diagnostics">—</small></button>
+          <button class="filter-pill" data-track="Surgical" style="--track-color:#8C7B91"><i class="dot"></i>外科 Surgical <small id="ct-Surgical">—</small></button>
+          <button class="filter-pill" data-track="Pharma" style="--track-color:#EC9B73"><i class="dot"></i>药物 Pharma <small id="ct-Pharma">—</small></button>
+        </div>
+      </div>
+
+      <div class="globe-stage-wrap">
+        <div class="globe-stage" id="globe-stage"></div>
+        <div class="globe-loading" id="globe-loading">地球加载中…</div>
+
+        <div class="globe-detail-card" id="globeDetailCard" role="dialog" aria-labelledby="globe-detail-title">
+          <!-- populated dynamically on point click -->
+        </div>
+
+        <aside class="country-drawer" id="countryDrawer" aria-label="国家详情">
+          <!-- populated dynamically on polygon click -->
+        </aside>
+      </div>
+
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心指标</h2>
+        <span class="cn">· 规范化数据</span><span class="en">Core metrics</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede has-wash w-rose-deep">
+          <div class="label">
+            <span class="en">Product lines</span>
+            <span class="zh">产品线 · 全球覆盖</span>
+          </div>
+          <span class="value" data-bind="products">975</span>
+          <span class="delta">36 countries · 9 L1 categories</span>
+        </article>
+        <article class="kpi-cell has-wash w-slate">
+          <div class="label"><span class="en">Upstream co.</span><span class="zh">上游企业</span></div>
+          <span class="value" data-bind="companies">359</span>
+          <span class="delta">manufacturers · brand owners</span>
+        </article>
+        <article class="kpi-cell has-wash w-peach">
+          <div class="label"><span class="en">Listed entities</span><span class="zh">上市主体</span></div>
+          <span class="value" data-bind="listed_company_batch">61</span>
+          <span class="delta">15 exchanges · KRX leads</span>
+        </article>
+        <article class="kpi-cell has-wash w-sand">
+          <div class="label"><span class="en">Brands</span><span class="zh">品牌</span></div>
+          <span class="value" data-bind="brands">957</span>
+          <span class="delta">881 product · 96 corporate</span>
+        </article>
+        <article class="kpi-cell has-wash w-plum">
+          <div class="label"><span class="en">Indication signals</span><span class="zh">适应症信号</span></div>
+          <span class="value" data-bind="indication_signals">1,236</span>
+          <span class="delta">cross-ref product master</span>
+        </article>
+        <article class="kpi-cell has-wash w-rose">
+          <div class="label"><span class="en">Reg. evidence</span><span class="zh">监管注册证据</span></div>
+          <span class="value" data-bind="registration_evidence">1,603</span>
+          <span class="delta">multi-region registration evidence</span>
+        </article>
+        <article class="kpi-cell has-wash w-sage">
+          <div class="label"><span class="en">Product specs</span><span class="zh">产品规格证据</span></div>
+          <span class="value" data-bind="product_specification_evidence">53,676</span>
+          <span class="delta">359 companies covered</span>
+        </article>
+        <article class="kpi-cell has-wash w-lavender">
+          <div class="label"><span class="en">Official sources</span><span class="zh">官方源</span></div>
+          <span class="value" data-bind="official_website_master">19,824</span>
+          <span class="delta">deduped to 365 domains</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>赛道格局</h2>
+        <span class="cn">· 材料 taxonomy 全景</span><span class="en">Track structure</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title" id="ml-headline">— 个材料一级赛道 · — 个二级 · 共 — 款产品</div>
+        <div class="chart-sub">每张卡片是一个材料一级赛道（material taxonomy L1）。左上是该 L1 的产品数，下方按产品数 desc 列出二级赛道与各自数量。这是现象层 —— 行业的真实分布格局，**先看见**再下结论。</div>
+        <div class="ml-grid" id="ml-grid"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>编辑视角</h2>
+        <span class="cn">· 三组新发现</span><span class="en">Editorial · new lenses</span>
+      </div>
+      <div class="editorial-row">
+        <article class="editorial-block has-wash w-rose-deep wash-bottom-left">
+          <span class="stamp">Lens 01 · Regulatory pulse</span>
+          <div class="lead">FDA clearance 节奏 <em>2022</em> 后跳台。</div>
+          <div class="num-pair"><span class="num">110</span><span class="unit">clearances · 2022–2026</span></div>
+          <div class="body">2017-21 共 <em>67</em> 条 → 2022-26 已 <em>110</em> 条；CE/MDR 同期补到 <em>72</em>，仍是缺口；NMPA / MFDS 由独立队列覆盖。</div>
+          <a class="cta" href="./regulatory-pulse.html">展开监管脉搏 ↗</a>
+        </article>
+        <article class="editorial-block has-wash w-apricot wash-bottom-left">
+          <span class="stamp">Lens 02 · Korea factor</span>
+          <div class="lead">韩国占全球上游企业 <em>28</em>%。</div>
+          <div class="num-pair"><span class="num">105</span><span class="unit">companies · 274 products</span></div>
+          <div class="body">远超美国 <em>60</em> / 意大利 <em>36</em>；上市仅 <em>22</em> 家，私营出口集群。</div>
+          <a class="cta" href="./geo-deep-dive.html">展开韩国画像 ↗</a>
+        </article>
+        <article class="editorial-block has-wash w-plum wash-bottom-left">
+          <span class="stamp">Lens 03 · Capital band skew</span>
+          <div class="lead">已上市 <em>64</em> 家，半数为小盘。</div>
+          <div class="num-pair"><span class="num">30</span><span class="unit">small cap · 3 mega cap</span></div>
+          <div class="body">大市值集中在 NASDAQ；KRX <em>22</em> 家小盘构成韩股板块。</div>
+          <a class="cta" href="./capital-map.html">展开资本地图 ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="block flat-map-section">
+      <div class="section-head">
+        <h2>全球医美企业星图</h2>
+        <span class="cn">· 城市级地理分布</span><span class="en">Global enterprise atlas</span>
+      </div>
+
+      <div class="flat-map-controls">
+        <div class="flat-map-toggle" role="tablist" aria-label="圆点大小语义">
+          <button class="active" type="button" data-flat-metric="products">按产品线 · By product lines</button>
+          <button type="button" data-flat-metric="companies">按企业数 · By company count</button>
+        </div>
+        <div class="flat-map-filters">
+          <select id="flatTrackFilter" aria-label="赛道筛选"></select>
+          <select id="flatRegionFilter" aria-label="区域筛选"></select>
+          <select id="flatListingFilter" aria-label="上市状态筛选"></select>
+          <select id="flatEvidenceFilter" aria-label="监管证据筛选"></select>
+        </div>
+      </div>
+
+      <div class="flat-map-stage-wrap">
+        <div id="flatMapStage" class="flat-map-stage" aria-label="全球医美企业地图"></div>
+      </div>
+
+      <div class="flat-map-legend">
+        <div class="legend-copy">
+          <strong>颜色 = 赛道</strong>
+          <span>大小 = <span id="flatMapMetricLabel">产品线</span></span>
+        </div>
+        <div class="legend-keys" id="flatMapLegendKeys"></div>
+      </div>
+
+      <div class="flat-map-stat-strip">
+        <div class="cell"><span class="k">Companies · 企业</span><span class="v" id="flatMapCompanies">—</span></div>
+        <div class="cell"><span class="k">Cities · 城市</span><span class="v" id="flatMapCities">—</span></div>
+        <div class="cell"><span class="k">Countries · 国家</span><span class="v" id="flatMapCountries">—</span></div>
+        <div class="cell"><span class="k">Products · 产品</span><span class="v" id="flatMapProducts">—</span></div>
+      </div>
+    </section>
+
+    <section class="block country-distribution">
+      <div class="section-head">
+        <h2>国家分布</h2>
+        <span class="cn">· Top 10 ranked</span><span class="en">Country distribution</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">头部 5 国 = 全球上游供给约 70%</div>
+        <div class="chart-sub">每行一国，按企业数排序；条形长度 = 产品线总数（normalized to max），色由该国主赛道决定。前 5 国（韩国 / 美国 / 意大利 / 法国 / 西班牙）合计撑起约 7 成全球上游供给；剩下 30 多个国家分散在长尾。</div>
+        <div id="country-bars"></div>
+
+        <div class="country-findings">
+          <div class="finding-chip" style="--chip-color:#8E3A3A;">
+            <span class="stamp">Korea factor</span>
+            <div class="num"><em>28</em>%</div>
+            <p>全球上游企业占比 · 但 FDA 命中率仅 <em>8%</em>，靠 KFDA → 东南亚 / 中东 / LATAM 出口路径，绕开高门槛市场。</p>
+          </div>
+          <div class="finding-chip" style="--chip-color:#6B5A75;">
+            <span class="stamp">Switzerland density</span>
+            <div class="num"><em>3.2</em></div>
+            <p>产品 / 公司密度全球最高（<em>17</em> 家撑 <em>55</em> 款）。瑞士集群是 Galderma 旗舰带头的大型上市公司战略。</p>
+          </div>
+          <div class="finding-chip" style="--chip-color:#D9AE91;">
+            <span class="stamp">Israel EBD edge</span>
+            <div class="num"><em>4.3</em></div>
+            <p>EBD 产品 / 公司密度全球最高 · InMode / Lumenis / Alma / Sciton 都在以色列设计或控股；FDA 准入 <em>12</em> 条单位最高。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>区域分布</h2>
+        <span class="cn">· 6 大区</span><span class="en">Region mix</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每行一个区域，按产品线数 desc</div>
+        <div class="chart-sub">单维全景：区域内有多少款产品线。欧洲 / 亚太 / 北美 三足鼎立。</div>
+        <div class="ov-bars" id="ov-region-bars"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>适应症 Top 12</h2>
+        <span class="cn">· 临床需求频次</span><span class="en">Top 12 indications</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每行一个适应症桶，按官方证据条数 desc</div>
+        <div class="chart-sub">单维全景：行业被监管认可最广的临床需求。多维分析（适应症 × 技术 / 监管）在「适应症星图」页。</div>
+        <div class="ov-bars" id="ov-indication-bars"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>赛道分布</h2>
+        <span class="cn">· L1 nine categories</span><span class="en">Track share</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">9 个一级赛道的产品线分布</div>
+        <div class="chart-sub">按当前产品主表统计，展示各一级赛道的产品线占比。</div>
+        <div class="donut-row">
+          <div class="donut-wrap">
+            <svg width="280" height="280" viewBox="0 0 280 280" aria-label="L1 赛道产品线分布">
+              <g transform="rotate(-90 140 140)">
+                <!-- circumference 2π*98 ≈ 615.75 ; total 975 -->
+                <circle class="donut-slice" data-track="EBD"          data-n="468" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="295.56 320.19" stroke-dashoffset="0"/>
+                <circle class="donut-slice" data-track="Injectables"  data-n="329" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="207.78 407.97" stroke-dashoffset="-295.56"/>
+                <circle class="donut-slice" data-track="Skincare"     data-n="80"  r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="50.52 565.23" stroke-dashoffset="-503.34"/>
+                <circle class="donut-slice" data-track="Implants"     data-n="28"  r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="17.68 598.07" stroke-dashoffset="-553.86"/>
+                <circle class="donut-slice" data-track="Regenerative" data-n="25"  r="98" cx="140" cy="140" fill="none" stroke="#A8B59A" stroke-width="38" stroke-dasharray="15.79 599.96" stroke-dashoffset="-571.54"/>
+                <circle class="donut-slice" data-track="Consumables"  data-n="23"  r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="14.53 601.22" stroke-dashoffset="-587.33"/>
+                <circle class="donut-slice" data-track="Surgical"     data-n="10"  r="98" cx="140" cy="140" fill="none" stroke="#8C7B91" stroke-width="38" stroke-dasharray="6.32 609.43" stroke-dashoffset="-601.86"/>
+                <circle class="donut-slice" data-track="Diagnostics"  data-n="9"   r="98" cx="140" cy="140" fill="none" stroke="#C76B68" stroke-width="38" stroke-dasharray="5.68 610.07" stroke-dashoffset="-608.17"/>
+                <circle class="donut-slice" data-track="Pharma"       data-n="3"   r="98" cx="140" cy="140" fill="none" stroke="#EC9B73" stroke-width="38" stroke-dasharray="1.89 613.86" stroke-dashoffset="-613.86"/>
+              </g>
+            </svg>
+            <div class="donut-center">
+              <span class="big">975</span>
+              <span class="small">product lines</span>
+            </div>
+          </div>
+          <div class="donut-list">
+            <div class="row donut-row" data-track="EBD"><span class="sw" style="background:#8E3A3A"></span><span class="name">EBD · 光电</span><span class="num">468</span><span class="pct">48.0%</span></div>
+            <div class="row donut-row" data-track="Injectables"><span class="sw" style="background:#6B5A75"></span><span class="name">Injectables · 注射</span><span class="num">329</span><span class="pct">33.7%</span></div>
+            <div class="row donut-row" data-track="Skincare"><span class="sw" style="background:#D9AE91"></span><span class="name">Cosmeceutical · 功能性护肤品</span><span class="num">80</span><span class="pct">8.2%</span></div>
+            <div class="row donut-row" data-track="Implants"><span class="sw" style="background:#CFB58E"></span><span class="name">Implants · 植入物</span><span class="num">28</span><span class="pct">2.9%</span></div>
+            <div class="row donut-row" data-track="Regenerative"><span class="sw" style="background:#A8B59A"></span><span class="name">Regenerative · 再生</span><span class="num">25</span><span class="pct">2.6%</span></div>
+            <div class="row donut-row" data-track="Consumables"><span class="sw" style="background:#5A6878"></span><span class="name">Consumables · 耗材</span><span class="num">23</span><span class="pct">2.4%</span></div>
+            <div class="row donut-row" data-track="Surgical"><span class="sw" style="background:#8C7B91"></span><span class="name">Surgical · 外科</span><span class="num">10</span><span class="pct">1.0%</span></div>
+            <div class="row donut-row" data-track="Diagnostics"><span class="sw" style="background:#C76B68"></span><span class="name">Diagnostics · 诊断</span><span class="num">9</span><span class="pct">0.9%</span></div>
+            <div class="row donut-row" data-track="Pharma"><span class="sw" style="background:#EC9B73"></span><span class="name">Pharma · 药物</span><span class="num">3</span><span class="pct">0.3%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 总览 Overview · 数据更新 <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<!-- Local data + interaction scripts first so country bars / donut wire up
+     even before globe libs load -->
+<script src="../app-data.js?v=20260529"></script>
+<script src="./v3-products.js?v=20260529"></script>
+<script src="./v3-companies.js?v=20260529"></script>
+<script src="./v3-product-tree.js?v=20260529"></script>
+<script src="./v3-company-detail.js?v=20260529"></script>
+<script src="./v3-chart-interact.js?v=20260607-tooltip"></script>
+<script src="./v3-material-landscape.js?v=20260604"></script>
+<script src="./v3-material-drawer.js?v=20260604"></script>
+<!-- Vendor three.js + globe.gl locally — unpkg.com is 40+s from CN networks.
+     Falls back to unpkg / jsdelivr if the local file ever disappears. -->
+<script>
+  (function loadGlobeLibs () {
+    function addScript (src, onload, onerror) {
+      const s = document.createElement("script");
+      s.src = src;
+      s.onload = onload;
+      s.onerror = onerror;
+      document.head.appendChild(s);
+    }
+    addScript("./assets/three.min.js",
+      () => addScript("./assets/globe.gl.min.js", null,
+        () => addScript("//cdn.jsdelivr.net/npm/globe.gl@2.34.4/dist/globe.gl.min.js")),
+      () => addScript("//cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js",
+        () => addScript("./assets/globe.gl.min.js", null,
+          () => addScript("//cdn.jsdelivr.net/npm/globe.gl@2.34.4/dist/globe.gl.min.js"))));
+  })();
+</script>
+<script src="./_nav.js" data-active="overview"></script>
+<script>
+  (function () {
+    const data = window.GLOBAL_AESTHETICS_DATA;
+    if (!data) return;
+    const fmt = (n) => (typeof n === "number" ? n.toLocaleString("en-US") : n);
+    document.querySelectorAll("[data-bind]").forEach(el => {
+      const key = el.getAttribute("data-bind");
+      const val = data.summary && data.summary[key];
+      if (val !== undefined && val !== null) el.textContent = fmt(val);
+    });
+    const stamp = data.generated_at;
+    if (stamp) {
+      const short = stamp.slice(0, 10).replace(/-/g, "·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = short; });
+    }
+  })();
+
+  /* ============ Country distribution block — top 10 ranked horizontal bars ============ */
+  (function renderCountryDistribution () {
+    const data = window.GLOBAL_AESTHETICS_DATA;
+    const wrap = document.getElementById("country-bars");
+    if (!data || !data.geo_companies || !wrap) return;
+
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+
+    const agg = {};
+    data.geo_companies.forEach(c => {
+      if (!c.country) return;
+      const k = c.country;
+      if (!agg[k]) agg[k] = { country: k, region: c.region || "", companies: 0, products: 0, tracks: {} };
+      agg[k].companies += 1;
+      agg[k].products += c.products || 0;
+      if (c.primary_track) agg[k].tracks[c.primary_track] = (agg[k].tracks[c.primary_track] || 0) + 1;
+    });
+
+    const countries = Object.values(agg).map(c => {
+      const sorted = Object.entries(c.tracks).sort((a, b) => b[1] - a[1]);
+      c.dominantTrack = sorted.length ? sorted[0][0] : "Unknown";
+      return c;
+    });
+    countries.sort((a, b) => b.companies - a.companies);
+    const top10 = countries.slice(0, 10);
+    const maxProducts = Math.max(1, ...top10.map(c => c.products));
+
+    wrap.innerHTML = top10.map((c, i) => {
+      const color = TRACK_COLORS[c.dominantTrack] || "#888";
+      const pct = (c.products / maxProducts) * 100;
+      return `
+        <div class="bar-row" data-country="${escapeHtmlCD(c.country)}" data-v3-interactive="1">
+          <div class="label">
+            <span class="sw" style="background:${color}; color:${color};"></span>
+            <div>
+              <span class="nm">${escapeHtmlCD(c.country)}</span>
+              <small>${escapeHtmlCD(c.region)} · 主赛道 ${escapeHtmlCD(c.dominantTrack)}</small>
+            </div>
+          </div>
+          <div class="country-bar-track">
+            <div class="country-bar-fill" style="--cd-color:${color}; width:${pct.toFixed(1)}%;"></div>
+          </div>
+          <div class="stats">
+            <span class="n">${c.companies}</span>
+            <span class="sub">${c.products} products</span>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    // ============ V3 chart interactivity wiring ============
+    if (window.V3Tooltip && window.V3DrillPanel) {
+      const TRACK_LABEL_ZH = {
+        "EBD":"光电","Injectables":"注射","Skincare":"功能性护肤品","Regenerative":"再生","Consumables":"耗材",
+        "Implants":"植入物","Diagnostics":"诊断","Surgical":"外科","Pharma":"药物","Services":"服务",
+      };
+      // Country bars — hover + click
+      wrap.querySelectorAll(".bar-row[data-country]").forEach(row => {
+        const country = row.getAttribute("data-country");
+        const agg = countries.find(c => c.country === country);
+        if (!agg) return;
+        window.V3Tooltip.attach(row, () => ({
+          title: country,
+          lines: [
+            `<em>${agg.companies}</em> companies · <em>${agg.products}</em> products`,
+            `主赛道 ${TRACK_LABEL_ZH[agg.dominantTrack] || agg.dominantTrack}`,
+            `${agg.region}`,
+          ],
+          hint: "click → list companies",
+        }));
+        row.addEventListener("click", () => {
+          const cosInCountry = data.geo_companies.filter(c => c.country === country)
+            .sort((a, b) => (b.products || 0) - (a.products || 0));
+          const summary = [
+            { k: "Companies", v: cosInCountry.length },
+            { k: "Products",  v: cosInCountry.reduce((s, c) => s + (c.products || 0), 0) },
+            { k: "Public",    v: cosInCountry.filter(c => c.ownership === "Public").length },
+          ];
+          window.V3DrillPanel.open({
+            stamp: "Country · top 10",
+            title: country,
+            sub: `${agg.region} · 主赛道 ${TRACK_LABEL_ZH[agg.dominantTrack] || agg.dominantTrack}`,
+            summary,
+            rows: cosInCountry.map(c => ({
+              company_id: c.company_id,
+              name: c.company,
+              hint: `${c.city || "—"} · ${c.primary_track || "—"} · ${c.ownership || "—"} · ${c.products || 0} prod`,
+              color: TRACK_COLORS[c.primary_track] || "#888",
+            })),
+          });
+        });
+      });
+
+      // L1 donut — slices + list rows
+      function openL1Drill (track) {
+        const cosInTrack = data.geo_companies.filter(c => c.primary_track === track)
+          .sort((a, b) => (b.products || 0) - (a.products || 0));
+        const totalProducts = cosInTrack.reduce((s, c) => s + (c.products || 0), 0);
+        const publicCt = cosInTrack.filter(c => c.ownership === "Public").length;
+        const countryCt = new Set(cosInTrack.map(c => c.country)).size;
+        window.V3DrillPanel.open({
+          stamp: "L1 track · drill",
+          title: displayTrack(track),
+          sub: `${TRACK_LABEL_ZH[track] || ""} · ${cosInTrack.length} companies in ${countryCt} countries`,
+          summary: [
+            { k: "Companies", v: cosInTrack.length },
+            { k: "Products",  v: totalProducts },
+            { k: "Public",    v: publicCt },
+            { k: "Countries", v: countryCt },
+          ],
+          rows: cosInTrack.slice(0, 100).map(c => ({
+            company_id: c.company_id,
+            name: c.company,
+            hint: `${c.country || "—"} · ${c.city || "—"} · ${c.ownership || "—"} · ${c.products || 0} prod`,
+            color: TRACK_COLORS[c.primary_track] || "#888",
+          })),
+        });
+      }
+      const TRACK_PRODUCTS = {"EBD":468,"Injectables":329,"Skincare":80,"Implants":28,"Regenerative":25,"Consumables":23,"Surgical":10,"Diagnostics":9,"Pharma":3};
+      const TRACK_TOTAL_PRODUCTS = Object.values(TRACK_PRODUCTS).reduce((sum, value) => sum + value, 0);
+      const TRACK_LABEL_EN = { "Skincare": "Cosmeceutical" };
+      const displayTrack = (track) => TRACK_LABEL_EN[track] || track;
+      document.querySelectorAll(".donut-slice").forEach(slice => {
+        const track = slice.getAttribute("data-track");
+        slice.style.cursor = "pointer";
+        window.V3Tooltip.attach(slice, () => ({
+          title: displayTrack(track),
+          lines: [
+            `<em>${TRACK_PRODUCTS[track] || 0}</em> products · ${TRACK_LABEL_ZH[track] || ""}`,
+            `${((TRACK_PRODUCTS[track] || 0) / TRACK_TOTAL_PRODUCTS * 100).toFixed(1)}% of total`,
+          ],
+          hint: "click → companies",
+        }));
+        slice.addEventListener("click", () => openL1Drill(track));
+      });
+      document.querySelectorAll(".donut-row[data-track]").forEach(row => {
+        const track = row.getAttribute("data-track");
+        row.style.cursor = "pointer";
+        row.addEventListener("click", () => openL1Drill(track));
+        window.V3Tooltip.attach(row, () => ({
+          title: displayTrack(track),
+          lines: [`<em>${TRACK_PRODUCTS[track] || 0}</em> products`],
+          hint: "click → companies",
+        }));
+      });
+    }
+
+    function escapeHtmlCD (s) {
+      return String(s || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
+    }
+  })();
+</script>
+
+<!-- ============================================================
+     Track Structure (Landscape) · material taxonomy L1 × L2
+     Phenomenon-level view added 2026-06-04 per user feedback.
+     ============================================================ -->
+<script>
+  (function () {
+    const data = window.V3_MATERIAL_LANDSCAPE;
+    const grid = document.getElementById("ml-grid");
+    const headline = document.getElementById("ml-headline");
+    if (!data || !grid) return;
+
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+    })[ch]);
+
+    const s = data.summary;
+    headline.textContent = `${s.l1_count} 个材料一级赛道 · ${s.l2_count} 个二级 · 共 ${s.total_products_classified} 款分类产品（全库 ${s.total_products_all}）`;
+
+    // Render: every L1 = a card. Per user feedback 2026-06-04:
+    //  - L1 card itself is NOT clickable here (the L1→L2 panel view is over
+    //    on tracks.html; on overview it'd just repeat info the user can see
+    //    inline in the L2 sub-cards below).
+    //  - Each L2 sub-card IS clickable → opens V3MaterialDrawer in L2 mode,
+    //    showing the L2's own market: L3 breakdown + companies + products
+    //    (i.e. the "Tier 3" data the user wanted).
+    const maxL2N = Math.max(1, ...data.l1_cards.flatMap(c => c.l2_list.map(x => x.n_products)));
+    grid.innerHTML = data.l1_cards.map(c => {
+      const color = TRACK_COLORS[c.dom_commercial_l1] || "var(--accent-2)";
+      const l2Html = c.l2_list.map(l2 => {
+        const intensity = Math.min(1, l2.n_products / maxL2N);
+        return `
+          <button class="ml-l2 ml-l2-clickable"
+                  type="button"
+                  data-l1="${esc(c.name)}" data-l2="${esc(l2.name)}"
+                  style="--accent:${color}; --intensity:${intensity.toFixed(2)};"
+                  title="${esc(l2.name)} · ${l2.n_products} 款 · 点击查看 L3 + 公司 + 产品">
+            <span class="ml-l2-name">${esc(l2.name)}</span>
+            <span class="ml-l2-n">${l2.n_products}</span>
+          </button>
+        `;
+      }).join("");
+      return `
+        <article class="ml-l1" style="--accent:${color};">
+          <header class="ml-l1-head">
+            <div>
+              <h3 class="ml-l1-name">${esc(c.name)}</h3>
+              <div class="ml-l1-meta">
+                <span class="ml-l1-meta-n">${c.l2_count}</span> 个二级赛道
+              </div>
+            </div>
+            <div class="ml-l1-total">
+              <span class="ml-l1-total-n">${c.n_products}</span>
+              <span class="ml-l1-total-k">款产品</span>
+            </div>
+          </header>
+          <div class="ml-l2-grid">${l2Html}</div>
+        </article>
+      `;
+    }).join("");
+
+    // L2 sub-card click → open V3MaterialDrawer in L2 mode (L3 + companies + products)
+    grid.querySelectorAll(".ml-l2-clickable").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const l1 = btn.getAttribute("data-l1");
+        const l2 = btn.getAttribute("data-l2");
+        if (l1 && l2 && window.V3MaterialDrawer) {
+          window.V3MaterialDrawer.show({ l1, l2 });
+        }
+      });
+    });
+
+    // ── Region + Indication single-dimension bars (phenomenon-level only) ──
+    const gd = window.GLOBAL_AESTHETICS_DATA || {};
+    const REGION_ZH = {
+      "Europe": "欧洲", "Asia-Pacific": "亚太", "North America": "北美",
+      "Middle East": "中东", "Latin America": "拉美", "Africa": "非洲",
+      "Oceania": "大洋洲", "Global": "全球", "Other": "其他",
+    };
+    function renderBars (containerId, rows, opts) {
+      const el = document.getElementById(containerId);
+      if (!el || !rows || !rows.length) return;
+      const max = Math.max(1, ...rows.map(r => r.value));
+      const items = rows.slice(0, opts.limit || rows.length);
+      el.innerHTML = items.map(r => {
+        const pct = (r.value / max * 100).toFixed(1);
+        const zh = opts.zhMap ? opts.zhMap[r.name] : "";
+        return `
+          <div class="ov-bar-row">
+            <div class="ov-bar-label">
+              <span class="ov-bar-zh">${esc(zh || r.name)}</span>
+              ${zh ? `<span class="ov-bar-en">${esc(r.name)}</span>` : ""}
+            </div>
+            <div class="ov-bar-track">
+              <div class="ov-bar-fill" style="width:${pct}%; --accent:${opts.color};"></div>
+            </div>
+            <div class="ov-bar-n">${r.value.toLocaleString("en-US")}</div>
+          </div>
+        `;
+      }).join("");
+    }
+    renderBars("ov-region-bars", gd.region_distribution || [], {
+      limit: 10, color: "var(--t-regen, #A8B59A)", zhMap: REGION_ZH,
+    });
+    renderBars("ov-indication-bars", (gd.indication_distribution || []).slice(0, 12), {
+      limit: 12, color: "var(--t-injectables, #6B5A75)",
+    });
+  })();
+</script>
+
+<script>
+  /* =========================================================================
+     Globe initialization · v3 iteration #2
+     - City-aggregated dots (size ∝ √n_companies)
+     - CSS glow + pulsing halo (Image 8 reference)
+     - Horizontal-only rotation (polar locked to PI/2)
+     - Auto-rotate from init (paused on user interaction)
+     - Top cities show labels when zoomed close
+     ========================================================================= */
+  /* Wait until both THREE + Globe libs finish loading (they're injected
+     dynamically by the loadGlobeLibs() above so they're not guaranteed
+     to be ready by the time this inline script runs). Poll every 200ms
+     up to 60s before giving up. */
+
+  // —— WebGL capability check + graceful fallback (so a GPU/hardware-accel
+  //    failure shows a clear message instead of a mysterious blank stage) ——
+  function globeWebglOK () {
+    try {
+      const c = document.createElement("canvas");
+      const gl = c.getContext("webgl2") || c.getContext("webgl") || c.getContext("experimental-webgl");
+      if (!gl) return false;
+      if (gl.isContextLost && gl.isContextLost()) return false;
+      return true;
+    } catch (e) { return false; }
+  }
+  function showGlobeFallback (reason) {
+    const loading = document.getElementById("globe-loading");
+    if (loading) loading.style.display = "none";
+    const stage = document.getElementById("globe-stage");
+    if (!stage || stage.querySelector(".globe-fallback")) return;
+    const div = document.createElement("div");
+    div.className = "globe-fallback";
+    div.style.cssText = "position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;gap:13px;";
+    const isFile = location.protocol === "file:";
+    const title = isFile ? "请通过本地服务器打开（http://）" : "3D 地球需要 WebGL / 硬件加速";
+    const body = isFile
+      ? `检测到你是<b style="color:#f0d9c8;">直接双击打开了 HTML 文件</b>（file://）。浏览器的安全策略（CORS）会拦截地球贴图、地形图与世界地图数据，所以 3D 地球无法显示。<br><br>
+         正确打开方式：<br>
+         ① 双击项目里的 <b style="color:#f0d9c8;">Open-Global-Dashboard.bat</b>；<br>
+         ② 或在项目目录运行 <code style="font-family:var(--f-mono);">python server.py --port 8790</code>，再用浏览器打开 <code style="font-family:var(--f-mono);">http://127.0.0.1:8790/v3/index.html</code>。<br><br>
+         <span style="opacity:.85;">页面其它部分能显示，是因为它们不需要加载贴图 / 外部文件。</span>`
+      : `当前浏览器未能渲染 3D 地球（${reason}）。<br>
+         开启方法：<b style="color:#f0d9c8;">浏览器设置 → 系统 → 打开「使用硬件加速模式」</b>，然后重启浏览器；<br>
+         可在 <code style="font-family:var(--f-mono);">chrome://gpu</code>（Edge 为 <code style="font-family:var(--f-mono);">edge://gpu</code>）查看 WebGL 是否为 <i>Hardware accelerated</i>。<br>
+         若仍空白，可能是显卡 / 驱动被屏蔽，换一个浏览器再试。<br>
+         <span style="opacity:.85;">下方「国家分布」「赛道分布」仍可查看全部全球数据。</span>`;
+    div.innerHTML = `
+      <div style="font-size:34px;opacity:.7;">🌐</div>
+      <div style="font-family:var(--f-display);font-size:21px;color:#f3ece1;">${title}</div>
+      <div style="font-family:var(--f-sans);font-size:13px;line-height:1.8;color:rgba(232,201,197,.74);max-width:580px;">${body}</div>`;
+    stage.appendChild(div);
+  }
+
+  (function waitForGlobeLibs () {
+    const data = window.GLOBAL_AESTHETICS_DATA;
+    if (!data || !data.geo_companies) {
+      console.warn("[v3 globe] geo_companies missing in app-data.js");
+      return;
+    }
+    if (location.protocol === "file:") { showGlobeFallback("file-protocol"); return; }
+    if (!globeWebglOK()) { showGlobeFallback("浏览器未启用 WebGL"); return; }
+    const loading = document.getElementById("globe-loading");
+    let attempts = 0;
+    const maxAttempts = 300;   // 60s @ 200ms
+    (function tick () {
+      attempts += 1;
+      if (typeof Globe === "function" && typeof THREE !== "undefined") {
+        try {
+          runInit(data);
+        } catch (e) {
+          console.error("[v3 globe] runInit threw:", e);
+          showGlobeFallback("初始化异常 · " + ((e && e.message) ? e.message : String(e)));
+        }
+        return;
+      }
+      if (attempts >= maxAttempts) {
+        console.error("[v3 globe] libs failed to load after 60s");
+        showGlobeFallback("3D 库加载失败（本地 + CDN）");
+        return;
+      }
+      if (loading && attempts === 10) loading.textContent = "地球加载中…（首次加载 ~3s）";
+      setTimeout(tick, 200);
+    })();
+  })();
+
+  function runInit (data) {
+
+    const TRACK_COLORS = {
+      "EBD":          "#8E3A3A",
+      "Injectables":  "#6B5A75",
+      "Skincare":     "#D9AE91",
+      "Regenerative": "#A8B59A",
+      "Consumables":  "#5A6878",
+      "Implants":     "#CFB58E",
+      "Diagnostics":  "#C76B68",
+      "Surgical":     "#8C7B91",
+      "Pharma":       "#EC9B73",
+      "Services":     "#C8B8D0",
+    };
+
+    const allCompanies = data.geo_companies.filter(c => Number.isFinite(c.lat) && Number.isFinite(c.lon));
+
+    // —— Track counts for filter pill badges ——
+    const trackCounts = allCompanies.reduce((acc, c) => {
+      acc[c.primary_track] = (acc[c.primary_track] || 0) + 1;
+      return acc;
+    }, {});
+    Object.keys(trackCounts).forEach(t => {
+      const el = document.getElementById("ct-" + t);
+      if (el) el.textContent = trackCounts[t];
+    });
+    const ctAll = document.getElementById("ct-all");
+    if (ctAll) ctAll.textContent = allCompanies.length;
+
+    // —— Aggregate by city: each city = one glowing dot ——
+    function aggregateByCity (companies) {
+      const map = new Map();
+      companies.forEach(c => {
+        const cityKey = (c.city || "—").trim();
+        const key = `${cityKey}|${c.country}`;
+        if (!map.has(key)) {
+          map.set(key, {
+            city: cityKey,
+            country: c.country,
+            region: c.region,
+            lat: c.lat,
+            lon: c.lon,
+            companies: [],
+          });
+        }
+        map.get(key).companies.push(c);
+      });
+      return Array.from(map.values()).map(city => {
+        const tc = {};
+        city.companies.forEach(c => {
+          const t = c.primary_track || "Unknown";
+          tc[t] = (tc[t] || 0) + 1;
+        });
+        const sortedTracks = Object.entries(tc).sort((a, b) => b[1] - a[1]);
+        const products = city.companies.reduce((s, c) => s + (c.products || 0), 0);
+        const brands = city.companies.reduce((s, c) => s + (c.brands || 0), 0);
+        const listed = city.companies.filter(c => c.ownership === "Public").length;
+        return Object.assign(city, {
+          n_companies: city.companies.length,
+          n_products: products,
+          n_brands: brands,
+          n_listed: listed,
+          dominant_track: sortedTracks[0][0],
+          track_breakdown: sortedTracks,
+        });
+      });
+    }
+
+    const allCities = aggregateByCity(allCompanies);
+
+    // —— Stat strip context-switching · global ↔ country ↔ city ——
+    const GLOBAL_STATS = [
+      { k: "Companies · 企业", v: allCompanies.length, lab: "Active · 活跃" },
+      { k: "Countries · 国家", v: new Set(allCompanies.map(c => c.country)).size, lab: "Total · 总计" },
+      { k: "Products · 产品",  v: (data.summary && data.summary.products) || 975, lab: "L1 × 9" },
+      { k: "Cities · 城市",    v: allCities.length, lab: "Mapped · 已映射" },
+    ];
+    function setStripCell (i, k, v, lab) {
+      const ke = document.getElementById("strip-k-" + i);
+      const ve = document.getElementById("strip-v-" + i);
+      const le = document.getElementById("strip-l-" + i);
+      if (ke) ke.textContent = k;
+      if (ve) ve.textContent = (typeof v === "number") ? v.toLocaleString("en-US") : String(v);
+      if (le) le.textContent = lab;
+    }
+    function updateStatStrip (scope) {
+      const lbl = document.getElementById("strip-scope-label");
+      const back = document.getElementById("strip-back");
+      if (!scope || scope.type === "global") {
+        if (lbl) lbl.textContent = "Global · 全局";
+        if (back) back.classList.add("hidden");
+        GLOBAL_STATS.forEach((c, i) => setStripCell(i + 1, c.k, c.v, c.lab));
+      } else if (scope.type === "country") {
+        if (lbl) lbl.textContent = `${scope.name}${scope.region ? " · " + scope.region : ""}`;
+        if (back) back.classList.remove("hidden");
+        setStripCell(1, "Companies · 企业", scope.companies, "in country · 该国");
+        setStripCell(2, "Cities · 城市",    scope.cities,    "in country · 该国");
+        setStripCell(3, "Products · 产品",  scope.products,  "in country · 该国");
+        setStripCell(4, "Listed · 上市",    scope.listed,    "public · 公开");
+      } else if (scope.type === "city") {
+        if (lbl) lbl.textContent = `${scope.city}${scope.country ? " · " + scope.country : ""}`;
+        if (back) back.classList.remove("hidden");
+        setStripCell(1, "Companies · 企业", scope.companies, "in city · 城内");
+        setStripCell(2, "Products · 产品",  scope.products,  "in city · 城内");
+        setStripCell(3, "Brands · 品牌",    scope.brands,    "in city · 城内");
+        setStripCell(4, "Listed · 上市",    scope.listed,    "public · 公开");
+      }
+    }
+    updateStatStrip({ type: "global" });
+    const stripBackBtn = document.getElementById("strip-back");
+    if (stripBackBtn) {
+      stripBackBtn.addEventListener("click", () => {
+        closeAllDrawers();
+        updateStatStrip({ type: "global" });
+      });
+    }
+
+    // Top N cities (by company count) — these show labels when zoomed in close
+    const TOP_N_LABELS = 24;
+    const topCityKeys = new Set(
+      allCities.slice().sort((a, b) => b.n_companies - a.n_companies).slice(0, TOP_N_LABELS)
+        .map(c => `${c.city}|${c.country}`)
+    );
+
+    // Animated label cycling — "camera-aware spatial spread":
+    //   - Pool: top 80 cities by company count
+    //   - Each tick (every 4 s) we:
+    //     1. Compute which pool cities are currently facing the camera
+    //        (dot product of city's unit-vector with camera direction > 0.15)
+    //     2. Greedy spatial spread within visible: take cities in order of
+    //        n_companies desc, accept one only if it's > 18° (great-circle)
+    //        away from every already-accepted city. Cap at MAX_LABELS.
+    //     3. Track "shown in current region" set so consecutive ticks
+    //        cycle through DIFFERENT subsets of the same visible cities.
+    //        When camera rotates to a new region (≥50% of visible cities
+    //        changed since last tick) the "shown" set resets.
+    //   - This fixes the 3 issues from the screenshots:
+    //     a. No empty frames — visible set is always whatever's facing camera.
+    //     b. No overlap — 18° min angular distance keeps labels apart.
+    //     c. Better cover — cap at 5 per tick, alternate subsets so the
+    //        ~20 cities in a dense region get rotated through.
+    // 2026-06-05: open the pool to EVERY mapped city so under-populated
+    // hemispheres (Pacific / Oceania / E.Asia) still surface labels —
+    // pixel-overlap selection caps the on-screen total to ≤ TARGET_LABELS
+    // regardless of pool size.
+    const CANDIDATE_CAP = 40;       // candidates considered per tick before pixel filter
+    const MIN_ANGULAR_DIST = 2;     // near-zero great-circle filter (pixel pass is the real guarantee)
+    const TARGET_LABELS = 10;       // aim for ≤ 10 visible
+    const cycleCities = allCities.slice()
+      .sort((a, b) => b.n_companies - a.n_companies);    // no .slice — full pool
+    const cyclePool = new Set(cycleCities.map(c => `${c.city}|${c.country}`));
+    window.__cyclePool = cyclePool;
+
+    // —— Initialize globe ——
+    const stage = document.getElementById("globe-stage");
+    const w = stage.clientWidth;
+    const h = stage.clientHeight;
+
+    let globe;
+    try {
+      globe = Globe({ rendererConfig: { antialias: true, alpha: true } })
+        .width(w)
+        .height(h)
+        .backgroundColor("rgba(0,0,0,0)")
+        .globeImageUrl("./assets/earth-blue-marble.jpg")
+        .bumpImageUrl("./assets/earth-topology.png")
+        .showAtmosphere(true)
+        .atmosphereColor("#b85957")
+        .atmosphereAltitude(0.20)
+        .htmlElementsData(allCities)
+        .htmlLat(d => d.lat)
+        .htmlLng(d => d.lon)
+        .htmlAltitude(0.005)
+        .htmlElement(d => buildCityDot(d, false))
+        (stage);
+    } catch (err) {
+      console.error("[v3 globe] init threw:", err);
+      showGlobeFallback("3D 渲染初始化失败");
+      return;
+    }
+    // If the WebGL context is missing or gets lost (GPU blocked / crashed),
+    // swap to the fallback message rather than leave a blank canvas.
+    const glCanvas = stage.querySelector("canvas");
+    if (!glCanvas) { showGlobeFallback("未能创建 3D 画布"); return; }
+    glCanvas.addEventListener("webglcontextlost", () => showGlobeFallback("WebGL 上下文丢失"), { once: true });
+    try {
+      const gl = glCanvas.getContext("webgl2") || glCanvas.getContext("webgl") || glCanvas.getContext("experimental-webgl");
+      if (!gl || (gl.isContextLost && gl.isContextLost())) { showGlobeFallback("WebGL 上下文不可用"); return; }
+    } catch (e) { /* non-fatal */ }
+
+    function buildCityDot (d, labelOn) {
+      const el = document.createElement("div");
+      el.className = "globe-city-dot";
+      const key = `${d.city}|${d.country}`;
+      if (topCityKeys.has(key)) el.classList.add("top-city");
+      if (labelOn && topCityKeys.has(key)) el.classList.add("label-on");
+      el.dataset.cityKey = key;
+      el.dataset.track = d.dominant_track;
+      const size = Math.max(10, Math.min(46, Math.sqrt(d.n_companies) * 9 + 8));
+      el.style.setProperty("--dot-color", TRACK_COLORS[d.dominant_track] || "#999");
+      el.style.setProperty("--dot-size", `${size}px`);
+      // Pull the lead company for this city (companies[] already sorted desc).
+      const leadCompany = (d.companies && d.companies[0] && d.companies[0].company) || "";
+      // Mark cycle eligibility statically; activation (cycle-on) is reapplied
+      // by the camera-aware tick (see startLabelCycling). The label content
+      // is single-line per user feedback — only company name. City + count
+      // remain in the hover title for context.
+      if (cyclePool.has(key)) {
+        el.classList.add("cycle-label");
+      }
+      // Latitude-aware placement: northern hemisphere labels float ABOVE the
+      // dot, southern hemisphere stay below. Equatorial just below. This
+      // breaks the "all labels piled at bottom" cluster the user noted.
+      const placeAbove = d.lat > 20;
+      if (placeAbove) el.classList.add("label-above");
+      el.title = `${d.city || ""} · ${d.country || ""} · ${d.n_companies} companies`;
+      el.innerHTML = `
+        <span class="halo halo-1"></span>
+        <span class="halo halo-2"></span>
+        <span class="core"></span>
+        <span class="city-label">${leadCompany ? escapeHtml(leadCompany) : escapeHtml(d.city)}</span>
+      `;
+      el.addEventListener("click", (evt) => {
+        evt.stopPropagation();
+        showCityDrawer(d);
+      });
+      return el;
+    }
+
+    // —— Country polygons (best-effort; missing geojson is fine) ——
+    let worldFeatures = [];
+    fetch("../world.geojson").then(r => r.ok ? r.json() : Promise.reject(r.status)).then(geo => {
+      worldFeatures = (geo.features || []).filter(f => f.properties && f.properties.name !== "Antarctica");
+      globe.polygonsData(worldFeatures)
+        .polygonAltitude(0.003)
+        .polygonCapColor(() => "rgba(247, 241, 230, 0.03)")
+        .polygonSideColor(() => "rgba(184, 89, 87, 0.08)")
+        .polygonStrokeColor(() => "rgba(232, 201, 197, 0.20)")
+        // .polygonLabel removed 2026-06-05 — user feedback: country-name
+        // tooltip following the mouse was distracting and unrelated to the
+        // medical-aesthetics narrative. Click still works (onPolygonClick).
+        .polygonLabel(() => "")
+        .onPolygonClick(d => showCountryDrawer(d.properties.name));
+    }).catch(err => console.warn("[v3 globe] world.geojson skipped:", err));
+
+    // —— Camera controls: mostly horizontal + auto-rotate immediately ——
+    const AUTO_ROTATE_SPEED = 0.5;
+    const AUTO_ROTATE_PAUSE_MS = 1800;
+    let rotationResumeTimer = null;
+    let rotationPausedUntil = 0;
+    const controls = globe.controls();
+    if (controls) {
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = AUTO_ROTATE_SPEED;  // a bit faster per user feedback
+      controls.enableZoom = true;
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.08;
+      controls.rotateSpeed = 0.5;
+      // Polar restricted to ±45° from equator — prevents 360 flip but allows
+      // programmatic centering of high-lat countries (USA / Korea / Europe)
+      controls.minPolarAngle = Math.PI / 4;          // 45°  (top tilt)
+      controls.maxPolarAngle = (3 * Math.PI) / 4;    // 135° (bottom tilt)
+      // Allow closer zoom for city-detail level
+      controls.minDistance = 130;
+      controls.maxDistance = 600;
+    }
+    window.__v3Globe = globe;
+    window.__v3GlobeControls = controls;
+
+    function resumeRotation () {
+      if (!controls) return;
+      if (rotationResumeTimer) {
+        clearTimeout(rotationResumeTimer);
+        rotationResumeTimer = null;
+      }
+      rotationPausedUntil = 0;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = AUTO_ROTATE_SPEED;
+    }
+
+    function resumeRotationSoon (delay = 650) {
+      if (!controls) return;
+      if (rotationResumeTimer) clearTimeout(rotationResumeTimer);
+      rotationPausedUntil = Date.now() + delay;
+      rotationResumeTimer = setTimeout(resumeRotation, delay);
+    }
+
+    // User gestures and camera focus tweens can disable OrbitControls'
+    // auto-rotate. Keep those pauses temporary so the globe returns to a
+    // steady, living rotation instead of freezing while the cloud layer spins.
+    function pauseRotation (delay = AUTO_ROTATE_PAUSE_MS) {
+      if (!controls) return;
+      controls.autoRotate = false;
+      resumeRotationSoon(delay);
+    }
+
+    function keepRotationAlive () {
+      if (controls && !document.hidden) {
+        if (controls.autoRotateSpeed !== AUTO_ROTATE_SPEED) {
+          controls.autoRotateSpeed = AUTO_ROTATE_SPEED;
+        }
+        if (!controls.autoRotate && !rotationResumeTimer && Date.now() >= rotationPausedUntil) {
+          resumeRotation();
+        }
+      }
+      requestAnimationFrame(keepRotationAlive);
+    }
+    requestAnimationFrame(keepRotationAlive);
+
+    // —— Animated label cycling — CAMERA-AWARE spatial spread ——
+    // Every TICK_MS we:
+    //   1. compute the cities currently facing the camera (dot product with
+    //      camera direction > 0.15, i.e. within ~80° of the front)
+    //   2. greedily pick up to MAX_LABELS that are ≥ MIN_ANGULAR_DIST apart
+    //      (great-circle), preferring high-rank cities first AND preferring
+    //      ones we haven't already shown this region.
+    //   3. assign .cycle-on to that subset, strip from all others.
+    // When the camera rotates to a new region (≥ 50% turnover in visible
+    // set since last tick), the "shown this region" memory resets so the
+    // new region starts fresh.
+    function startLabelCycling () {
+      const TICK_MS = 4000;
+      const shownThisRegion = new Set();
+      let lastVisible = new Set();
+
+      function keyOf (c) { return `${c.city}|${c.country}`; }
+      function angDist (a, b) {
+        // Great-circle distance in degrees
+        const φ1 = a.lat * Math.PI / 180;
+        const φ2 = b.lat * Math.PI / 180;
+        const Δφ = (b.lat - a.lat) * Math.PI / 180;
+        const Δλ = (b.lon - a.lon) * Math.PI / 180;
+        const x = Math.sin(Δφ / 2) ** 2 + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) ** 2;
+        return 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x)) * 180 / Math.PI;
+      }
+      function visibleCities () {
+        if (!globe || !globe.camera) return [];
+        const cam = globe.camera().position;
+        const camLen = Math.hypot(cam.x, cam.y, cam.z) || 1;
+        // Use globe.gl's own lat/lng→world fn so we never get axis confusion.
+        const getCoords = globe.getCoords ? globe.getCoords.bind(globe) : null;
+        return cycleCities.filter(c => {
+          let cx, cy, cz;
+          if (getCoords) {
+            const p = getCoords(c.lat, c.lon, 0);
+            cx = p.x; cy = p.y; cz = p.z;
+          } else {
+            const phi = (90 - c.lat) * Math.PI / 180;
+            const theta = (c.lon + 180) * Math.PI / 180;
+            cx = -Math.sin(phi) * Math.cos(theta);
+            cy = Math.cos(phi);
+            cz = Math.sin(phi) * Math.sin(theta);
+          }
+          const pLen = Math.hypot(cx, cy, cz) || 1;
+          const cos = (cx * cam.x + cy * cam.y + cz * cam.z) / (camLen * pLen);
+          return cos > 0.15;   // visible-ish (front 80% of sphere from camera)
+        });
+      }
+      function rectsOverlap (a, b, padding = 4) {
+        return !(a.right + padding < b.left || b.right + padding < a.left
+              || a.bottom + padding < b.top || b.bottom + padding < a.top);
+      }
+      function spreadPick (cities, exclude) {
+        // Coarse angular filter — biggest cities first, ≥ MIN_ANGULAR_DIST
+        // apart in great-circle. Returns up to CANDIDATE_CAP candidates.
+        const out = [];
+        for (const c of cities.slice().sort((a, b) => b.n_companies - a.n_companies)) {
+          if (exclude.has(keyOf(c))) continue;
+          if (out.some(s => angDist(s, c) < MIN_ANGULAR_DIST)) continue;
+          out.push(c);
+          if (out.length >= CANDIDATE_CAP) break;
+        }
+        return out;
+      }
+      function findDot (key) {
+        return stage.querySelector(`.globe-city-dot[data-city-key="${CSS.escape(key)}"]`);
+      }
+      // Per-city company rotation index — so a city with N companies
+      // rotates through ALL N names over successive ticks. With ALL 359
+      // companies in the pool, the page eventually surfaces every brand.
+      const companyCursor = new Map();
+      function nextCompanyName (city) {
+        const list = (city && city.companies) || [];
+        if (list.length === 0) return city.city || "";
+        const key = `${city.city}|${city.country}`;
+        const idx = (companyCursor.get(key) || 0) % list.length;
+        companyCursor.set(key, idx + 1);
+        return list[idx].company || city.city || "";
+      }
+      function setLabelForDot (dot, city) {
+        const lbl = dot.querySelector(".city-label");
+        if (!lbl) return;
+        const name = nextCompanyName(city);
+        if (name && lbl.textContent.trim() !== name) lbl.textContent = name;
+      }
+
+      const apply = () => {
+        const visible = visibleCities();
+        const visKeys = new Set(visible.map(keyOf));
+        // Region change detection: if visible set turned over by >= 50%,
+        // reset the "already shown this region" memory.
+        let same = 0;
+        visKeys.forEach(k => { if (lastVisible.has(k)) same++; });
+        const overlap = lastVisible.size ? same / Math.max(visKeys.size, lastVisible.size) : 0;
+        if (overlap < 0.5) shownThisRegion.clear();
+        lastVisible = visKeys;
+
+        let candidates = spreadPick(visible, shownThisRegion);
+        if (candidates.length < 3 && visible.length >= 3) {
+          shownThisRegion.clear();
+          candidates = spreadPick(visible, shownThisRegion);
+        }
+
+        // PIXEL-LEVEL SELECTION with progressive relaxation:
+        //   pass 1 — padding 8 (comfortable spacing)
+        //   pass 2 — padding 4 (tight) — only if pass 1 < MIN_LABELS
+        //   pass 3 — padding 0 (touching OK) — fallback to guarantee ≥3
+        // Why: dense clusters (NE US, Korea, N.Italy) used to reject all
+        // but one label after the first; the screenshot showed "Zimmer
+        // alone, 6s blank" — this guarantees we never go below 3 labels
+        // even in pathologic geometries.
+        const MIN_LABELS = 4;
+        const stageRect = stage.getBoundingClientRect();
+        // Compute and memo each candidate's measurable rect ONCE so the
+        // relaxation passes don't re-measure (label text doesn't change
+        // mid-pass; only the padding threshold does).
+        const measured = [];
+        for (const c of candidates) {
+          const key = keyOf(c);
+          const dot = findDot(key);
+          if (!dot) continue;
+          setLabelForDot(dot, c);
+          const lbl = dot.querySelector(".city-label");
+          if (!lbl) continue;
+          const rect = lbl.getBoundingClientRect();
+          if (rect.width === 0) continue;
+          // Stage clip — drop labels whose CENTER falls outside the stage.
+          // (Was: any-edge clip; that was rejecting limb labels of any size.)
+          const cx = (rect.left + rect.right) / 2;
+          const cy = (rect.top + rect.bottom) / 2;
+          if (cx < stageRect.left || cx > stageRect.right
+            || cy < stageRect.top || cy > stageRect.bottom) continue;
+          measured.push({ dot, rect, key });
+        }
+        function passWith (pad) {
+          const out = [];
+          for (const m of measured) {
+            if (out.some(a => rectsOverlap(a.rect, m.rect, pad))) continue;
+            out.push(m);
+            if (out.length >= TARGET_LABELS) break;
+          }
+          return out;
+        }
+        let accepted = passWith(8);
+        if (accepted.length < MIN_LABELS) accepted = passWith(4);
+        if (accepted.length < MIN_LABELS) accepted = passWith(0);
+        const acceptedKeys = new Set(accepted.map(a => a.key));
+        accepted.forEach(a => shownThisRegion.add(a.key));
+
+        stage.querySelectorAll(".globe-city-dot").forEach(el => {
+          const key = el.dataset.cityKey;
+          if (!cyclePool.has(key)) return;
+          if (!el.classList.contains("cycle-label")) el.classList.add("cycle-label");
+          if (acceptedKeys.has(key)) el.classList.add("cycle-on");
+          else el.classList.remove("cycle-on");
+        });
+      };
+
+      apply();
+      setInterval(apply, TICK_MS);
+    }
+    // Defer one frame so the city dots are in the DOM
+    setTimeout(startLabelCycling, 1000);
+
+    // —— Clouds · pushed higher & brighter for visible "floating in atmosphere" depth ——
+    if (typeof THREE !== "undefined" && globe.scene) {
+      new THREE.TextureLoader().load(
+        "./assets/earth-clouds.png",
+        (cloudsTex) => {
+          const R = globe.getGlobeRadius();
+          // Inner deck — closer to surface but lifted enough to read as a separate layer
+          const inner = new THREE.Mesh(
+            new THREE.SphereGeometry(R * 1.035, 96, 96),
+            new THREE.MeshLambertMaterial({
+              map: cloudsTex,
+              transparent: true,
+              opacity: 0.85,
+              depthWrite: false,
+            })
+          );
+          // Outer wispy halo — pulled way out for parallax depth + soft atmosphere lift
+          const outer = new THREE.Mesh(
+            new THREE.SphereGeometry(R * 1.075, 96, 96),
+            new THREE.MeshLambertMaterial({
+              map: cloudsTex,
+              transparent: true,
+              opacity: 0.40,
+              depthWrite: false,
+            })
+          );
+          outer.rotation.y = Math.PI;
+          globe.scene().add(inner);
+          globe.scene().add(outer);
+          (function spinClouds () {
+            inner.rotation.y += 0.00075;
+            outer.rotation.y += 0.00045;
+            requestAnimationFrame(spinClouds);
+          })();
+        },
+        undefined,
+        (err) => console.warn("[v3 globe] clouds texture failed:", err)
+      );
+    }
+
+    // —— Initial camera: slightly closer than default, looking at Europe/MidEast ——
+    globe.pointOfView({ lat: 30, lng: 30, altitude: 2.0 }, 0);
+
+    // —— Hide loading ——
+    setTimeout(() => {
+      const loading = document.getElementById("globe-loading");
+      if (loading) {
+        loading.style.opacity = "0";
+        setTimeout(() => { loading.style.display = "none"; }, 400);
+      }
+    }, 1200);
+
+    // —— Responsive resize ——
+    window.addEventListener("resize", () => {
+      globe.width(stage.clientWidth).height(stage.clientHeight);
+    });
+
+    // —— Keep interaction pauses brief; homepage should keep rotating ——
+    stage.addEventListener("mousedown", () => pauseRotation(1400));
+    stage.addEventListener("wheel", () => pauseRotation(1200), { passive: true });
+    stage.addEventListener("touchstart", () => pauseRotation(1500), { passive: true });
+    stage.addEventListener("touchend", () => resumeRotationSoon(700), { passive: true });
+    window.addEventListener("mouseup", () => resumeRotationSoon(700));
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) resumeRotationSoon(250);
+    });
+
+    // —— Zoom-aware label visibility: when camera is close, top cities auto-show labels ——
+    const ZOOM_LABEL_THRESHOLD = 230; // camera distance ; closer = smaller value
+    let labelsCurrentlyOn = false;
+    function updateLabels () {
+      const cam = globe.camera();
+      const dist = cam.position.length();
+      const shouldShow = dist < ZOOM_LABEL_THRESHOLD;
+      if (shouldShow !== labelsCurrentlyOn) {
+        labelsCurrentlyOn = shouldShow;
+        stage.querySelectorAll(".globe-city-dot.top-city").forEach(el => {
+          el.classList.toggle("label-on", shouldShow);
+        });
+      }
+    }
+    // Poll every 200ms (cheap, no requestAnimationFrame loop needed)
+    setInterval(updateLabels, 200);
+
+    // —— Filter pills (track selection) ——
+    let currentTrack = "all";
+    document.querySelectorAll(".globe-controls .filter-pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        document.querySelectorAll(".globe-controls .filter-pill").forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        currentTrack = pill.getAttribute("data-track");
+        const filteredCompanies = currentTrack === "all"
+          ? allCompanies
+          : allCompanies.filter(c => c.primary_track === currentTrack);
+        const filteredCities = aggregateByCity(filteredCompanies);
+        globe.htmlElementsData(filteredCities);
+        // Update stat strip "Cities" count
+        if (cityEl) cityEl.textContent = filteredCities.length;
+      });
+    });
+
+    // —— City drawer (replaces per-company detail card as primary drill) ——
+    function showCityDrawer (city) {
+      const drawer = document.getElementById("countryDrawer");
+      if (!drawer) return;
+      lastDrawerView = { type: "city", city };
+      // Update stat strip to city scope
+      const cityProducts = city.companies.reduce((s, c) => s + (c.products || 0), 0);
+      const cityBrands   = city.companies.reduce((s, c) => s + (c.brands || 0), 0);
+      const cityListed   = city.companies.filter(c => c.ownership === "Public").length;
+      updateStatStrip({
+        type: "city",
+        city: city.city,
+        country: city.country,
+        companies: city.companies.length,
+        products: cityProducts,
+        brands: cityBrands,
+        listed: cityListed,
+      });
+
+      const cityCompanies = city.companies
+        .slice()
+        .sort((a, b) => (b.products || 0) - (a.products || 0));
+
+      const rows = cityCompanies.map(c => `
+        <div class="row" data-company-id="${escapeHtml(c.company_id || "")}">
+          <span class="sw" style="background:${TRACK_COLORS[c.primary_track] || "#888"}; color:${TRACK_COLORS[c.primary_track] || "#888"}"></span>
+          <span class="name">
+            <span class="nm">${escapeHtml(c.company)}</span>
+            <span class="city">${escapeHtml(c.primary_track || "")} · ${escapeHtml(c.ownership || "—")}${c.stock_code ? " · " + escapeHtml(c.stock_code) : ""}</span>
+          </span>
+          <span class="pcount">${c.products || 0}</span>
+        </div>
+      `).join("");
+
+      drawer.innerHTML = `
+        <div class="drawer-head">
+          <button class="drawer-close" type="button" aria-label="关闭">×</button>
+          <span class="stamp">City · drill-down</span>
+          <h3>${escapeHtml(city.city)}${city.country ? `<span style="font-family:var(--f-body); font-size:13.5px; color:rgba(216,196,198,0.7); letter-spacing:0; margin-left:8px; font-weight:300;">${escapeHtml(city.country)}</span>` : ""}</h3>
+          <div class="sub">${escapeHtml(city.region || "")} · stats in the title strip ↑</div>
+        </div>
+        <div class="drawer-list">${rows}</div>
+      `;
+      drawer.classList.add("show");
+      drawer.querySelector(".drawer-close").addEventListener("click", () => {
+        drawer.classList.remove("show");
+        updateStatStrip({ type: "global" });
+        lastDrawerView = null;
+      });
+      drawer.querySelectorAll(".drawer-list .row").forEach(row => {
+        row.addEventListener("click", () => {
+          const cid = row.getAttribute("data-company-id");
+          const c = allCompanies.find(x => x.company_id === cid);
+          if (c) showDetailCard(c);
+        });
+      });
+
+      // Zoom camera in onto the city
+      globe.pointOfView({ lat: city.lat, lng: city.lon, altitude: 1.0 }, 1100);
+      pauseRotation();
+    }
+
+    // —— Navigation state: track the last drawer view so the detail card's "back"
+    //    chip can restore it. lastDrawerView is set in showCountryDrawer / showCityDrawer;
+    //    showDetailCard hides the drawer when it appears (so the card isn't covered)
+    //    and restores it when the back chip is clicked. ——
+    let lastDrawerView = null;     // {type:'country', name} or {type:'city', city}
+    let backCityContext = null;    // set by showCitySelector for the inner city → company back
+
+    function closeAllDrawers () {
+      document.getElementById("countryDrawer")?.classList.remove("show");
+      document.getElementById("globeDetailCard")?.classList.remove("show");
+      lastDrawerView = null;
+      backCityContext = null;
+    }
+
+    function restoreLastDrawer () {
+      if (!lastDrawerView) return;
+      document.getElementById("globeDetailCard")?.classList.remove("show");
+      if (lastDrawerView.type === "country") showCountryDrawer(lastDrawerView.name);
+      else if (lastDrawerView.type === "city") showCityDrawer(lastDrawerView.city);
+    }
+    function showCitySelector (city) {
+      const card = document.getElementById("globeDetailCard");
+      if (!card) return;
+      backCityContext = city;
+      const rows = city.companies
+        .slice()
+        .sort((a, b) => (b.products || 0) - (a.products || 0))
+        .map(c => `
+          <div class="city-selector-row" data-company-id="${escapeHtml(c.company_id || "")}">
+            <span class="sw" style="background:${TRACK_COLORS[c.primary_track] || "#888"}; color:${TRACK_COLORS[c.primary_track] || "#888"}"></span>
+            <span class="nm">
+              ${escapeHtml(c.company)}
+              <small>${escapeHtml(c.primary_track || "")} · ${escapeHtml(c.ownership || "—")}${c.stock_code ? " · " + escapeHtml(c.stock_code) : ""}</small>
+            </span>
+            <span class="pcount">${c.products || 0}</span>
+          </div>
+        `).join("");
+      card.innerHTML = `
+        <button class="card-close" type="button" aria-label="关闭">×</button>
+        <span class="card-rating">City · ${city.companies.length} companies</span>
+        <div class="card-title">${escapeHtml(city.city || "—")}</div>
+        <div class="card-sub">${escapeHtml(city.country || "")} · ${escapeHtml(city.region || "")}</div>
+        <div class="city-selector-head">Select a company to view its products</div>
+        <div class="city-selector-list">${rows}</div>
+      `;
+      card.classList.add("show");
+      card.querySelector(".card-close").addEventListener("click", () => {
+        card.classList.remove("show");
+        backCityContext = null;
+      });
+      card.querySelectorAll(".city-selector-row").forEach(row => {
+        row.addEventListener("click", () => {
+          const cid = row.getAttribute("data-company-id");
+          const c = allCompanies.find(x => x.company_id === cid);
+          if (c) showDetailCard(c);
+        });
+      });
+    }
+
+    // —— Detail card for individual company (with real product list) ——
+    function showDetailCard (c) {
+      const card = document.getElementById("globeDetailCard");
+      const drawer = document.getElementById("countryDrawer");
+      if (!card) return;
+
+      // CRITICAL: drawer is 380px wide on right edge; detail card also right-aligned.
+      // To make card actually visible, slide drawer offscreen first. Back chip restores.
+      if (drawer) drawer.classList.remove("show");
+
+      const trackColor = TRACK_COLORS[c.primary_track] || "#888";
+      const ownership = c.ownership || "Unknown";
+      const ownershipLabel = ownership === "Public" ? "上市" : (ownership === "Private" ? "私营" : "—");
+      const ownershipLevel = ownership === "Public" ? 3 : (ownership === "Private" ? 1 : 0);
+
+      // Look up real products by company_id (from v3-products.js)
+      const products = (window.V3_PRODUCTS_BY_COMPANY || {})[c.company_id] || [];
+      // Group products by brand for "brand → products" display
+      const brandGroups = {};
+      products.forEach(p => {
+        const key = p.brand || "(no brand)";
+        if (!brandGroups[key]) brandGroups[key] = { brand: p.brand, brand_role: p.brand_role, items: [] };
+        brandGroups[key].items.push(p);
+      });
+      const productListMarkup = products.length
+        ? Object.values(brandGroups).map(group => {
+            const itemsHtml = group.items.map(p => {
+              // 4 key fields: Tech_Type_Std, Brand, Brand_Type, Core_Product
+              const meta = [];
+              if (p.core && p.core !== p.name) meta.push(`<span><span class="pk">Core</span><span class="pv">${escapeHtml(p.core)}</span></span>`);
+              if (p.tech) meta.push(`<span><span class="pk">Tech</span><span class="pv">${escapeHtml(p.tech)}</span></span>`);
+              else if (p.material) meta.push(`<span><span class="pk">Material</span><span class="pv">${escapeHtml(p.material)}</span></span>`);
+              if (p.l2) meta.push(`<span><span class="pk">L2</span><span class="pv">${escapeHtml(p.l2)}</span></span>`);
+              if (p.tech_l2 && p.tech_l2 !== p.tech) meta.push(`<span><span class="pk">Tech L2</span><span class="pv">${escapeHtml(p.tech_l2)}</span></span>`);
+              return `
+                <div class="prod-detail">
+                  <span class="pn">${escapeHtml(p.name)}</span>
+                  <span class="pmeta">${meta.join("")}</span>
+                </div>
+              `;
+            }).join("");
+            return `
+              <div class="brand-group">
+                <div class="brand-head">
+                  <span class="name">${escapeHtml(group.brand || "(no brand)")}</span>
+                  ${group.brand_role ? `<span class="role">${escapeHtml(group.brand_role)}</span>` : ""}
+                  <span class="ct">${group.items.length} product${group.items.length > 1 ? "s" : ""}</span>
+                </div>
+                ${itemsHtml}
+              </div>
+            `;
+          }).join("")
+        : `<div style="font-family:var(--f-body); font-size:12.5px; color:rgba(216,196,198,0.55); font-style:italic; padding:8px 0;">product_master 暂无该公司产品记录</div>`;
+
+      // Back-to-drawer chip — restores whatever drawer was last open
+      let backChipLabel = "";
+      if (backCityContext) {
+        backChipLabel = `← ${escapeHtml(backCityContext.city || "city")} (${backCityContext.companies.length})`;
+      } else if (lastDrawerView && lastDrawerView.type === "country") {
+        backChipLabel = `← ${escapeHtml(lastDrawerView.name)} (list)`;
+      } else if (lastDrawerView && lastDrawerView.type === "city") {
+        backChipLabel = `← ${escapeHtml(lastDrawerView.city.city || "city")} (list)`;
+      }
+      const backChip = backChipLabel ? `<button class="back-to-city" type="button">${backChipLabel}</button>` : "";
+
+      card.innerHTML = `
+        <button class="card-close" type="button" aria-label="关闭">×</button>
+        ${backChip}
+        <span class="card-rating">Rank ${c.priority_rank || "—"} / ${allCompanies.length || 359}</span>
+        <div class="card-title" id="globe-detail-title">${escapeHtml(c.company)}</div>
+        <div class="card-sub">${escapeHtml(c.city || "")}${c.city && c.country ? ", " : ""}${escapeHtml(c.country || "")} · ${escapeHtml(c.region || "")}</div>
+        <div class="card-row">
+          <span class="k">Products<small>commercial L1 / L2</small></span>
+          <span class="v">${c.products || 0}</span>
+        </div>
+        <div class="card-row">
+          <span class="k">Brands<small>product + corporate</small></span>
+          <span class="v">${c.brands || 0}</span>
+        </div>
+        <div class="card-row">
+          <span class="k">Ownership<small>${escapeHtml(c.stock_code || "—")}</small></span>
+          <span class="level">
+            <i class="${ownershipLevel >= 1 ? "on" : ""}"></i>
+            <i class="${ownershipLevel >= 2 ? "on" : ""}"></i>
+            <i class="${ownershipLevel >= 3 ? "on" : ""}"></i>
+            <span class="level-label">${ownershipLabel}</span>
+          </span>
+        </div>
+        <span class="card-track-chip"><span class="sw" style="background:${trackColor}; color:${trackColor}"></span>${escapeHtml(c.primary_track || "")} · 主赛道</span>
+        <div class="card-products">
+          <div class="card-products-head">
+            <span class="label">Products · ${products.length}</span>
+            <span class="ct">commercial L1 / L2 / tech</span>
+          </div>
+          ${productListMarkup}
+        </div>
+      `;
+      card.classList.add("show");
+      card.querySelector(".card-close").addEventListener("click", () => {
+        card.classList.remove("show");
+        backCityContext = null;
+      });
+      const backBtn = card.querySelector(".back-to-city");
+      if (backBtn) {
+        backBtn.addEventListener("click", () => {
+          card.classList.remove("show");
+          if (backCityContext) {
+            const ctx = backCityContext;
+            backCityContext = null;
+            showCitySelector(ctx);
+          } else {
+            restoreLastDrawer();
+          }
+        });
+      }
+
+      globe.pointOfView({ lat: c.lat, lng: c.lon, altitude: 0.9 }, 1100);
+      pauseRotation();
+    }
+
+    // —— Country mini-map renderer · flat SVG country outline + city dots ——
+    function renderCountryMiniMap (countryFeatures, countryCompanies) {
+      const W = 320, H = 200, PAD_DEG = 1;
+
+      // Step 1: bbox of company points (always included — these are what user cares about)
+      const cLats = countryCompanies.map(c => c.lat);
+      const cLons = countryCompanies.map(c => c.lon);
+      let minLat = Math.min(...cLats);
+      let maxLat = Math.max(...cLats);
+      let minLon = Math.min(...cLons);
+      let maxLon = Math.max(...cLons);
+
+      // Step 2: include only mainland rings — rings whose CENTROID falls inside the
+      // company-bbox + RELEVANCE_DEG buffer. This correctly excludes territories like
+      // Alaska / Hawaii / French Guiana / Canary Islands while keeping mainland intact.
+      // (The previous "any vertex within buffer" filter incorrectly pulled in the Alaska
+      //  panhandle because some of its vertices were within range of continental US.)
+      const RELEVANCE_DEG = 8;
+      const relevantRings = [];
+      function ringCentroid (ring) {
+        let cx = 0, cy = 0, n = 0;
+        for (const pt of ring) {
+          if (Array.isArray(pt) && pt.length >= 2) {
+            cx += pt[0]; cy += pt[1]; n += 1;
+          }
+        }
+        return n ? [cx / n, cy / n] : [0, 0];
+      }
+      function ringIsMainland (ring) {
+        const [clon, clat] = ringCentroid(ring);
+        return (
+          clon >= minLon - RELEVANCE_DEG && clon <= maxLon + RELEVANCE_DEG &&
+          clat >= minLat - RELEVANCE_DEG && clat <= maxLat + RELEVANCE_DEG
+        );
+      }
+      countryFeatures.forEach(feat => {
+        const g = feat.geometry;
+        if (!g) return;
+        if (g.type === "Polygon") {
+          g.coordinates.forEach(ring => { if (ringIsMainland(ring)) relevantRings.push(ring); });
+        } else if (g.type === "MultiPolygon") {
+          g.coordinates.forEach(poly => poly.forEach(ring => {
+            if (ringIsMainland(ring)) relevantRings.push(ring);
+          }));
+        }
+      });
+
+      // Step 3: union — expand bbox to include all selected ring vertices so the
+      // border stays fully on-canvas. This is the fix for the "右侧被切" bug.
+      relevantRings.forEach(ring => {
+        ring.forEach(([lon, lat]) => {
+          if (lon < minLon) minLon = lon;
+          if (lon > maxLon) maxLon = lon;
+          if (lat < minLat) minLat = lat;
+          if (lat > maxLat) maxLat = lat;
+        });
+      });
+      minLat -= PAD_DEG; maxLat += PAD_DEG;
+      minLon -= PAD_DEG; maxLon += PAD_DEG;
+      const lonRange = maxLon - minLon || 4;
+      const latRange = maxLat - minLat || 4;
+
+      // Lock aspect ratio
+      const dataAspect = lonRange / latRange;
+      const svgAspect  = W / H;
+      let scale, offX = 0, offY = 0;
+      if (dataAspect > svgAspect) {
+        scale = W / lonRange;
+        offY  = (H - latRange * scale) / 2;
+      } else {
+        scale = H / latRange;
+        offX  = (W - lonRange * scale) / 2;
+      }
+      const project = (lon, lat) => [
+        (lon - minLon) * scale + offX,
+        H - ((lat - minLat) * scale + offY),
+      ];
+
+      // Build country shape paths (only from relevant rings — these are what's in view)
+      let countryPath = "";
+      relevantRings.forEach(ring => {
+        ring.forEach((pt, i) => {
+          if (!Array.isArray(pt) || pt.length < 2) return;
+          const [x, y] = project(pt[0], pt[1]);
+          countryPath += (i === 0 ? "M" : "L") + x.toFixed(1) + "," + y.toFixed(1) + " ";
+        });
+        countryPath += "Z ";
+      });
+
+      // Aggregate by city for dots
+      const cityMap = new Map();
+      countryCompanies.forEach(c => {
+        const key = `${c.city || "—"}|${c.lat.toFixed(2)}|${c.lon.toFixed(2)}`;
+        if (!cityMap.has(key)) {
+          cityMap.set(key, { city: c.city, lat: c.lat, lon: c.lon, companies: [] });
+        }
+        cityMap.get(key).companies.push(c);
+      });
+
+      let dotsMarkup = "";
+      Array.from(cityMap.values())
+        .sort((a, b) => a.companies.length - b.companies.length)
+        .forEach((city, i) => {
+          const [x, y] = project(city.lon, city.lat);
+          const trackCounts = {};
+          city.companies.forEach(c => {
+            const t = c.primary_track || "Unknown";
+            trackCounts[t] = (trackCounts[t] || 0) + 1;
+          });
+          const dominantTrack = Object.entries(trackCounts).sort((a, b) => b[1] - a[1])[0][0];
+          const color = TRACK_COLORS[dominantTrack] || "#888";
+          const r = Math.max(3, Math.min(14, Math.sqrt(city.companies.length) * 2.5 + 2));
+          const topCompanyId = city.companies.slice().sort((a, b) => (b.products || 0) - (a.products || 0))[0].company_id || "";
+          dotsMarkup += `<circle class="city-marker-halo" style="color:${color}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(r + 4).toFixed(1)}"></circle>`;
+          dotsMarkup += `<circle class="city-marker" data-city-key="${escapeHtml(city.city || "")}|${city.lat.toFixed(2)}|${city.lon.toFixed(2)}" data-top-company-id="${escapeHtml(topCompanyId)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${color}"><title>${escapeHtml(city.city || "")} · ${city.companies.length} cos · click for detail</title></circle>`;
+        });
+
+      return `
+        <div class="country-minimap-wrap">
+          <svg viewBox="0 0 ${W} ${H}" class="country-minimap" preserveAspectRatio="xMidYMid meet" aria-label="国家平面图">
+            <path class="country-shape" d="${countryPath}" />
+            ${dotsMarkup}
+          </svg>
+          <div class="country-minimap-meta">
+            <span>Map · flat projection · click dot</span>
+            <span>${cityMap.size} cities</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // —— Compute altitude that fits the country span ——
+    function altitudeForSpan (countryCompanies) {
+      const lats = countryCompanies.map(c => c.lat);
+      const lons = countryCompanies.map(c => c.lon);
+      const dLat = Math.max(...lats) - Math.min(...lats);
+      const dLon = Math.max(...lons) - Math.min(...lons);
+      const span = Math.max(dLat, dLon);
+      // span ~5 deg → alt 0.6 (close-in for small country) ; span 50 deg → alt 2.0
+      return Math.max(0.6, Math.min(2.0, 0.4 + span * 0.04));
+    }
+
+    // —— Country drawer (polygon click) ——
+    function showCountryDrawer (name) {
+      const drawer = document.getElementById("countryDrawer");
+      if (!drawer || !name) return;
+      const aliases = countryAliases(name);
+      let countryCompanies = [];
+      for (const a of aliases) {
+        countryCompanies = allCompanies.filter(c => c.country === a);
+        if (countryCompanies.length) break;
+      }
+      if (!countryCompanies.length) {
+        drawer.classList.remove("show");
+        return;
+      }
+
+      const totalProducts = countryCompanies.reduce((s, c) => s + (c.products || 0), 0);
+      const listed = countryCompanies.filter(c => c.ownership === "Public").length;
+      const cities = new Set(countryCompanies.map(c => c.city).filter(Boolean)).size;
+      const country = countryCompanies[0].country;
+      const region = countryCompanies[0].region;
+
+      lastDrawerView = { type: "country", name };
+      updateStatStrip({
+        type: "country",
+        name: country,
+        region: region,
+        companies: countryCompanies.length,
+        cities: cities,
+        products: totalProducts,
+        listed: listed,
+      });
+
+      // Find matching geojson features for this country
+      const featuresMatch = worldFeatures.filter(f => {
+        const props = f.properties || {};
+        const candidates = [props.name, props.name_long, props.admin].filter(Boolean);
+        return candidates.some(c => aliases.includes(c) || c === country);
+      });
+
+      const miniMapHtml = renderCountryMiniMap(featuresMatch, countryCompanies);
+
+      const rows = countryCompanies
+        .slice()
+        .sort((a, b) => (b.products || 0) - (a.products || 0))
+        .map(c => `
+          <div class="row" data-company-id="${escapeHtml(c.company_id || "")}">
+            <span class="sw" style="background:${TRACK_COLORS[c.primary_track] || "#888"}; color:${TRACK_COLORS[c.primary_track] || "#888"}"></span>
+            <span class="name">
+              <span class="nm">${escapeHtml(c.company)}</span>
+              <span class="city">${escapeHtml(c.city || "—")} · ${escapeHtml(c.primary_track || "")}</span>
+            </span>
+            <span class="pcount">${c.products || 0}</span>
+          </div>
+        `).join("");
+
+      drawer.innerHTML = `
+        <div class="drawer-head">
+          <button class="drawer-close" type="button" aria-label="关闭">×</button>
+          <span class="stamp">Country · drill-down</span>
+          <h3>${escapeHtml(country)}</h3>
+          <div class="sub">${escapeHtml(region || "")} · stats in the title strip ↑</div>
+        </div>
+        ${miniMapHtml}
+        <div class="drawer-list">${rows}</div>
+      `;
+      drawer.classList.add("show");
+      drawer.querySelector(".drawer-close").addEventListener("click", () => {
+        drawer.classList.remove("show");
+        updateStatStrip({ type: "global" });
+        lastDrawerView = null;
+      });
+      drawer.querySelectorAll(".drawer-list .row").forEach(row => {
+        row.addEventListener("click", () => {
+          const cid = row.getAttribute("data-company-id");
+          const c = allCompanies.find(x => x.company_id === cid);
+          if (c) showDetailCard(c);
+        });
+      });
+      // —— Click any city dot on mini-map ——
+      // Single-company city → detail card directly
+      // Multi-company city → city selector first (per user UX: "可以先出来企业列表")
+      drawer.querySelectorAll(".country-minimap .city-marker").forEach(circle => {
+        circle.style.cursor = "pointer";
+        circle.addEventListener("click", () => {
+          const cityKey = circle.getAttribute("data-city-key");
+          const cityCompanies = countryCompanies.filter(c => {
+            const k = `${c.city || ""}|${c.lat.toFixed(2)}|${c.lon.toFixed(2)}`;
+            return k === cityKey;
+          });
+          if (!cityCompanies.length) return;
+          if (cityCompanies.length === 1) {
+            showDetailCard(cityCompanies[0]);
+          } else {
+            const cityPayload = {
+              city: cityCompanies[0].city,
+              country: cityCompanies[0].country,
+              region: cityCompanies[0].region,
+              lat: cityCompanies[0].lat,
+              lon: cityCompanies[0].lon,
+              companies: cityCompanies,
+            };
+            showCitySelector(cityPayload);
+          }
+        });
+      });
+
+      // Camera: center on country with altitude proportional to country span
+      const lat = countryCompanies.reduce((s, c) => s + c.lat, 0) / countryCompanies.length;
+      const lng = countryCompanies.reduce((s, c) => s + c.lon, 0) / countryCompanies.length;
+      const altitude = altitudeForSpan(countryCompanies);
+      globe.pointOfView({ lat, lng, altitude }, 1400);
+      pauseRotation();
+    }
+
+    function countryAliases (name) {
+      const map = {
+        "United States of America": ["USA", "United States"],
+        "United States":            ["USA"],
+        "Republic of Korea":        ["South Korea"],
+        "Korea, Republic of":       ["South Korea"],
+        "United Kingdom":           ["UK"],
+        "Russian Federation":       ["Russia"],
+        "Czech Republic":           ["Czechia"],
+        "Iran (Islamic Republic of)": ["Iran"],
+      };
+      const extras = map[name] || [];
+      return [name, ...extras];
+    }
+
+    function escapeHtml (s) {
+      return String(s || "").replace(/[&<>"']/g, ch => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      })[ch]);
+    }
+  }
+</script>
+
+<!-- Leaflet + 平面 Map（v3 新增 · 学 codex 星图） -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin defer></script>
+<script src="./v3-flat-map.js?v=20260607-tooltip" defer></script>
+
+</body>
+</html>

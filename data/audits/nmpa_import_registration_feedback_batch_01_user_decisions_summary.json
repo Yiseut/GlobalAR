@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-06-01T00:57:39",
+  "source_batch": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\nmpa_import_registration_feedback_batch_01_fill_here.csv",
+  "user_decisions_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\nmpa_import_registration_feedback_batch_01_user_decisions.csv",
+  "decision_counts": {
+    "排除/不纳入": 1,
+    "确认新增/补入": 3,
+    "并入已有产品线": 4
+  },
+  "rule": "Only 国械注进 import certificates were included. User decided old not_found certificates may be mapped to existing product families, but unsupported/expired certificate numbers are not promoted as verified current registrations unless a replacement/current certificate is available."
+}

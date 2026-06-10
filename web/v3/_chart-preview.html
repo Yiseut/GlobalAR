@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1680, initial-scale=1" />
+<title>v3 · 图表 10 色候选预览 · Petal + Mist mix</title>
+<link rel="icon" href="data:," />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Italianno&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@200;300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* parent canvas — 用户选定的"总的开头方案"底色 */
+    --bg:        #efeae0;
+    --surface:   #f7f1e6;
+    --surface-2: #fdfaf2;
+    --ink:       #3a3340;
+    --ink-2:     #524656;
+    --muted:     #6a5d68;
+    --subtle:    #998f9b;
+    --hairline:  rgba(80, 60, 70, 0.18);
+    --rule:      rgba(80, 60, 70, 0.32);
+    --accent:    #b85957;
+
+    /* Mist 字体栈 */
+    --f-display: 'Marcellus', 'Noto Serif SC', serif;
+    --f-display-cn: 'Noto Serif SC', 'Songti SC', serif;
+    --f-script:  'Italianno', cursive;
+    --f-body:    'Lora', Georgia, serif;
+    --f-sans:    'DM Sans', system-ui, sans-serif;
+    --f-mono:    'DM Mono', 'Space Mono', monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 48px 80px;
+  }
+
+  /* ============ Header / sample of fonts ============ */
+  .masthead {
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  .masthead .eyebrow {
+    font-family: var(--f-sans);
+    font-size: 10.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .masthead h1 {
+    font-family: var(--f-display);
+    font-size: 56px;
+    line-height: 1.02;
+    margin: 0;
+    color: var(--ink);
+    font-weight: 400;
+  }
+  .masthead h1 .cn {
+    display: block;
+    font-family: var(--f-display-cn);
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.32em;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+  .masthead .script {
+    font-family: var(--f-script);
+    font-size: 30px;
+    color: var(--accent);
+    line-height: 1;
+    margin-top: 16px;
+  }
+  .masthead .lede {
+    font-family: var(--f-body);
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-2);
+    max-width: 56ch;
+  }
+  .masthead .lede .num {
+    font-family: var(--f-mono);
+    color: var(--accent);
+  }
+  .canvas-strip {
+    display: flex;
+    gap: 8px;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+  .canvas-strip .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px 4px 4px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+  }
+  .canvas-strip .pill .sw {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+  }
+
+  /* ============ Section heads ============ */
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--hairline);
+    margin: 56px 0 24px;
+  }
+  .sec-head .num {
+    font-family: var(--f-sans);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--accent);
+  }
+  .sec-head h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1;
+    margin: 0;
+    color: var(--ink);
+  }
+  .sec-head .cn {
+    font-family: var(--f-display-cn);
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    color: var(--muted);
+  }
+  .sec-head .desc {
+    flex: 1;
+    font-family: var(--f-body);
+    font-style: italic;
+    font-size: 12.5px;
+    color: var(--muted);
+    text-align: right;
+    border-bottom: 1px dashed var(--hairline);
+    padding-bottom: 2px;
+  }
+
+  /* ============ Source pools (20 chips) ============ */
+  .pool {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .pool .pool-label {
+    grid-column: 1 / -1;
+    font-family: var(--f-sans);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 14px 0 2px;
+  }
+  .chip {
+    background: var(--surface);
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+  }
+  .chip .swatch {
+    aspect-ratio: 1 / 0.7;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+  }
+  .chip .info {
+    padding: 8px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .chip .info .name {
+    font-family: var(--f-body);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .chip .info .hex {
+    font-family: var(--f-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  /* ============ Candidate palettes ============ */
+  .candidates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .candidate {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 24px 24px 28px;
+  }
+  .candidate .cand-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .candidate .cand-head .letter {
+    font-family: var(--f-display);
+    font-style: italic;
+    font-size: 30px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .candidate .cand-head h3 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0;
+    color: var(--ink);
+  }
+  .candidate .cand-head .cn {
+    font-family: var(--f-display-cn);
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+  }
+  .candidate .tagline {
+    font-family: var(--f-script);
+    font-size: 22px;
+    color: var(--accent);
+    line-height: 1;
+    margin: 4px 0 14px;
+  }
+  .candidate .mood {
+    font-family: var(--f-body);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    margin: 0 0 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed var(--hairline);
+  }
+
+  .track-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-bottom: 24px;
+  }
+  .track-row {
+    display: grid;
+    grid-template-columns: 18px 26px 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    font-family: var(--f-sans);
+    font-size: 12px;
+  }
+  .track-row .sw {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+  }
+  .track-row .idx {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--subtle);
+    letter-spacing: 0.06em;
+  }
+  .track-row .name {
+    color: var(--ink-2);
+  }
+  .track-row .hex {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--muted);
+  }
+  .track-row .src {
+    font-family: var(--f-sans);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--subtle);
+  }
+
+  /* donut + bar */
+  .chart-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+    align-items: center;
+  }
+  .donut-wrap {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  .donut-wrap .center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .donut-wrap .center .big {
+    font-family: var(--f-display);
+    font-size: 30px;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .donut-wrap .center .small {
+    font-family: var(--f-sans);
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .legend-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 12px;
+    font-family: var(--f-sans);
+    font-size: 11px;
+    color: var(--ink-2);
+  }
+  .legend-list .item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-list .item .sw {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+  }
+  .legend-list .item .nm {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .legend-list .item .pct {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .bar-block .label {
+    font-family: var(--f-sans);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .stacked-bar {
+    display: flex;
+    height: 24px;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px var(--hairline);
+  }
+  .stacked-bar > div { height: 100%; }
+
+  /* adjacency stripe — test相邻分辨度 */
+  .adj-grid {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .adj-grid > div {
+    height: 28px;
+  }
+  .adj-grid + .label {
+    font-family: var(--f-sans);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* note */
+  .pick-bar {
+    margin-top: 56px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .pick-bar .stamp {
+    font-family: var(--f-sans);
+    font-size: 10.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .pick-bar p {
+    margin: 0;
+    font-family: var(--f-body);
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+  .pick-bar code {
+    font-family: var(--f-mono);
+    font-size: 12.5px;
+    background: rgba(80,60,70,0.06);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div>
+    <div class="eyebrow">v3 · Chart Palette Preview · 研美 · 岚</div>
+    <h1>
+      Ten colors,
+      <span class="cn">十色 · 同一品牌</span>
+    </h1>
+    <div class="script">three candidate mixes</div>
+  </div>
+  <div>
+    <p class="lede">
+      底色用「总的开头」<span class="num">#efeae0</span> 中性纸面；字体走 Mist
+      （Marcellus · Lora · Italianno · Noto Serif SC · DM Sans）；图表 10 色从
+      Petal 与 Mist 两个池里混选。下面三套候选，用真实 L1 赛道分布
+      <span class="num">975</span> 条产品线做环形 + 堆叠条 + 相邻对比预演。
+    </p>
+    <div class="canvas-strip">
+      <span class="pill"><span class="sw" style="background:#efeae0"></span>bg · #efeae0</span>
+      <span class="pill"><span class="sw" style="background:#f7f1e6"></span>card · #f7f1e6</span>
+      <span class="pill"><span class="sw" style="background:#3a3340"></span>ink · #3a3340</span>
+      <span class="pill"><span class="sw" style="background:#b85957"></span>accent · #b85957</span>
+    </div>
+  </div>
+</header>
+
+<div class="sec-head">
+  <span class="num">01</span>
+  <h2>Source pools</h2>
+  <span class="cn">原色池 · 20 色</span>
+  <span class="desc">Petal 10 + Mist 10 — 候选都从这里选</span>
+</div>
+
+<div class="pool">
+  <div class="pool-label">Petal · 瓣 — blush-forward, warmer</div>
+</div>
+<div class="pool" id="poolPetal"></div>
+<div class="pool">
+  <div class="pool-label">Mist · 岚 — editorial, cooler</div>
+</div>
+<div class="pool" id="poolMist"></div>
+
+<div class="sec-head">
+  <span class="num">02</span>
+  <h2>Three candidate mixes</h2>
+  <span class="cn">三套候选 · 10 色赛道色</span>
+  <span class="desc">L1 实数：EBD 468 / Inj 329 / Cosmeceutical 80 / Impl 28 / Regen 25 / Consum 23 / Surg 10 / Diag 9 / Pharma 3</span>
+</div>
+
+<div class="candidates" id="candidates"></div>
+
+<div class="pick-bar">
+  <span class="stamp">NEXT ↗</span>
+  <p>
+    选定一套后告诉我 <code>A</code> / <code>B</code> / <code>C</code>，或指出"按 X 套但把第 N 个赛道换成
+    <code>#xxxxxx</code>"。锁定后我就用这套色 + Mist 字体 + parent canvas 底，把
+    <code>web/v3/styles.css</code> 写出来，然后把 Phase 1 的 4 页（index / regulatory-pulse / geo-deep-dive / capital-map）
+    用新方案重做。
+  </p>
+</div>
+
+<script>
+  // ============ data ============
+  const PETAL_POOL = [
+    { name: 'rose deep',  hex: '#8E3A3A' },
+    { name: 'rose',       hex: '#C76B68' },
+    { name: 'petal',      hex: '#E8B5B0' },
+    { name: 'peach',      hex: '#EC9B73' },
+    { name: 'apricot',    hex: '#F4C9A8' },
+    { name: 'butter',     hex: '#F0E1C2' },
+    { name: 'sand',       hex: '#CFB58E' },
+    { name: 'plum soft',  hex: '#8C7B91' },
+    { name: 'mist',       hex: '#B5A9BD' },
+    { name: 'lavender',   hex: '#C8B8D0' },
+  ];
+  const MIST_POOL = [
+    { name: 'plum deep',  hex: '#4A3D52' },
+    { name: 'rose dust',  hex: '#B58685' },
+    { name: 'mist',       hex: '#A99FB3' },
+    { name: 'sage soft',  hex: '#A8B59A' },
+    { name: 'sand cool',  hex: '#C5B196' },
+    { name: 'plum',       hex: '#6B5A75' },
+    { name: 'peach soft', hex: '#D9AE91' },
+    { name: 'slate blue', hex: '#5A6878' },
+    { name: 'petal',      hex: '#E8C9C5' },
+    { name: 'cream',      hex: '#EFE5D3' },
+  ];
+
+  const L1_TRACKS = [
+    { en: 'EBD',           cn: '光电',     n: 468 },
+    { en: 'Injectables',   cn: '注射',     n: 329 },
+    { en: 'Cosmeceutical', cn: '功能性护肤品', n: 80  },
+    { en: 'Implants',      cn: '植入物',   n: 28  },
+    { en: 'Regenerative',  cn: '再生',     n: 25  },
+    { en: 'Consumables',   cn: '耗材',     n: 23  },
+    { en: 'Surgical',      cn: '外科',     n: 10  },
+    { en: 'Diagnostics',   cn: '诊断',     n: 9   },
+    { en: 'Pharma',        cn: '药物',     n: 3   },
+  ];
+  const TRACK_TOTAL = L1_TRACKS.reduce((s, t) => s + t.n, 0); // 975
+
+  // ============ 3 candidate palettes ============
+  // 编号 0..9 对应 L1_TRACKS 顺序
+  const CANDIDATES = [
+    {
+      letter: 'A',
+      name: 'Balanced',
+      nameCn: '均衡',
+      tagline: 'half petal, half mist',
+      mood: '默认推荐：Mist 提供紫/绿/蓝灰骨架，Petal 补暖红/玫红/暖橙。相邻对比强，整体仍编辑感。',
+      palette: [
+        { hex: '#8E3A3A', name: 'rose deep',  src: 'Petal' },
+        { hex: '#6B5A75', name: 'plum',       src: 'Mist'  },
+        { hex: '#D9AE91', name: 'peach soft', src: 'Mist'  },
+        { hex: '#A8B59A', name: 'sage soft',  src: 'Mist'  },
+        { hex: '#5A6878', name: 'slate blue', src: 'Mist'  },
+        { hex: '#CFB58E', name: 'sand',       src: 'Petal' },
+        { hex: '#C76B68', name: 'rose',       src: 'Petal' },
+        { hex: '#8C7B91', name: 'plum soft',  src: 'Petal' },
+        { hex: '#EC9B73', name: 'peach',      src: 'Petal' },
+        { hex: '#C8B8D0', name: 'lavender',   src: 'Petal' },
+      ],
+    },
+    {
+      letter: 'B',
+      name: 'Mist-led',
+      nameCn: '岚主导',
+      tagline: 'cooler, more editorial',
+      mood: '更克制：Mist 池 9 色为主，仅借 Petal 的 peach 补暖。整体偏冷调灰紫，编辑感最强、最克制。',
+      palette: [
+        { hex: '#4A3D52', name: 'plum deep',  src: 'Mist'  },
+        { hex: '#B58685', name: 'rose dust',  src: 'Mist'  },
+        { hex: '#A99FB3', name: 'mist',       src: 'Mist'  },
+        { hex: '#A8B59A', name: 'sage soft',  src: 'Mist'  },
+        { hex: '#5A6878', name: 'slate blue', src: 'Mist'  },
+        { hex: '#C5B196', name: 'sand cool',  src: 'Mist'  },
+        { hex: '#6B5A75', name: 'plum',       src: 'Mist'  },
+        { hex: '#D9AE91', name: 'peach soft', src: 'Mist'  },
+        { hex: '#EC9B73', name: 'peach',      src: 'Petal' },
+        { hex: '#E8C9C5', name: 'petal',      src: 'Mist'  },
+      ],
+    },
+    {
+      letter: 'C',
+      name: 'Petal-led',
+      nameCn: '瓣主导',
+      tagline: 'warmer, more lyrical',
+      mood: '更抒情：Petal 池 7 色为主，借 Mist 的 sage/slate-blue 补绿/蓝。整体偏暖玫粉系，社交友好，但相邻分辨稍难。',
+      palette: [
+        { hex: '#8E3A3A', name: 'rose deep',  src: 'Petal' },
+        { hex: '#C76B68', name: 'rose',       src: 'Petal' },
+        { hex: '#EC9B73', name: 'peach',      src: 'Petal' },
+        { hex: '#A8B59A', name: 'sage soft',  src: 'Mist'  },
+        { hex: '#5A6878', name: 'slate blue', src: 'Mist'  },
+        { hex: '#CFB58E', name: 'sand',       src: 'Petal' },
+        { hex: '#8C7B91', name: 'plum soft',  src: 'Petal' },
+        { hex: '#B5A9BD', name: 'mist',       src: 'Petal' },
+        { hex: '#F4C9A8', name: 'apricot',    src: 'Petal' },
+        { hex: '#C8B8D0', name: 'lavender',   src: 'Petal' },
+      ],
+    },
+  ];
+
+  // ============ render pools ============
+  function renderChipPool(targetId, pool) {
+    const el = document.getElementById(targetId);
+    el.innerHTML = pool.map(c => `
+      <div class="chip">
+        <div class="swatch" style="background:${c.hex}"></div>
+        <div class="info">
+          <span class="name">${c.name}</span>
+          <span class="hex">${c.hex.toUpperCase()}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+  renderChipPool('poolPetal', PETAL_POOL);
+  renderChipPool('poolMist',  MIST_POOL);
+
+  // ============ render candidates ============
+  function renderDonut(palette) {
+    const r = 78, cx = 100, cy = 100, sw = 28;
+    const C = 2 * Math.PI * r;
+    let off = 0;
+    let circles = '';
+    L1_TRACKS.forEach((t, i) => {
+      const len = (t.n / TRACK_TOTAL) * C;
+      const color = palette[i].hex;
+      circles += `<circle r="${r}" cx="${cx}" cy="${cy}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-dasharray="${len.toFixed(2)} ${(C - len).toFixed(2)}" stroke-dashoffset="${(-off).toFixed(2)}" />`;
+      off += len;
+    });
+    return `<svg width="200" height="200" viewBox="0 0 200 200" aria-hidden="true">
+      <g transform="rotate(-90 ${cx} ${cy})">${circles}</g>
+    </svg>`;
+  }
+
+  function renderStackedBar(palette) {
+    return L1_TRACKS.map((t, i) => {
+      const w = (t.n / TRACK_TOTAL) * 100;
+      return `<div style="width:${w}%; background:${palette[i].hex}"></div>`;
+    }).join('');
+  }
+
+  function renderAdj(palette) {
+    return palette.map(p => `<div style="background:${p.hex}"></div>`).join('');
+  }
+
+  function renderLegend(palette) {
+    return L1_TRACKS.map((t, i) => `
+      <div class="item">
+        <span class="sw" style="background:${palette[i].hex}"></span>
+        <span class="nm">${t.cn} · ${t.en}</span>
+        <span class="pct">${((t.n / TRACK_TOTAL) * 100).toFixed(1)}%</span>
+      </div>
+    `).join('');
+  }
+
+  function renderTrackList(palette) {
+    return L1_TRACKS.map((t, i) => `
+      <div class="track-row">
+        <span class="sw" style="background:${palette[i].hex}"></span>
+        <span class="idx">${String(i + 1).padStart(2, '0')}</span>
+        <span class="name">${t.cn} · ${t.en} <span style="color:var(--subtle);">·</span> ${t.n}</span>
+        <span class="hex">${palette[i].hex.toUpperCase()}</span>
+        <span class="src">${palette[i].src}</span>
+      </div>
+    `).join('');
+  }
+
+  const candWrap = document.getElementById('candidates');
+  candWrap.innerHTML = CANDIDATES.map(c => `
+    <div class="candidate">
+      <div class="cand-head">
+        <span class="letter">${c.letter}</span>
+        <h3>${c.name}</h3>
+        <span class="cn">· ${c.nameCn}</span>
+      </div>
+      <div class="tagline">${c.tagline}</div>
+      <p class="mood">${c.mood}</p>
+
+      <div class="track-list">${renderTrackList(c.palette)}</div>
+
+      <div class="chart-row">
+        <div class="donut-wrap">
+          ${renderDonut(c.palette)}
+          <div class="center">
+            <span class="big">975</span>
+            <span class="small">product lines</span>
+          </div>
+        </div>
+        <div class="legend-list">${renderLegend(c.palette)}</div>
+      </div>
+
+      <div class="bar-block">
+        <div class="label">Stacked bar · share</div>
+        <div class="stacked-bar">${renderStackedBar(c.palette)}</div>
+      </div>
+
+      <div class="adj-grid">${renderAdj(c.palette)}</div>
+      <div class="label">Adjacency strip · 10 色相邻对比</div>
+    </div>
+  `).join('');
+</script>
+
+</body>
+</html>

@@ -8,16 +8,20 @@ only uses deterministic ticker candidates from our existing listing map.
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
+import os
 import re
 import shutil
+import sqlite3
 import subprocess
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from build_data import DATA_DIR
+from build_data import DATA_DIR, DB_PATH
 
 
 MARKET_CONFLICT_PATH = DATA_DIR / "market_snapshot_conflicts.csv"
@@ -39,6 +43,22 @@ def read_conflicts() -> list[dict[str, str]]:
         raise SystemExit(f"Missing conflict report: {MARKET_CONFLICT_PATH}. Run build_progress_reports.py first.")
     with MARKET_CONFLICT_PATH.open("r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def read_listed_companies(limit: int = 0) -> list[dict[str, str]]:
+    if not DB_PATH.exists():
+        raise SystemExit(f"Missing dashboard database: {DB_PATH}. Run build_data.py first.")
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    sql = """
+        SELECT canonical_name AS company, stock_code, exchange, ticker_symbol, listing_country
+        FROM company_master
+        WHERE stock_code IS NOT NULL AND stock_code != ''
+        ORDER BY COALESCE(priority_rank, 9999), canonical_name
+    """
+    rows = [dict(row) for row in conn.execute(sql)]
+    conn.close()
+    return rows[:limit] if limit else rows
 
 
 def a_share_symbol(ticker: str) -> str:
@@ -86,6 +106,40 @@ def symbol_candidates(row: dict[str, str]) -> list[dict[str, str]]:
     return unique
 
 
+def exa_symbol_candidates(row: dict[str, str], timeout: int = 30) -> list[dict[str, str]]:
+    key = os.environ.get("EXA_API_KEY")
+    if not key:
+        return []
+    company = norm(row.get("company"))
+    ticker = norm(row.get("ticker_symbol")) or norm(row.get("stock_code"))
+    query = f'site:xueqiu.com/S "{company}" "{ticker}"'
+    payload = json.dumps({"query": query, "numResults": 5}).encode("utf-8")
+    request = urllib.request.Request(
+        "https://api.exa.ai/search",
+        data=payload,
+        headers={
+            "x-api-key": key,
+            "Content-Type": "application/json",
+            "User-Agent": "GlobalAestheticsDashboard/0.1",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except Exception:
+        return []
+    candidates: list[dict[str, str]] = []
+    for item in data.get("results", []):
+        url = norm(item.get("url"))
+        match = re.search(r"xueqiu\.com/S/([A-Za-z0-9._-]+)", url)
+        if not match:
+            continue
+        symbol = match.group(1).strip("/")
+        if symbol:
+            candidates.append({"xueqiu_symbol": symbol, "candidate_reason": "exa_xueqiu_search_candidate"})
+    return candidates
+
+
 def run_snowball_quote(symbols: list[str]) -> list[dict[str, Any]]:
     if not symbols:
         return []
@@ -98,12 +152,17 @@ def run_snowball_quote(symbols: list[str]) -> list[dict[str, Any]]:
         errors="replace",
         timeout=60,
     )
-    if proc.returncode != 0:
-        raise RuntimeError((proc.stderr or proc.stdout).strip() or f"snowball exited with {proc.returncode}")
     text = proc.stdout.strip()
     if not text:
+        if proc.returncode != 0:
+            raise RuntimeError((proc.stderr or "").strip() or f"snowball exited with {proc.returncode}")
         return []
-    return json.loads(text)
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        if proc.returncode != 0:
+            raise RuntimeError((proc.stderr or proc.stdout).strip() or f"snowball exited with {proc.returncode}")
+        raise
 
 
 def quote_status(quote: dict[str, Any]) -> str:
@@ -116,11 +175,19 @@ def quote_status(quote: dict[str, Any]) -> str:
     return "quote_without_market_cap"
 
 
-def collect() -> dict[str, Any]:
-    rows = read_conflicts()
+def collect(scope: str, limit: int = 0, exa_discover: bool = False) -> dict[str, Any]:
+    rows = read_conflicts() if scope == "conflicts" else read_listed_companies(limit)
     candidate_rows: list[dict[str, str]] = []
     for row in rows:
-        for candidate in symbol_candidates(row):
+        candidates = symbol_candidates(row)
+        if exa_discover:
+            candidates.extend(exa_symbol_candidates(row))
+        seen = set()
+        for candidate in candidates:
+            key = candidate["xueqiu_symbol"]
+            if key in seen:
+                continue
+            seen.add(key)
             candidate_rows.append({**row, **candidate})
     symbols = [row["xueqiu_symbol"] for row in candidate_rows]
     quotes = {norm(item.get("symbol")): item for item in run_snowball_quote(symbols)}
@@ -140,8 +207,8 @@ def collect() -> dict[str, Any]:
             {
                 "company": row["company"],
                 "seed_stock_code": row["stock_code"],
-                "seed_exchange": row["exchange"],
-                "seed_ticker_symbol": row["ticker_symbol"],
+                "seed_exchange": row.get("exchange", ""),
+                "seed_ticker_symbol": row.get("ticker_symbol", ""),
                 "xueqiu_symbol": row["xueqiu_symbol"],
                 "candidate_reason": row["candidate_reason"],
                 "xueqiu_status": status,
@@ -184,7 +251,8 @@ def collect() -> dict[str, Any]:
         writer.writeheader()
         writer.writerows(output)
     return {
-        "conflict_rows": len(rows),
+        "scope": scope,
+        "source_rows": len(rows),
         "candidate_symbols": len(candidate_rows),
         "xueqiu_returned": len(quotes),
         "rows": len(output),
@@ -193,7 +261,12 @@ def collect() -> dict[str, Any]:
 
 
 def main() -> None:
-    print(json.dumps(collect(), ensure_ascii=False, indent=2))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--scope", choices=["conflicts", "listed"], default="conflicts")
+    parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--exa-discover", action="store_true")
+    args = parser.parse_args()
+    print(json.dumps(collect(args.scope, args.limit, args.exa_discover), ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

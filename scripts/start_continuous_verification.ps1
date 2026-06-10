@@ -1,6 +1,6 @@
 param(
     [int]$MaxBatches = 400,
-    [int]$StopAfterStalledBatches = 1
+    [int]$StopAfterStalledBatches = 8
 )
 
 $ErrorActionPreference = "Stop"
@@ -23,11 +23,11 @@ $PythonArgs = @(
     "--official-limit", "8",
     "--mdr-limit", "4",
     "--fda-companies", "4",
-    "--mdr-plan-companies", "120",
-    "--mdr-families-per-company", "8",
-    "--media-websites", "0",
-    "--media-page-fetches", "0",
-    "--media-images-per-site", "2",
+    "--mdr-plan-companies", "0",
+    "--mdr-families-per-company", "0",
+    "--media-websites", "24",
+    "--media-page-fetches", "32",
+    "--media-images-per-site", "0",
     "--media-pages-per-site", "2",
     "--search-results", "6",
     "--search-timeout", "35",
@@ -37,10 +37,11 @@ $PythonArgs = @(
     "--fda-stage-timeout", "600",
     "--fda-timeout", "35",
     "--fda-sleep", "0.5",
-    "--media-stage-timeout", "900",
+    "--media-stage-timeout", "1200",
     "--media-timeout", "10",
     "--media-sleep", "0.2",
-    "--skip-media-assets",
+    "--skip-image-downloads",
+    "--target-spec-gaps",
     "--product-gap-audit",
     "--build-timeout", "480",
     "--excel-timeout", "480"

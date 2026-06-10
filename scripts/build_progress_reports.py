@@ -24,6 +24,7 @@ from build_data import (
     STAGING_JSONL_PATH,
 )
 from collect_mdr_ce_sources import MDR_CE_EVIDENCE_PATH
+from dashboard_scope import company_exclusion_reason
 
 
 MARKET_VALUATION_RANK_PATH = DATA_DIR / "market_valuation_rank.csv"
@@ -42,7 +43,11 @@ def read_csv(path: Path) -> list[dict[str, str]]:
     if not path.exists():
         return []
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
-        return list(csv.DictReader(handle))
+        return [
+            row
+            for row in csv.DictReader(handle)
+            if company_exclusion_reason(row) != "no_medical_aesthetic_product"
+        ]
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -53,9 +58,12 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
         if not line.strip():
             continue
         try:
-            rows.append(json.loads(line))
+            row = json.loads(line)
         except json.JSONDecodeError:
             continue
+        if isinstance(row, dict) and company_exclusion_reason(row) == "no_medical_aesthetic_product":
+            continue
+        rows.append(row)
     return rows
 
 

@@ -1,0 +1,144 @@
+{
+  "ran_at": "2026-06-10T20:04:43+08:00",
+  "history_path": "E:\\shared\\code\\briefing_v6\\data\\wechat_plan_b_history.jsonl",
+  "curated_urls_total": 101,
+  "blocked_urls": 0,
+  "candidate_rows_total": 375,
+  "rows_promoted_to_user_curated": 27,
+  "promoted_by_event": {
+    "commercial_performance": 6,
+    "channel_coverage": 6,
+    "product_launch": 7,
+    "new_or_expanded_indication": 6,
+    "regulatory_signal": 1,
+    "official_label_or_ifu": 1
+  },
+  "status_before": {
+    "candidate_unverified": 178,
+    "user_curated": 93,
+    "rejected_event_class": 37,
+    "promoted": 38,
+    "excluded_scope_unlinked": 17,
+    "orphan_product_id_unlinked": 3,
+    "rejected_product_mismatch": 9
+  },
+  "status_after": {
+    "user_curated": 120,
+    "candidate_unverified": 151,
+    "rejected_event_class": 37,
+    "promoted": 38,
+    "excluded_scope_unlinked": 17,
+    "orphan_product_id_unlinked": 3,
+    "rejected_product_mismatch": 9
+  },
+  "examples": [
+    {
+      "article_date": "2026-06-09",
+      "company": "Medytox",
+      "brand": "",
+      "event_type": "commercial_performance",
+      "confidence_score": "68",
+      "article_title": "",
+      "url": "https://www.koreabiomed.com/news/articleViewAmp.html?idxno=31941"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Medytox",
+      "brand": "",
+      "event_type": "channel_coverage",
+      "confidence_score": "68",
+      "article_title": "",
+      "url": "https://www.koreabiomed.com/news/articleViewAmp.html?idxno=31941"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Sinclair Pharma",
+      "brand": "Sinclair",
+      "event_type": "commercial_performance",
+      "confidence_score": "64",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Sinclair Pharma",
+      "brand": "Sinclair",
+      "event_type": "channel_coverage",
+      "confidence_score": "64",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Ema Aesthetics",
+      "brand": "Préime",
+      "event_type": "commercial_performance",
+      "confidence_score": "64",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Ema Aesthetics",
+      "brand": "Préime",
+      "event_type": "channel_coverage",
+      "confidence_score": "64",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Medytox",
+      "brand": "",
+      "event_type": "product_launch",
+      "confidence_score": "62",
+      "article_title": "",
+      "url": "https://www.koreabiomed.com/news/articleViewAmp.html?idxno=31941"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Sinclair Pharma",
+      "brand": "Sinclair",
+      "event_type": "new_or_expanded_indication",
+      "confidence_score": "58",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Sinclair Pharma",
+      "brand": "Sinclair",
+      "event_type": "new_or_expanded_indication",
+      "confidence_score": "58",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Sinclair Pharma",
+      "brand": "Sinclair",
+      "event_type": "product_launch",
+      "confidence_score": "58",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Ema Aesthetics",
+      "brand": "Préime",
+      "event_type": "new_or_expanded_indication",
+      "confidence_score": "58",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    },
+    {
+      "article_date": "2026-06-09",
+      "company": "Ema Aesthetics",
+      "brand": "Préime",
+      "event_type": "new_or_expanded_indication",
+      "confidence_score": "58",
+      "article_title": "",
+      "url": "http://hy.stock.cnfol.com/hangyejingcui/20260609/32274406.shtml"
+    }
+  ]
+}

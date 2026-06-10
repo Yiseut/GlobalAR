@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-06-01T18:17:48+08:00",
+  "input_rows": 11,
+  "applied_rows": 11,
+  "skipped_rows": 0,
+  "backup_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_official_indication_evidence_backup_before_exa_second_curated_20260601_181748.csv",
+  "outputs": {
+    "summary_json": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_exa_second_curated_batch_latest.json",
+    "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_exa_second_curated_batch_applied_latest.csv",
+    "skipped_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_exa_second_curated_batch_skipped_latest.csv"
+  }
+}

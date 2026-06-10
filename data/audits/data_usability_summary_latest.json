@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-06-01T10:26:50.582011+00:00",
+  "audited_tables": 41,
+  "audited_rows": 181115,
+  "usable_or_reference_rows": 156517,
+  "planned_or_review_rows": 0,
+  "excluded_or_noise_rows": 24598,
+  "covered_rows": 181115,
+  "missing_owner_or_status_rows": 0,
+  "every_row_has_status_and_owner": true,
+  "by_coverage_class": {
+    "reference_or_registry": 119260,
+    "excluded_or_noise": 24598,
+    "usable_master": 37257
+  },
+  "top_responsible_modules": [
+    [
+      "product_specification_candidate_pool",
+      35538
+    ],
+    [
+      "official_source_crosscheck",
+      26891
+    ],
+    [
+      "media_asset_indexer",
+      23247
+    ],
+    [
+      "official_website_review",
+      20189
+    ],
+    [
+      "evidence_promotion_pipeline",
+      15614
+    ],
+    [
+      "product_fact_promotion_pipeline",
+      15282
+    ],
+    [
+      "spec_extractor_quality_filter",
+      8947
+    ],
+    [
+      "mdr_ce_policy_closure",
+      8226
+    ],
+    [
+      "product_family_mapping_backfill",
+      6264
+    ],
+    [
+      "reference_data_maintenance",
+      5585
+    ],
+    [
+      "product_hierarchy_mapping_backfill",
+      2220
+    ],
+    [
+      "product_hierarchy_maintenance",
+      2042
+    ]
+  ],
+  "top_operational_status": [
+    [
+      "medium_source_crosscheck",
+      16711
+    ],
+    [
+      "promoted_fact_trace",
+      15614
+    ],
+    [
+      "promoted_to_product_master",
+      15282
+    ],
+    [
+      "official_domain_reference",
+      14643
+    ],
+    [
+      "processed_specs_only",
+      13399
+    ],
+    [
+      "medium_review_sample_pool",
+      11918
+    ],
+    [
+      "official_surface_indexed",
+      10228
+    ],
+    [
+      "candidate",
+      9961
+    ],
+    [
+      "filtered_noise",
+      8947
+    ],
+    [
+      "official_candidate_pool_indexed",
+      6939
+    ],
+    [
+      "plan_missing_product_family",
+      6264
+    ],
+    [
+      "indexed_reference_data",
+      5585
+    ]
+  ],
+  "ledger_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\data_usability_ledger_latest.csv",
+  "row_status_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\data_usability_row_status_latest.csv",
+  "missing_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\data_usability_missing_owner_latest.csv"
+}

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>适应症星图 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Intelligence · Indication universe</div>
+      <h1>
+        适应症星图
+        <span class="h1-en">Indication Universe</span>
+      </h1>
+      <p class="lede">709 条官方适应症证据 × 32 个适应症桶 × 543 款产品 × 221 家公司 — 看清医美「在治疗什么」。<br><small style="opacity:0.65;font-style:italic;">数据来源 official_indication_evidence，覆盖 55.7% 产品；92 条待补具体正文已从临床适应症排行中剥离。</small></p>
+      <div class="stat-row">
+        <span><span class="num" data-count-up="709">709</span> 条官方证据 · <span class="num" data-count-up="32">32</span> 个适应症桶</span>
+        <span>覆盖 <span class="num" data-count-up="543">543</span> 款产品 · <span class="num" data-count-up="221">221</span> 家公司</span>
+        <span>头部适应症约 <span class="num" data-count-up="202">202</span> 条证据</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="cn">· 临床需求图谱</span><span class="en">Headline numbers</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede has-wash w-rose-deep">
+          <div class="label">
+            <span class="en">Evidence records</span>
+            <span class="zh">官方证据条数</span>
+          </div>
+          <span class="value" id="kpi-records">709</span>
+          <span class="delta">FDA / CE-MDR / Manufacturer IFU</span>
+        </article>
+        <article class="kpi-cell has-wash w-peach">
+          <div class="label"><span class="en">Indication buckets</span><span class="zh">适应症桶数</span></div>
+          <span class="value" id="kpi-buckets">32</span>
+          <span class="delta">祛皱 / 痤疮疤痕 / 唇部 / 私密 ...</span>
+        </article>
+        <article class="kpi-cell has-wash w-sand">
+          <div class="label"><span class="en">Products covered</span><span class="zh">覆盖产品</span></div>
+          <span class="value" id="kpi-products">543</span>
+          <span class="delta" id="kpi-products-pct">55.7% of 975</span>
+        </article>
+        <article class="kpi-cell has-wash w-sage">
+          <div class="label"><span class="en">Companies</span><span class="zh">覆盖公司</span></div>
+          <span class="value" id="kpi-companies">221</span>
+          <span class="delta">heavily injectables-skewed</span>
+        </article>
+        <article class="kpi-cell value-text has-wash w-rose">
+          <div class="label"><span class="en">Top indication</span><span class="zh">头部适应症</span></div>
+          <span class="value" id="kpi-top-ind">—</span>
+          <span class="delta" id="kpi-top-ind-n">— records</span>
+        </article>
+        <article class="kpi-cell has-wash w-slate">
+          <div class="label"><span class="en">Multi-tech indications</span><span class="zh">多技术竞争</span></div>
+          <span class="value" id="kpi-multi">—</span>
+          <span class="delta">≥3 technologies competing</span>
+        </article>
+        <article class="kpi-cell has-wash w-plum">
+          <div class="label"><span class="en">Avg tech / ind</span><span class="zh">平均技术数</span></div>
+          <span class="value" id="kpi-avg-tech">—</span>
+          <span class="delta">competition density</span>
+        </article>
+        <article class="kpi-cell value-text has-wash w-lavender">
+          <div class="label"><span class="en">Top brand</span><span class="zh">头部品牌</span></div>
+          <span class="value" id="kpi-top-brand">—</span>
+          <span class="delta" id="kpi-top-brand-n">— records</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>适应症排名</h2>
+        <span class="cn">· 按官方证据数</span><span class="en">Indication ranking</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">32 个适应症桶 — 临床适应症优先，待补具体正文后置</div>
+        <div class="chart-sub">每行一个适应症桶，bar 按官方证据条数归一化；右侧标 "产品数 · 公司数 · 技术数"。点击任一行查看头部品牌 + 技术 + 国家分布。</div>
+        <div class="ind-search-box">
+          <input id="indication-search" class="ind-search-input" type="search" autocomplete="off" placeholder="搜索适应症：颞部、temple、下颏、鼻部、脱发、乳房..." />
+          <span id="ind-search-count" class="ind-search-count">—</span>
+        </div>
+        <div class="ind-rank-list" id="ind-rank-list"></div>
+        <div class="ind-detail" id="ind-detail"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>适应症 × 技术 矩阵</h2>
+        <span class="cn">· 谁治什么 · 用什么</span><span class="en">Indication × technology</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每个适应症由哪些技术服务</div>
+        <div class="chart-sub">行 = 头部 8 个适应症桶；列 = 头部 6 种技术路线（HA / PLLA / PCL / Botulinum Toxin / Polynucleotide / Mesotherapy）。色块深浅 = 该「指证 × 技术」组合的证据数。多技术覆盖的适应症（如祛皱）是商业 commodity，单技术垄断的（如某些特殊指证）是技术壁垒。</div>
+        <div class="ind-tech-matrix" id="ind-tech-matrix"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>适应症 × 商业赛道</h2>
+        <span class="cn">· 反推 L1 归属</span><span class="en">Indication × commercial L1</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每个适应症由哪些商业赛道交付</div>
+        <div class="chart-sub">注射赛道几乎承包所有适应症（Injectables 在每一行都占大头）；EBD 在颈纹 / 皮肤纹理上有少量交叉；其他赛道因数据 sparse 暂时缺失。这是底库当前可见的状况，不是行业真实图景。</div>
+        <div class="ind-l1-matrix" id="ind-l1-matrix"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>适应症 × 监管机构</h2>
+        <span class="cn">· 哪国监管在管哪个适应症</span><span class="en">Indication × Regulator</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每个适应症在各国监管口径下的证据密度</div>
+        <div class="chart-sub">行 = 适应症桶；列 = 真实监管机构（FDA / NMPA / CE-MDR / MFDS / PMDA / TGA / ANVISA 等，已过滤"Official product/IFU/source text"等占位字段）。色深 = 该 (适应症 × 监管) 单元的官方证据数。**重点看横向稀疏**——某 indication 只有少数监管承认通常是新指证/未广覆盖；纵向比较则能看出某监管机构覆盖哪些 indication 最深。</div>
+        <div class="ind-reg-matrix" id="ind-reg-matrix"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row" id="finding-cards"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 适应症星图 Indication Universe · 709 records · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260524"></script>
+<script src="./v3-indications.js?v=20260604"></script>
+<script src="./v3-companies.js?v=20260524"></script>
+<script src="./v3-product-tree.js?v=20260526"></script>
+<script src="./v3-company-detail.js?v=20260526"></script>
+<script src="./v3-chart-interact.js?v=20260607-tooltip"></script>
+<script src="./v3-indication-detail.js?v=20260604"></script>
+<script src="./v3-indication-drawer.js?v=20260604"></script>
+<script src="./_nav.js" data-active="indications"></script>
+<script>
+  (function () {
+    const d = window.GLOBAL_AESTHETICS_DATA;
+    if (d && d.generated_at) {
+      const s = d.generated_at.slice(0,10).replace(/-/g,"·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+  })();
+
+  (function renderIndications () {
+    const data = window.V3_INDICATIONS_DATA;
+    if (!data) return;
+
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
+
+    // ---- KPI ----
+    const s = data.summary;
+    countUp(document.getElementById("kpi-records"), s.total_records);
+    countUp(document.getElementById("kpi-buckets"), s.total_buckets);
+    countUp(document.getElementById("kpi-products"), s.total_products);
+    setText("kpi-products-pct", `${s.coverage_pct}% of ${s.dashboard_product_total || 975}`);
+    countUp(document.getElementById("kpi-companies"), s.total_companies);
+    setText("kpi-top-ind", String(s.top_indication || "—"));
+    setText("kpi-top-ind-n", `${s.top_indication_n} records`);
+    countUp(document.getElementById("kpi-multi"), s.multi_tech_count);
+    const avgTech = data.indications.length
+      ? (data.indications.reduce((a, b) => a + b.n_techs, 0) / data.indications.length).toFixed(1)
+      : "—";
+    setText("kpi-avg-tech", avgTech);
+    const allBrands = {};
+    data.indications.forEach(i => i.top_brands.forEach(b => {
+      allBrands[b.name] = (allBrands[b.name] || 0) + b.n;
+    }));
+    const topBrand = Object.entries(allBrands).sort((a,b) => b[1]-a[1])[0];
+    if (topBrand) {
+      setText("kpi-top-brand", String(topBrand[0] || "—"));
+      setText("kpi-top-brand-n", `${topBrand[1]} records across indications`);
+    }
+
+    // ---- Indication ranking list ----
+    const listWrap = document.getElementById("ind-rank-list");
+    const detailWrap = document.getElementById("ind-detail");
+    const searchInput = document.getElementById("indication-search");
+    const searchCount = document.getElementById("ind-search-count");
+    const maxN = Math.max(1, ...data.indications.map(i => i.n_records));
+
+    renderRankList("");
+    if (searchInput) {
+      searchInput.addEventListener("input", () => renderRankList(searchInput.value));
+    }
+
+    // ---- Indication × Tech matrix ----
+    const techWrap = document.getElementById("ind-tech-matrix");
+    if (data.ind_x_tech.rows.length) {
+      const cols = data.ind_x_tech.columns;
+      techWrap.style.gridTemplateColumns = `170px repeat(${cols.length}, 1fr) 60px`;
+      const head = `<div class="ind-cell ind-head">适应症</div>` +
+        cols.map(c => `<div class="ind-cell ind-head">${esc(abbr(c, 14))}</div>`).join("") +
+        `<div class="ind-cell ind-head">Total</div>`;
+      const maxCell = Math.max(1, ...data.ind_x_tech.rows.flatMap(r => Object.values(r.values)));
+      const rowsHtml = data.ind_x_tech.rows.map(r => {
+        const cells = cols.map(c => {
+          const n = r.values[c] || 0;
+          const intensity = n / maxCell;
+          if (!n) return `<div class="ind-cell ind-val zero">—</div>`;
+          return `<div class="ind-cell ind-val" style="--intensity:${intensity.toFixed(2)}">${n}</div>`;
+        }).join("");
+        return `
+          <div class="ind-cell ind-row-label">${esc(r.indication)}</div>
+          ${cells}
+          <div class="ind-cell ind-total">${r.total}</div>
+        `;
+      }).join("");
+      techWrap.innerHTML = head + rowsHtml;
+      techWrap.classList.add("ind-heatmap");
+    }
+
+    // ---- Indication × L1 matrix ----
+    const l1MatrixWrap = document.getElementById("ind-l1-matrix");
+    if (data.ind_x_l1.rows.length) {
+      const cols = data.ind_x_l1.columns;
+      l1MatrixWrap.style.gridTemplateColumns = `170px repeat(${cols.length}, 1fr) 60px`;
+        const head = `<div class="ind-cell ind-head">适应症</div>` +
+          cols.map(c => `<div class="ind-cell ind-head">${esc(displayL1(c))}</div>`).join("") +
+        `<div class="ind-cell ind-head">Total</div>`;
+      const maxCell = Math.max(1, ...data.ind_x_l1.rows.flatMap(r => Object.values(r.values)));
+      const rowsHtml = data.ind_x_l1.rows.map(r => {
+        const cells = cols.map(c => {
+          const n = r.values[c] || 0;
+          const intensity = n / maxCell;
+          const color = TRACK_COLORS[c] || "#888";
+          if (!n) return `<div class="ind-cell ind-val zero">—</div>`;
+          return `<div class="ind-cell ind-val" style="--intensity:${intensity.toFixed(2)}; background: linear-gradient(135deg, ${color}${alpha(intensity * 0.32)}, ${color}${alpha(intensity * 0.16)}), var(--surface-2);">${n}</div>`;
+        }).join("");
+        return `
+          <div class="ind-cell ind-row-label">${esc(r.indication)}</div>
+          ${cells}
+          <div class="ind-cell ind-total">${r.total}</div>
+        `;
+      }).join("");
+      l1MatrixWrap.innerHTML = head + rowsHtml;
+      l1MatrixWrap.classList.add("ind-heatmap");
+    }
+
+    // ---- Indication × Regulator matrix (新增视角) ----
+    const regMatrixWrap = document.getElementById("ind-reg-matrix");
+    if (regMatrixWrap && data.ind_x_regulator && data.ind_x_regulator.rows.length) {
+      const cols = data.ind_x_regulator.columns;
+      regMatrixWrap.style.gridTemplateColumns = `170px repeat(${cols.length}, 1fr) 60px`;
+      const head = `<div class="ind-cell ind-head">适应症</div>` +
+        cols.map(c => `<div class="ind-cell ind-head">${esc(c)}</div>`).join("") +
+        `<div class="ind-cell ind-head">Total</div>`;
+      const maxCell = Math.max(1, ...data.ind_x_regulator.rows.flatMap(r => Object.values(r.values)));
+      const rowsHtml = data.ind_x_regulator.rows.map(r => {
+        const cells = cols.map(c => {
+          const n = r.values[c] || 0;
+          const intensity = n / maxCell;
+          if (!n) return `<div class="ind-cell ind-val zero">—</div>`;
+          return `<div class="ind-cell ind-val" style="--intensity:${intensity.toFixed(2)}">${n}</div>`;
+        }).join("");
+        return `
+          <div class="ind-cell ind-row-label">${esc(r.indication)}</div>
+          ${cells}
+          <div class="ind-cell ind-total">${r.total}</div>
+        `;
+      }).join("");
+      regMatrixWrap.innerHTML = head + rowsHtml;
+      regMatrixWrap.classList.add("ind-heatmap");
+    }
+
+    // ---- Findings ----
+    document.getElementById("finding-cards").innerHTML = (data.findings || []).map(f => `
+      <article class="editorial-block has-wash ${f.wash} wash-bottom-left">
+        <span class="stamp">${esc(f.stamp)}</span>
+        <div class="lead">${f.lead}</div>
+        <div class="num-pair">
+          <span class="num">${esc(String(f.num_pair.num))}</span>
+          <span class="unit">${esc(f.num_pair.unit)}</span>
+        </div>
+        <div class="body">${f.body}</div>
+      </article>
+    `).join("");
+
+    // Chart hover tooltips (Pack D)
+    if (window.V3Tooltip) {
+      // Heatmap cells (ind × tech / ind × L1 / ind × regulator)
+      ["#ind-tech-matrix", "#ind-l1-matrix", "#ind-reg-matrix"].forEach(sel => {
+        document.querySelectorAll(`${sel} .ind-cell.ind-val:not(.zero)`).forEach(cell => {
+          const v = cell.textContent.trim();
+          window.V3Tooltip.attach(cell, () => ({
+            title: `${v} records`,
+            lines: [`官方适应症证据 · 该 (适应症, 维度) 单元`],
+          }));
+        });
+      });
+    }
+
+    // Stat-row count-up
+    document.querySelectorAll("[data-count-up]").forEach(el => countUp(el, el.getAttribute("data-count-up")));
+
+    // IntersectionObserver fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add("in-view"); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    document.querySelectorAll(".block, .page-hero, .kpi-cell, .editorial-block").forEach(el => observer.observe(el));
+
+    // helpers
+    function setText (id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
+    function renderRankList (query) {
+      const q = String(query || "").trim().toLowerCase();
+      const matched = data.indications
+        .map((ind, i) => ({ ind, i }))
+        .filter(({ ind }) => {
+          if (!q) return true;
+          const haystack = [
+            ind.indication,
+            ...(ind.top_brands || []).map(b => b.name),
+            ...(ind.top_techs || []).map(t => t.name),
+            ...(ind.top_l1 || []).map(l => displayL1(l.l1)),
+          ].join(" ").toLowerCase();
+          return haystack.includes(q);
+        });
+      listWrap.innerHTML = matched.map(({ ind, i }, visibleIndex) => {
+        const pct = (ind.n_records / maxN) * 100;
+        const domL1 = (ind.top_l1[0] || {}).l1 || "Injectables";
+        const color = TRACK_COLORS[domL1] || "#888";
+        return `
+          <div class="ind-rank-row" data-ind-idx="${i}" style="--bar-color:${color};">
+            <span class="rank">${String(visibleIndex + 1).padStart(2, "0")}</span>
+            <span class="name">${esc(ind.indication)}</span>
+            <div class="bar-wrap">
+              <div class="bar-fill" style="width:${pct.toFixed(1)}%"></div>
+            </div>
+            <span class="stats">
+              <span class="n">${ind.n_records}</span>
+              <small>${ind.n_products}p · ${ind.n_companies}co · ${ind.n_techs}t</small>
+            </span>
+          </div>
+        `;
+      }).join("") || `<div class="ind-empty">没有匹配的适应症桶</div>`;
+      if (searchCount) {
+        searchCount.textContent = q ? `${matched.length} / ${data.indications.length}` : `${data.indications.length} buckets`;
+      }
+      listWrap.querySelectorAll(".ind-rank-row").forEach(row => {
+        row.addEventListener("click", () => {
+          const idx = parseInt(row.getAttribute("data-ind-idx"), 10);
+          const ind = data.indications[idx];
+          if (!ind) return;
+          listWrap.querySelectorAll(".ind-rank-row.active").forEach(r => r.classList.remove("active"));
+          row.classList.add("active");
+          if (window.V3IndicationDrawer) {
+            window.V3IndicationDrawer.show({ bucket: ind.indication });
+          }
+        });
+        if (window.V3Tooltip) {
+          const idx = parseInt(row.getAttribute("data-ind-idx"), 10);
+          const ind = data.indications[idx];
+          if (!ind) return;
+          window.V3Tooltip.attach(row, () => ({
+            title: ind.indication,
+            lines: [
+              `<em>${ind.n_records}</em> records · <em>${ind.n_products}</em> products`,
+              `${ind.n_companies} companies · ${ind.n_techs} techs`,
+              ind.top_l1[0] ? `Top L1 ${displayL1(ind.top_l1[0].l1)} (${ind.top_l1[0].n})` : "",
+            ].filter(Boolean),
+            hint: "click → expand detail",
+          }));
+        }
+      });
+    }
+    function alpha (v) {
+      const hex = Math.round(Math.min(1, v) * 255).toString(16).padStart(2, "0");
+      return hex;
+    }
+    function countUp (el, target) {
+      if (!el) return;
+      const tgt = Number(target);
+      if (!Number.isFinite(tgt)) { el.textContent = target; return; }
+      const isInt = Number.isInteger(tgt);
+      const duration = 1100;
+      const startTime = performance.now();
+      el.classList.add("counting");
+      function frame (now) {
+        const p = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const v = tgt * eased;
+        el.textContent = isInt ? Math.round(v).toLocaleString("en-US") : v.toFixed(1);
+        if (p < 1) requestAnimationFrame(frame);
+        else { el.classList.remove("counting"); el.textContent = isInt ? tgt.toLocaleString("en-US") : tgt.toFixed(2); }
+      }
+      requestAnimationFrame(frame);
+    }
+    function esc (s) {
+      return String(s || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
+    }
+    function abbr (s, len) {
+      const t = String(s || "");
+      if (t.length > (len || 26)) return t.slice(0, (len || 26) - 1) + "…";
+      return t;
+    }
+  })();
+</script>
+
+</body>
+</html>

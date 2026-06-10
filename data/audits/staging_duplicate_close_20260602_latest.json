@@ -1,0 +1,62 @@
+{
+  "run_id": "codex_duplicate_staging_close_20260602",
+  "closed_at": "2026-06-02T19:20:38+08:00",
+  "source": "data\\verification_evidence_staging.jsonl",
+  "backup": "data\\audits\\verification_evidence_staging.backup_before_duplicate_close_20260602_192038.jsonl",
+  "total_lines": 235,
+  "closable_keys": 112,
+  "closed_rows": 112,
+  "selection_rule": "evidence_staging.review_status='needs_review' and merge_target='registration_evidence' and same registration_no/product_id exists in registration_evidence with non-needs_review status",
+  "samples": [
+    {
+      "source_record_id": "K251327",
+      "product_id": "prod_6115f08655a6",
+      "company_id": "co_0f96737d49f7"
+    },
+    {
+      "source_record_id": "K212703",
+      "product_id": "prod_14ad2948931e",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K151947",
+      "product_id": "prod_de9818c5ff31",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K142860",
+      "product_id": "prod_12d68f975ca7",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K024093",
+      "product_id": "prod_12d68f975ca7",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K162837",
+      "product_id": "prod_12d68f975ca7",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K170121",
+      "product_id": "prod_12d68f975ca7",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K211979",
+      "product_id": "prod_12d68f975ca7",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K100415",
+      "product_id": "prod_14ad2948931e",
+      "company_id": "co_a5764a51df8b"
+    },
+    {
+      "source_record_id": "K202428",
+      "product_id": "prod_14ad2948931e",
+      "company_id": "co_a5764a51df8b"
+    }
+  ]
+}

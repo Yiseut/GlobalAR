@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>技术树 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Intelligence · Technology tree</div>
+      <h1>
+        技术树
+        <span class="h1-en">Technology Tree</span>
+      </h1>
+      <p class="lede">235 种技术 / 物质 / 能量在 973 款产品上的分布。这是商业赛道的「反向视角」 — 不问「这家公司做什么生意」，问「这种技术撑了多少生意」。</p>
+      <div class="stat-row">
+        <span><span class="num" data-count-up="235">235</span> 种核心技术 · <span class="num" data-count-up="10">10</span> 大技术族</span>
+        <span>头部 HA <span class="num" data-count-up="184">184</span> 款 · 占 <span class="num" data-count-up="19">19</span>%</span>
+        <span>跨多赛道平台技术 <span class="num" data-count-up="6">6</span> 种</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="cn">· 技术结构</span><span class="en">Headline numbers</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede lede-text has-wash w-rose-deep">
+          <div class="label">
+            <span class="en">Top technology</span>
+            <span class="zh">头部技术</span>
+          </div>
+          <span class="value" id="kpi-top-tech">HA</span>
+          <span class="delta" id="kpi-top-tech-share">184 · 19% share</span>
+        </article>
+        <article class="kpi-cell has-wash w-peach">
+          <div class="label"><span class="en">Distinct techs</span><span class="zh">独立技术数</span></div>
+          <span class="value" id="kpi-total-techs">235</span>
+          <span class="delta">material / energy source taxonomy</span>
+        </article>
+        <article class="kpi-cell has-wash w-sand">
+          <div class="label"><span class="en">Tech families</span><span class="zh">技术族数</span></div>
+          <span class="value" id="kpi-families">10</span>
+          <span class="delta">grouped by material / energy</span>
+        </article>
+        <article class="kpi-cell has-wash w-sage">
+          <div class="label"><span class="en">Cross-app techs</span><span class="zh">跨赛道平台技术</span></div>
+          <span class="value" id="kpi-cross">6</span>
+          <span class="delta">serves ≥3 commercial L1s</span>
+        </article>
+        <article class="kpi-cell has-wash w-rose">
+          <div class="label"><span class="en">Mesotherapy</span><span class="zh">中胚层</span></div>
+          <span class="value" id="kpi-meso">33</span>
+          <span class="delta">cocktail / hybrid tech family</span>
+        </article>
+        <article class="kpi-cell has-wash w-slate">
+          <div class="label"><span class="en">Diode laser</span><span class="zh">二极管激光</span></div>
+          <span class="value" id="kpi-diode">32</span>
+          <span class="delta">EBD anchor</span>
+        </article>
+        <article class="kpi-cell has-wash w-plum">
+          <div class="label"><span class="en">HIFU</span><span class="zh">超声聚焦</span></div>
+          <span class="value" id="kpi-hifu">29</span>
+          <span class="delta">深层提拉能量</span>
+        </article>
+        <article class="kpi-cell has-wash w-lavender">
+          <div class="label"><span class="en">Year-verified</span><span class="zh">有 approval 年份</span></div>
+          <span class="value" id="kpi-year">—</span>
+          <span class="delta">via registration_evidence</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>技术族</h2>
+        <span class="cn">· 10 大族 · 物质 / 能量分类</span><span class="en">Technology families</span>
+      </div>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">把 235 种技术按「物质 / 能量来源」聚成 10 族。这是医美技术的核心 taxonomy — 公司可以在族内做平行扩张（如同时做 HA + HA crosslinked），但跨族扩张（HA → 激光）通常意味着收购或战略转型。</p>
+      <div class="tech-family-grid" id="family-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>Top 15 技术排名</h2>
+        <span class="cn">· 含商业归属</span><span class="en">Top 15 technologies</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每种技术撑了多少产品 + 主要服务哪个商业赛道</div>
+        <div class="chart-sub">条形长度归一化到 HA = 100%。右侧标注 "产品数 · 公司数"，下方小 chip 显示 top 2 服务的 L1。点击展开详情：top L2 子分类 + 完整 L1 分布。</div>
+        <div class="tech-rank-list" id="tech-rank-list"></div>
+        <div class="ind-detail" id="tech-detail"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>技术 × 商业 矩阵</h2>
+        <span class="cn">· 反向 cross-tab</span><span class="en">Tech × commercial cross-tab</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每种技术服务于哪些商业 L1</div>
+        <div class="chart-sub">行 = top 10 技术；列 = top 6 商业 L1。色块按 L1 自己的色染（玫红 = EBD，紫 = Injectables 等）。多色横行的技术（如 Microneedling）= 平台型；单色横行（如 Hyaluronic Acid）= 单赛道专精。这跟 tracks 页面的"L1 × Tech"是同一份数据的 转置视图。</div>
+        <div class="tech-l1-matrix" id="tech-l1-matrix"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>技术成熟度</h2>
+        <span class="cn">· 新兴 / 成熟 / 遗留 / 待验证</span><span class="en">Tech maturity</span>
+      </div>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">基于 registration_evidence 的 approval_date 推断每种技术的活跃期。<strong style="color:var(--accent-2);">新兴</strong>（首次申报 ≥ 2018）= 待观察的赛道；<strong style="color:var(--accent-2);">成熟</strong> = 当前商业主力；<strong style="color:var(--accent-2);">遗留</strong>（最近申报 < 2018）= 衰退期；<strong style="color:var(--accent-2);">待验证</strong> = 底库尚无 approval 数据。</p>
+      <div class="maturity-grid" id="maturity-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row" id="finding-cards"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 技术树 Technology Tree · 235 techs · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260524"></script>
+<script src="./v3-technology.js?v=20260524"></script>
+<script src="./v3-companies.js?v=20260524"></script>
+<script src="./v3-product-tree.js?v=20260526"></script>
+<script src="./v3-company-detail.js?v=20260526"></script>
+<script src="./v3-chart-interact.js?v=20260607-tooltip"></script>
+<script src="./_nav.js" data-active="technology"></script>
+<script>
+  (function () {
+    const d = window.GLOBAL_AESTHETICS_DATA;
+    if (d && d.generated_at) {
+      const s = d.generated_at.slice(0,10).replace(/-/g,"·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+  })();
+
+  (function renderTech () {
+    const data = window.V3_TECHNOLOGY_DATA;
+    if (!data) return;
+
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
+
+    // ---- KPI ----
+    const s = data.summary;
+    setText("kpi-top-tech", String(s.top_tech || "—"));
+    setText("kpi-top-tech-share", `${s.top_tech_n} · ${s.top_tech_share}% share`);
+    countUp(document.getElementById("kpi-total-techs"), s.total_techs);
+    countUp(document.getElementById("kpi-families"), s.total_families);
+    countUp(document.getElementById("kpi-cross"), s.cross_app_count);
+    countUp(document.getElementById("kpi-year"), s.covered_with_year);
+    // Fill specific tech KPIs from top_techs lookup
+    const lookup = Object.fromEntries(data.top_techs.map(t => [t.tech, t.n_products]));
+    countUp(document.getElementById("kpi-meso"), lookup["Mesotherapy"] || 33);
+    countUp(document.getElementById("kpi-diode"), lookup["Diode Laser"] || 32);
+    countUp(document.getElementById("kpi-hifu"), lookup["HIFU"] || 29);
+
+    // ---- Family grid ----
+    const famWrap = document.getElementById("family-grid");
+    famWrap.innerHTML = data.family_rollup.map(f => {
+      const members = f.members.slice(0, 4).map(m => `
+        <div class="fam-row">
+          <span class="nm">${esc(m.name)}</span>
+          <span class="n">${m.n}</span>
+        </div>
+      `).join("");
+      const moreCount = Math.max(0, f.members.length - 4);
+      const moreHtml = moreCount ? `<div class="fam-row more">+ ${moreCount} more techs</div>` : "";
+      const l1Chips = f.top_l1.slice(0, 3).map(l => {
+        const c = TRACK_COLORS[l.l1] || "#888";
+        return `<span class="l1-chip" style="--c:${c};"><span class="sw"></span>${esc(displayL1(l.l1))} · ${l.n}</span>`;
+      }).join("");
+      return `
+        <article class="tech-family-card" style="--family-color:${f.color};">
+          <div class="fam-head">
+            <h4>${esc(f.family)}</h4>
+            <span class="ttl">${f.n_products}</span>
+          </div>
+          <div class="fam-meta">
+            <span>${f.n_techs} techs · ${f.n_companies} companies</span>
+          </div>
+          <div class="fam-members">${members}${moreHtml}</div>
+          <div class="fam-l1-chips">${l1Chips}</div>
+        </article>
+      `;
+    }).join("");
+
+    // ---- Top 15 tech ranking ----
+    const rankWrap = document.getElementById("tech-rank-list");
+    const detailWrap = document.getElementById("tech-detail");
+    const maxN = Math.max(1, ...data.top_techs.map(t => t.n_products));
+    rankWrap.innerHTML = data.top_techs.map((t, i) => {
+      const pct = (t.n_products / maxN) * 100;
+      const domL1 = (t.top_l1[0] || {}).l1 || "—";
+      const color = TRACK_COLORS[domL1] || "#888";
+      const yrSpan = t.first_year ? `${String(t.first_year).slice(2)}-${String(t.last_year || t.first_year).slice(2)}` : "—";
+      return `
+        <div class="ind-rank-row" data-tech-idx="${i}" style="--bar-color:${color};">
+          <span class="rank">${String(i + 1).padStart(2, "0")}</span>
+          <span class="name">${esc(t.tech)}</span>
+          <div class="bar-wrap">
+            <div class="bar-fill" style="width:${pct.toFixed(1)}%"></div>
+          </div>
+          <span class="stats">
+            <span class="n">${t.n_products}</span>
+            <small>${t.n_companies}co · '${yrSpan}</small>
+          </span>
+        </div>
+      `;
+    }).join("");
+    // Pack D: hover tooltips on rank rows
+    if (window.V3Tooltip) {
+      rankWrap.querySelectorAll(".ind-rank-row").forEach(row => {
+        const idx = parseInt(row.getAttribute("data-tech-idx"), 10);
+        const t = data.top_techs[idx];
+        if (!t) return;
+        window.V3Tooltip.attach(row, () => ({
+          title: t.tech,
+          lines: [
+            `<em>${t.n_products}</em> products · <em>${t.n_companies}</em> companies · ${t.n_brands || 0} brands`,
+            t.top_l1[0] ? `Top L1 ${displayL1(t.top_l1[0].l1)} (${t.top_l1[0].n})` : "",
+            t.first_year ? `Active ${t.first_year}–${t.last_year || t.first_year}` : "",
+          ].filter(Boolean),
+          hint: "click → expand detail",
+        }));
+      });
+    }
+    rankWrap.querySelectorAll(".ind-rank-row").forEach(row => {
+      row.addEventListener("click", () => {
+        const idx = parseInt(row.getAttribute("data-tech-idx"), 10);
+        const t = data.top_techs[idx];
+        const domL1 = (t.top_l1[0] || {}).l1 || "—";
+        const color = TRACK_COLORS[domL1] || "#888";
+        rankWrap.querySelectorAll(".ind-rank-row.active").forEach(r => r.classList.remove("active"));
+        row.classList.add("active");
+        detailWrap.innerHTML = `
+          <button class="pin-close" type="button" aria-label="关闭">×</button>
+          <div class="ind-detail-head" style="--pin-color:${color};">
+            <span class="chip"><span class="sw"></span>${esc(t.family || "Tech")}</span>
+            <h4>${esc(t.tech)}</h4>
+            <span class="ind-detail-n">${t.n_products}</span>
+          </div>
+          <div class="ind-detail-grid">
+            <div class="ind-block">
+              <div class="ind-block-label">Top L1 · 服务赛道</div>
+              ${t.top_l1.length ? t.top_l1.map(l => `<div class="ind-row"><span>${esc(displayL1(l.l1))}</span><span class="n">${l.n}</span></div>`).join("") : '<div class="empty">—</div>'}
+            </div>
+            <div class="ind-block">
+              <div class="ind-block-label">Top L2 · 子分类</div>
+              ${t.top_l2.length ? t.top_l2.map(l => `<div class="ind-row"><span>${esc(l.l2)}</span><span class="n">${l.n}</span></div>`).join("") : '<div class="empty">—</div>'}
+            </div>
+            <div class="ind-block">
+              <div class="ind-block-label">Coverage · 覆盖</div>
+              <div class="ind-row"><span>Products</span><span class="n">${t.n_products}</span></div>
+              <div class="ind-row"><span>Companies</span><span class="n">${t.n_companies}</span></div>
+              <div class="ind-row"><span>Brands</span><span class="n">${t.n_brands}</span></div>
+            </div>
+            <div class="ind-block">
+              <div class="ind-block-label">Activity · 申报年份</div>
+              <div class="ind-row"><span>First</span><span class="n">${t.first_year || "—"}</span></div>
+              <div class="ind-row"><span>Last</span><span class="n">${t.last_year || "—"}</span></div>
+              <div class="ind-row"><span>Coverage</span><span class="n">${t.covered ? "有" : "—"}</span></div>
+            </div>
+          </div>
+        `;
+        detailWrap.classList.add("show");
+        detailWrap.style.setProperty("--pin-color", color);
+        detailWrap.querySelector(".pin-close").addEventListener("click", () => {
+          detailWrap.classList.remove("show");
+          rankWrap.querySelectorAll(".ind-rank-row.active").forEach(r => r.classList.remove("active"));
+        });
+      });
+    });
+
+    // ---- Tech × L1 matrix ----
+    const matrixWrap = document.getElementById("tech-l1-matrix");
+    if (data.tech_x_l1.rows.length) {
+      const cols = data.tech_x_l1.columns;
+      matrixWrap.style.gridTemplateColumns = `170px repeat(${cols.length}, 1fr) 60px`;
+      const head = `<div class="ind-cell ind-head">技术</div>` +
+        cols.map(c => `<div class="ind-cell ind-head">${esc(displayL1(c))}</div>`).join("") +
+        `<div class="ind-cell ind-head">Total</div>`;
+      const maxCell = Math.max(1, ...data.tech_x_l1.rows.flatMap(r => Object.values(r.values)));
+      const rowsHtml = data.tech_x_l1.rows.map(r => {
+        const cells = cols.map(c => {
+          const n = r.values[c] || 0;
+          const intensity = n / maxCell;
+          const color = TRACK_COLORS[c] || "#888";
+          if (!n) return `<div class="ind-cell ind-val zero">—</div>`;
+          return `<div class="ind-cell ind-val" style="--intensity:${intensity.toFixed(2)}; background: linear-gradient(135deg, ${color}${alpha(intensity * 0.40)}, ${color}${alpha(intensity * 0.20)}), var(--surface-2);">${n}</div>`;
+        }).join("");
+        return `
+          <div class="ind-cell ind-row-label">${esc(r.tech)}</div>
+          ${cells}
+          <div class="ind-cell ind-total">${r.total}</div>
+        `;
+      }).join("");
+      matrixWrap.innerHTML = head + rowsHtml;
+      matrixWrap.classList.add("ind-heatmap");
+    }
+
+    // ---- Maturity grid ----
+    const matWrap = document.getElementById("maturity-grid");
+    const buckets = [
+      { key: "emerging",    label: "新兴",   en: "Emerging",     desc: "首次申报 ≥ 2018", color: "#A8B59A" },
+      { key: "established", label: "成熟",   en: "Established",  desc: "近期仍活跃，老牌", color: "#6B5A75" },
+      { key: "legacy",      label: "遗留",   en: "Legacy",       desc: "最近申报 < 2018", color: "#CFB58E" },
+      { key: "unverified",  label: "待验证", en: "Unverified",   desc: "底库无 approval 数据", color: "#5A6878" },
+    ];
+    matWrap.innerHTML = buckets.map(b => {
+      const items = (data.maturity[b.key] || []);
+      const chips = items.map(t => `<span class="tech-chip">${esc(t)}</span>`).join("");
+      return `
+        <article class="maturity-card" style="--mat-color:${b.color};">
+          <div class="mat-head">
+            <span class="label">${b.label}</span>
+            <span class="en">${b.en}</span>
+            <span class="ttl">${items.length}</span>
+          </div>
+          <div class="mat-desc">${b.desc}</div>
+          <div class="mat-chips">${chips || '<span style="color:var(--muted); font-size:11px; font-style:italic;">—</span>'}</div>
+        </article>
+      `;
+    }).join("");
+
+    // ---- Findings ----
+    document.getElementById("finding-cards").innerHTML = (data.findings || []).map(f => `
+      <article class="editorial-block has-wash ${f.wash} wash-bottom-left">
+        <span class="stamp">${esc(f.stamp)}</span>
+        <div class="lead">${f.lead}</div>
+        <div class="num-pair">
+          <span class="num">${esc(String(f.num_pair.num))}</span>
+          <span class="unit">${esc(f.num_pair.unit)}</span>
+        </div>
+        <div class="body">${f.body}</div>
+      </article>
+    `).join("");
+
+    // Animations
+    document.querySelectorAll("[data-count-up]").forEach(el => countUp(el, el.getAttribute("data-count-up")));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add("in-view"); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    document.querySelectorAll(".block, .page-hero, .kpi-cell, .editorial-block").forEach(el => observer.observe(el));
+
+    // helpers
+    function setText (id, v) { const el = document.getElementById(id); if (el) el.textContent = v; }
+    function alpha (v) {
+      const hex = Math.round(Math.min(1, v) * 255).toString(16).padStart(2, "0");
+      return hex;
+    }
+    function countUp (el, target) {
+      if (!el) return;
+      const tgt = Number(target);
+      if (!Number.isFinite(tgt)) { el.textContent = target; return; }
+      const isInt = Number.isInteger(tgt);
+      const duration = 1100;
+      const startTime = performance.now();
+      el.classList.add("counting");
+      function frame (now) {
+        const p = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const v = tgt * eased;
+        el.textContent = isInt ? Math.round(v).toLocaleString("en-US") : v.toFixed(1);
+        if (p < 1) requestAnimationFrame(frame);
+        else { el.classList.remove("counting"); el.textContent = isInt ? tgt.toLocaleString("en-US") : tgt.toFixed(2); }
+      }
+      requestAnimationFrame(frame);
+    }
+    function esc (s) {
+      return String(s || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
+    }
+    function abbr (s, len) {
+      const t = String(s || "");
+      if (t.length > (len || 26)) return t.slice(0, (len || 26) - 1) + "…";
+      return t;
+    }
+  })();
+</script>
+
+</body>
+</html>

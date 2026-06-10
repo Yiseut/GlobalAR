@@ -531,6 +531,83 @@ def site_rank(row: dict[str, Any]) -> tuple[Any, ...]:
     )
 
 
+SPEC_GAP_QUERY_PRIORITY = {
+    "product_ifu_labeling": 120,
+    "official_ifu_catalog": 110,
+    "product_certificate_registration": 100,
+    "product_official_page": 95,
+    "official_product_portfolio": 80,
+}
+
+SPEC_GAP_SCOPE_PRIORITY = {
+    "product": 90,
+    "product_line": 80,
+    "brand": 35,
+    "operating_company": 15,
+    "listed_parent": -80,
+}
+
+SPEC_GAP_KEYWORDS = re.compile(
+    r"\b(?:ifu|instruction|instructions|catalog|catalogue|brochure|manual|"
+    r"spec|specification|composition|ingredient|volume|syringe|vial|needle|"
+    r"certificate|certification|declaration|doc|pdf|label|labeling|labelling)\b",
+    re.I,
+)
+
+LOW_VALUE_SPEC_KEYWORDS = re.compile(r"\b(?:investor|annual\s+report|career|privacy|terms|newsroom|press)\b", re.I)
+
+
+def existing_spec_counts_by_family() -> Counter[str]:
+    counts: Counter[str] = Counter()
+    for row in read_csv(PRODUCT_SPECIFICATION_EVIDENCE_PATH):
+        family_id = norm(row.get("product_family_id"))
+        if family_id:
+            counts[family_id] += 1
+    return counts
+
+
+def spec_gap_rank(row: dict[str, Any], spec_counts: Counter[str]) -> tuple[Any, ...]:
+    """Prioritize official pages that are most likely to fill missing specs."""
+    family_id = norm(row.get("product_family_id"))
+    existing_specs = spec_counts.get(family_id, 0) if family_id else 0
+    text = " ".join(
+        [
+            norm(row.get("official_website_url")),
+            norm(row.get("source_url")),
+            norm(row.get("source_title")),
+            norm(row.get("product_family")),
+            norm(row.get("brand")),
+            norm(row.get("source_query_type")),
+        ]
+    )
+    priority = 0
+    priority += SPEC_GAP_SCOPE_PRIORITY.get(norm(row.get("entity_scope")), 0)
+    priority += SPEC_GAP_QUERY_PRIORITY.get(norm(row.get("source_query_type")), 0)
+    if family_id:
+        if existing_specs == 0:
+            priority += 95
+        elif existing_specs < 3:
+            priority += 60
+        elif existing_specs < 8:
+            priority += 25
+        else:
+            priority -= min(35, existing_specs // 3)
+    if SPEC_GAP_KEYWORDS.search(text):
+        priority += 45
+    if norm(row.get("official_website_url")).lower().endswith(".pdf") or norm(row.get("source_url")).lower().endswith(".pdf"):
+        priority += 25
+    if LOW_VALUE_SPEC_KEYWORDS.search(text):
+        priority -= 80
+    return (
+        -priority,
+        existing_specs,
+        norm(row.get("company")),
+        norm(row.get("product_family")),
+        norm(row.get("source_title")),
+        norm(row.get("official_website_url")),
+    )
+
+
 def build_company_website_view(websites: list[dict[str, Any]]) -> list[dict[str, Any]]:
     captured_at = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -608,7 +685,24 @@ class MediaParser(HTMLParser):
 def fetch_text(url: str, timeout: int) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 GlobalAestheticsAssetBot/0.2"})
     with urllib.request.urlopen(request, timeout=timeout) as response:
-        raw = response.read(2_000_000)
+        content_type = response.headers.get("content-type", "").split(";", 1)[0].lower()
+        raw = response.read(6_000_000)
+    parsed_path = urllib.parse.urlparse(url).path.lower()
+    if content_type == "application/pdf" or parsed_path.endswith(".pdf") or raw.startswith(b"%PDF"):
+        try:
+            import fitz  # type: ignore
+
+            with fitz.open(stream=raw, filetype="pdf") as document:
+                chunks = []
+                for page_index, page in enumerate(document):
+                    if page_index >= 16:
+                        break
+                    chunks.append(page.get_text("text"))
+                pdf_text = "\n".join(chunks).strip()
+                if pdf_text:
+                    return pdf_text
+        except Exception:  # noqa: BLE001
+            pass
     return raw.decode("utf-8", errors="replace")
 
 
@@ -904,12 +998,16 @@ def build_assets_and_page_specs(
     force_assets: bool,
     skip_image_downloads: bool,
     download_logos_only: bool,
+    target_spec_gaps: bool,
 ) -> tuple[int, list[dict[str, Any]]]:
     captured_at = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     existing_assets = read_csv(COMPANY_MEDIA_ASSET_INDEX_PATH)
     existing_asset_ids = {norm(row.get("asset_id")) for row in existing_assets if norm(row.get("asset_id"))}
     processed_website_ids = {norm(row.get("website_id")) for row in existing_assets if norm(row.get("website_id"))}
     asset_candidates = websites if force_assets else [row for row in websites if norm(row.get("website_id")) not in processed_website_ids]
+    if target_spec_gaps:
+        spec_counts = existing_spec_counts_by_family()
+        asset_candidates.sort(key=lambda row: spec_gap_rank(row, spec_counts))
     selected = asset_candidates[:limit_websites]
     ASSET_ROOT.mkdir(parents=True, exist_ok=True)
     sink = CsvSink(COMPANY_MEDIA_ASSET_INDEX_PATH, ASSET_FIELDS, append=bool(existing_assets))
@@ -1054,6 +1152,11 @@ def main() -> None:
         action="store_true",
         help="Fetch official pages and download only logo candidates; product images stay paused.",
     )
+    parser.add_argument(
+        "--target-spec-gaps",
+        action="store_true",
+        help="Prioritize product-line, IFU, catalog, certificate, and low-spec family pages for specification extraction.",
+    )
     parser.add_argument("--timeout", type=int, default=12)
     parser.add_argument("--sleep", type=float, default=0.03)
     args = parser.parse_args()
@@ -1081,6 +1184,7 @@ def main() -> None:
         args.force_assets,
         args.skip_image_downloads,
         args.download_logos_only,
+        args.target_spec_gaps,
     )
     spec_by_id = {
         norm(row.get("spec_id")): row
@@ -1107,6 +1211,7 @@ def main() -> None:
                 "downloaded_assets": downloaded,
                 "image_downloads_paused": args.skip_image_downloads,
                 "download_logos_only": args.download_logos_only,
+                "target_spec_gaps": args.target_spec_gaps,
                 "product_specification_rows": len(specs),
                 "asset_root": str(ASSET_ROOT),
                 "website_master_path": str(OFFICIAL_WEBSITE_MASTER_PATH),

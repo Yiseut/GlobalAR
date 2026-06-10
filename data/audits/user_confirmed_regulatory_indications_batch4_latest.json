@@ -1,0 +1,324 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_user_reg_indications_b4_20260601_030451.xlsx",
+  "workbook_changes": 47,
+  "manual_official_indication_rows_added": 15,
+  "manual_product_fact_rows_added": 6,
+  "target_record_ids": [
+    "REC_0009",
+    "REC_0522",
+    "REC_0675",
+    "REC_0903",
+    "REC_0936",
+    "REC_0937"
+  ],
+  "fda_confirmed_record_ids": [
+    "REC_0009",
+    "REC_0522",
+    "REC_0675",
+    "REC_0903",
+    "REC_0936",
+    "REC_0937"
+  ],
+  "ce_confirmed_record_ids": [
+    "REC_0009",
+    "REC_0522",
+    "REC_0675",
+    "REC_0903",
+    "REC_0936",
+    "REC_0937"
+  ],
+  "nmpa_confirmed_record_ids": [
+    "REC_0009",
+    "REC_0675",
+    "REC_0903"
+  ],
+  "known_residual_notes": [
+    "CE and NMPA certificate numbers remain blank where the user confirmed presence but did not supply precise numbers.",
+    "Asclepion parent/brand rows were not merged; this batch updates the main Asclepion Dermablate product line REC_0903.",
+    "Apyx legacy combined Renuvion (J-Plasma) row REC_0606 was not modified because separate J-Plasma and Renuvion APR rows already carry the granular claims."
+  ],
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_0009",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA 510(k), CE and NMPA confirmed by user; CE/NMPA certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0009",
+      "field": "FDA_510k_Number",
+      "old": "",
+      "new": "K072699"
+    },
+    {
+      "record_id": "REC_0009",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0009",
+      "field": "NMPA_Status",
+      "old": "",
+      "new": "NMPA Class III registration confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0009",
+      "field": "Tech_Type_Std",
+      "old": "Radiofrequency",
+      "new": "Unipolar RF + Ultrasound"
+    },
+    {
+      "record_id": "REC_0009",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Alma Lasers"
+    },
+    {
+      "record_id": "REC_0009",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Alma Lasers"
+    },
+    {
+      "record_id": "REC_0009",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch4: user-confirmed EBD indication/regulatory status applied; precise CE/NMPA certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA 510(k) and CE confirmed by user; CE certificate number pending."
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "FDA_510k_Number",
+      "old": "",
+      "new": "K201520"
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "Category_L2",
+      "old": "Laser",
+      "new": "Plasma"
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "Tech_Type_Std",
+      "old": "CO2 Laser",
+      "new": "Fractional RF Plasma"
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Alma Lasers"
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Alma Lasers"
+    },
+    {
+      "record_id": "REC_0522",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch4: user-confirmed EBD indication/regulatory status applied; precise CE/NMPA certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA 510(k), CE and NMPA confirmed by user; CE/NMPA certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "FDA_510k_Number",
+      "old": "",
+      "new": "K230371; K222064"
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "NMPA_Status",
+      "old": "",
+      "new": "NMPA registration confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "Tech_Type_Std",
+      "old": "Diode Laser",
+      "new": "755/810/1064nm Diode Laser"
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Alma Lasers"
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Alma Lasers"
+    },
+    {
+      "record_id": "REC_0675",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch4: user-confirmed EBD indication/regulatory status applied; precise CE/NMPA certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0937",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA 510(k) and CE confirmed by user; certificate numbers pending where not already captured."
+    },
+    {
+      "record_id": "REC_0937",
+      "field": "FDA_510k_Number",
+      "old": "",
+      "new": "K202880"
+    },
+    {
+      "record_id": "REC_0937",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0937",
+      "field": "Tech_Type_Std",
+      "old": "Plasma",
+      "new": "Helium Plasma + RF"
+    },
+    {
+      "record_id": "REC_0937",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Apyx Medical"
+    },
+    {
+      "record_id": "REC_0937",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Apyx Medical"
+    },
+    {
+      "record_id": "REC_0937",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch4: user-confirmed EBD indication/regulatory status applied; precise CE/NMPA certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA 510(k) and CE confirmed by user; CE certificate number pending."
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "FDA_510k_Number",
+      "old": "",
+      "new": "K230272"
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "Category_L2",
+      "old": "Radiofrequency",
+      "new": "Plasma"
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "Tech_Type_Std",
+      "old": "Plasma",
+      "new": "Helium Plasma + RF"
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Apyx Medical"
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Apyx Medical"
+    },
+    {
+      "record_id": "REC_0936",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch4: user-confirmed EBD indication/regulatory status applied; precise CE/NMPA certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA 510(k), CE and NMPA confirmed by user; CE/NMPA certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "FDA_510k_Number",
+      "old": "",
+      "new": "K210634"
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "NMPA_Status",
+      "old": "",
+      "new": "NMPA registration confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "Tech_Type_Std",
+      "old": "Er:YAG Laser",
+      "new": "Er:YAG Laser 2940nm"
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Asclepion Laser Technologies"
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Asclepion Laser Technologies"
+    },
+    {
+      "record_id": "REC_0903",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch4: user-confirmed EBD indication/regulatory status applied; precise CE/NMPA certificate numbers remain blank unless supplied."
+    }
+  ]
+}

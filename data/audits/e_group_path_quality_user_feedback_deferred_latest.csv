@@ -1,0 +1,4 @@
+﻿seed_record_id,product_id,company,brand,standard_product_name,decision,reason,source_url
+REC_0355,prod_6f741f7cd970,Professional Derma,Jalupro,Super Hydro,defer_to_reacquire_official_source,Jalupro Super Hydro source text is truncated at indicated for; needs fresh official IFU/product page.,https://jalupro.fr/en/products/superhydro
+REC_0738,prod_2f2b780d683a,Promoitalia,V-Carbon,V-Carbon System,defer_to_reacquire_official_source,Promoitalia V-Carbon source text is truncated at indicated for improving the appearance of; needs fresh official IFU/product page.,https://us.webpromoitalia.com/product/v-carbon/
+REC_0309,prod_9c9b96546070,Revitacare,HairCare,HairCare,defer_to_reacquire_official_source,Revitacare HairCare source text is truncated at intended for; needs fresh official IFU/product page.,https://revitacare.net/4-medical-devices

@@ -1,0 +1,31 @@
+﻿change_type,entity,before,after,note
+fix_extra_brand_row,Kylane / Kysense,Kylane / MaiLi / Kysense,Kylane / Kysense,Converted combined MaiLi / Kysense portfolio row to the actual Kysense brand row after MAP-02 split decision.
+add_brand_portfolio,Allergan / Juvéderm Ultra Plus XC,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Allergan / Juvéderm Ultra XC,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Allergan / Juvéderm Volbella XC,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Allergan / Juvéderm Vollure XC,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Allergan / REVOLVE,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,BTL / EMTONE,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Cellese / AnteAGE / AnteAGE MD,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Galderma / Restylane Defyne,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Galderma / Restylane Kysse,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Galderma / Restylane Lyft,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Galderma / Restylane Refyne,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Galderma / Restylane Skinboosters Vital Light,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Medytox / NEWLUX,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Sinclair Pharma / Lanluma,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Sinclair Pharma / Perfectha,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Skin Tech / Aesthetic Dermal,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Skin Tech / Benebellum,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Skin Tech / HAPPY intim,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Skin Tech / Peel2Glow,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Skin Tech / Reparestim,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Skin Tech / RRS HA Long Lasting,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Skin Tech / XL Hair,,added,Added from Product_Lines (1 source row(s)).
+add_brand_portfolio,Taumedika SRL / Karisma FACE Rh Collagen,,added,Added from Product_Lines (1 source row(s)).
+update_company_counts,Allergan,Product_Count=14; Brand_Count=14,Product_Count=19; Brand_Count=19,Synchronized source Companies counts to raw Product_Lines company/brand counts.
+update_company_counts,BTL,Product_Count=14; Brand_Count=13,Product_Count=15; Brand_Count=14,Synchronized source Companies counts to raw Product_Lines company/brand counts.
+update_company_counts,Galderma,Product_Count=17; Brand_Count=16,Product_Count=22; Brand_Count=21,Synchronized source Companies counts to raw Product_Lines company/brand counts.
+update_company_counts,Medytox,Product_Count=8; Brand_Count=8,Product_Count=9; Brand_Count=9,Synchronized source Companies counts to raw Product_Lines company/brand counts.
+update_company_counts,Sinclair Pharma,Product_Count=11; Brand_Count=6,Product_Count=13; Brand_Count=8,Synchronized source Companies counts to raw Product_Lines company/brand counts.
+update_company_counts,Skin Tech,Product_Count=9; Brand_Count=3,Product_Count=16; Brand_Count=10,Synchronized source Companies counts to raw Product_Lines company/brand counts.

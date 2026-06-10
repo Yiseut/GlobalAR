@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>图表色板 · 10 个 L1 赛道色 + 多色应用方案</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;1,6..72,400&family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --font-title:   'Noto Serif SC', serif;
+  --font-serif-it:'Newsreader', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+  --font-number:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* —— L1 赛道专属色（按企业数量从大到小排序，全部派生自 Aestra 5 色） —— */
+  --t-ebd:         #520E0D;     /* oxblood        · EBD 光电 (174 cos)  */
+  --t-injectables: #233245;     /* slate          · Injectables (155)   */
+  --t-skincare:    #BCA078;     /* sand-3 (deep)  · Skincare (63)       */
+  --t-regen:       #8B3F3E;     /* oxblood-soft   · Regenerative (21)   */
+  --t-consumables: #485670;     /* slate-3        · Consumables (18)    */
+  --t-implants:    #D7C0A6;     /* sand-1 (light) · Implants (14)       */
+  --t-diagnostics: #C99B99;     /* oxblood-mist   · Diagnostics (6)     */
+  --t-surgical:    #6B7891;     /* slate-soft     · Surgical (6)        */
+  --t-pharma:      #94A0B5;     /* slate-mute     · Pharma (5)          */
+  --t-services:    #CEB59C;     /* sand-2 (mid)   · Services (3)        */
+
+  /* —— sub-track 色阶（每个 L1 提供 3 档 light/mid/deep 给二级细分） —— */
+  --t-ebd-3:       #3C0A09;     /* deep   */
+  --t-ebd-2:       #520E0D;     /* mid    */
+  --t-ebd-1:       #8B3F3E;     /* light  */
+
+  --t-inj-3:       #1A2333;
+  --t-inj-2:       #233245;
+  --t-inj-1:       #485670;
+
+  --t-skin-3:      #A88958;
+  --t-skin-2:      #BCA078;
+  --t-skin-1:      #D7C0A6;
+
+  /* —— surfaces —— */
+  --c-paper:       #F4ECDC;
+  --c-paper-card:  rgba(255, 252, 245, 0.94);
+  --c-slate:       #233245;
+  --c-bone:        #E0D6CA;
+  --c-bone-near-white: #F4ECDC;
+  --c-sand-1:      #D7C0A6;
+  --c-ink-1:       #1A2333;
+  --c-ink-3:       #303F54;
+  --c-ink-4:       #485670;
+  --c-hairline:    rgba(35, 50, 69, 0.12);
+  --c-hairline-dusk: rgba(206, 181, 156, 0.22);
+
+  --r-card: 16px;
+  --shadow-card: 0 1px 0 rgba(35,50,69,0.05), 0 12px 28px -18px rgba(35,50,69,0.18);
+  --shadow-dusk: 0 2px 8px rgba(0,0,0,0.22), 0 26px 56px -22px rgba(0,0,0,0.40);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--c-paper);
+  color: var(--c-ink-1);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.005em;
+}
+
+.band { padding: 48px clamp(28px, 5vw, 80px); }
+.band-inner { max-width: 1320px; margin: 0 auto; }
+.band-dusk {
+  background: var(--c-slate);
+  color: var(--c-bone-near-white);
+  position: relative;
+  overflow: hidden;
+}
+.band-dusk::before {
+  content: ""; position: absolute; top: -140px; left: -180px;
+  width: 780px; height: 780px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(82,14,13,0.55), transparent 70%);
+  filter: blur(40px); pointer-events: none;
+}
+.band-dusk > .band-inner { position: relative; z-index: 1; }
+
+h2 {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: -0.008em;
+  margin: 0 0 6px;
+  color: var(--c-ink-1);
+}
+.band-dusk h2 { color: var(--c-bone-near-white); }
+.subtitle {
+  font-size: 13px;
+  color: var(--c-ink-3);
+  margin-bottom: 24px;
+}
+.band-dusk .subtitle { color: var(--c-sand-1); }
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #520E0D;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.eyebrow .dot { width: 6px; height: 6px; background: #520E0D; }
+.band-dusk .eyebrow { color: var(--c-sand-1); }
+.band-dusk .eyebrow .dot { background: #C99B99; }
+
+/* ========== 1) Token legend ========== */
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.legend-card {
+  padding: 16px 14px 18px;
+  border-radius: var(--r-card);
+  background: var(--c-paper-card);
+  border: 1px solid var(--c-hairline);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.legend-swatch {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+  position: relative;
+}
+.legend-swatch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+.legend-zh {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-ink-1);
+}
+.legend-en {
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-4);
+}
+.legend-hex {
+  font-family: var(--font-number);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--c-ink-4);
+  font-variant-numeric: tabular-nums;
+}
+.legend-meta {
+  font-size: 11.5px;
+  color: var(--c-ink-3);
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+.legend-meta .num {
+  font-family: var(--font-serif-it);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--c-ink-1);
+  line-height: 1;
+}
+
+/* ========== 2) Stacked bar ========== */
+.chart-card {
+  padding: 24px;
+  border-radius: var(--r-card);
+  background: var(--c-paper-card);
+  border: 1px solid var(--c-hairline);
+  box-shadow: var(--shadow-card);
+}
+.band-dusk .chart-card {
+  background: rgba(48, 63, 84, 0.62);
+  border: 1px solid var(--c-hairline-dusk);
+  backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-dusk);
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 60px;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--c-hairline);
+}
+.band-dusk .bar-row { border-bottom-color: var(--c-hairline-dusk); }
+.bar-row:last-child { border-bottom: 0; }
+.bar-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-ink-1);
+}
+.band-dusk .bar-label { color: var(--c-bone-near-white); }
+.bar-region {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-ink-4);
+  margin-top: 2px;
+}
+.band-dusk .bar-region { color: var(--c-sand-1); }
+.bar-track {
+  display: flex;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(35, 50, 69, 0.06);
+}
+.band-dusk .bar-track { background: rgba(255,255,255,0.06); }
+.bar-seg {
+  height: 100%;
+  position: relative;
+  transition: opacity 200ms;
+}
+.bar-seg:hover { opacity: 0.85; }
+.bar-total {
+  text-align: right;
+  font-family: var(--font-number);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink-1);
+}
+.band-dusk .bar-total { color: var(--c-bone-near-white); }
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-hairline);
+}
+.band-dusk .chart-legend { border-top-color: var(--c-hairline-dusk); }
+.chart-legend .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--c-ink-3);
+}
+.band-dusk .chart-legend .item { color: var(--c-sand-1); }
+.chart-legend .item .sw {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+}
+
+/* ========== 3) Donut ========== */
+.donut-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.donut-wrap {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+}
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.donut-center .big {
+  font-family: var(--font-serif-it);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  color: var(--c-ink-1);
+  line-height: 1;
+}
+.band-dusk .donut-center .big { color: var(--c-bone-near-white); }
+.donut-center .small {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-ink-4);
+  margin-top: 6px;
+}
+.band-dusk .donut-center .small { color: var(--c-sand-1); }
+.donut-list {
+  display: grid;
+  gap: 8px;
+}
+.donut-list .row {
+  display: grid;
+  grid-template-columns: 14px 1fr 70px 50px;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 13px;
+}
+.donut-list .sw {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  align-self: center;
+}
+.donut-list .name { color: var(--c-ink-1); font-weight: 500; }
+.band-dusk .donut-list .name { color: var(--c-bone-near-white); }
+.donut-list .num {
+  font-family: var(--font-number);
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink-1);
+}
+.band-dusk .donut-list .num { color: var(--c-bone-near-white); }
+.donut-list .pct {
+  text-align: right;
+  font-size: 12px;
+  color: var(--c-ink-4);
+}
+.band-dusk .donut-list .pct { color: var(--c-sand-1); }
+
+/* ========== Section spacing ========== */
+.subsection { margin-bottom: 48px; }
+.subsection:last-child { margin-bottom: 0; }
+
+/* ========== Sub-track ramp demo ========== */
+.ramp {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--c-hairline);
+}
+.ramp:last-child { border-bottom: 0; }
+.ramp-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-ink-1);
+}
+.ramp-label small {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-ink-4);
+  margin-top: 2px;
+}
+.ramp-bar {
+  display: flex;
+  height: 26px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.ramp-bar .seg {
+  flex: 1;
+  position: relative;
+}
+.ramp-bar .seg span {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-number);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--c-ink-4);
+  white-space: nowrap;
+}
+.ramp + .ramp-spacer { height: 20px; }
+</style>
+</head>
+<body>
+
+<!-- ============================== LIGHT ============================== -->
+<div class="band band-paper">
+  <div class="band-inner">
+
+    <!-- 1) 10 个 L1 赛道色 -->
+    <div class="subsection">
+      <div class="eyebrow"><span class="dot"></span>CATEGORICAL TOKENS · TIER 1</div>
+      <h2>10 个 L1 赛道专属色</h2>
+      <div class="subtitle">按企业数量从大到小排序。全部派生自 Aestra 5 色（oxblood / slate / sand / bone）。视觉上 oxblood-slate-sand 三家族交替出现，最大化相邻区分度。</div>
+
+      <div class="legend-grid">
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#520E0D"></div>
+          <span class="legend-en">EBD · 光电</span>
+          <span class="legend-zh">能量类设备</span>
+          <span class="legend-hex">#520E0D · OXBLOOD</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">174</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#233245"></div>
+          <span class="legend-en">INJECTABLES · 注射</span>
+          <span class="legend-zh">玻尿酸 · 肉毒 · 中胚层</span>
+          <span class="legend-hex">#233245 · SLATE</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">155</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#BCA078"></div>
+          <span class="legend-en">SKINCARE · 护肤</span>
+          <span class="legend-zh">化妆品 · 化学剥脱</span>
+          <span class="legend-hex">#BCA078 · SAND-DEEP</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">63</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#8B3F3E"></div>
+          <span class="legend-en">REGENERATIVE · 再生</span>
+          <span class="legend-zh">PLLA · PN · 胶原蛋白</span>
+          <span class="legend-hex">#8B3F3E · OXBLOOD-SOFT</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">21</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#485670"></div>
+          <span class="legend-en">CONSUMABLES · 耗材</span>
+          <span class="legend-zh">敷料 · 探头</span>
+          <span class="legend-hex">#485670 · SLATE-3</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">18</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#D7C0A6"></div>
+          <span class="legend-en">IMPLANTS · 植入物</span>
+          <span class="legend-zh">乳房假体 · 鼻整形</span>
+          <span class="legend-hex">#D7C0A6 · SAND-LIGHT</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">14</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#C99B99"></div>
+          <span class="legend-en">DIAGNOSTICS · 诊断</span>
+          <span class="legend-zh">皮肤检测 · 影像</span>
+          <span class="legend-hex">#C99B99 · OXBLOOD-MIST</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">6</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#6B7891"></div>
+          <span class="legend-en">SURGICAL · 外科</span>
+          <span class="legend-zh">外科器械 · 麻醉</span>
+          <span class="legend-hex">#6B7891 · SLATE-SOFT</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">6</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#94A0B5"></div>
+          <span class="legend-en">PHARMA · 药物</span>
+          <span class="legend-zh">口服 · 外用 · 联合</span>
+          <span class="legend-hex">#94A0B5 · SLATE-MUTE</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">5</span></span>
+        </div>
+        <div class="legend-card">
+          <div class="legend-swatch" style="background:#CEB59C"></div>
+          <span class="legend-en">SERVICES · 服务</span>
+          <span class="legend-zh">CRO · 教育 · OEM</span>
+          <span class="legend-hex">#CEB59C · SAND-MID</span>
+          <span class="legend-meta"><span>企业数</span><span class="num">3</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2) Sub-track 3 档色阶 -->
+    <div class="subsection">
+      <div class="eyebrow"><span class="dot"></span>CATEGORICAL TOKENS · TIER 2</div>
+      <h2>子赛道 3 档色阶（每个 L1 提供 light / mid / deep）</h2>
+      <div class="subtitle">用于堆叠柱内的二级细分、饼图嵌套圈。同一 L1 的不同 sub-track 用同一色相的 3 档明度，跨 L1 之间用色相切换 — 视觉上同族共生，外族分明。</div>
+
+      <div class="chart-card">
+        <div class="ramp">
+          <div class="ramp-label">EBD <small>OXBLOOD</small></div>
+          <div class="ramp-bar">
+            <div class="seg" style="background:#8B3F3E"><span>Laser</span></div>
+            <div class="seg" style="background:#520E0D"><span>RF</span></div>
+            <div class="seg" style="background:#3C0A09"><span>HIFU</span></div>
+          </div>
+        </div>
+        <div class="ramp">
+          <div class="ramp-label">Injectables <small>SLATE</small></div>
+          <div class="ramp-bar">
+            <div class="seg" style="background:#485670"><span>Filler</span></div>
+            <div class="seg" style="background:#233245"><span>Booster</span></div>
+            <div class="seg" style="background:#1A2333"><span>Toxin</span></div>
+          </div>
+        </div>
+        <div class="ramp">
+          <div class="ramp-label">Skincare <small>SAND</small></div>
+          <div class="ramp-bar">
+            <div class="seg" style="background:#D7C0A6"><span>Cosmeceutical</span></div>
+            <div class="seg" style="background:#BCA078"><span>Peel</span></div>
+            <div class="seg" style="background:#A88958"><span>Topical</span></div>
+          </div>
+        </div>
+        <div class="ramp">
+          <div class="ramp-label">Regenerative <small>OXBLOOD-SOFT</small></div>
+          <div class="ramp-bar">
+            <div class="seg" style="background:#C99B99"><span>PRP</span></div>
+            <div class="seg" style="background:#8B3F3E"><span>PLLA</span></div>
+            <div class="seg" style="background:#6B2A2A"><span>PN</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================== DUSK ============================== -->
+<div class="band band-dusk">
+  <div class="band-inner">
+
+    <!-- 3) Stacked bar -->
+    <div class="subsection">
+      <div class="eyebrow"><span class="dot"></span>APPLICATION · STACKED BAR</div>
+      <h2>区域 × 赛道企业分布</h2>
+      <div class="subtitle">每行一个区域，按赛道企业数堆叠。在 dusk 段，10 色保留同 hex — 已验证在 #233245 底上仍能保持 ≥3:1 的对比。</div>
+
+      <div class="chart-card">
+        <!-- North America 60 cos -->
+        <div class="bar-row">
+          <div>
+            <div class="bar-label">北美 / N. America</div>
+            <span class="bar-region">60 COMPANIES</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#520E0D; flex: 24"></div>
+            <div class="bar-seg" style="background:#233245; flex: 22"></div>
+            <div class="bar-seg" style="background:#BCA078; flex: 7"></div>
+            <div class="bar-seg" style="background:#8B3F3E; flex: 3"></div>
+            <div class="bar-seg" style="background:#485670; flex: 2"></div>
+            <div class="bar-seg" style="background:#D7C0A6; flex: 2"></div>
+          </div>
+          <div class="bar-total">60</div>
+        </div>
+        <!-- Europe -->
+        <div class="bar-row">
+          <div>
+            <div class="bar-label">欧洲 / Europe</div>
+            <span class="bar-region">139 COMPANIES</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#520E0D; flex: 56"></div>
+            <div class="bar-seg" style="background:#233245; flex: 48"></div>
+            <div class="bar-seg" style="background:#BCA078; flex: 18"></div>
+            <div class="bar-seg" style="background:#8B3F3E; flex: 8"></div>
+            <div class="bar-seg" style="background:#485670; flex: 5"></div>
+            <div class="bar-seg" style="background:#D7C0A6; flex: 4"></div>
+          </div>
+          <div class="bar-total">139</div>
+        </div>
+        <!-- APAC -->
+        <div class="bar-row">
+          <div>
+            <div class="bar-label">亚太 / Asia-Pacific</div>
+            <span class="bar-region">118 COMPANIES · INC. KOREA 105</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#520E0D; flex: 58"></div>
+            <div class="bar-seg" style="background:#233245; flex: 38"></div>
+            <div class="bar-seg" style="background:#BCA078; flex: 12"></div>
+            <div class="bar-seg" style="background:#8B3F3E; flex: 5"></div>
+            <div class="bar-seg" style="background:#485670; flex: 3"></div>
+            <div class="bar-seg" style="background:#C99B99; flex: 2"></div>
+          </div>
+          <div class="bar-total">118</div>
+        </div>
+        <!-- Middle East -->
+        <div class="bar-row">
+          <div>
+            <div class="bar-label">中东 / Middle East</div>
+            <span class="bar-region">19 COMPANIES</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#520E0D; flex: 12"></div>
+            <div class="bar-seg" style="background:#233245; flex: 4"></div>
+            <div class="bar-seg" style="background:#BCA078; flex: 2"></div>
+            <div class="bar-seg" style="background:#D7C0A6; flex: 1"></div>
+          </div>
+          <div class="bar-total">19</div>
+        </div>
+        <!-- LATAM / Other -->
+        <div class="bar-row">
+          <div>
+            <div class="bar-label">拉美 + 其它 / LATAM + Other</div>
+            <span class="bar-region">18 COMPANIES</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#520E0D; flex: 7"></div>
+            <div class="bar-seg" style="background:#233245; flex: 6"></div>
+            <div class="bar-seg" style="background:#BCA078; flex: 3"></div>
+            <div class="bar-seg" style="background:#8B3F3E; flex: 1"></div>
+            <div class="bar-seg" style="background:#94A0B5; flex: 1"></div>
+          </div>
+          <div class="bar-total">18</div>
+        </div>
+
+        <div class="chart-legend">
+          <span class="item"><span class="sw" style="background:#520E0D"></span>EBD</span>
+          <span class="item"><span class="sw" style="background:#233245"></span>Injectables</span>
+          <span class="item"><span class="sw" style="background:#BCA078"></span>Skincare</span>
+          <span class="item"><span class="sw" style="background:#8B3F3E"></span>Regenerative</span>
+          <span class="item"><span class="sw" style="background:#485670"></span>Consumables</span>
+          <span class="item"><span class="sw" style="background:#D7C0A6"></span>Implants</span>
+          <span class="item"><span class="sw" style="background:#C99B99"></span>Diagnostics</span>
+          <span class="item"><span class="sw" style="background:#6B7891"></span>Surgical</span>
+          <span class="item"><span class="sw" style="background:#94A0B5"></span>Pharma</span>
+          <span class="item"><span class="sw" style="background:#CEB59C"></span>Services</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4) Donut -->
+    <div class="subsection">
+      <div class="eyebrow"><span class="dot"></span>APPLICATION · DONUT</div>
+      <h2>全球 977 个产品线 · 按 L1 赛道分布</h2>
+      <div class="subtitle">conic-gradient 实现的环形图，中心数字用 Newsreader italic。所有色块共享同一 1px 内描边以与 dusk 底分离。</div>
+
+      <div class="chart-card">
+        <div class="donut-row">
+          <div class="donut-wrap">
+            <svg width="240" height="240" viewBox="0 0 240 240">
+              <!-- L1 by Products: EBD 480, Injectables 328, Skincare 79, Regen 28, Consum 23, Implants 19, Diag 9, Surgical 8, Pharma 7, Services 4 -->
+              <!-- total 985 (rounded). Compute cumulative percents -->
+              <g transform="translate(120,120)">
+                <!-- ring -->
+                <circle r="84" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="36"/>
+              </g>
+              <!-- Slices via stroke-dasharray on circle -->
+              <g transform="translate(120,120) rotate(-90)">
+                <!-- circumference = 2 * pi * 84 ≈ 527.79 -->
+                <!-- EBD 480/985 = 48.7%  → 257  -->
+                <circle r="84" fill="none" stroke="#520E0D" stroke-width="36" stroke-dasharray="257.0 527.79" stroke-dashoffset="0"/>
+                <!-- Injectables 328/985 = 33.3% → 175.8 ; offset -257 -->
+                <circle r="84" fill="none" stroke="#233245" stroke-width="36" stroke-dasharray="175.8 527.79" stroke-dashoffset="-257.0"/>
+                <!-- Skincare 79/985 = 8.0% → 42.3 ; offset -432.8 -->
+                <circle r="84" fill="none" stroke="#BCA078" stroke-width="36" stroke-dasharray="42.3 527.79" stroke-dashoffset="-432.8"/>
+                <!-- Regenerative 28/985 = 2.8% → 15.0 ; offset -475.1 -->
+                <circle r="84" fill="none" stroke="#8B3F3E" stroke-width="36" stroke-dasharray="15.0 527.79" stroke-dashoffset="-475.1"/>
+                <!-- Consumables 23/985 = 2.3% → 12.3 ; offset -490.1 -->
+                <circle r="84" fill="none" stroke="#485670" stroke-width="36" stroke-dasharray="12.3 527.79" stroke-dashoffset="-490.1"/>
+                <!-- Implants 19/985 = 1.9% → 10.2 ; offset -502.4 -->
+                <circle r="84" fill="none" stroke="#D7C0A6" stroke-width="36" stroke-dasharray="10.2 527.79" stroke-dashoffset="-502.4"/>
+                <!-- Diagnostics 9/985 = 0.9% → 4.8 ; offset -512.6 -->
+                <circle r="84" fill="none" stroke="#C99B99" stroke-width="36" stroke-dasharray="4.8 527.79" stroke-dashoffset="-512.6"/>
+                <!-- Surgical 8/985 = 0.8% → 4.3 ; offset -517.4 -->
+                <circle r="84" fill="none" stroke="#6B7891" stroke-width="36" stroke-dasharray="4.3 527.79" stroke-dashoffset="-517.4"/>
+                <!-- Pharma 7/985 = 0.7% → 3.8 ; offset -521.7 -->
+                <circle r="84" fill="none" stroke="#94A0B5" stroke-width="36" stroke-dasharray="3.8 527.79" stroke-dashoffset="-521.7"/>
+                <!-- Services 4/985 = 0.4% → 2.1 ; offset -525.5 -->
+                <circle r="84" fill="none" stroke="#CEB59C" stroke-width="36" stroke-dasharray="2.1 527.79" stroke-dashoffset="-525.5"/>
+              </g>
+            </svg>
+            <div class="donut-center">
+              <span class="big">985</span>
+              <span class="small">PRODUCT LINES</span>
+            </div>
+          </div>
+
+          <div class="donut-list">
+            <div class="row"><span class="sw" style="background:#520E0D"></span><span class="name">EBD · 光电</span><span class="num">480</span><span class="pct">48.7%</span></div>
+            <div class="row"><span class="sw" style="background:#233245"></span><span class="name">Injectables · 注射</span><span class="num">328</span><span class="pct">33.3%</span></div>
+            <div class="row"><span class="sw" style="background:#BCA078"></span><span class="name">Skincare · 护肤</span><span class="num">79</span><span class="pct">8.0%</span></div>
+            <div class="row"><span class="sw" style="background:#8B3F3E"></span><span class="name">Regenerative · 再生</span><span class="num">28</span><span class="pct">2.8%</span></div>
+            <div class="row"><span class="sw" style="background:#485670"></span><span class="name">Consumables · 耗材</span><span class="num">23</span><span class="pct">2.3%</span></div>
+            <div class="row"><span class="sw" style="background:#D7C0A6"></span><span class="name">Implants · 植入物</span><span class="num">19</span><span class="pct">1.9%</span></div>
+            <div class="row"><span class="sw" style="background:#C99B99"></span><span class="name">Diagnostics · 诊断</span><span class="num">9</span><span class="pct">0.9%</span></div>
+            <div class="row"><span class="sw" style="background:#6B7891"></span><span class="name">Surgical · 外科</span><span class="num">8</span><span class="pct">0.8%</span></div>
+            <div class="row"><span class="sw" style="background:#94A0B5"></span><span class="name">Pharma · 药物</span><span class="num">7</span><span class="pct">0.7%</span></div>
+            <div class="row"><span class="sw" style="background:#CEB59C"></span><span class="name">Services · 服务</span><span class="num">4</span><span class="pct">0.4%</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

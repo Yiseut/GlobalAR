@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-06-01T01:26:34",
+  "reason": "A3 evidence product_id integrity: unlink evidence attached to products excluded from active dashboard scope.",
+  "orphan_product_ids": {
+    "prod_a55cc60a5d01": "REC_0525 Osteopore excluded bone-scaffold scope",
+    "prod_167cd4804103": "REC_0658 Skinedit oral/nutricosmetic scope"
+  },
+  "changes": [
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence_backup_before_excluded_product_unlink_20260601_012632.csv",
+      "rows_unlinked": 36,
+      "by_original_product_id": {
+        "prod_a55cc60a5d01": 23,
+        "prod_167cd4804103": 13
+      }
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log_backup_before_excluded_product_unlink_20260601_012632.csv",
+      "rows_unlinked": 36,
+      "by_original_product_id": {
+        "prod_a55cc60a5d01": 23,
+        "prod_167cd4804103": 13
+      }
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence_backup_before_excluded_product_unlink_20260601_012632.csv",
+      "rows_unlinked": 22,
+      "by_original_product_id": {
+        "prod_a55cc60a5d01": 22
+      }
+    }
+  ],
+  "total_rows_unlinked": 94
+}

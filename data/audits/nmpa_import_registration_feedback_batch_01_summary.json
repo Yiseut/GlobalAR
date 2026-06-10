@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-01T00:45:43",
+  "rule": "Only NMPA certificate_no starting with 国械注进 is included. 国械注准 domestic certificates are excluded from this user-confirmation batch.",
+  "import_total": 67,
+  "already_in_global": 59,
+  "needs_confirmation": 8,
+  "verified_missing": 4,
+  "not_found_hold": 4,
+  "csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\nmpa_import_registration_feedback_batch_01_fill_here.csv"
+}

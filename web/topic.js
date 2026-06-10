@@ -9,7 +9,7 @@ const MATERIAL_LABELS = {
   caha: "CaHA",
   pn_pdrn: "PN / PDRN",
   exosome: "外泌体 / Exosomes",
-  botulinum: "肉毒毒素 / Neurotoxin",
+  botulinum: "肉毒毒素",
   ebd: "光电设备 / EBD",
   threads: "线材 / Threads",
   mesotherapy: "中胚层 / Mesotherapy",
@@ -1841,7 +1841,7 @@ function topicEvidenceFunnel(view) {
     { name: "监管线索", value: scope.regulatory_seed_signals ?? regulatorySignal, note: "待以官方文件逐条核实" },
     { name: "FDA 已核", value: scope.fda_merged_rows || 0, note: "FDA / openFDA 可追溯记录" },
     { name: "官方适应症", value: scope.promoted_indication_rows || 0, note: "按产品、国家、监管机构和批准时间记录" },
-    { name: "CE/MDR 待核", value: scope.mdr_ce_candidate_rows || 0, note: "等待证书、IFU 或 EUDAMED 确认" },
+    { name: "CE/MDR 线索池", value: scope.mdr_ce_candidate_rows || 0, note: "原始候选证据池，不等于未完成清单" },
   ];
 }
 
@@ -1852,15 +1852,56 @@ function topicRegulatoryMix(view) {
     { name: "FDA 原表线索", value: regulatory.fda || 0 },
     { name: "CE/MDR 原表线索", value: regulatory.ce || 0 },
     { name: "FDA 已核", value: scope.fda_merged_rows || 0 },
-    { name: "CE/MDR 待核", value: scope.mdr_ce_candidate_rows || 0 },
+    { name: "CE/MDR 线索池", value: scope.mdr_ce_candidate_rows || 0 },
     { name: "CE/MDR 已核", value: scope.mdr_ce_merged_rows || 0 },
     { name: "官方适应症", value: scope.promoted_indication_rows || 0 },
   ];
 }
 
-function auditBadge(value, label) {
-  const state = Number(value || 0) > 0 ? "ok" : "missing";
-  return `<span class="audit-badge ${state}" title="${escapeHtml(label)}">${escapeHtml(label)} ${fmt(value || 0)}</span>`;
+function auditBadge(value, label, unavailable = false) {
+  const count = Number(value || 0);
+  if (unavailable) {
+    const title = `${label} 已检索公开官方来源；未发现可可靠落库的公开适应症原文`;
+    return `<span class="audit-badge ok" title="${escapeHtml(title)}">${escapeHtml(label)} 未公开</span>`;
+  }
+  const state = count > 0 ? "ok" : "watch";
+  const title = count > 0
+    ? `${label} 已有 ${fmt(count)} 条入库证据`
+    : `${label} 暂无入库证据；已核产品的 0 表示后续可补强，不阻塞入库`;
+  return `<span class="audit-badge ${state}" title="${escapeHtml(title)}">${escapeHtml(label)} ${fmt(count)}</span>`;
+}
+
+function productAuditIssueMeta(issue) {
+  const blocking = new Set(["主表仍是 seed", "材料/子赛道冲突"]);
+  const labels = {
+    "主表仍是 seed": "待核：主表仍是 seed",
+    "材料/子赛道冲突": "待核：材料/子赛道冲突",
+    "疑似需拆 SKU": "可补强：疑似需拆 SKU",
+    "缺注册证据": "可补强：注册证据未入库",
+    "缺官方适应症": "可补强：官方适应症未入库",
+    "缺官网直连": "可补强：官网直连未入库",
+    "缺规格候选": "可补强：规格/IFU 候选未入库",
+  };
+  return {
+    label: labels[issue] || issue,
+    state: blocking.has(issue) ? "blocking" : "watch",
+  };
+}
+
+function productAuditIssuesMarkup(issues) {
+  if (!issues?.length) {
+    return `<span class="issue-chip ok">资料闭合</span>`;
+  }
+  return `
+    <div class="issue-chips">
+      ${issues
+        .map((issue) => {
+          const meta = productAuditIssueMeta(issue);
+          return `<span class="issue-chip ${meta.state}">${escapeHtml(meta.label)}</span>`;
+        })
+        .join("")}
+    </div>
+  `;
 }
 
 function cleanStatusLabel(value = "") {
@@ -1885,15 +1926,15 @@ function renderProductEvidenceAudit(view) {
         <tr>
           <th>产品</th>
           <th>主表状态</th>
-          <th>证据链</th>
-          <th>完整度</th>
-          <th>主要缺口</th>
+          <th>已入库证据</th>
+          <th>资料完备度</th>
+          <th>后续动作</th>
         </tr>
       </thead>
       <tbody>
         ${rows
           .map((row) => {
-            const issues = row.issues?.length ? row.issues.join(" / ") : "OK";
+            const issues = row.issues || [];
             return `
               <tr>
                 <td>
@@ -1908,11 +1949,11 @@ function renderProductEvidenceAudit(view) {
                     ${auditBadge(row.website_rows, "官网")}
                     ${auditBadge(row.spec_rows, "规格")}
                     ${auditBadge(row.registration_rows, "注册")}
-                    ${auditBadge(row.official_indication_rows, "适应症")}
+                    ${auditBadge(row.official_indication_rows, "适应症", row.official_indication_unavailable)}
                   </div>
                 </td>
                 <td><strong>${fmt(row.completeness_score || 0)}</strong><small>/100</small></td>
-                <td>${escapeHtml(issues)}</td>
+                <td>${productAuditIssuesMarkup(issues)}</td>
               </tr>
             `;
           })

@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-06-01T17:27:04+08:00",
+  "target_products": 20,
+  "search_jobs": 60,
+  "search_errors": 29,
+  "search_result_rows": 0,
+  "selected_fetch_urls": 0,
+  "fetch_ok": 0,
+  "candidate_rows": 0,
+  "candidate_products": 0,
+  "skipped_products_no_strong_result": 20,
+  "candidate_reject_reasons": {},
+  "outputs": {
+    "summary_json": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_external_search_summary_latest.json",
+    "search_results_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_external_search_results_latest.csv",
+    "search_errors_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_external_search_errors_latest.csv",
+    "fetch_log_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_external_search_fetch_log_latest.csv",
+    "candidates_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_external_search_candidates_latest.csv",
+    "skipped_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_external_search_skipped_latest.csv"
+  }
+}

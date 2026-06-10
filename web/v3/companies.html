@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>公司列表 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Entity · Company list</div>
+      <h1>
+        公司列表
+        <span class="h1-en">Companies</span>
+      </h1>
+      <p class="lede">371 家上游医美企业的完整画像 — 业务类型 / HQ / 主赛道 / 产品规模 / 资本结构 / 母子关系。表格支持搜索、筛选、排序，下方有集团结构和国家×上市矩阵。</p>
+      <div class="stat-row">
+        <span><span class="num" data-count-up="371">371</span> 家上游企业 · <span class="num" data-count-up="47">47</span> 家公开上市</span>
+        <span>Manufacturer <span class="num" data-count-up="315">315</span> · Brand Owner <span class="num" data-count-up="42">42</span></span>
+        <span>头部 Galderma / InMode 各 <span class="num" data-count-up="17">17</span> 款产品</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="cn">· 企业结构</span><span class="en">Headline numbers</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede has-wash w-rose-deep">
+          <div class="label">
+            <span class="en">Companies</span>
+            <span class="zh">上游企业总数</span>
+          </div>
+          <span class="value" id="kpi-total">371</span>
+          <span class="delta">manufacturers + brand owners + biotech</span>
+        </article>
+        <article class="kpi-cell has-wash w-peach">
+          <div class="label"><span class="en">Manufacturer</span><span class="zh">制造型</span></div>
+          <span class="value" id="kpi-manu">315</span>
+          <span class="delta">85% of universe</span>
+        </article>
+        <article class="kpi-cell has-wash w-sand">
+          <div class="label"><span class="en">Brand owner</span><span class="zh">品牌型</span></div>
+          <span class="value" id="kpi-brand">42</span>
+          <span class="delta">11% — light asset model</span>
+        </article>
+        <article class="kpi-cell has-wash w-sage">
+          <div class="label"><span class="en">R&amp;D / OEM</span><span class="zh">研发代工</span></div>
+          <span class="value" id="kpi-rd">8</span>
+          <span class="delta">2% — Korean OEM cluster</span>
+        </article>
+        <article class="kpi-cell has-wash w-rose">
+          <div class="label"><span class="en">Public listed</span><span class="zh">公开上市</span></div>
+          <span class="value" id="kpi-public">47</span>
+          <span class="delta">on 15 exchanges</span>
+        </article>
+        <article class="kpi-cell has-wash w-slate">
+          <div class="label"><span class="en">Private</span><span class="zh">私营</span></div>
+          <span class="value" id="kpi-private">309</span>
+          <span class="delta">83% of universe</span>
+        </article>
+        <article class="kpi-cell has-wash w-plum">
+          <div class="label"><span class="en">Subsidiary</span><span class="zh">子公司</span></div>
+          <span class="value" id="kpi-sub">15</span>
+          <span class="delta">embedded in group</span>
+        </article>
+        <article class="kpi-cell has-wash w-lavender">
+          <div class="label"><span class="en">Corporate families</span><span class="zh">集团结构</span></div>
+          <span class="value" id="kpi-fam">2</span>
+          <span class="delta">parents with ≥2 subsidiaries</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>价值链定位</h2>
+        <span class="cn">· business_role</span><span class="en">Value chain positioning</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">企业类型构成 — 这是个「制造驱动」的行业</div>
+        <div class="chart-sub">Manufacturer 占绝对主导（85%）— 多数公司自己生产；Brand Owner（11%）通常是代理 / 控股品牌组合，自己不持有产线；R&D / OEM（2%）是上游为他人代工的角色，韩国集群典型。Service 类已被排除（独立准入机制）。</div>
+        <div id="role-bars"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>集团结构</h2>
+        <span class="cn">· ultimate_parent ≥ 2 subsidiaries</span><span class="en">Corporate families</span>
+      </div>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">行业并购整合处于早期。这里只显示在底库里有明确父子关系的集团。AbbVie / Allergan、J&amp;J / Mentor 等典型并购案例在 ultimate_parent 字段里尚未完整 backfill。</p>
+      <div class="family-grid" id="family-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>国家 × 上市状态</h2>
+        <span class="cn">· Top 12 countries</span><span class="en">Country × listing status</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每个主要国家的公司构成 + FDA 准入数</div>
+        <div class="chart-sub">单元格深色 = 该国在该列的相对集中度。韩国 105 家企业里 22 家上市，但 FDA 命中只有 8 家 — 印证「数量冠军 ≠ 技术冠军」结论。</div>
+        <div class="co-matrix" id="co-matrix"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row" id="finding-cards"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>公司全表</h2>
+        <span class="cn">· 371 家 · 可搜索筛选排序</span><span class="en">Company directory</span>
+      </div>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">前面的分析维度看完后，这张表是详尽的查阅入口 — 搜索 / 赛道筛选 / ownership 筛选 / 列头排序都在浏览器即时完成。</p>
+      <div class="chart-card">
+        <div class="companies-toolbar">
+          <div class="search-wrap">
+            <span class="search-icon">⌕</span>
+            <input type="search" id="search-input" class="search-input" placeholder="搜索公司名 / 城市 / 股票代码…" />
+          </div>
+          <div class="filter-row" id="filter-track">
+            <button class="filter-pill active" data-filter="track" data-val="all">全部 All</button>
+            <button class="filter-pill" data-filter="track" data-val="EBD">光电 EBD</button>
+            <button class="filter-pill" data-filter="track" data-val="Injectables">注射 Inj.</button>
+            <button class="filter-pill" data-filter="track" data-val="Skincare">功能性护肤品 Cosmeceutical</button>
+            <button class="filter-pill" data-filter="track" data-val="Regenerative">再生 Regen</button>
+            <button class="filter-pill" data-filter="track" data-val="Implants">植入物 Impl.</button>
+          </div>
+          <div class="filter-row" id="filter-ownership">
+            <button class="filter-pill active" data-filter="ownership" data-val="all">全部 All</button>
+            <button class="filter-pill" data-filter="ownership" data-val="Public">上市 Public</button>
+            <button class="filter-pill" data-filter="ownership" data-val="Private">私营 Private</button>
+            <button class="filter-pill" data-filter="ownership" data-val="Subsidiary">子公司 Subsidiary</button>
+          </div>
+          <button type="button" class="reset-btn" id="reset-btn">Reset</button>
+          <span class="result-count" id="result-count"><span class="num">371</span> showing</span>
+        </div>
+        <div class="table-card" style="padding:0;">
+          <table class="companies-table" id="co-table">
+            <thead>
+              <tr>
+                <th style="width:40px;">#</th>
+                <th class="sortable" data-sort="name">公司 · Company</th>
+                <th class="sortable" data-sort="country">HQ</th>
+                <th class="sortable" data-sort="primary_track">主赛道</th>
+                <th>Role</th>
+                <th class="num sortable sort-desc" data-sort="products">Products</th>
+                <th class="num sortable" data-sort="brands">Brands</th>
+                <th class="num sortable" data-sort="fda">FDA</th>
+                <th>Ownership</th>
+                <th>Stock</th>
+              </tr>
+            </thead>
+            <tbody id="co-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 公司列表 Companies · 371 firms · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260524"></script>
+<script src="./v3-companies.js?v=20260524"></script>
+<script src="./v3-product-tree.js?v=20260526"></script>
+<script src="./v3-company-detail.js?v=20260526"></script>
+<script src="./_nav.js" data-active="companies"></script>
+<style>
+  .companies-table tr.co-row { cursor: pointer; transition: background-color .12s ease; }
+  .companies-table tr.co-row:hover { background-color: rgba(184,89,87,0.06); }
+  .companies-table tr.co-row:focus { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .family-card .sub-row.co-row:hover { background-color: rgba(184,89,87,0.06); }
+</style>
+<script>
+  (function () {
+    const d = window.GLOBAL_AESTHETICS_DATA;
+    if (d && d.generated_at) {
+      const s = d.generated_at.slice(0,10).replace(/-/g,"·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+  })();
+
+  (function renderCompanies () {
+    const data = window.V3_COMPANIES_DATA;
+    if (!data) { console.warn("[v3 companies] data missing"); return; }
+
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    const TRACK_PILL_CLASS = {
+      "EBD":"pill-ebd","Injectables":"pill-injectables","Skincare":"pill-skincare",
+      "Regenerative":"pill-regen","Consumables":"pill-consumables","Implants":"pill-implants",
+      "Diagnostics":"pill-diagnostics","Surgical":"pill-surgical","Pharma":"pill-pharma","Services":"pill-services",
+    };
+    const displayTrack = (track) => track === "Skincare" ? "Cosmeceutical" : (track || "—");
+    const ROLE_BADGE_CLASS = {
+      "Manufacturer":"manufacturer","Brand Owner":"brand-owner",
+      "R&D/OEM":"rd-oem","Biotech":"biotech","Service":"service","Supplier":"supplier",
+    };
+
+    // ---- KPI ----
+    const s = data.summary;
+    countUp(document.getElementById("kpi-total"), s.total);
+    countUp(document.getElementById("kpi-manu"), s.manufacturer);
+    countUp(document.getElementById("kpi-brand"), s.brand_owner);
+    countUp(document.getElementById("kpi-rd"), s.r_and_d);
+    countUp(document.getElementById("kpi-public"), s.listed);
+    countUp(document.getElementById("kpi-private"), s.private);
+    countUp(document.getElementById("kpi-sub"), s.subsidiary);
+    countUp(document.getElementById("kpi-fam"), s.corporate_families);
+
+    // ---- Value chain bars ----
+    const roleWrap = document.getElementById("role-bars");
+    const roleTotal = data.business_role_mix.reduce((a, b) => a + b.n, 0);
+    roleWrap.innerHTML = data.business_role_mix.map(r => {
+      const pct = (r.n / roleTotal) * 100;
+      const cls = ROLE_BADGE_CLASS[r.role] || "";
+      return `
+        <div class="bar-row" style="grid-template-columns: 180px 1fr 80px;">
+          <div class="label">
+            <span class="role-badge ${cls}" style="margin-right:6px;">${esc(r.role)}</span>
+          </div>
+          <div class="bar-track" style="height: 24px;">
+            <div class="bar-seg" style="background:${getRoleColor(r.role)}; flex:${r.n}; border-radius:2px;"></div>
+            <div class="bar-seg" style="background:transparent; flex:${roleTotal - r.n};"></div>
+          </div>
+          <div class="bar-total">${r.n}<small style="display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);letter-spacing:0.06em;text-align:right;font-style:normal;">${pct.toFixed(0)}%</small></div>
+        </div>
+      `;
+    }).join("");
+
+    // ---- The companies table — with filter/search/sort ----
+    const tbody = document.getElementById("co-tbody");
+    const countEl = document.getElementById("result-count");
+    let state = {
+      track: "all",
+      ownership: "all",
+      search: "",
+      ids: null,        // Set of company_id — set via ?ids= cross-link
+      sortKey: "products",
+      sortDir: -1,  // -1 desc, 1 asc
+    };
+
+    function applyFilter () {
+      let arr = data.companies.slice();
+      if (state.ids) arr = arr.filter(c => state.ids.has(c.company_id));
+      if (state.track !== "all") arr = arr.filter(c => c.primary_track === state.track);
+      if (state.ownership !== "all") arr = arr.filter(c => c.ownership === state.ownership);
+      if (state.search) {
+        const q = state.search.toLowerCase();
+        arr = arr.filter(c =>
+          (c.name || "").toLowerCase().includes(q) ||
+          (c.city || "").toLowerCase().includes(q) ||
+          (c.country || "").toLowerCase().includes(q) ||
+          (c.stock_code || "").toLowerCase().includes(q)
+        );
+      }
+      arr.sort((a, b) => {
+        const av = a[state.sortKey] ?? "";
+        const bv = b[state.sortKey] ?? "";
+        if (typeof av === "number" || typeof bv === "number") {
+          return ((+av || 0) - (+bv || 0)) * state.sortDir;
+        }
+        return String(av).localeCompare(String(bv)) * state.sortDir;
+      });
+      renderRows(arr);
+      countEl.innerHTML = `<span class="num">${arr.length}</span> showing of ${data.companies.length}`;
+    }
+
+    function renderRows (arr) {
+      if (!arr.length) {
+        tbody.innerHTML = `<tr><td colspan="10" class="empty">没有匹配的公司 · try clearing filters</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = arr.map((c, i) => {
+        const pill = TRACK_PILL_CLASS[c.primary_track] || "pill-default";
+        const roleCls = ROLE_BADGE_CLASS[c.business_role] || "";
+        const ownCls = (c.ownership || "").toLowerCase();
+        return `
+          <tr class="co-row" data-company-id="${esc(c.company_id || "")}" tabindex="0" role="button" aria-label="${esc(c.name)} · 展开产品树">
+            <td>${String(i + 1).padStart(2, "0")}</td>
+            <td><strong style="font-family:var(--f-body); font-weight:500; color:var(--ink);">${esc(c.name)}</strong>${c.city ? `<br><small style="color:var(--muted); font-size:10.5px; letter-spacing:0.04em;">${esc(c.city)}</small>` : ""}</td>
+            <td>${esc(c.country || "—")}<br><small style="color:var(--muted); font-size:10px; letter-spacing:0.06em;">${esc(c.region || "")}</small></td>
+            <td><span class="pill-tag ${pill}">${esc(displayTrack(c.primary_track))}</span></td>
+            <td><span class="role-badge ${roleCls}">${esc(c.business_role || "—")}</span></td>
+            <td class="num">${c.products || 0}</td>
+            <td class="num">${c.brands || 0}</td>
+            <td class="num">${c.fda || "—"}</td>
+            <td><span class="ownership-badge ${ownCls}">${esc(c.ownership || "—")}</span></td>
+            <td><small style="font-family:var(--f-mono); font-size:10.5px;">${esc(c.stock_code || "—")}</small></td>
+          </tr>
+        `;
+      }).join("");
+      // wire row click → open shared company-detail drawer
+      tbody.querySelectorAll("tr.co-row").forEach(tr => {
+        tr.addEventListener("click", () => {
+          const cid = tr.getAttribute("data-company-id");
+          if (cid && window.V3CompanyDetail) window.V3CompanyDetail.show(cid);
+        });
+        tr.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            tr.click();
+          }
+        });
+      });
+    }
+
+    // wire filters
+    document.querySelectorAll(".companies-toolbar .filter-pill").forEach(pill => {
+      pill.addEventListener("click", () => {
+        const f = pill.getAttribute("data-filter");
+        const v = pill.getAttribute("data-val");
+        state[f] = v;
+        document.querySelectorAll(`.companies-toolbar .filter-pill[data-filter="${f}"]`).forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        applyFilter();
+      });
+    });
+    document.getElementById("search-input").addEventListener("input", (e) => {
+      state.search = e.target.value.trim();
+      applyFilter();
+    });
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      state = { track: "all", ownership: "all", search: "", ids: null, sortKey: "products", sortDir: -1 };
+      const banner = document.querySelector(".companies-toolbar .xlink-banner");
+      if (banner) banner.remove();
+      document.getElementById("search-input").value = "";
+      document.querySelectorAll(".companies-toolbar .filter-pill").forEach(p => {
+        p.classList.toggle("active", p.getAttribute("data-val") === "all");
+      });
+      document.querySelectorAll("#co-table th.sortable").forEach(th => {
+        th.classList.remove("sort-asc", "sort-desc");
+        if (th.getAttribute("data-sort") === "products") th.classList.add("sort-desc");
+      });
+      applyFilter();
+    });
+    // column sort
+    document.querySelectorAll("#co-table th.sortable").forEach(th => {
+      th.addEventListener("click", () => {
+        const key = th.getAttribute("data-sort");
+        if (state.sortKey === key) {
+          state.sortDir *= -1;
+        } else {
+          state.sortKey = key;
+          state.sortDir = (["products", "brands", "fda"].includes(key)) ? -1 : 1;
+        }
+        document.querySelectorAll("#co-table th.sortable").forEach(h => h.classList.remove("sort-asc", "sort-desc"));
+        th.classList.add(state.sortDir === 1 ? "sort-asc" : "sort-desc");
+        applyFilter();
+      });
+    });
+
+    // ---- Apply incoming cross-link URL params (?track=&ownership=&q=&ids=) ----
+    (function initFromUrl () {
+      const p = new URLSearchParams(location.search);
+      const track = p.get("track");
+      const ownership = p.get("ownership");
+      const q = p.get("q");
+      const ids = p.get("ids");
+      const from = p.get("from");
+      const label = p.get("label");
+      let applied = false;
+      if (track) {
+        state.track = track; applied = true;
+        const pill = document.querySelector(`.companies-toolbar .filter-pill[data-filter="track"][data-val="${CSS.escape(track)}"]`);
+        document.querySelectorAll('.companies-toolbar .filter-pill[data-filter="track"]').forEach(x => x.classList.remove("active"));
+        if (pill) pill.classList.add("active");
+      }
+      if (ownership) {
+        state.ownership = ownership; applied = true;
+        const pill = document.querySelector(`.companies-toolbar .filter-pill[data-filter="ownership"][data-val="${CSS.escape(ownership)}"]`);
+        document.querySelectorAll('.companies-toolbar .filter-pill[data-filter="ownership"]').forEach(x => x.classList.remove("active"));
+        if (pill) pill.classList.add("active");
+      }
+      if (q) { state.search = q; const si = document.getElementById("search-input"); if (si) si.value = q; applied = true; }
+      if (ids) {
+        state.ids = new Set(ids.split(",").map(s => s.trim()).filter(Boolean));
+        applied = true;
+      }
+      if (applied) {
+        const tb = document.querySelector(".companies-toolbar");
+        const banner = document.createElement("div");
+        banner.className = "xlink-banner";
+        banner.style.cssText = "grid-column:1/-1;display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:11.5px;color:var(--accent-2);background:rgba(184,89,87,0.07);border:1px solid var(--hairline-2);border-radius:6px;padding:8px 12px;margin-bottom:4px;";
+        const bits = [];
+        const sourceLabel = {
+          "topic-l2"     : "从 L2 子赛道",
+          "topic-l1"     : "从 L1 赛道",
+          "deep-dive"    : "从深度下钻",
+          "cross"        : "从交叉分析",
+        }[from] || "从交叉分析";
+        if (state.ids) {
+          bits.push(label
+            ? `${sourceLabel} · ${label} · ${state.ids.size} 家`
+            : `${sourceLabel}筛选 · ${state.ids.size} 家`);
+        }
+        if (track) bits.push(`赛道 = ${displayTrack(track)}`);
+        if (ownership) bits.push(`所有制 = ${ownership}`);
+        if (q) bits.push(`搜索 = "${q}"`);
+        banner.innerHTML = `<span>⤵ ${bits.join(" · ")}</span><a href="./companies.html" style="margin-left:auto;color:var(--muted);text-decoration:none;border:1px solid var(--hairline);border-radius:99px;padding:2px 10px;">清除 ✕</a>`;
+        if (tb) tb.prepend(banner);
+      }
+    })();
+
+    applyFilter();
+
+    // ---- Corporate families ----
+    const famWrap = document.getElementById("family-grid");
+    if (data.corporate_families.length) {
+      const byName = new Map((data.companies || []).map(c => [c.name, c.company_id]));
+      famWrap.innerHTML = data.corporate_families.map(f => {
+        const rows = f.subsidiaries.map(s => {
+          const pill = TRACK_PILL_CLASS[s.primary_track] || "pill-default";
+          const cid = byName.get(s.name) || "";
+          return `
+            <div class="sub-row co-row" data-company-id="${esc(cid)}" tabindex="0" role="button" style="cursor:${cid ? "pointer" : "default"};">
+              <span class="nm">${esc(s.name)}</span>
+              <span class="ctx"><span class="pill-tag ${pill}" style="font-size:10px;padding:1px 8px;">${esc(displayTrack(s.primary_track))}</span> · ${esc(s.country || "")}</span>
+              <span class="p">${s.products || 0}</span>
+            </div>
+          `;
+        }).join("");
+        return `
+          <article class="family-card">
+            <div class="family-head"><h4>${esc(f.parent)}</h4><span class="ttl">${f.total_products}</span></div>
+            <div class="family-sub">${f.n_subsidiaries} subsidiaries · ${f.total_products} products · ${f.total_brands} brands</div>
+            <div class="sub-list">${rows}</div>
+          </article>
+        `;
+      }).join("");
+      famWrap.querySelectorAll(".sub-row.co-row[data-company-id]:not([data-company-id=''])").forEach(row => {
+        row.addEventListener("click", () => {
+          const cid = row.getAttribute("data-company-id");
+          if (cid && window.V3CompanyDetail) window.V3CompanyDetail.show(cid);
+        });
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); row.click(); }
+        });
+      });
+    } else {
+      famWrap.innerHTML = `<div style="grid-column:1/-1; padding:24px; color:var(--muted); font-style:italic; text-align:center; font-family:var(--f-body);">底库 ultimate_parent 字段尚未充分 backfill — 下一轮补全 AbbVie/Allergan / J&J/Mentor 等典型集团关系后此处会展开</div>`;
+    }
+
+    // ---- Country × ownership matrix ----
+    const coWrap = document.getElementById("co-matrix");
+    if (coWrap && data.country_x_ownership.length) {
+      const headers = ["国家 · Country", "Total", "Public", "Private", "Subsidiary", "FDA·hit"];
+      const maxCell = Math.max(...data.country_x_ownership.flatMap(r =>
+        [r.total, r.public, r.private, r.subsidiary, r.fda]
+      ));
+      const headHtml = headers.map(h => `<div class="co-cell co-head">${esc(h)}</div>`).join("");
+      const rowsHtml = data.country_x_ownership.map(r => {
+        const cellVal = (v) => {
+          if (!v) return `<div class="co-cell co-val zero">—</div>`;
+          const intensity = v / maxCell;
+          return `<div class="co-cell co-val" style="--intensity:${intensity.toFixed(2)}">${v}</div>`;
+        };
+        return `
+          <div class="co-cell co-row-label">${esc(r.country)}<small>${esc(r.region || "")}</small></div>
+          ${cellVal(r.total)}
+          ${cellVal(r.public)}
+          ${cellVal(r.private)}
+          ${cellVal(r.subsidiary)}
+          ${cellVal(r.fda)}
+        `;
+      }).join("");
+      coWrap.innerHTML = headHtml + rowsHtml;
+    }
+
+    // ---- Findings ----
+    document.getElementById("finding-cards").innerHTML = (data.findings || []).map(f => `
+      <article class="editorial-block has-wash ${f.wash} wash-bottom-left">
+        <span class="stamp">${esc(f.stamp)}</span>
+        <div class="lead">${f.lead}</div>
+        <div class="num-pair">
+          <span class="num">${esc(String(f.num_pair.num))}</span>
+          <span class="unit">${esc(f.num_pair.unit)}</span>
+        </div>
+        <div class="body">${f.body}</div>
+      </article>
+    `).join("");
+
+    // Animate count-up on stat row
+    document.querySelectorAll("[data-count-up]").forEach(el => {
+      countUp(el, el.getAttribute("data-count-up"));
+    });
+
+    // IntersectionObserver for fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add("in-view"); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    document.querySelectorAll(".block, .page-hero, .kpi-cell, .editorial-block, .l1-card").forEach(el => observer.observe(el));
+
+    // ---- helpers ----
+    function getRoleColor (role) {
+      return {
+        "Manufacturer": "#8E3A3A",
+        "Brand Owner":  "#D9AE91",
+        "R&D/OEM":      "#A8B59A",
+        "Biotech":      "#A8B59A",
+        "Service":      "#C8B8D0",
+        "Supplier":     "#5A6878",
+      }[role] || "#888";
+    }
+    function countUp (el, target) {
+      if (!el) return;
+      const tgt = Number(target);
+      if (!Number.isFinite(tgt)) { el.textContent = target; return; }
+      const isInt = Number.isInteger(tgt);
+      const duration = 1100;
+      const startTime = performance.now();
+      el.classList.add("counting");
+      function frame (now) {
+        const p = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const v = tgt * eased;
+        el.textContent = isInt ? Math.round(v).toLocaleString("en-US") : v.toFixed(1);
+        if (p < 1) requestAnimationFrame(frame);
+        else { el.classList.remove("counting"); el.textContent = isInt ? tgt.toLocaleString("en-US") : tgt.toFixed(2); }
+      }
+      requestAnimationFrame(frame);
+    }
+    function esc (s) {
+      return String(s || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
+    }
+  })();
+</script>
+
+</body>
+</html>

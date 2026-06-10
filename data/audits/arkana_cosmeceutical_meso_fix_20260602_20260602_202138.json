@@ -1,0 +1,178 @@
+{
+  "run_ts": "20260602_202138",
+  "correction": "arkana_cosmeceutical_meso_fix_20260602",
+  "records": {
+    "REC_0258": {
+      "product_id": "prod_62cba0e9d6a5",
+      "old_family_id": "pf_4957194648b8",
+      "new_family_id": "pf_e48c8f7b8d7c",
+      "category_l1": "Skincare",
+      "category_l2": "Cosmeceutical",
+      "tech_type": "Exosome"
+    },
+    "REC_0571": {
+      "product_id": "prod_ba776e888b9e",
+      "old_family_id": "pf_b1625795ed59",
+      "new_family_id": "pf_93756b2d7567",
+      "category_l1": "Injectables",
+      "category_l2": "Mesotherapy",
+      "tech_type": "Biomimetic Peptide Mesotherapy"
+    }
+  },
+  "workbook": {
+    "path": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.xlsx",
+    "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_arkana_cosmeceutical_meso_fix_20260602_20260602_202138.xlsx",
+    "changed_records": {
+      "REC_0060": {
+        "Verified_Product_Type_CN": {
+          "before": "",
+          "after": "院线功效护肤 / 复合酸治疗"
+        },
+        "Market_Channel": {
+          "before": "",
+          "after": "professional cosmeceutical / beauty salon"
+        },
+        "Backfill_Audit": {
+          "before": "",
+          "after": "arkana_cosmeceutical_meso_fix_20260602: Arkana skincare line display normalized to Cosmeceutical/professional functional skincare."
+        }
+      },
+      "REC_0490": {
+        "Verified_Product_Type_CN": {
+          "before": "",
+          "after": "院线功效护肤 / 神经美容酸焕肤"
+        },
+        "Market_Channel": {
+          "before": "",
+          "after": "professional cosmeceutical / beauty salon"
+        },
+        "Backfill_Audit": {
+          "before": "",
+          "after": "arkana_cosmeceutical_meso_fix_20260602: Arkana peel line display normalized to Cosmeceutical/professional functional skincare."
+        }
+      },
+      "REC_0258": {
+        "Category_L1": {
+          "before": "Regenerative",
+          "after": "Skincare"
+        },
+        "Category_L2": {
+          "before": "Exosome",
+          "after": "Cosmeceutical"
+        },
+        "Verified_Product_Type_CN": {
+          "before": "",
+          "after": "院线功效护肤 / 外泌体再生护理"
+        },
+        "Market_Channel": {
+          "before": "",
+          "after": "professional cosmeceutical / beauty salon / regenerative skincare"
+        },
+        "Material_Taxonomy_Source": {
+          "before": "rule:topical_cosmeceutical",
+          "after": "manual_correction:arkana_cosmeceutical_meso_fix_20260602"
+        },
+        "Material_Taxonomy_Confidence": {
+          "before": "medium",
+          "after": "high"
+        },
+        "Material_Taxonomy_Review_Status": {
+          "before": "accepted",
+          "after": "manual_verified"
+        },
+        "Material_Taxonomy_Note": {
+          "before": "topical/skincare commercial context | v4 closure: accepted current taxonomy path for usable database; no hold taxonomy decision required",
+          "after": "Arkana Exo Complex is a professional dermocosmetic/exosome skincare line; kept Exosome as technology but normalized commercial classification to Cosmeceutical."
+        },
+        "Material_Family": {
+          "before": "",
+          "after": "外泌体 Exosome"
+        },
+        "Backfill_Audit": {
+          "before": "[v4_material_review_closure] non-hold backlog closed as accepted",
+          "after": "[v4_material_review_closure] non-hold backlog closed as accepted | arkana_cosmeceutical_meso_fix_20260602: Arkana Exosome line moved from Regenerative/Exosome display bucket to Skincare/Cosmeceutical; Exosome retained as technology."
+        }
+      },
+      "REC_0571": {
+        "Category_L1": {
+          "before": "EBD",
+          "after": "Injectables"
+        },
+        "Category_L2": {
+          "before": "Radiofrequency",
+          "after": "Mesotherapy"
+        },
+        "Tech_Type_Std": {
+          "before": "PRP/PRF",
+          "after": "Biomimetic Peptide Mesotherapy"
+        },
+        "Tech_Type_Original": {
+          "before": "",
+          "after": "PRP-like peptide microneedling / no-needle mesotherapy; product-led, not RF or energy device."
+        },
+        "Verified_Product_Type_CN": {
+          "before": "",
+          "after": "仿生肽美素 / 微针导入疗法"
+        },
+        "Market_Channel": {
+          "before": "",
+          "after": "professional cosmeceutical / beauty salon / mesotherapy"
+        },
+        "Material_Taxonomy_L2_CN": {
+          "before": "自体来源",
+          "after": "美塑成分"
+        },
+        "Material_Taxonomy_L3_CN": {
+          "before": "PRP 富血小板血浆",
+          "after": "生长因子/多肽鸡尾酒"
+        },
+        "Material_Taxonomy_Path_CN": {
+          "before": "注射类 > 自体来源 > PRP 富血小板血浆",
+          "after": "注射类 > 美塑成分 > 生长因子/多肽鸡尾酒"
+        },
+        "Material_Taxonomy_Source": {
+          "before": "rule:autologous_prp",
+          "after": "manual_correction:arkana_cosmeceutical_meso_fix_20260602"
+        },
+        "Material_Taxonomy_Review_Status": {
+          "before": "auto_applied",
+          "after": "manual_verified"
+        },
+        "Material_Taxonomy_Note": {
+          "before": "PRP term",
+          "after": "PRP-like Arkana line uses W3 Peptide/GHK-Cu peptide complex with microneedling/no-needle mesotherapy delivery; the needle is a consumable delivery route, not radiofrequency or other energy-based device, and it is not autologous PRP."
+        },
+        "Material_Family": {
+          "before": "",
+          "after": "生长因子/多肽鸡尾酒"
+        },
+        "Backfill_Audit": {
+          "before": "",
+          "after": "arkana_cosmeceutical_meso_fix_20260602: PRP-like Therapy corrected from EBD/Radiofrequency to Injectables/Mesotherapy; product-led peptide mesotherapy, not an energy device."
+        }
+      }
+    }
+  },
+  "csv_updates": [
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_official_source_plan.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\company_official_source_plan.backup_before_arkana_cosmeceutical_meso_fix_20260602_20260602_202138.csv",
+      "changed_rows": 6
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_product_fact_evidence.backup_before_arkana_cosmeceutical_meso_fix_20260602_20260602_202138.csv",
+      "changed_rows": 39
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\product_specification_evidence.backup_before_arkana_cosmeceutical_meso_fix_20260602_20260602_202138.csv",
+      "changed_rows": 19
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_media_asset_index.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\company_media_asset_index.backup_before_arkana_cosmeceutical_meso_fix_20260602_20260602_202138.csv",
+      "changed_rows": 22
+    }
+  ]
+}

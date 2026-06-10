@@ -1,0 +1,16 @@
+﻿sheet,record_id,before_l1,after_l1
+Product_Lines,REC_0008,Regenerative,Consumables
+Product_Lines,REC_0049,EBD,Consumables
+Product_Lines,REC_0475,EBD,Surgical
+Brand_Portfolio,REC_0008,,Consumables
+Brand_Portfolio,REC_0049,,Consumables
+Brand_Portfolio,REC_0475,,Surgical
+Product_Master,REC_0008,,Consumables
+Product_Master,REC_0049,,Consumables
+Product_Master,REC_0475,,Surgical
+Product_Family_Master,REC_0475,,Surgical
+Product_Family_Master,REC_0049,,Consumables
+Product_Family_Master,REC_0008,,Consumables
+Product_SKU_Master,REC_0008,,Consumables
+Product_SKU_Master,REC_0049,,Consumables
+Product_SKU_Master,REC_0475,,Surgical

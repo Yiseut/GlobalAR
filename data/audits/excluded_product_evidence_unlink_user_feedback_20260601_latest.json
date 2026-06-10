@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-06-01T14:37:13",
+  "reason": "A3 evidence product_id integrity: unlink evidence attached to newly excluded or wrong-attribution products from user feedback.",
+  "orphan_product_ids": {
+    "prod_f3262e00d428": "REC_0963 Dongkook/Nabota wrong attribution; canonical active row is REC_0473 Daewoong / Nabota.",
+    "prod_f2adaaca4e65": "REC_0965 Jetema/Yvoire wrong attribution; canonical active row is REC_0778 LG Chem / Yvoire.",
+    "prod_8aca814d2399": "REC_0533 Daejoo PDRN/PN API raw-material line excluded from terminal aesthetic product master.",
+    "prod_6232571cca15": "REC_0475 Arthrex/NanoScope generic endoscopic surgical device excluded from core aesthetics upstream scope.",
+    "prod_ce8125425c4c": "REC_0101 Contura/Bulkamid urogynecology urethral bulking product excluded from core aesthetics upstream scope."
+  },
+  "changes": [
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence_backup_before_user_feedback_excluded_unlink_20260601_143713.csv",
+      "rows_unlinked": 52,
+      "by_original_product_id": {
+        "prod_6232571cca15": 31,
+        "prod_ce8125425c4c": 21
+      }
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log_backup_before_user_feedback_excluded_unlink_20260601_143713.csv",
+      "rows_unlinked": 49,
+      "by_original_product_id": {
+        "prod_6232571cca15": 31,
+        "prod_ce8125425c4c": 18
+      }
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence_backup_before_user_feedback_excluded_unlink_20260601_143713.csv",
+      "rows_unlinked": 69,
+      "by_original_product_id": {
+        "prod_6232571cca15": 44,
+        "prod_ce8125425c4c": 25
+      }
+    }
+  ],
+  "total_rows_unlinked": 170
+}

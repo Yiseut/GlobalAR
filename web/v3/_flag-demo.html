@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>v3 · 注册名 / 适应症 flag 视觉 demo</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ============ Demo-only layout ============ */
+  body { padding: 48px 64px; max-width: 1280px; margin: 0 auto; }
+  .demo-hd { margin-bottom: 32px; }
+  .demo-hd h1 { font-family: var(--f-display); font-weight: 400; font-size: 36px; letter-spacing: 0.5px; margin: 0 0 8px; color: var(--ink); }
+  .demo-hd .sub { font-family: var(--f-serif-it); font-style: italic; font-size: 18px; color: var(--muted); }
+  .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+  .demo-card { background: var(--surface); border: 1px solid var(--hairline); border-radius: var(--r-3); padding: 24px; }
+  .demo-card h3 { margin: 0 0 4px; font-family: var(--f-display); font-weight: 400; font-size: 18px; color: var(--ink); letter-spacing: 0.3px; }
+  .demo-card .label { font-family: var(--f-sans); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+
+  /* ============ Evidence table — mimics v3 regulatory-pulse table ============ */
+  table.evidence { width: 100%; border-collapse: collapse; font-family: var(--f-sans); font-size: 13px; color: var(--ink); }
+  table.evidence th { text-align: left; font-weight: 500; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); padding: 8px 6px; border-bottom: 1px solid var(--hairline); }
+  table.evidence td { padding: 12px 6px; border-bottom: 1px solid var(--hairline-2); vertical-align: middle; }
+  table.evidence td.brand { font-weight: 500; }
+  table.evidence td.regno { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); }
+  table.evidence td.indication { color: var(--ink-2); }
+
+  /* ============ TIER 1 chip — missing registered_name ============ */
+  .reg-empty-cell { color: var(--subtle); font-style: italic; font-size: 12px; }
+  .flag-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(184, 89, 87, 0.55);
+    color: #fff;
+    font-family: var(--f-sans);
+    font-size: 11px;
+    font-weight: 500;
+    margin-left: 6px;
+    cursor: help;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  .flag-chip:hover { background: rgba(184, 89, 87, 0.85); }
+
+  /* ============ TIER 2 暗号 — oblique 6° on indication cell ============ */
+  td.indication.no-public { font-style: oblique 6deg; }
+
+  /* ============ "暗号说明" callout ============ */
+  .key-card {
+    margin-top: 48px; padding: 20px 24px;
+    background: var(--surface-2); border-left: 3px solid var(--accent);
+    border-radius: var(--r-2);
+    font-family: var(--f-sans); font-size: 13px; color: var(--ink-2);
+  }
+  .key-card h4 { margin: 0 0 12px; font-family: var(--f-display); font-weight: 400; font-size: 16px; color: var(--ink); }
+  .key-card .key-row { display: flex; gap: 16px; align-items: baseline; padding: 6px 0; }
+  .key-card .key-row .sample { min-width: 200px; flex-shrink: 0; }
+  .key-card .key-row .desc { color: var(--muted); font-size: 12px; }
+  .key-card .key-row .desc em { color: var(--ink-2); font-style: normal; font-weight: 500; }
+
+  /* ============ Top-bar timestamp preview ============ */
+  .topbar-mock {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--surface-2); border-bottom: 1px solid var(--hairline);
+    padding: 12px 24px; margin: 0 -64px 32px; font-family: var(--f-sans);
+  }
+  .topbar-mock .brand { font-family: var(--f-display); font-size: 18px; color: var(--ink); letter-spacing: 0.5px; }
+  .topbar-mock .as-of { display: flex; align-items: baseline; gap: 8px; font-size: 12px; color: var(--muted); }
+  .topbar-mock .as-of .lbl { letter-spacing: 1px; text-transform: uppercase; font-size: 10px; }
+  .topbar-mock .as-of .ts { font-family: var(--f-mono); color: var(--ink-2); font-size: 13px; }
+  .topbar-mock .as-of .scope { color: var(--subtle); font-size: 11px; }
+</style>
+</head>
+<body>
+
+<div class="topbar-mock">
+  <div class="brand">Global Aesthetics · v3</div>
+  <div class="as-of">
+    <span class="lbl">数据截至</span>
+    <span class="ts">2026-06-04 03:30</span>
+    <span class="scope">· 975 产品 / 359 公司</span>
+  </div>
+</div>
+
+<div class="demo-hd">
+  <h1>flag 视觉 demo</h1>
+  <p class="sub">注册名缺失（醒目印章） · 适应症未公开（oblique 6° 暗号） · 顶部 data-as-of 时间戳</p>
+</div>
+
+<!-- =========================================================
+     SIDE-BY-SIDE: 不标 vs 标
+     ========================================================= -->
+<div class="demo-grid">
+
+  <!-- LEFT: 完全不标 - baseline -->
+  <div class="demo-card">
+    <h3>不加任何标记</h3>
+    <p class="label">Baseline · 现状</p>
+    <table class="evidence">
+      <thead>
+        <tr><th>注册名</th><th>公司 / 品牌</th><th>司法</th><th>注册号</th><th>适应症</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="brand">Profhilo</td><td>IBSA Derma</td><td>EU</td><td class="regno">CE 2797</td><td class="indication">皮肤生物再塑</td></tr>
+        <tr><td class="brand">Belotero Balance</td><td>Merz</td><td>EU</td><td class="regno">CE 0086</td><td class="indication">中度真皮内填充</td></tr>
+        <tr><td><span class="reg-empty-cell">— 未找到 —</span></td><td>Alma Lasers / Alma TED</td><td>US</td><td class="regno">K201228</td><td class="indication">经皮给药</td></tr>
+        <tr><td class="brand">Restylane Contour</td><td>Galderma</td><td>US</td><td class="regno">P140029/S054</td><td class="indication">颞部填充</td></tr>
+        <tr><td class="brand">Dermapose</td><td>Bimini Health Tech</td><td>EU</td><td class="regno">MDR 2026</td><td class="indication">脂肪移植套件</td></tr>
+        <tr><td><span class="reg-empty-cell">— 未找到 —</span></td><td>Bimini / Puregraft</td><td>EU</td><td class="regno">MDR 2026</td><td class="indication">脂肪过滤套件</td></tr>
+        <tr><td class="brand">Juvéderm Volux</td><td>AbbVie / Allergan</td><td>US</td><td class="regno">P170033/S014</td><td class="indication">下颌轮廓塑形</td></tr>
+        <tr><td class="brand">CaHA Microspheres</td><td>Moyom</td><td>CN</td><td class="regno">国械注准</td><td class="indication">软组织填充</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RIGHT: 加上 Tier 1 + Tier 2 flag -->
+  <div class="demo-card">
+    <h3>加 Tier 1 印章 + Tier 2 暗号</h3>
+    <p class="label">Proposed · 提示但不刺眼</p>
+    <table class="evidence">
+      <thead>
+        <tr><th>注册名</th><th>公司 / 品牌</th><th>司法</th><th>注册号</th><th>适应症</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="brand">Profhilo</td><td>IBSA Derma</td><td>EU</td><td class="regno">CE 2797</td><td class="indication">皮肤生物再塑</td></tr>
+        <tr><td class="brand">Belotero Balance</td><td>Merz</td><td>EU</td><td class="regno">CE 0086</td><td class="indication">中度真皮内填充</td></tr>
+        <tr>
+          <td>
+            <span class="reg-empty-cell">— 未找到 —</span>
+            <span class="flag-chip" title="经检索 FDA / EU / NMPA 未找到 registered_name，可定期复查">?</span>
+          </td>
+          <td>Alma Lasers / Alma TED</td><td>US</td><td class="regno">K201228</td>
+          <td class="indication no-public">经皮给药</td>
+        </tr>
+        <tr><td class="brand">Restylane Contour</td><td>Galderma</td><td>US</td><td class="regno">P140029/S054</td><td class="indication">颞部填充</td></tr>
+        <tr>
+          <td class="brand">Dermapose</td><td>Bimini Health Tech</td><td>EU</td><td class="regno">MDR 2026</td>
+          <td class="indication no-public">脂肪移植套件</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="reg-empty-cell">— 未找到 —</span>
+            <span class="flag-chip" title="经检索 FDA / EU / NMPA 未找到 registered_name，可定期复查">?</span>
+          </td>
+          <td>Bimini / Puregraft</td><td>EU</td><td class="regno">MDR 2026</td>
+          <td class="indication no-public">脂肪过滤套件</td>
+        </tr>
+        <tr><td class="brand">Juvéderm Volux</td><td>AbbVie / Allergan</td><td>US</td><td class="regno">P170033/S014</td><td class="indication">下颌轮廓塑形</td></tr>
+        <tr><td class="brand">CaHA Microspheres</td><td>Moyom</td><td>CN</td><td class="regno">国械注准</td><td class="indication">软组织填充</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ============ 暗号说明 ============ -->
+<div class="key-card">
+  <h4>暗号说明（这张说明页可以不上线，给你自己看）</h4>
+  <div class="key-row">
+    <div class="sample">
+      <span class="reg-empty-cell">— 未找到 —</span>
+      <span class="flag-chip">?</span>
+    </div>
+    <div class="desc"><em>Tier 1 — 注册名缺失</em>。oxblood 半透明圆章 · hover 出原因 · 78 行 / 67 产品</div>
+  </div>
+  <div class="key-row">
+    <div class="sample"><span style="font-style: oblique 6deg;">经皮给药</span></div>
+    <div class="desc"><em>Tier 2 — 适应症未公开</em>。该单元格文本 oblique 6°（你扫得到、外人误以为是排版） · 739 行 / 519 产品</div>
+  </div>
+  <div class="key-row">
+    <div class="sample"><span style="color: var(--ink);">皮肤生物再塑</span></div>
+    <div class="desc"><em>正常</em>。无任何标记。</div>
+  </div>
+</div>
+
+<!-- ============ 给你选的备选暗号方案 ============ -->
+<div class="key-card" style="border-left-color: var(--plum);">
+  <h4>如果 Tier 2 的 oblique 6° 你觉得不对，备选三选一</h4>
+  <div class="key-row">
+    <div class="sample"><span style="font-style: oblique 6deg;">经皮给药</span></div>
+    <div class="desc"><em>A · oblique 6°（当前方案）</em>。最隐蔽，外人完全察觉不到。</div>
+  </div>
+  <div class="key-row">
+    <div class="sample">经皮给药<span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:rgba(184,89,87,0.55);margin-left:8px;vertical-align:middle;"></span></div>
+    <div class="desc"><em>B · 行尾 5px 暗红小点</em>。你能看见、不知道含义的人会忽略。</div>
+  </div>
+  <div class="key-row">
+    <div class="sample"><span style="color: var(--subtle);">经皮给药</span></div>
+    <div class="desc"><em>C · 文字色降为 muted</em>。外人会觉得"这条好像浅一点"，你知道意思。</div>
+  </div>
+  <div class="key-row">
+    <div class="sample"><span>经皮给药</span></div>
+    <div class="desc"><em>D · 完全不标</em>。只在 db 加 data_status 字段，UI 上零暗号。</div>
+  </div>
+</div>
+
+</body>
+</html>

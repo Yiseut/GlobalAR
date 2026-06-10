@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the MDR/CE evidence search plan for priority companies.
+"""Build the MDR/CE evidence search plan from all eligible product families.
 
 Rows generated here are review targets, not verified CE authorization facts.
 They make the manual path explicit: EUDAMED, notified-body certificate, and
@@ -104,23 +104,29 @@ def build_query(company: str, brand: str, product_family: str, source_key: str) 
 
 
 def priority_families(conn: sqlite3.Connection, limit_companies: int, families_per_company: int) -> list[sqlite3.Row]:
+    where = [
+        "pf.category_l1 IN ('EBD', 'Injectables', 'Implants', 'Consumables', 'Diagnostics', 'Regenerative')"
+    ]
+    params: list[Any] = []
+    if limit_companies > 0:
+        where.append("cm.priority_rank IS NOT NULL")
+        where.append("cm.priority_rank <= ?")
+        params.append(limit_companies)
     rows = conn.execute(
-        """
+        f"""
         SELECT cm.priority_rank, pf.*
         FROM product_family_master pf
         JOIN company_master cm ON cm.company_id = pf.company_id
-        WHERE cm.priority_rank IS NOT NULL
-          AND cm.priority_rank <= ?
-          AND pf.category_l1 IN ('EBD', 'Injectables', 'Implants', 'Consumables', 'Diagnostics', 'Regenerative')
-        ORDER BY cm.priority_rank, pf.primary_record_count DESC, pf.product_family
+        WHERE {' AND '.join(where)}
+        ORDER BY COALESCE(cm.priority_rank, 999999), pf.company, pf.primary_record_count DESC, pf.product_family
         """,
-        (limit_companies,),
+        params,
     ).fetchall()
     selected: list[sqlite3.Row] = []
     counts: dict[str, int] = {}
     for row in rows:
         count = counts.get(row["company_id"], 0)
-        if count >= families_per_company:
+        if families_per_company > 0 and count >= families_per_company:
             continue
         selected.append(row)
         counts[row["company_id"]] = count + 1
@@ -188,8 +194,8 @@ def build_plan(limit_companies: int, families_per_company: int) -> dict[str, Any
         writer.writeheader()
         writer.writerows(rows)
     return {
-        "companies_limit": limit_companies,
-        "families_per_company": families_per_company,
+        "companies_limit": limit_companies if limit_companies > 0 else "all",
+        "families_per_company": families_per_company if families_per_company > 0 else "all",
         "rows": len(rows),
         "sources": sorted(sources),
         "path": str(MDR_CE_SEARCH_PLAN_PATH),
@@ -198,8 +204,8 @@ def build_plan(limit_companies: int, families_per_company: int) -> dict[str, Any
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--companies", type=int, default=37)
-    parser.add_argument("--families-per-company", type=int, default=4)
+    parser.add_argument("--companies", type=int, default=0, help="Priority-company cap. 0 means all companies.")
+    parser.add_argument("--families-per-company", type=int, default=0, help="Per-company family cap. 0 means all families.")
     args = parser.parse_args()
     if not DB_PATH.exists():
         raise SystemExit(f"Database not found: {DB_PATH}. Run scripts/build_data.py first.")

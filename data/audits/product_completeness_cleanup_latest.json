@@ -1,0 +1,92 @@
+{
+  "source_workbook": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.xlsx",
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_product_completeness_20260601_020440.xlsx",
+  "workbook_changes": [
+    {
+      "record_id": "REC_0266",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "CG Bio Co., Ltd."
+    },
+    {
+      "record_id": "REC_0266",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "CG Bio Co., Ltd."
+    },
+    {
+      "record_id": "REC_0266",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "product_completeness_20260601: FACETEM kept as the active CGBIO product line; official use captured in indication evidence; Korea/MFDS number not confirmed."
+    },
+    {
+      "record_id": "REC_0960",
+      "field": "Duplicate_Note",
+      "old": "duplicate_of:REC_0266; FACETEM is a CGBIO/Daewoong-affiliate CaHA line; old HA label was corrected.",
+      "new": "duplicate_of:REC_0266; FACETEM active product line is held under CGBIO/Cell Growth Bio; Daewoong kept only as parent/affiliate trace."
+    },
+    {
+      "record_id": "REC_0960",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "product_completeness_20260601: non-primary duplicate removed from dashboard/product-gap scope."
+    },
+    {
+      "record_id": "REC_0479",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "MATEX LAB SPA"
+    },
+    {
+      "record_id": "REC_0479",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Matex Lab"
+    },
+    {
+      "record_id": "REC_0479",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_1023",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "MATEX LAB SPA"
+    },
+    {
+      "record_id": "REC_1023",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Matex Lab"
+    },
+    {
+      "record_id": "REC_1023",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0479",
+      "field": "CE_Status",
+      "old": "",
+      "new": "EU MDR Class III medical device (official Neauvia statement)"
+    },
+    {
+      "record_id": "REC_0479",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "product_completeness_20260601: official Neauvia Intense page/factsheet captured; public certificate number not available."
+    },
+    {
+      "record_id": "REC_1023",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "product_completeness_20260601: official Neauvia Stimulate page captured; official use promoted from product page."
+    }
+  ],
+  "manual_product_fact_rows_added": 6,
+  "manual_official_indication_rows_added": 3
+}

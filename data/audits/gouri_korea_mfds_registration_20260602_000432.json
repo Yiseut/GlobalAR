@@ -1,0 +1,36 @@
+{
+  "target_record_id": "REC_0307",
+  "target_product_id": "prod_c019a8d54482",
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_gouri_korea_mfds_20260602_000432.xlsx",
+  "workbook_changes": [
+    {
+      "record_id": "REC_0307",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user/public media; certificate number pending."
+    },
+    {
+      "record_id": "REC_0307",
+      "field": "KFDA_Approval_Date",
+      "old": "",
+      "new": "2025-09"
+    },
+    {
+      "record_id": "REC_0307",
+      "field": "CE_Status",
+      "old": "CE confirmed by user; certificate number pending.",
+      "new": "KFDA/MFDS and CE confirmed; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0307",
+      "field": "Backfill_Audit",
+      "old": "[orig:注射类 > 胶原刺激剂 > PCL 聚己内酯] GOURI液态PCL胶原刺激剂; user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied.",
+      "new": "[orig:注射类 > 胶原刺激剂 > PCL 聚己内酯] GOURI液态PCL胶原刺激剂; user_reg_indications_20260601_batch3: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied.; gouri_korea_mfds_20260602: user/public-media confirmed Korea MFDS registration; approval month 2025-09, certificate number not captured."
+    }
+  ],
+  "manual_official_indication_rows_added": 1,
+  "source_url": "https://www.thebell.co.kr/front/newsview.asp?key=202605130602069380102883",
+  "supporting_url": "https://www.hankookilbo.com/news/article/A2026041310270001876",
+  "approval_date": "2025-09",
+  "status": "applied"
+}

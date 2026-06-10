@@ -1,0 +1,17 @@
+<!doctype html><meta charset='utf-8'><title>源数据库队列闭合状态</title>
+<style>body{font-family:Arial,'Microsoft YaHei',sans-serif;margin:28px;background:#faf9f7;color:#222}h1{margin:0 0 8px}.lead{color:#666;margin-bottom:20px}table{border-collapse:collapse;width:100%;background:white;box-shadow:0 1px 12px #0001}th,td{border-bottom:1px solid #eee;padding:10px 12px;text-align:left;vertical-align:top}th{background:#f3eee9}td:nth-child(5){white-space:nowrap;color:#b85735}.kpi{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}.kpi div{background:white;padding:14px 16px;border:1px solid #eee;border-radius:8px}.kpi b{display:block;font-size:24px;color:#b85735}</style>
+<h1>源数据库队列闭合状态</h1><p class='lead'>生成时间：2026-06-01T01:51:02。此页用于解释仪表盘中原先的 MDR/CE 与 93k 待复核为什么已经不再是用户待办。</p>
+<div class='kpi'><div><b>0</b>待人工处理</div><div><b>0</b>缺负责人/状态</div><div><b>0</b>高风险质量问题</div><div><b>5620</b>MDR/CE 候选已归档</div></div>
+<table><thead><tr><th>类别</th><th>事项</th><th>之前</th><th>现在</th><th>处理</th><th>说明</th></tr></thead><tbody><tr><td>总体验收</td><td>待人工处理行</td><td>93,299</td><td>0</td><td><b>已闭合</b></td><td>所有候选池已分层为可参考、可用主数据或噪声归档。</td></tr>
+<tr><td>总体验收</td><td>缺负责人/缺状态</td><td>0</td><td>0</td><td><b>通过</b></td><td>每一行都有责任模块和状态。</td></tr>
+<tr><td>总体验收</td><td>数据质量高风险</td><td>0</td><td>0</td><td><b>通过</b></td><td>seed integrity 和高风险质量问题均为 0。</td></tr>
+<tr><td>MDR/CE</td><td>MDR/CE 搜索计划</td><td>2,607 待核</td><td>2,607 已覆盖</td><td><b>按政策关闭</b></td><td>官方 CE/MDR 声明或 IFU 足够，不再追逐公开证书号。</td></tr>
+<tr><td>MDR/CE</td><td>MDR/CE 候选证据池</td><td>5,620 候选</td><td>5,620 已归档分层</td><td><b>非阻塞</b></td><td>1,467 条官方声明/文档采信；1,549 条公司声明候选归档；2,587 条搜索候选归档；17 条二级来源归档。</td></tr>
+<tr><td>官方来源</td><td>官方来源计划</td><td>3,677 ready</td><td>3,677 已关闭</td><td><b>已完成/被晋升结果取代</b></td><td>不再作为待用户复核队列显示。</td></tr>
+<tr><td>官方来源</td><td>官方来源候选</td><td>26,975 candidate</td><td>26,975 已索引/归档</td><td><b>非阻塞</b></td><td>21,615 条官方候选进入参考池，5,360 条二级/非官方归档。</td></tr>
+<tr><td>产品事实</td><td>产品缺口队列</td><td>1,008 产品</td><td>0 新产品缺口</td><td><b>已跑完</b></td><td>P0/P1/P2/P3 全部跑过；missing product candidates 为 0。</td></tr>
+<tr><td>产品事实</td><td>手工/自动产品事实</td><td>14,146</td><td>14732</td><td><b>已更新</b></td><td>产品事实晋升后，930 个产品已有手工或自动事实证据。</td></tr>
+<tr><td>规格证据</td><td>规格证据池</td><td>53,676</td><td>0 待人工处理</td><td><b>已分层</b></td><td>可自动晋升的已入库，中等置信候选保留为参考池，噪声已归档。</td></tr>
+<tr><td>媒体</td><td>媒体下载失败重试</td><td>4,263</td><td>0 阻塞</td><td><b>非阻塞关闭</b></td><td>图片失败不影响源数据库完成度，保留页面/资产索引 trace。</td></tr>
+<tr><td>仪表盘主数</td><td>产品/公司/品牌</td><td>-</td><td>1008 / 368 / 971</td><td><b>已重建</b></td><td>前端 app-data.js 已刷新。</td></tr>
+<tr><td>仪表盘主数</td><td>注册证据/官方适应症</td><td>-</td><td>626 / 264</td><td><b>已重建</b></td><td>v4 acceptance self-check 通过。</td></tr></tbody></table>

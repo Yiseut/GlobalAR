@@ -1,0 +1,638 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_user_reg_indications_b5_20260601_031934.xlsx",
+  "workbook_changes": 94,
+  "manual_official_indication_rows_added": 31,
+  "manual_product_fact_rows_added": 13,
+  "target_record_ids": [
+    "REC_0143",
+    "REC_0202",
+    "REC_0260",
+    "REC_0293",
+    "REC_0319",
+    "REC_0389",
+    "REC_0540",
+    "REC_0554",
+    "REC_0592",
+    "REC_0601",
+    "REC_0602",
+    "REC_0619",
+    "REC_0636",
+    "REC_0648",
+    "REC_0731",
+    "REC_0970",
+    "REC_0971"
+  ],
+  "korea_confirmed_record_ids": [
+    "REC_0143",
+    "REC_0202",
+    "REC_0293",
+    "REC_0319",
+    "REC_0389",
+    "REC_0592",
+    "REC_0601",
+    "REC_0602",
+    "REC_0619",
+    "REC_0636",
+    "REC_0731",
+    "REC_0970",
+    "REC_0971"
+  ],
+  "ce_confirmed_record_ids": [
+    "REC_0143",
+    "REC_0202",
+    "REC_0260",
+    "REC_0293",
+    "REC_0319",
+    "REC_0389",
+    "REC_0540",
+    "REC_0554",
+    "REC_0592",
+    "REC_0601",
+    "REC_0602",
+    "REC_0619",
+    "REC_0636",
+    "REC_0648",
+    "REC_0731",
+    "REC_0970",
+    "REC_0971"
+  ],
+  "nmpa_confirmed_record_ids": [
+    "REC_0601"
+  ],
+  "bioPlus_rejuran_correction": {
+    "REC_0968": "renamed to BioPlus Kiara Reju based on existing official BioPlus Kiara Reju evidence; not treated as PharmaResearch Rejuran.",
+    "REC_0969": "excluded as wrong attribution for Rejuran HB."
+  },
+  "known_residual_notes": [
+    "Certificate numbers remain blank where the user confirmed registration presence but did not supply precise numbers.",
+    "DFK/Chaeum/GANA/Daejoo/Laboratoire Skin France PDRN rows are captured as family-level KFDA/CE claims, not exact certificate-level records.",
+    "Haim Exovair/LeVair received category/technology correction only; no registration status was supplied in this user batch.",
+    "BioPlus Kiara Reju remains an active BioPlus product identity without a KFDA row until product-specific registration is supplied."
+  ],
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_0968",
+      "field": "Brand",
+      "old": "REJURAN",
+      "new": "Kiara Reju"
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Core_Product",
+      "old": "REJURAN",
+      "new": "Kiara Reju"
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Tech_Type_Std",
+      "old": "Hyaluronic Acid",
+      "new": "PDRN + Hyaluronic Acid"
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Tech_Type_Original",
+      "old": "PDRN Skin Booster",
+      "new": "PDRN / HA skin booster"
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "BioPlus Co., Ltd."
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "BioPlus"
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Duplicate_Note",
+      "old": "",
+      "new": "corrected_from:REJURAN; not PharmaResearch Rejuran. BioPlus official product evidence points to Kiara Reju."
+    },
+    {
+      "record_id": "REC_0968",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: corrected BioPlus/Rejuran attribution; PharmaResearch / PR Bio retained as Rejuran owner."
+    },
+    {
+      "record_id": "REC_0969",
+      "field": "Inclusion_Status",
+      "old": "active",
+      "new": "excluded"
+    },
+    {
+      "record_id": "REC_0969",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0969",
+      "field": "Duplicate_Note",
+      "old": "",
+      "new": "wrong_attribution: REJURAN HB belongs to PharmaResearch / PR Bio; BioPlus mapping excluded."
+    },
+    {
+      "record_id": "REC_0969",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: corrected BioPlus/Rejuran attribution; PharmaResearch / PR Bio retained as Rejuran owner."
+    },
+    {
+      "record_id": "REC_0601",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0601",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0601",
+      "field": "NMPA_Status",
+      "old": "",
+      "new": "NMPA confirmed for selected Rejuran models by user; exact certificate/model mapping pending."
+    },
+    {
+      "record_id": "REC_0601",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0601",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0601",
+      "field": "Backfill_Audit",
+      "old": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531",
+      "new": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531; user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0602",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0602",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0602",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0602",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0602",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0970",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0970",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0970",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0970",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0970",
+      "field": "Backfill_Audit",
+      "old": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531",
+      "new": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531; user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0971",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed at Rejuran family level by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0971",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed at Rejuran family level by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0971",
+      "field": "Category_L2",
+      "old": "Dermal Filler",
+      "new": "Skin Booster"
+    },
+    {
+      "record_id": "REC_0971",
+      "field": "Tech_Type_Std",
+      "old": "Hyaluronic Acid",
+      "new": "PN / HA Skin Booster"
+    },
+    {
+      "record_id": "REC_0971",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0971",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "PharmaResearch / PR Bio"
+    },
+    {
+      "record_id": "REC_0971",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0540",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE Class III confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0540",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0319",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0319",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0319",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0619",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0619",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0619",
+      "field": "Category_L2",
+      "old": "Dermal Filler",
+      "new": "Skin Booster"
+    },
+    {
+      "record_id": "REC_0619",
+      "field": "Tech_Type_Std",
+      "old": "Hyaluronic Acid",
+      "new": "PDRN + Hyaluronic Acid + Peptides"
+    },
+    {
+      "record_id": "REC_0619",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0636",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0636",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0636",
+      "field": "Tech_Type_Std",
+      "old": "Polynucleotide",
+      "new": "PDRN + HA Skin Booster"
+    },
+    {
+      "record_id": "REC_0636",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0731",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0731",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0731",
+      "field": "Tech_Type_Std",
+      "old": "Polynucleotide",
+      "new": "PDRN / PN Skin Booster"
+    },
+    {
+      "record_id": "REC_0731",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0293",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0293",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0293",
+      "field": "Tech_Type_Std",
+      "old": "Polynucleotide",
+      "new": "PDRN + HA Skin Booster"
+    },
+    {
+      "record_id": "REC_0293",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0202",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0202",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0202",
+      "field": "Category_L1",
+      "old": "EBD",
+      "new": "Injectables"
+    },
+    {
+      "record_id": "REC_0202",
+      "field": "Category_L2",
+      "old": "EMS",
+      "new": "Skin Booster"
+    },
+    {
+      "record_id": "REC_0202",
+      "field": "Tech_Type_Std",
+      "old": "Pdrn",
+      "new": "PDRN / PN Skin Booster"
+    },
+    {
+      "record_id": "REC_0202",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "PDRN mesotherapy injection"
+    },
+    {
+      "record_id": "REC_0202",
+      "field": "Backfill_Audit",
+      "old": "[orig:注射类 > 再生材料 > PDRN/PN 多聚核苷酸] PDRN注射/美塑，非外用; review_feedback_batches_20260531",
+      "new": "[orig:注射类 > 再生材料 > PDRN/PN 多聚核苷酸] PDRN注射/美塑，非外用; review_feedback_batches_20260531; user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0648",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE family-level claim captured from user feedback; certificate number pending."
+    },
+    {
+      "record_id": "REC_0648",
+      "field": "Tech_Type_Std",
+      "old": "Mesotherapy",
+      "new": "PDRN + HA Mesotherapy"
+    },
+    {
+      "record_id": "REC_0648",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0260",
+      "field": "Category_L1",
+      "old": "Injectables",
+      "new": "Regenerative"
+    },
+    {
+      "record_id": "REC_0260",
+      "field": "Category_L2",
+      "old": "Dermal Filler",
+      "new": "Exosome"
+    },
+    {
+      "record_id": "REC_0260",
+      "field": "Tech_Type_Std",
+      "old": "Hyaluronic Acid",
+      "new": "Exosome / Topical Microneedling"
+    },
+    {
+      "record_id": "REC_0260",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Exosome complex for topical or microneedling-assisted application"
+    },
+    {
+      "record_id": "REC_0260",
+      "field": "CE_Status",
+      "old": "",
+      "new": "EU CPNP or selected Class II registration captured from user feedback; direct-injection CE not assumed."
+    },
+    {
+      "record_id": "REC_0260",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0396",
+      "field": "Category_L1",
+      "old": "Injectables",
+      "new": "Regenerative"
+    },
+    {
+      "record_id": "REC_0396",
+      "field": "Category_L2",
+      "old": "Skin Booster",
+      "new": "Exosome"
+    },
+    {
+      "record_id": "REC_0396",
+      "field": "Tech_Type_Std",
+      "old": "Polynucleotide",
+      "new": "PDRN / Exosome Skin Booster"
+    },
+    {
+      "record_id": "REC_0396",
+      "field": "Tech_Type_Original",
+      "old": "Skin Booster (PDRN/Exosome)",
+      "new": "Microneedling-compatible exosome/PDRN skin booster"
+    },
+    {
+      "record_id": "REC_0396",
+      "field": "Backfill_Audit",
+      "old": "[orig:注射类 > 再生材料 > PDRN/PN 多聚核苷酸] LeVair含PDRN+外泌体,主线PDRN(需拆) | [v4_material_review_closure] non-hold backlog closed as accepted; review_feedback_batches_20260531",
+      "new": "[orig:注射类 > 再生材料 > PDRN/PN 多聚核苷酸] LeVair含PDRN+外泌体,主线PDRN(需拆) | [v4_material_review_closure] non-hold backlog closed as accepted; review_feedback_batches_20260531; user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0554",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0554",
+      "field": "Backfill_Audit",
+      "old": "[orig:注射类 > 透明质酸 HA > 交联HA(填充剂形态)] Pluryal HA填充剂; review_feedback_batches_20260531",
+      "new": "[orig:注射类 > 透明质酸 HA > 交联HA(填充剂形态)] Pluryal HA填充剂; review_feedback_batches_20260531; user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0143",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0143",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0143",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0389",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0389",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0389",
+      "field": "Tech_Type_Std",
+      "old": "Hyaluronic Acid",
+      "new": "HA Filler / PDRN Skin Booster"
+    },
+    {
+      "record_id": "REC_0389",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0592",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0592",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0592",
+      "field": "Category_L2",
+      "old": "Skin Booster",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0592",
+      "field": "Tech_Type_Std",
+      "old": "Polynucleotide",
+      "new": "PDO / PDRN-coated Thread"
+    },
+    {
+      "record_id": "REC_0592",
+      "field": "Tech_Type_Original",
+      "old": "PDO Threads / PDRN",
+      "new": "PDO cog threads / PDRN coating"
+    },
+    {
+      "record_id": "REC_0592",
+      "field": "Backfill_Audit",
+      "old": "[orig:注射类 > 再生材料 > PDRN/PN 多聚核苷酸] RE:Thread含PDO线+PDRN,主成分PDRN(需拆分) | [v4_material_review_closure] non-hold backlog closed as accepted; review_feedback_batches_20260531",
+      "new": "[orig:注射类 > 再生材料 > PDRN/PN 多聚核苷酸] RE:Thread含PDO线+PDRN,主成分PDRN(需拆分) | [v4_material_review_closure] non-hold backlog closed as accepted; review_feedback_batches_20260531; user_reg_indications_20260601_batch5: user-confirmed PN/PDRN/exosome/HA/thread indication and regulatory status applied; certificate numbers remain blank unless supplied."
+    }
+  ]
+}

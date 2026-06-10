@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-01T03:27:47+08:00",
+  "rows": 62,
+  "group_counts": {
+    "光电/能量源设备": 18,
+    "主流 HA 填充剂": 12,
+    "手术/脂肪移植/耗材": 3,
+    "韩国注射/耗材/MFDS P1": 6,
+    "再生材料/生物刺激剂": 2,
+    "韩国再生材料/MFDS P1": 6,
+    "韩国手术耗材/MFDS P1": 5,
+    "其他高优先级待核": 3,
+    "专业护肤/术后修护": 4,
+    "韩国光电设备/MFDS P1": 3
+  },
+  "product_gap_p0_p1_rows": 61,
+  "korea_p1_rows": 20,
+  "csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\next_user_confirmation_batch_latest.csv",
+  "html": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\next_user_confirmation_batch_latest.html"
+}

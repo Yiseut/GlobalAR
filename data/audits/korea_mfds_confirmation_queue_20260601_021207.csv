@@ -1,0 +1,270 @@
+﻿priority,status,company,brand,standard_product_name,track,form,product_id,seed_record_id,verification_status,official_product_evidence,other_registration_rows,other_regulators,recommended_action
+P1,需先核产品身份，再查 MFDS,Aezian,aesPlla,aesPlla PLLA Filler,Injectables,Biostimulator,prod_3efc789ddb46,REC_1054,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Baz Biomedic,NOVAPlus Nozzle,专用无针喷嘴 (Nozzle Kits),Consumables,Disposables,prod_d420cdff209c,REC_0501,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,BioPlus,REJURAN HB,REJURAN HB,Injectables,Skin Booster,prod_648384ce6a33,REC_0969,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Caregen,Aquashine,Aquashine,Injectables,Dermal Filler,prod_8e5a747e9769,REC_0932,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Daejoo,Medical Cosmetics (ODM),Post-Procedure,Injectables,Skin Booster,prod_5d5ec2334c4b,REC_0431,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Daejoo,PDRN / PN API,API (PDRN/PN),Injectables,Skin Booster,prod_8aca814d2399,REC_0533,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Dermakor,PDO / PCL Threads,Consumables,Injectables,Biostimulator,prod_1c85fe3bc0ee,REC_0532,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Dongbang Medical,Dongbang Needles,Acupuncture,EBD,Microneedling,prod_6b38425956af,REC_0198,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Dongkook Pharma,Elravie,Elravie,Injectables,Dermal Filler,prod_6d65d588bcf6,REC_0964,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Doum,Fat Transfer Cannulas,Fat Grafting,Consumables,Needles & Cannulas,prod_e176269738b7,REC_0268,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Doum,Infiltration Pump,Tool,Surgical,Surgical Tools,prod_30833f2b6462,REC_0344,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Doum,Power Assisted Liposuction (PAL),Liposuction,Surgical,Liposuction,prod_255ee8bb59a2,REC_0557,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,FacePharm Korea,Etrebelle,Etrebelle 50 mg / 200 mg,Injectables,Biostimulator,prod_1d01a539c54f,REC_1055,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Meamo Labs,BEAUX,BEAUX Collagen Stimulator (PDLLA/HA),Injectables,Biostimulator,prod_159a16acc962,REC_1051,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Meamo Labs,BEAUY,BEAUY (PLLA 200),Injectables,Biostimulator,prod_0d06a0c20ae0,REC_1052,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Medytox,New Biju,Cholic Acid Lipolytic,Injectables,Lipolytic,prod_90e11f082f05,REC_0883,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Medytox,NEWLUX,Botulinum Toxin Type A 100U,Injectables,Neurotoxin,prod_a85c058406fc,TOPLINE_MEDYTOX_NEWLUX_20260530,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,NCRI,Mosquito Needle,Carbon Nanotube Needle,Consumables,Needles & Cannulas,prod_fa0f0d665a69,REC_0467,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Reanzen,Nesfill,Nesfill / Reanzen Threads,Injectables,Biostimulator,prod_785ba96d1b84,REC_0487,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Tentech,10Thera,10Thera (TenThera),EBD,HIFU,prod_53c8e4eddfc4,REC_0005,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,Tentech,10Therma,10Therma (TenTherma),EBD,Radiofrequency,prod_1410ca60fe8f,REC_0006,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,USCAREPHARM,ERBELLA,ERBELLA PLA PLUS AQ / EPI,Injectables,Skin Booster,prod_87053e266024,REC_1053,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P1,需先核产品身份，再查 MFDS,WEDERM,POWER COL-TRA,POWER COL-TRA,Injectables,Biostimulator,prod_197658025e6f,REC_1050,unverified_seed,no,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Abio Materials,BioExo-Water,植物外泌体原料,Regenerative,Exosome,prod_5237f68ba525,REC_0077,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Abio Materials,Celexo,术后修复与抗衰,EBD,Microneedling,prod_5c030635760a,REC_0104,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Abio Materials,CellExosome®,外泌体皮肤动能素/水光,Regenerative,Exosome,prod_a5ee1496505f,REC_0107,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Abio Materials,Lucidor,护肤品,Regenerative,Exosome,prod_c27e26b61c0f,REC_0413,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Across,Dermalax,HA Dermal Fillers,Injectables,Dermal Filler,prod_118ab4dff259,REC_0167,official_product_and_spec_cross_checked,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Across,Persnica,HA Dermal Fillers,Injectables,Dermal Filler,prod_769aa48e85f4,REC_0537,official_evidence_promoted,yes,1,EUDAMED / European Commission,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Across,Revolax,HA Dermal Fillers,Injectables,Dermal Filler,prod_48d9e846b0fc,REC_0615,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Across,The Chaeum,HA Dermal Fillers,Injectables,Dermal Filler,prod_db526d37c263,REC_0693,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Across,Volus 10,HA Dermal Fillers,Injectables,Dermal Filler,prod_a064e42b320b,REC_0758,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Agnes Medical,Agnes RF,绝缘微针射频,EBD,Radiofrequency,prod_44cc33ddc1de,REC_0018,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Asterasys,Futera Dots,点阵射频 (Fractional RF),EBD,Radiofrequency,prod_8ac097cddd93,REC_0289,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Asterasys,Liftera A / Liftera V,高强度聚焦超声 (HIFU),EBD,HIFU,prod_b70fbfc60b13,REC_0398,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Asterasys,Liftera Cool,冷却型聚焦超声 (Cooled HIFU),EBD,HIFU,prod_fdff6d5978e8,REC_0399,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Baz Biomedic,NOVAPlus,无针药物递送系统 (Needle-Free Injector),Consumables,Needles & Cannulas,prod_e73c210bf8b2,REC_0500,official_spec_candidate_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Be Aes Labs,PLAXPOT,等离子皮肤再生仪 (Plasma Device),EBD,Plasma,prod_6057e93d791b,REC_0551,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Be Aes Labs,PLAXPOT Tips,等离子导入头 (Plasma Tip),EBD,Plasma,prod_4cb7ff56d389,REC_0552,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Beamed,Hellas EVO / Hellas RT,Q-Switched Nd:YAG,EBD,Laser,prod_0d45ca0c7712,REC_0315,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Beamed,Maxell,IPL (强脉冲光),EBD,IPL,prod_ff7925b3730e,REC_0428,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Beamed,Unixel RF,CO2 Fractional Laser,EBD,Laser,prod_f9fde9d391b6,REC_0725,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BioPlus,ACROSS,ACROSS,Injectables,Dermal Filler,prod_4ae5a7c8f961,REC_0967,official_evidence_promoted,yes,2,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BioPlus,DeneB,Body Filler,Injectables,Dermal Filler,prod_d5b2f27e12d5,REC_0163,official_evidence_promoted,yes,1,EUDAMED / European Commission,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BioPlus,HyalDew,HA Dermal Filler,Injectables,Dermal Filler,prod_92f8a1e94062,REC_0328,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BioPlus,REJURAN,REJURAN,Injectables,Skin Booster,prod_4efdfa479c82,REC_0968,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BioPlus,SkinPlus-Hyal,HA Dermal Filler,Injectables,Dermal Filler,prod_84777f8a86ec,REC_0663,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bison Medical,Cynergy / Dual Yellow (Tech),Copper Bromide Laser,EBD,Laser,prod_b0fe499ed8b0,REC_0146,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bison Medical,Dual Accento,Dual Wavelength Laser,EBD,Laser,prod_b10f6cd187fc,REC_0207,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bison Medical,Fire-Xel,Fractional CO2 Laser,EBD,Laser,prod_eb1e88806d8d,REC_0273,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bison Medical,Lucid Q-PTP,Q-Switched Nd:YAG,EBD,Laser,prod_d585e7929cef,REC_0412,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bluecore,Fouri,Hybrid Laser (CO2+Er:YAG),EBD,Laser,prod_88e8f8e32c49,REC_0283,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bluecore,IRIS,Q-Switched Nd:YAG,EBD,Laser,prod_e76c1cf1a6cb,REC_0352,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bluecore,Picore,Picosecond Nd:YAG,EBD,Laser,prod_b5b19b99e3f7,REC_0544,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BNC Korea,BONIVA,BONIVA,Injectables,Neurotoxin,prod_c013792ba2b5,REC_0973,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BNC Korea,BONIVA FILLER,BONIVA Filler,Injectables,Dermal Filler,prod_26725a451fd7,REC_0974,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BNC Korea,Cutegel,Cutegel NMPA HA filler (deep dermis),Injectables,Dermal Filler,prod_bf4ea3166ef3,REC_1031,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BNC Korea,Cutegel,Cutegel NMPA HA filler (middle dermis),Injectables,Dermal Filler,prod_6bddba58542f,REC_1032,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BNC Korea,Cutegel Lidocaine,Cutegel Lidocaine NMPA HA filler (middle dermis),Injectables,Dermal Filler,prod_15c04124bfb8,REC_1030,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BNC Korea,Cutegel Lidocaine,Cutegel Lidocaine NMPA medicated HA filler,Injectables,Dermal Filler,prod_d67645230f76,REC_1033,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BNC Korea,Lumifil,L-Kiss / L-Max,Injectables,Dermal Filler,prod_517462ddb18e,REC_0417,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bomtech Electronics,A-One / SDW,Skin Diagnosis,EBD,Skin Diagnosis,prod_1626ab414ab5,REC_0034,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bomtech Electronics,Digital Pop / Bom i-Touch,PMU / Microneedling,EBD,Microneedling,prod_719e5b88387e,REC_0189,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Bomtech Electronics,Refine,Auto-MTS,EBD,Microneedling,prod_09c8433a608f,REC_0595,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BR Pharm,Derm S,Post-Procedure Care,Injectables,Skin Booster,prod_0803c36d054e,REC_0164,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BR Pharm,HP Cell Vitaran,PDRN / PN Injection,Injectables,Skin Booster,prod_d9c1ddea77c1,REC_0319,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,BR Pharm,Revitrane,HA Dermal Filler,Injectables,Dermal Filler,prod_2208755ef810,REC_0613,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Caregen,Dermaheal,Dermaheal,Injectables,Mesotherapy,prod_3db628294f2c,REC_0933,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Caregen,Dermaheal / Aquashine,Skin Booster / Meso,Injectables,Dermal Filler,prod_f72f3e4d0e72,REC_0166,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Caregen,DR. CYJ,DR. CYJ Hair Filler,Injectables,Dermal Filler,prod_64ad26738e7a,REC_0931,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Caregen,Dr. CYJ Hair Filler,Hair Filler,Injectables,Dermal Filler,prod_2c785d3f4372,REC_0201,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Caregen,Prostrolane Series,Peptide Dermal Filler,Injectables,Dermal Filler,prod_d5cee00a7fe9,REC_0569,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Caregen,Revofil,Revofil,Injectables,Dermal Filler,prod_a3b3934f8c77,REC_0934,official_evidence_promoted,yes,1,EUDAMED / European Commission,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,CGBIO / Cell Growth Bio,AiLEENE / GISELLELIGNE,HA Filler,Injectables,Dermal Filler,prod_f955aa625ac2,REC_0020,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,CGBIO / Cell Growth Bio,CELLUNIT,SVF Isolation,Regenerative,Cell Therapy,prod_4f84b27dbc16,REC_0111,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,CGBIO / Cell Growth Bio,CGBIO HA Filler,CGBIO NMPA HA filler (deep dermis/subcutaneous),Injectables,Dermal Filler,prod_dab4456d0074,REC_1027,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,CGBIO / Cell Growth Bio,CGBIO HA Filler,CGBIO NMPA HA filler (mid-to-deep dermis),Injectables,Dermal Filler,prod_2723b68a7718,REC_1026,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,CGBIO / Cell Growth Bio,DERMAREVIVE,Exosome/Microneedle,Regenerative,Exosome,prod_17911e49bc65,REC_0174,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,CGBIO / Cell Growth Bio,FACETEM,FACETEM / FACETEM S CaHA Filler,Injectables,Dermal Filler,prod_8f2f08496a8c,REC_0266,official_document_cross_checked,yes,1,Official labeling,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,CGBIO / Cell Growth Bio,NOVOSIS,Growth Factor,Injectables,Dermal Filler,prod_58da5da1427a,REC_0504,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Cha Meditech,Celltermi,Skin Booster,Injectables,Skin Booster,prod_a8401ea0624d,REC_0108,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Cha Meditech,Exosome Skin Booster,Exosome,Injectables,Skin Booster,prod_2d4a8fd2cc8a,REC_0265,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Cha Meditech,HyaFilia,HA Dermal Filler,Injectables,Dermal Filler,prod_a3c4c96b3cb0,REC_0325,official_product_and_spec_cross_checked,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Cha Meditech,HyaFilia ME:DAM,HA Dermal Filler,Injectables,Dermal Filler,prod_fca98d0ecf02,REC_0326,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Chaeum Pharma,DLS (Face/Body),Biostimulator (PDLLA),Injectables,Biostimulator,prod_1f3d11bdb148,REC_0196,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Chaeum Pharma,V7 (V-Seven),PDRN / PN,Injectables,Skin Booster,prod_ccfdce7b6ac2,REC_0731,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Chaeum Pharma,VOM / VOM O/M/V,HA Filler,EBD,Radiofrequency,prod_2458c93e680b,REC_0759,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,CLATUU,CLATUU Alpha,EBD,Cryotherapy,prod_6b6a0e3e9272,REC_0913,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,Clatuu Alpha,Cryolipolysis,EBD,Cryotherapy,prod_c11d7beb341d,REC_0116,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,FORSHAPE,FORSHAPE,EBD,Radiofrequency,prod_fefe21c20b2a,REC_0916,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,Scizer,Body HIFU,EBD,HIFU,prod_dc6dcb5198b0,REC_0633,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,SCIZER,SCIZER,EBD,HIFU,prod_6f5741324e5d,REC_0914,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,Ultraformer III / MPT (Shurink),HIFU (Ultrasound),EBD,HIFU,prod_f3ac7de00cf3,REC_0723,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,ULTRAFORMER MPT,Shurink Universe,EBD,HIFU,prod_40e14a3ef3da,REC_0911,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,VOLNEWMER,EVERESSE (US),EBD,Radiofrequency,prod_d28a080f123c,REC_0912,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Classys,Volnewmer,Monopolar RF,EBD,Radiofrequency,prod_d0deae9fe331,REC_0757,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Daejoo,Dr. DMA / PDRN Injection,Mesotherapy,EBD,EMS,prod_7aaee3d51236,REC_0202,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Daewoong,Easydew (RX / DW-EGF),EGF Skincare,Injectables,Skin Booster,prod_0ce1204a3ad1,REC_0214,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Daewoong,Nabota (Jeuveau / Nuceiva),Botulinum Toxin,Injectables,Neurotoxin,prod_9060828d2c15,REC_0473,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Daewoong,V-OLET,Lipolysis,Injectables,Lipolytic,prod_6b766e97c020,REC_0756,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Daeyang Medical,Focus Dual,HIFU + RF Microneedling,EBD,Microneedling,prod_1104b252f1d2,REC_0276,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Daeyang Medical,Liftron,RF Microneedling,EBD,Microneedling,prod_8438280d11e4,REC_0400,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Daeyang Medical,VinuShape,Body Contouring,EBD,Radiofrequency,prod_f487b78b371b,REC_0747,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dermakor,Micro Cannulas,Cannulas,Injectables,Dermal Filler,prod_afa2169379b3,REC_0452,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dexlevo,GOURI,Liquid PCL,Injectables,Biostimulator,prod_c019a8d54482,REC_0307,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dexlevo,Miracle,Miracle L / H,Injectables,Biostimulator,prod_02295d3779ba,REC_0459,official_product_page_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,DFK Biolab,Exo One,Exosomes,Regenerative,Exosome,prod_1ce5f9b8db37,REC_0259,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,DFK Biolab,Hyalmass,Body Filler,Injectables,Dermal Filler,prod_e7b0d1042e84,REC_0329,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,DFK Biolab,S-DNA,PDRN / Skin Booster,Injectables,Skin Booster,prod_f80e1322cc26,REC_0636,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongbang Medical,Elasty Filler,Elasty Filler NMPA HA filler (mid-to-deep dermis),Injectables,Dermal Filler,prod_321e882f2e01,REC_1024,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongbang Medical,Elasty Filler,Elasty Filler NMPA HA filler (nasolabial fold),Injectables,Dermal Filler,prod_097ef8f4bb10,REC_1025,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongbang Medical,Elasty Filler,HA Dermal Filler,Injectables,Dermal Filler,prod_023b84807c23,REC_0219,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongbang Medical,Elasty Threads,PDO Threads,Injectables,Thread Lift,prod_b7b47ba01d84,REC_0220,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongkook Pharma,Bellast (贝拉斯特),HA Dermal Filler,Injectables,Dermal Filler,prod_0514ecba49cc,REC_0068,official_product_page_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongkook Pharma,Centellian24 (Madeca Cream),Cosmeceuticals,EBD,Microneedling,prod_d3653ff5a469,REC_0112,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongkook Pharma,Hyaron (海珠),HA Skin Booster,Injectables,Dermal Filler,prod_ff0ece9e27eb,REC_0332,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dongkook Pharma,Nabota,Nabota,Injectables,Neurotoxin,prod_f3262e00d428,REC_0963,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dr. PRP,Dr. PRP Centrifuge,Centrifuge,EBD,Radiofrequency,prod_4ca2005d07dc,REC_0204,official_spec_candidate_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Dr. PRP,Dr. PRP Kit,PRP Kit,EBD,Radiofrequency,prod_7e29af20abe6,REC_0205,official_spec_candidate_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,DTS MG,DTS Roller (Disk Type),Microneedling,EBD,Microneedling,prod_348cede7a525,REC_0206,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,DTS MG,Genosys (荷诺诗),Post-Procedure,EBD,Laser,prod_f0fc46662ee2,REC_0297,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,DTS MG,HR3 Matrix,Hair Loss,EBD,Microneedling,prod_cd3bd51cb4e5,REC_0320,official_spec_candidate_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Eunsung,Eunsung,CoolShaping 2,EBD,Cryotherapy,prod_12bd71c49908,REC_0247,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Eunsung,Eunsung,Vital Injector 2 / 3,Injectables,Mesotherapy,prod_d227177895d7,REC_0245,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,ExoCoBio,ASCE+,Regenerative Aesthetics,Regenerative,Exosome,prod_af01da567664,REC_0050,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,ExoCoBio,Celltweet,Cosmeceuticals,Regenerative,Exosome,prod_71b18457443a,REC_0109,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,ExoCoBio,EXOMAGE,Cosmeceuticals,Regenerative,Exosome,prod_acac3f705bb9,REC_0264,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Fijie,Novacutan,YBio / SBio,Injectables,Dermal Filler,prod_97704cd84eb2,REC_0499,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,FineMEC,FineMEC,Nobleen,EBD,Laser,prod_635571c0f47a,REC_0272,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Forest Hills Lab Korea,Rejeunesse,Rejeunesse NMPA HA Filler,Injectables,Dermal Filler,prod_fe4548278050,REC_1035,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,GANA,GANA,GANA DA,Injectables,Lipolytic,prod_67982711aa8b,REC_0292,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,GANA,GANA,GANA Fill / GANA V,Injectables,Biostimulator,prod_a8fb29b09711,REC_0291,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,GANA,GANA,GANA HA (Body/Face),Injectables,Dermal Filler,prod_ec01791c3d66,REC_0290,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,GANA,GANA,GANA PNV / PNV+,Injectables,Skin Booster,prod_776580700a03,REC_0293,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,GCS,GCS,The Lift / PLLA Threads,Injectables,Thread Lift,prod_afedb735738e,REC_0294,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Genoss,Monalisa,Monalisa / Monalisa Lidocaine,Injectables,Dermal Filler,prod_9c02b95b86f1,REC_0463,official_product_and_spec_cross_checked,yes,2,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Grand Aespio,X-Lift,X-Lift / X-Line,Injectables,Biostimulator,prod_66ecebdf04bc,REC_0775,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,GTG Wellness,LeShape,LeShape / U-One,EBD,Laser,prod_98b60272b235,REC_0393,official_spec_candidate_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Haim Aesthetics,Eloquence,Eloquence (Fine/Deep/Sub-Q),Injectables,Dermal Filler,prod_82f3430ed451,REC_0224,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Haim Aesthetics,LeVair,LeVair PDRN / Exovair,Injectables,Skin Booster,prod_69f3db034694,REC_0396,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,HansBiomed.,BellaGel,BellaGel Micro,Implants,Breast Implant,prod_317aa4161f85,REC_0067,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,HansBiomed.,MegaDerm,MegaDerm,Implants,Tissue Matrix,prod_b851b8d645e7,REC_0975,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,HansBiomed.,MegaFill,MegaFill,Injectables,Dermal Filler,prod_cfde60e90695,REC_0976,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,HansBiomed.,MINT Lift,MINT (Fine/Petit/Easy),Injectables,Thread Lift,prod_c566406b61d0,REC_0458,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Healux,i-THREAD,Matrix / Cog,Injectables,Biostimulator,prod_4ae06e3d3156,REC_0353,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hironic,DOUBLO,DOUBLO Gold,EBD,HIFU,prod_a76a87ba7c16,REC_0947,official_evidence_promoted,yes,1,Notified Body / Manufacturer,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hironic,Doublo,New Doublo,EBD,Radiofrequency,prod_e998a6e999a4,REC_0199,official_evidence_promoted,yes,2,FDA; Notified Body / Manufacturer,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hironic,MICOOL,MICOOL-S/MICOOL-A,EBD,Cryotherapy,prod_865309768b06,REC_0952,official_evidence_promoted,yes,1,EUDAMED / European Commission,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hironic,New Doublo,New Doublo 2.0,EBD,Radiofrequency,prod_c43b4e296ca2,REC_0948,official_evidence_promoted,yes,2,FDA; Notified Body / Manufacturer,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hironic,PicoHi,PicoHi 300,EBD,Laser,prod_9bb0117dfaf5,REC_0543,official_evidence_promoted,yes,2,FDA; Notified Body / Manufacturer,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hironic,SILKRO,SILKRO,EBD,Radiofrequency,prod_91d9d7eb822e,REC_0950,official_evidence_promoted,yes,4,EUDAMED / European Commission; FDA; Notified Body / Manufacturer,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hironic,Ultra Vera,Ultra Vera,EBD,HIFU,prod_02a6e5495b56,REC_0951,official_evidence_promoted,yes,1,Notified Body / Manufacturer,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,HJorations,LIPO VELA,LIPO VELA V,Injectables,Lipolytic,prod_2af5e0e0531e,REC_0403,official_product_page_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,HJorations,TOXPIA,TOXPIA 100u,Injectables,Neurotoxin,prod_16ef1286e357,REC_0708,official_product_page_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,BlueRose,BlueRose Threads,Injectables,Thread Lift,prod_2903e9009d75,REC_0088,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,Bylizen,HA Skin Booster,Injectables,Dermal Filler,prod_825c38109f01,REC_0875,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,Dermalax,HA Filler Blob Technology,Injectables,Dermal Filler,prod_95f3372fb201,REC_0876,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,Letybo / Botulax,Letybo (LetibotulinumtoxinA),Injectables,Neurotoxin,prod_d1a2783c56d8,REC_0395,official_product_and_spec_cross_checked,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,The Chaeum,The Chaeum (Premium/Shape),Injectables,Dermal Filler,prod_fdf018f29690,REC_0694,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,The Chaeum Premium No.1,HA Filler for Fine Lines,Injectables,Dermal Filler,prod_aaed356a0a30,REC_0877,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,The Chaeum Premium No.2,HA Filler for Moderate Wrinkles,Injectables,Dermal Filler,prod_453907611a76,REC_0878,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,The Chaeum Premium No.3,HA Filler for Deep Wrinkles,Injectables,Dermal Filler,prod_c4df4d3ffc60,REC_0879,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hugel,The Chaeum Premium No.4,HA Filler for Volume,Injectables,Dermal Filler,prod_d354284a3d37,REC_0880,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Humedix,Pre-filled Sodium Hyaluronate Syringe,HA Dermal Filler,Injectables,Dermal Filler,prod_efe169c02ddf,NMPA_IMPORT_HUMEDIX_HA_20260601,official_evidence_promoted,yes,2,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Huons BioPharma,HUTOX,HUTOX 100U Botulinum Toxin Type A,Injectables,Neurotoxin,prod_4379c6237efa,REC_1038,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Huons Meditech,DermaShine,DermaShine Duo RF,EBD,Radiofrequency,prod_fad4dbfdec67,REC_0177,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Huons Meditech,DermaShine,DermaShine Pro / Balance,Consumables,Needles & Cannulas,prod_34f1bcd4274c,REC_0176,official_document_cross_checked,yes,1,CE/MDR,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Huons Meditech,Jill's of,Jill's of (Jill'SOF),Consumables,Needles & Cannulas,prod_cf51c1755a7c,REC_0365,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Hyundae Meditech,Secret,Secret Line,Injectables,Thread Lift,prod_e589d8549306,REC_0639,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,IDS / Innovative Device Solutions,IDS,XLASE / Oron,EBD,Laser,prod_446cbbef2b08,REC_0338,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Ilooda,Fraxis,Fraxis Duo,EBD,Laser,prod_7730ec2527ca,REC_0286,official_document_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Ilooda,Secret,Secret RF / Duo,EBD,Microneedling,prod_c618b5a64752,REC_0638,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,ITC,PLACL,V-Line / Omega,EBD,HIFU,prod_299ac11c38df,REC_0548,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jaysean / J Syeon,La Pomme,La Pomme / Caratfill,Injectables,Dermal Filler,prod_2856e814e526,REC_0389,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,JDBIO,Richesse,Richesse / Richesse Eyes,Injectables,Dermal Filler,prod_111999385ece,REC_0619,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jeisys Medical,INTRAcel,INTRAcel PRO,EBD,Microneedling,prod_575599ff2562,REC_1010,official_document_cross_checked,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jeisys Medical,Jeisys,Density,EBD,Radiofrequency,prod_954fd28ff315,REC_0361,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jeisys Medical,Jeisys,EdgeONE,EBD,Laser,prod_7a2627f43512,REC_1011,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jeisys Medical,Jeisys,LinearZ (Ultracel [zi:]),EBD,HIFU,prod_16f7a0517407,REC_0360,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jeisys Medical,Jeisys,Potenza,EBD,Radiofrequency,prod_4a3055eb9885,REC_0359,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jetema,e.p.t.q.,e.p.t.q. (S100/300/500),Injectables,Dermal Filler,prod_6538b2f63b54,REC_0213,official_product_and_spec_cross_checked,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jetema,Linerase,Linerase,Injectables,Skin Booster,prod_d2cc9437fbbb,REC_0966,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jetema,The Toxin,Liztox / The Toxin,Injectables,Neurotoxin,prod_4a10d92c3fae,REC_0696,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jetema,Yvoire,Yvoire,EBD,IPL,prod_f2adaaca4e65,REC_0965,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jion Meditech,Dualsonic Maximum,Multi-Function,EBD,Radiofrequency,prod_5a822478f351,REC_0209,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jion Meditech,Dualsonic Professional / Luxury,Home Use HIFU,EBD,HIFU,prod_3fa48a96f243,REC_0210,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,JMBiotech,RIBESKIN,CO2 Carboxy / Pink Aging,EBD,Laser,prod_6acacc13ad62,REC_0618,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Jskbiomed,Mirajet,Mirajet,EBD,Laser,prod_5004843144bd,REC_0460,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,JYSUNG Meditech,JYSUNG,Cannula / Meso Needle,Injectables,Mesotherapy,prod_b542390745a8,REC_0371,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,K1 Med,Magma,Magma / Xtream,EBD,HIFU,prod_a1e05ddb320c,REC_0422,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,K1 Med,Magma,Magma / Xtream,EBD,Laser,prod_9c63bea8297b,REC_0423,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Koru Pharma,Crystal / Avalon,Crystal Lite/Deep/Ultra,Injectables,Dermal Filler,prod_ee7a595768eb,REC_0143,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Koru Pharma,Mesoheal,Mesoheal Body,Injectables,Dermal Filler,prod_fe9bd2c78a5f,REC_0441,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Koru Pharma,Mesoheal,Mesoheal Body / Pink Glow,Injectables,Dermal Filler,prod_122ef924ac55,REC_0440,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Korust,Utims,Utims A3,EBD,HIFU,prod_f3e61c8195c4,REC_0727,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Korust,UTIMS,UTIMS A3 / A3-P,EBD,HIFU,prod_312d51cc72d7,REC_0728,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lameditech,HandyRay,HandyRay / Lite,EBD,Laser,prod_2d8dbd0394b6,REC_0310,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lameditech,Puraxel,Puraxel-Me,EBD,Laser,prod_f70793a53347,REC_0572,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,LG Chem,Yvoire,Yvoire (Classic/Volume),Injectables,Dermal Filler,prod_e074be487e63,REC_0778,official_product_and_spec_cross_checked,yes,4,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Healite,Healite II,EBD,Radiofrequency,prod_7f47b4115f90,REC_1008,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,LaseMD,LaseMD Ultra,EBD,Laser,prod_48196660d7e3,REC_1004,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Lutronic,Accufit,EBD,EMS,prod_24a96d4dceb4,REC_1007,official_evidence_promoted,yes,5,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Lutronic,Clarity II,EBD,Laser,prod_b0efb78d5400,REC_1006,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Lutronic,eCO2 Plus,EBD,Laser,prod_e298bdfe05b0,REC_1005,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Lutronic,Genius,EBD,Microneedling,prod_19403421ebcf,REC_0419,official_evidence_promoted,yes,5,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Lutronic,Genius,EBD,Microneedling,prod_67410421beb1,REC_1003,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Lutronic,Hollywood Spectra,EBD,Laser,prod_89333a6ecb2d,REC_0420,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Lutronic,LaseMD Ultra,EBD,Laser,prod_98e1ab884d55,REC_0418,official_evidence_promoted,yes,3,EUDAMED / European Commission; FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Lutronic / Cynosure Lutronic,Mosaic,Mosaic 3D,EBD,Laser,prod_3b0c60aa688d,REC_1009,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medikan International,Lipokit,Lipokit / Adivive,Surgical,Liposuction,prod_5bdad9c1a581,REC_0406,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medytox,Coretox,Animal-Free Botulinum Toxin,Injectables,Neurotoxin,prod_5b477b4aab50,REC_0129,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medytox,Innotox,Innotox 50U/100U,Injectables,Neurotoxin,prod_f16b720710a4,REC_0349,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medytox,Neuramis,Neuramis (Deep/Volume),Injectables,Dermal Filler,prod_47cb493205f7,REC_0489,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medytox,Neuramis Deep,HA Filler 20mg/ml,Injectables,Dermal Filler,prod_88adbabfca4e,REC_0885,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medytox,Neuramis Light,HA Filler for Superficial,EBD,Radiofrequency,prod_d9e270e32e4c,REC_0884,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medytox,Neuramis Volume,HA Filler for Volume,Injectables,Dermal Filler,prod_404084cc36eb,REC_0886,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Medytox,Neuronox / Meditoxin,Neuronox (Botulinum Toxin Type A),Injectables,Neurotoxin,prod_38346130aefe,REC_0492,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Meta Biomed,Da:all,Da:all Threads (Mono/Screw/I-Screw),Injectables,Thread Lift,prod_d3f4cc74d5e0,REC_0149,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,N-Finders,RE: Thread,RE: N-COG / PDRN,Injectables,Skin Booster,prod_28cc6470cc92,REC_0592,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,NeoDr,Neo Thread,Multi Thread (Twin/Triple),EBD,IPL,prod_c127129a8dd6,REC_0481,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Neogenesis,Regenovue,Regenovue (Deep/Sub-Q),Injectables,Dermal Filler,prod_ecb2d81aa136,REC_0597,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Newpong,LSSA,LSSA (Liposculpture),EBD,HIFU,prod_f5332f3a5753,REC_0411,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,NOBAMEDI,便携式电子注射枪,便携式电子注射枪,Consumables,Injection Devices,prod_484f03027c12,REC_0793,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,NOBAMEDI,智能负压水光仪,智能负压水光仪,Consumables,Injection Devices,prod_a92cb8b2a29b,REC_0792,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,NOBAMEDI,笔式微针注射器,笔式微针注射器,EBD,Microneedling,prod_76db8bfa1f7f,REC_0794,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,NOBAMEDI,针头,针头,Consumables,Disposables,prod_07a193dfa02a,REC_0795,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Onetech,Onetech,Picocare (Distributor?),EBD,Laser,prod_032038c85f9a,REC_0518,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Oreon Life Science,Aessoa,Aessoa (Shine/Deep),Injectables,Dermal Filler,prod_979fbd2d80a9,REC_0015,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Oreon Life Science,Rainbow,Rainbow Threads,Injectables,Biostimulator,prod_150ec772863a,REC_0591,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Ostin Bio,Audrey,Audrey (H/S/M) / Body,Injectables,Dermal Filler,prod_a8c428e8f3ec,REC_0057,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Ostin Bio,B-OstIN,B-OstIN,Consumables,Raw Materials,prod_3ee70ed6dbfb,REC_0093,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,PharmaResearch / PR Bio,Rejuran,Rejuran Healer,Injectables,Skin Booster,prod_7ea8f16a2265,REC_0970,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,PharmaResearch / PR Bio,Rejuran,Rejuran Healer / HB Plus,Injectables,Skin Booster,prod_acddd3fcf65f,REC_0601,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,PharmaResearch / PR Bio,Rejuran,Rejuran i / s,Injectables,Skin Booster,prod_370e7de7fb2d,REC_0602,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,PharmaResearch / PR Bio,Rejuran,Rejuran Shine,Injectables,Dermal Filler,prod_6c7426692e00,REC_0971,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Primoris International,ExoHealer,ExoHealer / Filcore,Regenerative,Exosome,prod_d6af2a1ed735,REC_0262,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,PRP Science,Olidia,Olidia / 爱唯缇 PLLA facial filler,Injectables,Biostimulator,prod_0393dd76da33,REC_0515,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,RecensMedical,TargetCool,Precision Cooling,EBD,Cryotherapy,prod_b71a1cc66a50,REC_0686,official_product_page_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,RecensMedical,TargetCool (Dermatology Mode),Cryotherapy,EBD,Cryotherapy,prod_e500d6260056,REC_0687,official_document_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Regen Biotech,AestheFill,AestheFill (PDLLA),Injectables,Biostimulator,prod_0d773d4bf9db,REC_0016,official_product_and_spec_cross_checked,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,RFBio,Sardenya,Sardenya (Deep/Shape),Injectables,Dermal Filler,prod_ac8031252362,REC_0628,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,S. Thepharm,QTFill,QTFill Plus,Injectables,Dermal Filler,prod_8950b9e51f0d,REC_0579,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Samyang Holdings,Croquis,Croquis Threads,Injectables,Thread Lift,prod_36e16dbfca8b,REC_0137,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,"SCL CO., LTD.",A-Viearchee,A-Viearchee HA Filler,Injectables,Dermal Filler,prod_92ea4756fe77,REC_1034,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Seoulin Medicare,Plasmage,Plasmage,EBD,Plasma,prod_432f37e9095f,REC_0550,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,ShenB,Vivace / Virtue RF,Virtue RF,EBD,Microneedling,prod_a18f5a8b3e51,REC_0754,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Tentech,Regevan,Regevan PN,EBD,HIFU,prod_aef38a23730f,REC_0598,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Tesslift,Tesslift,Tesslift Soft,Injectables,Thread Lift,prod_98861342eeb7,REC_0692,official_product_page_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Ultra V,Ultra V,Ultra V Lift (Hiko/Cog),Injectables,Biostimulator,prod_3da98131f9ad,REC_0721,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Union Medical,AirJet,AirJet II,EBD,Other EBD,prod_81b428fce6e4,REC_0021,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Vaim,Juvelook,Juvelook / Lenisna,Injectables,Biostimulator,prod_315b1d771ebc,REC_0370,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,ViOL,Sylfirm X,Sylfirm X,EBD,Microneedling,prod_f947b4f14336,REC_0684,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,VSoft Lift,VSoft,VSoft Lift Threads,Injectables,Thread Lift,prod_94de9d607127,REC_0760,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,HairBeam,HairBeam/HairBoom,EBD,Laser,prod_49a9c5d5acd1,REC_0945,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,OLIGIO,OLIGIO/OLIGIO KISS,EBD,Radiofrequency,prod_094243b8e2bd,REC_0941,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,PASTELLE,PASTELLE Pro,EBD,Laser,prod_89d5b8dfdcf0,REC_0946,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,PICOALEX,PICOALEX,EBD,Laser,prod_c0cd8164840f,REC_0944,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,PICOCARE,PICOCARE 450/Majesty,EBD,Laser,prod_c9edd723d544,REC_0940,official_evidence_promoted,yes,2,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,SANDRO DUAL,SANDRO DUAL,EBD,Laser,prod_8b55aef7732b,REC_0942,official_document_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,ULTRASKIN,ULTRASKIN TIGHTAN II,EBD,HIFU,prod_bb2703fb8d76,REC_0943,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,Wontech,Lavieen,EBD,Laser,prod_c59257d9852e,REC_0767,official_evidence_promoted,yes,2,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,Wontech,Oligio,EBD,Radiofrequency,prod_41b15086576a,REC_0765,official_product_and_spec_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,Wontech,Pastelle,EBD,Laser,prod_b3e2fc3093a1,REC_0764,official_evidence_promoted,yes,2,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Wontech,Wontech,Picocare 450 / Majesty,EBD,Laser,prod_f3677588ff0d,REC_0766,official_evidence_promoted,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Woorhi Mecha,Woorhi,Laser Arms / EBD,EBD,Laser,prod_5d828f26cb5c,REC_0768,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Ycellbio Medical,Ycellbio,Ycellbio Kit,EBD,Radiofrequency,prod_2f00569cb52e,REC_0776,official_product_and_spec_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,YooYoung Pharmaceutical,Modified Sodium Hyaluronate Gel,HA Dermal Filler,Injectables,Dermal Filler,prod_7afe7d757a2c,NMPA_IMPORT_YOOYOUNG_HA_20260601,official_evidence_promoted,yes,1,NMPA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Youthera,Youthera,Youthera HIFU,EBD,HIFU,prod_c12ff5e2b4e2,REC_0777,official_document_cross_checked,yes,1,FDA,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。
+P2,产品已核，韩国 MFDS/KFDA 未确认,Zishel,Zishel,Zishel Rose,Injectables,Dermal Filler,prod_c3e8047ac0dd,REC_0786,official_document_cross_checked,yes,0,,查 MFDS/UDI 韩国医疗器械库；若无公开号，则标记为未公开，不影响官方产品事实。

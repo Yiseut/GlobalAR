@@ -1,0 +1,350 @@
+﻿seed_record_id,product_id,company,brand,standard_product_name,action_group,reason,source_url
+REC_0126,prod_2f91ca9586c5,A.A.M.S.,Concerto,Mesogun,A_not_explicit_user_rewrite,not_explicit_enough,https://medicaldevices-bg.com/therapy-devices/concerto/
+REC_0014,prod_c51a363262f4,Advance Esthetic,Adonyss,Adonyss,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Zemits,https://advance-esthetic.us/ultimate_skin_renewal_bundle
+REC_0851,prod_29134424e03e,Alma Lasers,DermaClear,Hydradermabrasion System,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Accent Prime,https://almalasers.com/product_cat/skin/
+REC_0058,prod_63bb8b978ce1,Alvi Prague,Autonomy / F-Series,综合美容工作站,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://alvi-prague.ae/about-us
+REC_0195,prod_a9a7cdbe4956,Alvi Prague,DL-7000 Ultra Pulse,半导体脱毛激光,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Diode 808nm,https://alvi-prague.ae/diode-lasers/
+REC_0434,prod_6de1107efdaa,Alvi Prague,MED-X,二氧化碳点阵激光,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:EXION Fractional RF,https://alvi-prague.com/fractional-laser-co2-med-x
+REC_0038,prod_ea1ee5b1932e,Aptos,Aptos Namica,玻尿酸功能线,A_not_explicit_user_rewrite,not_explicit_enough,https://namica.ngt.hk/
+REC_0043,prod_88c99020df94,Aquavit Pharmaceuticals,Aquagold Ampoules,医用级安瓶,A_not_explicit_user_rewrite,not_explicit_enough,https://aquagoldfinetouch.com/pages/aquagold
+REC_0008,prod_c4ae0e2960a6,Arthrex,ACA-Kit (Autologous Conditioned Adipose),ACA-Kit (Autologous Conditioned Adipose),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Touch My Skin (TMS) / Varioderm Mesolift,https://www.arthrex.com/resources/FL2-000936-en-US/title
+REC_0090,prod_edf297e7fbd6,BMED,Bontempi,B.A.F.F.I. Kit,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Aptos Nano,https://www.bontempimed.com/cataloghi/Brochure_Tecnica_BAFFI_BUTTOCK_Quaranta.pdf
+REC_0974,prod_26725a451fd7,BNC Korea,BONIVA FILLER,BONIVA Filler,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Cutegel Lidocaine,http://www.bnckorea.co.kr/eng/0201products.asp?ct1=G01&ct2=&seq=44&urlkeyword=FLORE+Lidocaine
+REC_0164,prod_0803c36d054e,BR Pharm,Derm S,Post-Procedure Care,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:HP Cell Vitaran,https://pamiderm.com/en/b/vitaran
+REC_0340,prod_febc8674f517,BRERA Medical,Imperium Med 400,RF & Ultrasound,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:LMWHA Home Care,https://www.breramedical.com/en/products/imperium-med/
+REC_0549,prod_75dcc03faa0f,BRERA Medical,Plasmage,Fractional Plasma,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Jovena,https://www.breramedical.com/home-en/bmt/depliant
+REC_0867,prod_b5b0c31cc885,BTL,EXION Clear RF,RF for Skin Clarity,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Emface,http://www.exion.com/
+REC_0871,prod_565dcef1d971,BTL,Exilis Ultra,RF + Ultrasound Combination,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://btl-vn.firmstudio.com/exilis/
+REC_0301,prod_943dfb98d110,BeautyBio,GloPRO,Microneedling Tool,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:LMWHA Home Care,https://beautybio.com/products/glopro-at-home-microneedling-tool?bvstate=pg%3A2%2Fct%3Aq
+REC_0071,prod_efeb75b92560,Benev,Benev GF Series (GF-DNA),Growth Factors,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:BOTOX Cosmetic,https://www.benev.com/benev-skincare
+REC_0667,prod_03ea16aa60a0,Benev,Smart Peels,Modified Acid System,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Benev Exosome (ERC / ERC+),https://exosomebybenev.com/
+REC_0086,prod_67608c04e0b3,Bio-Therapeutic,Bio-Ultimate Platinum,Microcurrent,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:BOTOX Cosmetic,https://www.biotherapeuticaus.com.au/pages/bio-ultimate-platinum
+REC_0967,prod_4ae5a7c8f961,BioPlus,ACROSS,ACROSS,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Volus 10,http://across.kr/eng/
+REC_0605,prod_81dc370a45cf,Biotec,Renova,Facial Platform,A_not_explicit_user_rewrite,not_explicit_enough,https://biotecitaliauk.co.uk/renova-omnia/
+REC_0287,prod_e5c12b6c2481,Blue Moon,Frozen,Cryolipolysis,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://www.perfect-blue.com/en/procedures/perfect-blue-medispa/cryolipolysis-lipomassage.html
+REC_0074,prod_3c8d61b13587,Body Health,BHS 201 / Cryo-Frequency,Cryo-Radiofrequency,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Venusian CO2 Therapy,https://bodyhealth.com.ar/en/refreeze-en/
+REC_0595,prod_09c8433a608f,Bomtech Electronics,Refine,Auto-MTS,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Aptos Wire / Needle,http://bomtech.net/english/product5_01_new.html?cate=product6
+REC_0138,prod_36e5518f310f,Brymill,Cry-Ac® / Cry-Ac®-3,Cryosurgery,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Cry-Baby®,https://www.brymill.com/docs/default-source/default-document-library/cry-ac_instructions_for_use_rev_4_english_rest_of_worlde920106f6d026b74931bff0000d12bb9.pdf?sfvrsn=0
+REC_0174,prod_17911e49bc65,CGBIO / Cell Growth Bio,DERMAREVIVE,Exosome/Microneedle,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Belotero Revive,https://www.dermareviveskincareltd.co.uk/exosomes/
+REC_0504,prod_58da5da1427a,CGBIO / Cell Growth Bio,NOVOSIS,Growth Factor,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Cutegel Lidocaine,https://www.cgbio.co.kr/en/product/aesthetics/aileene
+REC_0084,prod_b5144b7e9c39,CMed Aesthetics,BioReTherapy (Hydra/Lift),Post-Procedure,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:DTS Roller (Disk Type),https://cmedaestheticsaustralia.com.au/blogs/news/bioretherapy-system-biorepeelcl-%C2%AE-biorehydra-biorelift
+REC_0298,prod_32274b6a2644,Candela,GentleMax Pro / Pro Plus,Hair Removal Platform,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Cynergy / Dual Yellow (Tech),https://candelamedical.com/products/gentle-pro-series/
+REC_0865,prod_40519e61ef99,Candela,Glacē,Hydro-Dermabrasion + LED,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Nordlys,https://marketing.candelamedical.com/JP-CP-2025-11-Glace-Hydradermabrasion-White-Paper_LP.html
+REC_0497,prod_95127b4e1783,Candela,Nordlys,IPL / Multi-platform,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://candelamedical.com/resources/clinical-papers/nordlys-swt-ipl-clinical-evidence-compendium/
+REC_0933,prod_3db628294f2c,Caregen,Dermaheal,Dermaheal,A_not_explicit_user_rewrite,not_explicit_enough,http://dermaheal.com.cn/h-col-123.html
+REC_0108,prod_a8401ea0624d,Cha Meditech,Celltermi,Skin Booster,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Renuvion Dermal,https://www.chamt.co.kr/en/Products/Dorothy.aspx
+REC_0265,prod_2d4a8fd2cc8a,Cha Meditech,Exosome Skin Booster,Exosome,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:HyaFilia,https://www.chamt.co.kr/en/Products/Classic.aspx
+REC_0759,prod_2458c93e680b,Chaeum Pharma,VOM / VOM O/M/V,HA Filler,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:New Natural Line / XCellarisPRO,https://fillersfairy.com/product/chaeum-premium-3/
+REC_0723,prod_f3ac7de00cf3,Classys,Ultraformer III / MPT (Shurink),HIFU (Ultrasound),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:DL-7000 Ultra Pulse,https://ultraformer.com/ultraformer-%e2%85%a2/what-is-uf3/
+REC_0019,prod_63a2fcd1ee8d,Cliniccare,AHA / BHA Peels,Chemical Peel,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:LMWHA Home Care,https://cliniccare.se/chemical-peels/pure-peel
+REC_0128,prod_297bd24f7f45,Cocoon Medical,Cooltech Define / Cooltech,Cryolipolysis,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Soft Tissue Reinforcement,https://cooltechdefine.com/technology/
+REC_0670,prod_f9613565d24b,Collagen Matrix / Regenity Biosciences,Soft Tissue Reinforcement,Soft Tissue Scaffold,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Matrix,https://regenity.com/products-services/
+REC_0573,prod_275cdb6c6d7c,Croma Pharma,Pure HA / Farewell,Post-Procedure,A_not_explicit_user_rewrite,not_explicit_enough,https://www.croma.at/products-de-en-001/
+REC_0634,prod_4acbb96379cb,Cynosure,SculpSure,Submental Fat,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Elite iQ,https://www.cynosure.com/webcasts/sculpsure-webcast/
+REC_0901,prod_956e9aaf5595,DEKA,Lipo AI,1444nm Laser Lipolysis,A_not_explicit_user_rewrite,not_explicit_enough,https://technologies.dekalaser.com/en-GB/productdocuments.aspx?item=lipo_ai
+REC_0468,prod_38970f165cf3,DEKA,Motus AX / AY,Alexandrite Laser,A_not_explicit_user_rewrite,not_explicit_enough,https://dekalaser.com/products/motus-ax/
+REC_0899,prod_de4fe30d53c9,DEKA,Onda PRO,Coolwaves Microwave,A_not_explicit_user_rewrite,not_explicit_enough,https://technologies.dekalaser.com/es-ES/productdocuments.aspx?item=Onda_Pro
+REC_0668,prod_3ce57001f9c2,DEKA,SmartPico,Picosecond Laser,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:PRP-like Therapy,https://www.dekalaser.com/en-GB/product.aspx?item=SmartPICO
+REC_0329,prod_e7b0d1042e84,DFK Biolab,Hyalmass,Body Filler,A_not_explicit_user_rewrite,not_explicit_enough,https://filler-online.com/Hyalmass-Ultra-1x1-ml/0384
+REC_0193,prod_503047b92460,DSD Pharm,Dixidox de Luxe (Classic Line),Trichology,A_not_explicit_user_rewrite,not_explicit_enough,https://dsddeluxe.lv/recommended-therapy/en
+REC_0206,prod_348cede7a525,DTS MG,DTS Roller (Disk Type),Microneedling,A_not_explicit_user_rewrite,not_explicit_enough,https://dtsmg.com/en-brands/en-oem/
+REC_0214,prod_0ce1204a3ad1,Daewoong,Easydew (RX / DW-EGF),EGF Skincare,A_not_explicit_user_rewrite,not_explicit_enough,https://easydewjapan.com/renewal/about/
+REC_0152,prod_54658578e2d2,Decomedical,Decolaser,Diode Laser,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:TL-700 / Pico-Light,https://www.decomedical.com/en/decolaser-m-medical-aesthetic-devices/
+REC_0154,prod_e0b83cfd1538,Decomedical,Decopeel,Microdermabrasion,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Cryo-Radiofrequency (Refreeze),https://www.decomedical.com/en/medical-devices/
+REC_0155,prod_ef8e2f525d59,Decomedical,Decopress,Pressotherapy,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Cryo-Radiofrequency (Refreeze),https://www.decomedical.com/en/medical-devices/
+REC_0169,prod_3eeb761e39e2,DermapenWorld,Dermapen 4,Microneedling,A_not_explicit_user_rewrite,not_explicit_enough,https://www.dermapenworld.com/en-rw/dermapen-professional/dermapen4-app/how-use-dermapen
+REC_0170,prod_24428fdc6e75,DermapenWorld,Dermapen Home,Home Use,A_not_explicit_user_rewrite,not_explicit_enough,https://dermapenworld.co.uk/pages/landing-dermapen-home
+REC_0186,prod_a08ab337e76d,Dermoaroma,Dermoaroma PDRN,Mesotherapy,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://dermoaroma.com/dpg-prp/
+REC_0558,prod_30336ec4587c,Dives Med,Power Skin / Meso Series,Mesotherapy,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Dives Filler (Universal / Volume),https://premiumskin.lv/en/brand/2-dives-med
+REC_0112,prod_d3653ff5a469,Dongkook Pharma,Centellian24 (Madeca Cream),Cosmeceuticals,A_not_explicit_user_rewrite,not_explicit_enough,https://centellian24usa.com/blogs/news/centellian-24-madeca-cream-anti-aging-cream-teca
+REC_0061,prod_904761e21bec,Dr. Babor,BABOR Ampoules,Ampoule Concentrates,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Collagen P.I.N.,https://us.babor.com/products/fluids-fp/63694-collagen-firming.html
+REC_0197,prod_18ed9d22f745,Dr. Babor,DOCTOR BABOR / PRO,Cosmeceuticals,A_not_explicit_user_rewrite,not_explicit_enough,https://us.babor.com/products/doctor-babor-pro/line/31962
+REC_0455,prod_88f11cb6bafb,Eclipse,MicroPen EVO,Microneedling,A_not_explicit_user_rewrite,not_explicit_enough,https://micropenevo.com/us/
+REC_0160,prod_dbc971ebb3e8,El.En.,DEKA,Onda (Coolwaves),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Onda Coolwaves (分销/关联),https://ondacoolwaves.be/onda_uploads/2019/05/Onda-Brochure-ING-Rev-1.6.pdf
+REC_0161,prod_16627855997a,El.En.,DEKA,RedTouch PRO,A_not_explicit_user_rewrite,not_explicit_enough,https://dekalaser.com/products/redtouch-pro/
+REC_0585,prod_b0d4ee4e961a,El.En.,Quanta System,Thunder MT,A_not_explicit_user_rewrite,not_explicit_enough,https://www.quantasystem.com/us/laser/thunder-series/
+REC_0568,prod_28c6e4ae9ca6,EmCyte,Progenisa,Biologics,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:ACA-Kit (Autologous Conditioned Adipose),https://emcyte.com/about-us/
+REC_0574,prod_aa4c7abdba97,EmCyte,PurePRP / GenesisCS,PRP Kit,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Lira Clinical,https://emcyte.com/wp-content/uploads/2022/04/GS-SP.pdf
+REC_0560,prod_34c8693e47e6,Ema Aesthetics,Préime,Préime DermaFacial,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://preimedermafacial.com/
+REC_0485,prod_0b017e1f0144,Energist,NeoGen,NeoGen SPA,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:General Project,https://www.neo-gen.co.uk/technology/
+REC_0451,prod_af930908355a,European Wellness Biomedical,MF+ / EW,Precursor Stem Cells,A_not_explicit_user_rewrite,not_explicit_enough,https://european-wellness.eu/publications/treatment-of-glaucoma-with-progenitor-precursor-stem-cells/
+REC_0496,prod_ef8f33b6e109,Euroresearch,Nithya Peel,Chemical Peel,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Renuvion Dermal,https://www.euroresearch.it/wp-content/uploads/2023/04/Nithya-Injection-Points-brochure-2023.pdf
+REC_0264,prod_acac3f705bb9,ExoCoBio,EXOMAGE,Cosmeceuticals,A_not_explicit_user_rewrite,not_explicit_enough,https://www.exomage.com/technology
+REC_0649,prod_e69bcd77107d,Fillmed,Skin Perfusion,Post-Procedure Skincare,A_not_explicit_user_rewrite,not_explicit_enough,https://uk.fillmed.com/wp-content/uploads/2019/03/Skin-Perfusion-B-B-Brochure.pdf
+REC_0279,prod_c86e43d32fd2,FotoFinder Systems,FotoFinder,ATBM master,A_not_explicit_user_rewrite,not_explicit_enough,https://www.fotofinder.de/fileadmin/Documentation/IFU_FotoFinder_bodystudioATBMmaster_20250320_EN.pdf
+REC_0280,prod_ced9c2685e0e,Fotona d.o.o.,Fotona,SP Dynamis (4D Pro),A_not_explicit_user_rewrite,not_explicit_enough,https://fotona.com/en/products/2027/sp-dynamis
+REC_0996,prod_53a408d41803,Fotona d.o.o.,Fotona,SP Dynamis Pro,A_not_explicit_user_rewrite,not_explicit_enough,https://fotona.com/en/products/2027/sp-dynamis
+REC_1001,prod_c0931f4c54a9,Fotona d.o.o.,StarFormer,StarFormer TightWave,A_not_explicit_user_rewrite,not_explicit_enough,https://fotona.com/us/product/fotona-starformer-pro
+REC_0999,prod_02f4cd89aad2,Fotona d.o.o.,TimeWalker,TimeWalker II Fotona4D,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Fotona,https://www.fotona.com/us/aesthetic-lasers/
+REC_1000,prod_0a209ceda803,Fotona d.o.o.,TimeWalker,TimeWalker II NightLase,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Fotona,http://www.fotona.com/en/aesthetics/products/
+REC_0288,prod_701e3c958a7a,Fusion Meso,Fusion,F-XFC / F-Hair,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Exosome Skin Booster,https://fusionmeso.com/product/f-xfc-sterile-serum-vials-revitalization-micro-needling/
+REC_0023,prod_22738c55d605,Galderma,Alastin,Regenerating Skin Nectar,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Neuro GABA & NANA Peels,https://alastin.com/products/regenerating-skin-nectar?designate-location=18882
+REC_0594,prod_5ece29bbee4f,Glyance,RefillHA,RefillHA (Solid/Ultra Solid),A_not_explicit_user_rewrite,not_explicit_enough,https://www.glyance.com/
+REC_0396,prod_69f3db034694,Haim Aesthetics,LeVair,LeVair PDRN / Exovair,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:PRP-like Therapy,https://haimintl.com/products/exovair
+REC_0067,prod_317aa4161f85,HansBiomed.,BellaGel,BellaGel Micro,A_not_explicit_user_rewrite,not_explicit_enough,http://www.bellagelimplants.com/en/bellagel_breastimplant
+REC_0458,prod_c566406b61d0,HansBiomed.,MINT Lift,MINT (Fine/Petit/Easy),A_not_explicit_user_rewrite,not_explicit_enough,https://www.mintpdo.com/announcement/mint-pdo-receives-third-fda-clearance
+REC_0975,prod_b851b8d645e7,HansBiomed.,MegaDerm,MegaDerm,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Renuvion Dermal,https://hansbiomedusa.com/biologics/
+REC_0976,prod_cfde60e90695,HansBiomed.,MegaFill,MegaFill,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:MINT Lift,https://store.hansbiomedusa.com/
+REC_0199,prod_e998a6e999a4,Hironic,Doublo,New Doublo,A_not_explicit_user_rewrite,not_explicit_enough,https://hironic.com/p/doublo-nw
+REC_0543,prod_9bb0117dfaf5,Hironic,PicoHi,PicoHi 300,A_not_explicit_user_rewrite,not_explicit_enough,https://www.e-hironic.com/clinical
+REC_0950,prod_91d9d7eb822e,Hironic,SILKRO,SILKRO,A_not_explicit_user_rewrite,not_explicit_enough,https://www.e-hironic.com/clinical
+REC_0951,prod_02a6e5495b56,Hironic,Ultra Vera,Ultra Vera,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Hifu Top,https://hironic-us.com/UltraVera
+REC_0088,prod_2903e9009d75,Hugel,BlueRose,BlueRose Threads,A_not_explicit_user_rewrite,not_explicit_enough,https://hugel-inc.com/tw/solution/quality
+REC_0876,prod_95f3372fb201,Hugel,Dermalax,HA Filler Blob Technology,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:BOTOX Cosmetic,https://fillersclub.com/dermal-fillers/contour/dermalax-implant-plus-2-x-1-1ml/
+REC_0335,prod_548ddc3c621f,Hydrinity Skin Science,Hydrinity,Restorative HA Serum,A_not_explicit_user_rewrite,not_explicit_enough,https://www.hydrinity.com/blogs/news/great-skin-in-two-simple-steps
+REC_0028,prod_4f7129876c31,IBSA Derma,Aliaxin,Aliaxin (FL/GP/EV),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Meso-Sculpt C71™,https://www.ibsaderma.fr/en/aliaxin/aliaxin-gp/
+REC_0896,prod_d89f89c44ccf,IBSA Derma,Ialuset,HA Wound Healing Series,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:BOTOX Cosmetic,https://www.businessdevelopment.ibsagroup.com/licensing/dermatology/
+REC_0566,prod_acd5efffb9e9,IBSA Derma,Profhilo,Profhilo Body,A_not_explicit_user_rewrite,not_explicit_enough,https://www.ibsaderma.co.uk/profhilo/profhilo/
+REC_0888,prod_4077ef8059fe,IBSA Derma,Profhilo Body,HA Bio-Remodeling for Body,A_not_explicit_user_rewrite,not_explicit_enough,https://www.ibsaderma.co.uk/profhilo/profhilo/
+REC_0752,prod_d065f1875e87,IBSA Derma,Viscoderm,Viscoderm Hydrobooster,A_not_explicit_user_rewrite,not_explicit_enough,https://dermahubshop.com/catalog/mesotherapy/viscoderm-skinbooster/
+REC_0894,prod_7969e2fffe78,IBSA Derma,Viscoderm Hydrobooster,Crosslinked HA Dynamic Areas,A_not_explicit_user_rewrite,not_explicit_enough,https://dermahubshop.com/catalog/mesotherapy/viscoderm-skinbooster/
+REC_0338,prod_446cbbef2b08,IDS / Innovative Device Solutions,IDS,XLASE / Oron,A_not_explicit_user_rewrite,not_explicit_enough,https://medispasolutions.com.au/wp-content/uploads/2021/03/TechnicalLeaflet_XLasePLUS_Standing_2020.pdf
+REC_0339,prod_383eb617653e,Image Skincare,Image,I Peel,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Aquagold Fine Touch,https://imageskincare.co.uk/pages/treatments-chemical-peels
+REC_0842,prod_9f7183105911,InMode,DiolazeXL MAX,Enhanced Diode Hair Removal,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Diode 808nm,https://laserhairremovalmap.com/equipment-verification-tool/diolaze-xl
+REC_0843,prod_20e7c2bea8c8,InMode,EmpowerRF,Womens Wellness Platform,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Morpheus8,https://www.inmode.com.au/pages/womens-health-and-wellness
+REC_0343,prod_df5ecd87f89e,Induction Therapies,Induction Therapies Skincare,Post-Procedure,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Hyaluronic Forte,https://inductiontherapies.com/products/phaz
+REC_0063,prod_e31fd556f548,Institute BCN,BCN,BCN Classics,A_not_explicit_user_rewrite,not_explicit_enough,https://institutebcn.com/shop/?products-per-page=all
+REC_0690,prod_a17c3abd72a4,Iskra Medical,Tesla Former,Tesla Former / Care,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Neauvia Devices,https://iskramedical.com/about-us/
+REC_0371,prod_b542390745a8,JYSUNG Meditech,JYSUNG,Cannula / Meso Needle,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Meso-Eye C71™,https://mesoskinline.com/mesotherapy-shop/258-hypodermic-needles/970-needletech-27g-25mm-micro-needle-sterile-hypodermic-needle/
+REC_1045,prod_887cd9ed1e96,Johnson & Johnson,Mentor,CPX4 Breast Tissue Expanders,A_not_explicit_user_rewrite,not_explicit_enough,https://breastimplantsbymentor.net/en-GB/products/memorygel-xtra
+REC_1047,prod_a55dd6461778,Johnson & Johnson,Mentor,ARTOURA PLUS Breast Tissue Expanders,A_not_explicit_user_rewrite,not_explicit_enough,https://breastimplantsbymentor.net/en-GB/products/memorygel-xtra
+REC_1048,prod_b16294ba00c9,Johnson & Johnson,Mentor,Volume Sizing System,A_not_explicit_user_rewrite,not_explicit_enough,https://breastimplantsbymentor.net/en-GB/products/memorygel-xtra
+REC_0368,prod_63f8b056df34,Juvaplus,Juvapen,Juvapen Expert,A_not_explicit_user_rewrite,not_explicit_enough,https://www.juvaplus.com/terms-conditions/
+REC_0599,prod_f5611c9980d1,Kaizen Endustri,REIN / AdiponanoX,AdiponanoX,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Peeling Kits,https://www.kaizenendustri.com/en/rein-prp-single-1-tube-ifu
+REC_0441,prod_fe9bd2c78a5f,Koru Pharma,Mesoheal,Mesoheal Body,A_not_explicit_user_rewrite,not_explicit_enough,https://korupharma.com/mesoheal-body-ha-filler-50-ml-adaptor
+REC_0655,prod_d05b22e104ce,L'Oréal,SkinCeuticals,CE Ferulic / Phyto Corrective,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:EXION Fractional RF,https://intl.skinceuticals.com/en_IN/integrated-skincare.html
+REC_0409,prod_908b7391f00b,LPG Systems,LPG,Cellu M6 Alliance,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Soft Tissue Reinforcement,https://www.lpgsystems.com/user-guides/pdf/Cellu-M6-Alliance/1570-Guide-ALLIANCELAB-MEDICAL-GB-2020.pdf
+REC_0498,prod_3be683150d47,Laboratoire Nouveau Visage,Nouveau Visage,Newage / Newskin,A_not_explicit_user_rewrite,not_explicit_enough,https://www.nouveau-visage.com/
+REC_0572,prod_f70793a53347,Lameditech,Puraxel,Puraxel-Me,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:LMWHA Home Care,https://puraxel.com/exec/front/Board/download/?filename=FX1000_Manual_EN_FX1000MLE_V2.02%2820230523%29.pdf&no=204&realname=2024%2F07%2F11%2F1a1da98f1581ad8499d19b8cb714dbd5.pdf
+REC_0979,prod_de9818c5ff31,Lumenis,LightSheer,LightSheer QUATTRO,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://lumenis.co.uk/solutions/aesthetic/products/lightsheer-quattro/
+REC_0587,prod_49138ab69fca,Lumibird,Quantel,Aran / Compact,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Cynergy / Dual Yellow (Tech),https://www.lumibirdmedical.com/quantel-medical-receives-fda-approval-for-easyret-photocoagulator-laser/
+REC_0318,prod_b9627f06cb15,Medians,Histolab,Basic Science / Derma Science,A_not_explicit_user_rewrite,not_explicit_enough,https://www.histolabusa.com/basic-science
+REC_0492,prod_38346130aefe,Medytox,Neuronox / Meditoxin,Neuronox (Botulinum Toxin Type A),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Dr. DMA / PDRN Injection,https://medytox.com/page/meditoxin_en?site_id=en
+REC_0814,prod_ed8770b8d4e9,Merz,NEOCUTIS,Growth Factor Skincare,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Aquagold Fine Touch,https://neocutis.com/
+REC_0472,prod_406b577b7c2e,My Med Aesthetics,My Filler,My Filler (Glips/Man),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Aptos Wire / Needle,https://www.mnvmedical.com/en/myfiller-glips-hyaluornic-hybric-acid-moisturizing-and-plumping-lips-xml-3194_3679-24778.html
+REC_0145,prod_7707c25b67e5,Needle Concept,Crystal Multi Needle (水晶针),Mesogun,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:GloPRO Scalp / Body,https://www.needleconcept.fr/en-gb
+REC_0789,prod_d60dcbabb2e8,Needle Concept,Mesogun,U225 mesotherapy injector,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:GloPRO Scalp / Body,https://www.needleconcept.fr/en-gb
+REC_0520,prod_3358911138f2,Opatra London,Opatra,DermiNeck / Synergy,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:TL-700 / Pico-Light,https://opatra.com/products/synergy-neck-rose
+REC_0015,prod_979fbd2d80a9,Oreon Life Science,Aessoa,Aessoa (Shine/Deep),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:HYAcorp Face / Lips,http://oreonglobal.com/sub/Filler_AESSOA_3.php
+REC_0528,prod_15ce67dc07e2,Pollogen,OxyGeneo,Geneo X / Glo2Facial,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://pollogen.com/technologies/oxygeneo/
+REC_0527,prod_99d401f41fe2,Pollogen,OxyGeneo,Geneo X,A_not_explicit_user_rewrite,not_explicit_enough,http://www.pollogen.com/pollogen-products/geneoplus.html
+REC_0555,prod_7e2ce128be6d,Polytech Health & Aesthetics,Polytech,Microthane / Diagon\Gel,A_not_explicit_user_rewrite,not_explicit_enough,https://polytech-health-aesthetics.com/en/pro/products/breast-implants/surfaces/
+REC_0505,prod_5d4db3b9cc73,Promoitalia,Nucleofill,Nucleofill / Pink Intimate,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:PQ Age / Pink Intimate,https://webpromoitalia.com/pink-intimate-system/
+REC_0559,prod_0ad1744af85b,Promoitalia,PQ Age / Pink Intimate,PQ Age Evolution,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Liftera Cool,https://us.webpromoitalia.com/product-category/pqage-evolution/
+REC_0738,prod_2f2b780d683a,Promoitalia,V-Carbon,V-Carbon System,E_other_quality_blocker,incomplete_indication_text,https://us.webpromoitalia.com/product/v-carbon/
+REC_0582,prod_ada5be5d76c0,Quanta System,Quanta,Thunder MT,A_not_explicit_user_rewrite,not_explicit_enough,https://www.quantasystem.com/us/laser/thunder-series/
+REC_0909,prod_46b6f10e3b17,Quanta System,Suprema,Triple-Wavelength Hair Removal,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Quanta,https://www.quantasystem.com/laser/suprema/
+REC_0908,prod_9d299b0ce20d,Quanta System,Thunder,Dual-Wavelength High-Speed Hair Removal,A_not_explicit_user_rewrite,not_explicit_enough,https://www.quantasystem.com/us/laser/thunder-series/
+REC_0596,prod_2899fff4aab8,Regen Lab SA,Regen Lab,RegenKit (BCT / THT),A_not_explicit_user_rewrite,not_explicit_enough,https://regenlabusa.com/regenkit-tht/
+REC_0157,prod_e77b0dd7b813,Relife,Definisse,Definisse Filler,A_not_explicit_user_rewrite,not_explicit_enough,https://www.relife-aesthetics.com/corporate/en/products/definisse-fillers.html
+REC_0056,prod_33eb307047c0,Reveal Lasers,Attiva,Attiva S.I.H.,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://www.attivarf.com/
+REC_0147,prod_7d761a89b2ad,Revitacare,Cytocare,Cytocare 516 / 532,A_not_explicit_user_rewrite,not_explicit_enough,https://revitacare.net/medical-devices/20-cytocare-532.html
+REC_0309,prod_9c9b96546070,Revitacare,HairCare,HairCare,E_other_quality_blocker,incomplete_indication_text,https://revitacare.net/4-medical-devices
+REC_0004,prod_c2989c822390,Rion Aesthetics,plated,PEP (Purified Exosome Product),A_not_explicit_user_rewrite,not_explicit_enough,https://www.rionaesthetics.com/
+REC_0579,prod_8950b9e51f0d,S. Thepharm,QTFill,QTFill Plus,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Soft Tissue Reinforcement,https://qtfill.com.au/pages/faqs
+REC_0640,prod_bcc339ac7d66,Senté Labs,Senté,Dermal Repair Cream,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Juvéderm,https://sentelabs.com/pages/heparan-sulfate-analog-technology-how-it-works
+REC_0120,prod_c4efc6e77f0f,Sinclair Pharma,Cocoon Medical,Elysion Pro,A_not_explicit_user_rewrite,not_explicit_enough,https://sinclair.com/uk/brands/energy-devices/elysion-2000w/
+REC_0647,prod_a8c9af4989b1,Sinclair Pharma,Sinclair,Préime DermaFacial,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://sinclair.com/preime-dermafacial/
+REC_0749,prod_29c6eb659e69,Sinclair Pharma,Viora,V-Series (V10/V20/V30),A_not_explicit_user_rewrite,not_explicit_enough,https://sinclair.com/uk/brands/energy-devices/v-series/
+REC_0622,prod_5c3441c05358,Skin Tech,RRS,RRS HA Tensor Lift,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Aesthetic Dermal,https://asc-advancedskincare.com/en/2021/12/13/rrs-mesotherapy/
+REC_0624,prod_916e002716fe,Skin Tech,RRS,RRS HA Eyes,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Restylane Contour,https://www.skintechpharmagroup.com/products/injectables/rrs-ha-eyes/
+REC_0379,prod_4ee93ce963da,SkinQRI,KeraFactor,KeraFactor Serum,A_not_explicit_user_rewrite,not_explicit_enough,https://kerafactor.eu/products/kerafactormd-in-office-serum-box-of-5
+REC_0656,prod_47e4043a000e,Skinderma Medical,Skinderma,Meso Vials,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Mesotherapy,https://mesotherapy-solutions.com/product/skinderma-antiaging-combo-5-x-10ml-vials/
+REC_0819,prod_73700a68ac8a,Solta Medical,VASERshape,Non-Invasive Ultrasound,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Microchannel Technology,https://soltamedical.co.uk/professionals/vaser-professionals
+REC_0106,prod_bc10482ec24e,Suisselle,Cellbooster PN,PN (Polynucleotide),C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Lira Clinical,https://suisselle.com/product/cellbooster-shape-2/
+REC_0798,prod_d0f11bea1eb2,Suisselle,Mesotherapy,Mesotherapy,A_not_explicit_user_rewrite,not_explicit_enough,https://suisselle.com/expertise/
+REC_0512,prod_780e8da589d0,Sylton,Observ,Observ 520x,A_not_explicit_user_rewrite,not_explicit_enough,https://us.sylton.com/faq/
+REC_0709,prod_b20f8d5954fa,TRIA Beauty,Tria,Hair Removal Laser 4X,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Color Light Therapy Set,https://www.triabeauty.com/pages/activation
+REC_0714,prod_a0fa0fc327fd,TSK Laboratory,TSK,The Invisible Needle,A_not_explicit_user_rewrite,not_explicit_enough,https://www.tsklab.com/documents/
+REC_0362,prod_c813884158b8,Tav-Tech,JetPeel,JetPro / JetPeel-3,A_not_explicit_user_rewrite,not_explicit_enough,https://jetpeel.com/jetpeel/jetpeel-handpieces/
+REC_0017,prod_f1f78f4784a1,Tavger,Affinite,Affinite,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Venusian CO2 Therapy,https://tavger.com/products-affinity_reserve
+REC_0386,prod_c9f9afcd16fb,Tema Medicina,K-Surgery,Idea / TC Plus,A_not_explicit_user_rewrite,not_explicit_enough,https://k-surgerymed.com/en/complete-guide-to-the-safe-use-of-dermal-fillers/
+REC_0717,prod_ebc1252c32d2,U.SK / Under Skin,U.SK,U.SK Anti-Aging,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Dualsonic Maximum,https://underskin.com/pages/skin-savers
+REC_0671,prod_634d7c5eba21,VIVACY,SoftFil,Precision / EasyGuide,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:EXION Clear RF,https://www.softfil.com/ua/product/softfil-precision-micro-cannulas/
+REC_0760,prod_94de9d607127,VSoft Lift,VSoft,VSoft Lift Threads,A_not_explicit_user_rewrite,not_explicit_enough,https://vsoftthreads.com/product/lifting-pdo-brochure/
+REC_0923,prod_5704d19bf441,Venus Concept,AI.ME,AI.ME,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Venus Legacy,https://ir.venusconcept.com/news-releases/news-release-details/venus-concept-announces-first-patient-treatment-study-evaluating
+REC_0306,prod_8651924ee70e,W.L. Gore & Associates,Gore-Tex,ePTFE Implants,A_not_explicit_user_rewrite,not_explicit_enough,https://www.goremedical.com/me/products/stp
+REC_0511,prod_bbf45fe273c4,Waldencast,Obagi / Milk,Nu-Derm / Makeup,A_not_explicit_user_rewrite,not_explicit_enough,http://obagi.com/patients/product-line/obagi-nu-derm-system?tab=product-details
+REC_0946,prod_89d5b8dfdcf0,Wontech,PASTELLE,PASTELLE Pro,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:Renuvion Dermal,https://wontechusa.com/sub/Aesthetic/Pastelle-pro.php
+REC_0776,prod_2f00569cb52e,Ycellbio Medical,Ycellbio,Ycellbio Kit,C_bad_url_mentions_other_brand,candidate_text_mentions_other_brand:BOTOX Cosmetic,https://ycellbiousa.com/faq
+REC_0783,prod_e565b4dad018,Zenix Professional,Zenix,Clay Mask / Peel-off,A_not_explicit_user_rewrite,not_explicit_enough,https://zenixcosmetic.com/index.php?path=93_97&route=product%2Fcategory
+REC_0081,prod_8be29b3ce71e,Zepter,Bioptron 2 / Pro 1,Light Therapy (Photobiomodulation),A_not_explicit_user_rewrite,not_explicit_enough,https://bioptron.co.nz/products/bioptron-pro1-with-table-stand
+REC_0082,prod_83f31ea0d941,Zepter,Bioptron MedAll,Light Therapy,A_not_explicit_user_rewrite,not_explicit_enough,https://az.zepter.com/MainMenu/Products/Medical/Bioptron/ProductRange.aspx
+REC_0536,prod_8be566691d6c,Zero Gravity,Perfectio,Perfectio Plus,A_not_explicit_user_rewrite,not_explicit_enough,https://zerogravityskin.com/?logged_in_customer_id=&lang=de
+REC_0720,prod_1121b71a86b2,A.A.M.S.,Ultim,Mesogun,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0447,prod_8e4c4a2135cd,ABG Lab LLC,Meso-Sculpt C71™,Specific Areas,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0448,prod_0f21b463f349,ABG Lab LLC,Meso-Wharton P199™,Anti-Aging & Regeneration,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0077,prod_5237f68ba525,Abio Materials,BioExo-Water,植物外泌体原料,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0104,prod_5c030635760a,Abio Materials,Celexo,术后修复与抗衰,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0107,prod_a5ee1496505f,Abio Materials,CellExosome®,外泌体皮肤动能素/水光,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0413,prod_c27e26b61c0f,Abio Materials,Lucidor,护肤品,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0012,prod_4e942fe70698,Advance Esthetic,Adonyss,Adonyss,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0024,prod_1b57ca7cffd0,Advanced Aesthetic,Algeness DF (3.5% Agarose),琼脂糖凝胶填充剂,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0025,prod_97f25cc5f1d3,Advanced Aesthetic,Algeness HD (1.5% Agarose),琼脂糖凝胶填充剂,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0026,prod_a9358fa5cc3f,Advanced Aesthetic,Algeness LD (1.0% Agarose),琼脂糖凝胶填充剂,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+TOPLINE_ALLERGAN_REVOLVE_20260530,prod_2fe1895b624f,Allergan,REVOLVE,REVOLVE Advanced Adipose System,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0852,prod_5d2abd632f97,Alma Lasers,BeautiFill,Laser-Assisted Liposuction,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0705,prod_c828ebcf7b79,Alvi Prague,TL-700 / Pico-Light,皮秒/调Q激光,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0464,prod_36f05265aaf4,Arion,Monobloc Hydrogel (CMC),生物水凝胶假体,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0490,prod_300c9fa839df,Arkana Cosmetics,Neuro GABA & NANA Peels,神经美容酸/焕肤剂,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0571,prod_ba776e888b9e,Arkana Cosmetics,PRP-like Therapy,仿生肽与微针,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0906,prod_d01cdbefb5c7,Asclepion,BodyLab,FMS Focused Magnetic Stimulation,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0471,prod_f172e5642c73,Asclepion Laser,Multipulse PRO,混合激光技术,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0055,prod_48a72462c92b,Aspen Pharmacare,Aspen,Xylocaine / EMLA,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0289,prod_8ac097cddd93,Asterasys,Futera Dots,点阵射频 (Fractional RF),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0087,prod_b33f48cf377b,Aurora Medical,BlackBox,皮肤镜/诊断系统,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0091,prod_0113087be616,BMED,Bontempi,Supercut Scissors,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0092,prod_d97390c51cd5,BMED,Bontempi,Rhinoplasty Instruments,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0868,prod_a816d8a3af2e,BTL,EMFACE Submentum,RF + HIFES for Submental,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0873,prod_ecb9ce655791,BTL,EXION Face,Monopolar RF + Targeted Ultrasound,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0872,prod_2465634bea74,BTL,EXION Fractional RF,AI-Controlled Fractional RF,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0042,prod_85a3b6172cc7,Baz Biomedic,AquaClean / AquaClean Mini,皮肤清洁管理系统 (Aqua Peeling),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0500,prod_e73c210bf8b2,Baz Biomedic,NOVAPlus,无针药物递送系统 (Needle-Free Injector),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0551,prod_6057e93d791b,Be Aes Labs,PLAXPOT,等离子皮肤再生仪 (Plasma Device),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0552,prod_4cb7ff56d389,Be Aes Labs,PLAXPOT Tips,等离子导入头 (Plasma Tip),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0315,prod_0d45ca0c7712,Beamed,Hellas EVO / Hellas RT,Q-Switched Nd:YAG,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0725,prod_f9fde9d391b6,Beamed,Unixel RF,CO2 Fractional Laser,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0958,prod_bbf4db0a2efe,Beauty Health,HydraFacial,HydraFacial Boosters,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0333,prod_803e14decc4a,Beauty Health,HydraFacial Boosters,联名加强剂 (Boosters),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0381,prod_7876b0099060,Beauty Health,Keravive,HydraFacial Keravive,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0588,prod_51b0440e27b7,BeautyBio,R45 The Reversal,Retinol System,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0401,prod_7854f078c6c4,BenQ,Lily / Miracle,HA Dermal Filler,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0076,prod_2273a36a633c,Bio-Therapeutic,Bio-Brasion Trinity / GEN4,Wet/Dry Microdermabrasion,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0328,prod_92f8a1e94062,BioPlus,HyalDew,HA Dermal Filler,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0663,prod_84777f8a86ec,BioPlus,SkinPlus-Hyal,HA Dermal Filler,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0331,prod_facbf7fd2c9f,Biocyte,Hyaluronic Forte,口服透明质酸 (Oral HA),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0469,prod_b60505f69d9e,Biopark Medical,MPGUN,AI Mesotherapy Gun,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0450,prod_e0c34f70a096,Biopark Medical,Messenger,Booster,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0445,prod_845dd1dc50ba,Biotekne,Meso-relle,Mesotherapy Needles,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0446,prod_e03ae9253ce8,Biotekne,Meso-relle Multi-injectors,Multi-injectors,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0146,prod_b0fe499ed8b0,Bison Medical,Cynergy / Dual Yellow (Tech),Copper Bromide Laser,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0207,prod_b10f6cd187fc,Bison Medical,Dual Accento,Dual Wavelength Laser,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0273,prod_eb1e88806d8d,Bison Medical,Fire-Xel,Fractional CO2 Laser,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0412,prod_d585e7929cef,Bison Medical,Lucid Q-PTP,Q-Switched Nd:YAG,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0317,prod_bd4d4164c8d7,Blue Moon,Himalaya,Multi-Platform,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0283,prod_88e8f8e32c49,Bluecore,Fouri,Hybrid Laser (CO2+Er:YAG),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0352,prod_e76c1cf1a6cb,Bluecore,IRIS,Q-Switched Nd:YAG,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0073,prod_0987d06cdeff,Body Health,BHS 156 Venera / Iconyc,Body Contouring Platform,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0184,prod_4f6bf13d9953,Body Health,Dermo Health (Vacuum),Vacuum Therapy,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0726,prod_3ad2526a2ee8,Body Health,Unyque / Unilift,Facial Rejuvenation,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0111,prod_4f84b27dbc16,CGBIO / Cell Growth Bio,CELLUNIT,SVF Isolation,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0860,prod_36ae1e81e1bc,Candela,Frax Pro,Dual-Wavelength Fractional,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0350,prod_ede0e17a78bc,Canfield Scientific,IntelliStudio / DermaGraphix,Total Body Photography,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0612,prod_401af2982cd9,Canfield Scientific,Reveal Imager,Portable Imager,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0166,prod_f72f3e4d0e72,Caregen,Dermaheal / Aquashine,Skin Booster / Meso,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0935,prod_e5f39ad0ebaf,Caregen,Pelo Baum,Pelo Baum,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0535,prod_0f86d4d1a826,Caregen,Pelo Baum / Renokin,Post-Procedure,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0569,prod_d5cee00a7fe9,Caregen,Prostrolane Series,Peptide Dermal Filler,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+UPR_ANTEAGE_MD_001,prod_441d4948f558,Cellese / AnteAGE,AnteAGE MD,AnteAGE MD Growth Factor / Exosome Treatment Solutions,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0124,prod_ebfe4e4ad1e7,Christina Cosmeceuticals,Comodex,Comodex Treatment,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0102,prod_3fcc357b4834,Cliniccare,Carbon Peel Paste,Carbon Paste,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0217,prod_a8638f87748e,Cliniccare,"EGF / HA Cocktails (Glow, Tight, Refresh)",Meso Vials,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0408,prod_38192e48b209,Cliniccare,LMWHA Home Care,Post-Procedure,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0225,prod_ba2124d5992a,Cocoon Medical,Elysion-Pro,Diode Laser,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0141,prod_8b3778f3e2c0,Cryoalfa,Cryoalfa LUX / SUPER,Cryotherapy Pen,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0897,prod_4a55b313638e,DEKA,Motus PRO,MOVEO Pain-Free Hair Removal,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0259,prod_1ce5f9b8db37,DFK Biolab,Exo One,Exosomes,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0095,prod_56c13ebad4cb,DSD Pharm,Botox Like Hair Therapy,Hair Structure,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0630,prod_59ecfbda235c,DSD Pharm,Scalp Peeling (1.3),Scalp Detox,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0297,prod_f0fc46662ee2,DTS MG,Genosys (荷诺诗),Post-Procedure,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0320,prod_cd3bd51cb4e5,DTS MG,HR3 Matrix,Hair Loss,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0276,prod_1104b252f1d2,Daeyang Medical,Focus Dual,HIFU + RF Microneedling,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0400,prod_8438280d11e4,Daeyang Medical,Liftron,RF Microneedling,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0747,prod_f487b78b371b,Daeyang Medical,VinuShape,Body Contouring,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0457,prod_0924b252ed12,Dermaceutic,Milk Peel (奶滑酸),Chemical Peel,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0452,prod_afa2169379b3,Dermakor,Micro Cannulas,Cannulas,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0493,prod_db11de963271,Dermaroller,New Natural Line / XCellarisPRO,Professional Skincare,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0096,prod_9d4af3e2df89,Dexlevo,Bravity,Topical Serum / Ampoule,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0220,prod_b7b47ba01d84,Dongbang Medical,Elasty Threads,PDO Threads,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0068,prod_0514ecba49cc,Dongkook Pharma,Bellast (贝拉斯特),HA Dermal Filler,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0332,prod_ff0ece9e27eb,Dongkook Pharma,Hyaron (海珠),HA Skin Booster,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0062,prod_c35e8fe440b4,Dr. Babor,BABOR Tech / SkinFusion,Skin Management Device,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0085,prod_25e9f96d530b,Dr. Korman,Biorevitalizers,Biorevitalization,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0204,prod_4ca2005d07dc,Dr. PRP,Dr. PRP Centrifuge,Centrifuge,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0205,prod_7e29af20abe6,Dr. PRP,Dr. PRP Kit,PRP Kit,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0131,prod_30db6b2ff645,E.I.C.O.,Cosmeceuticals,Manufacturing,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0079,prod_ee087976d5df,Eberlin,Biological Line,Professional,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0052,prod_a9d3f122f3d9,El.En.,Asclepion,MeDioStar Monolith,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0390,prod_a7eb3a871fe8,European Wellness Biomedical,Lab RMS,Mito Organelles,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0050,prod_af01da567664,ExoCoBio,ASCE+,Regenerative Aesthetics,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0109,prod_71b18457443a,ExoCoBio,Celltweet,Cosmeceuticals,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0269,prod_b95e361c3b1b,Fijie,FBio,FBio (Light/Medium/Volume),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0499,prod_97704cd84eb2,Fijie,Novacutan,YBio / SBio,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0997,prod_749ebff98350,Fotona d.o.o.,StarWalker,StarWalker MaQX Pro,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0248,prod_2630cbe3d927,GC Aesthetics,Eurosilicone,The Matrix / Round,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0474,prod_1a62b8e74291,GC Aesthetics,Nagor,Impleo / CoGel Breast Implants,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0393,prod_98b60272b235,GTG Wellness,LeShape,LeShape / U-One,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0114,prod_cce4c2f61882,Galderma,Cetaphil,Gentle Skin Cleanser,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0811,prod_72a45f382c8e,Galderma,Restylane Skinboosters,HA Skin Booster,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+TOPLINE_GALDERMA_RESTYLANE_VITAL_LIGHT_20260530,prod_36cccb3f5f45,Galderma,Restylane Skinboosters Vital Light,HA Skin Quality Booster for Delicate Areas,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0403,prod_2af5e0e0531e,HJorations,LIPO VELA,LIPO VELA V,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0708,prod_16ef1286e357,HJorations,TOXPIA,TOXPIA 100u,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0947,prod_a76a87ba7c16,Hironic,DOUBLO,DOUBLO Gold,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0952,prod_865309768b06,Hironic,MICOOL,MICOOL-S/MICOOL-A,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0948,prod_c43b4e296ca2,Hironic,New Doublo,New Doublo 2.0,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0875,prod_825c38109f01,Hugel,Bylizen,HA Skin Booster,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0177,prod_fad4dbfdec67,Huons Meditech,DermaShine,DermaShine Duo RF,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0365,prod_cf51c1755a7c,Huons Meditech,Jill's of,Jill's of (Jill'SOF),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0895,prod_1c145f78da2e,IBSA Derma,Viscoderm Skinko E,Enhanced Mesotherapy Cocktail,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0638,prod_c618b5a64752,Ilooda,Secret,Secret RF / Duo,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0253,prod_87b4be6aaf38,InMode,Evoke,Evoke Face / Chin,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0841,prod_9d164b78897f,InMode,Solaria,Fractional CO2 Laser,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0844,prod_e6af61526a83,InMode,Triton,Multi-Wavelength Hair Removal,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0711,prod_ffc6c1c04170,InMode,Triton,Triton Duo (755/810/1064),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0654,prod_8d02fb4bb296,ItalFarmacia,Skin-B / Skin-R,Amino Acid Precursors,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0618,prod_6acacc13ad62,JMBiotech,RIBESKIN,CO2 Carboxy / Pink Aging,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0358,prod_a7e81a750c35,Japan Bio Products / JBP,JBP Nanoneedle,Nanoneedle (UTW),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0391,prod_88d161a35dfc,Japan Bio Products / JBP,Laennec / Curacen,Laennec / Curacen,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0209,prod_5a822478f351,Jion Meditech,Dualsonic Maximum,Multi-Function,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0210,prod_3fa48a96f243,Jion Meditech,Dualsonic Professional / Luxury,Home Use HIFU,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0430,prod_9ea3d8161cc7,Julphar,MEBO,MEBO Scar / Ointment,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0728,prod_312d51cc72d7,Korust,UTIMS,UTIMS A3 / A3-P,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0727,prod_f3e61c8195c4,Korust,Utims,Utims A3,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0113,prod_168f0968830a,L'Oréal,CeraVe,Moisturizing Cream,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0788,prod_5f0bc874adfd,MI Medical,Consumables,Consumables,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0437,prod_7f29aa15375e,MI Medical,Mesbio,Mesogun,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0787,prod_56495cceb0d9,MI Medical,Mesogun,Pistor 4 mesotherapy injector,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0478,prod_021af539d92d,Matex Lab,Neauvia Devices,Sectum / Plasma,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0643,prod_ab575ec17a6c,Meddrop BMT,Seyo,Seyo TDA,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0562,prod_9872572dffe8,Medency,Primo,Primo / Triplo,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0406,prod_5bdad9c1a581,Medikan International,Lipokit,Lipokit / Adivive,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0683,prod_2a863da828bd,MedixSysteme,SygmaLift,SygmaLift,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0435,prod_1a39f21a2270,Melsmon Pharmaceutical,Melsmon,Melsmon Injection,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0149,prod_d3f4cc74d5e0,Meta Biomed,Da:all,Da:all Threads (Mono/Screw/I-Screw),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0793,prod_484f03027c12,NOBAMEDI,便携式电子注射枪,便携式电子注射枪,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0792,prod_a92cb8b2a29b,NOBAMEDI,智能负压水光仪,智能负压水光仪,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0794,prod_76db8bfa1f7f,NOBAMEDI,笔式微针注射器,笔式微针注射器,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0795,prod_07a193dfa02a,NOBAMEDI,针头,针头,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0790,prod_6169eec64290,Needle Concept,柔性钝针 (Flexible Microcannula),柔性钝针 (Flexible Microcannula),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0481,prod_c127129a8dd6,NeoDr,Neo Thread,Multi Thread (Twin/Triple),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0597,prod_ecb2d81aa136,Neogenesis,Regenovue,Regenovue (Deep/Sub-Q),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0411,prod_f5332f3a5753,Newpong,LSSA,LSSA (Liposculpture),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0080,prod_52b69899fa6b,Nexgen Bio,Biometics,Spider Cream / Toxin,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0507,prod_e95d844f09d8,Nunii Laboratoire,Nunii,Nunii professional peels and uniq-white pigmentation treatment,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0057,prod_a8c428e8f3ec,Ostin Bio,Audrey,Audrey (H/S/M) / Body,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0093,prod_3ee70ed6dbfb,Ostin Bio,B-OstIN,B-OstIN,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0530,prod_57a9b9ffdde9,Palomar Medical,Palomar,Vectus / Icon,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0262,prod_d6af2a1ed735,Primoris International,ExoHealer,ExoHealer / Filcore,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0570,prod_8ff2089359ed,Protect-Laserschutz,Protect,Laser Safety Eyewear,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0583,prod_d09b2ffe38d4,Quanta System,Quanta,Youlaser MT,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0404,prod_0197583f2e96,Receptura Apotheke,Lipodissolve,PPC / DC (Phosphatidylcholine),B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0508,prod_e4e5d09625ac,Recros Medica,Nuvell,Rotational Fractional Resection,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0137,prod_36e16dbfca8b,Samyang Holdings,Croquis,Croquis Threads,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0550,prod_432f37e9095f,Seoulin Medicare,Plasmage,Plasmage,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+TOPLINE_SINCLAIR_PERFECTHA_20260530,prod_357be20483fc,Sinclair Pharma,Perfectha,HA Dermal Filler Line,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0750,prod_e7ec253d23d6,Sinclair Pharma,Viora,Pristine,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_SKINTECH_PEEL2GLOW,prod_ef673f39c229,Skin Tech,Peel2Glow,Peel2Glow,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0622_RRS_HA_LONG_LASTING,prod_9dc8a1da4d72,Skin Tech,RRS HA Long Lasting,RRS HA Long Lasting,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0625,prod_fe4450415c14,Skin Tech,XL Hair,XL Hair,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+UPR_KARISMA_001,prod_a11a36bc340c,Taumedika SRL,Karisma FACE Rh Collagen,Karisma FACE Rh Collagen,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0598,prod_aef38a23730f,Tentech,Regevan,Regevan PN,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0021,prod_81b428fce6e4,Union Medical,AirJet,AirJet II,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0730,prod_aa09a611a6d8,Utsukusy Cosmetics,Utsukusy,Dragon's Blood / Hyaluron,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0755,prod_f5b5d70ac88d,VLCC Personal Care,VLCC,Professional Range,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0370,prod_315b1d771ebc,Vaim,Juvelook,Juvelook / Lenisna,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0763,prod_d6d866cbb755,Wonder Technology,Wonder,Wonder Axon / Prestige,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0944,prod_c0cd8164840f,Wontech,PICOALEX,PICOALEX,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0943,prod_bb2703fb8d76,Wontech,ULTRASKIN,ULTRASKIN TIGHTAN II,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0768,prod_5d828f26cb5c,Woorhi Mecha,Woorhi,Laser Arms / EBD,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0123,prod_ecbcf82d6a6e,Zepter,Color Light Therapy Set,Color Filters,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,
+REC_0637,prod_4a99fc6fd9a0,e Sebbin,Sebbin,Integrity / Purity,B_need_new_official_ifu_or_product_page,no_clear_official_indication_phrase_in_existing_manual_evidence,

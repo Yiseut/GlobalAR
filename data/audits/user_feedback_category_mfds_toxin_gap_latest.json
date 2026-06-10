@@ -1,0 +1,1176 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_user_feedback_cat_mfds_toxin_gap_20260601_035159.xlsx",
+  "workbook_changes": 711,
+  "manual_official_indication_rows_added": 31,
+  "manual_product_fact_rows_added": 50,
+  "target_record_ids": [
+    "REC_0005",
+    "REC_0006",
+    "REC_0029",
+    "REC_0032",
+    "REC_0044",
+    "REC_0071",
+    "REC_0090",
+    "REC_0091",
+    "REC_0092",
+    "REC_0094",
+    "REC_0103",
+    "REC_0126",
+    "REC_0151",
+    "REC_0178",
+    "REC_0179",
+    "REC_0211",
+    "REC_0213",
+    "REC_0224",
+    "REC_0334",
+    "REC_0364",
+    "REC_0381",
+    "REC_0387",
+    "REC_0395",
+    "REC_0453",
+    "REC_0473",
+    "REC_0533",
+    "REC_0707",
+    "REC_0720",
+    "REC_0734",
+    "REC_0745",
+    "REC_0759",
+    "REC_0772",
+    "REC_0805",
+    "REC_0806",
+    "REC_0848",
+    "REC_0884",
+    "REC_0932",
+    "REC_0956",
+    "REC_0957",
+    "REC_0958",
+    "REC_0962",
+    "REC_0963",
+    "REC_0964",
+    "REC_0965",
+    "REC_0973",
+    "REC_1055",
+    "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_PLUS_XC_20260530",
+    "TOPLINE_BTL_EMTONE_20260530",
+    "TOPLINE_GALDERMA_RESTYLANE_DEFYNE_20260530",
+    "TOPLINE_MEDYTOX_NEWLUX_20260530"
+  ],
+  "regulatory_record_ids": [
+    "REC_0005",
+    "REC_0006",
+    "REC_0032",
+    "REC_0094",
+    "REC_0151",
+    "REC_0178",
+    "REC_0179",
+    "REC_0211",
+    "REC_0364",
+    "REC_0387",
+    "REC_0395",
+    "REC_0449",
+    "REC_0473",
+    "REC_0707",
+    "REC_0734",
+    "REC_0772",
+    "REC_0805",
+    "REC_0806",
+    "REC_0932",
+    "REC_0962",
+    "REC_0964",
+    "REC_1055",
+    "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_PLUS_XC_20260530",
+    "TOPLINE_BTL_EMTONE_20260530",
+    "TOPLINE_GALDERMA_RESTYLANE_DEFYNE_20260530",
+    "TOPLINE_MEDYTOX_NEWLUX_20260530"
+  ],
+  "excluded_record_ids": [
+    "REC_0533",
+    "REC_0963",
+    "REC_0965"
+  ],
+  "already_resolved_before_this_script": {
+    "BioPlus/Rejuran active mismatch": "0 active rows in latest product_master before script; canonical PharmaResearch rows retained."
+  },
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "注射类",
+      "new": "溶脂注射"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "美塑成分",
+      "new": "脱氧胆酸"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "脂解剂 Lipolytic",
+      "new": "下颌下脂肪"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "注射类 > 美塑成分 > 脂解剂 Lipolytic",
+      "new": "溶脂注射 > 脱氧胆酸 > 下颌下脂肪"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:mesotherapy_lipolytic",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Taxonomy_Note",
+      "old": "lipolytic injection term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Material_Family",
+      "old": "",
+      "new": "脱氧胆酸"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Deoxycholic acid lipolytic injection"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Core_Product",
+      "old": "Deoxycholic Acid (脱氧胆酸)",
+      "new": "Deoxycholic Acid (submental fat injection)"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "FDA_Status",
+      "old": "FDA",
+      "new": "FDA approved NDA 206333"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "CE_Status",
+      "old": "",
+      "new": "Europe authorization/market access confirmed by user; exact pathway pending"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "NMPA_Status",
+      "old": "",
+      "new": "China NMPA clinical/review status noted by user; no approval number captured"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Introduction",
+      "old": "双下巴溶脂针。FDA批准的首个用于改善颏下脂肪（双下巴）的注射药物。通过破坏脂肪细胞膜来永久性去除脂肪。国际名称为Belkyra。",
+      "new": "[脱氧胆酸溶脂注射] Kybella/Belkyra 用于改善成人中度至重度下颌下脂肪外观，属于组织破坏性化学去脂药物，不归入美素营养成分。"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Feature_Tags",
+      "old": "FDA_Approved",
+      "new": "injectables, lipolytic, deoxycholic-acid, submental-fat"
+    },
+    {
+      "record_id": "REC_0387",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "注射类",
+      "new": "透明质酸填充剂"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "透明质酸 HA",
+      "new": "交联HA"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "交联HA（填充剂形态）",
+      "new": "面部填充/轮廓塑形"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "注射类 > 透明质酸 HA > 交联HA（填充剂形态）",
+      "new": "透明质酸填充剂 > 交联HA > 面部填充/轮廓塑形"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:ha_filler",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Taxonomy_Note",
+      "old": "HA with filler or default HA commercial context",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Material_Family",
+      "old": "",
+      "new": "透明质酸"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Tech_Type_Std",
+      "old": "Hyaluronic Acid",
+      "new": "Hyaluronic Acid Dermal Filler"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Cross-linked monophasic HA filler"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Introduction",
+      "old": "型号：Mesolift, Fine, Basic, Plus, Subdermal, Lips。是 Adoderm 的经典系列。采用 MPT 单相粒子技术，具有极高的交联度和粘弹性（尤其是 Subdermal 型号），主要针对深层皱纹和轮廓塑形。",
+      "new": "[高交联 HA 深层填充] Varioderm 为 Adoderm 的深层皱纹静态填充和面部轮廓容量重塑产品，不归入美素浅层微滴注射。"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "injectables, dermal-filler, hyaluronic-acid, facial-contouring"
+    },
+    {
+      "record_id": "REC_0734",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "注射类",
+      "new": "皮肤动能素/水光"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "透明质酸 HA",
+      "new": "非交联/微交联HA复配"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "交联HA（填充剂形态）",
+      "new": "浅层微滴注射"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "注射类 > 透明质酸 HA > 交联HA（填充剂形态）",
+      "new": "皮肤动能素/水光 > 非交联/微交联HA复配 > 浅层微滴注射"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:ha_filler",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Taxonomy_Note",
+      "old": "HA with filler or default HA commercial context",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Material_Family",
+      "old": "",
+      "new": "HA皮肤动能素"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Category_L2",
+      "old": "Dermal Filler",
+      "new": "Skin Booster"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Tech_Type_Std",
+      "old": "Hyaluronic Acid",
+      "new": "Hyaluronic Acid Skin Booster"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Micro-crosslinked / non-crosslinked HA mesolift"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Introduction",
+      "old": "用于改善肤质和水合作用的非交联或微交联玻尿酸",
+      "new": "[浅层 HA 水光/美素] Touch My Skin / Varioderm Mesolift 用于面部、颈部、手背浅表微滴注射，改善细小干纹和真皮水合状态。"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "injectables, skin-booster, hyaluronic-acid, mesolift"
+    },
+    {
+      "record_id": "REC_0707",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "耗材/器械",
+      "new": "器械/给药设备"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "给药设备",
+      "new": "气体治疗/二氧化碳"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "无针注射/电穿孔等",
+      "new": "Carboxytherapy"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "耗材/器械 > 给药设备 > 无针注射/电穿孔等",
+      "new": "器械/给药设备 > 气体治疗/二氧化碳 > Carboxytherapy"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:consumable_delivery_device",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Taxonomy_Note",
+      "old": "delivery-device or mesogun term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Material_Family",
+      "old": "",
+      "new": "二氧化碳治疗设备"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Category_L2",
+      "old": "Laser",
+      "new": "Injection Devices"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Tech_Type_Std",
+      "old": "CO2 Laser",
+      "new": "CO2 Carboxytherapy Device"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Carboxytherapy gas injection pen"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Introduction",
+      "old": "皮下二氧化碳注射笔",
+      "new": "[二氧化碳气体治疗设备] Carboxy-Pen 是卡波西疗法/CO2 气体治疗设备，不是 CO2 激光，也不是美素成分。"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "ebd, injection-device, carboxytherapy, co2"
+    },
+    {
+      "record_id": "REC_0103",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "耗材/器械",
+      "new": "器械/给药设备"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "给药设备",
+      "new": "注射辅助/微通道"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "无针注射/电穿孔等",
+      "new": "自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "耗材/器械 > 给药设备 > 无针注射/电穿孔等",
+      "new": "器械/给药设备 > 注射辅助/微通道 > 自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:consumable_delivery_device",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Taxonomy_Note",
+      "old": "delivery-device or mesogun term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Material_Family",
+      "old": "",
+      "new": "给药设备"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Category_L1",
+      "old": "Injectables",
+      "new": "EBD"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Category_L2",
+      "old": "Mesotherapy",
+      "new": "Injection Devices"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Tech_Type_Std",
+      "old": "Mesotherapy",
+      "new": "Electronic Mesotherapy Injection Gun"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Microcomputer mesotherapy injector"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Introduction",
+      "old": "全球首款**“二合一”设备**，集成了中胚层疗法注射（Mesotherapy）和碳酸疗法（Carboxytherapy）两种功能",
+      "new": "[美素注射枪] Concerto 是微电脑美素/给药设备，应作为给药载体而非注射成分管理。"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "ebd, injection-device, mesogun, mesotherapy-device"
+    },
+    {
+      "record_id": "REC_0126",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "耗材/器械",
+      "new": "器械/给药设备"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "给药设备",
+      "new": "注射辅助/微通道"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "无针注射/电穿孔等",
+      "new": "自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "耗材/器械 > 给药设备 > 无针注射/电穿孔等",
+      "new": "器械/给药设备 > 注射辅助/微通道 > 自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:consumable_delivery_device",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Taxonomy_Note",
+      "old": "delivery-device or mesogun term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Material_Family",
+      "old": "",
+      "new": "给药设备"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Category_L1",
+      "old": "Injectables",
+      "new": "EBD"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Category_L2",
+      "old": "Mesotherapy",
+      "new": "Injection Devices"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Tech_Type_Std",
+      "old": "Mesotherapy",
+      "new": "Electronic Mesotherapy Injection Gun"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Microcomputer mesotherapy injector"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Introduction",
+      "old": "",
+      "new": "[美素注射枪] Ultim 是微电脑美素/给药设备，应作为给药载体而非注射成分管理。"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "ebd, injection-device, mesogun, mesotherapy-device"
+    },
+    {
+      "record_id": "REC_0720",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "耗材/器械",
+      "new": "器械/给药设备"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "给药设备",
+      "new": "气体治疗/二氧化碳"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "无针注射/电穿孔等",
+      "new": "Carboxytherapy"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "耗材/器械 > 给药设备 > 无针注射/电穿孔等",
+      "new": "器械/给药设备 > 气体治疗/二氧化碳 > Carboxytherapy"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:consumable_delivery_device",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Taxonomy_Note",
+      "old": "delivery-device or mesogun term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Material_Family",
+      "old": "",
+      "new": "二氧化碳治疗设备"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Category_L2",
+      "old": "Laser",
+      "new": "Injection Devices"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Tech_Type_Std",
+      "old": "Collagen",
+      "new": "CO2 Carboxytherapy Device"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "CO2 gas flow injection system"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Core_Product",
+      "old": "Carboxytherapy (卡波西/二氧化碳疗法)",
+      "new": "Carboxytherapy (CO2 Therapy)"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Introduction",
+      "old": "智能二氧化碳治疗仪。这是 APS 的旗舰与核心竞争力产品。通过皮下注射医用级 CO2 气体，改善微循环、分解脂肪并刺激胶原再生。广泛用于治疗橘皮组织、妊娠纹、黑眼圈及女性私密年轻化。其独有的“气体加热”和“流速控制”软件极大降低了传统卡波西疗法的疼痛感。",
+      "new": "[二氧化碳气流注射仪] Venusian CO2 Therapy 通过皮下注入 CO2 促进局部循环，属于气体治疗/给药设备，不归入美素成分。"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "ebd, injection-device, carboxytherapy, co2"
+    },
+    {
+      "record_id": "REC_0745",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "能量设备",
+      "new": "能量源设备"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "超声 US",
+      "new": "毛发复苏/透皮导入"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "微聚焦超声 HIFU/MFU",
+      "new": "超声透皮给药"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "能量设备 > 超声 US > 微聚焦超声 HIFU/MFU",
+      "new": "能量源设备 > 毛发复苏/透皮导入 > 超声透皮给药"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:ebd_hifu_lift",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Taxonomy_Note",
+      "old": "HIFU/MFU lifting term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Material_Family",
+      "old": "",
+      "new": "毛发复苏设备"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Category_L2",
+      "old": "HIFU",
+      "new": "Hair Restoration"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Tech_Type_Std",
+      "old": "LIPUS",
+      "new": "Ultrasound Trans-Epidermal Drug Delivery"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Alma TED ultrasound hair restoration"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Core_Product",
+      "old": "声波生发系统",
+      "new": "Trans-Epidermal Drug Delivery"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA clearance confirmed by user; clearance number pending"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Introduction",
+      "old": "经皮声波给药系统。利用声波产生的“推力”和空化效应，增加头皮角质层的通透性，将生发精华导入毛囊，是一种无痛、无针的脱发治疗方案（目前在美国非常火）。",
+      "new": "[超声透皮给药生发设备] Alma TED 通过超声辅助非侵入性透皮给药用于毛发复苏，属于设备载体，不归入美素注射成分。"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "ebd, hair-restoration, ultrasound, trans-epidermal-drug-delivery"
+    },
+    {
+      "record_id": "REC_0029",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "耗材/器械",
+      "new": "能量源设备"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "给药设备",
+      "new": "毛发复苏/透皮导入"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "无针注射/电穿孔等",
+      "new": "超声透皮给药"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "耗材/器械 > 给药设备 > 无针注射/电穿孔等",
+      "new": "能量源设备 > 毛发复苏/透皮导入 > 超声透皮给药"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:consumable_delivery_device",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Taxonomy_Note",
+      "old": "delivery-device or mesogun term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Material_Family",
+      "old": "",
+      "new": "毛发复苏设备"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Category_L2",
+      "old": "Other EBD",
+      "new": "Hair Restoration"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Tech_Type_Std",
+      "old": "Ultrasound",
+      "new": "Ultrasound Trans-Epidermal Drug Delivery"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Tech_Type_Original",
+      "old": "Ultrasound",
+      "new": "Trans-epidermal drug delivery platform"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA clearance confirmed by user; clearance number pending"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Introduction",
+      "old": "",
+      "new": "[超声透皮给药生发设备] Alma TED 是非侵入式透皮给药/毛发复苏平台，作为设备载体管理。"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "ebd, hair-restoration, ultrasound, trans-epidermal-drug-delivery"
+    },
+    {
+      "record_id": "REC_0848",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "耗材/器械",
+      "new": "器械/给药设备"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "微针类",
+      "new": "注射辅助/微通道"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "微针/滚针/纳米针",
+      "new": "自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "耗材/器械 > 微针类 > 微针/滚针/纳米针",
+      "new": "器械/给药设备 > 注射辅助/微通道 > 自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Taxonomy_Source",
+      "old": "manual_botulinum_false_positive_fix",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Taxonomy_Note",
+      "old": "Aquagold Fine Touch 是微通道给药装置，不是真正肉毒毒素。",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Material_Family",
+      "old": "Microchannel delivery device",
+      "new": "给药设备"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "AQUAGOLD fine touch microchannel device"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA listing/clearance noted by user; exact number pending"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Introduction",
+      "old": "24K 黄金微通道印章。这是该公司的成名作和核心资产。它看起来像一个盖章的小瓶子，头部有 20 根比头发丝还细（600微米长）的24K镀金空心微针。与传统的实心微针（滚轮/微针笔）不同，它是空心的，能将瓶子里的“鸡尾酒配方”（肉毒素、玻尿酸、PRP、维生素）直接**“微滴注射”**进真皮层。在好莱坞非常流行，被称为“玻璃肌（Glass Skin）”神器。",
+      "new": "[手动微通道给药器械] Aquagold Fine Touch 属于黄金微针印章/微通道输送工具，不是注射成分。"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Feature_Tags",
+      "old": "",
+      "new": "consumables, injection-device, microchannel, aquagold"
+    },
+    {
+      "record_id": "REC_0044",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied."
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Taxonomy_L1_CN",
+      "old": "耗材/器械",
+      "new": "器械/给药设备"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Taxonomy_L2_CN",
+      "old": "给药设备",
+      "new": "注射辅助/微通道"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Taxonomy_L3_CN",
+      "old": "无针注射/电穿孔等",
+      "new": "自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Taxonomy_Path_CN",
+      "old": "耗材/器械 > 给药设备 > 无针注射/电穿孔等",
+      "new": "器械/给药设备 > 注射辅助/微通道 > 自动注射或微通道给药"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Taxonomy_Source",
+      "old": "rule:consumable_delivery_device",
+      "new": "user_feedback_20260601"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Taxonomy_Review_Status",
+      "old": "auto_applied",
+      "new": "user_confirmed"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Taxonomy_Note",
+      "old": "delivery-device or mesogun term",
+      "new": "用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Material_Family",
+      "old": "",
+      "new": "给药设备"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Category_L1",
+      "old": "Regenerative",
+      "new": "Consumables"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Category_L2",
+      "old": "Biotech",
+      "new": "Injection Devices"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Tech_Type_Std",
+      "old": "Microchannel Drug Delivery",
+      "new": "Microchannel Injection Device"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Tech_Type_Original",
+      "old": "",
+      "new": "Microchannel drug-delivery technology"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Core_Product",
+      "old": "药物输送技术",
+      "new": "Microchannel Injection Device"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA listing/clearance noted by user; exact number pending"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certification confirmed by user; certificate number pending"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Data_Source",
+      "old": "",
+      "new": "official_company_fact_override"
+    },
+    {
+      "record_id": "REC_0453",
+      "field": "Introduction",
+      "old": "专利微通道技术。公司将此技术不仅仅用于医美，还正在研发用于疫苗接种、胰岛素给药等医疗领域，旨在替代传统的皮下注射针头，实现无痛给药。",
+      "new": "[手动微通道输送器械] Aquavit Microchannel Technology/Aquagold 属于微型给药耗材工具，不归入再生/美素成分。"
+    }
+  ]
+}

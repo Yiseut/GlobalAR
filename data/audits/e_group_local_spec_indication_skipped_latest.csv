@@ -1,0 +1,417 @@
+﻿seed_record_id,company,brand,standard_product_name,reason,local_spec_rows
+REC_0004,Rion Aesthetics,plated,PEP (Purified Exosome Product),no_usable_explicit_window,6
+REC_0008,Arthrex,ACA-Kit (Autologous Conditioned Adipose),ACA-Kit (Autologous Conditioned Adipose),no_usable_explicit_window,2
+REC_0012,Advance Esthetic,Adonyss,Adonyss,no_usable_explicit_window,5
+REC_0014,Advance Esthetic,Adonyss,Adonyss,bad_text:title:,6
+REC_0015,Oreon Life Science,Aessoa,Aessoa (Shine/Deep),bad_text:needle gauge,25
+REC_0017,Tavger,Affinite,Affinite,no_local_spec_rows,
+REC_0018,Agnes Medical,Agnes RF,绝缘微针射频,no_usable_explicit_window,39
+REC_0019,Cliniccare,AHA / BHA Peels,Chemical Peel,no_usable_explicit_window,21
+REC_0021,Union Medical,AirJet,AirJet II,bad_text:title:,22
+REC_0023,Galderma,Alastin,Regenerating Skin Nectar,no_usable_explicit_window,4
+REC_0024,Advanced Aesthetic,Algeness DF (3.5% Agarose),琼脂糖凝胶填充剂,no_local_spec_rows,
+REC_0025,Advanced Aesthetic,Algeness HD (1.5% Agarose),琼脂糖凝胶填充剂,no_local_spec_rows,
+REC_0026,Advanced Aesthetic,Algeness LD (1.0% Agarose),琼脂糖凝胶填充剂,no_local_spec_rows,
+REC_0028,IBSA Derma,Aliaxin,Aliaxin (FL/GP/EV),no_usable_explicit_window,15
+REC_0029,Alma Lasers,Alma TED,Trans-Epidermal Drug Delivery,no_usable_explicit_window,4
+REC_0038,Aptos,Aptos Namica,玻尿酸功能线,no_usable_explicit_window,4
+REC_0042,Baz Biomedic,AquaClean / AquaClean Mini,皮肤清洁管理系统 (Aqua Peeling),no_local_spec_rows,
+REC_0043,Aquavit Pharmaceuticals,Aquagold Ampoules,医用级安瓶,no_local_spec_rows,
+REC_0048,Fillmed,Art Filler,Art Filler (Universal/Volume/Lips),no_usable_explicit_window,62
+REC_0050,ExoCoBio,ASCE+,Regenerative Aesthetics,no_usable_explicit_window,4
+REC_0052,El.En.,Asclepion,MeDioStar Monolith,no_usable_explicit_window,5
+REC_0053,El.En.,Asclepion,QuadroStar PRO,source_not_official_enough,23
+REC_0055,Aspen Pharmacare,Aspen,Xylocaine / EMLA,no_usable_explicit_window,34
+REC_0056,Reveal Lasers,Attiva,Attiva S.I.H.,no_usable_explicit_window,21
+REC_0057,Ostin Bio,Audrey,Audrey (H/S/M) / Body,no_usable_explicit_window,1
+REC_0058,Alvi Prague,Autonomy / F-Series,综合美容工作站,no_local_spec_rows,
+REC_0061,Dr. Babor,BABOR Ampoules,Ampoule Concentrates,source_not_official_enough,42
+REC_0062,Dr. Babor,BABOR Tech / SkinFusion,Skin Management Device,no_local_spec_rows,
+REC_0063,Institute BCN,BCN,BCN Classics,no_usable_explicit_window,17
+REC_0067,HansBiomed.,BellaGel,BellaGel Micro,no_local_spec_rows,
+REC_0068,Dongkook Pharma,Bellast (贝拉斯特),HA Dermal Filler,no_local_spec_rows,
+REC_0071,Benev,Benev GF Series (GF-DNA),Growth Factors,no_usable_explicit_window,18
+REC_0073,Body Health,BHS 156 Venera / Iconyc,Body Contouring Platform,no_usable_explicit_window,12
+REC_0074,Body Health,BHS 201 / Cryo-Frequency,Cryo-Radiofrequency,no_local_spec_rows,
+REC_0075,Body Health,BHS 202 / BHS 156 (HIMFU),HIMFU (Body Contouring),no_usable_explicit_window,26
+REC_0076,Bio-Therapeutic,Bio-Brasion Trinity / GEN4,Wet/Dry Microdermabrasion,no_usable_explicit_window,6
+REC_0077,Abio Materials,BioExo-Water,植物外泌体原料,no_local_spec_rows,
+REC_0079,Eberlin,Biological Line,Professional,no_usable_explicit_window,9
+REC_0080,Nexgen Bio,Biometics,Spider Cream / Toxin,no_local_spec_rows,
+REC_0081,Zepter,Bioptron 2 / Pro 1,Light Therapy (Photobiomodulation),no_usable_explicit_window,76
+REC_0082,Zepter,Bioptron MedAll,Light Therapy,no_usable_explicit_window,72
+REC_0084,CMed Aesthetics,BioReTherapy (Hydra/Lift),Post-Procedure,no_usable_explicit_window,19
+REC_0085,Dr. Korman,Biorevitalizers,Biorevitalization,no_usable_explicit_window,9
+REC_0086,Bio-Therapeutic,Bio-Ultimate Platinum,Microcurrent,no_usable_explicit_window,12
+REC_0087,Aurora Medical,BlackBox,皮肤镜/诊断系统,no_local_spec_rows,
+REC_0088,Hugel,BlueRose,BlueRose Threads,bad_text:title:,5
+REC_0090,BMED,Bontempi,B.A.F.F.I. Kit,no_usable_explicit_window,6
+REC_0091,BMED,Bontempi,Supercut Scissors,no_usable_explicit_window,5
+REC_0092,BMED,Bontempi,Rhinoplasty Instruments,no_usable_explicit_window,8
+REC_0093,Ostin Bio,B-OstIN,B-OstIN,no_local_spec_rows,
+REC_0095,DSD Pharm,Botox Like Hair Therapy,Hair Structure,no_usable_explicit_window,1
+REC_0096,Dexlevo,Bravity,Topical Serum / Ampoule,no_local_spec_rows,
+REC_0102,Cliniccare,Carbon Peel Paste,Carbon Paste,no_local_spec_rows,
+REC_0104,Abio Materials,Celexo,术后修复与抗衰,no_usable_explicit_window,20
+REC_0105,Suisselle,Cellbooster Hair / Shape,Hair / Fat,no_usable_explicit_window,19
+REC_0106,Suisselle,Cellbooster PN,PN (Polynucleotide),no_local_spec_rows,
+REC_0107,Abio Materials,CellExosome®,外泌体皮肤动能素/水光,no_usable_explicit_window,11
+REC_0108,Cha Meditech,Celltermi,Skin Booster,no_usable_explicit_window,13
+REC_0109,ExoCoBio,Celltweet,Cosmeceuticals,no_usable_explicit_window,21
+REC_0111,CGBIO / Cell Growth Bio,CELLUNIT,SVF Isolation,no_usable_explicit_window,1
+REC_0112,Dongkook Pharma,Centellian24 (Madeca Cream),Cosmeceuticals,no_usable_explicit_window,5
+REC_0113,L'Oréal,CeraVe,Moisturizing Cream,no_usable_explicit_window,41
+REC_0114,Galderma,Cetaphil,Gentle Skin Cleanser,no_usable_explicit_window,26
+REC_0115,Biotec,CFU Èlife,HIFU (Focused Ultrasound),no_usable_explicit_window,26
+REC_0118,Sinclair Pharma,Cocoon Medical,Cooltech Define,no_usable_explicit_window,8
+REC_0119,Sinclair Pharma,Cocoon Medical,Primelase,no_usable_explicit_window,30
+REC_0120,Sinclair Pharma,Cocoon Medical,Elysion Pro,no_usable_explicit_window,31
+REC_0123,Zepter,Color Light Therapy Set,Color Filters,no_usable_explicit_window,7
+REC_0124,Christina Cosmeceuticals,Comodex,Comodex Treatment,no_usable_explicit_window,8
+REC_0126,A.A.M.S.,Concerto,Mesogun,no_usable_explicit_window,4
+REC_0128,Cocoon Medical,Cooltech Define / Cooltech,Cryolipolysis,no_usable_explicit_window,4
+REC_0131,E.I.C.O.,Cosmeceuticals,Manufacturing,bad_text:title:,2
+REC_0134,Deleo,CRISTAL Fit,HI-EMS,no_usable_explicit_window,10
+REC_0137,Samyang Holdings,Croquis,Croquis Threads,no_usable_explicit_window,8
+REC_0138,Brymill,Cry-Ac® / Cry-Ac®-3,Cryosurgery,no_usable_explicit_window,44
+REC_0141,Cryoalfa,Cryoalfa LUX / SUPER,Cryotherapy Pen,no_usable_explicit_window,29
+REC_0142,Body Health,Cryo-Radiofrequency (Refreeze),Cryo-Frequency,no_usable_explicit_window,14
+REC_0145,Needle Concept,Crystal Multi Needle (水晶针),Mesogun,bad_text:title:,12
+REC_0146,Bison Medical,Cynergy / Dual Yellow (Tech),Copper Bromide Laser,no_usable_explicit_window,9
+REC_0147,Revitacare,Cytocare,Cytocare 516 / 532,no_usable_explicit_window,13
+REC_0149,Meta Biomed,Da:all,Da:all Threads (Mono/Screw/I-Screw),no_usable_explicit_window,67
+REC_0152,Decomedical,Decolaser,Diode Laser,no_usable_explicit_window,20
+REC_0154,Decomedical,Decopeel,Microdermabrasion,no_usable_explicit_window,2
+REC_0155,Decomedical,Decopress,Pressotherapy,no_local_spec_rows,
+REC_0157,Relife,Definisse,Definisse Filler,no_usable_explicit_window,19
+REC_0160,El.En.,DEKA,Onda (Coolwaves),no_usable_explicit_window,14
+REC_0161,El.En.,DEKA,RedTouch PRO,bad_text:scientific papers,5
+REC_0164,BR Pharm,Derm S,Post-Procedure Care,no_local_spec_rows,
+REC_0166,Caregen,Dermaheal / Aquashine,Skin Booster / Meso,no_usable_explicit_window,2
+REC_0168,Mesoestetic Pharma,Dermamelan,Dermamelan Intimate,no_usable_explicit_window,3
+REC_0169,DermapenWorld,Dermapen 4,Microneedling,no_usable_explicit_window,22
+REC_0170,DermapenWorld,Dermapen Home,Home Use,no_usable_explicit_window,23
+REC_0174,CGBIO / Cell Growth Bio,DERMAREVIVE,Exosome/Microneedle,bad_text:title:,1
+REC_0177,Huons Meditech,DermaShine,DermaShine Duo RF,no_usable_explicit_window,10
+REC_0184,Body Health,Dermo Health (Vacuum),Vacuum Therapy,bad_text:title:,7
+REC_0185,Dermoaroma,Dermo Peel,Chemical Peel,no_local_spec_rows,
+REC_0186,Dermoaroma,Dermoaroma PDRN,Mesotherapy,no_usable_explicit_window,18
+REC_0187,VIVACY,Desirial,Desirial / Plus,no_local_spec_rows,
+REC_0193,DSD Pharm,Dixidox de Luxe (Classic Line),Trichology,no_usable_explicit_window,20
+REC_0195,Alvi Prague,DL-7000 Ultra Pulse,半导体脱毛激光,no_local_spec_rows,
+REC_0197,Dr. Babor,DOCTOR BABOR / PRO,Cosmeceuticals,no_usable_explicit_window,31
+REC_0199,Hironic,Doublo,New Doublo,no_usable_explicit_window,84
+REC_0204,Dr. PRP,Dr. PRP Centrifuge,Centrifuge,no_usable_explicit_window,46
+REC_0205,Dr. PRP,Dr. PRP Kit,PRP Kit,no_usable_explicit_window,39
+REC_0206,DTS MG,DTS Roller (Disk Type),Microneedling,no_usable_explicit_window,13
+REC_0207,Bison Medical,Dual Accento,Dual Wavelength Laser,no_usable_explicit_window,52
+REC_0209,Jion Meditech,Dualsonic Maximum,Multi-Function,no_usable_explicit_window,16
+REC_0210,Jion Meditech,Dualsonic Professional / Luxury,Home Use HIFU,no_usable_explicit_window,23
+REC_0214,Daewoong,Easydew (RX / DW-EGF),EGF Skincare,no_usable_explicit_window,4
+REC_0217,Cliniccare,"EGF / HA Cocktails (Glow, Tight, Refresh)",Meso Vials,no_usable_explicit_window,88
+REC_0220,Dongbang Medical,Elasty Threads,PDO Threads,no_local_spec_rows,
+REC_0221,Professional Skin Solutions,Elementrē,Elementrē Dermo Cosmetics,no_usable_explicit_window,5
+REC_0225,Cocoon Medical,Elysion-Pro,Diode Laser,source_not_official_enough,27
+REC_0226,BTL,Emface,Facial Muscle Lifting,no_usable_explicit_window,14
+REC_0228,BTL,Emsculpt NEO,Body Contouring (Muscle),no_usable_explicit_window,12
+REC_0248,GC Aesthetics,Eurosilicone,The Matrix / Round,source_not_official_enough,6
+REC_0253,InMode,Evoke,Evoke Face / Chin,no_usable_explicit_window,4
+REC_0255,Evolus,Evolysse,Evolysse Lift / Smooth,no_usable_explicit_window,35
+REC_0259,DFK Biolab,Exo One,Exosomes,no_usable_explicit_window,33
+REC_0262,Primoris International,ExoHealer,ExoHealer / Filcore,no_local_spec_rows,
+REC_0264,ExoCoBio,EXOMAGE,Cosmeceuticals,no_usable_explicit_window,20
+REC_0265,Cha Meditech,Exosome Skin Booster,Exosome,no_usable_explicit_window,13
+REC_0269,Fijie,FBio,FBio (Light/Medium/Volume),no_usable_explicit_window,1
+REC_0273,Bison Medical,Fire-Xel,Fractional CO2 Laser,no_local_spec_rows,
+REC_0274,Biovico,Flavya,Native HA Booster,no_usable_explicit_window,18
+REC_0276,Daeyang Medical,Focus Dual,HIFU + RF Microneedling,no_local_spec_rows,
+REC_0279,FotoFinder Systems,FotoFinder,ATBM master,no_usable_explicit_window,31
+REC_0280,Fotona d.o.o.,Fotona,SP Dynamis (4D Pro),no_usable_explicit_window,47
+REC_0281,Fotona d.o.o.,Fotona,StarWalker MaQX,no_usable_explicit_window,20
+REC_0283,Bluecore,Fouri,Hybrid Laser (CO2+Er:YAG),no_usable_explicit_window,7
+REC_0287,Blue Moon,Frozen,Cryolipolysis,no_usable_explicit_window,6
+REC_0288,Fusion Meso,Fusion,F-XFC / F-Hair,no_usable_explicit_window,8
+REC_0289,Asterasys,Futera Dots,点阵射频 (Fractional RF),no_usable_explicit_window,13
+REC_0297,DTS MG,Genosys (荷诺诗),Post-Procedure,no_usable_explicit_window,5
+REC_0298,Candela,GentleMax Pro / Pro Plus,Hair Removal Platform,no_usable_explicit_window,28
+REC_0301,BeautyBio,GloPRO,Microneedling Tool,no_usable_explicit_window,13
+REC_0306,W.L. Gore & Associates,Gore-Tex,ePTFE Implants,no_usable_explicit_window,10
+REC_0309,Revitacare,HairCare,HairCare,bad_text:title:,7
+REC_0315,Beamed,Hellas EVO / Hellas RT,Q-Switched Nd:YAG,no_local_spec_rows,
+REC_0317,Blue Moon,Himalaya,Multi-Platform,no_usable_explicit_window,6
+REC_0318,Medians,Histolab,Basic Science / Derma Science,no_usable_explicit_window,7
+REC_0320,DTS MG,HR3 Matrix,Hair Loss,no_usable_explicit_window,2
+REC_0328,BioPlus,HyalDew,HA Dermal Filler,no_usable_explicit_window,4
+REC_0329,DFK Biolab,Hyalmass,Body Filler,no_usable_explicit_window,25
+REC_0331,Biocyte,Hyaluronic Forte,口服透明质酸 (Oral HA),no_usable_explicit_window,19
+REC_0332,Dongkook Pharma,Hyaron (海珠),HA Skin Booster,source_not_official_enough,2
+REC_0333,Beauty Health,HydraFacial Boosters,联名加强剂 (Boosters),no_local_spec_rows,
+REC_0335,Hydrinity Skin Science,Hydrinity,Restorative HA Serum,no_usable_explicit_window,47
+REC_0338,IDS / Innovative Device Solutions,IDS,XLASE / Oron,no_usable_explicit_window,24
+REC_0339,Image Skincare,Image,I Peel,no_usable_explicit_window,11
+REC_0340,BRERA Medical,Imperium Med 400,RF & Ultrasound,no_usable_explicit_window,20
+REC_0343,Induction Therapies,Induction Therapies Skincare,Post-Procedure,no_usable_explicit_window,6
+REC_0349,Medytox,Innotox,Innotox 50U/100U,no_usable_explicit_window,42
+REC_0350,Canfield Scientific,IntelliStudio / DermaGraphix,Total Body Photography,no_usable_explicit_window,3
+REC_0352,Bluecore,IRIS,Q-Switched Nd:YAG,no_usable_explicit_window,6
+REC_0355,Professional Derma,Jalupro,Super Hydro,no_local_spec_rows,
+REC_0358,Japan Bio Products / JBP,JBP Nanoneedle,Nanoneedle (UTW),bad_text:privacy policy,57
+REC_0360,Jeisys Medical,Jeisys,LinearZ (Ultracel [zi:]),no_usable_explicit_window,78
+REC_0361,Jeisys Medical,Jeisys,Density,no_usable_explicit_window,69
+REC_0362,Tav-Tech,JetPeel,JetPro / JetPeel-3,no_usable_explicit_window,4
+REC_0365,Huons Meditech,Jill's of,Jill's of (Jill'SOF),no_local_spec_rows,
+REC_0368,Juvaplus,Juvapen,Juvapen Expert,no_local_spec_rows,
+REC_0370,Vaim,Juvelook,Juvelook / Lenisna,no_local_spec_rows,
+REC_0371,JYSUNG Meditech,JYSUNG,Cannula / Meso Needle,no_usable_explicit_window,31
+REC_0379,SkinQRI,KeraFactor,KeraFactor Serum,no_usable_explicit_window,6
+REC_0381,Beauty Health,Keravive,HydraFacial Keravive,no_local_spec_rows,
+REC_0384,FB Dermatology,Kleresca,Kleresca Light,no_local_spec_rows,
+REC_0386,Tema Medicina,K-Surgery,Idea / TC Plus,no_usable_explicit_window,13
+REC_0390,European Wellness Biomedical,Lab RMS,Mito Organelles,no_local_spec_rows,
+REC_0391,Japan Bio Products / JBP,Laennec / Curacen,Laennec / Curacen,no_local_spec_rows,
+REC_0393,GTG Wellness,LeShape,LeShape / U-One,no_usable_explicit_window,3
+REC_0396,Haim Aesthetics,LeVair,LeVair PDRN / Exovair,bad_text:title:,37
+REC_0400,Daeyang Medical,Liftron,RF Microneedling,no_local_spec_rows,
+REC_0401,BenQ,Lily / Miracle,HA Dermal Filler,no_usable_explicit_window,2
+REC_0403,HJorations,LIPO VELA,LIPO VELA V,no_local_spec_rows,
+REC_0404,Receptura Apotheke,Lipodissolve,PPC / DC (Phosphatidylcholine),no_local_spec_rows,
+REC_0406,Medikan International,Lipokit,Lipokit / Adivive,no_usable_explicit_window,16
+REC_0408,Cliniccare,LMWHA Home Care,Post-Procedure,no_local_spec_rows,
+REC_0409,LPG Systems,LPG,Cellu M6 Alliance,no_usable_explicit_window,11
+REC_0411,Newpong,LSSA,LSSA (Liposculpture),no_usable_explicit_window,22
+REC_0412,Bison Medical,Lucid Q-PTP,Q-Switched Nd:YAG,no_usable_explicit_window,20
+REC_0413,Abio Materials,Lucidor,护肤品,no_usable_explicit_window,14
+REC_0418,Lutronic / Cynosure Lutronic,Lutronic,LaseMD Ultra,no_usable_explicit_window,46
+REC_0419,Lutronic / Cynosure Lutronic,Lutronic,Genius,no_usable_explicit_window,31
+REC_0420,Lutronic / Cynosure Lutronic,Lutronic,Hollywood Spectra,no_usable_explicit_window,55
+REC_0430,Julphar,MEBO,MEBO Scar / Ointment,no_usable_explicit_window,53
+REC_0432,Asclepion Laser,MeDioStar Monolith,半导体脱毛激光,no_local_spec_rows,
+REC_0433,HOYA ConBio,MedLite C6,Q-Switched Nd:YAG,source_not_official_enough,5
+REC_0434,Alvi Prague,MED-X,二氧化碳点阵激光,no_usable_explicit_window,40
+REC_0435,Melsmon Pharmaceutical,Melsmon,Melsmon Injection,no_local_spec_rows,
+REC_0437,MI Medical,Mesbio,Mesogun,bad_text:title:,12
+REC_0441,Koru Pharma,Mesoheal,Mesoheal Body,no_usable_explicit_window,37
+REC_0442,Mesoestetic Pharma,Mesohyal,Mesohyal (NCTC 109),bad_text:title:,13
+REC_0445,Biotekne,Meso-relle,Mesotherapy Needles,no_usable_explicit_window,23
+REC_0446,Biotekne,Meso-relle Multi-injectors,Multi-injectors,no_local_spec_rows,
+REC_0447,ABG Lab LLC,Meso-Sculpt C71™,Specific Areas,no_local_spec_rows,
+REC_0448,ABG Lab LLC,Meso-Wharton P199™,Anti-Aging & Regeneration,no_local_spec_rows,
+REC_0450,Biopark Medical,Messenger,Booster,no_local_spec_rows,
+REC_0451,European Wellness Biomedical,MF+ / EW,Precursor Stem Cells,no_local_spec_rows,
+REC_0452,Dermakor,Micro Cannulas,Cannulas,no_local_spec_rows,
+REC_0455,Eclipse,MicroPen EVO,Microneedling,bad_text:designed to perform.trusted,2
+REC_0457,Dermaceutic,Milk Peel (奶滑酸),Chemical Peel,no_usable_explicit_window,8
+REC_0458,HansBiomed.,MINT Lift,MINT (Fine/Petit/Easy),no_usable_explicit_window,14
+REC_0464,Arion,Monobloc Hydrogel (CMC),生物水凝胶假体,no_usable_explicit_window,1
+REC_0468,DEKA,Motus AX / AY,Alexandrite Laser,no_usable_explicit_window,5
+REC_0469,Biopark Medical,MPGUN,AI Mesotherapy Gun,no_local_spec_rows,
+REC_0471,Asclepion Laser,Multipulse PRO,混合激光技术,no_local_spec_rows,
+REC_0472,My Med Aesthetics,My Filler,My Filler (Glips/Man),no_usable_explicit_window,25
+REC_0474,GC Aesthetics,Nagor,Impleo / CoGel Breast Implants,no_local_spec_rows,
+REC_0478,Matex Lab,Neauvia Devices,Sectum / Plasma,no_usable_explicit_window,2
+REC_0481,NeoDr,Neo Thread,Multi Thread (Twin/Triple),no_local_spec_rows,
+REC_0485,Energist,NeoGen,NeoGen SPA,no_usable_explicit_window,18
+REC_0490,Arkana Cosmetics,Neuro GABA & NANA Peels,神经美容酸/焕肤剂,no_local_spec_rows,
+REC_0492,Medytox,Neuronox / Meditoxin,Neuronox (Botulinum Toxin Type A),no_usable_explicit_window,48
+REC_0493,Dermaroller,New Natural Line / XCellarisPRO,Professional Skincare,no_usable_explicit_window,44
+REC_0495,Euroresearch,Nithya,Collagen,no_usable_explicit_window,28
+REC_0496,Euroresearch,Nithya Peel,Chemical Peel,no_usable_explicit_window,2
+REC_0497,Candela,Nordlys,IPL / Multi-platform,bad_text:clinical papers,58
+REC_0498,Laboratoire Nouveau Visage,Nouveau Visage,Newage / Newskin,no_usable_explicit_window,2
+REC_0499,Fijie,Novacutan,YBio / SBio,no_usable_explicit_window,2
+REC_0500,Baz Biomedic,NOVAPlus,无针药物递送系统 (Needle-Free Injector),no_usable_explicit_window,7
+REC_0504,CGBIO / Cell Growth Bio,NOVOSIS,Growth Factor,no_usable_explicit_window,40
+REC_0505,Promoitalia,Nucleofill,Nucleofill / Pink Intimate,bad_text:title:,18
+REC_0507,Nunii Laboratoire,Nunii,Nunii professional peels and uniq-white pigmentation treatment,no_local_spec_rows,
+REC_0508,Recros Medica,Nuvell,Rotational Fractional Resection,no_local_spec_rows,
+REC_0511,Waldencast,Obagi / Milk,Nu-Derm / Makeup,no_usable_explicit_window,21
+REC_0512,Sylton,Observ,Observ 520x,no_usable_explicit_window,27
+REC_0520,Opatra London,Opatra,DermiNeck / Synergy,no_usable_explicit_window,3
+REC_0521,InMode,Optimas,Lumecca / DiolazeXL / Forma / Vasculaze,no_usable_explicit_window,21
+REC_0527,Pollogen,OxyGeneo,Geneo X,no_usable_explicit_window,13
+REC_0528,Pollogen,OxyGeneo,Geneo X / Glo2Facial,no_usable_explicit_window,26
+REC_0530,Palomar Medical,Palomar,Vectus / Icon,no_local_spec_rows,
+REC_0535,Caregen,Pelo Baum / Renokin,Post-Procedure,no_local_spec_rows,
+REC_0536,Zero Gravity,Perfectio,Perfectio Plus,no_usable_explicit_window,6
+REC_0543,Hironic,PicoHi,PicoHi 300,no_local_spec_rows,
+REC_0549,BRERA Medical,Plasmage,Fractional Plasma,no_usable_explicit_window,6
+REC_0550,Seoulin Medicare,Plasmage,Plasmage,no_local_spec_rows,
+REC_0551,Be Aes Labs,PLAXPOT,等离子皮肤再生仪 (Plasma Device),bad_text:title:,4
+REC_0552,Be Aes Labs,PLAXPOT Tips,等离子导入头 (Plasma Tip),no_local_spec_rows,
+REC_0555,Polytech Health & Aesthetics,Polytech,Microthane / Diagon\Gel,bad_text:title:,5
+REC_0558,Dives Med,Power Skin / Meso Series,Mesotherapy,no_usable_explicit_window,12
+REC_0559,Promoitalia,PQ Age / Pink Intimate,PQ Age Evolution,no_usable_explicit_window,16
+REC_0560,Ema Aesthetics,Préime,Préime DermaFacial,no_usable_explicit_window,3
+REC_0562,Medency,Primo,Primo / Triplo,no_usable_explicit_window,4
+REC_0566,IBSA Derma,Profhilo,Profhilo Body,no_usable_explicit_window,27
+REC_0568,EmCyte,Progenisa,Biologics,no_usable_explicit_window,2
+REC_0569,Caregen,Prostrolane Series,Peptide Dermal Filler,no_local_spec_rows,
+REC_0570,Protect-Laserschutz,Protect,Laser Safety Eyewear,no_usable_explicit_window,78
+REC_0571,Arkana Cosmetics,PRP-like Therapy,仿生肽与微针,no_usable_explicit_window,17
+REC_0572,Lameditech,Puraxel,Puraxel-Me,no_usable_explicit_window,15
+REC_0573,Croma Pharma,Pure HA / Farewell,Post-Procedure,no_usable_explicit_window,7
+REC_0574,EmCyte,PurePRP / GenesisCS,PRP Kit,no_usable_explicit_window,28
+REC_0579,S. Thepharm,QTFill,QTFill Plus,no_usable_explicit_window,8
+REC_0582,Quanta System,Quanta,Thunder MT,no_usable_explicit_window,37
+REC_0583,Quanta System,Quanta,Youlaser MT,no_usable_explicit_window,35
+REC_0585,El.En.,Quanta System,Thunder MT,no_usable_explicit_window,31
+REC_0587,Lumibird,Quantel,Aran / Compact,no_usable_explicit_window,100
+REC_0588,BeautyBio,R45 The Reversal,Retinol System,no_local_spec_rows,
+REC_0594,Glyance,RefillHA,RefillHA (Solid/Ultra Solid),no_usable_explicit_window,24
+REC_0595,Bomtech Electronics,Refine,Auto-MTS,no_local_spec_rows,
+REC_0596,Regen Lab SA,Regen Lab,RegenKit (BCT / THT),no_usable_explicit_window,21
+REC_0597,Neogenesis,Regenovue,Regenovue (Deep/Sub-Q),no_usable_explicit_window,6
+REC_0598,Tentech,Regevan,Regevan PN,no_local_spec_rows,
+REC_0599,Kaizen Endustri,REIN / AdiponanoX,AdiponanoX,no_usable_explicit_window,47
+REC_0605,Biotec,Renova,Facial Platform,no_usable_explicit_window,13
+REC_0611,Prollenium Medical,Revanesse,Revanesse Versa / Lips,bad_text:available in,30
+REC_0612,Canfield Scientific,Reveal Imager,Portable Imager,no_usable_explicit_window,3
+REC_0616,InMode,RFAL Family,BodyTite / FaceTite / AccuTite / NeckTite,no_usable_explicit_window,31
+REC_0618,JMBiotech,RIBESKIN,CO2 Carboxy / Pink Aging,no_usable_explicit_window,26
+REC_0622,Skin Tech,RRS,RRS HA Tensor Lift,no_usable_explicit_window,11
+REC_0622_RRS_HA_LONG_LASTING,Skin Tech,RRS HA Long Lasting,RRS HA Long Lasting,no_usable_explicit_window,25
+REC_0623,Skin Tech,RRS,RRS HA Injectable,no_usable_explicit_window,33
+REC_0624,Skin Tech,RRS,RRS HA Eyes,no_usable_explicit_window,18
+REC_0625,Skin Tech,XL Hair,XL Hair,no_usable_explicit_window,5
+REC_0630,DSD Pharm,Scalp Peeling (1.3),Scalp Detox,no_usable_explicit_window,2
+REC_0634,Cynosure,SculpSure,Submental Fat,no_usable_explicit_window,20
+REC_0637,e Sebbin,Sebbin,Integrity / Purity,no_local_spec_rows,
+REC_0638,Ilooda,Secret,Secret RF / Duo,no_usable_explicit_window,25
+REC_0640,Senté Labs,Senté,Dermal Repair Cream,no_usable_explicit_window,18
+REC_0643,Meddrop BMT,Seyo,Seyo TDA,no_local_spec_rows,
+REC_0647,Sinclair Pharma,Sinclair,Préime DermaFacial,no_usable_explicit_window,13
+REC_0649,Fillmed,Skin Perfusion,Post-Procedure Skincare,no_usable_explicit_window,6
+REC_0654,ItalFarmacia,Skin-B / Skin-R,Amino Acid Precursors,no_usable_explicit_window,7
+REC_0655,L'Oréal,SkinCeuticals,CE Ferulic / Phyto Corrective,no_usable_explicit_window,9
+REC_0656,Skinderma Medical,Skinderma,Meso Vials,no_usable_explicit_window,23
+REC_0663,BioPlus,SkinPlus-Hyal,HA Dermal Filler,no_usable_explicit_window,6
+REC_0667,Benev,Smart Peels,Modified Acid System,no_local_spec_rows,
+REC_0668,DEKA,SmartPico,Picosecond Laser,no_local_spec_rows,
+REC_0670,Collagen Matrix / Regenity Biosciences,Soft Tissue Reinforcement,Soft Tissue Scaffold,no_local_spec_rows,
+REC_0671,VIVACY,SoftFil,Precision / EasyGuide,bad_text:available in,93
+REC_0683,MedixSysteme,SygmaLift,SygmaLift,no_local_spec_rows,
+REC_0690,Iskra Medical,Tesla Former,Tesla Former / Care,no_usable_explicit_window,9
+REC_0705,Alvi Prague,TL-700 / Pico-Light,皮秒/调Q激光,no_usable_explicit_window,22
+REC_0708,HJorations,TOXPIA,TOXPIA 100u,no_usable_explicit_window,6
+REC_0709,TRIA Beauty,Tria,Hair Removal Laser 4X,no_usable_explicit_window,18
+REC_0711,InMode,Triton,Triton Duo (755/810/1064),no_usable_explicit_window,14
+REC_0714,TSK Laboratory,TSK,The Invisible Needle,no_usable_explicit_window,83
+REC_0717,U.SK / Under Skin,U.SK,U.SK Anti-Aging,no_usable_explicit_window,12
+REC_0720,A.A.M.S.,Ultim,Mesogun,source_not_official_enough,6
+REC_0723,Classys,Ultraformer III / MPT (Shurink),HIFU (Ultrasound),no_usable_explicit_window,107
+REC_0725,Beamed,Unixel RF,CO2 Fractional Laser,source_not_official_enough,13
+REC_0726,Body Health,Unyque / Unilift,Facial Rejuvenation,no_usable_explicit_window,8
+REC_0727,Korust,Utims,Utims A3,no_local_spec_rows,
+REC_0728,Korust,UTIMS,UTIMS A3 / A3-P,no_usable_explicit_window,24
+REC_0730,Utsukusy Cosmetics,Utsukusy,Dragon's Blood / Hyaluron,no_usable_explicit_window,6
+REC_0736,Alvi Prague,Vascu-X (980nm),血管治疗激光,no_local_spec_rows,
+REC_0738,Promoitalia,V-Carbon,V-Carbon System,no_usable_explicit_window,6
+REC_0739,Canfield Scientific,VECTRA XT / H2,3D Simulation,no_usable_explicit_window,2
+REC_0742,TransLite,Veinlite,Veinlite LED+ / EMS,no_usable_explicit_window,20
+REC_0747,Daeyang Medical,VinuShape,Body Contouring,no_local_spec_rows,
+REC_0748,Sinclair Pharma,Viora,Reaction,no_usable_explicit_window,11
+REC_0749,Sinclair Pharma,Viora,V-Series (V10/V20/V30),source_not_official_enough,33
+REC_0750,Sinclair Pharma,Viora,Pristine,bad_text:title:,2
+REC_0752,IBSA Derma,Viscoderm,Viscoderm Hydrobooster,no_usable_explicit_window,39
+REC_0755,VLCC Personal Care,VLCC,Professional Range,no_usable_explicit_window,9
+REC_0759,Chaeum Pharma,VOM / VOM O/M/V,HA Filler,no_local_spec_rows,
+REC_0760,VSoft Lift,VSoft,VSoft Lift Threads,no_usable_explicit_window,45
+REC_0762,GPQ Srl,WiQo,PRX-T33 / WiQo Cream,no_usable_explicit_window,13
+REC_0763,Wonder Technology,Wonder,Wonder Axon / Prestige,no_usable_explicit_window,9
+REC_0768,Woorhi Mecha,Woorhi,Laser Arms / EBD,bad_text:title:,4
+REC_0770,Dermaroller,XCellarisPRO Twist,Electric Microneedling,no_usable_explicit_window,21
+REC_0776,Ycellbio Medical,Ycellbio,Ycellbio Kit,no_usable_explicit_window,9
+REC_0783,Zenix Professional,Zenix,Clay Mask / Peel-off,no_usable_explicit_window,55
+REC_0787,MI Medical,Mesogun,Pistor 4 mesotherapy injector,no_local_spec_rows,
+REC_0788,MI Medical,Consumables,Consumables,source_not_official_enough,2
+REC_0789,Needle Concept,Mesogun,U225 mesotherapy injector,no_local_spec_rows,
+REC_0790,Needle Concept,柔性钝针 (Flexible Microcannula),柔性钝针 (Flexible Microcannula),no_local_spec_rows,
+REC_0792,NOBAMEDI,智能负压水光仪,智能负压水光仪,no_usable_explicit_window,10
+REC_0793,NOBAMEDI,便携式电子注射枪,便携式电子注射枪,bad_text:title:,8
+REC_0794,NOBAMEDI,笔式微针注射器,笔式微针注射器,no_usable_explicit_window,14
+REC_0795,NOBAMEDI,针头,针头,bad_text:title:,15
+REC_0798,Suisselle,Mesotherapy,Mesotherapy,no_usable_explicit_window,14
+REC_0811,Galderma,Restylane Skinboosters,HA Skin Booster,no_usable_explicit_window,15
+REC_0814,Merz,NEOCUTIS,Growth Factor Skincare,no_usable_explicit_window,6
+REC_0819,Solta Medical,VASERshape,Non-Invasive Ultrasound,no_usable_explicit_window,1
+REC_0828,Cynosure,Smartlipo Triplex,Triple-Wavelength Laser Lipolysis,no_usable_explicit_window,14
+REC_0840,InMode,ApexRF,Mens Health RF,no_usable_explicit_window,16
+REC_0841,InMode,Solaria,Fractional CO2 Laser,no_local_spec_rows,
+REC_0842,InMode,DiolazeXL MAX,Enhanced Diode Hair Removal,bad_text:title:,8
+REC_0843,InMode,EmpowerRF,Womens Wellness Platform,no_usable_explicit_window,13
+REC_0844,InMode,Triton,Multi-Wavelength Hair Removal,no_usable_explicit_window,3
+REC_0845,InMode,AccuTite,Precision RFAL for Small Areas,no_usable_explicit_window,6
+REC_0851,Alma Lasers,DermaClear,Hydradermabrasion System,no_usable_explicit_window,10
+REC_0852,Alma Lasers,BeautiFill,Laser-Assisted Liposuction,no_usable_explicit_window,23
+REC_0855,Candela,Vbeam Prima,Dual-Wavelength PDL,bad_text:clinical papers,14
+REC_0860,Candela,Frax Pro,Dual-Wavelength Fractional,source_not_official_enough,10
+REC_0861,Candela,Matrix,Triple-in-One RF System,no_usable_explicit_window,26
+REC_0864,Candela,VelaShape III,IR+RF+Vacuum+Massage,no_usable_explicit_window,5
+REC_0865,Candela,Glacē,Hydro-Dermabrasion + LED,bad_text:title:,21
+REC_0867,BTL,EXION Clear RF,RF for Skin Clarity,no_usable_explicit_window,9
+REC_0868,BTL,EMFACE Submentum,RF + HIFES for Submental,no_usable_explicit_window,8
+REC_0871,BTL,Exilis Ultra,RF + Ultrasound Combination,no_usable_explicit_window,13
+REC_0872,BTL,EXION Fractional RF,AI-Controlled Fractional RF,no_usable_explicit_window,12
+REC_0873,BTL,EXION Face,Monopolar RF + Targeted Ultrasound,no_usable_explicit_window,10
+REC_0875,Hugel,Bylizen,HA Skin Booster,no_local_spec_rows,
+REC_0876,Hugel,Dermalax,HA Filler Blob Technology,no_usable_explicit_window,26
+REC_0888,IBSA Derma,Profhilo Body,HA Bio-Remodeling for Body,no_usable_explicit_window,6
+REC_0891,IBSA Derma,Aliaxin GP,HA Filler Global Performance,no_local_spec_rows,
+REC_0894,IBSA Derma,Viscoderm Hydrobooster,Crosslinked HA Dynamic Areas,no_usable_explicit_window,12
+REC_0895,IBSA Derma,Viscoderm Skinko E,Enhanced Mesotherapy Cocktail,no_usable_explicit_window,2
+REC_0896,IBSA Derma,Ialuset,HA Wound Healing Series,no_usable_explicit_window,22
+REC_0897,DEKA,Motus PRO,MOVEO Pain-Free Hair Removal,no_usable_explicit_window,13
+REC_0899,DEKA,Onda PRO,Coolwaves Microwave,no_usable_explicit_window,16
+REC_0901,DEKA,Lipo AI,1444nm Laser Lipolysis,no_usable_explicit_window,18
+REC_0902,Asclepion,MeDioStar,810+940nm Diode Hair Removal,no_usable_explicit_window,32
+REC_0906,Asclepion,BodyLab,FMS Focused Magnetic Stimulation,no_usable_explicit_window,1
+REC_0908,Quanta System,Thunder,Dual-Wavelength High-Speed Hair Removal,no_usable_explicit_window,20
+REC_0909,Quanta System,Suprema,Triple-Wavelength Hair Removal,no_usable_explicit_window,26
+REC_0910,Quanta System,Chrome Lase-Station,Multi-Application Workstation,no_usable_explicit_window,17
+REC_0915,Classys,AQUAPURE,AQUAPURE,no_usable_explicit_window,12
+REC_0919,Venus Concept,Venus Versa Pro,Venus Versa Pro,no_usable_explicit_window,17
+REC_0923,Venus Concept,AI.ME,AI.ME,no_local_spec_rows,
+REC_0933,Caregen,Dermaheal,Dermaheal,no_usable_explicit_window,25
+REC_0935,Caregen,Pelo Baum,Pelo Baum,no_local_spec_rows,
+REC_0940,Wontech,PICOCARE,PICOCARE 450/Majesty,bad_text:title:,23
+REC_0943,Wontech,ULTRASKIN,ULTRASKIN TIGHTAN II,no_usable_explicit_window,15
+REC_0944,Wontech,PICOALEX,PICOALEX,no_usable_explicit_window,2
+REC_0946,Wontech,PASTELLE,PASTELLE Pro,no_usable_explicit_window,11
+REC_0947,Hironic,DOUBLO,DOUBLO Gold,no_usable_explicit_window,63
+REC_0948,Hironic,New Doublo,New Doublo 2.0,no_usable_explicit_window,49
+REC_0950,Hironic,SILKRO,SILKRO,no_usable_explicit_window,60
+REC_0951,Hironic,Ultra Vera,Ultra Vera,no_usable_explicit_window,35
+REC_0952,Hironic,MICOOL,MICOOL-S/MICOOL-A,no_usable_explicit_window,12
+REC_0954,EndyMed Medical,PRO,EndyMed PRO,no_usable_explicit_window,40
+REC_0958,Beauty Health,HydraFacial,HydraFacial Boosters,no_usable_explicit_window,2
+REC_0967,BioPlus,ACROSS,ACROSS,no_usable_explicit_window,9
+REC_0974,BNC Korea,BONIVA FILLER,BONIVA Filler,no_local_spec_rows,
+REC_0975,HansBiomed.,MegaDerm,MegaDerm,no_local_spec_rows,
+REC_0976,HansBiomed.,MegaFill,MegaFill,no_local_spec_rows,
+REC_0979,Lumenis,LightSheer,LightSheer QUATTRO,no_usable_explicit_window,64
+REC_0982,Lumenis,Legend Pro,Legend Pro+,no_usable_explicit_window,20
+REC_0989,Sciton,BBL,BBL HEROic,bad_text:wide range of treatments,27
+REC_0996,Fotona d.o.o.,Fotona,SP Dynamis Pro,no_usable_explicit_window,32
+REC_0997,Fotona d.o.o.,StarWalker,StarWalker MaQX Pro,no_usable_explicit_window,12
+REC_0999,Fotona d.o.o.,TimeWalker,TimeWalker II Fotona4D,no_usable_explicit_window,29
+REC_1000,Fotona d.o.o.,TimeWalker,TimeWalker II NightLase,no_usable_explicit_window,21
+REC_1001,Fotona d.o.o.,StarFormer,StarFormer TightWave,no_usable_explicit_window,3
+REC_1004,Lutronic / Cynosure Lutronic,LaseMD,LaseMD Ultra,no_usable_explicit_window,9
+REC_1011,Jeisys Medical,Jeisys,EdgeONE,no_usable_explicit_window,65
+REC_1045,Johnson & Johnson,Mentor,CPX4 Breast Tissue Expanders,source_not_official_enough,2
+REC_1046,Johnson & Johnson,Mentor,CPX4 Plus Enhance Breast Tissue Expander,source_not_official_enough,2
+REC_1047,Johnson & Johnson,Mentor,ARTOURA PLUS Breast Tissue Expanders,source_not_official_enough,2
+REC_1048,Johnson & Johnson,Mentor,Volume Sizing System,source_not_official_enough,2
+REC_SKINTECH_PEEL2GLOW,Skin Tech,Peel2Glow,Peel2Glow,no_local_spec_rows,
+TOPLINE_ALLERGAN_JUVEDERM_ULTRA_XC_20260530,Allergan,Juvéderm Ultra XC,HA Filler for Lip Augmentation,no_local_spec_rows,
+TOPLINE_ALLERGAN_JUVEDERM_VOLBELLA_20260530,Allergan,Juvéderm Volbella XC,HA Filler for Lips and Undereye,no_local_spec_rows,
+TOPLINE_ALLERGAN_JUVEDERM_VOLLURE_20260530,Allergan,Juvéderm Vollure XC,HA Filler for Smile Lines,no_local_spec_rows,
+TOPLINE_ALLERGAN_REVOLVE_20260530,Allergan,REVOLVE,REVOLVE Advanced Adipose System,no_local_spec_rows,
+TOPLINE_GALDERMA_RESTYLANE_KYSSE_20260530,Galderma,Restylane Kysse,HA Filler for Lips,no_local_spec_rows,
+TOPLINE_GALDERMA_RESTYLANE_LYFT_20260530,Galderma,Restylane Lyft,HA Filler for Cheeks and Hands,no_local_spec_rows,
+TOPLINE_GALDERMA_RESTYLANE_REFYNE_20260530,Galderma,Restylane Refyne,HA Filler for Dynamic Facial Folds,no_local_spec_rows,
+TOPLINE_GALDERMA_RESTYLANE_VITAL_LIGHT_20260530,Galderma,Restylane Skinboosters Vital Light,HA Skin Quality Booster for Delicate Areas,no_local_spec_rows,
+TOPLINE_SINCLAIR_LANLUMA_20260530,Sinclair Pharma,Lanluma,PLLA Collagen Stimulating Injectable Filler,no_local_spec_rows,
+TOPLINE_SINCLAIR_PERFECTHA_20260530,Sinclair Pharma,Perfectha,HA Dermal Filler Line,no_local_spec_rows,
+UPR_ANTEAGE_MD_001,Cellese / AnteAGE,AnteAGE MD,AnteAGE MD Growth Factor / Exosome Treatment Solutions,no_local_spec_rows,
+UPR_KARISMA_001,Taumedika SRL,Karisma FACE Rh Collagen,Karisma FACE Rh Collagen,no_local_spec_rows,

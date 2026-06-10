@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>监管脉搏 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Lens 01 · New dimension</div>
+      <h1>
+        监管脉搏
+        <span class="h1-en">Regulatory Pulse</span>
+      </h1>
+      <p class="lede">567 条注册证据 · 按年度、通道、辖区切片，识别监管节奏的加速期与品类轮动。</p>
+      <div class="stat-row">
+        <span>FDA 主导 <span class="num">462</span> 条 (81%)</span>
+        <span>CE/MDR / EUDAMED <span class="num">72</span> 条</span>
+        <span>Manufacturer IFU <span class="num">73</span> 条</span>
+        <span>近五年加速 <span class="num">110</span> 条 (2022–2026)</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="cn">· 567 条证据</span><span class="en">Headline numbers</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede has-wash w-rose-deep">
+          <div class="label">
+            <span class="en">2022–2026 acceleration</span>
+            <span class="zh">近五年新增注册证据</span>
+          </div>
+          <span class="value">110</span>
+          <span class="delta">vs 2017–2021 的 67 条 — 1.6×</span>
+        </article>
+        <article class="kpi-cell has-wash w-rose">
+          <div class="label"><span class="en">510(K) pathway</span><span class="zh">510(k) 通道占比</span></div>
+          <span class="value">59%</span>
+          <span class="delta">336 / 567 总条数</span>
+        </article>
+        <article class="kpi-cell has-wash w-peach">
+          <div class="label"><span class="en">FDA · EU spread</span><span class="zh">FDA / CE 比</span></div>
+          <span class="value">6.4×</span>
+          <span class="delta">FDA 462 / CE/MDR 72</span>
+        </article>
+        <article class="kpi-cell has-wash w-slate">
+          <div class="label"><span class="en">PMA · high-risk</span><span class="zh">PMA / 高风险</span></div>
+          <span class="value">7</span>
+          <span class="delta">PMA 1 + PMA Supplement 6</span>
+        </article>
+        <article class="kpi-cell has-wash w-sand">
+          <div class="label"><span class="en">Jurisdictions</span><span class="zh">辖区数</span></div>
+          <span class="value">5</span>
+          <span class="delta">US 462 · EU/Global 72 · CN 2</span>
+        </article>
+        <article class="kpi-cell has-wash w-plum">
+          <div class="label"><span class="en">Pre-1990 historical</span><span class="zh">1990 前历史证据</span></div>
+          <span class="value">5</span>
+          <span class="delta">最早可回溯到 1984 年</span>
+        </article>
+        <article class="kpi-cell has-wash w-sage">
+          <div class="label"><span class="en">Undated rows</span><span class="zh">无日期行</span></div>
+          <span class="value">226</span>
+          <span class="delta">IFU/标签证据多未带 approval date</span>
+        </article>
+        <article class="kpi-cell has-wash w-lavender">
+          <div class="label"><span class="en">2022 peak</span><span class="zh">2022 单年峰值</span></div>
+          <span class="value">30</span>
+          <span class="delta">2024 次高 29 · 2025 共 23</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>年度时间线</h2>
+        <span class="cn">· 2006–2026</span><span class="en">Annual timeline</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">每年新增注册证据条数</div>
+        <div class="chart-sub">主曲线：FDA / Manufacturer IFU 主导。2022 年起整体节奏明显加快 — EBD 头部公司连续多代 510(k) 扩展申报 + 注射类指证扩展是主要推手。</div>
+        <div class="timeline-line-chart" id="annual-timeline-chart" aria-label="年度证据曲线图"></div>
+        <div class="chart-legend">
+          <span class="item"><span class="sw" style="background:#8E3A3A"></span>FDA / Manufacturer IFU</span>
+          <span class="item">数据范围 <strong>1984 · 2026</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>监管通道分类</h2>
+        <span class="cn">· 567 records</span><span class="en">Regulatory pathway breakdown</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">监管通道与文档类型的构成</div>
+        <div class="chart-sub">510(k) 占主导是 EBD/注射赛道的本质 — 多数为 Class II 设备 / 已上市等同性比较。PMA 数量极少，意味着 Class III / 高风险植入物在样本中稀缺。</div>
+        <div class="donut-row">
+          <div class="donut-wrap">
+            <svg width="280" height="280" viewBox="0 0 280 280" aria-label="监管通道分布">
+              <g transform="rotate(-90 140 140)">
+                <!-- circumference 2π*98 ≈ 615.75 ; total 567 -->
+                <circle class="reg-slice" data-pathway="510(k)" data-n="337" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="366.05 249.70" stroke-dashoffset="0"/>
+                <circle class="reg-slice" data-pathway="FDA label/summary/IFU" data-n="118" r="98" cx="140" cy="140" fill="none" stroke="#4A3D52" stroke-width="38" stroke-dasharray="128.16 487.59" stroke-dashoffset="-366.05"/>
+                <circle class="reg-slice" data-pathway="Manufacturer IFU" data-n="73" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="79.28 536.47" stroke-dashoffset="-494.21"/>
+                <circle class="reg-slice" data-pathway="EUDAMED" data-n="16" r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="17.38 598.37" stroke-dashoffset="-573.49"/>
+                <circle class="reg-slice" data-pathway="CE/MDR" data-n="16" r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="17.38 598.37" stroke-dashoffset="-590.87"/>
+                <circle class="reg-slice" data-pathway="PMA Supplement" data-n="6" r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="6.52 609.23" stroke-dashoffset="-608.25"/>
+                <circle class="reg-slice" data-pathway="PMA" data-n="1" r="98" cx="140" cy="140" fill="none" stroke="#EC9B73" stroke-width="38" stroke-dasharray="1.09 614.66" stroke-dashoffset="-614.77"/>
+              </g>
+            </svg>
+            <div class="donut-center">
+              <span class="big">567</span>
+              <span class="small">registration records</span>
+            </div>
+          </div>
+          <div class="donut-list">
+            <div class="row reg-row" data-pathway="510(k)"><span class="sw" style="background:#8E3A3A"></span><span class="name">510(k) · 美国 Class II 等同</span><span class="num">337</span><span class="pct">59.4%</span></div>
+            <div class="row reg-row" data-pathway="FDA label/summary/IFU"><span class="sw" style="background:#4A3D52"></span><span class="name">FDA label / summary / IFU</span><span class="num">118</span><span class="pct">20.8%</span></div>
+            <div class="row reg-row" data-pathway="Manufacturer IFU"><span class="sw" style="background:#6B5A75"></span><span class="name">IFU · 厂家说明书</span><span class="num">73</span><span class="pct">12.9%</span></div>
+            <div class="row reg-row" data-pathway="EUDAMED"><span class="sw" style="background:#5A6878"></span><span class="name">EUDAMED · 欧盟数据库</span><span class="num">16</span><span class="pct">2.8%</span></div>
+            <div class="row reg-row" data-pathway="CE/MDR"><span class="sw" style="background:#D9AE91"></span><span class="name">CE/MDR · 证书或声明</span><span class="num">16</span><span class="pct">2.8%</span></div>
+            <div class="row reg-row" data-pathway="PMA Supplement"><span class="sw" style="background:#CFB58E"></span><span class="name">PMA Supplement · Class III 增补</span><span class="num">6</span><span class="pct">1.1%</span></div>
+            <div class="row reg-row" data-pathway="PMA"><span class="sw" style="background:#EC9B73"></span><span class="name">PMA · Class III 原始</span><span class="num">1</span><span class="pct">0.2%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>头部企业</h2>
+        <span class="cn">· 注册证据数</span><span class="en">Top companies</span>
+      </div>
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:40px;">#</th>
+              <th>公司 / Company</th>
+              <th>主赛道</th>
+              <th>HQ</th>
+              <th class="num">FDA</th>
+              <th class="num">CE/MDR</th>
+              <th class="num">合计</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td>Merz</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>Germany</td><td class="num">14</td><td class="num">14</td><td class="num">36</td></tr>
+            <tr><td>02</td><td>Allergan / AbbVie</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>USA</td><td class="num">28</td><td class="num">3</td><td class="num">33</td></tr>
+            <tr><td>03</td><td>Galderma</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>Switzerland</td><td class="num">6</td><td class="num">14</td><td class="num">24</td></tr>
+            <tr><td>04</td><td>Revance Therapeutics</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>USA</td><td class="num">21</td><td class="num">2</td><td class="num">23</td></tr>
+            <tr><td>05</td><td>Quanta System</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>Italy</td><td class="num">21</td><td class="num">1</td><td class="num">22</td></tr>
+            <tr><td>06</td><td>Lumenis</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>Israel</td><td class="num">20</td><td class="num">2</td><td class="num">22</td></tr>
+            <tr><td>07</td><td>Apyx Medical</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>USA</td><td class="num">14</td><td class="num">6</td><td class="num">21</td></tr>
+            <tr><td>08</td><td>Lutronic / Cynosure Lutronic</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>South Korea</td><td class="num">19</td><td class="num">1</td><td class="num">20</td></tr>
+            <tr><td>09</td><td>Candela</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>USA</td><td class="num">19</td><td class="num">0</td><td class="num">19</td></tr>
+            <tr><td>10</td><td>Asclepion</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>Germany</td><td class="num">18</td><td class="num">0</td><td class="num">18</td></tr>
+            <tr><td>11</td><td>DEKA</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>Italy</td><td class="num">17</td><td class="num">0</td><td class="num">17</td></tr>
+            <tr><td>12</td><td>Solta Medical</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>USA</td><td class="num">15</td><td class="num">2</td><td class="num">17</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">数字为本地底库快照（截至 <span data-bind-text="generated_at_short">2026·05·20</span>），不代表全部历史申报；详细记录待 FDA openFDA + EUDAMED 后续批次补全。</p>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读与下钻</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation & drill-down</span>
+      </div>
+      <div class="editorial-row">
+        <article class="editorial-block has-wash w-rose-deep wash-bottom-left">
+          <span class="stamp">Finding · 01</span>
+          <div class="lead"><em>2022</em> 之后年度证据量翻倍。</div>
+          <div class="num-pair"><span class="num">1.6×</span><span class="unit">2022-26 vs 2017-21</span></div>
+          <div class="body">2017–2021 共 <em>67</em> 条；2022–2026 已抓到 <em>110</em> 条，年均 <em>22</em> 条。2022 单年 <em>30</em> 条创历史高，2024 <em>29</em> 条紧随。Merz / Allergan / Revance / Apyx / Lumenis 五家在 2022 后密集追加 510(k)。</div>
+          <a class="cta" href="./tracks.html?segment=ebd">查看 EBD 头部公司 ↗</a>
+        </article>
+        <article class="editorial-block has-wash w-apricot wash-bottom-left">
+          <span class="stamp">Finding · 02</span>
+          <div class="lead">CE/MDR 仍是结构性缺口。</div>
+          <div class="num-pair"><span class="num">72</span><span class="unit">vs FDA 462 条</span></div>
+          <div class="body">本轮补到 <em>72</em> 条 CE/EU 类证据（EUDAMED <em>16</em> + CE/MDR 证书 <em>16</em> + Manufacturer IFU 引用 <em>40</em>）vs <em>462</em> 条 FDA。后续 CE/MDR 只按定期后台计划补充，不再把内部工作清单暴露在仪表盘页面里。</div>
+        </article>
+        <article class="editorial-block has-wash w-plum wash-bottom-left">
+          <span class="stamp">Finding · 03</span>
+          <div class="lead">PMA 稀缺意味着风险等级倾斜。</div>
+          <div class="num-pair"><span class="num">7</span><span class="unit">class III · entire dataset</span></div>
+          <div class="body">PMA + PMA Supplement 共 <em>7</em> 条 — 全球医美主流停在 Class II/IIa；植入物、神经调控等高风险路径在本库证据仍单薄。</div>
+          <a class="cta" href="./tracks.html?segment=implants">查看植入物赛道 ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 监管脉搏 Regulatory Pulse · 567 records · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260523"></script>
+<script src="./v3-companies.js?v=20260524"></script>
+<script src="./v3-cross-analysis.js?v=20260526"></script>
+<script src="./v3-product-tree.js?v=20260526"></script>
+<script src="./v3-company-detail.js?v=20260526"></script>
+<script src="./v3-chart-interact.js?v=20260607-tooltip"></script>
+<script src="./_nav.js" data-active="regulatory"></script>
+<style>
+  .table-card tr.co-row { cursor: pointer; transition: background-color .12s ease; }
+  .table-card tr.co-row:hover { background-color: rgba(184,89,87,0.06); }
+  .timeline-hit { cursor: pointer; }
+  .reg-slice { cursor: pointer; transition: opacity .12s ease, stroke-width .15s ease; }
+  .reg-slice:hover { opacity: 0.78; }
+  .donut-list .row { cursor: pointer; transition: background-color .12s ease; }
+  .donut-list .row:hover { background-color: rgba(184,89,87,0.06); }
+</style>
+<script>
+  (function () {
+    const d = window.GLOBAL_AESTHETICS_DATA;
+    if (d && d.generated_at) {
+      const s = d.generated_at.slice(0,10).replace(/-/g,"·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+  })();
+
+  // Wire top-company table rows → shared company-detail drawer.
+  if (window.V3CompanyDetail) {
+    window.V3CompanyDetail.attachToTable(".table-card table tbody tr", { nameCellSelector: "td:nth-child(2)" });
+  }
+
+  // ============ Chart interactivity (Pack D) ============
+  (function wireCharts () {
+    if (!window.V3DrillPanel || !window.V3Tooltip) return;
+    const lens2 = (window.V3_CROSS_ANALYSIS_DATA || {}).lens2;
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    const displayTrack = (track) => track === "Skincare" ? "Cosmeceutical" : (track || "—");
+    // Map pathway label → which regulator bucket dominates
+    const PATHWAY_TO_REGBUCKET = {
+      "510(k)": "fda",
+      "FDA label/summary/IFU": "fda",
+      "Manufacturer IFU": "other",
+      "EUDAMED": "ce_eu",
+      "CE/MDR": "ce_eu",
+      "PMA Supplement": "fda",
+      "PMA": "fda",
+    };
+    function listCompaniesByRegBucket (bucket, pathwayName) {
+      if (!lens2) return [];
+      // Sum that bucket across years for each company
+      return lens2.rows.map(r => {
+        const ct = r.cells.reduce((s, c) => s + (c[bucket] || 0), 0);
+        return { ...r, bucket_total: ct };
+      }).filter(r => r.bucket_total > 0)
+        .sort((a, b) => b.bucket_total - a.bucket_total);
+    }
+
+    function smoothPath(points) {
+      if (points.length < 2) return "";
+      let d = `M ${points[0].x} ${points[0].y}`;
+      for (let i = 0; i < points.length - 1; i++) {
+        const p0 = points[i - 1] || points[i];
+        const p1 = points[i];
+        const p2 = points[i + 1];
+        const p3 = points[i + 2] || p2;
+        const c1x = p1.x + (p2.x - p0.x) / 6;
+        const c1y = p1.y + (p2.y - p0.y) / 6;
+        const c2x = p2.x - (p3.x - p1.x) / 6;
+        const c2y = p2.y - (p3.y - p1.y) / 6;
+        d += ` C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${p2.x} ${p2.y}`;
+      }
+      return d;
+    }
+
+    function renderAnnualTimeline() {
+      const wrap = document.getElementById("annual-timeline-chart");
+      if (!wrap) return [];
+      const rows = [
+        [2006, 11], [2007, 13], [2008, 5], [2009, 3], [2010, 6], [2011, 13], [2012, 10],
+        [2013, 11], [2014, 15], [2015, 22], [2016, 12], [2017, 7], [2018, 9], [2019, 21],
+        [2020, 17], [2021, 13], [2022, 30], [2023, 23], [2024, 29], [2025, 23], [2026, 6],
+      ];
+      const width = 1200;
+      const height = 260;
+      const pad = { top: 26, right: 36, bottom: 46, left: 36 };
+      const max = Math.max(...rows.map(([, value]) => value));
+      const step = (width - pad.left - pad.right) / (rows.length - 1);
+      const points = rows.map(([year, value], index) => ({
+        year,
+        value,
+        x: Math.round(pad.left + index * step),
+        y: Math.round(pad.top + (1 - value / max) * (height - pad.top - pad.bottom)),
+      }));
+      const path = smoothPath(points);
+      const area = `${path} L ${points[points.length - 1].x} ${height - pad.bottom} L ${points[0].x} ${height - pad.bottom} Z`;
+      const axisTicks = points
+        .filter((point, index) => index % 2 === 0 || index === points.length - 1)
+        .map(point => `<text class="timeline-axis-label" x="${point.x}" y="${height - 14}" text-anchor="middle">'${String(point.year).slice(2)}</text>`)
+        .join("");
+      const peakLabels = points
+        .filter(point => point.value >= 23 || point.year === 2026)
+        .map(point => `<text class="timeline-value-label" x="${point.x}" y="${Math.max(14, point.y - 12)}" text-anchor="middle">${point.value}</text>`)
+        .join("");
+      const pointNodes = points.map(point => `
+        <g class="timeline-point-group" data-year="${point.year}" data-n="${point.value}">
+          <circle class="timeline-point-halo" cx="${point.x}" cy="${point.y}" r="9"></circle>
+          <circle class="timeline-point" cx="${point.x}" cy="${point.y}" r="4.5"></circle>
+          <circle class="timeline-hit" cx="${point.x}" cy="${point.y}" r="15"></circle>
+        </g>
+      `).join("");
+      wrap.innerHTML = `
+        <svg class="timeline-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="2006 到 2026 年新增注册证据曲线">
+          <line class="timeline-gridline strong" x1="${pad.left}" x2="${width - pad.right}" y1="${height - pad.bottom}" y2="${height - pad.bottom}"></line>
+          <line class="timeline-gridline" x1="${pad.left}" x2="${width - pad.right}" y1="${pad.top + 64}" y2="${pad.top + 64}"></line>
+          <line class="timeline-gridline" x1="${pad.left}" x2="${width - pad.right}" y1="${pad.top + 128}" y2="${pad.top + 128}"></line>
+          <path class="timeline-area" d="${area}"></path>
+          <path class="timeline-line" d="${path}" pathLength="1"></path>
+          ${pointNodes}
+          ${peakLabels}
+          ${axisTicks}
+        </svg>
+      `;
+      return Array.from(wrap.querySelectorAll(".timeline-point-group"));
+    }
+
+    // Year timeline — hover + click
+    const cols = renderAnnualTimeline();
+    cols.forEach(col => {
+      const fullYear = col.dataset.year;
+      const n = parseInt(col.dataset.n || "0", 10);
+      window.V3Tooltip.attach(col, () => ({
+        title: fullYear,
+        lines: [`<em>${n}</em> registration records`],
+        hint: "click → companies active that year",
+      }));
+      col.addEventListener("click", () => {
+        // Find companies that filed in this year (lens2 has per-company year cells)
+        if (!lens2) {
+          window.V3DrillPanel.open({
+            stamp: "Year · drill",
+            title: fullYear,
+            sub: `${n} records · 详细数据请加载 cross-analysis 数据`,
+            rows: [],
+          });
+          return;
+        }
+        const matching = lens2.rows.map(r => {
+          const cell = r.cells.find(c => c.year === fullYear);
+          return cell && cell.total > 0
+            ? { row: r, cell }
+            : null;
+        }).filter(Boolean).sort((a, b) => b.cell.total - a.cell.total);
+        window.V3DrillPanel.open({
+          stamp: "Year timeline · drill",
+          title: `${fullYear} · ${n} registrations`,
+          sub: `${matching.length} 头部公司在该年有新增证据`,
+          summary: [
+            { k: "Year", v: fullYear },
+            { k: "Records", v: n },
+            { k: "Active cos", v: matching.length },
+          ],
+          rows: matching.map(({row, cell}) => ({
+            company_id: row.company_id,
+            name: row.company,
+            hint: `${displayTrack(row.primary_track)} · ${row.country || "—"} · FDA ${cell.fda} CE ${cell.ce_eu} NMPA ${cell.nmpa} KFDA ${cell.kfda}`,
+            color: TRACK_COLORS[row.primary_track] || "#888",
+            badge: `${cell.total} reg`,
+          })),
+        });
+      });
+    });
+
+    // Donut slices + list rows
+    function openPathwayDrill (pathway, n) {
+      const bucket = PATHWAY_TO_REGBUCKET[pathway] || "fda";
+      const rows = listCompaniesByRegBucket(bucket, pathway).slice(0, 50);
+      const BUCKET_LABEL_ZH = { fda: "FDA", ce_eu: "CE/EU", nmpa: "NMPA", kfda: "KFDA", other: "Other" };
+      window.V3DrillPanel.open({
+        stamp: "Pathway · regulatory",
+        title: pathway,
+        sub: `${n} 条证据 · 按 ${BUCKET_LABEL_ZH[bucket]} 桶汇总该 pathway 内的头部公司`,
+        summary: [
+          { k: "Pathway", v: pathway },
+          { k: "Records", v: n },
+          { k: "Bucket", v: BUCKET_LABEL_ZH[bucket] },
+        ],
+        rows: rows.map(r => ({
+          company_id: r.company_id,
+          name: r.company,
+          hint: `${displayTrack(r.primary_track)} · ${r.country || "—"} · ${BUCKET_LABEL_ZH[bucket]} 计 ${r.bucket_total}`,
+          color: TRACK_COLORS[r.primary_track] || "#888",
+          badge: `${r.bucket_total}`,
+        })),
+      });
+    }
+    document.querySelectorAll(".reg-slice").forEach(s => {
+      const pathway = s.getAttribute("data-pathway");
+      const n = parseInt(s.getAttribute("data-n") || "0", 10);
+      window.V3Tooltip.attach(s, () => ({
+        title: pathway,
+        lines: [
+          `<em>${n}</em> records · ${(n / 567 * 100).toFixed(1)}% of total`,
+        ],
+        hint: "click → top companies in pathway",
+      }));
+      s.addEventListener("click", () => openPathwayDrill(pathway, n));
+    });
+    document.querySelectorAll(".reg-row").forEach(row => {
+      const pathway = row.getAttribute("data-pathway");
+      const n = parseInt(row.querySelector(".num").textContent.trim() || "0", 10);
+      window.V3Tooltip.attach(row, () => ({
+        title: pathway,
+        lines: [`<em>${n}</em> records`],
+        hint: "click → top companies in pathway",
+      }));
+      row.addEventListener("click", () => openPathwayDrill(pathway, n));
+    });
+  })();
+</script>
+
+</body>
+</html>

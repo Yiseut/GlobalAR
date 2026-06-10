@@ -17,6 +17,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from dashboard_scope import compact_key as scope_key
+from dashboard_scope import company_exclusion_reason, product_exclusion_reason
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
@@ -26,6 +29,11 @@ OUT_JSON = DATA_DIR / "company_profiles_bridge.json"
 OUT_JS = WEB_DIR / "company-profiles-data.js"
 ASSET_OUT = WEB_DIR / "assets" / "company_profiles"
 COMPANY_LOGO_MANIFEST = DATA_DIR / "company_logo_manifest.csv"
+# Company logo false positives are expensive in the UI: distributors, media,
+# regulators, and unrelated same-name domains can all expose "logo" assets.
+# Keep auto-matched candidates in the manifest, but only show explicitly
+# approved logos on company cards.
+TRUSTED_LOGO_DISPLAY_STATUSES = {"approved_display"}
 
 BRIEFING_ROOT = Path("E:/shared/code/briefing_v6")
 BRIEFING_DATA = BRIEFING_ROOT / "data"
@@ -176,7 +184,13 @@ def load_logo_manifest() -> dict[str, str]:
     for row in read_csv(COMPANY_LOGO_MANIFEST):
         company = clean_text(row.get("company"))
         web_path = clean_text(row.get("web_path"))
-        if clean_text(row.get("status")) == "ok" and company and web_path:
+        display_status = clean_text(row.get("display_status")) or "candidate_hidden"
+        if (
+            clean_text(row.get("status")) == "ok"
+            and display_status in TRUSTED_LOGO_DISPLAY_STATUSES
+            and company
+            and web_path
+        ):
             logos[norm_key(company)] = web_path
     return logos
 
@@ -185,15 +199,25 @@ def load_dashboard_companies() -> tuple[list[dict[str, Any]], dict[str, list[dic
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     try:
-        companies = [dict(row) for row in conn.execute("SELECT * FROM companies ORDER BY company").fetchall()]
+        raw_companies = [dict(row) for row in conn.execute("SELECT * FROM companies ORDER BY company").fetchall()]
         products_by_company: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for row in conn.execute("SELECT * FROM products ORDER BY company, brand, core_product").fetchall():
             item = dict(row)
+            if product_exclusion_reason(item):
+                continue
             company = clean_text(item.get("company"))
             if company:
                 products_by_company[company].append(item)
     finally:
         conn.close()
+    included_company_keys = {scope_key(company) for company in products_by_company}
+    companies = [
+        company
+        for company in raw_companies
+        if clean_text(company.get("company"))
+        and not company_exclusion_reason(company)
+        and scope_key(company.get("company")) in included_company_keys
+    ]
     return companies, dict(products_by_company)
 
 
@@ -212,6 +236,7 @@ def product_summary(products: list[dict[str, Any]]) -> dict[str, Any]:
 
 def format_intro(company: dict[str, Any], products: list[dict[str, Any]]) -> dict[str, str]:
     name = clean_text(company.get("company"))
+    positioning = clean_text(company.get("positioning_cn"))
     location = clean_text(company.get("location_full") or company.get("hq_country") or company.get("region"))
     role = clean_text(company.get("business_role")) or "company"
     ownership = clean_text(company.get("ownership"))
@@ -225,6 +250,8 @@ def format_intro(company: dict[str, Any], products: list[dict[str, Any]]) -> dic
     if role:
         zh_bits.append(f"业务角色为 {role}")
     intro_zh = "，".join(zh_bits) + f"。当前库内记录 {count} 条产品线，主赛道为 {track}。"
+    if positioning:
+        intro_zh = f"{name}：{positioning}。当前库内记录 {count} 条产品线，主赛道为 {track}。"
     intro_en = f"{name} is tracked as a {ownership or 'profiled'} {role.lower()} in {location or 'the global aesthetics database'}, with {count} product lines currently mapped under {track}."
     return {"zh": intro_zh, "en": intro_en}
 
@@ -268,6 +295,9 @@ def build_profile(
                 "category_l2": clean_text(product.get("category_l2")),
                 "tech_type_std": clean_text(product.get("tech_type_std")),
                 "introduction": clean_text(product.get("introduction")),
+                "verified_product_type_cn": clean_text(product.get("verified_product_type_cn")),
+                "market_channel": clean_text(product.get("market_channel")),
+                "material_taxonomy_path_cn": clean_text(product.get("material_taxonomy_path_cn")),
                 "ce_status": clean_text(product.get("ce_status")),
                 "fda_510k_number": clean_text(product.get("fda_510k_number")),
             }
@@ -288,6 +318,7 @@ def build_profile(
         "parent_company": clean_text(company.get("parent_company") or snapshot.get("parent_company")),
         "stock_code": clean_text(company.get("stock_code") or snapshot.get("stock_code")),
         "primary_track": clean_text(company.get("primary_track") or snapshot.get("primary_track")),
+        "positioning_cn": clean_text(company.get("positioning_cn") or snapshot.get("positioning_cn")),
         "product_count": len(products),
         "brand_count": summary["brand_count"],
         "briefing_dates": sorted(schedule.get(name, [])),

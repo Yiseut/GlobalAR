@@ -13,6 +13,7 @@ import csv
 import json
 import math
 import re
+import shutil
 from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -30,7 +31,11 @@ OFFICIAL_WEBSITE_MASTER = DATA_DIR / "official_website_master.csv"
 PRODUCT_SPEC_EVIDENCE = DATA_DIR / "product_specification_evidence.csv"
 REGISTRATION_EVIDENCE = DATA_DIR / "registration_evidence.csv"
 OFFICIAL_INDICATION_EVIDENCE = DATA_DIR / "official_indication_evidence.csv"
+MANUAL_PRODUCT_FACT_EVIDENCE = DATA_DIR / "manual_product_fact_evidence.csv"
 MDR_CE_EVIDENCE = DATA_DIR / "mdr_ce_evidence_candidates.jsonl"
+MISSING_PRODUCT_ACTIONS = AUDIT_DIR / "missing_product_family_feedback_batch_01_master_actions.csv"
+CATEGORY_FEEDBACK_DECISIONS = AUDIT_DIR / "category_dictionary_feedback_batch_01_user_decisions.csv"
+NEXT_CONFIRMATION_DECISIONS = AUDIT_DIR / "next_user_confirmation_decisions_20260601_latest.csv"
 
 
 REGULATED_TRACKS = {"injectables", "ebd", "implants", "regenerative", "consumables", "surgical", "diagnostics"}
@@ -44,6 +49,43 @@ def norm_key(value: object) -> str:
     return re.sub(r"[^a-z0-9]+", "", clean(value).lower())
 
 
+COMPANY_ALIAS_KEYS = {
+    "candelamedical": "candela",
+}
+
+OUT_OF_SCOPE_COMPANY_KEYS = {
+    "kai",
+    "q3medicaldevices",
+    "skineditnutricosmetics",
+}
+
+
+def canonical_company_key(value: object) -> str:
+    key = norm_key(value)
+    return COMPANY_ALIAS_KEYS.get(key, key)
+
+
+SCOPE_EXCLUDED_CANDIDATE_KEYS = {
+    (canonical_company_key("Arthrex"), norm_key("NanoScope")),
+    (canonical_company_key("Contura"), norm_key("Bulkamid")),
+    (canonical_company_key("Contura"), norm_key("Bulking Agent")),
+    (canonical_company_key("Biovico"), norm_key("Xerthra / AOORA")),
+    (canonical_company_key("Biovico"), norm_key("PRP / Cellular Therapy")),
+    (canonical_company_key("Contura"), norm_key("Aquamid (Reconstruction)")),
+    (canonical_company_key("Contura"), norm_key("Polyacrylamide Hydrogel")),
+    (canonical_company_key("Crown"), norm_key("ProGen PRP")),
+    (canonical_company_key("Crown"), norm_key("Platelet-Rich Plasma")),
+    (canonical_company_key("Eclipse"), norm_key("Eclipse PRP (Gold)")),
+    (canonical_company_key("Eclipse"), norm_key("PRP Kit")),
+    (canonical_company_key("Lameditech"), norm_key("HandyRay")),
+    (canonical_company_key("Lameditech"), norm_key("HandyRay / Lite")),
+    (canonical_company_key("Mesotech"), norm_key("Overage")),
+    (canonical_company_key("Mesotech"), norm_key("Overage (Deep/Derma)")),
+    (canonical_company_key("Bayer"), norm_key("Skinoren 施灵乐/思丽安")),
+    (canonical_company_key("Bayer"), norm_key("Acne & Rosacea")),
+}
+
+
 def compact_space(value: object) -> str:
     return re.sub(r"\s+", " ", clean(value))
 
@@ -53,6 +95,40 @@ def read_csv_rows(path: Path) -> list[dict[str, str]]:
         return []
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def resolved_missing_product_candidate_keys() -> set[tuple[str, str]]:
+    """Rows already decided by user feedback should not keep reappearing as new gaps."""
+    keys: set[tuple[str, str]] = set(SCOPE_EXCLUDED_CANDIDATE_KEYS)
+
+    def add(company: object, candidate: object) -> None:
+        company_key = canonical_company_key(company)
+        candidate_key = norm_key(candidate)
+        if company_key and candidate_key:
+            keys.add((company_key, candidate_key))
+
+    for row in read_csv_rows(MISSING_PRODUCT_ACTIONS):
+        add(row.get("candidate_company"), row.get("candidate_product_or_family"))
+
+    for row in read_csv_rows(CATEGORY_FEEDBACK_DECISIONS):
+        decision = clean(row.get("your_decision_fill_this"))
+        if "排除" not in decision and "不纳入" not in decision:
+            continue
+        for sample in re.split(r"[；;]", clean(row.get("sample_products"))):
+            parts = [part.strip() for part in sample.split(" / ") if part.strip()]
+            if len(parts) >= 2:
+                add(parts[0], parts[1])
+            if len(parts) >= 3:
+                add(parts[0], parts[2])
+
+    for row in read_csv_rows(NEXT_CONFIRMATION_DECISIONS):
+        decision = clean(row.get("decision")).lower()
+        if not any(token in decision for token in ["exclude", "delete_duplicate", "merge"]):
+            continue
+        add(row.get("company"), row.get("brand"))
+        add(row.get("company"), row.get("product"))
+
+    return keys
 
 
 def read_jsonl_rows(path: Path) -> list[dict[str, str]]:
@@ -109,7 +185,7 @@ def company_index(rows: list[dict[str, str]]) -> dict[str, dict[str, str]]:
     for row in rows:
         name = clean(row.get("canonical_name") or row.get("company") or row.get("company_name") or row.get("name"))
         if name:
-            output[norm_key(name)] = row
+            output[canonical_company_key(name)] = row
     return output
 
 
@@ -119,7 +195,7 @@ def product_company_index(products: list[dict[str, str]], company_rows: list[dic
     product_counts: Counter[str] = Counter()
     for product in products:
         company_name = clean(product.get("company"))
-        company_key = norm_key(company_name)
+        company_key = canonical_company_key(company_name)
         if not company_key:
             continue
         product_counts[company_key] += 1
@@ -155,6 +231,15 @@ def index_rows(rows: list[dict[str, str]], field: str) -> dict[str, list[dict[st
     return output
 
 
+def index_company_rows(rows: list[dict[str, str]]) -> dict[str, list[dict[str, str]]]:
+    output: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        key = canonical_company_key(row.get("company"))
+        if key:
+            output[key].append(row)
+    return output
+
+
 def rows_for_product(
     by_product: dict[str, list[dict[str, str]]],
     by_seed: dict[str, list[dict[str, str]]],
@@ -180,8 +265,79 @@ def rows_for_product(
     return rows
 
 
+def non_primary_or_excluded_product(product: dict[str, str], duplicate_record_ids: set[str]) -> bool:
+    inclusion = clean(product.get("inclusion_status")).lower()
+    if inclusion in {"deleted", "excluded"}:
+        return True
+    seed_record_id = clean(product.get("seed_record_id"))
+    if seed_record_id and seed_record_id in duplicate_record_ids:
+        return True
+    blob = clean(product.get("search_blob")).lower()
+    return "duplicate_of:" in blob
+
+
+def registration_gap_is_blocking(product: dict[str, str], official_rows: list[dict[str, str]], specs: list[dict[str, str]]) -> bool:
+    """Only treat missing registration as a blocking gap when identity is still weak.
+
+    Many official product pages, IFUs, and MDR/CE claims do not publish a product-
+    level certificate number. Once a regulated product already has official product
+    evidence, lack of a public certificate number should be monitored separately
+    instead of shown as a red product-completeness defect.
+    """
+    if not regulated_track(product):
+        return False
+    verification_status = clean(product.get("verification_status")).lower()
+    review_status = clean(product.get("review_status")).lower()
+    source_status = clean(product.get("source_status")).lower()
+    has_official_product_evidence = bool(official_rows) or "official_product_page" in source_status or "official_product_document" in source_status
+    has_spec_evidence = bool(specs) or bool(clean(product.get("technical_specs_json"))) or bool(clean(product.get("spec_evidence_count")))
+    if verification_status == "unverified_seed":
+        return True
+    if review_status == "queued":
+        return True
+    return not (has_official_product_evidence or has_spec_evidence)
+
+
+def manual_fact_is_direct_official(row: dict[str, str]) -> bool:
+    """Treat already-promoted manual product facts as direct product evidence."""
+    if not clean(row.get("source_url")):
+        return False
+    source_type = clean(row.get("source_type")).lower()
+    review_status = clean(row.get("review_status")).lower()
+    fact_group = clean(row.get("fact_group")).lower()
+    if source_type not in {"official_product_page", "official_brand_page", "official_product_document", "official_company_claim"}:
+        return False
+    if review_status not in {"promoted", "auto_cross_checked", "manual_verified", "user_confirmed"} and not review_status.startswith("manual_verified"):
+        return False
+    return fact_group in {
+        "official_product_page",
+        "official_brand_page",
+        "official_product_document",
+        "official_company_claim",
+        "top_company_productline_official_verification",
+        "upstream_report_reference_official_verification",
+    }
+
+
+def official_indication_gap_is_blocking(
+    product: dict[str, str],
+    regs: list[dict[str, str]],
+    indications: list[dict[str, str]],
+    official_rows: list[dict[str, str]],
+    specs: list[dict[str, str]],
+) -> bool:
+    if not regulated_track(product) or indications:
+        return False
+    if any("unavailable_verified_no_public_indication" in clean(row.get("review_status")).lower() for row in regs):
+        return False
+    verification_status = clean(product.get("verification_status")).lower()
+    if verification_status == "unverified_seed":
+        return True
+    return registration_gap_is_blocking(product, official_rows, specs)
+
+
 def fuzzy_company_rows(rows_by_company: dict[str, list[dict[str, str]]], product: dict[str, str], fields: list[str], limit: int = 20) -> list[dict[str, str]]:
-    company_key = norm_key(product.get("company"))
+    company_key = canonical_company_key(product.get("company"))
     rows = rows_by_company.get(company_key, [])
     tokens = [
         token
@@ -270,22 +426,25 @@ def score_product(
 ) -> tuple[int, str, list[str], str]:
     issues: list[str] = []
     score = 0
-    if clean(product.get("verification_status")) == "unverified_seed":
+    verification_status = clean(product.get("verification_status")).lower()
+    has_regulatory_and_indication = bool(regs) and bool(indications)
+    nonblocking_evidence_complete = has_regulatory_and_indication and verification_status != "unverified_seed"
+    if verification_status == "unverified_seed":
         score += 18
         issues.append("master_unverified_seed")
     if missing_fields:
         score += 18
         issues.append("missing_identity:" + ",".join(missing_fields))
-    if not direct_websites:
+    if not direct_websites and not nonblocking_evidence_complete:
         score += 20
         issues.append("no_direct_official_product_or_family_url")
-    if not direct_specs:
+    if not direct_specs and not nonblocking_evidence_complete:
         score += 12
         issues.append("no_direct_spec_candidate")
-    if regulated_track(product) and not regs:
+    if regulated_track(product) and not regs and registration_gap_is_blocking(product, direct_websites, direct_specs):
         score += 24
         issues.append("no_registration_evidence")
-    if regulated_track(product) and not indications:
+    if official_indication_gap_is_blocking(product, regs, indications, direct_websites, direct_specs):
         score += 12
         issues.append("no_official_indication")
     if not clean(product.get("verified_differentiator")):
@@ -322,7 +481,7 @@ def score_product(
         action = "Review A/B spec candidates and map useful rows to product/family; discard weak C rows."
     elif missing_fields:
         action = "Fix product identity fields before evidence promotion."
-    elif clean(product.get("verification_status")) == "unverified_seed":
+    elif verification_status == "unverified_seed":
         action = "Cross-check product existence and core positioning against official product page."
     else:
         action = "Keep as lower-priority monitoring item."
@@ -338,9 +497,13 @@ def build_product_queue(args: argparse.Namespace) -> tuple[list[dict[str, object
     specs = read_csv_rows(PRODUCT_SPEC_EVIDENCE)
     registrations = read_csv_rows(REGISTRATION_EVIDENCE)
     indications = read_csv_rows(OFFICIAL_INDICATION_EVIDENCE)
+    manual_facts = read_csv_rows(MANUAL_PRODUCT_FACT_EVIDENCE)
     ce_candidates = read_jsonl_rows(MDR_CE_EVIDENCE)
 
-    family_by_record, _family_by_id = family_maps(families)
+    family_by_record, family_by_id = family_maps(families)
+    duplicate_record_ids: set[str] = set()
+    for family in family_by_id.values():
+        duplicate_record_ids.update(split_ids(family.get("duplicate_record_ids", "")))
     website_by_product = index_rows(websites, "product_id")
     website_by_family = index_rows(websites, "product_family_id")
     spec_by_product = index_rows(specs, "product_id")
@@ -349,17 +512,50 @@ def build_product_queue(args: argparse.Namespace) -> tuple[list[dict[str, object
     reg_by_seed = index_rows(registrations, "seed_record_id")
     indication_by_product = index_rows(indications, "product_id")
     indication_by_seed = index_rows(indications, "seed_record_id")
+    fact_by_product = index_rows(manual_facts, "product_id")
+    fact_by_seed = index_rows(manual_facts, "seed_record_id")
     ce_by_family = index_rows(ce_candidates, "product_family_id")
-    websites_by_company = index_rows(websites, "company")
-    specs_by_company = index_rows(specs, "company")
+    websites_by_company = index_company_rows(websites)
+    specs_by_company = index_company_rows(specs)
 
     queue_rows: list[dict[str, object]] = []
     for product in products:
+        if non_primary_or_excluded_product(product, duplicate_record_ids):
+            continue
         family_ids = family_by_record.get(clean(product.get("seed_record_id")), [])
-        company = companies.get(norm_key(product.get("company")), {})
+        company = companies.get(canonical_company_key(product.get("company")), {})
         direct_websites = rows_for_product(website_by_product, {}, website_by_family, clean(product.get("product_id")), "", family_ids)
         direct_specs_all = rows_for_product(spec_by_product, {}, spec_by_family, clean(product.get("product_id")), "", family_ids)
         direct_specs = [row for row in direct_specs_all if spec_tier(row) in {"A", "B"}]
+        fact_rows = rows_for_product(
+            fact_by_product,
+            fact_by_seed,
+            {},
+            clean(product.get("product_id")),
+            clean(product.get("seed_record_id")),
+            [],
+        )
+        direct_websites.extend(
+            row
+            for row in fact_rows
+            if manual_fact_is_direct_official(row)
+        )
+        direct_specs.extend(
+            {
+                "source_page_url": clean(row.get("source_url")),
+                "source_title": clean(row.get("evidence_title")),
+                "spec_value": clean(row.get("field_value")),
+                "evidence_excerpt": clean(row.get("evidence_excerpt")),
+                "confidence": clean(row.get("confidence")),
+                "source_type": clean(row.get("source_type")),
+            }
+            for row in fact_rows
+            if (
+                clean(row.get("fact_group")) == "official_specification_candidate"
+                or manual_fact_is_direct_official(row)
+            )
+            and clean(row.get("field_value"))
+        )
         fuzzy_websites = [] if direct_websites else fuzzy_company_rows(
             websites_by_company,
             product,
@@ -422,7 +618,7 @@ def build_product_queue(args: argparse.Namespace) -> tuple[list[dict[str, object
                 "official_indication_rows": len(inds),
                 "mdr_ce_candidate_rows": len(ce_rows),
                 "lead_official_url": first_url(direct_websites or fuzzy_websites, "official_website_url", "source_url"),
-                "lead_spec_url": first_url(direct_specs or fuzzy_specs, "source_page_url"),
+                "lead_spec_url": first_url(direct_specs or fuzzy_specs, "source_page_url", "source_url"),
                 "lead_registration_url": first_url(regs or ce_rows, "source_url", "url"),
                 "evidence_mix": evidence_counts(regs + inds + direct_specs[:5] + ce_rows[:5]),
                 "issues": " | ".join(issues),
@@ -459,10 +655,27 @@ def build_missing_product_candidates(
     specs: list[dict[str, str]],
     limit: int,
 ) -> list[dict[str, object]]:
-    known_company_brand = {(norm_key(row.get("company")), norm_key(row.get("brand"))) for row in products if clean(row.get("brand"))}
+    resolved_keys = resolved_missing_product_candidate_keys()
+    active_products = [row for row in products if clean(row.get("inclusion_status")).lower() not in {"deleted", "excluded"}]
+    excluded_products = [row for row in products if clean(row.get("inclusion_status")).lower() in {"deleted", "excluded"}]
+    known_company_brand = {
+        (canonical_company_key(row.get("company")), norm_key(row.get("brand")))
+        for row in active_products
+        if clean(row.get("brand"))
+    }
     known_company_product = {
-        (norm_key(row.get("company")), norm_key(row.get("standard_product_name") or row.get("core_product")))
-        for row in products
+        (canonical_company_key(row.get("company")), norm_key(row.get("standard_product_name") or row.get("core_product")))
+        for row in active_products
+        if clean(row.get("standard_product_name") or row.get("core_product"))
+    }
+    excluded_company_brand = {
+        (canonical_company_key(row.get("company")), norm_key(row.get("brand")))
+        for row in excluded_products
+        if clean(row.get("brand"))
+    }
+    excluded_company_product = {
+        (canonical_company_key(row.get("company")), norm_key(row.get("standard_product_name") or row.get("core_product")))
+        for row in excluded_products
         if clean(row.get("standard_product_name") or row.get("core_product"))
     }
     grouped: dict[tuple[str, str], dict[str, object]] = {}
@@ -472,8 +685,14 @@ def build_missing_product_candidates(
         candidate = compact_space(name)
         if not company or len(candidate) < 3:
             return
-        ckey = norm_key(company)
+        ckey = canonical_company_key(company)
+        if ckey in OUT_OF_SCOPE_COMPANY_KEYS:
+            return
         nkey = norm_key(candidate)
+        if (ckey, nkey) in resolved_keys:
+            return
+        if (ckey, nkey) in excluded_company_brand or (ckey, nkey) in excluded_company_product:
+            return
         if not nkey or (ckey, nkey) in known_company_brand or (ckey, nkey) in known_company_product:
             return
         key = (company, candidate)
@@ -657,6 +876,13 @@ def main() -> None:
     write_csv(queue_path, queue_rows, queue_fields)
     write_csv(missing_path, missing_candidates, missing_fields)
     write_summary(summary_path, queue_path, missing_path, summary, queue_rows, generated_at)
+    if output_stem != "latest":
+        latest_queue_path = AUDIT_DIR / "product_gap_queue_latest.csv"
+        latest_missing_path = AUDIT_DIR / "candidate_missing_product_lines_latest.csv"
+        latest_summary_path = AUDIT_DIR / "product_gap_summary_latest.md"
+        shutil.copyfile(queue_path, latest_queue_path)
+        shutil.copyfile(missing_path, latest_missing_path)
+        shutil.copyfile(summary_path, latest_summary_path)
     print(
         json.dumps(
             {

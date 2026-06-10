@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-06-01T16:50:41+08:00",
+  "seed_record_id": "REC_0660",
+  "product_id_before_rebuild": "prod_16dfb5b48cc2",
+  "workbook_row_found": true,
+  "changes": [
+    {
+      "field": "Inclusion_Status",
+      "old": "active",
+      "new": "excluded"
+    },
+    {
+      "field": "Duplicate_Note",
+      "old": "",
+      "new": "excluded_by_scope_20260601: Bayer Skinoren is an azelaic-acid prescription dermatology product for acne/rosacea, not an upstream medical-aesthetics product line under the current scope rules."
+    },
+    {
+      "field": "V4_1_Registration_Review_Status",
+      "old": "",
+      "new": "excluded_scope"
+    }
+  ],
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_skinoren_scope_exclusion_20260601_164938.xlsx",
+  "note": "excluded_by_scope_20260601: Bayer Skinoren is an azelaic-acid prescription dermatology product for acne/rosacea, not an upstream medical-aesthetics product line under the current scope rules."
+}

@@ -294,7 +294,8 @@ def build_commands(args: argparse.Namespace) -> list[dict[str, Any]]:
                 str(args.media_sleep),
             ]
             + (["--skip-image-downloads"] if skip_image_downloads else [])
-            + (["--download-logos-only"] if args.download_logos_only else []),
+            + (["--download-logos-only"] if args.download_logos_only else [])
+            + (["--target-spec-gaps"] if args.target_spec_gaps else []),
             # Product photos and broad page fetches can explode the queue. Product-gap
             # mode keeps generated official/spec tables current without crawling.
             "timeout": args.media_stage_timeout,
@@ -486,8 +487,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--official-limit", type=int, default=25)
     parser.add_argument("--mdr-limit", type=int, default=20)
     parser.add_argument("--fda-companies", type=int, default=8)
-    parser.add_argument("--mdr-plan-companies", type=int, default=80)
-    parser.add_argument("--mdr-families-per-company", type=int, default=4)
+    parser.add_argument("--mdr-plan-companies", type=int, default=0, help="Priority-company cap for MDR/CE plan. 0 means all companies.")
+    parser.add_argument("--mdr-families-per-company", type=int, default=0, help="Per-company family cap for MDR/CE plan. 0 means all families.")
     parser.add_argument("--media-websites", type=int, default=12)
     parser.add_argument("--media-page-fetches", type=int, default=8)
     parser.add_argument("--media-images-per-site", type=int, default=2)
@@ -509,6 +510,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--skip-media-assets", action="store_true", help="Keep generated official/spec tables but skip broad website media/page crawling.")
     parser.add_argument("--skip-image-downloads", action="store_true")
     parser.add_argument("--download-logos-only", action="store_true")
+    parser.add_argument("--target-spec-gaps", action="store_true", help="Prioritize official product pages with missing or weak specification coverage.")
     parser.add_argument("--product-gap-audit", action="store_true", help="Write the latest product verification gap queue after each batch.")
     parser.add_argument("--news-limit", type=int, default=45)
     parser.add_argument("--news-stage-timeout", type=int, default=180)

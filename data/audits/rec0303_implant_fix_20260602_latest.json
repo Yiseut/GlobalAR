@@ -1,0 +1,53 @@
+{
+  "run_ts": "20260602_002521",
+  "correction": "rec0303_implant_fix_20260602",
+  "record_id": "REC_0303",
+  "product_id": "prod_439b182b8315",
+  "old_family_id": "pf_ab942908f374",
+  "new_family_id": "pf_f0c2e4808248",
+  "classification": {
+    "category_l1": "Implants",
+    "category_l2": "Other Implant",
+    "tech_type": "Silicone Body Implant",
+    "material_taxonomy_path_cn": "植入物 > 身体假体 > 硅胶假体",
+    "review_status": "manual_verified"
+  },
+  "workbook": {
+    "path": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.xlsx",
+    "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_rec0303_implant_fix_20260602_20260602_002521.xlsx",
+    "record_id": "REC_0303",
+    "target_family_id": "pf_f0c2e4808248",
+    "changes": {
+      "Material_Taxonomy_Note": {
+        "before": "REC_0303 is gluteal/calf silicone body implant; corrected from EBD fallback to implant taxonomy based on existing backfill_audit and material taxonomy contradiction.",
+        "after": "REC_0303 is gluteal/calf silicone body implant; corrected from legacy fallback classification to implant taxonomy based on existing backfill_audit and material taxonomy contradiction."
+      },
+      "Backfill_Audit": {
+        "before": "[orig:植入物 > 乳房假体 > 硅胶假体] 臀/小腿硅胶身体假体，应归植入物(可加身体假体三级) | rec0303_implant_fix_20260602: corrected commercial classification from EBD/Other EBD to Implants/Other Implant; body silicone implant taxonomy applied.",
+        "after": "[orig:植入物 > 乳房假体 > 硅胶假体] 臀/小腿硅胶身体假体，应归植入物(可加身体假体三级) | rec0303_implant_fix_20260602: corrected legacy commercial classification to Implants/Other Implant; body silicone implant taxonomy applied."
+      }
+    }
+  },
+  "csv_updates": [
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_official_source_plan.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_media_asset_index.csv",
+      "backup": "",
+      "changed_rows": 0
+    }
+  ]
+}

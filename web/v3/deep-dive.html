@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>深度下钻 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  /* ===== sunburst ===== */
+  .sb-layout { display: grid; grid-template-columns: minmax(320px, 1fr) 360px; gap: 28px; align-items: start; }
+  .sb-stage { position: relative; }
+  .sb-crumb {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.05em; margin-bottom: 12px; min-height: 22px;
+  }
+  .sb-crumb a {
+    cursor: pointer; color: var(--muted); text-decoration: none;
+    padding: 2px 9px; border: 1px solid var(--hairline-2); border-radius: 99px; transition: all .14s ease;
+  }
+  .sb-crumb a:hover { color: var(--accent); border-color: var(--accent); }
+  .sb-crumb a.cur { color: var(--ink); border-color: var(--rose-dust); background: var(--surface-3); }
+  .sb-crumb .sep { color: var(--subtle); }
+  .sb-svg { width: 100%; height: auto; display: block; touch-action: none; }
+  .sb-arc { cursor: pointer; stroke: var(--surface-2); stroke-width: 1; transition: opacity .18s ease, filter .18s ease; }
+  .sb-arc:hover { opacity: 0.82; }
+  .sb-arc.dim { opacity: 0.28; }
+  .sb-arc.leaf { cursor: zoom-in; }
+  .sb-center-label { font-family: var(--f-display); fill: var(--ink); text-anchor: middle; }
+  .sb-center-n { font-family: var(--f-serif-it); font-style: italic; fill: var(--accent-2); text-anchor: middle; }
+  .sb-center-sub { font-family: var(--f-mono); fill: var(--muted); text-anchor: middle; font-size: 10px; letter-spacing: 0.08em; }
+  .sb-center-hit { cursor: zoom-out; }
+  @keyframes sbIn { from { opacity: 0; transform: scale(.92) rotate(-3deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+  .sb-anim { transform-origin: center; animation: sbIn .42s cubic-bezier(.34,1.2,.4,1) both; }
+  .sb-tip {
+    position: fixed; pointer-events: none; z-index: 9300; max-width: 240px;
+    background: var(--ink); color: #fff; font-family: var(--f-sans); font-size: 11.5px;
+    padding: 7px 11px; border-radius: 6px; box-shadow: 0 6px 20px rgba(58,51,64,.3);
+    opacity: 0; transition: opacity .12s ease; line-height: 1.5;
+  }
+  .sb-tip.show { opacity: 1; }
+  .sb-tip b { font-family: var(--f-body); font-weight: 600; }
+  .sb-tip .pct { color: #e8b5b0; font-family: var(--f-mono); }
+
+  /* ===== focus card (right of sunburst) ===== */
+  .focus-card {
+    background: var(--surface-2); border: 1px solid var(--hairline-2);
+    border-radius: 8px; padding: 20px 22px; position: sticky; top: 18px;
+  }
+  .focus-card .fc-stamp { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .focus-card h3 { font-family: var(--f-display); font-weight: 400; font-size: 23px; margin: 8px 0 2px; color: var(--ink); line-height: 1.15; }
+  .focus-card .fc-n { font-family: var(--f-serif-it); font-style: italic; font-size: 30px; color: var(--accent-2); }
+  .focus-card .fc-n small { font-family: var(--f-mono); font-style: normal; font-size: 11px; color: var(--muted); letter-spacing: 0.06em; margin-left: 6px; }
+  .focus-card .fc-children { margin-top: 16px; display: flex; flex-direction: column; gap: 5px; max-height: 320px; overflow-y: auto; }
+  .fc-row {
+    display: grid; grid-template-columns: 10px 1fr auto; gap: 9px; align-items: center;
+    padding: 6px 6px; border-radius: 5px; cursor: pointer; transition: background .12s ease;
+  }
+  .fc-row:hover { background: rgba(184,89,87,0.06); }
+  .fc-row .sw { width: 10px; height: 10px; border-radius: 2px; }
+  .fc-row .nm { font-family: var(--f-body); font-size: 13px; color: var(--ink); }
+  .fc-row .nm small { display: block; font-family: var(--f-mono); font-size: 9.5px; color: var(--muted); }
+  .fc-row .bar { grid-column: 2 / 4; height: 3px; border-radius: 2px; background: var(--hairline-2); position: relative; margin-top: 2px; }
+  .fc-row .bar i { position: absolute; inset: 0 auto 0 0; border-radius: 2px; }
+  .fc-row .n { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); }
+
+  /* ===== miller columns (commercial) ===== */
+  .mc-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .mc-col { background: var(--surface-3); border: 1px solid var(--hairline-2); border-radius: 6px; overflow: hidden; min-height: 200px; }
+  .mc-col-head { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 10px 14px; border-bottom: 1px solid var(--hairline-2); background: var(--surface); }
+  .mc-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; cursor: pointer; border-bottom: 1px dashed var(--hairline-2); transition: background .12s ease; }
+  .mc-item:last-child { border-bottom: none; }
+  .mc-item:hover { background: rgba(184,89,87,0.05); }
+  .mc-item.sel { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--accent); }
+  .mc-item .sw { width: 9px; height: 18px; border-radius: 2px; flex-shrink: 0; }
+  .mc-item .nm { flex: 1; font-family: var(--f-body); font-size: 12.5px; color: var(--ink); }
+  .mc-item .n { font-family: var(--f-mono); font-size: 11px; color: var(--ink-2); }
+  .mc-item .chev { color: var(--subtle); font-size: 12px; }
+  .mc-empty { padding: 26px 16px; color: var(--muted); font-style: italic; font-size: 12.5px; text-align: center; }
+
+  /* ===== drawer (page-local) ===== */
+  .dd-drill { position: fixed; top: 0; right: 0; height: 100vh; width: min(460px, 94vw);
+    background: var(--surface-2); border-left: 1px solid var(--hairline); box-shadow: -10px 0 36px rgba(58,51,64,0.18);
+    transform: translateX(100%); transition: transform .26s cubic-bezier(.4,0,.2,1); z-index: 9100;
+    display: flex; flex-direction: column; font-family: var(--f-body); }
+  .dd-drill.show { transform: translateX(0); }
+  .dd-drill .head { padding: 22px 26px 12px; border-bottom: 1px solid var(--hairline-2); position: relative; }
+  .dd-drill .head .stamp { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .dd-drill .head h3 { font-family: var(--f-display); font-size: 22px; margin: 8px 0 2px; font-weight: 400; color: var(--ink); line-height: 1.2; }
+  .dd-drill .head .sub { font-style: italic; font-size: 12.5px; color: var(--muted); }
+  .dd-drill .close-btn { position: absolute; top: 16px; right: 18px; width: 30px; height: 30px; border-radius: 50%;
+    border: 1px solid var(--hairline); background: transparent; color: var(--ink); font-size: 16px; cursor: pointer; transition: all .15s ease; }
+  .dd-drill .close-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .dd-drill .body { flex: 1; overflow-y: auto; padding: 6px 22px 26px; }
+  .dd-co { display: flex; gap: 10px; align-items: center; padding: 9px 4px; border-bottom: 1px dashed var(--hairline-2); cursor: pointer; }
+  .dd-co:hover { background: rgba(184,89,87,0.05); }
+  .dd-co .sw { width: 6px; height: 28px; border-radius: 2px; flex-shrink: 0; }
+  .dd-co .nm { flex: 1; font-size: 13px; color: var(--ink); font-weight: 500; }
+  .dd-co .nm small { display: block; font-family: var(--f-mono); font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .dd-co .badge { font-family: var(--f-mono); font-size: 11px; padding: 2px 8px; border-radius: 3px; background: var(--surface-3); border: 1px solid var(--hairline); color: var(--ink-2); }
+  .dd-backdrop { position: fixed; inset: 0; background: rgba(58,51,64,0.22); backdrop-filter: blur(1.5px); opacity: 0; pointer-events: none; transition: opacity .2s ease; z-index: 9099; }
+  .dd-backdrop.show { opacity: 1; pointer-events: auto; }
+
+  @media (max-width: 1100px) {
+    .sb-layout { grid-template-columns: 1fr; }
+    .focus-card { position: static; }
+    .mc-wrap { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Drill-down · L1 › L2 › L3</div>
+      <h1>
+        深度下钻
+        <span class="h1-en">Deep Drilldown · 三级分类</span>
+      </h1>
+      <p class="lede">单维排行和 L1×L2 矩阵之外，这一页把<strong>二级以下</strong>的真实结构摊开看 —
+        979 款产品在 <strong>材料分类 8→32→69</strong> 三级、和 <strong>商业 10→56→技术</strong> 路线上的逐层分布。
+        旭日图<strong style="color:var(--accent-2);">点扇区即下钻</strong>，每个叶子都能点开看背后企业、并一键跳到公司列表或子赛道页。</p>
+      <div class="stat-row">
+        <span><span class="num" data-count-up="979">979</span> 款产品 · <span class="num" data-count-up="362">362</span> 家企业</span>
+        <span>材料 <span class="num" data-count-up="8">8</span> · <span class="num" data-count-up="32">32</span> · <span class="num" data-count-up="69">69</span> 三级</span>
+        <span>商业 <span class="num" data-count-up="10">10</span> L1 · <span class="num" data-count-up="56">56</span> L2</span>
+      </div>
+    </section>
+
+    <!-- ============ SUNBURST · MATERIAL 3-tier ============ -->
+    <section class="block">
+      <div class="section-head">
+        <h2>材料三级分类 · 旭日下钻</h2>
+        <span class="cn">· L1 → L2 → L3 · 8 / 32 / 69</span><span class="en">Material 3-level · sunburst drill</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">从大类到细分材料 — 内环是 8 个材料大类，往外是 L2、L3</div>
+        <div class="chart-sub">扇区面积 ∝ 产品数。<strong style="color:var(--accent-2);">点有子级的扇区</strong>放大下钻，点最外层（L3 叶子）打开明细抽屉看具体企业；点中心或面包屑回退。右侧卡片实时跟随当前焦点。</div>
+        <div class="sb-layout">
+          <div class="sb-stage">
+            <div class="sb-crumb" id="sb-crumb"></div>
+            <svg class="sb-svg" id="sb-svg" viewBox="0 0 560 560" role="img" aria-label="材料分类旭日图"></svg>
+          </div>
+          <div class="focus-card" id="focus-card"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MILLER · COMMERCIAL L1>L2>tech ============ -->
+    <section class="block">
+      <div class="section-head">
+        <h2>商业路线逐列下钻</h2>
+        <span class="cn">· L1 → L2 → 技术/材料源</span><span class="en">Commercial path · column drill</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">从商业赛道到子赛道再到底层技术 — 一列点一层</div>
+        <div class="chart-sub">点第一列的 L1 赛道，第二列展开它的 L2 子赛道；再点 L2，第三列展开底层技术/材料源。点任意带 <span style="color:var(--accent-2);">›</span> 的项继续下钻，点最末项打开明细抽屉。</div>
+        <div class="mc-wrap" id="mc-wrap">
+          <div class="mc-col"><div class="mc-col-head">L1 · 商业赛道</div><div id="mc-l1"></div></div>
+          <div class="mc-col"><div class="mc-col-head">L2 · 子赛道</div><div id="mc-l2"><div class="mc-empty">← 先选一个 L1</div></div></div>
+          <div class="mc-col"><div class="mc-col-head">L3 · 技术 / 材料源</div><div id="mc-l3"><div class="mc-empty">← 再选一个 L2</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row" id="finding-cards"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 深度下钻 Deep Drilldown · 材料 8/32/69 · 商业 10/56 · <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<div class="dd-backdrop" id="dd-backdrop"></div>
+<aside class="dd-drill" id="dd-drill" role="dialog" aria-label="明细下钻">
+  <div class="head">
+    <button class="close-btn" type="button" aria-label="关闭">×</button>
+    <span class="stamp" id="dd-stamp">Leaf · drill-down</span>
+    <h3 id="dd-title">—</h3>
+    <div class="sub" id="dd-sub">—</div>
+  </div>
+  <div class="body" id="dd-body"></div>
+</aside>
+<div class="sb-tip" id="sb-tip"></div>
+
+<script src="../app-data.js?v=20260528"></script>
+<script src="./v3-companies.js?v=20260528"></script>
+<script src="./v3-product-tree.js?v=20260528"></script>
+<script src="./v3-company-detail.js?v=20260528"></script>
+<script src="./v3-deep-dive.js?v=20260528"></script>
+<script src="./v3-deep-interact.js?v=20260528"></script>
+<script src="./_nav.js" data-active="deep"></script>
+<script>
+(function () {
+  const DEEP = window.V3_DEEP_DIVE_DATA;
+  const PIV = window.V3_PIVOT_DATA;
+  if (!DEEP || !PIV) { console.error("[deep-dive] data missing"); return; }
+  const facts = PIV.facts;
+
+  const d = window.GLOBAL_AESTHETICS_DATA;
+  if (d && d.generated_at) {
+    const s = d.generated_at.slice(0, 10).replace(/-/g, "·");
+    document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => el.textContent = s);
+  }
+
+  // ---- material L1 palette ----
+  const MAT_COLORS = {
+    "能量设备": "#8E3A3A", "注射类": "#6B5A75", "功效性护肤品": "#D9AE91",
+    "耗材/器械": "#5A6878", "植入物": "#CFB58E", "埋线提升": "#C76B68",
+    "肉毒毒素": "#A8B59A", "诊断/影像": "#8C7B91",
+  };
+  const FALLBACK = ["#8E3A3A", "#6B5A75", "#D9AE91", "#5A6878", "#CFB58E", "#C76B68", "#A8B59A", "#8C7B91"];
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, ch =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[ch]));
+  }
+  function hexToHsl(hex) {
+    const c = hex.replace("#", "");
+    const r = parseInt(c.slice(0, 2), 16) / 255, g = parseInt(c.slice(2, 4), 16) / 255, b = parseInt(c.slice(4, 6), 16) / 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b); let h = 0, s = 0; const l = (mx + mn) / 2;
+    if (mx !== mn) { const dd = mx - mn; s = l > 0.5 ? dd / (2 - mx - mn) : dd / (mx + mn);
+      switch (mx) { case r: h = (g - b) / dd + (g < b ? 6 : 0); break; case g: h = (b - r) / dd + 2; break; case b: h = (r - g) / dd + 4; break; } h /= 6; }
+    return { h: h * 360, s: s * 100, l: l * 100 };
+  }
+  function hslToHex(h, s, l) {
+    h /= 360; s /= 100; l /= 100; let r, g, b;
+    if (s === 0) { r = g = b = l; } else {
+      const hue = (p, q, t) => { if (t < 0) t += 1; if (t > 1) t -= 1; if (t < 1/6) return p + (q - p) * 6 * t; if (t < 1/2) return q; if (t < 2/3) return p + (q - p) * (2/3 - t) * 6; return p; };
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s; const p = 2 * l - q;
+      r = hue(p, q, h + 1/3); g = hue(p, q, h); b = hue(p, q, h - 1/3);
+    }
+    const tx = x => Math.round(x * 255).toString(16).padStart(2, "0");
+    return "#" + tx(r) + tx(g) + tx(b);
+  }
+  function shade(hex, step) {
+    const { h, s, l } = hexToHsl(hex);
+    const nl = Math.max(28, Math.min(86, l + step * 9));
+    const ns = Math.max(14, s - Math.abs(step) * 6);
+    return hslToHex(h, ns, nl);
+  }
+
+  // ===================== SUNBURST =====================
+  const CX = 280, CY = 280;
+  const RINGS = [[64, 132], [132, 200], [200, 264]];
+  const svg = document.getElementById("sb-svg");
+  const tip = document.getElementById("sb-tip");
+  let focusPath = [{ node: DEEP.material_tree, color: null, label: "材料分类" }];
+
+  function polar(r, deg) { const a = deg * Math.PI / 180; return [CX + r * Math.cos(a), CY + r * Math.sin(a)]; }
+  function donut(r0, r1, a0, a1) {
+    if (a1 - a0 >= 359.999) a1 = a0 + 359.999;
+    const large = (a1 - a0) > 180 ? 1 : 0;
+    const [xo0, yo0] = polar(r1, a0), [xo1, yo1] = polar(r1, a1);
+    const [xi1, yi1] = polar(r0, a1), [xi0, yi0] = polar(r0, a0);
+    return `M${xo0.toFixed(2)} ${yo0.toFixed(2)} A${r1} ${r1} 0 ${large} 1 ${xo1.toFixed(2)} ${yo1.toFixed(2)} L${xi1.toFixed(2)} ${yi1.toFixed(2)} A${r0} ${r0} 0 ${large} 0 ${xi0.toFixed(2)} ${yi0.toFixed(2)} Z`;
+  }
+
+  function layout() {
+    const root = focusPath[focusPath.length - 1].node;
+    const baseColorFixed = focusPath[focusPath.length - 1].color; // null at top
+    const arcs = [];
+    const kids = root.children || [];
+    const total = kids.reduce((s, c) => s + c.n, 0) || 1;
+    let a = -90;
+    kids.forEach((c1, i1) => {
+      const span1 = 360 * c1.n / total;
+      const base = baseColorFixed || MAT_COLORS[c1.name] || FALLBACK[i1 % FALLBACK.length];
+      arcs.push({ node: c1, ring: 0, a0: a, a1: a + span1, color: baseColorFixed ? shade(base, i1 % 4 - 1) : base, base, path: focusPath.map(f => f.node).slice(1).concat(c1) });
+      const ch1 = c1.children || []; const t1 = ch1.reduce((s, c) => s + c.n, 0) || 1; let b = a;
+      ch1.forEach((c2, i2) => {
+        const span2 = span1 * c2.n / t1;
+        arcs.push({ node: c2, ring: 1, a0: b, a1: b + span2, color: shade(base, (i2 % 4) + 1), base, path: focusPath.map(f => f.node).slice(1).concat(c1, c2) });
+        const ch2 = c2.children || []; const t2 = ch2.reduce((s, c) => s + c.n, 0) || 1; let dd = b;
+        ch2.forEach((c3, i3) => {
+          const span3 = span2 * c3.n / t2;
+          arcs.push({ node: c3, ring: 2, a0: dd, a1: dd + span3, color: shade(base, (i3 % 3) + 3), base, path: focusPath.map(f => f.node).slice(1).concat(c1, c2, c3) });
+          dd += span3;
+        });
+        b += span2;
+      });
+      a += span1;
+    });
+    return arcs;
+  }
+
+  function renderSunburst() {
+    const arcs = layout();
+    const focus = focusPath[focusPath.length - 1];
+    const focusNode = focus.node;
+    const totalN = (focusNode.children || []).reduce((s, c) => s + c.n, 0) || focusNode.n || 1;
+    let html = `<g class="sb-anim">`;
+    arcs.forEach((arc, idx) => {
+      const isLeaf = !(arc.node.children && arc.node.children.length);
+      html += `<path class="sb-arc${isLeaf ? " leaf" : ""}" d="${donut(RINGS[arc.ring][0], RINGS[arc.ring][1], arc.a0, arc.a1)}"
+        fill="${arc.color}" data-idx="${idx}" style="animation-delay:${Math.min(idx * 9, 240)}ms"></path>`;
+    });
+    // center
+    const label = focus.label.length > 7 ? focus.label.slice(0, 7) + "…" : focus.label;
+    html += `<circle class="sb-center-hit" cx="${CX}" cy="${CY}" r="${RINGS[0][0] - 2}" fill="var(--surface-2)" stroke="var(--hairline-2)"></circle>`;
+    html += `<text class="sb-center-label" x="${CX}" y="${CY - 8}" font-size="16">${esc(label)}</text>`;
+    html += `<text class="sb-center-n" x="${CX}" y="${CY + 16}" font-size="22">${totalN}</text>`;
+    html += `<text class="sb-center-sub" x="${CX}" y="${CY + 33}">${focusPath.length > 1 ? "点中心回退" : "产品总数"}</text>`;
+    html += `</g>`;
+    svg.innerHTML = html;
+
+    // wire arcs
+    svg.querySelectorAll(".sb-arc").forEach(el => {
+      const arc = arcs[+el.getAttribute("data-idx")];
+      el.addEventListener("mousemove", (e) => {
+        const pct = ((arc.node.n / totalN) * 100).toFixed(1);
+        tip.innerHTML = `<b>${esc(arc.node.name)}</b><br>${arc.node.n} 款产品 · <span class="pct">${pct}%</span>${arc.node.children && arc.node.children.length ? " · 点击下钻" : " · 点击看明细"}`;
+        tip.style.left = (e.clientX + 14) + "px"; tip.style.top = (e.clientY + 14) + "px"; tip.classList.add("show");
+      });
+      el.addEventListener("mouseleave", () => tip.classList.remove("show"));
+      el.addEventListener("click", () => {
+        tip.classList.remove("show");
+        if (arc.node.children && arc.node.children.length) {
+          focusPath.push({ node: arc.node, color: arc.base, label: arc.node.name });
+          renderSunburst(); renderCrumb(); renderFocusCard();
+        } else {
+          openMaterialDrawer(arc.path);
+        }
+      });
+    });
+    svg.querySelector(".sb-center-hit").addEventListener("click", () => {
+      if (focusPath.length > 1) { focusPath.pop(); renderSunburst(); renderCrumb(); renderFocusCard(); }
+    });
+  }
+
+  function renderCrumb() {
+    const wrap = document.getElementById("sb-crumb");
+    wrap.innerHTML = focusPath.map((f, i) => {
+      const cur = i === focusPath.length - 1;
+      return `<a data-i="${i}" class="${cur ? "cur" : ""}">${esc(f.label)}</a>` + (cur ? "" : `<span class="sep">›</span>`);
+    }).join("");
+    wrap.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      const i = +a.getAttribute("data-i");
+      focusPath = focusPath.slice(0, i + 1);
+      renderSunburst(); renderCrumb(); renderFocusCard();
+    }));
+  }
+
+  function renderFocusCard() {
+    const card = document.getElementById("focus-card");
+    const focus = focusPath[focusPath.length - 1];
+    const node = focus.node;
+    const kids = (node.children || []).slice();
+    const total = kids.reduce((s, c) => s + c.n, 0) || node.n || 1;
+    const base = focus.color || "#8C7B91";
+    const path = focusPath.map(f => f.node).slice(1);
+    const seg = window.V3Link.segmentForMaterial([node.name].concat(kids.slice(0, 3).map(k => k.name)).join(" "));
+    const cos = companiesUnder(matFilter(path));
+    const maxN = kids.length ? Math.max(...kids.map(k => k.n)) : 1;
+    let html = `<div class="fc-stamp">当前焦点 · ${focusPath.length === 1 ? "全部材料" : "L" + (focusPath.length - 1)}</div>
+      <h3>${esc(node.name)}</h3>
+      <div class="fc-n">${total}<small>款产品 · ${cos.length} 家企业</small></div>`;
+    html += `<div id="fc-jump"></div>`;
+    if (kids.length) {
+      html += `<div class="fc-children">` + kids.map((k, i) => {
+        const col = focusPath.length === 1 ? (MAT_COLORS[k.name] || FALLBACK[i % 8]) : shade(base, (i % 4) + 1);
+        const hasKids = k.children && k.children.length;
+        return `<div class="fc-row" data-i="${i}">
+          <span class="sw" style="background:${col}"></span>
+          <span class="nm">${esc(k.name)}<small>${hasKids ? (k.children.length + " 个下级 · 点击下钻") : "叶子 · 点击看明细"}</small></span>
+          <span class="n">${k.n}</span>
+          <span class="bar"><i style="width:${(k.n / maxN * 100).toFixed(0)}%;background:${col}"></i></span>
+        </div>`;
+      }).join("") + `</div>`;
+    } else {
+      html += `<p style="font-style:italic;color:var(--muted);font-size:12.5px;margin-top:14px;">这是最细一级（L3 叶子）。下方按钮可跳转查看这 ${cos.length} 家企业。</p>`;
+    }
+    card.innerHTML = html;
+    // jump bar for focus
+    document.getElementById("fc-jump").appendChild(window.V3Link.jumpBar({
+      segment: seg, segmentLabel: seg, ids: cos.map(c => c.ci), count: cos.length,
+      chips: path.map((p, i) => ({ k: "L" + (i + 1), v: p.name })),
+    }));
+    card.querySelectorAll(".fc-row").forEach(row => row.addEventListener("click", () => {
+      const k = kids[+row.getAttribute("data-i")];
+      if (k.children && k.children.length) {
+        focusPath.push({ node: k, color: focusPath.length === 1 ? (MAT_COLORS[k.name] || base) : base, label: k.name });
+        renderSunburst(); renderCrumb(); renderFocusCard();
+      } else {
+        openMaterialDrawer(path.concat(k));
+      }
+    }));
+  }
+
+  // material path → fact filter {m1,m2,m3}
+  function matFilter(path) {
+    const f = {};
+    if (path[0]) f.m1 = path[0].name;
+    if (path[1]) f.m2 = path[1].name;
+    if (path[2]) f.m3 = path[2].name;
+    return f;
+  }
+  function companiesUnder(filter) {
+    const rows = facts.filter(ff => Object.entries(filter).every(([k, v]) => v == null || ff[k] === v));
+    const byCo = new Map();
+    rows.forEach(ff => {
+      const e = byCo.get(ff.co) || { co: ff.co, ci: ff.ci, n: 0, rg: ff.rg, ow: ff.ow, pt: ff.pt, brands: new Set() };
+      e.n++; if (ff.b) e.brands.add(ff.b); byCo.set(ff.co, e);
+    });
+    return [...byCo.values()].sort((a, b) => b.n - a.n);
+  }
+
+  function openMaterialDrawer(path) {
+    const filter = matFilter(path);
+    const seg = window.V3Link.segmentForMaterial(path.map(p => p.name).join(" "));
+    openDrawer({
+      stamp: "材料 L" + path.length + " · 明细",
+      title: path[path.length - 1].name,
+      sub: path.map(p => p.name).join(" › "),
+      filter, segment: seg,
+      chips: path.map((p, i) => ({ k: "L" + (i + 1), v: p.name })),
+    });
+  }
+
+  // ===================== MILLER COLUMNS (commercial) =====================
+  const COM = DEEP.commercial_tree;
+  const TRACK_COLORS = { EBD: "#8E3A3A", Injectables: "#6B5A75", Skincare: "#D9AE91", Regenerative: "#A8B59A", Consumables: "#5A6878", Implants: "#CFB58E", Diagnostics: "#C76B68", Surgical: "#8C7B91", Pharma: "#EC9B73", "Thread Lift": "#C8B8D0" };
+  const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
+  let selL1 = null, selL2 = null;
+  function renderMiller() {
+    const c1 = document.getElementById("mc-l1");
+    c1.innerHTML = COM.children.map((n, i) => millerItem({ ...n, name: displayL1(n.name) }, TRACK_COLORS[n.name] || FALLBACK[i % 8], n.children && n.children.length, selL1 === n.name)).join("");
+    c1.querySelectorAll(".mc-item").forEach((el, i) => el.addEventListener("click", () => {
+      const n = COM.children[i];
+      if (selL1 === n.name) return;
+      selL1 = n.name; selL2 = null; renderMiller();
+    }));
+    const c2 = document.getElementById("mc-l2");
+    const l1node = COM.children.find(n => n.name === selL1);
+    if (!l1node) { c2.innerHTML = `<div class="mc-empty">← 先选一个 L1</div>`; }
+    else {
+      const base = TRACK_COLORS[selL1] || "#8C7B91";
+      c2.innerHTML = l1node.children.map((n, i) => millerItem(n, shade2(base, i), n.children && n.children.length, selL2 === n.name)).join("");
+      c2.querySelectorAll(".mc-item").forEach((el, i) => el.addEventListener("click", () => {
+        const n = l1node.children[i];
+        if (n.children && n.children.length) { selL2 = n.name; renderMiller(); }
+        else openComDrawer(selL1, n.name, null);
+      }));
+    }
+    const c3 = document.getElementById("mc-l3");
+    const l2node = l1node && l1node.children.find(n => n.name === selL2);
+    if (!l2node) { c3.innerHTML = `<div class="mc-empty">← 再选一个 L2</div>`; }
+    else {
+      const base = TRACK_COLORS[selL1] || "#8C7B91";
+      c3.innerHTML = l2node.children.map((n, i) => millerItem(n, shade2(base, i + 3), false, false)).join("");
+      c3.querySelectorAll(".mc-item").forEach((el, i) => el.addEventListener("click", () => openComDrawer(selL1, selL2, l2node.children[i].name)));
+    }
+  }
+  function shade2(hex, i) { return shade(hex, (i % 5) + 1); }
+  function millerItem(n, color, hasKids, sel) {
+    return `<div class="mc-item${sel ? " sel" : ""}">
+      <span class="sw" style="background:${color}"></span>
+      <span class="nm">${esc(n.name)}</span>
+      <span class="n">${n.n}</span>
+      <span class="chev">${hasKids ? "›" : ""}</span></div>`;
+  }
+  function openComDrawer(l1, l2, t) {
+    const filter = {}; if (l1) filter.l1 = l1; if (l2) filter.l2 = l2; if (t) filter.t = t;
+    const parts = [l1, l2, t].filter(Boolean);
+    const displayParts = [displayL1(l1), l2, t].filter(Boolean);
+    openDrawer({
+      stamp: "商业 · 明细", title: displayParts[displayParts.length - 1], sub: displayParts.join(" › "),
+      filter, segment: window.V3Link.segmentForTrack(l1), track: l1,
+      chips: [{ k: "L1", v: displayL1(l1) }, { k: "L2", v: l2 }, { k: "技术", v: t }].filter(c => c.v),
+    });
+  }
+
+  // ===================== DRAWER =====================
+  const drill = document.getElementById("dd-drill");
+  const bg = document.getElementById("dd-backdrop");
+  bg.addEventListener("click", closeDrawer);
+  drill.querySelector(".close-btn").addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawer(); });
+  function closeDrawer() { drill.classList.remove("show"); bg.classList.remove("show"); }
+
+  function openDrawer(cfg) {
+    const cos = companiesUnder(cfg.filter);
+    document.getElementById("dd-stamp").textContent = cfg.stamp;
+    document.getElementById("dd-title").textContent = cfg.title;
+    document.getElementById("dd-sub").textContent = cfg.sub;
+    const body = document.getElementById("dd-body");
+    body.innerHTML = "";
+    body.appendChild(window.V3Link.jumpBar({
+      segment: cfg.segment, segmentLabel: cfg.segment, track: cfg.track,
+      ids: cos.map(c => c.ci), count: cos.length, chips: cfg.chips,
+    }));
+    const totalProd = cos.reduce((s, c) => s + c.n, 0);
+    const head = document.createElement("div");
+    head.style.cssText = "font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:0.05em;margin:4px 0 8px;";
+    head.textContent = `${cos.length} 家企业 · ${totalProd} 款产品`;
+    body.appendChild(head);
+    if (!cos.length) {
+      const e = document.createElement("div");
+      e.style.cssText = "padding:24px 0;text-align:center;font-style:italic;color:var(--muted);";
+      e.textContent = "该分类下暂无产品记录";
+      body.appendChild(e);
+    } else {
+      cos.forEach(c => {
+        const row = document.createElement("div");
+        row.className = "dd-co";
+        row.innerHTML = `<span class="sw" style="background:${TRACK_COLORS[c.pt] || "#8C7B91"}"></span>
+          <span class="nm">${esc(c.co)}<small>${esc(c.rg || "")} · ${esc(c.ow || "")} · ${[...c.brands].slice(0, 2).map(esc).join(", ")}</small></span>
+          <span class="badge">${c.n} 款</span>`;
+        if (c.ci) {
+          row.addEventListener("click", () => { closeDrawer(); if (window.V3CompanyDetail) window.V3CompanyDetail.show(c.ci); });
+        } else { row.style.cursor = "default"; }
+        body.appendChild(row);
+      });
+    }
+    drill.classList.add("show"); bg.classList.add("show");
+  }
+
+  // ===================== FINDINGS =====================
+  const findings = [
+    { wash: "w-rose-deep", stamp: "Finding · 01", lead: "能量设备是最碎的大类。", num: "394", unit: "products · 7 个 L2", body: "材料 L1「能量设备」下有激光/射频/超声/光IPL 等 7 个 L2、20+ 个 L3 细分 — 没有单一霸主。下钻到 L3 才能看清「色素激光 vs 脱毛激光 vs 点阵」这种真正的竞争边界。" },
+    { wash: "w-plum", stamp: "Finding · 02", lead: "注射类高度集中在 HA。", num: "196", unit: "HA / 297 注射", body: "注射类 297 款里 196 款是透明质酸 HA（66%），其余被胶原刺激剂、美塑、肉毒分摊。这解释了为什么注射赛道的护城河更多在「材料工艺 + 监管」而非品类宽度。" },
+    { wash: "w-apricot", stamp: "Finding · 03", lead: "二级以下才看得见差异。", num: "69", unit: "L3 leaf categories", body: "只看 L1（8 类）会把「单极射频」和「微聚焦超声」混为一谈。展开到 69 个 L3 叶子，才能把监管路径、临床证据、竞争格局逐一对上 — 这正是这一页存在的意义。" },
+  ];
+  document.getElementById("finding-cards").innerHTML = findings.map(f => `
+    <article class="editorial-block has-wash ${f.wash} wash-bottom-left">
+      <span class="stamp">${f.stamp}</span>
+      <div class="lead">${f.lead}</div>
+      <div class="num-pair"><span class="num">${f.num}</span><span class="unit">${f.unit}</span></div>
+      <div class="body">${f.body}</div>
+    </article>`).join("");
+
+  // ===================== INIT =====================
+  renderSunburst(); renderCrumb(); renderFocusCard(); renderMiller();
+})();
+</script>
+
+</body>
+</html>

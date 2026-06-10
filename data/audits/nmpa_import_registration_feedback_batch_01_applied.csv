@@ -1,0 +1,9 @@
+﻿batch_no,decision,target,db_action,note
+NMPA-IMP-01,排除/不纳入,YA-MAN 家用射频皮肤治疗仪不纳入全球医美上游主库,excluded; no product/evidence row added,用户确认：由个人用户在家庭环境自行使用，按家用设备口径排除。
+NMPA-IMP-02,确认新增/补入,新增 Humedix / Pre-filled Sodium Hyaluronate Syringe 产品线，并与 NMPA-IMP-03 合并为同一产品族,new Humedix product line; two NMPA evidence rows added,用户确认：02/03 合并新增；两个进口证号归同一 Humedix HA filler 产品线。
+NMPA-IMP-03,确认新增/补入,新增 Humedix / Pre-filled Sodium Hyaluronate Syringe 产品线，并与 NMPA-IMP-02 合并为同一产品族,new Humedix product line; two NMPA evidence rows added,用户确认：02/03 合并新增；两个进口证号归同一 Humedix HA filler 产品线。
+NMPA-IMP-04,确认新增/补入,新增 YooYoung / Modified Sodium Hyaluronate Gel 产品线,new YooYoung product line; one NMPA evidence row added,用户确认：YooYoung 注射用修饰透明质酸钠凝胶新增为产品线。
+NMPA-IMP-05,并入已有产品线,并入 LG Chem / Yvoire；废弃旧证号 国械注进20163130114，使用现行/已核验进口证组合,mapped to existing LG Chem / Yvoire; old not_found certificate not promoted; existing current certificates retained,用户确认：解冻入库；对标主库已有 LG Chem / Yvoire。当前库已含 20173132005、20183131717、20153133933、20253130269 等证据。
+NMPA-IMP-06,并入已有产品线,并入 Allergan / Juvéderm Voluma XC；废弃未核验的 国械注进20223130141，使用 20193130410、20213130485 等已核验证据,mapped to existing Allergan / Juvéderm Voluma XC; old not_found certificate not promoted; existing verified certificates retained,用户确认：解冻入库；对标主库已有 Allergan / Juvéderm VOLUMA。
+NMPA-IMP-07,并入已有产品线,并入 Lutronic / Cynosure Lutronic 射频微针产品族；旧 INFINI 证号作为历史线索，待补续展/现行证号,mapped to existing Lutronic RF microneedling family as historical INFINI signal; no current verified certificate added,用户确认：解冻入库；本轮不把旧证号直接写为当前有效证，先挂到 Lutronic RF microneedling 线。
+NMPA-IMP-08,并入已有产品线,并入 EndyMed Medical / EndyMed PRO 平台；以 国械注进20183091955 作为现行证号线索补入,mapped to existing EndyMed Pro platform; current public-crosschecked certificate row added pending official refresh,用户确认：解冻入库；原 2018 证号判定为历史断代，补到 EndyMed Pro / Intensif 平台。

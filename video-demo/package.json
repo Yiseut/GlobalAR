@@ -1,0 +1,28 @@
+{
+  "name": "global-aesthetics-dashboard-video-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preflight": "node scripts/preflight.mjs",
+    "record": "node scripts/record-dashboard.mjs",
+    "audio": "node scripts/generate-audio.mjs",
+    "captions": "node scripts/export-srt.mjs",
+    "render": "node node_modules/@remotion/cli/remotion-cli.js render src/index.ts GlobalAestheticsDemo ../output/global-aesthetics-map-demo-16x9.mp4 --codec=h264 --audio-codec=aac --pixel-format=yuv420p --overwrite",
+    "render:ffmpeg": "node scripts/render-ffmpeg.mjs",
+    "validate": "node scripts/validate-output.mjs",
+    "build": "node scripts/render-demo.mjs",
+    "studio": "node node_modules/@remotion/cli/remotion-cli.js studio src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.300",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.300"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.29",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "rawRecordingPath": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\video-demo-globe\\public\\assets\\recordings\\globe-interaction-raw.webm",
+  "mainRecordingPath": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\video-demo-globe\\public\\assets\\recordings\\globe-interaction-main.mp4",
+  "trimStartSec": 10.290000000000006,
+  "rawDurationSec": 111.04,
+  "durationSec": 100,
+  "warnings": [
+    "cityEl is not defined",
+    "cityEl is not defined",
+    "cityEl is not defined"
+  ],
+  "notes": [
+    "Opening starts directly on the globe.",
+    "Includes auto-rotation, drag pause, wheel zoom, USA country panel, and Allergan product card."
+  ]
+}

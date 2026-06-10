@@ -1,0 +1,84 @@
+<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>分类字典缺口反馈批次 01</title><style>
+body{margin:0;background:#f6f7f4;color:#202620;font:14px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',Arial,sans-serif}main{max-width:1320px;margin:0 auto;padding:24px}h1{margin:0 0 6px;font-size:28px}.muted{color:#667066}.help{background:#fff8eb;border:1px solid #ead6b8;border-radius:8px;padding:12px;margin:14px 0;color:#513a17}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #d9dfd6}th,td{padding:9px;border-bottom:1px solid #e8ece6;vertical-align:top;text-align:left}th{background:#eef3ee}.fill{background:#fffdf4}select,input{width:100%;border:1px solid #cfd6ce;border-radius:6px;padding:6px}.chip{display:inline-flex;margin:0 4px 4px 0;padding:3px 7px;border-radius:999px;background:#edf0ed;font-size:12px}
+</style></head><body><main><h1>分类字典缺口反馈批次 01</h1><p class='muted'>生成时间：2026-06-01 00:24:38。这里只处理 Product_Lines 的 Category_L1 / Category_L2 是否进入标准字典。</p><div class='help'><b>你可以直接这样回：</b> CAT-001 映射到 xxx；CAT-002 新增；CAT-004 排除。<br>如果同意我的推荐，也可以回：全部按推荐，CAT-004 先确认范围。</div><table><thead><tr><th>编号</th><th>当前缺口分类</th><th>样例产品</th><th>你的处理意见</th><th>目标分类</th><th>我的建议</th><th>选项</th></tr></thead><tbody>
+    <tr>
+      <td><b>CAT-001</b></td>
+      <td><b>Consumables &gt; Surgical Accessories</b><br><span class='muted'>1 行</span></td>
+      <td>Johnson &amp; Johnson / Mentor / Volume Sizing System</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>新增到字典<br><b>Consumables &gt; Surgical Accessories</b><br><span class='muted'>如 Mentor Volume Sizing System 这类术中配套耗材/量测附件，不宜混入 Surgical Tools。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    
+    <tr>
+      <td><b>CAT-002</b></td>
+      <td><b>EBD &gt; Injection Devices</b><br><span class='muted'>1 行</span></td>
+      <td>Tav-Tech / JetPeel / JetPro / JetPeel-3</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>新增到字典<br><b>EBD &gt; Injection Devices</b><br><span class='muted'>JetPeel/无针喷射等是设备型给药，不宜完全归入 Consumables &gt; Injection Devices。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    
+    <tr>
+      <td><b>CAT-003</b></td>
+      <td><b>EBD &gt; Shockwave</b><br><span class='muted'>1 行</span></td>
+      <td>Storz Medical / Storz / Cellactor / D-Actor</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>新增到字典<br><b>EBD &gt; Shockwave</b><br><span class='muted'>冲击波/声波能量设备与 RF/Laser/Ultrasound 不同，建议作为 EBD 二级类。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    
+    <tr>
+      <td><b>CAT-004</b></td>
+      <td><b>Implants &gt; Bioresorbable Bone Scaffold</b><br><span class='muted'>1 行</span></td>
+      <td>Osteopore / Osteopore / Osteomesh / Osteoplug / aXOpore</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>先确认范围<br><b>Implants &gt; Tissue Matrix 或排除</b><br><span class='muted'>骨支架更偏骨科/颅颌面重建，是否留在本医美上游范围需要确认。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    
+    <tr>
+      <td><b>CAT-005</b></td>
+      <td><b>Implants &gt; Breast Reconstruction</b><br><span class='muted'>3 行</span></td>
+      <td>Johnson &amp; Johnson / Mentor / ARTOURA PLUS Breast Tissue Expanders；Johnson &amp; Johnson / Mentor / CPX4 Breast Tissue Expanders；Johnson &amp; Johnson / Mentor / CPX4 Plus Enhance Breast Tissue Expander</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>新增到字典<br><b>Implants &gt; Breast Reconstruction</b><br><span class='muted'>乳房组织扩张器/重建器械与 Breast Implant 不完全相同，建议保留重建子类。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    
+    <tr>
+      <td><b>CAT-006</b></td>
+      <td><b>Implants &gt; Surgical Implant</b><br><span class='muted'>1 行</span></td>
+      <td>Universal IPS / U.IPS / Surgical Implants</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>映射到已有分类<br><b>Implants &gt; Other Implant</b><br><span class='muted'>通用 Surgical Implant 可并入已有 Other Implant，避免二级类过散。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    
+    <tr>
+      <td><b>CAT-007</b></td>
+      <td><b>Skincare &gt; Professional Treatment</b><br><span class='muted'>3 行</span></td>
+      <td>Skin Tech / Aesthetic Dermal / Aesthetic Dermal；Skin Tech / HAPPY intim / HAPPY intim；Skin Tech / Reparestim / Reparestim</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>映射到已有分类<br><b>Skincare &gt; Professional</b><br><span class='muted'>字典已有 Skincare &gt; Professional，Professional Treatment 可作为同义/展示文案。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    
+    <tr>
+      <td><b>CAT-008</b></td>
+      <td><b>Thread Lift &gt; Absorbable Threads</b><br><span class='muted'>1 行</span></td>
+      <td>GCS / GCS / The Lift / PLLA Threads</td>
+      <td class='fill'><select><option></option><option>新增到字典</option><option>映射到已有分类</option><option>排除/不纳入</option><option>先确认范围</option></select></td>
+      <td class='fill'><input placeholder='目标分类，如 EBD > Shockwave' value=''></td>
+      <td>映射到已有分类<br><b>Injectables &gt; Thread Lift</b><br><span class='muted'>现有字典已有 Injectables &gt; Thread Lift，吸收线属于其中子类，材料层已能表达 PDO/PLLA 等细分。</span></td>
+      <td><span class='chip'>新增到字典</span><span class='chip'>映射到已有分类</span><span class='chip'>排除/不纳入</span><span class='chip'>先确认范围</span></td>
+    </tr>
+    </tbody></table><p class='muted'>CSV：category_dictionary_feedback_batch_01_fill_here.csv</p></main></body></html>

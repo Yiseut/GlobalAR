@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>v2 vs v3·A 并排对照</title>
+<link rel="icon" href="data:," />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Noto+Serif+SC:wght@200;300;400&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; background: #2a2530; color: #efeae0; font-family: 'DM Sans', system-ui, sans-serif; }
+  .bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #1a1620;
+    padding: 14px 24px;
+    border-bottom: 1px solid #4a3d52;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .bar .col {
+    background: #2a2530;
+    padding: 0 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .bar .col h1 {
+    font-family: 'Marcellus', serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    color: #efeae0;
+  }
+  .bar .col .cn {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: #998f9b;
+  }
+  .bar .col .stamp {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #b85957;
+    margin-left: auto;
+  }
+  .bar .col .stamp.v3 { color: #D9AE91; }
+  .bar .col .stamp.v2 { color: #C99B99; }
+  .frames {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    height: calc(100vh - 60px);
+    background: #1a1620;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #fff;
+    display: block;
+  }
+  .legend {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1620;
+    border: 1px solid #4a3d52;
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    color: #cdc4d0;
+    box-shadow: 0 12px 40px -16px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 20;
+  }
+  .legend a {
+    color: #efeae0;
+    text-decoration: none;
+    border-bottom: 1px solid #b85957;
+    padding-bottom: 1px;
+  }
+  .legend .sep { opacity: 0.4; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="col">
+    <h1>v2</h1>
+    <span class="cn">研美 · Aestra Light</span>
+    <span class="stamp v2">claude-code · 2026·05·20</span>
+  </div>
+  <div class="col">
+    <h1>v3 · A</h1>
+    <span class="cn">研美 · 岚 · Balanced</span>
+    <span class="stamp v3">claude-design · 2026·05·23</span>
+  </div>
+</div>
+
+<div class="frames">
+  <iframe src="../v2/index.html" title="v2 index"></iframe>
+  <iframe src="./_mock-a.html" title="v3 candidate A mockup"></iframe>
+</div>
+
+<div class="legend">
+  <a href="../v2/index.html" target="_blank">v2 单开 ↗</a>
+  <span class="sep">·</span>
+  <a href="./_mock-a.html" target="_blank">v3·A 单开 ↗</a>
+  <span class="sep">·</span>
+  <a href="./_chart-preview.html" target="_blank">三套 A/B/C 色板预览 ↗</a>
+</div>
+
+</body>
+</html>

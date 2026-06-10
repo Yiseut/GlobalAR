@@ -1,0 +1,216 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_promoted_fact_status_sync_20260601_033220.xlsx",
+  "target_record_ids": [
+    "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_PLUS_XC_20260530",
+    "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_XC_20260530",
+    "TOPLINE_ALLERGAN_JUVEDERM_VOLBELLA_20260530",
+    "TOPLINE_ALLERGAN_JUVEDERM_VOLLURE_20260530",
+    "TOPLINE_ALLERGAN_REVOLVE_20260530",
+    "TOPLINE_BTL_EMTONE_20260530",
+    "TOPLINE_GALDERMA_RESTYLANE_DEFYNE_20260530",
+    "TOPLINE_GALDERMA_RESTYLANE_KYSSE_20260530",
+    "TOPLINE_GALDERMA_RESTYLANE_LYFT_20260530",
+    "TOPLINE_GALDERMA_RESTYLANE_REFYNE_20260530",
+    "TOPLINE_GALDERMA_RESTYLANE_VITAL_LIGHT_20260530",
+    "TOPLINE_MEDYTOX_NEWLUX_20260530",
+    "TOPLINE_SINCLAIR_LANLUMA_20260530",
+    "TOPLINE_SINCLAIR_PERFECTHA_20260530",
+    "UPR_ANTEAGE_MD_001",
+    "UPR_KARISMA_001"
+  ],
+  "workbook_changes": 32,
+  "changed_fields_sample": [
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_PLUS_XC_20260530",
+      "field": "Data_Source",
+      "old": "https://www.juvederm.com/",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_PLUS_XC_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_XC_20260530",
+      "field": "Data_Source",
+      "old": "https://www.juvederm.com/",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_ULTRA_XC_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_VOLBELLA_20260530",
+      "field": "Data_Source",
+      "old": "https://www.juvederm.com/",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_VOLBELLA_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_VOLLURE_20260530",
+      "field": "Data_Source",
+      "old": "https://www.juvederm.com/",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_JUVEDERM_VOLLURE_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_REVOLVE_20260530",
+      "field": "Data_Source",
+      "old": "https://www.allerganaesthetics.com/brands/revolve",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_ALLERGAN_REVOLVE_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; revolve_core_name_user_feedback_20260531",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; revolve_core_name_user_feedback_20260531; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_BTL_EMTONE_20260530",
+      "field": "Data_Source",
+      "old": "https://bodybybtl.com/solutions/emtone",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_BTL_EMTONE_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_DEFYNE_20260530",
+      "field": "Data_Source",
+      "old": "https://www.galderma.com/news/galderma-receives-fda-approval-restylaner-kysse-new-hyaluronic-acid-ha-filler-specifically",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_DEFYNE_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_KYSSE_20260530",
+      "field": "Data_Source",
+      "old": "https://www.galderma.com/news/galderma-receives-fda-approval-restylaner-kysse-new-hyaluronic-acid-ha-filler-specifically",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_KYSSE_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_LYFT_20260530",
+      "field": "Data_Source",
+      "old": "https://www.galderma.com/news/galderma-receives-fda-approval-restylaner-kysse-new-hyaluronic-acid-ha-filler-specifically",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_LYFT_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_REFYNE_20260530",
+      "field": "Data_Source",
+      "old": "https://www.galderma.com/news/galderma-receives-fda-approval-restylaner-kysse-new-hyaluronic-acid-ha-filler-specifically",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_REFYNE_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_VITAL_LIGHT_20260530",
+      "field": "Data_Source",
+      "old": "https://www.galdermaaesthetics.com/hydrated-skin-with-restylane-skinboosters",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_GALDERMA_RESTYLANE_VITAL_LIGHT_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_MEDYTOX_NEWLUX_20260530",
+      "field": "Data_Source",
+      "old": "https://medytox.com/page/newlux?site_id=en",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_MEDYTOX_NEWLUX_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_SINCLAIR_LANLUMA_20260530",
+      "field": "Data_Source",
+      "old": "https://sinclair.com/brands/injectables-and-threads/lanluma/",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_SINCLAIR_LANLUMA_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "TOPLINE_SINCLAIR_PERFECTHA_20260530",
+      "field": "Data_Source",
+      "old": "https://sinclair.com/brands/injectables-and-threads/perfectha/",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "TOPLINE_SINCLAIR_PERFECTHA_20260530",
+      "field": "Backfill_Audit",
+      "old": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530",
+      "new": "top_company_productline_batch_20260530; top_company_productline_core_name_repair_20260530; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "UPR_ANTEAGE_MD_001",
+      "field": "Data_Source",
+      "old": "https://anteage.com/products/anteage-md-microneedling-solution-box-5",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "UPR_ANTEAGE_MD_001",
+      "field": "Backfill_Audit",
+      "old": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531",
+      "new": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    },
+    {
+      "record_id": "UPR_KARISMA_001",
+      "field": "Data_Source",
+      "old": "https://www.karismacollagen.com/karisma-rh-collagen/",
+      "new": "official_product_fact_promoted"
+    },
+    {
+      "record_id": "UPR_KARISMA_001",
+      "field": "Backfill_Audit",
+      "old": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531",
+      "new": "upstream_report_reference_batch_20260530; review_feedback_batches_20260531; promoted_fact_status_sync_20260601: promoted official product facts treated as source-verified product identity."
+    }
+  ]
+}

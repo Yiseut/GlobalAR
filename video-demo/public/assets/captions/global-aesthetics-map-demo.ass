@@ -1,0 +1,17 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Bottom,Microsoft YaHei,44,&H00EDF7FF,&H000000FF,&HA01B1F2B,&HA01B1F2B,-1,0,0,0,100,100,0,0,1,3.2,1.6,2,120,120,138,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.20,0:00:06.65,Bottom,,0,0,0,,971 条产品线、366 家企业，勾勒全球医美供给网络。
+Dialogue: 0,0:00:07.20,0:00:17.64,Bottom,,0,0,0,,欧洲、北美与东亚，形成三处高密度企业带。
+Dialogue: 0,0:00:18.19,0:00:27.64,Bottom,,0,0,0,,从产品线到企业数，规模重心在地图上重新排布。
+Dialogue: 0,0:00:28.19,0:00:39.64,Bottom,,0,0,0,,注射材料是跨区域竞争最密集的赛道之一。
+Dialogue: 0,0:00:40.20,0:00:52.64,Bottom,,0,0,0,,韩国样本显示：50 家企业集中在 9 个城市。
+Dialogue: 0,0:00:53.20,0:00:59.64,Bottom,,0,0,0,,一张图看清区域集中度、赛道结构与企业版图。

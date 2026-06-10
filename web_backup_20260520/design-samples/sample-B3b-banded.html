@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>路 2 · 板块切换 · 全球医美仪表盘</title>
+<link rel="stylesheet" href="./_shared.css" />
+<style>
+body {
+  background-color: #E0D6CA;
+}
+.shell { padding: 0; max-width: none; }
+.band {
+  padding: 56px clamp(28px, 5vw, 80px);
+}
+.band-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.band-paper {
+  background: #E0D6CA;
+}
+.band-dusk {
+  background: #233245;
+  color: var(--c-bone);
+}
+.band-paper-2 {
+  background: #EBE3D8;
+  border-top: 1px solid var(--c-hairline);
+  border-bottom: 1px solid var(--c-hairline);
+}
+/* 在 dusk 板块内，所有 token 都翻面 */
+.band-dusk .section-head h2 { color: var(--c-bone); font-weight: 200; }
+.band-dusk .section-head .en { color: var(--c-sand); }
+.band-dusk .editorial-block {
+  background: rgba(48, 63, 84, 0.55);
+  border: 1px solid rgba(206, 181, 156, 0.18);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15), 0 22px 50px -22px rgba(0,0,0,0.28);
+  backdrop-filter: blur(20px) saturate(140%);
+}
+.band-dusk .editorial-block::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 40%);
+}
+.band-dusk .editorial-block .stamp { color: var(--c-sand-0); }
+.band-dusk .editorial-block .stamp::before { background: var(--c-oxblood-mist); }
+.band-dusk .editorial-block .lead { color: var(--c-bone); font-weight: 300; }
+.band-dusk .editorial-block .num-pair .num { color: var(--c-bone); }
+.band-dusk .editorial-block .num-pair .unit { color: var(--c-sand); }
+.band-dusk .editorial-block .body { color: var(--c-sand-0); }
+
+.band-dusk .footnote {
+  border-top-color: rgba(206, 181, 156, 0.20);
+  color: var(--c-sand);
+}
+
+/* dusk-on-dusk hero (band hero stamp) */
+.band-dusk-eyebrow {
+  font-family: var(--font-stamp);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-sand);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.band-dusk-eyebrow .seal {
+  width: 22px; height: 22px;
+  background: var(--c-oxblood);
+  color: var(--c-bone);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="band band-paper">
+  <div class="band-inner">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">2026 · Vol. 02 · Global Snapshot</div>
+        <h1>全球医美产业图谱</h1>
+        <div class="h1-en">Global Medical Aesthetics Landscape</div>
+      </div>
+      <div class="hero-meta">
+        <span class="label">Updated</span>
+        <time>2026·05·19</time>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="band band-paper-2">
+  <div class="band-inner">
+    <section class="kpi-section" style="margin-top:0;">
+      <div class="section-head">
+        <h2>核心指标</h2>
+        <span class="en">CORE METRICS · N = 977 / 372</span>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-cell dusk">
+          <span class="label"><span class="en">PRODUCT LINES</span><span class="zh">产品线 · 全球覆盖</span></span>
+          <span class="value">977</span>
+          <span class="delta">38 countries · 10 categories</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">UPSTREAM CO.</span><span class="zh">上游企业</span></span>
+          <span class="value">372</span>
+          <span class="delta">manufacturers · brand owners</span>
+        </div>
+        <div class="kpi-cell accent">
+          <span class="label"><span class="en">LISTED ENTITIES</span><span class="zh">上市主体</span></span>
+          <span class="value">61</span>
+          <span class="delta">across 15 exchanges</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">BRANDS</span><span class="zh">品牌</span></span>
+          <span class="value">946</span>
+          <span class="delta">881 product · 96 corporate</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">INDICATION SIGNALS</span><span class="zh">适应症信号</span></span>
+          <span class="value">958</span>
+          <span class="delta">cross-ref product master</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">REG. EVIDENCE</span><span class="zh">监管注册证据</span></span>
+          <span class="value">410</span>
+          <span class="delta">FDA 321 · CE/EU 49</span>
+        </div>
+        <div class="kpi-cell">
+          <span class="label"><span class="en">PRODUCT SPECS</span><span class="zh">产品规格证据</span></span>
+          <span class="value">31,736</span>
+          <span class="delta">362 companies covered</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="band band-dusk">
+  <div class="band-inner">
+    <section class="kpi-section" style="margin-top:0;">
+      <div class="section-head">
+        <h2>编辑视角</h2>
+        <span class="band-dusk-eyebrow">
+          <span class="seal">研</span>
+          EDITORIAL · NEW LENSES FROM EXCEL
+        </span>
+      </div>
+      <div class="editorial-row">
+        <article class="editorial-block">
+          <span class="stamp">LENS 01 · REGULATORY PULSE</span>
+          <div class="lead">FDA clearance 节奏 2022 后翻倍。</div>
+          <div class="num-pair"><span class="num">69</span><span class="unit">CLEARANCES · 2022–2026</span></div>
+          <div class="body">同期 CE/MDR 仅 24 条；中国 NMPA 由独立项目覆盖。</div>
+        </article>
+        <article class="editorial-block">
+          <span class="stamp">LENS 02 · KOREA FACTOR</span>
+          <div class="lead">韩国占全球上游企业 28%。</div>
+          <div class="num-pair"><span class="num">105</span><span class="unit">COMPANIES · 274 PRODUCTS</span></div>
+          <div class="body">远超美国 60 / 意大利 36；上市仅 22 家，私营出口集群。</div>
+        </article>
+        <article class="editorial-block">
+          <span class="stamp">LENS 03 · CAPITAL BAND SKEW</span>
+          <div class="lead">已上市 64 家，半数小盘。</div>
+          <div class="num-pair"><span class="num">30</span><span class="unit">SMALL CAP · 3 MEGA CAP</span></div>
+          <div class="body">大市值集中在 NASDAQ；KRX 22 家小盘构成韩股板块。</div>
+        </article>
+      </div>
+      <div class="footnote">
+        <span>路 2 · 板块切换 · 编辑杂志感</span>
+        <span>Aesthetic Reflections · 研美思维</span>
+      </div>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>

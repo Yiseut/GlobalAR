@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-06-01T08:56:30+08:00",
+  "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\briefing_update_candidates.csv",
+  "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\briefing_update_candidates_backup_before_next_confirmation_unlink_20260601_085630.csv",
+  "rows_unlinked": 10,
+  "by_original_product_id": {
+    "prod_e176269738b7": 2,
+    "prod_255ee8bb59a2": 8
+  },
+  "sample": [
+    {
+      "candidate_id": "briefing_1f45d308802b38",
+      "product_id": "prod_e176269738b7",
+      "company": "Doum",
+      "brand": "Fat Transfer Cannulas",
+      "product_name": "Fat Grafting",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "company_market_presence"
+    },
+    {
+      "candidate_id": "briefing_f7fc8fe6868dcb",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "company_market_presence"
+    },
+    {
+      "candidate_id": "briefing_4541bd48260d11",
+      "product_id": "prod_e176269738b7",
+      "company": "Doum",
+      "brand": "Fat Transfer Cannulas",
+      "product_name": "Fat Grafting",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "registration_evidence"
+    },
+    {
+      "candidate_id": "briefing_50442e40148cf4",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "registration_evidence"
+    },
+    {
+      "candidate_id": "briefing_396407f659b938",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "market_snapshot_or_company_note"
+    },
+    {
+      "candidate_id": "briefing_b7926259e5fbfe",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "registration_evidence"
+    },
+    {
+      "candidate_id": "briefing_28b89b231fbd50",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "market_snapshot_or_company_note"
+    },
+    {
+      "candidate_id": "briefing_25a393d32f408d",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "product_gap_queue"
+    },
+    {
+      "candidate_id": "briefing_6643fca2352c6b",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "registration_evidence"
+    },
+    {
+      "candidate_id": "briefing_5127229fd9aed9",
+      "product_id": "prod_255ee8bb59a2",
+      "company": "Doum",
+      "brand": "Power Assisted Liposuction (PAL)",
+      "product_name": "Liposuction",
+      "old_status": "candidate_unverified",
+      "old_promotion_target": "product_gap_queue"
+    }
+  ]
+}

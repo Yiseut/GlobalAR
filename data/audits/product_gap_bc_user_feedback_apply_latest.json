@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-01T13:21:43+08:00",
+  "target_rows": 136,
+  "by_group": {
+    "B_regulatory_leads": 121,
+    "C_official_url_leads": 15
+  },
+  "new_fact_candidates": 407,
+  "manual_product_fact_rows_added": 407,
+  "new_registration_candidates": 136,
+  "manual_registration_rows_added": 136,
+  "missing_products": [],
+  "c_overrides_applied": [
+    "REC_0095",
+    "REC_0487",
+    "REC_0622_RRS_HA_LONG_LASTING",
+    "REC_0625",
+    "REC_0932",
+    "REC_0964"
+  ]
+}

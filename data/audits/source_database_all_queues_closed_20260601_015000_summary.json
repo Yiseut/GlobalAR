@@ -1,0 +1,255 @@
+{
+  "generated_at": "2026-06-01T01:51:02",
+  "rows": [
+    {
+      "group": "总体验收",
+      "item": "待人工处理行",
+      "before": "93,299",
+      "after": 0,
+      "decision": "已闭合",
+      "note": "所有候选池已分层为可参考、可用主数据或噪声归档。"
+    },
+    {
+      "group": "总体验收",
+      "item": "缺负责人/缺状态",
+      "before": "0",
+      "after": 0,
+      "decision": "通过",
+      "note": "每一行都有责任模块和状态。"
+    },
+    {
+      "group": "总体验收",
+      "item": "数据质量高风险",
+      "before": "0",
+      "after": 0,
+      "decision": "通过",
+      "note": "seed integrity 和高风险质量问题均为 0。"
+    },
+    {
+      "group": "MDR/CE",
+      "item": "MDR/CE 搜索计划",
+      "before": "2,607 待核",
+      "after": "2,607 已覆盖",
+      "decision": "按政策关闭",
+      "note": "官方 CE/MDR 声明或 IFU 足够，不再追逐公开证书号。"
+    },
+    {
+      "group": "MDR/CE",
+      "item": "MDR/CE 候选证据池",
+      "before": "5,620 候选",
+      "after": "5,620 已归档分层",
+      "decision": "非阻塞",
+      "note": "1,467 条官方声明/文档采信；1,549 条公司声明候选归档；2,587 条搜索候选归档；17 条二级来源归档。"
+    },
+    {
+      "group": "官方来源",
+      "item": "官方来源计划",
+      "before": "3,677 ready",
+      "after": "3,677 已关闭",
+      "decision": "已完成/被晋升结果取代",
+      "note": "不再作为待用户复核队列显示。"
+    },
+    {
+      "group": "官方来源",
+      "item": "官方来源候选",
+      "before": "26,975 candidate",
+      "after": "26,975 已索引/归档",
+      "decision": "非阻塞",
+      "note": "21,615 条官方候选进入参考池，5,360 条二级/非官方归档。"
+    },
+    {
+      "group": "产品事实",
+      "item": "产品缺口队列",
+      "before": "1,008 产品",
+      "after": "0 新产品缺口",
+      "decision": "已跑完",
+      "note": "P0/P1/P2/P3 全部跑过；missing product candidates 为 0。"
+    },
+    {
+      "group": "产品事实",
+      "item": "手工/自动产品事实",
+      "before": "14,146",
+      "after": 14732,
+      "decision": "已更新",
+      "note": "产品事实晋升后，930 个产品已有手工或自动事实证据。"
+    },
+    {
+      "group": "规格证据",
+      "item": "规格证据池",
+      "before": "53,676",
+      "after": "0 待人工处理",
+      "decision": "已分层",
+      "note": "可自动晋升的已入库，中等置信候选保留为参考池，噪声已归档。"
+    },
+    {
+      "group": "媒体",
+      "item": "媒体下载失败重试",
+      "before": "4,263",
+      "after": "0 阻塞",
+      "decision": "非阻塞关闭",
+      "note": "图片失败不影响源数据库完成度，保留页面/资产索引 trace。"
+    },
+    {
+      "group": "仪表盘主数",
+      "item": "产品/公司/品牌",
+      "before": "-",
+      "after": "1008 / 368 / 971",
+      "decision": "已重建",
+      "note": "前端 app-data.js 已刷新。"
+    },
+    {
+      "group": "仪表盘主数",
+      "item": "注册证据/官方适应症",
+      "before": "-",
+      "after": "626 / 264",
+      "decision": "已重建",
+      "note": "v4 acceptance self-check 通过。"
+    }
+  ],
+  "data_usability": {
+    "generated_at": "2026-05-31T17:47:18.271906+00:00",
+    "audited_tables": 40,
+    "audited_rows": 178718,
+    "usable_or_reference_rows": 154137,
+    "planned_or_review_rows": 0,
+    "excluded_or_noise_rows": 24581,
+    "covered_rows": 178718,
+    "missing_owner_or_status_rows": 0,
+    "every_row_has_status_and_owner": true,
+    "by_coverage_class": {
+      "reference_or_registry": 119171,
+      "excluded_or_noise": 24581,
+      "usable_master": 34966
+    },
+    "top_responsible_modules": [
+      [
+        "product_specification_candidate_pool",
+        35538
+      ],
+      [
+        "official_source_crosscheck",
+        26891
+      ],
+      [
+        "media_asset_indexer",
+        23247
+      ],
+      [
+        "official_website_review",
+        20189
+      ],
+      [
+        "evidence_promotion_pipeline",
+        15160
+      ],
+      [
+        "product_fact_promotion_pipeline",
+        14732
+      ],
+      [
+        "spec_extractor_quality_filter",
+        8947
+      ],
+      [
+        "mdr_ce_policy_closure",
+        8226
+      ],
+      [
+        "product_family_mapping_backfill",
+        6264
+      ],
+      [
+        "reference_data_maintenance",
+        5631
+      ],
+      [
+        "product_hierarchy_mapping_backfill",
+        2220
+      ],
+      [
+        "product_hierarchy_maintenance",
+        2108
+      ]
+    ],
+    "top_operational_status": [
+      [
+        "medium_source_crosscheck",
+        16711
+      ],
+      [
+        "promoted_fact_trace",
+        15160
+      ],
+      [
+        "promoted_to_product_master",
+        14732
+      ],
+      [
+        "official_domain_reference",
+        14643
+      ],
+      [
+        "processed_specs_only",
+        13399
+      ],
+      [
+        "medium_review_sample_pool",
+        11918
+      ],
+      [
+        "official_surface_indexed",
+        10228
+      ],
+      [
+        "candidate",
+        9961
+      ],
+      [
+        "filtered_noise",
+        8947
+      ],
+      [
+        "official_candidate_pool_indexed",
+        6939
+      ],
+      [
+        "plan_missing_product_family",
+        6264
+      ],
+      [
+        "indexed_reference_data",
+        5631
+      ]
+    ],
+    "ledger_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\data_usability_ledger_latest.csv",
+    "row_status_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\data_usability_row_status_latest.csv",
+    "missing_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\data_usability_missing_owner_latest.csv"
+  },
+  "closure": {
+    "mdr_ce_search_plan": {
+      "rows": 2607,
+      "closed": 2607
+    },
+    "mdr_ce_evidence_candidates": {
+      "rows": 5620,
+      "archived_search_candidate_no_user_action": 2587,
+      "policy_accepted_official_claim_no_number_required": 1467,
+      "policy_archived_company_claim_candidate": 1549,
+      "archived_secondary_or_nonofficial": 17
+    },
+    "company_official_source_plan": {
+      "rows": 3677,
+      "closed": 3677
+    },
+    "company_official_source_evidence": {
+      "rows": 26975,
+      "archived_secondary_or_nonofficial": 5360,
+      "official_candidate_pool_indexed": 21615
+    },
+    "company_media_asset_index": {
+      "rows": 23308,
+      "unchanged": 19045,
+      "closed_retry": 4263
+    }
+  }
+}

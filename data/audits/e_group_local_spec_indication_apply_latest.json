@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-06-01T17:00:51+08:00",
+  "target_queue_rows": 420,
+  "candidate_rows": 10,
+  "candidate_products": 4,
+  "applied_rows": 4,
+  "skipped_products": 416,
+  "backup_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_official_indication_evidence_backup_before_local_spec_indication_20260601_170051.csv",
+  "skip_reasons": {
+    "no_usable_explicit_window": 5450,
+    "bad_text:title:": 411,
+    "source_not_official_enough": 147,
+    "no_local_spec_rows": 99,
+    "bad_text:available in": 83,
+    "bad_text:needle gauge": 61,
+    "bad_text:source:": 21,
+    "bad_text:privacy policy": 15,
+    "truncated_or_navigation_text": 10,
+    "bad_text:cookie": 9,
+    "product_token_not_near_candidate": 8,
+    "bad_text:clinical papers": 6,
+    "bad_text:range of indications": 5,
+    "wrong_path:urologic": 4,
+    "bad_text:scientific papers": 3,
+    "bad_text:wide range of treatments": 3,
+    "bad_text:literature": 2,
+    "bad_text:clinical evaluation": 2,
+    "bad_text:designed to perform.trusted": 2,
+    "bad_text:contraindications": 2,
+    "bad_text:objective of this study": 1,
+    "bad_text:animal model": 1,
+    "bad_text:not intended to treat or diagnose": 1,
+    "wrong_path:bony defect": 1,
+    "wrong_path:lancing device": 1,
+    "wrong_path:bone graft": 1,
+    "wrong_path:blood collection": 1,
+    "bad_text:terms of use": 1,
+    "bad_text:product features": 1
+  },
+  "applied_by_confidence": {
+    "official_search_excerpt_spec_candidate": 4
+  },
+  "applied_by_query_type": {
+    "product_ifu_labeling": 1,
+    "product_official_page": 2,
+    "official_product_portfolio": 1
+  },
+  "outputs": {
+    "summary_json": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_local_spec_indication_apply_latest.json",
+    "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_local_spec_indication_applied_latest.csv",
+    "skipped_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_local_spec_indication_skipped_latest.csv",
+    "candidates_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_local_spec_indication_candidates_latest.csv"
+  }
+}

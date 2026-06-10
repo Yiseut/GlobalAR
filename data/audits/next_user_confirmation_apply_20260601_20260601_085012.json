@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-06-01T08:50:12+08:00",
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_next_confirmation_batch_20260601_20260601_085012.xlsx",
+  "workbook_changes": 8,
+  "manual_official_indication_rows_added": 0,
+  "manual_product_fact_rows_added": 0,
+  "keep_official": [
+    "NEXT-001",
+    "NEXT-002",
+    "NEXT-003",
+    "NEXT-004",
+    "NEXT-005",
+    "NEXT-006",
+    "NEXT-007",
+    "NEXT-008",
+    "NEXT-020",
+    "NEXT-022",
+    "NEXT-023",
+    "NEXT-025",
+    "NEXT-026",
+    "NEXT-027",
+    "NEXT-028",
+    "NEXT-035",
+    "NEXT-036",
+    "NEXT-037",
+    "NEXT-038"
+  ],
+  "keep_korea": [
+    "NEXT-009",
+    "NEXT-010",
+    "NEXT-011",
+    "NEXT-012",
+    "NEXT-013",
+    "NEXT-015",
+    "NEXT-019"
+  ],
+  "merge_decisions": {
+    "NEXT-014": {
+      "target_record_id": "REC_0388",
+      "target_label": "Kysense main line",
+      "action": "delete_duplicate",
+      "note": "Kysense Body HA is a body SKU under the Kysense main HA filler family."
+    },
+    "NEXT-016": {
+      "target_record_id": "REC_0500",
+      "target_label": "NOVAPlus needle-free injector",
+      "action": "delete_duplicate",
+      "note": "NOVAPlus Nozzle is an accessory/nozzle kit for the NOVAPlus injector."
+    },
+    "NEXT-017": {
+      "target_record_id": "REC_0733",
+      "target_label": "BTL Vanquish ME",
+      "action": "keep_canonical",
+      "note": "Use this row as the canonical Vanquish ME line and fold regional wording into it."
+    },
+    "NEXT-018": {
+      "target_record_id": "REC_0733",
+      "target_label": "BTL Vanquish ME",
+      "action": "delete_duplicate",
+      "note": "Non-Contact Selective RF is another description of BTL Vanquish ME."
+    },
+    "NEXT-024": {
+      "target_record_id": "REC_0724",
+      "target_label": "BTL Unison",
+      "action": "keep_canonical",
+      "note": "Use this row as the canonical BTL Unison line."
+    },
+    "NEXT-034": {
+      "target_record_id": "REC_0455",
+      "target_label": "Eclipse MicroPen EVO",
+      "action": "delete_duplicate",
+      "note": "MicroGlide is a topical glide/adjunct product for Eclipse microneedling devices, not an injectable filler line."
+    }
+  },
+  "exclude_decisions": {
+    "NEXT-021": "Universal IPS surgical implants are generic orthopedic/dental/surgical implant scope, not aesthetic-dedicated upstream products.",
+    "NEXT-029": "Daejoo Medical Cosmetics ODM is broad ODM/service capability without a concrete independent terminal product line.",
+    "NEXT-030": "Dongbang acupuncture needles are TCM/rehabilitation consumables, not aesthetic microneedling products.",
+    "NEXT-031": "Doum fat transfer cannulas are hard surgical/liposuction instruments outside the current light-aesthetic upstream scope.",
+    "NEXT-032": "Doum infiltration pump is general liposuction surgery hardware outside the current scope.",
+    "NEXT-033": "Doum PAL liposuction system is large surgical hardware outside the current scope."
+  },
+  "deleted_product_ids_unlinked": {
+    "prod_a42d9b6e3f31": "REC_0426 Kylane / Kysense",
+    "prod_d420cdff209c": "REC_0501 Baz Biomedic / NOVAPlus Nozzle",
+    "prod_0b9f549a22d3": "REC_0870 BTL / Vanquish ME",
+    "prod_e5bdbee0ec8b": "REC_0454 Eclipse / MicroGlide",
+    "prod_e8c83a0b8fb9": "REC_0716 Universal IPS / U.IPS",
+    "prod_5d5ec2334c4b": "REC_0431 Daejoo / Medical Cosmetics (ODM)",
+    "prod_6b38425956af": "REC_0198 Dongbang Medical / Dongbang Needles",
+    "prod_e176269738b7": "REC_0268 Doum / Fat Transfer Cannulas",
+    "prod_30833f2b6462": "REC_0344 Doum / Infiltration Pump",
+    "prod_255ee8bb59a2": "REC_0557 Doum / Power Assisted Liposuction (PAL)"
+  },
+  "unlink_results": [
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence_backup_before_next_confirmation_unlink_20260601_085012.csv",
+      "rows_unlinked": 0,
+      "by_original_product_id": {}
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log_backup_before_next_confirmation_unlink_20260601_085012.csv",
+      "rows_unlinked": 0,
+      "by_original_product_id": {}
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence_backup_before_next_confirmation_unlink_20260601_085012.csv",
+      "rows_unlinked": 0,
+      "by_original_product_id": {}
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_official_indication_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_official_indication_evidence_backup_before_next_confirmation_unlink_20260601_085012.csv",
+      "rows_unlinked": 0,
+      "by_original_product_id": {}
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_nmpa_registration_evidence.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_nmpa_registration_evidence_backup_before_next_confirmation_unlink_20260601_085012.csv",
+      "rows_unlinked": 0,
+      "by_original_product_id": {}
+    }
+  ],
+  "decisions_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\next_user_confirmation_decisions_20260601_latest.csv",
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_0733",
+      "field": "V4_1_Registration_Review_Status",
+      "old": "canonical_product_line_normalized",
+      "new": "User confirmed retained; registration number pending/not public"
+    },
+    {
+      "record_id": "REC_0733",
+      "field": "V4_1_Registration_Note",
+      "old": "NEXT-017: Use this row as the canonical Vanquish ME line and fold regional wording into it.",
+      "new": "NEXT-017: user confirmed retain; exact certificate number remains blank unless public official evidence is found."
+    },
+    {
+      "record_id": "REC_0724",
+      "field": "V4_1_Registration_Review_Status",
+      "old": "canonical_product_line_normalized",
+      "new": "User confirmed retained; registration number pending/not public"
+    },
+    {
+      "record_id": "REC_0724",
+      "field": "V4_1_Registration_Note",
+      "old": "NEXT-024: Use this row as the canonical BTL Unison line.",
+      "new": "NEXT-024: user confirmed retain; exact certificate number remains blank unless public official evidence is found."
+    },
+    {
+      "record_id": "REC_0733",
+      "field": "V4_1_Registration_Review_Status",
+      "old": "User confirmed retained; registration number pending/not public",
+      "new": "canonical_product_line_normalized"
+    },
+    {
+      "record_id": "REC_0733",
+      "field": "V4_1_Registration_Note",
+      "old": "NEXT-017: user confirmed retain; exact certificate number remains blank unless public official evidence is found.",
+      "new": "NEXT-017: Use this row as the canonical Vanquish ME line and fold regional wording into it."
+    },
+    {
+      "record_id": "REC_0724",
+      "field": "V4_1_Registration_Review_Status",
+      "old": "User confirmed retained; registration number pending/not public",
+      "new": "canonical_product_line_normalized"
+    },
+    {
+      "record_id": "REC_0724",
+      "field": "V4_1_Registration_Note",
+      "old": "NEXT-024: user confirmed retain; exact certificate number remains blank unless public official evidence is found.",
+      "new": "NEXT-024: Use this row as the canonical BTL Unison line."
+    }
+  ]
+}

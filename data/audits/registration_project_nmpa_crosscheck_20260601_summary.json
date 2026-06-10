@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-01T00:28:51",
+  "registration_project_master_records": 216,
+  "global_registration_evidence_records": 620,
+  "matched_by_certificate_no": 65,
+  "not_in_global_by_certificate_no": 151,
+  "missing_verified_existing_entity_hint": 5,
+  "missing_verified_no_entity_hint": 108,
+  "provincial_or_unsupported": 34,
+  "not_found_hold": 4,
+  "output_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\registration_project_nmpa_crosscheck_20260601.csv"
+}

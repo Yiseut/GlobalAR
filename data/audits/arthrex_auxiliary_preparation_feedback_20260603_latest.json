@@ -1,0 +1,116 @@
+{
+  "tag": "arthrex_auxiliary_preparation_feedback_20260603",
+  "run_ts": "20260603_210200",
+  "workbook": {
+    "workbook_backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_arthrex_auxiliary_preparation_feedback_20260603_20260603_210200.xlsx",
+    "changed": [
+      {
+        "sheet": "Product_Lines",
+        "record_id": "REC_0008",
+        "before_l1": "Regenerative",
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_Lines",
+        "record_id": "REC_0049",
+        "before_l1": "EBD",
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_Lines",
+        "record_id": "REC_0475",
+        "before_l1": "EBD",
+        "after_l1": "Surgical"
+      },
+      {
+        "sheet": "Brand_Portfolio",
+        "record_id": "REC_0008",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Brand_Portfolio",
+        "record_id": "REC_0049",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Brand_Portfolio",
+        "record_id": "REC_0475",
+        "before_l1": null,
+        "after_l1": "Surgical"
+      },
+      {
+        "sheet": "Product_Master",
+        "record_id": "REC_0008",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_Master",
+        "record_id": "REC_0049",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_Master",
+        "record_id": "REC_0475",
+        "before_l1": null,
+        "after_l1": "Surgical"
+      },
+      {
+        "sheet": "Product_Family_Master",
+        "record_id": "REC_0475",
+        "before_l1": null,
+        "after_l1": "Surgical"
+      },
+      {
+        "sheet": "Product_Family_Master",
+        "record_id": "REC_0049",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_Family_Master",
+        "record_id": "REC_0008",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_SKU_Master",
+        "record_id": "REC_0008",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_SKU_Master",
+        "record_id": "REC_0049",
+        "before_l1": null,
+        "after_l1": "Consumables"
+      },
+      {
+        "sheet": "Product_SKU_Master",
+        "record_id": "REC_0475",
+        "before_l1": null,
+        "after_l1": "Surgical"
+      }
+    ]
+  },
+  "csv_layers": [
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_master.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_master_backup_before_arthrex_auxiliary_preparation_feedback_20260603_20260603_210200.csv",
+      "changed_rows": 2
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_family_master.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_family_master_backup_before_arthrex_auxiliary_preparation_feedback_20260603_20260603_210200.csv",
+      "changed_rows": 2
+    },
+    {
+      "file": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_sku_master.csv",
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_sku_master_backup_before_arthrex_auxiliary_preparation_feedback_20260603_20260603_210200.csv",
+      "changed_rows": 2
+    }
+  ]
+}

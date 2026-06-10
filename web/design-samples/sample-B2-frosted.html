@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>样例 B' · 毛玻璃 · 全球医美仪表盘</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600&family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  /* —— typography —— */
+  --font-title:   'Noto Serif SC', 'Songti SC', serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  --font-number:  'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-stamp:   'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+
+  /* —— Aestra base 5 —— */
+  --c-oxblood:     #520E0D;
+  --c-slate:       #233245;
+  --c-slate-2:     #303F54;
+  --c-sand:        #CEB59C;
+  --c-bone:        #E0D6CA;
+
+  /* —— extended tonal scale (light, paper-side) —— */
+  --c-paper-0:     #F8F2E8;   /* lightest cream */
+  --c-paper-1:     #F2EAD9;
+  --c-paper-2:     #EBE3D4;
+  --c-paper-3:     #E2D8C7;
+
+  /* —— extended sand scale —— */
+  --c-sand-0:      #E4D4BD;
+  --c-sand-1:      #D7C0A6;
+  --c-sand-2:      #CEB59C;
+  --c-sand-3:      #BCA078;
+
+  /* —— extended slate scale (ink side) —— */
+  --c-slate-mid:   #4A5870;
+  --c-slate-soft:  #6B7891;
+  --c-slate-mute:  #94A0B5;
+  --c-slate-ghost: #C4CBDA;
+
+  /* —— oxblood scale —— */
+  --c-oxblood-deep:   #3C0A09;
+  --c-oxblood-soft:   #8B3F3E;
+  --c-oxblood-mist:   #C99B99;
+
+  /* —— translucent surface tokens —— */
+  --c-glass:           rgba(252, 247, 239, 0.55);
+  --c-glass-strong:    rgba(252, 247, 239, 0.72);
+  --c-glass-dusk:      rgba(35, 50, 69, 0.78);
+  --c-glass-dusk-soft: rgba(35, 50, 69, 0.62);
+  --c-hairline:        rgba(35, 50, 69, 0.08);
+  --c-hairline-mid:    rgba(35, 50, 69, 0.14);
+
+  /* —— radii, shadows, motion —— */
+  --r-card: 16px;
+  --r-chip: 999px;
+  --shadow-soft:   0 1px 2px rgba(35, 50, 69, 0.025), 0 6px 22px -12px rgba(35, 50, 69, 0.10);
+  --shadow-lift:   0 2px 8px rgba(35, 50, 69, 0.04),  0 18px 38px -20px rgba(35, 50, 69, 0.18);
+  --shadow-dusk:   0 2px 6px rgba(35, 50, 69, 0.20),  0 22px 50px -22px rgba(35, 50, 69, 0.35);
+  --ease-quiet:    cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  min-height: 100vh;
+  color: var(--c-slate);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.005em;
+
+  /* lighter, more layered background — 6-stop wash from cream → sand */
+  background:
+    radial-gradient(70% 50% at 5% -5%, rgba(82, 14, 13, 0.06), transparent 55%),
+    radial-gradient(55% 45% at 100% 10%, rgba(206, 181, 156, 0.30), transparent 60%),
+    radial-gradient(60% 50% at 50% 100%, rgba(35, 50, 69, 0.04), transparent 65%),
+    linear-gradient(180deg, var(--c-paper-0) 0%, var(--c-paper-1) 100%);
+  background-attachment: fixed;
+}
+
+/* ========== Shell ========== */
+.shell {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 56px 48px 96px;
+}
+
+/* ========== Hero ========== */
+.eyebrow {
+  font-family: var(--font-stamp);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-oxblood);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 36px;
+}
+.hero h1 {
+  font-family: var(--font-title);
+  font-weight: 200;
+  font-size: clamp(40px, 5vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -0.012em;
+  margin: 14px 0 4px;
+  color: var(--c-slate);
+}
+.hero .h1-en {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0;
+  color: var(--c-slate-soft);
+  margin-top: 6px;
+}
+.hero-meta { text-align: right; }
+.hero-meta .label {
+  font-family: var(--font-stamp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-slate-soft);
+}
+.hero-meta time {
+  display: block;
+  font-family: var(--font-number);
+  font-weight: 400;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: var(--c-slate);
+  margin-top: 6px;
+}
+
+/* ========== Section heads ========== */
+section.kpi-section { margin-top: 40px; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.section-head h2 {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: -0.005em;
+  margin: 0;
+  color: var(--c-slate);
+}
+.section-head .en {
+  font-family: var(--font-stamp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-slate-soft);
+}
+
+/* ========== Frosted glass KPI cards ========== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.kpi-cell {
+  position: relative;
+  padding: 22px 22px 24px;
+  border-radius: var(--r-card);
+  background: var(--c-glass);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 280ms var(--ease-quiet), box-shadow 280ms var(--ease-quiet), background 280ms var(--ease-quiet);
+  overflow: hidden;
+}
+.kpi-cell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.40), transparent 35%);
+  border-radius: inherit;
+}
+.kpi-cell:hover {
+  transform: translateY(-2px);
+  background: var(--c-glass-strong);
+  box-shadow: var(--shadow-lift);
+}
+
+.kpi-cell .label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+}
+.kpi-cell .label .zh {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-slate);
+  letter-spacing: -0.005em;
+}
+.kpi-cell .label .en {
+  font-family: var(--font-stamp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-slate-soft);
+}
+
+.kpi-cell .value {
+  position: relative;
+  font-family: var(--font-number);
+  font-weight: 300;
+  font-size: 52px;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
+  color: var(--c-slate);
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi-cell .delta {
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--c-slate-mid);
+  letter-spacing: 0;
+}
+
+/* —— Accent card (oxblood whisper) —— */
+.kpi-cell.accent {
+  background:
+    radial-gradient(130% 100% at 0% 0%, rgba(82, 14, 13, 0.10), transparent 55%),
+    var(--c-glass);
+}
+.kpi-cell.accent .value {
+  color: var(--c-oxblood);
+  font-weight: 300;
+}
+
+/* —— Dusk lede card (frosted dark) —— */
+.kpi-cell.dusk {
+  grid-column: span 2;
+  color: var(--c-bone);
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(82, 14, 13, 0.32), transparent 60%),
+    var(--c-glass-dusk);
+  border: 1px solid rgba(206, 181, 156, 0.20);
+  box-shadow: var(--shadow-dusk);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+}
+.kpi-cell.dusk::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 40%);
+}
+.kpi-cell.dusk .label .zh { color: var(--c-bone); }
+.kpi-cell.dusk .label .en { color: var(--c-sand); }
+.kpi-cell.dusk .value {
+  color: var(--c-bone);
+  font-size: 76px;
+  font-weight: 200;
+}
+.kpi-cell.dusk .delta { color: var(--c-sand-0); }
+
+/* ========== Editorial blocks ========== */
+.editorial-row {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.editorial-block {
+  position: relative;
+  padding: 24px 22px 24px;
+  border-radius: var(--r-card);
+  background: var(--c-glass);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 280ms var(--ease-quiet), box-shadow 280ms var(--ease-quiet), background 280ms var(--ease-quiet);
+  overflow: hidden;
+}
+.editorial-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.40), transparent 35%);
+  border-radius: inherit;
+}
+.editorial-block:hover {
+  transform: translateY(-2px);
+  background: var(--c-glass-strong);
+  box-shadow: var(--shadow-lift);
+}
+.editorial-block > * { position: relative; }
+
+.editorial-block .stamp {
+  font-family: var(--font-stamp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-oxblood);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.editorial-block .stamp::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: var(--c-oxblood);
+  border-radius: 1px;
+}
+.editorial-block .lead {
+  font-family: var(--font-title);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.28;
+  color: var(--c-slate);
+  margin-top: 6px;
+  letter-spacing: -0.008em;
+}
+.editorial-block .num-pair {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 10px;
+}
+.editorial-block .num-pair .num {
+  font-family: var(--font-number);
+  font-weight: 300;
+  font-size: 32px;
+  letter-spacing: -0.035em;
+  color: var(--c-slate);
+  font-variant-numeric: tabular-nums;
+}
+.editorial-block .num-pair .unit {
+  font-family: var(--font-stamp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-slate-soft);
+}
+.editorial-block .body {
+  font-size: 13px;
+  color: var(--c-slate-mid);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+
+/* ========== Footer note ========== */
+.footnote {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-hairline);
+  font-family: var(--font-stamp);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-slate-soft);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 960px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-cell.dusk { grid-column: span 2; }
+  .editorial-row { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main class="shell">
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">2026 · Vol. 02 · Global Snapshot</div>
+      <h1>全球医美产业图谱</h1>
+      <div class="h1-en">Global Medical Aesthetics Landscape</div>
+    </div>
+    <div class="hero-meta">
+      <span class="label">Updated</span>
+      <time>2026·05·19</time>
+    </div>
+  </header>
+
+  <section class="kpi-section">
+    <div class="section-head">
+      <h2>核心指标</h2>
+      <span class="en">CORE METRICS · N = 977 / 372</span>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-cell dusk">
+        <span class="label"><span class="en">PRODUCT LINES</span><span class="zh">产品线 · 全球覆盖</span></span>
+        <span class="value">977</span>
+        <span class="delta">38 countries · 10 categories</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">UPSTREAM CO.</span><span class="zh">上游企业</span></span>
+        <span class="value">372</span>
+        <span class="delta">manufacturers · brand owners</span>
+      </div>
+      <div class="kpi-cell accent">
+        <span class="label"><span class="en">LISTED ENTITIES</span><span class="zh">上市主体</span></span>
+        <span class="value">61</span>
+        <span class="delta">across 15 exchanges</span>
+      </div>
+
+      <div class="kpi-cell">
+        <span class="label"><span class="en">BRANDS</span><span class="zh">品牌</span></span>
+        <span class="value">946</span>
+        <span class="delta">881 product · 96 corporate</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">INDICATION SIGNALS</span><span class="zh">适应症信号</span></span>
+        <span class="value">958</span>
+        <span class="delta">cross-ref product master</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">REG. EVIDENCE</span><span class="zh">监管注册证据</span></span>
+        <span class="value">410</span>
+        <span class="delta">FDA 321 · CE/EU 49</span>
+      </div>
+      <div class="kpi-cell">
+        <span class="label"><span class="en">PRODUCT SPECS</span><span class="zh">产品规格证据</span></span>
+        <span class="value">31,736</span>
+        <span class="delta">362 companies covered</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="kpi-section">
+    <div class="section-head">
+      <h2>编辑视角</h2>
+      <span class="en">EDITORIAL · NEW LENSES FROM EXCEL RE-SCAN</span>
+    </div>
+
+    <div class="editorial-row">
+      <article class="editorial-block">
+        <span class="stamp">LENS 01 · REGULATORY PULSE</span>
+        <div class="lead">FDA clearance 节奏 2022 后翻倍。</div>
+        <div class="num-pair">
+          <span class="num">69</span>
+          <span class="unit">CLEARANCES · 2022–2026</span>
+        </div>
+        <div class="body">同期 CE/MDR 仅 24 条；中国 NMPA 由独立项目覆盖。</div>
+      </article>
+
+      <article class="editorial-block">
+        <span class="stamp">LENS 02 · KOREA FACTOR</span>
+        <div class="lead">韩国占全球上游企业 28%。</div>
+        <div class="num-pair">
+          <span class="num">105</span>
+          <span class="unit">COMPANIES · 274 PRODUCTS</span>
+        </div>
+        <div class="body">远超美国 60 / 意大利 36；上市仅 22 家，私营出口集群。</div>
+      </article>
+
+      <article class="editorial-block">
+        <span class="stamp">LENS 03 · CAPITAL BAND SKEW</span>
+        <div class="lead">已上市 64 家，半数小盘。</div>
+        <div class="num-pair">
+          <span class="num">30</span>
+          <span class="unit">SMALL CAP · 3 MEGA CAP</span>
+        </div>
+        <div class="body">大市值集中在 NASDAQ；KRX 22 家小盘构成韩股板块。</div>
+      </article>
+    </div>
+  </section>
+
+  <div class="footnote">
+    <span>SAMPLE B' · FROSTED GLASS · INTER · NOTO SERIF SC</span>
+    <span>Aesthetic Reflections · 研美思维</span>
+  </div>
+
+</main>
+</body>
+</html>

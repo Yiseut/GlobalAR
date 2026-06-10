@@ -27,6 +27,10 @@ except Exception:  # noqa: BLE001 - chart fallback still works for symbol sanity
     yf = None
 
 YAHOO_CHART = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d"
+YAHOO_QUOTE_SUMMARY = (
+    "https://query2.finance.yahoo.com/v10/finance/quoteSummary/{symbol}"
+    "?modules=summaryDetail,defaultKeyStatistics,financialData"
+)
 FX_TO_USD_SYMBOL = {
     "USD": "",
     "CHF": "CHFUSD=X",
@@ -47,6 +51,15 @@ FX_TO_USD_SYMBOL = {
 
 def norm(value: Any) -> str:
     return "" if value is None else str(value).strip()
+
+
+def fmt_number(value: Any, digits: int = 2) -> str:
+    if value in (None, ""):
+        return ""
+    try:
+        return f"{float(value):.{digits}f}".rstrip("0").rstrip(".")
+    except (TypeError, ValueError):
+        return ""
 
 
 def _snapshot_keys(row: dict[str, Any] | sqlite3.Row) -> list[str]:
@@ -99,7 +112,17 @@ def preserve_valuation(row: dict[str, Any], company: sqlite3.Row, fallback: dict
         return row
 
     row["market_cap_usd_m"] = norm(previous.get("market_cap_usd_m"))
-    row["pe_ratio"] = norm(row.get("pe_ratio")) or norm(previous.get("pe_ratio"))
+    for field in (
+        "pe_ratio",
+        "pb_ratio",
+        "eps_ttm",
+        "net_profit_growth_yoy_pct",
+        "financial_period",
+        "filing_date",
+        "metric_basis",
+        "financial_refreshed_at",
+    ):
+        row[field] = norm(row.get(field)) or norm(previous.get(field))
     preserved_as_of = norm(previous.get("as_of"))
     preserved_source = norm(previous.get("source"))
     row["snapshot_status"] = "price_refreshed_valuation_carried_forward"
@@ -162,6 +185,27 @@ def fetch_chart(symbol: str) -> dict[str, Any] | None:
     return result[0] if result else None
 
 
+def fetch_quote_summary(symbol: str) -> dict[str, Any]:
+    url = YAHOO_QUOTE_SUMMARY.format(symbol=urllib.parse.quote(symbol))
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 GlobalAestheticsDashboard/0.1"})
+    with urllib.request.urlopen(request, timeout=25) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    result = (((payload.get("quoteSummary") or {}).get("result") or [{}])[0]) or {}
+    merged: dict[str, Any] = {}
+    for module in ("summaryDetail", "defaultKeyStatistics", "financialData"):
+        values = result.get(module) or {}
+        if isinstance(values, dict):
+            merged.update(values)
+    return merged
+
+
+def quote_value(summary: dict[str, Any], key: str) -> Any:
+    value = summary.get(key)
+    if isinstance(value, dict):
+        return value.get("raw") if value.get("raw") is not None else value.get("fmt")
+    return value
+
+
 def day_change_pct(result: dict[str, Any], price: float | None) -> str:
     closes = (((result.get("indicators") or {}).get("quote") or [{}])[0].get("close") or [])
     values = [float(value) for value in closes if value is not None]
@@ -220,6 +264,15 @@ def fetch_yfinance_snapshot(company: sqlite3.Row, symbol: str) -> dict[str, Any]
     price = fast_info_value(info, "last_price") or fast_info_value(info, "lastPrice")
     currency = norm(fast_info_value(info, "currency")).upper()
     previous_close = fast_info_value(info, "previous_close") or fast_info_value(info, "previousClose")
+    quote_summary: dict[str, Any] = {}
+    try:
+        quote_summary = fetch_quote_summary(symbol)
+    except Exception:
+        quote_summary = {}
+    if market_cap is None:
+        market_cap = quote_value(quote_summary, "marketCap")
+    if price is None:
+        price = quote_value(quote_summary, "regularMarketPrice") or quote_value(quote_summary, "currentPrice")
     if market_cap is None and price is None:
         return None
     rate = fx_to_usd(currency)
@@ -229,6 +282,11 @@ def fetch_yfinance_snapshot(company: sqlite3.Row, symbol: str) -> dict[str, Any]
     day_change = ""
     if price is not None and previous_close:
         day_change = f"{((float(price) - float(previous_close)) / float(previous_close)) * 100:.2f}"
+    as_of = datetime.now().astimezone().isoformat(timespec="seconds")
+    pe_ratio = quote_value(quote_summary, "trailingPE") or quote_value(quote_summary, "forwardPE")
+    pb_ratio = quote_value(quote_summary, "priceToBook")
+    eps_ttm = quote_value(quote_summary, "trailingEps")
+    earnings_growth = quote_value(quote_summary, "earningsGrowth")
     return {
         "company_id": company["company_id"],
         "company": company["canonical_name"],
@@ -237,11 +295,19 @@ def fetch_yfinance_snapshot(company: sqlite3.Row, symbol: str) -> dict[str, Any]
         "ticker_symbol": company["ticker_symbol"],
         "yahoo_symbol": symbol,
         "listing_country": company["listing_country"],
-        "as_of": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "as_of": as_of,
         "price": "" if price is None else str(price),
         "currency": currency,
         "market_cap_usd_m": market_cap_usd_m,
-        "pe_ratio": "",
+        "pe_ratio": fmt_number(pe_ratio),
+        "pb_ratio": fmt_number(pb_ratio),
+        "eps_ttm": fmt_number(eps_ttm),
+        "net_profit_growth_yoy_pct": fmt_number(float(earnings_growth) * 100) if earnings_growth not in (None, "") else "",
+        "financial_period": "",
+        "filing_date": "",
+        "metric_basis": "Yahoo Finance quote summary" if quote_summary else "",
+        "market_refreshed_at": as_of,
+        "financial_refreshed_at": "",
         "day_change_pct": day_change,
         "source": "yfinance / Yahoo Finance fast_info",
         "source_url": f"https://finance.yahoo.com/quote/{urllib.parse.quote(symbol)}",
@@ -288,6 +354,14 @@ def snapshot_for(company: sqlite3.Row) -> dict[str, Any]:
             "currency": meta.get("currency") or "",
             "market_cap_usd_m": "",
             "pe_ratio": "",
+            "pb_ratio": "",
+            "eps_ttm": "",
+            "net_profit_growth_yoy_pct": "",
+            "financial_period": "",
+            "filing_date": "",
+            "metric_basis": "",
+            "market_refreshed_at": as_of,
+            "financial_refreshed_at": "",
             "day_change_pct": day_change_pct(result, float(price) if price is not None else None),
             "source": "Yahoo Finance chart API",
             "source_url": source_url,
@@ -307,6 +381,14 @@ def snapshot_for(company: sqlite3.Row) -> dict[str, Any]:
         "currency": "",
         "market_cap_usd_m": "",
         "pe_ratio": "",
+        "pb_ratio": "",
+        "eps_ttm": "",
+        "net_profit_growth_yoy_pct": "",
+        "financial_period": "",
+        "filing_date": "",
+        "metric_basis": "",
+        "market_refreshed_at": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "financial_refreshed_at": "",
         "day_change_pct": "",
         "source": "Yahoo Finance chart API",
         "source_url": "",
@@ -347,6 +429,14 @@ def collect(limit: int, sleep_seconds: float) -> dict[str, Any]:
         "currency",
         "market_cap_usd_m",
         "pe_ratio",
+        "pb_ratio",
+        "eps_ttm",
+        "net_profit_growth_yoy_pct",
+        "financial_period",
+        "filing_date",
+        "metric_basis",
+        "market_refreshed_at",
+        "financial_refreshed_at",
         "day_change_pct",
         "source",
         "source_url",

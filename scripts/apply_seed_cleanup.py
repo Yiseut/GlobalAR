@@ -34,6 +34,7 @@ from build_data import (
     DATA_QUALITY_ISSUES_PATH,
     EVIDENCE_PROMOTION_LOG_PATH,
     LISTED_COMPANY_BATCH_PATH,
+    MANUAL_PRODUCT_FACT_EVIDENCE_PATH,
     MDR_CE_SEARCH_PLAN_PATH,
     OFFICIAL_WEBSITE_MASTER_PATH,
     OFFICIAL_INDICATION_EVIDENCE_PATH,
@@ -208,9 +209,92 @@ def set_cell(
 
 def canonical_company(value: Any) -> str:
     text = norm(value)
-    if compact_key(text) == "deka":
-        return "DEKA"
-    return text
+    overrides = {
+        "deka": "DEKA",
+        "candelamedical": "Candela",
+    }
+    return overrides.get(compact_key(text), text)
+
+
+COMPANY_IDENTITY_FIELDS = {
+    "Company",
+    "company",
+    "canonical_name",
+    "related_company",
+    "listed_parent_company",
+    "legal_manufacturer",
+    "marketing_holder",
+    "local_holder",
+    "oem_for",
+    "manufactured_by",
+}
+
+COMPANY_ID_FIELDS = {
+    "company_id",
+    "related_company_id",
+    "listed_parent_company_id",
+    "legal_manufacturer_id",
+    "marketing_holder_id",
+    "local_holder_id",
+}
+
+
+def cleanup_company_aliases_across_workbook(wb: openpyxl.Workbook, changes: list[dict[str, Any]]) -> dict[str, int]:
+    stats: Counter[str] = Counter()
+    old_company_id = stable_id("co", "Candela Medical")
+    new_company_id = stable_id("co", "Candela")
+
+    for ws in wb.worksheets:
+        colmap = headers(ws)
+        identity_cols = {
+            field: col
+            for field, col in colmap.items()
+            if field in COMPANY_IDENTITY_FIELDS or field.lower() in COMPANY_IDENTITY_FIELDS
+        }
+        id_cols = {
+            field: col
+            for field, col in colmap.items()
+            if field in COMPANY_ID_FIELDS or field.lower() in COMPANY_ID_FIELDS
+        }
+        if not identity_cols and not id_cols:
+            continue
+        record_col = colmap.get("Record_ID") or colmap.get("product_id") or colmap.get("evidence_id") or colmap.get("asset_id")
+        for row in range(2, ws.max_row + 1):
+            row_id = ws.cell(row, record_col).value if record_col else row
+            for field, col in identity_cols.items():
+                old_value = ws.cell(row, col).value
+                new_value = canonical_company(old_value)
+                if new_value and norm(old_value) != new_value:
+                    ws.cell(row, col).value = new_value
+                    log_change(
+                        changes,
+                        ws.title,
+                        row,
+                        row_id,
+                        field,
+                        old_value,
+                        new_value,
+                        "canonicalize_company_alias",
+                        "merged company alias into canonical identity",
+                    )
+                    stats["company_name_cells"] += 1
+            for field, col in id_cols.items():
+                old_value = norm(ws.cell(row, col).value)
+                if old_value == old_company_id:
+                    ws.cell(row, col).value = new_company_id
+                    log_change(
+                        changes,
+                        ws.title,
+                        row,
+                        row_id,
+                        field,
+                        old_value,
+                        new_company_id,
+                        "canonicalize_company_id",
+                        "merged Candela Medical ID into Candela ID",
+                    )
+                    stats["company_id_cells"] += 1
+    return dict(stats)
 
 
 def cleanup_product_lines(wb: openpyxl.Workbook, changes: list[dict[str, Any]]) -> dict[str, Any]:
@@ -643,6 +727,7 @@ def run_cleanup(no_backup: bool = False) -> dict[str, Any]:
         "started_at": datetime.now().isoformat(timespec="seconds"),
         "product_lines": cleanup_product_lines(wb, changes),
     }
+    summary["company_alias_cells"] = cleanup_company_aliases_across_workbook(wb, changes)
     summary["duplicate_company_rows_removed"] = merge_duplicate_companies(wb, changes)
     summary["company_stat_cells_refreshed"] = refresh_company_stats(wb, changes)
     summary["brand_portfolio"] = rebuild_brand_portfolio(wb, changes)
@@ -704,6 +789,7 @@ def sync_background_sheets(no_backup: bool = False) -> dict[str, Any]:
     company_website_rows = write_csv_sheet(wb, "Company_Official_Website", COMPANY_OFFICIAL_WEBSITE_PATH)
     media_asset_rows = write_csv_sheet(wb, "Media_Asset_Index", COMPANY_MEDIA_ASSET_INDEX_PATH)
     product_spec_rows = write_csv_sheet(wb, "Product_Spec_Evidence", PRODUCT_SPECIFICATION_EVIDENCE_PATH)
+    manual_product_fact_rows = write_csv_sheet(wb, "Manual_Product_Fact_Evidence", MANUAL_PRODUCT_FACT_EVIDENCE_PATH)
     regulatory_plan_rows = write_csv_sheet(wb, "Policy_Regulatory_Source_Plan", POLICY_REGULATORY_SOURCE_PLAN_PATH)
     valuation_rank_rows = write_csv_sheet(wb, "Market_Valuation_Rank", MARKET_VALUATION_RANK_PATH)
     market_conflict_rows = write_csv_sheet(wb, "Market_Conflicts", MARKET_CONFLICT_PATH)
@@ -729,6 +815,7 @@ def sync_background_sheets(no_backup: bool = False) -> dict[str, Any]:
         "company_official_website_rows": company_website_rows,
         "media_asset_rows": media_asset_rows,
         "product_specification_rows": product_spec_rows,
+        "manual_product_fact_evidence_rows": manual_product_fact_rows,
         "policy_regulatory_source_plan_rows": regulatory_plan_rows,
         "market_valuation_rank_rows": valuation_rank_rows,
         "market_conflict_rows": market_conflict_rows,

@@ -1,0 +1,147 @@
+{
+  "run_ts": "20260603_205226",
+  "correction": "cosmeceutical_scope_cleanup_20260602",
+  "scope_policy": {
+    "display_label": "Cosmeceutical / 功能性护肤品",
+    "schema_key": "Skincare",
+    "definition": "Professional functional skincare / cosmeceuticals used in medical-aesthetic clinics, physician-dispensed channels, peri-procedure repair, scar management, professional peel or treatment-cycle support. Excludes mass supermarket/drugstore consumer skincare unless the specific product line is physician-dispensed or professional-channel."
+  },
+  "excluded_records": {
+    "REC_0113": "excluded: mass-market CeraVe moisturizer is supermarket/drugstore skincare, outside medical-aesthetic professional product scope.",
+    "REC_0114": "excluded: Cetaphil cleanser is mass dermatological skincare / pharmacy retail line, outside medical-aesthetic professional product scope.",
+    "REC_0236": "excluded: Enhel hydrogen water generator is wellness / health appliance, not medical-aesthetic upstream product line.",
+    "REC_0237": "excluded: Enhel hydrogen mask is hydrogen wellness skincare, not medical-aesthetic professional product line.",
+    "REC_0375": "excluded: Kamedis eczema/acne kit is OTC dermatology/pharmacy consumer care, not medical-aesthetic professional channel.",
+    "REC_0511": "excluded: mixed Waldencast holding-company row combines Obagi professional skincare with Milk Makeup cosmetics; replaced by dedicated Obagi rows."
+  },
+  "changed_family_ids": {
+    "REC_0801": {
+      "product_id": "prod_d40850afd216",
+      "old_family_id": "pf_6c699cec5074",
+      "new_family_id": "pf_ef9b01774c9d",
+      "category_l1": "Pharma",
+      "category_l2": "Topical Rx",
+      "tech_type": "Prostaglandin / Bimatoprost"
+    },
+    "REC_0593": {
+      "product_id": "prod_96179facd1ca",
+      "old_family_id": "pf_32294d13bd46",
+      "new_family_id": "pf_f13dd9ad5cfb",
+      "category_l1": "EBD",
+      "category_l2": "Other EBD",
+      "tech_type": "Pulsed Shortwave Therapy (PSWT)"
+    },
+    "REC_0679": {
+      "product_id": "prod_6df40f5cb83f",
+      "old_family_id": "pf_b083e8f719bf",
+      "new_family_id": "pf_061822ea670e",
+      "category_l1": "Skincare",
+      "category_l2": "Cosmeceutical",
+      "tech_type": "Scar Management / Silicone Gel"
+    },
+    "REC_0509": {
+      "product_id": "prod_1328390d9da3",
+      "old_family_id": "pf_9105a9247ff3",
+      "new_family_id": "pf_351c7e1240da",
+      "category_l1": "Skincare",
+      "category_l2": "Cosmeceutical",
+      "tech_type": "Hydroquinone / Rx Cosmeceutical"
+    },
+    "REC_0510": {
+      "product_id": "prod_8818ec371431",
+      "old_family_id": "pf_fd710695e595",
+      "new_family_id": "pf_5191e48337f4",
+      "category_l1": "Skincare",
+      "category_l2": "Cosmeceutical",
+      "tech_type": "Vitamin C / Elastin Support Cosmeceutical"
+    }
+  },
+  "c_case_decisions": {
+    "REC_0339": "retain: professional peel / medspa channel",
+    "REC_0180": "retain: doctor/professional cosmeceutical line",
+    "REC_0755": "retain as boundary professional salon/aesthetic-adjacent range only",
+    "REC_SKINTECH_PEEL2GLOW": "retain: home-care extension of professional Skin Tech portfolio",
+    "REC_SKINTECH_HAPPY_INTIM": "retain: professional intimate/gyne-aesthetic line",
+    "REC_0080": "retain: recombinant protein topical cosmeceutical, not injectable toxin",
+    "REC_0375": "exclude: OTC dermatology/pharmacy consumer care"
+  },
+  "workbook": {
+    "path": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.xlsx",
+    "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_cosmeceutical_scope_cleanup_20260602_20260603_205226.xlsx",
+    "changed_records": {},
+    "category_definition_changes": {
+      "Skincare / Cosmeceutical": {
+        "Definition_EN": {
+          "before": "Professional-grade skincare products",
+          "after": "Professional functional skincare / cosmeceuticals used in medical-aesthetic clinics, physician-dispensed channels, peri-procedure repair, scar management, professional peel or treatment-cycle support. Excludes mass supermarket/drugstore consumer skincare unless the specific product line is physician-dispensed or professional-channel."
+        },
+        "Tech_Type_Examples": {
+          "before": "Cosmeceutical, Retinol, Vitamin C",
+          "after": "Professional functional skincare; peri-procedure repair; scar management; professional peel support; physician-dispensed cosmeceutical"
+        }
+      },
+      "Skincare / Chemical Peel": {
+        "Definition_EN": {
+          "before": "Chemical exfoliation treatments",
+          "after": "Professional chemical peel / exfoliation products used by clinics, medspas or trained professionals."
+        },
+        "Tech_Type_Examples": {
+          "before": "Glycolic Acid, Salicylic Acid, TCA, Jessner",
+          "after": "AHA peel; TCA peel; salicylic peel; professional exfoliation protocol"
+        }
+      },
+      "Skincare / Professional": {
+        "Definition_EN": {
+          "before": "Needs definition",
+          "after": "Professional clinic, medspa, physician-dispensed or aesthetic-adjacent skincare lines; excludes purely mass-market beauty/cosmetics."
+        },
+        "Tech_Type_Examples": {
+          "before": "Professional Skincare, Clinical Skincare, Hydroquinone, Skincare / Cosmetics, Professional Treatment",
+          "after": "Professional skincare line; clinic channel skincare; aesthetic-adjacent treatment support"
+        }
+      },
+      "Skincare / Wellness": {
+        "Definition_EN": {
+          "before": "Needs definition",
+          "after": "Legacy wellness skincare bucket. Products are out of active dashboard scope unless clearly tied to medical-aesthetic professional treatment cycles."
+        },
+        "Tech_Type_Examples": {
+          "before": "Molecular Hydrogen, Supplements (Nad+)",
+          "after": "Wellness-only skincare is normally excluded_scope"
+        }
+      }
+    }
+  },
+  "csv_updates": [
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_official_source_plan.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\mdr_ce_search_plan.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_media_asset_index.csv",
+      "backup": "",
+      "changed_rows": 0
+    },
+    {
+      "path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log.csv",
+      "backup": "",
+      "changed_rows": 0
+    }
+  ]
+}

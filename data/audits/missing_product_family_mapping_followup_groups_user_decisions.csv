@@ -1,0 +1,6 @@
+﻿group_id,batch_nos,decision,note,applied_at
+MAP-01,MISS-007,确认公司归属修正,用户确认：Olidia 不重复新增，按 Ubio Biotechnology 与现有 PRP Science / Olidia 的公司归属/制造注册主体修正处理。,20260601_002041
+MAP-02,MISS-011; MISS-022,确认主体拆分映射,用户确认：MaiLi/Kysense 不重复新增，按 Kylane 研发/注册主体与 Sinclair 全球推广/营销主体拆分映射处理。,20260601_002041
+MAP-03,MISS-015,确认改 Crown Aesthetics,用户确认：SkinPen 不归 Revance，不重复新增，统一修正为 Crown Aesthetics / SkinPen。,20260601_002041
+MAP-04,MISS-021,确认别名合并,用户确认：Eltech 与 Eltech K-Laser 按公司别名/标准名合并，不重复新增 K-Laser。,20260601_002041
+MAP-05,MISS-029,先查证,用户要求：KeraFactor 先查证 SkinQRI 与 Skinedit Nutricosmetics 的品牌/公司/营销主体关系后再修正。,20260601_002041

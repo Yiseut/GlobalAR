@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>资本地图 · v2</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>LENS 03 · NEW DIMENSION</div>
+      <h1>
+        资本地图
+        <span class="h1-en">Capital Map &amp; Valuation Bands</span>
+      </h1>
+      <p class="lede">61 家已上市主体 · 15 个交易所 · 估值带、交易所、母子结构一目了然。</p>
+
+      <div class="stat-row">
+        <span>已上市 <span class="num">61</span> / 372 = <span class="num">16%</span></span>
+        <span>主交易所 KRX 22 + NASDAQ 15</span>
+        <span>巨盘 <span class="num">3</span> · 大盘 <span class="num">3</span> · 中盘 <span class="num">12</span> · 小盘 <span class="num">30</span></span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="en">HEADLINE NUMBERS</span>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi-cell lede w-peach">
+          <span class="label">
+            <span class="en">LISTING RATE</span>
+            <span class="zh">全行业上市率</span>
+          </span>
+          <span class="value">16%</span>
+          <span class="delta">61 / 372 上游企业上市</span>
+        </article>
+        <article class="kpi-cell w-blue-mute">
+          <span class="label"><span class="en">SMALL CAP DOMINANCE</span><span class="zh">小盘占比</span></span>
+          <span class="value">63%</span>
+          <span class="delta">30 / 48 有估值带的</span>
+        </article>
+        <article class="kpi-cell w-gold-warm">
+          <span class="label"><span class="en">MEGA CAP</span><span class="zh">巨盘公司</span></span>
+          <span class="value">3</span>
+          <span class="delta">AbbVie · J&J · 中外医药</span>
+        </article>
+
+        <article class="kpi-cell w-cream">
+          <span class="label"><span class="en">KRX SUBSET</span><span class="zh">韩交所</span></span>
+          <span class="value">22</span>
+          <span class="delta">几乎全部小盘 · 韩股板块</span>
+        </article>
+        <article class="kpi-cell w-rose">
+          <span class="label"><span class="en">NASDAQ</span><span class="zh">纳斯达克</span></span>
+          <span class="value">15</span>
+          <span class="delta">InMode · Apyx · STAA 等</span>
+        </article>
+        <article class="kpi-cell w-blue-ice">
+          <span class="label"><span class="en">SUBSIDIARIES</span><span class="zh">子公司 / 关联</span></span>
+          <span class="value">15</span>
+          <span class="delta">46 主体 + 15 子结构</span>
+        </article>
+        <article class="kpi-cell w-khaki">
+          <span class="label"><span class="en">PENDING VALUATION</span><span class="zh">估值待补</span></span>
+          <span class="value">13</span>
+          <span class="delta">本批次未抓到市值快照</span>
+        </article>
+        <article class="kpi-cell w-gold-soft">
+          <span class="label"><span class="en">PRIVATE COMPANIES</span><span class="zh">私营企业</span></span>
+          <span class="value">309</span>
+          <span class="delta">83% 全行业以私营为主</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>估值带分布</h2>
+        <span class="en">VALUATION BANDS · 48 RANKED ENTITIES</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">小盘统治：48 家有估值带分类的企业里 30 家小盘</div>
+        <div class="chart-sub">头部由 3 家巨盘 + 3 家大盘构成 — 集中在传统药械综合体；中段断层。13 家"pending" 是数据采集本轮未覆盖的，下一批补全。</div>
+
+        <div class="bar-row">
+          <div class="label">小盘 Small Cap<small>&lt; $2B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#C99B99; flex: 30; width: 30%; min-width: 8px;"></div>
+          </div>
+          <div class="bar-total">30</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">中盘 Mid Cap<small>$2B – $10B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#8B3F3E; flex: 12;"></div>
+          </div>
+          <div class="bar-total">12</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">大盘 Large Cap<small>$10B – $200B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#520E0D; flex: 3;"></div>
+          </div>
+          <div class="bar-total">3</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">巨盘 Mega Cap<small>&gt; $200B</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#3C0A09; flex: 3;"></div>
+          </div>
+          <div class="bar-total">3</div>
+        </div>
+        <div class="bar-row">
+          <div class="label">待补 Pending<small>本轮未抓取</small></div>
+          <div class="bar-track">
+            <div class="bar-seg" style="background:#94A0B5; flex: 13;"></div>
+          </div>
+          <div class="bar-total">13</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>交易所分布</h2>
+        <span class="en">EXCHANGE DISTRIBUTION · 15 EXCHANGES</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">韩股板块 + 美股板块 = 60% 全部上市主体</div>
+        <div class="chart-sub">KRX 22 家全部为韩国医美设备 / 注射出口企业；NASDAQ 15 家是 EBD 头部的主要资本市场。Borsa Italiana 5 家反映欧洲注射类传统格局。</div>
+        <div class="donut-row">
+          <div class="donut-wrap">
+            <svg width="240" height="240" viewBox="0 0 240 240" aria-label="交易所分布">
+              <g transform="translate(120,120) rotate(-90)">
+                <!-- circumference ≈ 527.79 · total 62 -->
+                <!-- KRX 22 → 187.27 -->
+                <circle r="84" fill="none" stroke="#520E0D" stroke-width="36" stroke-dasharray="187.27 527.79" stroke-dashoffset="0"/>
+                <!-- NASDAQ 15 → 127.69 ; offset -187.27 -->
+                <circle r="84" fill="none" stroke="#233245" stroke-width="36" stroke-dasharray="127.69 527.79" stroke-dashoffset="-187.27"/>
+                <!-- Borsa Italiana 5 → 42.56 ; offset -314.96 -->
+                <circle r="84" fill="none" stroke="#BCA078" stroke-width="36" stroke-dasharray="42.56 527.79" stroke-dashoffset="-314.96"/>
+                <!-- Paris (PA) 3 → 25.54 ; offset -357.52 -->
+                <circle r="84" fill="none" stroke="#8B3F3E" stroke-width="36" stroke-dasharray="25.54 527.79" stroke-dashoffset="-357.52"/>
+                <!-- SZSE 2 → 17.02 ; offset -383.06 -->
+                <circle r="84" fill="none" stroke="#485670" stroke-width="36" stroke-dasharray="17.02 527.79" stroke-dashoffset="-383.06"/>
+                <!-- TW 2 → 17.02 ; offset -400.08 -->
+                <circle r="84" fill="none" stroke="#D7C0A6" stroke-width="36" stroke-dasharray="17.02 527.79" stroke-dashoffset="-400.08"/>
+                <!-- TA 2 → 17.02 ; offset -417.10 -->
+                <circle r="84" fill="none" stroke="#C99B99" stroke-width="36" stroke-dasharray="17.02 527.79" stroke-dashoffset="-417.10"/>
+                <!-- 其它 11 single ≈ 93.62 ; offset -434.12 -->
+                <circle r="84" fill="none" stroke="#94A0B5" stroke-width="36" stroke-dasharray="93.62 527.79" stroke-dashoffset="-434.12"/>
+              </g>
+            </svg>
+            <div class="donut-center">
+              <span class="big">62</span>
+              <span class="small">LISTED RECORDS</span>
+            </div>
+          </div>
+          <div class="donut-list">
+            <div class="row"><span class="sw" style="background:#520E0D"></span><span class="name">KRX · 韩国交易所</span><span class="num">22</span><span class="pct">35.5%</span></div>
+            <div class="row"><span class="sw" style="background:#233245"></span><span class="name">NASDAQ · 美国</span><span class="num">15</span><span class="pct">24.2%</span></div>
+            <div class="row"><span class="sw" style="background:#BCA078"></span><span class="name">Borsa Italiana · 意大利</span><span class="num">5</span><span class="pct">8.1%</span></div>
+            <div class="row"><span class="sw" style="background:#8B3F3E"></span><span class="name">Paris (PA) · 法国</span><span class="num">3</span><span class="pct">4.8%</span></div>
+            <div class="row"><span class="sw" style="background:#485670"></span><span class="name">SZSE · 深圳</span><span class="num">2</span><span class="pct">3.2%</span></div>
+            <div class="row"><span class="sw" style="background:#D7C0A6"></span><span class="name">TW / TWO · 台湾</span><span class="num">2</span><span class="pct">3.2%</span></div>
+            <div class="row"><span class="sw" style="background:#C99B99"></span><span class="name">TA · 特拉维夫</span><span class="num">2</span><span class="pct">3.2%</span></div>
+            <div class="row"><span class="sw" style="background:#94A0B5"></span><span class="name">SIX · BR · T · HKEX · ASX · JSE · OTC</span><span class="num">11</span><span class="pct">17.7%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>头部已上市主体</h2>
+        <span class="en">TOP LISTED · BY MARKET CAP RANK</span>
+      </div>
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 40px;">#</th>
+              <th>公司</th>
+              <th>主赛道</th>
+              <th>交易所</th>
+              <th>代码</th>
+              <th>估值带</th>
+              <th class="num">关联企业</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>01</td><td>AbbVie (Allergan Aesthetics)</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>NYSE</td><td>ABBV</td><td><span class="pill-tag pill-default">Mega Cap</span></td><td class="num">1</td></tr>
+            <tr><td>02</td><td>Johnson &amp; Johnson</td><td><span class="pill-tag pill-implants">Implants</span></td><td>NYSE</td><td>JNJ</td><td><span class="pill-tag pill-default">Mega Cap</span></td><td class="num">1</td></tr>
+            <tr><td>03</td><td>Galderma</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>SIX</td><td>GALD</td><td><span class="pill-tag pill-default">Large Cap</span></td><td class="num">1</td></tr>
+            <tr><td>04</td><td>Bausch Health</td><td><span class="pill-tag pill-skincare">Skincare</span></td><td>NYSE</td><td>BHC</td><td><span class="pill-tag pill-default">Large Cap</span></td><td class="num">1</td></tr>
+            <tr><td>05</td><td>InMode</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>INMD</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>06</td><td>Hugel</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>145020</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>07</td><td>Medytox</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>086900</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>08</td><td>Classys</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>KRX</td><td>214150</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
+            <tr><td>09</td><td>Daewoong Pharm.</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>069620</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Cutera</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>CUTR</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
+            <tr><td>11</td><td>Apyx Medical</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>APYX</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
+            <tr><td>12</td><td>STAAR Surgical</td><td><span class="pill-tag pill-implants">Implants</span></td><td>NASDAQ</td><td>STAA</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--c-ink-mute);margin-top:10px;">估值带为本地底库快照（截至 <span data-bind-text="generated_at_short">2026·05·20</span>），不代表实时市值；详细市值待 yfinance + Xueqiu 同步补全。</p>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="en">INTERPRETATION</span>
+      </div>
+      <div class="editorial-row">
+        <article class="editorial-block w-peach">
+          <span class="stamp">FINDING · 01</span>
+          <div class="lead">头重脚轻 + 中段空心。</div>
+          <div class="body">巨盘 3 + 大盘 3 = 6 家撑起行业资本叙事；中盘仅 12 家；小盘 30 家集中在 KRX。这意味着除头部并购整合者外，行业还没有形成真正的中型 platform 玩家。</div>
+        </article>
+        <article class="editorial-block w-gold-warm">
+          <span class="stamp">FINDING · 02</span>
+          <div class="lead">KRX 是隐藏的产能池。</div>
+          <div class="body">22 家韩股全部小盘，但它们贡献了全球医美产品供给的近 30%。"KRX 小盘 × OEM 出口" 是当前行业最被低估的商业模式。</div>
+        </article>
+        <article class="editorial-block w-blue-mute">
+          <span class="stamp">FINDING · 03</span>
+          <div class="lead">非上市集团应单独追踪。</div>
+          <div class="body">Lumenis、Cynosure、Alma Lasers、Merz 等都是非上市（私有 / 已退市 / PE 持有）但份额大的玩家，应建立独立的"暗股池"追踪表 — 资本动作不进股市但影响行业并购。</div>
+        </article>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v2 · CAPITAL MAP · 61 LISTED · UPDATED <span data-bind-text="generated_at_short">—</span></span>
+      <span>Aesthetic Reflections · 研美思维</span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260520"></script>
+<script src="./_nav.js" data-active="capital"></script>
+<script>
+  (function () {
+    const d = window.GLOBAL_AESTHETICS_DATA;
+    if (d && d.generated_at) {
+      const s = d.generated_at.slice(0,10).replace(/-/g,"·");
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+  })();
+</script>
+</body>
+</html>

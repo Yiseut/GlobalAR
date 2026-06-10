@@ -1,0 +1,51 @@
+{
+  "total_rows": 34,
+  "by_master_action": {
+    "ADD_PRODUCT_LINE": 6,
+    "MERGE_TO_EXISTING": 1,
+    "EXCLUDE_CANDIDATE": 21,
+    "LINK_EXISTING_REVIEW_COMPANY_MAPPING": 6
+  },
+  "add_product_line_batches": [
+    "MISS-001",
+    "MISS-002",
+    "MISS-006",
+    "MISS-013",
+    "MISS-018",
+    "MISS-032"
+  ],
+  "link_existing_batches": [
+    "MISS-007",
+    "MISS-011",
+    "MISS-015",
+    "MISS-021",
+    "MISS-022",
+    "MISS-029"
+  ],
+  "merge_batches": [
+    "MISS-003"
+  ],
+  "exclude_batches": [
+    "MISS-004",
+    "MISS-005",
+    "MISS-008",
+    "MISS-009",
+    "MISS-010",
+    "MISS-012",
+    "MISS-014",
+    "MISS-016",
+    "MISS-017",
+    "MISS-019",
+    "MISS-020",
+    "MISS-023",
+    "MISS-024",
+    "MISS-025",
+    "MISS-026",
+    "MISS-027",
+    "MISS-028",
+    "MISS-030",
+    "MISS-031",
+    "MISS-033",
+    "MISS-034"
+  ]
+}

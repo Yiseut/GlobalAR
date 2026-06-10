@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-06-01T00:58:27",
+  "workbook_backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4_backup_before_nmpa_import_feedback_20260601_005739.xlsx",
+  "manual_nmpa_backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_nmpa_registration_evidence_backup_before_nmpa_import_feedback_20260601_005739.csv",
+  "added_product_lines": [
+    "NMPA_IMPORT_HUMEDIX_HA_20260601",
+    "NMPA_IMPORT_YOOYOUNG_HA_20260601"
+  ],
+  "added_companies": [
+    "Humedix",
+    "YooYoung Pharmaceutical"
+  ],
+  "added_brand_portfolio_rows": [
+    "Humedix/Pre-filled Sodium Hyaluronate Syringe",
+    "YooYoung Pharmaceutical/Modified Sodium Hyaluronate Gel"
+  ],
+  "added_manual_nmpa_registration_numbers": [
+    "国械注进20153130263",
+    "国械注进20193130565",
+    "国械注进20233130573",
+    "国械注进20183091955"
+  ],
+  "execution_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\nmpa_import_registration_feedback_batch_01_applied.csv",
+  "execution_html": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\nmpa_import_registration_feedback_batch_01_applied.html",
+  "not_promoted_as_verified_current": [
+    "国械注进20163130114",
+    "国械注进20223130141",
+    "国械注进20163090059",
+    "国械注进20183251955"
+  ],
+  "reason_not_promoted": "Old certificate numbers were not verified/current in the local registration master; user-approved product-family mapping was applied without pretending these stale numbers are current official evidence."
+}

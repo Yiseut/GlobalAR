@@ -1,0 +1,391 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_user_reg_indications_b2_20260601_023237.xlsx",
+  "workbook_changes": 75,
+  "manual_official_indication_rows_added": 21,
+  "manual_product_fact_rows_added": 2,
+  "target_record_ids": [
+    "REC_0037",
+    "REC_0156",
+    "REC_0196",
+    "REC_0291",
+    "REC_0359",
+    "REC_0367",
+    "REC_0402",
+    "REC_0515",
+    "REC_0548",
+    "REC_0591",
+    "REC_0677",
+    "REC_0823",
+    "REC_1049"
+  ],
+  "category_corrected_record_ids": [
+    "REC_0037",
+    "REC_0156",
+    "REC_0359",
+    "REC_0548",
+    "REC_0591",
+    "REC_0677"
+  ],
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_0367",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE Class III medical device confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0367",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Nordberg Medical"
+    },
+    {
+      "record_id": "REC_0367",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Nordberg Medical"
+    },
+    {
+      "record_id": "REC_0367",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_1049",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_1049",
+      "field": "KFDA_Status",
+      "old": "KFDA manufacture license obtained for AestheFill & PowerFill family (official history)",
+      "new": "KFDA/MFDS approval confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_1049",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Regen Biotech, Inc."
+    },
+    {
+      "record_id": "REC_1049",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "RegenBio Global / Regen Biotech"
+    },
+    {
+      "record_id": "REC_1049",
+      "field": "Backfill_Audit",
+      "old": "official_manual_backfill:korea_plla_gap_20260528",
+      "new": "official_manual_backfill:korea_plla_gap_20260528; user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0196",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0196",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0196",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Chaeum Pharma"
+    },
+    {
+      "record_id": "REC_0196",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Chaeum Pharma"
+    },
+    {
+      "record_id": "REC_0196",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0291",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0291",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0291",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "GANA R&D"
+    },
+    {
+      "record_id": "REC_0291",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "GANA"
+    },
+    {
+      "record_id": "REC_0291",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0515",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by official Olidia page/user; NMPA row already present."
+    },
+    {
+      "record_id": "REC_0515",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS authorization confirmed; number pending."
+    },
+    {
+      "record_id": "REC_0515",
+      "field": "Manufactured_By",
+      "old": "PRP SCIENCE Co.,Ltd.(주)피알피사이언스",
+      "new": "PRP Science / Ubio"
+    },
+    {
+      "record_id": "REC_0515",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "PRP Science / Ubio"
+    },
+    {
+      "record_id": "REC_0515",
+      "field": "Backfill_Audit",
+      "old": "nmpa_supplement_product_line_backfill_20260527 | missing_product_family_feedback_20260601: Olidia already active; user confirmed company-mapping issue. Keep one active product line and note Ubio/PRP Science attribution for later certificate-level refinement.",
+      "new": "nmpa_supplement_product_line_backfill_20260527 | missing_product_family_feedback_20260601: Olidia already active; user confirmed company-mapping issue. Keep one active product line and note Ubio/PRP Science attribution for later certificate-level refinement.; user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0037",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE and multi-country registrations confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0037",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0037",
+      "field": "Tech_Type_Std",
+      "old": "PLLA",
+      "new": "P(LA/CL) Thread"
+    },
+    {
+      "record_id": "REC_0037",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Aptos"
+    },
+    {
+      "record_id": "REC_0037",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Aptos"
+    },
+    {
+      "record_id": "REC_0037",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0156",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0156",
+      "field": "Tech_Type_Std",
+      "old": "PDO Thread",
+      "new": "P(LA/CL) Thread"
+    },
+    {
+      "record_id": "REC_0156",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Relife / Menarini"
+    },
+    {
+      "record_id": "REC_0156",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Relife / Menarini"
+    },
+    {
+      "record_id": "REC_0156",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0677",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0677",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0677",
+      "field": "Tech_Type_Std",
+      "old": "PLLA",
+      "new": "Permanent Elastic Thread"
+    },
+    {
+      "record_id": "REC_0677",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "1st SurgiConcept"
+    },
+    {
+      "record_id": "REC_0677",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "1st SurgiConcept"
+    },
+    {
+      "record_id": "REC_0677",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0591",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0591",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0591",
+      "field": "Category_L2",
+      "old": "Biostimulator",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0591",
+      "field": "Tech_Type_Std",
+      "old": "PLLA",
+      "new": "PDO / PLLA / PCL Thread"
+    },
+    {
+      "record_id": "REC_0591",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Oreon Life Science"
+    },
+    {
+      "record_id": "REC_0591",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Oreon Life Science"
+    },
+    {
+      "record_id": "REC_0591",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS and CE confirmed by user; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "Category_L1",
+      "old": "EBD",
+      "new": "Injectables"
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "Category_L2",
+      "old": "HIFU",
+      "new": "Thread Lift"
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "Tech_Type_Std",
+      "old": "Placl Threads",
+      "new": "PDO / PCL Thread"
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "ITC"
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "ITC"
+    },
+    {
+      "record_id": "REC_0548",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601_batch2: user-confirmed indication/regulatory status applied; precise certificate numbers remain blank unless supplied."
+    },
+    {
+      "record_id": "REC_0359",
+      "field": "FDA_Status",
+      "old": "",
+      "new": "FDA clearance confirmed via Potenza/TempSure 510(k) mapping; verify legal indication in source record."
+    },
+    {
+      "record_id": "REC_0359",
+      "field": "FDA_510k_Number",
+      "old": "",
+      "new": "K190678"
+    },
+    {
+      "record_id": "REC_0359",
+      "field": "CE_Status",
+      "old": "",
+      "new": "FDA / CE / KFDA-MFDS confirmed by user; CE/KFDA numbers pending."
+    },
+    {
+      "record_id": "REC_0359",
+      "field": "KFDA_Status",
+      "old": "",
+      "new": "KFDA/MFDS registration confirmed by user; number pending."
+    }
+  ]
+}

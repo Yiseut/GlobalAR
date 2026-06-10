@@ -1,0 +1,17 @@
+{
+  "followup_groups": 5,
+  "direct_add": [
+    "MISS-001",
+    "MISS-002",
+    "MISS-006",
+    "MISS-013",
+    "MISS-018",
+    "MISS-032"
+  ],
+  "direct_merge": [
+    "MISS-003"
+  ],
+  "excluded_count": 21,
+  "html": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\missing_product_family_mapping_followup_groups.html",
+  "csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\missing_product_family_mapping_followup_groups_fill_here.csv"
+}

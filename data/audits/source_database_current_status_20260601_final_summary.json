@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-06-01T01:33:43",
+  "dashboard_summary": {
+    "products": 1008,
+    "companies": 368,
+    "brands": 971,
+    "registration_evidence": 626,
+    "data_quality_issues": 0,
+    "data_usability_audited_rows": 177549,
+    "data_usability_missing_owner_rows": 0,
+    "mdr_ce_evidence_candidates": 5620
+  },
+  "v4_acceptance_passed": true,
+  "product_gap_priority_counts": {
+    "P0": 36,
+    "P1": 64,
+    "P2": 567,
+    "P3": 341
+  },
+  "missing_product_candidates": 0,
+  "rows": [
+    {
+      "group_id": "CLOSED-01",
+      "group": "源库结构问题已关闭",
+      "severity": "closed",
+      "needs_user": "不需要",
+      "count": "seed_integrity_issues=0；missing product candidates=0；v4 self-check passed",
+      "summary": "MISS 产品线、分类字典、品牌组合、公司计数、排除产品证据解绑、Humedix 财务缺口均已处理并重建。",
+      "next_step": "无需人工确认；后续只看新的源库结构问题。",
+      "evidence": "v4_acceptance_self_check_latest.json / seed_integrity_issues.csv / candidate_missing_product_lines_latest.csv"
+    },
+    {
+      "group_id": "RUN-01",
+      "group": "P0/P1 产品证据补齐队列",
+      "severity": "machine_queue",
+      "needs_user": "通常不需要",
+      "count": "P0 36；P1 64；合计 100",
+      "summary": "这是官方产品页、规格、注册证、适应症等证据补齐队列，不是源库结构错误。机器可继续按优先级补证据。",
+      "next_step": "按 product_gap_queue_latest.csv 从 P0 开始补官网/IFU/注册/规格；遇到范围判断再单独问你。",
+      "evidence": "product_gap_queue_latest.csv"
+    },
+    {
+      "group_id": "RUN-02",
+      "group": "规格证据三角池",
+      "severity": "machine_queue",
+      "needs_user": "不需要",
+      "count": "product_specification_evidence 53,676 行；已按可用性账本归类",
+      "summary": "大量规格候选已经作为原始证据池保留，现阶段不是让你逐条审核。",
+      "next_step": "只对 P0/P1 产品做定向映射和提升，弱候选继续停留在证据池。",
+      "evidence": "product_specification_evidence.csv / data_usability_row_status_latest.csv"
+    },
+    {
+      "group_id": "RUN-03",
+      "group": "MDR/CE 线索池",
+      "severity": "raw_candidate_pool",
+      "needs_user": "不需要",
+      "count": "MDR/CE 候选 5,620；已确认 MDR/CE 无需追逐产品公开号码",
+      "summary": "这 5,620 是原始候选池，不等于还有 5,620 条要你确认。官方声明/公告机构代码可作为已确认信号，IFU 只作适应症证据。",
+      "next_step": "按新规则降噪：只在发现明确 Basic UDI-DI、证书号或产品页冲突时提升。",
+      "evidence": "mdr_ce_evidence_candidates.jsonl / classification_policy_notes.csv"
+    },
+    {
+      "group_id": "RUN-04",
+      "group": "媒体/图片资产重试",
+      "severity": "low",
+      "needs_user": "不需要",
+      "count": "media_asset_retry 约 3,918",
+      "summary": "图片资产失败不影响产品事实和注册证据，只影响展示丰富度。",
+      "next_step": "后续批量重试或标记 unavailable。",
+      "evidence": "data_usability_row_status_latest.csv"
+    }
+  ]
+}

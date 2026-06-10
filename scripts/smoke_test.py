@@ -23,6 +23,7 @@ def main() -> None:
     expected = manifest["summary"]
     snapshot_text = SNAPSHOT_PATH.read_text(encoding="utf-8")
     snapshot = json.loads(snapshot_text.removeprefix("window.GLOBAL_AESTHETICS_DATA = ").rstrip(";\n"))
+    dashboard_scope = snapshot.get("dashboard_scope", {})
     ha_segment = next((item for item in snapshot.get("segments", []) if item.get("code") == "ha"), {})
     pcl_segment = next((item for item in snapshot.get("segments", []) if item.get("code") == "pcl"), {})
     caha_segment = next((item for item in snapshot.get("segments", []) if item.get("code") == "caha"), {})
@@ -71,6 +72,10 @@ def main() -> None:
     conn = sqlite3.connect(DB_PATH)
     registration_columns = {row[1] for row in conn.execute("PRAGMA table_info(registration_evidence)").fetchall()}
     official_indication_columns = {row[1] for row in conn.execute("PRAGMA table_info(official_indication_evidence)").fetchall()}
+
+    def has_row(sql: str) -> bool:
+        return bool(conn.execute(sql).fetchone())
+
     checks = {
         "products": conn.execute("SELECT COUNT(*) FROM products").fetchone()[0],
         "companies": conn.execute("SELECT COUNT(*) FROM companies").fetchone()[0],
@@ -90,6 +95,26 @@ def main() -> None:
         "verification_queue": conn.execute("SELECT COUNT(*) FROM verification_queue").fetchone()[0],
         "evidence_staging": conn.execute("SELECT COUNT(*) FROM evidence_staging").fetchone()[0],
         "market_snapshot": conn.execute("SELECT COUNT(*) FROM market_snapshot").fetchone()[0],
+        "company_financial_metrics": conn.execute("SELECT COUNT(*) FROM company_financial_metrics").fetchone()[0],
+        "company_revenue_collection_plan": conn.execute("SELECT COUNT(*) FROM company_revenue_collection_plan").fetchone()[0],
+        "company_revenue_collection_plan_ready": conn.execute(
+            "SELECT COUNT(*) FROM company_revenue_collection_plan WHERE operational_status = 'ready_to_collect'"
+        ).fetchone()[0],
+        "company_revenue_collection_plan_promoted": conn.execute(
+            "SELECT COUNT(*) FROM company_revenue_collection_plan WHERE operational_status = 'promoted_to_companies'"
+        ).fetchone()[0],
+        "company_revenue_collection_plan_snapshot": len(snapshot.get("company_revenue_collection_plan", [])),
+        "company_revenue_collection_plan_has_owner": not bool(
+            conn.execute(
+                """
+                SELECT 1
+                FROM company_revenue_collection_plan
+                WHERE COALESCE(operational_status, '') = ''
+                   OR COALESCE(responsible_module, '') = ''
+                   OR COALESCE(next_action, '') = ''
+                """
+            ).fetchone()
+        ),
         "company_background_evidence": conn.execute("SELECT COUNT(*) FROM company_background_evidence").fetchone()[0],
         "company_capital_structure": conn.execute("SELECT COUNT(*) FROM company_capital_structure").fetchone()[0],
         "listed_company_batch": conn.execute("SELECT COUNT(*) FROM listed_company_batch").fetchone()[0],
@@ -105,6 +130,29 @@ def main() -> None:
         "official_product_line_websites": conn.execute("SELECT COUNT(*) FROM official_website_master WHERE entity_scope = 'product_line'").fetchone()[0],
         "policy_regulatory_source_plan": conn.execute("SELECT COUNT(*) FROM policy_regulatory_source_plan").fetchone()[0],
         "mdr_ce_search_plan": conn.execute("SELECT COUNT(*) FROM mdr_ce_search_plan").fetchone()[0],
+        "news_regulatory_event_candidates": conn.execute("SELECT COUNT(*) FROM news_regulatory_event_candidates").fetchone()[0],
+        "briefing_update_candidates": conn.execute("SELECT COUNT(*) FROM briefing_update_candidates").fetchone()[0],
+        "briefing_update_needs_verification": conn.execute(
+            "SELECT COUNT(*) FROM briefing_update_candidates WHERE needs_official_verification = 'yes'"
+        ).fetchone()[0],
+        "briefing_update_promoted": conn.execute(
+            "SELECT COUNT(*) FROM briefing_update_candidates WHERE status = 'promoted'"
+        ).fetchone()[0],
+        "briefing_update_rejected": conn.execute(
+            "SELECT COUNT(*) FROM briefing_update_candidates WHERE status LIKE 'rejected%'"
+        ).fetchone()[0],
+        "briefing_verified_update_events": conn.execute("SELECT COUNT(*) FROM briefing_verified_update_events").fetchone()[0],
+        "briefing_verified_promoted": conn.execute(
+            "SELECT COUNT(*) FROM briefing_verified_update_events WHERE promotion_status IN ('promoted', 'promoted_to_log')"
+        ).fetchone()[0],
+        "briefing_verified_gaps": conn.execute(
+            "SELECT COUNT(*) FROM briefing_verified_update_events WHERE promotion_status = 'verified_gap'"
+        ).fetchone()[0],
+        "briefing_fulltext_rescue": conn.execute("SELECT COUNT(*) FROM briefing_fulltext_rescue").fetchone()[0],
+        "briefing_fulltext_rescued": conn.execute(
+            "SELECT COUNT(*) FROM briefing_fulltext_rescue WHERE fetch_status = 'ok'"
+        ).fetchone()[0],
+        "briefing_product_gap_candidates": conn.execute("SELECT COUNT(*) FROM briefing_product_gap_candidates").fetchone()[0],
         "evidence_promotion_log": conn.execute("SELECT COUNT(*) FROM evidence_promotion_log").fetchone()[0],
         "official_indication_evidence": conn.execute("SELECT COUNT(*) FROM official_indication_evidence").fetchone()[0],
         "official_indication_precise_description_columns": {
@@ -159,6 +207,11 @@ def main() -> None:
         ),
         "seed_integrity_issues": conn.execute("SELECT COUNT(*) FROM seed_integrity_issues").fetchone()[0],
         "seed_integrity_high": conn.execute("SELECT COUNT(*) FROM seed_integrity_issues WHERE severity IN ('critical','high')").fetchone()[0],
+        "data_usability_ledger": conn.execute("SELECT COUNT(*) FROM data_usability_ledger").fetchone()[0],
+        "data_usability_row_status": conn.execute("SELECT COUNT(*) FROM data_usability_row_status").fetchone()[0],
+        "data_usability_missing_owner": conn.execute("SELECT COUNT(*) FROM data_usability_missing_owner").fetchone()[0],
+        "data_usability_snapshot_rows": snapshot.get("summary", {}).get("data_usability_audited_rows", 0),
+        "data_usability_snapshot_missing_owner": snapshot.get("summary", {}).get("data_usability_missing_owner_rows", 0),
         "conference_rows": conn.execute("SELECT COUNT(*) FROM conferences").fetchone()[0],
         "market_metrics": conn.execute("SELECT COUNT(*) FROM market_metrics").fetchone()[0],
         "reports": conn.execute("SELECT COUNT(*) FROM reports").fetchone()[0],
@@ -168,6 +221,33 @@ def main() -> None:
         "ha_subtrack_rows": len(ha_segment.get("subtrack_heatmap", {}).get("rows", [])),
         "pcl_products": pcl_segment.get("products", 0),
         "pcl_indication_rows": len(pcl_segment.get("indication_heatmap", {}).get("rows", [])),
+        "ellanse_in_pcl_taxonomy": bool(
+            conn.execute(
+                """
+                SELECT 1
+                FROM products
+                WHERE record_id = 'REC_0223'
+                  AND LOWER(COALESCE(brand, '') || ' ' || COALESCE(core_product, '')) LIKE '%ellans%'
+                  AND (',' || COALESCE(segments, '') || ',') LIKE '%,pcl,%'
+                  AND material_taxonomy_l2_cn = '胶原刺激剂'
+                  AND material_taxonomy_l3_cn = 'PCL 聚己内酯'
+                """
+            ).fetchone()
+        ),
+        "bravity_is_skincare_not_pcl": bool(
+            conn.execute(
+                """
+                SELECT 1
+                FROM products
+                WHERE record_id = 'REC_0096'
+                  AND LOWER(COALESCE(brand, '') || ' ' || COALESCE(core_product, '')) LIKE '%bravity%'
+                  AND COALESCE(category_l1, '') = 'Skincare'
+                  AND COALESCE(material_taxonomy_l1_cn, '') = '功效性护肤品'
+                  AND COALESCE(material_taxonomy_l2_cn, '') = '医学护肤活性'
+                  AND (',' || COALESCE(segments, '') || ',') NOT LIKE '%,pcl,%'
+                """
+            ).fetchone()
+        ),
         "caha_products": caha_segment.get("products", 0),
         "caha_indication_rows": len(caha_segment.get("indication_heatmap", {}).get("rows", [])),
         "caha_subtrack_rows": len(caha_segment.get("subtrack_heatmap", {}).get("rows", [])),
@@ -214,7 +294,21 @@ def main() -> None:
         "ha_evidence_funnel": len(ha_segment.get("evidence_funnel", [])),
         "pcl_company_subtrack_rows": len(pcl_segment.get("company_subtrack_matrix", {}).get("rows", [])),
         "ebd_country_subtrack_rows": len(ebd_segment.get("country_subtrack_matrix", {}).get("rows", [])),
-        "ebd_sample_has_merz": any((row.get("company") or "").lower() == "merz" for row in ebd_segment.get("sample_products", [])),
+        "ebd_sample_products": len(ebd_segment.get("sample_products", [])),
+        "candela_medical_absent": not has_row(
+            """
+            SELECT 1
+            FROM company_master
+            WHERE lower(canonical_name) = 'candela medical'
+            """
+        )
+        and not has_row(
+            """
+            SELECT 1
+            FROM product_master
+            WHERE lower(company) = 'candela medical'
+            """
+        ),
         "regulatory_atlas_size": len(snapshot.get("regulatory_atlas", [])),
         "regulatory_atlas_has_mdsap_note": any(
             item.get("code") == "mdsap" and item.get("license_effect") == "quality_system_audit_not_sales_authorization"
@@ -337,6 +431,125 @@ def main() -> None:
         "workbench_policy_plan_rows": snapshot.get("verification_workbench", {}).get("company_background", {}).get("policy_plan_rows", 0),
         "mdr_ce_snapshot_rows": snapshot.get("summary", {}).get("mdr_ce_search_plan", 0),
         "workbench_mdr_ce_rows": snapshot.get("verification_workbench", {}).get("mdr_ce_plan", {}).get("rows", 0),
+        "workbench_news_regulatory_rows": snapshot.get("verification_workbench", {}).get("news_regulatory_events", {}).get("rows", 0),
+        "workbench_briefing_update_rows": snapshot.get("verification_workbench", {}).get("briefing_update_candidates", {}).get("rows", 0),
+        "workbench_briefing_preview": len(snapshot.get("verification_workbench", {}).get("briefing_update_candidates", {}).get("candidate_preview", [])),
+        "workbench_briefing_needs_verification": snapshot.get("verification_workbench", {}).get("briefing_update_candidates", {}).get("needs_official_verification", 0),
+        "workbench_briefing_verified_rows": snapshot.get("verification_workbench", {}).get("briefing_verified_updates", {}).get("rows", 0),
+        "workbench_briefing_verified_promoted": snapshot.get("verification_workbench", {}).get("briefing_verified_updates", {}).get("promoted", 0),
+        "workbench_briefing_verified_gaps": snapshot.get("verification_workbench", {}).get("briefing_verified_updates", {}).get("verified_gap", 0),
+        "workbench_briefing_verified_preview": len(snapshot.get("verification_workbench", {}).get("briefing_verified_updates", {}).get("event_preview", [])),
+        "workbench_briefing_fulltext_rescue": snapshot.get("verification_workbench", {}).get("briefing_verified_updates", {}).get("fulltext_rescue", {}).get("rows", 0),
+        "workbench_briefing_fulltext_rescued": snapshot.get("verification_workbench", {}).get("briefing_verified_updates", {}).get("fulltext_rescue", {}).get("rescued", 0),
+        "workbench_briefing_product_gaps": snapshot.get("verification_workbench", {}).get("briefing_verified_updates", {}).get("product_gap_candidates", {}).get("rows", 0),
+        "briefing_guard_huons_ce_mdr": has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE event_group = 'regulatory_approval'
+              AND lower(COALESCE(company, '') || ' ' || COALESCE(excerpt, '')) LIKE '%huons%'
+              AND lower(COALESCE(market_or_jurisdiction, '') || ' ' || COALESCE(excerpt, '')) LIKE '%eu%'
+            """
+        ),
+        "briefing_guard_radiesse_indication": has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE event_group = 'indication_expansion'
+              AND lower(COALESCE(company, '') || ' ' || COALESCE(brand, '') || ' ' || COALESCE(product_name, '') || ' ' || COALESCE(excerpt, '')) LIKE '%radiesse%'
+            """
+        ),
+        "briefing_guard_airsculpt_commercial": not has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE event_group = 'commercial_performance'
+              AND lower(COALESCE(company, '') || ' ' || COALESCE(excerpt, '')) LIKE '%airsculpt%'
+              AND lower(COALESCE(company, '')) NOT LIKE '%airsculpt%'
+              AND COALESCE(product_id, '') != ''
+            """
+        ),
+        "briefing_guard_alpha_channel": has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE event_group = 'channel_coverage'
+              AND lower(COALESCE(company, '') || ' ' || COALESCE(excerpt, '')) LIKE '%alpha aesthetics%'
+            """
+        ),
+        "briefing_guard_hironic_channel": has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE event_group = 'channel_coverage'
+              AND lower(COALESCE(company, '') || ' ' || COALESCE(excerpt, '')) LIKE '%hironic%'
+            """
+        ),
+        "briefing_no_airsculpt_advance_mislink": not has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE lower(COALESCE(excerpt, '')) LIKE '%airsculpt%'
+              AND (
+                lower(COALESCE(company, '')) LIKE '%advance esthetic%'
+                OR COALESCE(product_name, '') LIKE '%身体塑形%'
+              )
+            """
+        ),
+        "briefing_no_huons_biopark_mislink": not has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE lower(COALESCE(excerpt, '')) LIKE '%huons%'
+              AND (
+                lower(COALESCE(company, '')) LIKE '%biopark%'
+                OR lower(COALESCE(product_name, '')) LIKE '%messenger booster%'
+              )
+            """
+        ),
+        "briefing_no_ariessence_cgbio_mislink": not has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE (
+                lower(COALESCE(excerpt, '')) LIKE '%ariessence%'
+                OR lower(COALESCE(excerpt, '')) LIKE '%pdgf%'
+              )
+              AND (
+                lower(COALESCE(company, '')) LIKE '%cgbio%'
+                OR lower(COALESCE(product_name, '')) LIKE '%novosis%'
+              )
+            """
+        ),
+        "briefing_no_hans_allergan_mislink": not has_row(
+            """
+            SELECT 1
+            FROM briefing_update_candidates
+            WHERE lower(COALESCE(excerpt, '')) LIKE '%hans biomed%'
+              AND (
+                lower(COALESCE(company, '')) LIKE '%allergan%'
+                OR lower(COALESCE(product_name, '')) LIKE '%natrelle%'
+              )
+            """
+        ),
+        "briefing_verified_radiesse_official": has_row(
+            """
+            SELECT 1
+            FROM briefing_verified_update_events
+            WHERE lower(COALESCE(company, '') || ' ' || COALESCE(brand, '') || ' ' || COALESCE(official_source_url, '')) LIKE '%radiesse%'
+              AND official_source_url LIKE '%P050052S162%'
+              AND promotion_status = 'promoted'
+            """
+        ),
+        "briefing_verified_bimini_resolved": has_row(
+            """
+            SELECT 1
+            FROM briefing_verified_update_events
+            WHERE lower(COALESCE(company, '') || ' ' || COALESCE(product_name, '') || ' ' || COALESCE(promoted_target, '')) LIKE '%bimini%'
+              AND promotion_status = 'promoted'
+              AND promoted_target LIKE '%product_master%'
+            """
+        ),
         "hierarchy_snapshot_families": snapshot.get("product_hierarchy", {}).get("summary", {}).get("families", 0),
         "hierarchy_snapshot_skus": snapshot.get("product_hierarchy", {}).get("summary", {}).get("sku_candidates", 0),
         "hierarchy_top_families": len(snapshot.get("product_hierarchy", {}).get("top_families", [])),
@@ -348,9 +561,37 @@ def main() -> None:
         "geo_city_clusters": len(snapshot.get("geo_city_clusters", [])),
         "geo_mapped_summary": snapshot.get("geo_summary", {}).get("mapped_companies", 0),
         "geo_city_precision": snapshot.get("geo_summary", {}).get("city_precision", 0),
+        "dashboard_products": snapshot.get("summary", {}).get("products", 0),
+        "dashboard_companies": snapshot.get("summary", {}).get("companies", 0),
+        "dashboard_brands": snapshot.get("summary", {}).get("brands", 0),
+        "dashboard_excluded_products": dashboard_scope.get("excluded_products", 0),
+        "dashboard_excluded_companies": dashboard_scope.get("excluded_companies", 0),
+        "dashboard_services_segment_absent": not any(
+            (segment.get("code") == "services" or segment.get("name") == "Services")
+            and segment.get("products", 0)
+            for segment in snapshot.get("segments", [])
+        ),
     }
     conn.close()
-    mismatches = {key: (checks[key], expected[key]) for key in expected if key in checks and checks[key] != expected[key]}
+    scoped_summary_keys = {
+        "products",
+        "companies",
+        "brands",
+        "company_master",
+        "product_master",
+        "product_families",
+        "product_sku_candidates",
+        "mapped_companies",
+        "countries",
+        "market_snapshot",
+        "company_financial_metrics",
+        "company_revenue_collection_plan",
+    }
+    mismatches = {
+        key: (checks[key], expected[key])
+        for key in expected
+        if key in checks and key not in scoped_summary_keys and checks[key] != expected[key]
+    }
     api = {}
     for label, query, expected_segment in [
         ("pcl", "GOURI%20PCL", "pcl"),
@@ -384,6 +625,8 @@ def main() -> None:
         or checks["ha_subtrack_rows"] == 0
         or checks["pcl_products"] == 0
         or checks["pcl_indication_rows"] == 0
+        or not checks["ellanse_in_pcl_taxonomy"]
+        or not checks["bravity_is_skincare_not_pcl"]
         or checks["caha_products"] == 0
         or checks["caha_indication_rows"] == 0
         or checks["caha_subtrack_rows"] == 0
@@ -401,7 +644,8 @@ def main() -> None:
         or checks["ha_evidence_funnel"] < 5
         or checks["pcl_company_subtrack_rows"] == 0
         or checks["ebd_country_subtrack_rows"] == 0
-        or not checks["ebd_sample_has_merz"]
+        or checks["ebd_sample_products"] == 0
+        or not checks["candela_medical_absent"]
         or checks["regulatory_atlas_size"] != 19
         or not checks["regulatory_atlas_has_mdsap_note"]
         or not checks["ha_has_filler_booster_meso"]
@@ -426,9 +670,15 @@ def main() -> None:
         or checks["company_geo"] != checks["company_master"]
         or checks["product_master"] != checks["products"]
         or checks["product_families"] == 0
-        or checks["product_sku_candidates"] != checks["products"]
-        or checks["hierarchy_snapshot_families"] != checks["product_families"]
-        or checks["hierarchy_snapshot_skus"] != checks["product_sku_candidates"]
+        or checks["product_sku_candidates"] < checks["products"]
+        or checks["hierarchy_snapshot_families"] != expected.get("product_families")
+        or checks["hierarchy_snapshot_skus"] != expected.get("product_sku_candidates")
+        or checks["dashboard_products"] != expected.get("products")
+        or checks["dashboard_companies"] != expected.get("companies")
+        or checks["dashboard_brands"] != expected.get("brands")
+        or checks["dashboard_excluded_products"] == 0
+        or checks["dashboard_excluded_companies"] == 0
+        or not checks["dashboard_services_segment_absent"]
         or checks["hierarchy_top_families"] == 0
         or min(checks["sku_split_candidates"], 40) != checks["hierarchy_split_candidates"]
         or checks["registration_evidence"] == 0
@@ -438,6 +688,9 @@ def main() -> None:
         or checks["source_authority_rules"] < 4
         or checks["verification_queue"] < checks["workbench_top_companies"] * 4
         or checks["market_snapshot"] == 0
+        or checks["company_financial_metrics"] == 0
+        or checks["company_revenue_collection_plan_snapshot"] != checks["company_revenue_collection_plan"]
+        or not checks["company_revenue_collection_plan_has_owner"]
         or checks["background_snapshot_evidence"] != checks["company_background_evidence"]
         or checks["capital_snapshot_rows"] != checks["company_capital_structure"]
         or checks["workbench_background_evidence"] != checks["company_background_evidence"]
@@ -459,6 +712,34 @@ def main() -> None:
         or checks["policy_regulatory_source_plan"] < 19
         or checks["mdr_ce_snapshot_rows"] != checks["mdr_ce_search_plan"]
         or checks["workbench_mdr_ce_rows"] != checks["mdr_ce_search_plan"]
+        or checks["workbench_news_regulatory_rows"] != checks["news_regulatory_event_candidates"]
+        or checks["workbench_briefing_update_rows"] != checks["briefing_update_candidates"]
+        or checks["workbench_briefing_preview"] == 0
+        or checks["workbench_briefing_needs_verification"] != checks["briefing_update_needs_verification"]
+        or checks["briefing_update_promoted"] == 0
+        or checks["briefing_update_rejected"] == 0
+        or checks["briefing_verified_update_events"] == 0
+        or checks["briefing_verified_promoted"] == 0
+        or checks["briefing_fulltext_rescue"] == 0
+        or checks["briefing_fulltext_rescued"] == 0
+        or checks["workbench_briefing_verified_rows"] != checks["briefing_verified_update_events"]
+        or checks["workbench_briefing_verified_promoted"] != checks["briefing_verified_promoted"]
+        or checks["workbench_briefing_verified_gaps"] != checks["briefing_verified_gaps"]
+        or checks["workbench_briefing_verified_preview"] == 0
+        or checks["workbench_briefing_fulltext_rescue"] != checks["briefing_fulltext_rescue"]
+        or checks["workbench_briefing_fulltext_rescued"] != checks["briefing_fulltext_rescued"]
+        or checks["workbench_briefing_product_gaps"] != checks["briefing_product_gap_candidates"]
+        or not checks["briefing_guard_huons_ce_mdr"]
+        or not checks["briefing_guard_radiesse_indication"]
+        or not checks["briefing_guard_airsculpt_commercial"]
+        or not checks["briefing_guard_alpha_channel"]
+        or not checks["briefing_guard_hironic_channel"]
+        or not checks["briefing_no_airsculpt_advance_mislink"]
+        or not checks["briefing_no_huons_biopark_mislink"]
+        or not checks["briefing_no_ariessence_cgbio_mislink"]
+        or not checks["briefing_no_hans_allergan_mislink"]
+        or not checks["briefing_verified_radiesse_official"]
+        or not checks["briefing_verified_bimini_resolved"]
         or checks["evidence_promotion_log"] == 0
         or checks["official_indication_evidence"] != checks["official_indication_snapshot"]
         or checks["official_indication_evidence"] == 0
@@ -476,11 +757,16 @@ def main() -> None:
         or not checks["radiesse_s049_has_hand_bucket"]
         or checks["data_quality_snapshot"] != checks["seed_integrity_issues"]
         or not checks["data_quality_reported"]
-        or checks["geo_snapshot"] != checks["company_geo"]
-        or checks["geo_mapped_summary"] != checks["company_geo"]
+        or checks["data_usability_ledger"] == 0
+        or checks["data_usability_row_status"] == 0
+        or checks["data_usability_missing_owner"] != 0
+        or checks["data_usability_snapshot_rows"] != checks["data_usability_row_status"]
+        or checks["data_usability_snapshot_missing_owner"] != checks["data_usability_missing_owner"]
+        or checks["geo_snapshot"] != expected.get("company_master")
+        or checks["geo_mapped_summary"] != expected.get("mapped_companies")
         or checks["geo_points"] < 100
         or checks["geo_city_clusters"] == 0
-        or checks["geo_city_precision"] < checks["company_geo"] // 2
+        or checks["geo_city_precision"] < expected.get("company_master", 0) // 2
         or checks["workbench_top_companies"] < 30
         or checks["workbench_sources"] < 19
         or not checks["source_registry_has_mdsap_qms"]

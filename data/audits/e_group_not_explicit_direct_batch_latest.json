@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-06-01T16:43:07+08:00",
+  "rewrite_candidates": 67,
+  "new_manual_indication_rows_added": 9,
+  "skipped": 58,
+  "manual_backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_official_indication_evidence_backup_before_not_explicit_direct_20260601_164307.csv",
+  "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_not_explicit_direct_batch_applied_latest.csv",
+  "skipped_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\e_group_not_explicit_direct_batch_skipped_latest.csv"
+}

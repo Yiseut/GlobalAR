@@ -187,6 +187,13 @@ def pending_counts() -> dict[str, Any]:
     official_plan = read_csv(DATA_DIR / "company_official_source_plan.csv")
     official_ev, official_bad = read_jsonl(DATA_DIR / "company_official_source_evidence.jsonl")
     official_plan_keys = {row.get("plan_id", "").strip() for row in official_plan if row.get("plan_id")}
+    official_closed_keys = {
+        row.get("plan_id", "").strip()
+        for row in official_plan
+        if row.get("plan_id")
+        and str(row.get("status", "")).strip().lower()
+        in {"completed_or_superseded", "closed", "policy_closed", "done"}
+    }
     official_ev_plan_keys = {str(row.get("plan_id", "")).strip() for row in official_ev if row.get("plan_id")}
     official_ev_legacy_keys = {
         (str(row.get("company_id", "")).strip(), str(row.get("query_type", "")).strip())
@@ -197,18 +204,29 @@ def pending_counts() -> dict[str, Any]:
     for row in official_plan:
         plan_id = row.get("plan_id", "").strip()
         legacy_key = (row.get("company_id", "").strip(), row.get("query_type", "").strip())
-        if plan_id and (plan_id in official_ev_plan_keys or legacy_key in official_ev_legacy_keys):
+        if plan_id and (plan_id in official_ev_plan_keys or legacy_key in official_ev_legacy_keys or plan_id in official_closed_keys):
             official_covered_keys.add(plan_id)
 
     mdr_plan = read_csv(DATA_DIR / "mdr_ce_search_plan.csv")
     mdr_ev, mdr_bad = read_jsonl(DATA_DIR / "mdr_ce_evidence_candidates.jsonl")
     mdr_plan_ids = {row.get("plan_id", "").strip() for row in mdr_plan if row.get("plan_id")}
     mdr_ev_ids = {str(row.get("plan_id", "")).strip() for row in mdr_ev if row.get("plan_id")}
+    mdr_closed_ids = {
+        row.get("plan_id", "").strip()
+        for row in mdr_plan
+        if row.get("plan_id")
+        and (
+            str(row.get("review_status", "")).strip().lower().startswith("policy_closed")
+            or str(row.get("automation_status", "")).strip().lower().startswith("closed_by_user_policy")
+        )
+    }
+    mdr_covered_ids = mdr_ev_ids | mdr_closed_ids
 
     websites = read_csv(DATA_DIR / "official_website_master.csv")
     assets = read_csv(DATA_DIR / "company_media_asset_index.csv")
     website_ids = {row.get("website_id", "").strip() for row in websites if row.get("website_id")}
     processed_website_ids = {row.get("website_id", "").strip() for row in assets if row.get("website_id")}
+    processed_current_website_ids = website_ids & processed_website_ids
 
     return {
         "official": {
@@ -219,14 +237,14 @@ def pending_counts() -> dict[str, Any]:
         },
         "mdr_ce": {
             "total": len(mdr_plan_ids),
-            "covered": len(mdr_ev_ids),
-            "pending": len(mdr_plan_ids - mdr_ev_ids),
+            "covered": len(mdr_plan_ids & mdr_covered_ids),
+            "pending": len(mdr_plan_ids - mdr_covered_ids),
             "bad_jsonl": mdr_bad,
         },
         "media": {
             "total": len(website_ids),
-            "covered": len(processed_website_ids),
-            "pending": len(website_ids - processed_website_ids),
+            "covered": len(processed_current_website_ids),
+            "pending": len(website_ids - processed_current_website_ids),
             "bad_jsonl": 0,
         },
     }

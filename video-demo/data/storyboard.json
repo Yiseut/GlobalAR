@@ -1,0 +1,48 @@
+{
+  "title": "Global Aesthetics Map demo",
+  "format": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "durationSeconds": 60
+  },
+  "sourceUrl": "http://127.0.0.1:8790/index.html",
+  "storyboard": [
+    {
+      "start": 0,
+      "end": 7,
+      "scene": "Hero and KPI reveal",
+      "caption": "971 条产品线、366 家企业，勾勒全球医美供给网络。"
+    },
+    {
+      "start": 7,
+      "end": 18,
+      "scene": "Map beauty pass",
+      "caption": "欧洲、北美与东亚，形成三处高密度企业带。"
+    },
+    {
+      "start": 18,
+      "end": 28,
+      "scene": "Metric switch",
+      "caption": "从产品线到企业数，规模重心在地图上重新排布。"
+    },
+    {
+      "start": 28,
+      "end": 40,
+      "scene": "Asia-Pacific injectables filter",
+      "caption": "注射材料是跨区域竞争最密集的赛道之一。"
+    },
+    {
+      "start": 40,
+      "end": 53,
+      "scene": "South Korea drilldown",
+      "caption": "韩国样本显示：50 家企业集中在 9 个城市。"
+    },
+    {
+      "start": 53,
+      "end": 60,
+      "scene": "Global close",
+      "caption": "一张图看清区域集中度、赛道结构与企业版图。"
+    }
+  ]
+}

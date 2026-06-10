@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title data-stub-title>规划中 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span><span data-stub-eyebrow>Phase 2 · 规划中</span></div>
+      <h1>
+        <span data-stub-zh>—</span>
+        <span class="h1-en" data-stub-en>—</span>
+      </h1>
+      <p class="lede" data-stub-lede>本页面在 v3 重设计的 Phase 2 阶段实现。当前先用 stub 框架展示导航和设计语言，让你确认页面规划方向。</p>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>预期模块</h2>
+        <span class="cn">· 规划中</span>
+        <span class="en">Planned modules</span>
+      </div>
+      <div class="editorial-row" id="stubModules"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · stub · 规划中</span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260524"></script>
+<script src="./_nav.js"></script>
+<script>
+  /* The same stub registry pattern as v2 — each route loads metadata from a
+     central object and renders editorial cards with the planned modules. */
+  const STUB_REGISTRY = {
+    "tracks": {
+      active: "tracks",
+      eyebrow: "Intelligence · Track structure",
+      zh: "赛道结构",
+      en: "Track Structure",
+      lede: "10 个 L1 × 64 个 L2 分类的产品树。按 Candidate A 色板分层着色，堆叠柱内嵌、技术路线树都基于这套色阶。",
+      modules: [
+        { wash: "w-rose-deep",  stamp: "Module 01", lead: "L1 × L2 矩阵", body: "横轴 L1、纵轴 L2，单元格显示产品数 + 公司数，点击下钻到 topic 页。" },
+        { wash: "w-apricot",    stamp: "Module 02", lead: "技术路线 sunburst", body: "classification_layer JSON 解析后，commercial × technology × regulatory 三层旭日图。" },
+        { wash: "w-plum",       stamp: "Module 03", lead: "Sub-track 时序", body: "每个 sub-track 按年份的新产品上市节奏，揭示赛道生命周期阶段。" },
+      ],
+    },
+    "indications": {
+      active: "indications",
+      eyebrow: "Intelligence · Indication universe",
+      zh: "适应症星图",
+      en: "Indication Universe",
+      lede: "Official_Indication_Evidence 82 条 + 适应症 buckets — 每个适应症作为节点，产品作为边，构建医美适应症的关联网络。",
+      modules: [
+        { wash: "w-rose-deep", stamp: "Module 01", lead: "适应症 buckets 排名", body: "祛皱、痤疮疤痕、面部凹陷、私密、毛发 ... 按官方证据条数排序。" },
+        { wash: "w-rose",      stamp: "Module 02", lead: "产品 × 适应症 矩阵", body: "一个产品可能覆盖多个适应症；矩阵热图显示产品的「适应症跨度」。" },
+        { wash: "w-slate",     stamp: "Module 03", lead: "适应症-技术映射", body: "祛皱 → 肉毒 + HA + 提拉线；痤疮疤痕 → CO2 + PRP + 微针 ... 决策路径图。" },
+      ],
+    },
+    "technology-tree": {
+      active: "technology",
+      eyebrow: "Intelligence · Technology tree",
+      zh: "技术树",
+      en: "Technology Tree",
+      lede: "184 款基于 HA、33 款基于 Mesotherapy、32 款基于 Diode Laser ... Product_Master 的 classification_layer JSON 展开为三层技术分类树。",
+      modules: [
+        { wash: "w-rose-deep", stamp: "Module 01", lead: "Material / Energy Source 排名", body: "HA 184 · Mesotherapy 33 · Diode 32 · HIFU 29 · CO2 28 · RF 26 ..." },
+        { wash: "w-apricot",   stamp: "Module 02", lead: "技术路线 vs 商业路线", body: "Injectables > Dermal Filler 这条 commercial 路线下，有 HA / PLLA / PCL / CaHA 多条 technology 路线 — 矩阵交叉。" },
+        { wash: "w-sand",      stamp: "Module 03", lead: "技术成熟度", body: "按 Global_Launch_Year 把每条技术分成 新兴 / 成熟 / 遗留 三段，找出当前的「技术风口」。" },
+      ],
+    },
+    "companies": {
+      active: "companies",
+      eyebrow: "Entity · Company list",
+      zh: "公司列表",
+      en: "Companies",
+      lede: "372 家上游企业的完整列表 — 可按主赛道、HQ 国家、上市状态、FDA 准入数、产品数排序与筛选；点击进入公司画像页。",
+      modules: [
+        { wash: "w-rose-deep", stamp: "Module 01", lead: "可筛选公司表", body: "筛选器：赛道 / HQ / 上市状态 / FDA 状态 / 产品数。默认按产品数降序。" },
+        { wash: "w-apricot",   stamp: "Module 02", lead: "价值链定位标签", body: "Manufacturer 316 / Brand Owner 42 / R&D-OEM 8 / Biotech 3 / Service 2 — 视化定位徽章。" },
+        { wash: "w-plum",      stamp: "Module 03", lead: "母子结构视图", body: "AbbVie → Allergan Aesthetics；J&J → Mentor → ... 集团内多公司层级树。" },
+      ],
+    },
+    "evidence": {
+      active: "evidence",
+      eyebrow: "Intelligence · Evidence library",
+      zh: "资料覆盖",
+      en: "Evidence Library",
+      lede: "19,992 条官网证据 + 27,182 条候选 + 3,704 条搜寻计划 — 完整的证据生命周期看板：待采集 / 采集中 / 待审核 / 已合并。",
+      modules: [
+        { wash: "w-rose-deep", stamp: "Module 01", lead: "资料覆盖漏斗", body: "搜寻计划 → 候选 → 已采集 → 已审核 → 已合并的 5 段漏斗图，按 source class 着色。" },
+        { wash: "w-rose",      stamp: "Module 02", lead: "公司 × 证据完整度热图", body: "每家公司 5 类证据（capital / portfolio / IFU / FDA / CE/MDR）的完整度热图。" },
+        { wash: "w-slate",     stamp: "Module 03", lead: "待审核任务队列", body: "evidence_staging 235 + verification_queue 185 + capital_structure 72 + mdr_ce_plan 789 — 审核工单池。" },
+      ],
+    },
+    "topic": {
+      active: "topic-ebd",
+      eyebrow: "Drill-down · Sub-track topic",
+      zh: "子赛道详情",
+      en: "Sub-track Topic",
+      lede: "URL 参数 ?segment=ebd|injectables|... — 单赛道下钻页：核心指标、Top 公司、Top 品牌、监管证据、技术细分。",
+      modules: [
+        { wash: "w-rose-deep", stamp: "Module 01", lead: "赛道核心指标 + 子分布", body: "继承总览的 KPI 卡形式，但数字限定为该赛道；附 sub-track 3 档色阶堆叠柱。" },
+        { wash: "w-apricot",   stamp: "Module 02", lead: "Top 公司 + 品牌矩阵", body: "Top 12 公司按产品数排序，每家展示主品牌、HQ、监管覆盖、估值带。" },
+        { wash: "w-plum",      stamp: "Module 03", lead: "本赛道监管证据", body: "把该赛道相关的 FDA/CE 证据条目和年度时间线单独呈现。" },
+      ],
+    },
+  };
+
+  (function () {
+    const key = (location.pathname.split("/").pop() || "").replace(".html", "");
+    let meta;
+    if (key === "tracks") meta = STUB_REGISTRY.tracks;
+    else if (key === "indications") meta = STUB_REGISTRY.indications;
+    else if (key === "technology-tree") meta = STUB_REGISTRY["technology-tree"];
+    else if (key === "companies") meta = STUB_REGISTRY.companies;
+    else if (key === "evidence") meta = STUB_REGISTRY.evidence;
+    else if (key === "topic") meta = STUB_REGISTRY.topic;
+    if (!meta) meta = STUB_REGISTRY.tracks;
+
+    // Activate matching rail entry (post-mount, since _nav.js renders after this script)
+    const tryActivate = () => {
+      const railLinks = document.querySelectorAll("#rail a");
+      railLinks.forEach(a => {
+        if (a.getAttribute("href") === "./" + key + ".html") a.classList.add("active");
+      });
+      const topLinks = document.querySelectorAll("#topbar nav a");
+      topLinks.forEach(a => {
+        if (a.getAttribute("href") === "./" + key + ".html") a.classList.add("active");
+      });
+    };
+    setTimeout(tryActivate, 0);
+
+    document.title = meta.zh + " · v3 · 规划中";
+    document.querySelector("[data-stub-title]").textContent = meta.zh + " · v3 · 规划中";
+    document.querySelector("[data-stub-eyebrow]").textContent = meta.eyebrow;
+    document.querySelector("[data-stub-zh]").textContent = meta.zh;
+    document.querySelector("[data-stub-en]").textContent = meta.en;
+    document.querySelector("[data-stub-lede]").textContent = meta.lede;
+
+    const wrap = document.getElementById("stubModules");
+    wrap.innerHTML = meta.modules.map((m, i) => `
+      <article class="editorial-block has-wash ${m.wash} wash-bottom-left">
+        <span class="stamp">${m.stamp}</span>
+        <div class="lead">${m.lead}</div>
+        <div class="body">${m.body}</div>
+        <a class="cta" href="./index.html">回总览 ↗</a>
+      </article>
+    `).join("");
+  })();
+</script>
+
+</body>
+</html>

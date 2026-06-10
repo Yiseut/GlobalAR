@@ -1,0 +1,61 @@
+{
+  "run_ts": "20260602_003912",
+  "backups": {
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\briefing_update_candidates.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_update_candidates.backup_before_briefing_status_residuals_20260602_003912.csv",
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\briefing_verified_update_events.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_verified_update_events.backup_before_briefing_status_residuals_20260602_003912.csv",
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_product_gap_candidates_latest.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\briefing_product_gap_candidates_latest.backup_before_briefing_status_residuals_20260602_003912.csv",
+    "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log.csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_evidence_promotion_log.backup_before_briefing_status_residuals_20260602_003912.csv"
+  },
+  "changes": {
+    "candidates": {
+      "bimini_gap_closed": 15,
+      "solta_promoted_to_log": 1,
+      "solta_rejected_event_class": 2,
+      "fulltext_closed_nonactionable": 14
+    },
+    "verified_events_closed": 15,
+    "product_gaps_closed": 4
+  },
+  "closed_product_gaps": [
+    {
+      "company": "Huons Meditech",
+      "candidate_product_or_family": "Premium 9-Pin Needle",
+      "source_count": "1",
+      "source_types": "official_company_press_release",
+      "source_domains": "huonsmeditech.com",
+      "confidence_mix": "official_company_release; certificate id pending",
+      "sample_url": "https://huonsmeditech.com/layout/eng/home.php?mid=30&go=pds.list&pds_type=7&start=0&num=1288&s_key1=&s_key2=&s_que=",
+      "review_status": "ready_for_master_mapping"
+    },
+    {
+      "company": "Alpha Aesthetics Partners",
+      "candidate_product_or_family": "Company market presence / Preva Aesthetics partnership",
+      "source_count": "1",
+      "source_types": "official_company_press_release",
+      "source_domains": "prnewswire.com",
+      "confidence_mix": "official_company_release; company master id needed",
+      "sample_url": "https://www.prnewswire.com/news-releases/alpha-aesthetics-partners-expands-presence-in-california-and-enters-colorado-through-partnership-with-preva-aesthetics-302776732.html",
+      "review_status": "ready_for_master_mapping"
+    },
+    {
+      "company": "Bimini Health Tech",
+      "candidate_product_or_family": "Puregraft Fat Transfer Product Suite",
+      "source_count": "1",
+      "source_types": "official_company_press_release",
+      "source_domains": "prnewswire.com",
+      "confidence_mix": "official_company_release; EU MDR; product absent from master",
+      "sample_url": "https://www.prnewswire.com/news-releases/bimini-health-tech-achieves-eu-mdr-certification-302770477.html",
+      "review_status": "ready_for_master_mapping"
+    },
+    {
+      "company": "Bimini Health Tech",
+      "candidate_product_or_family": "Dermapose Fat Transfer Product Suite",
+      "source_count": "1",
+      "source_types": "official_company_press_release",
+      "source_domains": "prnewswire.com",
+      "confidence_mix": "official_company_release; EU MDR; product absent from master",
+      "sample_url": "https://www.prnewswire.com/news-releases/bimini-health-tech-achieves-eu-mdr-certification-302770477.html",
+      "review_status": "ready_for_master_mapping"
+    }
+  ]
+}

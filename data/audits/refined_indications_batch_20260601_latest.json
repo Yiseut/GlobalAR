@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-06-01T16:04:59+08:00",
+  "refined_items": 17,
+  "updated_existing_rows": 12,
+  "new_manual_indication_rows_added": 5,
+  "not_found_or_excluded": 0,
+  "manual_backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\manual_official_indication_evidence_backup_before_refined_batch_20260601_160459.csv",
+  "applied_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\refined_indications_batch_20260601_latest.csv",
+  "excluded_check_csv": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\refined_indications_excluded_check_20260601_latest.csv"
+}

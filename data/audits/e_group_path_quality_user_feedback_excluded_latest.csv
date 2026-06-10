@@ -1,0 +1,7 @@
+﻿seed_record_id,product_id,company,brand,standard_product_name,decision,reason
+REC_0773,prod_14e9b740531f,Biovico,Xerthra / AOORA,PRP / Cellular Therapy,exclude,"excluded_by_user_e_group_path_20260601: Biovico Xerthra/AOORA points to ophthalmology, orthopedics, wound regeneration and veterinary/product paths, outside core aesthetics upstream scope."
+REC_0045,prod_b3ddb0a7078e,Contura,Aquamid (Reconstruction),Polyacrylamide Hydrogel,exclude,"excluded_by_user_e_group_path_20260601: Contura Aquamid reconstruction evidence points to orthopaedics, animal health and urinary incontinence, outside current aesthetics scope."
+REC_0567,prod_147bcefb8ca0,Crown,ProGen PRP,Platelet-Rich Plasma,exclude,"excluded_by_user_e_group_path_20260601: Crown ProGen PRP IFU is for bone-defect graft handling, not terminal aesthetic PRP use."
+REC_0215,prod_7add158f2714,Eclipse,Eclipse PRP (Gold),PRP Kit,exclude,"excluded_by_user_e_group_path_20260601: Eclipse PRP Gold / ProGen PRP IFU is for bone-defect graft handling, not terminal aesthetic PRP use."
+REC_0310,prod_2d8dbd0394b6,Lameditech,HandyRay,HandyRay / Lite,exclude,"excluded_by_user_e_group_path_20260601: Lameditech HandyRay is a personal laser lancing/blood-sampling device, not aesthetic treatment equipment."
+REC_0526,prod_d8647af9b2a5,Mesotech,Overage,Overage (Deep/Derma),exclude,"excluded_by_user_e_group_path_20260601: Mesotech Overage text indicates ophthalmic surgical aid, outside core aesthetics scope."

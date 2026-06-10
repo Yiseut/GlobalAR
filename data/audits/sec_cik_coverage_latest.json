@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-06-01T00:20:20+08:00",
+  "listed_company_batch_rows": 61,
+  "listed_company_batch_with_sec_cik": 16,
+  "sec_applicable_rows": 16,
+  "sec_applicable_with_cik": 16,
+  "sec_applicable_missing_cik": 0,
+  "non_sec_exchange_rows": 45,
+  "company_capital_structure_rows": 72,
+  "company_capital_structure_with_sec_cik": 12,
+  "exchange_counts": {
+    "NASDAQ": 15,
+    "SIX": 1,
+    "HKEX": 1,
+    "KRX": 22,
+    "SZSE": 2,
+    "BORSA ITALIANA": 5,
+    "TA": 2,
+    "Unknown": 2,
+    "TW": 2,
+    "OTC": 1,
+    "T": 1,
+    "PA": 3,
+    "JSE": 1,
+    "BR": 1,
+    "TWO": 1,
+    "ASX": 1
+  },
+  "sec_missing": []
+}

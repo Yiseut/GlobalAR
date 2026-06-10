@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>Design Samples · 全球医美仪表盘</title>
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", sans-serif;
+  background: #F6EEDE;
+  color: #1A2333;
+  padding: 28px 36px 48px;
+}
+h1 { font-weight: 200; font-size: 28px; margin: 0 0 8px; letter-spacing: -0.01em; }
+.sub { color: #485670; font-size: 13px; margin-bottom: 24px; line-height: 1.6; max-width: 1100px; }
+.section-h {
+  margin: 32px 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #520E0D;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(35, 50, 69, .14);
+  display: flex; align-items: center; gap: 10px;
+}
+.section-h::before {
+  content: ""; width: 6px; height: 6px; background: #520E0D;
+}
+.row { display: grid; gap: 18px; }
+.row.solo { grid-template-columns: 1fr; height: 880px; }
+.row.two  { grid-template-columns: 1fr 1fr; height: 720px; }
+iframe {
+  width: 100%; height: 100%;
+  border: 1px solid rgba(35,50,69,.16);
+  background: #fff;
+  border-radius: 8px;
+}
+.tag {
+  display: inline-block; padding: 4px 10px;
+  background: #520E0D; color: #F4ECDC;
+  font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; font-weight: 600;
+  margin-bottom: 8px;
+}
+.tag.live  { background: #BCA078; color: #1A2333; }
+.tag.muted { background: rgba(35,50,69,0.08); color: #485670; }
+.col h3 {
+  font-weight: 300; font-size: 18px;
+  margin: 0 0 4px; letter-spacing: -0.005em;
+}
+.col p {
+  font-size: 12px; color: #485670;
+  margin: 0 0 10px; line-height: 1.55;
+}
+.legacy-link {
+  display: block; margin-top: 24px; font-size: 12px; color: #520E0D;
+}
+.legacy-link a { color: inherit; margin-right: 12px; }
+</style>
+</head>
+<body>
+<h1>全球医美仪表盘 · 设计样例</h1>
+<div class="sub">最新定稿候选：全浅色页面、Aestra 派生 8 色小晕染、陶红只做点缀（chip、active 按钮、italic accent 数字）。深色仅在单张卡片内作为局部装饰允许，禁用整块 dusk 板块。</div>
+
+<div class="section-h">最终候选 · 全浅色页面 + 多色小晕染</div>
+<div class="row solo">
+  <div class="col" style="display:flex;flex-direction:column;">
+    <span class="tag live">FINAL · LIGHT</span>
+    <h3>全浅色版 · 多色小晕染</h3>
+    <p>整页 #F6EEDE 浅米纸面，无任何深色大块。每张 KPI 卡片右上角一个直径 ~180px 的 pastel radial wash（8 个颜色循环：暖红雾 / 冰蓝 / 暖金 / 米白雾 / 雾蓝 / 玫瑰 / 卡其 / 浅金），全部派生自 Aestra 5 色，对比度刚刚好。陶红只用在：① eyebrow chip ② 子赛道 active filter pill ③ inline stat 数字高亮 ④ lede 卡片的 Newsreader italic 大数字 ⑤ editorial 卡片的 stamp + italic 数字。</p>
+    <iframe src="./sample-final-light.html"></iframe>
+  </div>
+</div>
+
+<div class="section-h">辅助 · 子赛道图表色板（用于堆叠柱 / 环形图）</div>
+<div class="row solo">
+  <div class="col" style="display:flex;flex-direction:column;">
+    <span class="tag muted">CHART PALETTE</span>
+    <h3>10 个 L1 赛道专属色 + sub-track 色阶</h3>
+    <p>注意：图表色板的下半部分（堆叠柱 + 环形图）当前仍画在 dusk 段示意。下一轮我会把它们也搬到浅色背景上，保留同样的 10 色。</p>
+    <iframe src="./sample-chart-palette.html"></iframe>
+  </div>
+</div>
+
+<div class="legacy-link">
+  对比历史样例（已被替代或部分否决）：
+  <a href="./sample-final-hybrid.html">融合版 · 半 dusk</a>
+  <a href="./sample-A-strict-aestra.html">A · 严格 Aestra</a>
+  <a href="./sample-B-aestra-apple.html">B · 早期 Apple 卡</a>
+  <a href="./sample-B2-frosted.html">B' · 渐变光斑</a>
+  <a href="./sample-B3a-dotgrid.html">路 1 · 网点</a>
+  <a href="./sample-B3b-banded.html">路 2 · 板块原版</a>
+  <a href="./sample-B3b2-banded-clear.html">路 2′ · 提清</a>
+  <a href="./sample-B3c-linen.html">路 3 · 亚麻</a>
+  <a href="./sample-claude-warm.html">Claude 暖橙</a>
+</div>
+</body>
+</html>

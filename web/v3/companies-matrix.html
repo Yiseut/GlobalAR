@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>企业矩阵 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  /* Page-local layout for company-matrix toolbar + KPI overlay */
+  .cm-toolbar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px;
+    padding: 14px 18px; margin-bottom: 12px;
+    background: var(--surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-3);
+    font-family: var(--f-sans);
+  }
+  .cm-toolbar label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .cm-toolbar select, .cm-toolbar input[type=number] {
+    font-family: var(--f-sans); font-size: 12px;
+    padding: 4px 10px; min-width: 0;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    color: var(--ink);
+  }
+  .cm-toolbar input[type=range] { accent-color: var(--accent); width: 140px; }
+  .cm-toolbar .cm-stat {
+    margin-left: auto; font-family: var(--f-mono);
+    font-size: 11.5px; color: var(--ink-2);
+  }
+  .cm-toolbar .cm-stat strong { color: var(--accent-2); font-weight: 500; }
+
+  /* Wrapper supplies the bottom scroll + sticky top scrollbar duplicate */
+  .cm-grid-wrap {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+  /* Top-side scrollbar synced with the grid — sticky to top of viewport
+     so the user never has to hunt for the bottom scrollbar when the table
+     is tall. ~60px = topbar height. */
+  .cm-scroll-top {
+    position: sticky;
+    top: 60px;
+    z-index: 5;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 14px;
+    background: var(--surface-2);
+    border: 1px solid var(--hairline);
+    border-bottom: none;
+    border-radius: var(--r-3) var(--r-3) 0 0;
+    margin-bottom: -1px;
+  }
+  .cm-scroll-top-inner { height: 1px; }
+
+  /* Company-matrix grid — extends .ind-heatmap; same Aestra-Soft tokens. */
+  .cm-grid {
+    display: grid;
+    gap: 1px;
+    background: var(--hairline-2);
+    border-radius: var(--r-3);
+  }
+  .cm-cell {
+    background: var(--surface-2);
+    padding: 10px 8px;
+    font-family: var(--f-sans);
+    font-size: 12.5px;
+    color: var(--ink-2);
+    text-align: center;
+    position: relative;
+    min-height: 44px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cm-cell.cm-head {
+    background: var(--surface);
+    font-size: 10px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 10px 4px;
+    word-break: keep-all; line-height: 1.3;
+    flex-direction: column; gap: 3px;
+  }
+  /* L1 group label row above the column heads — spans its child columns */
+  .cm-cell.cm-grouphead {
+    background: var(--surface);
+    font-family: var(--f-display);
+    font-size: 11px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding: 8px 6px 6px;
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
+  }
+  .cm-cell.cm-grouphead::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--group-color, var(--accent-2));
+  }
+  /* Group divider — left edge of first cell in each L1 group */
+  .cm-cell.cm-group-start {
+    box-shadow: inset 2px 0 0 0 var(--group-color, var(--accent-2));
+  }
+  .cm-cell.cm-head .cm-head-n {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--subtle);
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+  .cm-cell.cm-row-label {
+    background: var(--surface);
+    text-align: left;
+    padding-left: 18px;
+    padding-right: 14px;
+    font-family: var(--f-body);
+    font-size: 13px;
+    color: var(--ink);
+    justify-content: flex-start;
+    position: relative;
+    gap: 8px;
+    white-space: nowrap;            /* don't wrap "6 赛道" or "10 款" */
+  }
+  .cm-cell.cm-row-label::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 50%;
+    transform: translateY(-50%);
+    width: 4px; height: 18px;
+    background: var(--row-color, var(--accent-2));
+    border-radius: 2px;
+  }
+  .cm-cell.cm-row-label .cm-co-name {
+    background: transparent; border: none; padding: 0; cursor: pointer;
+    font-family: inherit; font-size: inherit; color: inherit;
+    text-align: left; font-weight: 500;
+  }
+  .cm-cell.cm-row-label .cm-co-name:hover { color: var(--accent-2); }
+  .cm-cell.cm-row-label .cm-badge {
+    font-family: var(--f-mono); font-size: 10px;
+    padding: 1px 7px; border-radius: 999px;
+    background: rgba(184, 89, 87, 0.10);
+    color: var(--accent-2);
+    letter-spacing: 0.02em;
+    white-space: nowrap;            /* whole badge stays on one line */
+    flex-shrink: 0;
+  }
+  .cm-cell.cm-row-label .cm-co-name {
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  .cm-cell.cm-row-label .cm-badge.cm-tracks { background: rgba(107, 90, 117, 0.12); color: var(--plum-deep); }
+  .cm-cell.cm-val {
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--ink);
+    background: linear-gradient(
+      135deg,
+      rgba(184, 89, 87, calc(var(--intensity, 0) * 0.36)),
+      rgba(217, 160, 91, calc(var(--intensity, 0) * 0.20))
+    ), var(--surface-2);
+    cursor: help;
+  }
+  .cm-cell.cm-val.zero { color: var(--subtle); font-size: 12px; background: var(--surface-2); }
+  .cm-cell.cm-total {
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--accent-2);
+    background: var(--surface);
+  }
+  /* Country-group divider — spans full grid width when sort=country-group */
+  .cm-country-divider {
+    background: var(--surface);
+    padding: 14px 18px 8px;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px dashed var(--hairline-2);
+    font-family: var(--f-display);
+    font-size: 14px;
+    color: var(--ink);
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .cm-country-divider:first-child { border-top: none; }
+  .cm-country-divider .cm-country-divider-n {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+  /* Cell drawer reuses .v3-l2-drawer; only override the title to allow
+     the company-name button to sit alongside the L2 name. */
+  .v3-cell-drawer .v3-l2-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+  .v3-cell-drawer .v3-l2-title .v3-cell-co {
+    font-family: inherit; font-size: inherit; font-weight: inherit;
+    color: var(--ink); background: transparent; border: none; cursor: pointer;
+    padding: 0; text-align: left;
+  }
+  .v3-cell-drawer .v3-l2-title .v3-cell-co:hover { color: var(--track-accent, var(--accent-2)); }
+  .v3-cell-drawer .v3-l2-title .v3-cell-co .co-name-arrow {
+    font-size: 14px; color: var(--subtle); margin-left: 4px;
+    transition: color 0.16s, transform 0.16s;
+  }
+  .v3-cell-drawer .v3-l2-title .v3-cell-co:hover .co-name-arrow {
+    color: var(--track-accent, var(--accent-2));
+    transform: translate(2px, -2px);
+  }
+</style>
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Companies · Material-track matrix</div>
+      <h1>
+        企业矩阵
+        <span class="h1-en">Company Matrix</span>
+      </h1>
+      <p class="lede">每家公司在 <em>material_taxonomy_l2_cn</em> 14 个主要材料赛道上的产品布局。<strong>覆盖赛道数越多 = 平台型；单赛道但产品多 = 王者型</strong>。默认只显示覆盖 ≥3 个材料赛道的公司（≈ 62 家），其余 3 百家长尾可通过左侧滑杆放开。</p>
+      <div class="stat-row">
+        <span><span class="num" id="cm-stat-companies">—</span> 家公司入矩阵 · 全库 <span class="num" id="cm-stat-total">—</span> 家</span>
+        <span>列 = 14 个主流材料赛道 · 覆盖 <span class="num" id="cm-stat-coverage">—</span>% 产品</span>
+        <span>头部 <span class="num" id="cm-stat-top">—</span> 个赛道（全库最多）</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>企业 × 材料赛道矩阵</h2>
+        <span class="cn">· 谁覆盖了什么</span><span class="en">Companies × material tracks</span>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-title">每格 = 该公司在该材料赛道的产品数</div>
+        <div class="chart-sub">行 = 公司，**按"覆盖材料赛道数 DESC → 总产品数 DESC"排序**（可在工具栏切换）。列 = top 14 材料二级赛道（HA / Laser / RF / 医学护肤活性 / ...）。**色越深 = 该公司在该赛道产品越多**。<strong style="color:var(--accent-2);">点击公司名</strong> → 完整产品库 drawer；**悬停色块**看产品名。</div>
+
+        <div class="cm-toolbar" id="cm-toolbar">
+          <label>最少赛道
+            <input type="range" id="cm-min-tracks" min="1" max="10" step="1" value="3" />
+            <span id="cm-min-tracks-val" style="font-family:var(--f-mono); font-size:12px; color:var(--ink-2);">3</span>
+          </label>
+          <label>排序
+            <select id="cm-sort">
+              <option value="tracks">赛道数 DESC</option>
+              <option value="products">产品数 DESC</option>
+              <option value="listed">上市优先</option>
+              <option value="country-group">国家分组</option>
+              <option value="name">公司名 ASC</option>
+              <option value="country">国家 ASC</option>
+            </select>
+          </label>
+          <label>最少产品
+            <input type="number" id="cm-min-prods" min="1" max="20" value="1" style="width:60px;" />
+          </label>
+          <label>搜索
+            <input type="search" id="cm-search" placeholder="公司名 / 国家..." style="width:180px; padding:4px 8px;" />
+          </label>
+          <span class="cm-stat" id="cm-stat-line">— · —</span>
+        </div>
+
+        <div class="cm-scroll-top" id="cm-scroll-top"><div class="cm-scroll-top-inner" id="cm-scroll-top-inner"></div></div>
+        <div class="cm-grid-wrap" id="cm-grid-wrap"><div class="cm-grid" id="cm-grid"></div></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>解读</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row" id="cm-findings"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 企业矩阵 Company Matrix · companies × material-L2 · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260524"></script>
+<script src="./v3-companies.js?v=20260604"></script>
+<script src="./v3-product-tree.js?v=20260604"></script>
+<script src="./v3-company-detail.js?v=20260604"></script>
+<script src="./v3-company-matrix.js?v=20260604"></script>
+<script src="./v3-cell-drawer.js?v=20260604"></script>
+<script src="./_nav.js" data-active="companies-matrix"></script>
+<script>
+(function () {
+  const d = window.GLOBAL_AESTHETICS_DATA;
+  if (d && d.generated_at) {
+    const s = d.generated_at.slice(0, 10).replace(/-/g, "·");
+    document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+  }
+
+  const data = window.V3_COMPANY_MATRIX;
+  if (!data) { console.warn("V3_COMPANY_MATRIX missing"); return; }
+
+  const TRACK_COLORS = {
+    "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+    "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+    "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+  };
+  const L1_ZH = {
+    "EBD":"能量源设备 EBD","Injectables":"注射类 Injectables","Skincare":"功能性护肤品",
+    "Regenerative":"再生 Regenerative","Consumables":"耗材 Consumables","Implants":"植入物 Implants",
+    "Diagnostics":"诊断 Diagnostics","Surgical":"外科 Surgical","Pharma":"药品 Pharma","Services":"服务 Services",
+    "":"其他 Other","其他":"其他 Other",
+  };
+  const displayL1 = l1 => L1_ZH[l1] || l1;
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  })[ch]);
+
+  const grid = document.getElementById("cm-grid");
+  const minTracksInput = document.getElementById("cm-min-tracks");
+  const minTracksVal = document.getElementById("cm-min-tracks-val");
+  const sortSel = document.getElementById("cm-sort");
+  const minProdsInput = document.getElementById("cm-min-prods");
+  const searchInput = document.getElementById("cm-search");
+  const statLine = document.getElementById("cm-stat-line");
+
+  // Header summary
+  const sum = data.summary;
+  document.getElementById("cm-stat-total").textContent = sum.companies_total;
+  const matrixProdTotal = data.rows.reduce((s, r) => s + r.in_matrix_products, 0);
+  const allProdTotal = data.rows.reduce((s, r) => s + r.total_products, 0);
+  document.getElementById("cm-stat-coverage").textContent = ((matrixProdTotal / Math.max(1, allProdTotal)) * 100).toFixed(0);
+  document.getElementById("cm-stat-top").textContent = sum.max_track_in_matrix;
+  // Cap the slider max to the actual maximum in-matrix track count so the
+  // user can't drag past a value that filters everything out.
+  minTracksInput.max = sum.max_track_in_matrix;
+
+  // Initial defaults from build
+  minTracksInput.value = sum.default_min_tracks;
+  minTracksVal.textContent = sum.default_min_tracks;
+
+  // Max-cell intensity normaliser (global, so colour scale stays comparable
+  // across filters / sorts)
+  const globalMaxCell = Math.max(1, ...data.rows.flatMap(r =>
+    data.columns.map(c => (r.cells[c.name] && r.cells[c.name].n) || 0)
+  ));
+
+  function render () {
+    const minT = parseInt(minTracksInput.value, 10) || 0;
+    const minP = parseInt(minProdsInput.value, 10) || 0;
+    const q = (searchInput.value || "").trim().toLowerCase();
+    const sort = sortSel.value;
+
+    // Filter / sort by VISIBLE matrix tracks so the badge and slider always
+    // match what the user actually sees in the heatmap.
+    let filtered = data.rows.filter(r =>
+      r.track_count_in_matrix >= minT
+      && r.total_products >= minP
+      && (!q || r.name.toLowerCase().includes(q) || (r.country || "").toLowerCase().includes(q))
+    );
+    if (sort === "tracks")   filtered.sort((a, b) => b.track_count_in_matrix - a.track_count_in_matrix || b.total_products - a.total_products || a.name.localeCompare(b.name));
+    else if (sort === "products") filtered.sort((a, b) => b.total_products - a.total_products || b.track_count_in_matrix - a.track_count_in_matrix || a.name.localeCompare(b.name));
+    else if (sort === "name")     filtered.sort((a, b) => a.name.localeCompare(b.name));
+    else if (sort === "country" || sort === "country-group")
+      filtered.sort((a, b) => (a.country || "zzz").localeCompare(b.country || "zzz") || b.track_count_in_matrix - a.track_count_in_matrix || a.name.localeCompare(b.name));
+    else if (sort === "listed") {
+      // Public first, then Private, then everything else; within each group
+      // by track count desc then product count desc.
+      const tier = o => (o === "Public" ? 0 : o === "Private" ? 1 : 2);
+      filtered.sort((a, b) => tier(a.ownership) - tier(b.ownership)
+        || b.track_count_in_matrix - a.track_count_in_matrix
+        || b.total_products - a.total_products
+        || a.name.localeCompare(b.name));
+    }
+
+    document.getElementById("cm-stat-companies").textContent = filtered.length;
+    statLine.innerHTML = `<strong>${filtered.length}</strong> 家入矩阵 / 全 ${sum.companies_total} · ${data.columns.length} 个材料赛道`;
+
+    if (!filtered.length) {
+      grid.innerHTML = `<div class="cm-cell" style="grid-column:1/-1;color:var(--muted);font-style:italic;">没有符合条件的公司，请放宽筛选</div>`;
+      grid.style.gridTemplateColumns = "1fr";
+      return;
+    }
+
+    const cols = data.columns;
+    // First column wider (320px) so company name + badges stay on ONE line.
+    // No trailing "合计" column — the in-matrix total already lives in the
+    // badge ("N 款") on each row label.
+    grid.style.gridTemplateColumns = `320px repeat(${cols.length}, minmax(60px, 1fr))`;
+
+    // Compute L1 groups in column-order (consecutive runs of same group_l1).
+    // Each group → display label, color, column span, "start" index used to
+    // tag the boundary cell with a left-edge accent.
+    const groups = [];
+    let cur = null;
+    cols.forEach((c, i) => {
+      const g = c.group_l1 || "其他";
+      if (!cur || cur.l1 !== g) {
+        cur = { l1: g, color: TRACK_COLORS[g] || "var(--accent-2)", startIdx: i, count: 1 };
+        groups.push(cur);
+      } else {
+        cur.count += 1;
+      }
+    });
+    const startIdxSet = new Set(groups.map(g => g.startIdx));
+    const groupByIdx = {};
+    groups.forEach(g => {
+      for (let i = 0; i < g.count; i++) groupByIdx[g.startIdx + i] = g;
+    });
+
+    // ── Header row A: L1 group labels spanning their columns ──
+    const groupRow = `<div class="cm-cell cm-grouphead" style="background:var(--surface);">材料赛道分组</div>`
+      + groups.map(g => `<div class="cm-cell cm-grouphead" style="grid-column: span ${g.count}; --group-color:${g.color};">${esc(displayL1(g.l1))}</div>`).join("");
+
+    // ── Header row B: per-column names + global product totals ──
+    const head = `<div class="cm-cell cm-head">企业 / Company</div>`
+      + cols.map((c, i) => {
+        const g = groupByIdx[i];
+        const cls = "cm-cell cm-head" + (startIdxSet.has(i) ? " cm-group-start" : "");
+        return `<div class="${cls}" style="--group-color:${g.color};">${esc(c.name)}<span class="cm-head-n">${c.n_products}</span></div>`;
+      }).join("");
+
+    const body = filtered.map((r, rowIdx) => {
+      const trackColor = TRACK_COLORS[r.primary_track] || "var(--accent-2)";
+      // Country-group divider: insert a span-all label row whenever the country
+      // changes (only for sort === "country-group").
+      let groupDivider = "";
+      if (sort === "country-group") {
+        const prev = rowIdx > 0 ? filtered[rowIdx - 1] : null;
+        const prevCountry = prev ? (prev.country || "—") : null;
+        const thisCountry = r.country || "—";
+        if (thisCountry !== prevCountry) {
+          const sameCountry = filtered.filter(x => (x.country || "—") === thisCountry).length;
+          groupDivider = `<div class="cm-country-divider" style="grid-column:1 / -1;">${esc(thisCountry)} <span class="cm-country-divider-n">${sameCountry} 家</span></div>`;
+        }
+      }
+      const cells = cols.map((c, i) => {
+        const g = groupByIdx[i];
+        const cell = r.cells[c.name];
+        const n = cell ? cell.n : 0;
+        const startCls = startIdxSet.has(i) ? " cm-group-start" : "";
+        const groupStyle = `--group-color:${g.color}`;
+        if (!n) return `<div class="cm-cell cm-val zero${startCls}" style="${groupStyle}">—</div>`;
+        const intensity = n / globalMaxCell;
+        // Tooltip: first 6 product names (rest in drawer)
+        const sample = (cell.products || []).slice(0, 6).map(p => p.name).join(" · ");
+        const more = (cell.products || []).length > 6 ? ` · +${cell.products.length - 6}` : "";
+        const tip = `${esc(r.name)} · ${esc(c.name)} (${esc(g.l1)})\n${n} 款 — 点击查看完整列表\n${esc(sample)}${more}`;
+        return `<div class="cm-cell cm-val${startCls}" style="--intensity:${intensity.toFixed(2)}; ${groupStyle}; cursor:pointer;" title="${tip}" data-cell-co="${esc(r.company_id)}" data-cell-l2="${esc(c.name)}" data-cell-l1="${esc(g.l1)}">${n}</div>`;
+      }).join("");
+      // Badges: show ONLY what's visible in the matrix (user requirement
+      // 2026-06-04: "只要求显示 6 个赛道和 10 款产品"). Hover tooltip still
+      // surfaces full-DB counts for transparency.
+      const tailTracks = r.track_count_l2_all - r.track_count_in_matrix;
+      const tailProds  = r.total_products - r.in_matrix_products;
+      const trackTitle = tailTracks > 0
+        ? `图中可见 ${r.track_count_in_matrix} 个材料赛道 · 全库还有 ${tailTracks} 个长尾未入矩阵`
+        : `图中可见 ${r.track_count_in_matrix} 个材料赛道（无长尾）`;
+      const prodTitle = tailProds > 0
+        ? `图中 ${r.in_matrix_products} 款 · 全库还有 ${tailProds} 款在长尾材料分类里`
+        : `图中 ${r.in_matrix_products} 款（无长尾）`;
+      return `
+        ${groupDivider}
+        <div class="cm-cell cm-row-label" style="--row-color:${trackColor}">
+          <button class="cm-co-name" type="button" data-company-id="${esc(r.company_id)}" title="打开 ${esc(r.name)} 完整产品库 ↗">${esc(r.name)}</button>
+          <span class="cm-badge cm-tracks" title="${trackTitle}">${r.track_count_in_matrix} 赛道</span>
+          <span class="cm-badge" title="${prodTitle}">${r.in_matrix_products} 款</span>
+        </div>
+        ${cells}
+      `;
+    }).join("");
+
+    grid.innerHTML = groupRow + head + body;
+
+    // Wire company-name → V3CompanyDetail
+    grid.querySelectorAll(".cm-co-name").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const cid = btn.getAttribute("data-company-id");
+        if (cid && window.V3CompanyDetail) window.V3CompanyDetail.show(cid, { source: "companies-matrix" });
+      });
+    });
+
+    // Wire cell click → V3CellDrawer (shows ALL products in that cell)
+    if (window.V3CellDrawer) {
+      grid.querySelectorAll(".cm-val[data-cell-co]").forEach(cell => {
+        cell.addEventListener("click", () => {
+          const cid = cell.getAttribute("data-cell-co");
+          const l2 = cell.getAttribute("data-cell-l2");
+          const l1 = cell.getAttribute("data-cell-l1");
+          const row = data.rows.find(x => x.company_id === cid);
+          if (!row || !row.cells[l2]) return;
+          window.V3CellDrawer.show({
+            companyId:    row.company_id,
+            companyName:  row.name,
+            country:      row.country,
+            ownership:    row.ownership,
+            primaryTrack: row.primary_track,
+            l2Name:       l2,
+            l2GroupL1:    l1,
+            n:            row.cells[l2].n,
+            products:     row.cells[l2].products,
+          });
+        });
+      });
+    }
+  }
+
+  // Live controls
+  minTracksInput.addEventListener("input", () => {
+    minTracksVal.textContent = minTracksInput.value;
+    render();
+  });
+  sortSel.addEventListener("change", render);
+  minProdsInput.addEventListener("input", render);
+  searchInput.addEventListener("input", render);
+
+  // —— Top scrollbar synced with the grid wrapper ——
+  // The grid is wider than the viewport. Reading rows in the middle of the
+  // table previously required scrolling all the way down just to reach the
+  // browser's native scrollbar. A sticky-top duplicate fixes that.
+  const gridWrap = document.getElementById("cm-grid-wrap");
+  const scrollTop = document.getElementById("cm-scroll-top");
+  const scrollTopInner = document.getElementById("cm-scroll-top-inner");
+  function syncScrollWidth () {
+    scrollTopInner.style.width = grid.scrollWidth + "px";
+  }
+  let syncing = false;
+  scrollTop.addEventListener("scroll", () => {
+    if (syncing) { syncing = false; return; }
+    syncing = true;
+    gridWrap.scrollLeft = scrollTop.scrollLeft;
+  });
+  gridWrap.addEventListener("scroll", () => {
+    if (syncing) { syncing = false; return; }
+    syncing = true;
+    scrollTop.scrollLeft = gridWrap.scrollLeft;
+  });
+  // Trackpad / mouse-wheel translation: vertical wheel becomes horizontal
+  // scroll WHEN the user is over a cell row that has horizontal overflow
+  // and they're holding shift. (Shift+wheel is the universal "scroll
+  // horizontal" convention; trackpads work natively.)
+  // We also intercept plain wheel events when the page itself can't scroll
+  // further down — that prevents the table from being "trapped" under the
+  // viewport.
+  gridWrap.addEventListener("wheel", (e) => {
+    if (e.shiftKey || (Math.abs(e.deltaX) > Math.abs(e.deltaY))) {
+      const maxLeft = gridWrap.scrollWidth - gridWrap.clientWidth;
+      if ((e.deltaX > 0 || e.deltaY > 0) && gridWrap.scrollLeft < maxLeft) {
+        gridWrap.scrollLeft += Math.max(e.deltaY, e.deltaX);
+        e.preventDefault();
+      } else if ((e.deltaX < 0 || e.deltaY < 0) && gridWrap.scrollLeft > 0) {
+        gridWrap.scrollLeft += Math.min(e.deltaY, e.deltaX);
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+
+  // Re-sync width after every render + on resize
+  const _origRender = render;
+  function renderAndSync () { _origRender(); requestAnimationFrame(syncScrollWidth); }
+  // Replace the live-bound callers' "render" reference
+  minTracksInput.removeEventListener("input", () => {}); // noop guard
+  // Just call our wrapper directly for every input
+  [minTracksInput, sortSel, minProdsInput, searchInput].forEach(el => {
+    const evt = el.tagName === "SELECT" ? "change" : "input";
+    el.addEventListener(evt, () => requestAnimationFrame(syncScrollWidth));
+  });
+  window.addEventListener("resize", syncScrollWidth);
+
+  render();
+  requestAnimationFrame(syncScrollWidth);
+
+  // Findings (compact, sample) — all counts now use VISIBLE in-matrix tracks
+  // so the numbers match what the user reads in the badges.
+  const top = data.rows[0];
+  const five = data.rows.filter(r => r.track_count_in_matrix >= 5);
+  const fourPlusBig = data.rows.filter(r => r.track_count_in_matrix >= 4 && r.total_products >= 15);
+  document.getElementById("cm-findings").innerHTML = [
+    {
+      stamp: "Finding · 01",
+      wash: "w-rose-deep",
+      lead: `<em>${esc(top.name)}</em> 在 14 个主流材料赛道里覆盖最广 — <em>${top.track_count_in_matrix}</em> 个赛道。`,
+      num: top.track_count_in_matrix, unit: "in-matrix tracks",
+      body: `${esc(top.name)} 在矩阵中 ${top.track_count_in_matrix} / 14 个主流材料赛道有产品（合计 ${top.total_products} 款，全库覆盖 ${top.track_count_l2_all} 个含长尾）。这是真正的<strong>平台型</strong>布局——对手要全面竞争而非单点突破。`,
+    },
+    {
+      stamp: "Finding · 02",
+      wash: "w-plum",
+      lead: `仅 <em>${five.length}</em> 家公司在矩阵中覆盖 ≥5 个材料赛道。`,
+      num: five.length, unit: "≥5 in-matrix tracks",
+      body: `5 个主流赛道是「平台型」门槛。只有 ${five.length} 家做到：${five.map(c => `<em>${esc(c.name)}</em>(${c.track_count_in_matrix})`).join(" · ")}。其余几百家本质上还是 1-2 赛道的专精型，**矩阵稀疏度本身就是竞争结构的事实**。`,
+    },
+    {
+      stamp: "Finding · 03",
+      wash: "w-apricot",
+      lead: `<em>${fourPlusBig.length}</em> 家公司是「≥4 赛道 + ≥15 产品」组合 — 资源最厚。`,
+      num: fourPlusBig.length, unit: "platform-heavy",
+      body: `${fourPlusBig.length} 家公司同时满足 in-matrix tracks ≥4 + 总产品 ≥15：${fourPlusBig.map(c => `<em>${esc(c.name)}</em>(${c.track_count_in_matrix}赛/${c.total_products}款)`).join(" · ")}。它们在每个赛道里产品都多，是行业「重量级 platform」。`,
+    },
+  ].map(f => `
+    <article class="editorial-block has-wash ${f.wash} wash-bottom-left">
+      <span class="stamp">${esc(f.stamp)}</span>
+      <div class="lead">${f.lead}</div>
+      <div class="num-pair"><span class="num">${esc(String(f.num))}</span><span class="unit">${esc(f.unit)}</span></div>
+      <div class="body">${f.body}</div>
+    </article>
+  `).join("");
+
+  // IntersectionObserver for fade-in
+  if ("IntersectionObserver" in window) {
+    const obs = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in-view"); obs.unobserve(e.target); }
+    }), { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".block, .page-hero, .editorial-block").forEach(el => obs.observe(el));
+  }
+})();
+</script>
+
+</body>
+</html>

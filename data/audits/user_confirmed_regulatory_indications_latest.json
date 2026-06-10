@@ -1,0 +1,264 @@
+{
+  "backup": "E:\\shared\\Documents\\data\\全球医美企业库_标准化版v4.backup_before_user_reg_indications_20260601_021951.xlsx",
+  "workbook_changes": 43,
+  "manual_official_indication_rows_added": 11,
+  "target_record_ids": [
+    "REC_0163",
+    "REC_0178",
+    "REC_0449",
+    "REC_0537",
+    "REC_0615",
+    "REC_0693",
+    "REC_0758",
+    "REC_0934"
+  ],
+  "collapsed_chaeum_duplicate_record_ids": [
+    "REC_0694",
+    "REC_0877",
+    "REC_0878",
+    "REC_0879",
+    "REC_0880"
+  ],
+  "changed_fields_sample": [
+    {
+      "record_id": "REC_0537",
+      "field": "CE_Status",
+      "old": "",
+      "new": "NMPA Class III registration confirmed by user; certificate number pending."
+    },
+    {
+      "record_id": "REC_0537",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0693",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS registered and CE certified; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0693",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0615",
+      "field": "CE_Status",
+      "old": "",
+      "new": "KFDA/MFDS registered and CE certified; certificate numbers pending."
+    },
+    {
+      "record_id": "REC_0615",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0758",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certified; MFDS export manufacturing approval confirmed from official Across history."
+    },
+    {
+      "record_id": "REC_0758",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0163",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certified; certificate number pending."
+    },
+    {
+      "record_id": "REC_0163",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0934",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certified; certificate number pending."
+    },
+    {
+      "record_id": "REC_0934",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0449",
+      "field": "CE_Status",
+      "old": "",
+      "new": "CE certified; certificate number pending."
+    },
+    {
+      "record_id": "REC_0449",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0178",
+      "field": "CE_Status",
+      "old": "欧盟 CE 0123 Class III",
+      "new": "CE 0123 Class III medical device; official intended use captured."
+    },
+    {
+      "record_id": "REC_0178",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: user/official confirmation applied; precise certificate number remains blank unless supplied."
+    },
+    {
+      "record_id": "REC_0537",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0693",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0615",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0758",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0537",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0693",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0615",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0758",
+      "field": "Marketing_Holder",
+      "old": "",
+      "new": "Across Co., Ltd."
+    },
+    {
+      "record_id": "REC_0163",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "BioPlus Co., Ltd."
+    },
+    {
+      "record_id": "REC_0934",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Caregen Co., Ltd."
+    },
+    {
+      "record_id": "REC_0449",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "ABG Lab LLC"
+    },
+    {
+      "record_id": "REC_0178",
+      "field": "Manufactured_By",
+      "old": "",
+      "new": "Alta Care"
+    },
+    {
+      "record_id": "REC_0694",
+      "field": "Is_Primary_Record",
+      "old": "True",
+      "new": ""
+    },
+    {
+      "record_id": "REC_0694",
+      "field": "Duplicate_Note",
+      "old": "",
+      "new": "duplicate_of:REC_0693; The Chaeum active product family is kept under Across as legal/manufacturing subject; Hugel retained as parent/portfolio trace."
+    },
+    {
+      "record_id": "REC_0694",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: collapsed into Across The Chaeum product family for active dashboard/product-gap scope."
+    },
+    {
+      "record_id": "REC_0877",
+      "field": "Is_Primary_Record",
+      "old": "True",
+      "new": ""
+    },
+    {
+      "record_id": "REC_0877",
+      "field": "Duplicate_Note",
+      "old": "",
+      "new": "duplicate_of:REC_0693; The Chaeum Premium No.1 should be treated as SKU/variant under Across The Chaeum, not a separate Hugel product line."
+    },
+    {
+      "record_id": "REC_0877",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: collapsed into Across The Chaeum product family for active dashboard/product-gap scope."
+    },
+    {
+      "record_id": "REC_0878",
+      "field": "Is_Primary_Record",
+      "old": "True",
+      "new": ""
+    },
+    {
+      "record_id": "REC_0878",
+      "field": "Duplicate_Note",
+      "old": "",
+      "new": "duplicate_of:REC_0693; The Chaeum Premium No.2 should be treated as SKU/variant under Across The Chaeum, not a separate Hugel product line."
+    },
+    {
+      "record_id": "REC_0878",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: collapsed into Across The Chaeum product family for active dashboard/product-gap scope."
+    },
+    {
+      "record_id": "REC_0879",
+      "field": "Is_Primary_Record",
+      "old": "True",
+      "new": ""
+    },
+    {
+      "record_id": "REC_0879",
+      "field": "Duplicate_Note",
+      "old": "",
+      "new": "duplicate_of:REC_0693; The Chaeum Premium No.3 should be treated as SKU/variant under Across The Chaeum, not a separate Hugel product line."
+    },
+    {
+      "record_id": "REC_0879",
+      "field": "Backfill_Audit",
+      "old": "",
+      "new": "user_reg_indications_20260601: collapsed into Across The Chaeum product family for active dashboard/product-gap scope."
+    }
+  ]
+}
