@@ -27,7 +27,11 @@ from typing import Any
 
 import openpyxl
 
-from dashboard_scope import company_exclusion_reason, product_exclusion_reason
+from dashboard_scope import (
+    company_exclusion_reason,
+    is_non_core_cosmetic_or_oral_product,
+    product_exclusion_reason,
+)
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
@@ -6615,6 +6619,28 @@ def apply_dashboard_scope(
         else:
             included_products.append(product)
 
+    products_by_company_key: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for product in included_products:
+        key = compact_key(product.get("Company"))
+        if key:
+            products_by_company_key[key].append(product)
+
+    no_core_medical_company_keys = {
+        key
+        for key, rows in products_by_company_key.items()
+        if rows and all(is_non_core_cosmetic_or_oral_product(row) for row in rows)
+    }
+    if no_core_medical_company_keys:
+        kept_products: list[dict[str, Any]] = []
+        no_core_reason = "company_has_no_medical_aesthetic_device_drug_or_equipment"
+        for product in included_products:
+            if compact_key(product.get("Company")) in no_core_medical_company_keys:
+                excluded_products.append({**product, "_dashboard_exclusion_reason": no_core_reason})
+                product_exclusion_reasons[no_core_reason] += 1
+            else:
+                kept_products.append(product)
+        included_products = kept_products
+
     product_count_by_company = Counter(product.get("Company") or "" for product in included_products)
     brand_sets_by_company: dict[str, set[str]] = defaultdict(set)
     track_counter_by_company: dict[str, Counter[str]] = defaultdict(Counter)
@@ -6635,8 +6661,11 @@ def apply_dashboard_scope(
     company_exclusion_reasons: Counter[str] = Counter()
     for company in companies:
         name = company.get("Company") or ""
+        company_key = compact_key(name)
         reason = company_exclusion_reason(company)
-        if not reason and compact_key(name) not in included_company_keys:
+        if not reason and company_key in no_core_medical_company_keys:
+            reason = "company_has_no_medical_aesthetic_device_drug_or_equipment"
+        if not reason and company_key not in included_company_keys:
             reason = "no_dashboard_supply_products"
         if reason:
             excluded_companies.append({**company, "_dashboard_exclusion_reason": reason})

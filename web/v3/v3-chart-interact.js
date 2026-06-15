@@ -9,7 +9,7 @@
    Usage:
      V3Tooltip.attach(el, () => ({ title: "...", lines: ["...", "..."] }));
      V3DrillPanel.open({
-        stamp: "Chart · drill",
+        stamp: "Chart · detail",
         title: "EBD · 480 products",
         sub:   "172 companies · top tracks: ...",
         rows:  [{company_id, name, hint, color, badge}, ...],
@@ -628,11 +628,11 @@
     panelEl = document.createElement("aside");
     panelEl.className = "v3-dp";
     panelEl.setAttribute("role", "dialog");
-    panelEl.setAttribute("aria-label", "chart drill-down");
+    panelEl.setAttribute("aria-label", "chart detail");
     panelEl.innerHTML = `
       <div class="head">
         <button class="close-btn" type="button" aria-label="关闭">×</button>
-        <span class="stamp" id="v3dp-stamp">Chart · drill</span>
+        <span class="stamp" id="v3dp-stamp">Chart · detail</span>
         <h3 id="v3dp-title">—</h3>
         <div class="sub" id="v3dp-sub">—</div>
       </div>
@@ -649,7 +649,7 @@
 
   function openPanel (cfg) {
     ensurePanel();
-    document.getElementById("v3dp-stamp").textContent = cfg.stamp || "Chart · drill";
+    document.getElementById("v3dp-stamp").textContent = cfg.stamp || "Chart · detail";
     document.getElementById("v3dp-title").textContent = cfg.title || "—";
     document.getElementById("v3dp-sub").textContent = cfg.sub || "";
 

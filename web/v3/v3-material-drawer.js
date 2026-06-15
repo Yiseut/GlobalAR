@@ -111,7 +111,7 @@
     return `
       <div class="v3-l2-head" style="--track-accent:${accent};">
         <button class="v3-l2-close" type="button" aria-label="关闭">×</button>
-        <span class="v3-l2-stamp" style="color:${accent};border-color:${accent}66;">材料 L2 · drill-down</span>
+        <span class="v3-l2-stamp" style="color:${accent};border-color:${accent}66;">材料 L2 · detail</span>
         <h2 class="v3-l2-title">
           <span class="l1" style="color:var(--muted); font-size:14px;">${esc(l1)}</span>
           <span class="sep">/</span>
@@ -162,7 +162,7 @@
       drawerEl.innerHTML = `
         <div class="v3-l2-head" style="--track-accent:${accent};">
           <button class="v3-l2-close" type="button" aria-label="关闭">×</button>
-          <span class="v3-l2-stamp" style="color:${accent};border-color:${accent}66;">材料 L1 · drill-down</span>
+          <span class="v3-l2-stamp" style="color:${accent};border-color:${accent}66;">材料 L1 · detail</span>
           <h2 class="v3-l2-title">
             <span class="l1" style="color:${accent};">${esc(card.name)}</span>
           </h2>

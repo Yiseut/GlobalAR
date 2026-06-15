@@ -56,6 +56,20 @@ SERVICE_CORE_TERMS = (
     "book of injectable fillers",
 )
 
+NON_CORE_CATEGORY_L1 = {"skincare"}
+NON_CORE_CATEGORY_L2_TERMS = (
+    "nutricosmetic",
+    "nutraceutical",
+    "supplement",
+)
+NON_CORE_PRODUCT_TERMS_RE = re.compile(
+    r"口服|\boral\b|nutricosmetic|nutraceutical|dietary supplement|"
+    r"food supplement|health supplement|supplement\b|gummies?\b|"
+    r"capsules?\b|tablets?\b|drink\b|powder\b|sachet\b|"
+    r"胶囊|软糖|片剂|膳食补充|保健品|营养液|美容饮",
+    re.IGNORECASE,
+)
+
 
 def clean_text(value: Any) -> str:
     if value is None:
@@ -117,6 +131,42 @@ def product_exclusion_reason(row: Mapping[str, Any]) -> str:
         return "service_product"
 
     return ""
+
+
+def is_non_core_cosmetic_or_oral_product(row: Mapping[str, Any]) -> bool:
+    """True when a row is only cosmetic/skincare or oral supplement identity.
+
+    This is intentionally company-scope logic rather than a blanket product
+    exclusion: ancillary skincare or supplements may remain visible for a
+    company that also has a qualifying medical aesthetic device, drug, or
+    equipment line.
+    """
+
+    category_l1 = compact_key(field(row, "Category_L1", "category_l1", "commercial_path_l1"))
+    if category_l1 in NON_CORE_CATEGORY_L1:
+        return True
+
+    category_l2 = field(row, "Category_L2", "category_l2", "commercial_path_l2").lower()
+    if any(term in category_l2 for term in NON_CORE_CATEGORY_L2_TERMS):
+        return True
+
+    identity_blob = " ".join(
+        field(row, name)
+        for name in (
+            "Brand",
+            "brand",
+            "Core_Product",
+            "core_product",
+            "standard_product_name",
+            "product_family",
+            "Tech_Type_Std",
+            "tech_type_std",
+            "technology_path_l1",
+            "technology_path_l2",
+            "material_or_energy_source",
+        )
+    )
+    return bool(NON_CORE_PRODUCT_TERMS_RE.search(identity_blob))
 
 
 def company_exclusion_reason(row: Mapping[str, Any]) -> str:

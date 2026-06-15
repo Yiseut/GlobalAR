@@ -288,7 +288,7 @@
     // Prefer the shared V3DrillPanel if it exists; otherwise jump to companies.html
     if (window.V3DrillPanel && typeof window.V3DrillPanel.open === "function") {
       window.V3DrillPanel.open({
-        stamp: "City · 地图下钻",
+        stamp: "City · 地图详情",
         title: `${city.city}${city.country ? " · " + city.country : ""}`,
         sub: `${city.region || ""} · 主赛道 ${TRACK_LABEL_ZH[city.dominant_track] || city.dominant_track}`,
         summary: [

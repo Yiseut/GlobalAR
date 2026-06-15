@@ -77,7 +77,7 @@
     drawerEl.innerHTML = `
       <div class="v3-l2-head" style="--track-accent:${accent};">
         <button class="v3-l2-close" type="button" aria-label="关闭">×</button>
-        <span class="v3-l2-stamp" style="color:${accent};border-color:${accent}66;">Cell · drill-down</span>
+        <span class="v3-l2-stamp" style="color:${accent};border-color:${accent}66;">Cell · detail</span>
         <h2 class="v3-l2-title">
           <button class="cm-co-name v3-cell-co" type="button" data-company-id="${esc(cfg.companyId)}" title="打开 ${esc(cfg.companyName)} 完整产品库 ↗">
             ${esc(cfg.companyName)}

@@ -312,7 +312,7 @@
     drawerEl.innerHTML = `
       <div class="v3-cd-head">
         <button class="v3-cd-close" type="button" aria-label="关闭">×</button>
-        <span class="v3-cd-stamp" style="color:${accent};border-color:${accent}66;">Company · drill-down</span>
+        <span class="v3-cd-stamp" style="color:${accent};border-color:${accent}66;">Company · detail</span>
         <h2 class="v3-cd-title">${escapeHtml(name)}</h2>
         <div class="v3-cd-sub">${escapeHtml(subLine || "—")}</div>
         ${metaCells}

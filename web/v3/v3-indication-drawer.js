@@ -206,7 +206,7 @@
     drawerEl.innerHTML = `
       <div class="v3-l2-head" style="--track-accent:${accent};">
         <button class="v3-l2-close" type="button" aria-label="关闭">×</button>
-        <span class="v3-l2-stamp" style="color:${accent};border-color:rgba(184,89,87,0.4);">Indication · drill-down</span>
+        <span class="v3-l2-stamp" style="color:${accent};border-color:rgba(184,89,87,0.4);">Indication · detail</span>
         <h2 class="v3-l2-title">
           <span class="l1">适应症</span>
           <span class="sep">/</span>
