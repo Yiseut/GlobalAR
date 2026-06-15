@@ -18,11 +18,15 @@ TOPIC_JS_PATH = PROJECT_DIR / "web" / "topic.js"
 APP_JS_PATH = PROJECT_DIR / "web" / "app.js"
 
 
+def strip_prefix(text: str, prefix: str) -> str:
+    return text[len(prefix) :] if text.startswith(prefix) else text
+
+
 def main() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     expected = manifest["summary"]
     snapshot_text = SNAPSHOT_PATH.read_text(encoding="utf-8")
-    snapshot = json.loads(snapshot_text.removeprefix("window.GLOBAL_AESTHETICS_DATA = ").rstrip(";\n"))
+    snapshot = json.loads(strip_prefix(snapshot_text, "window.GLOBAL_AESTHETICS_DATA = ").rstrip(";\n"))
     dashboard_scope = snapshot.get("dashboard_scope", {})
     ha_segment = next((item for item in snapshot.get("segments", []) if item.get("code") == "ha"), {})
     pcl_segment = next((item for item in snapshot.get("segments", []) if item.get("code") == "pcl"), {})
@@ -477,12 +481,12 @@ def main() -> None:
               AND lower(COALESCE(company, '') || ' ' || COALESCE(excerpt, '')) LIKE '%alpha aesthetics%'
             """
         ),
-        "briefing_guard_hironic_channel": has_row(
+        "briefing_guard_channel_sentinel": has_row(
             """
             SELECT 1
             FROM briefing_update_candidates
             WHERE event_group = 'channel_coverage'
-              AND lower(COALESCE(company, '') || ' ' || COALESCE(excerpt, '')) LIKE '%hironic%'
+              AND lower(COALESCE(company, '') || ' ' || COALESCE(excerpt, '')) LIKE '%lutronic%'
             """
         ),
         "briefing_no_airsculpt_advance_mislink": not has_row(
@@ -733,7 +737,7 @@ def main() -> None:
         or not checks["briefing_guard_radiesse_indication"]
         or not checks["briefing_guard_airsculpt_commercial"]
         or not checks["briefing_guard_alpha_channel"]
-        or not checks["briefing_guard_hironic_channel"]
+        or not checks["briefing_guard_channel_sentinel"]
         or not checks["briefing_no_airsculpt_advance_mislink"]
         or not checks["briefing_no_huons_biopark_mislink"]
         or not checks["briefing_no_ariessence_cgbio_mislink"]

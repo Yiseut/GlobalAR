@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 import json
 import os
 import re
@@ -4851,7 +4852,10 @@ def generated_csv_record_key(path: Path, record: dict[str, Any]) -> str:
 def load_generated_csv(path: Path) -> list[dict[str, Any]]:
     if not path.exists():
         return []
-    with path.open("r", encoding="utf-8-sig", newline="") as handle:
+    raw_text = path.read_text(encoding="utf-8-sig")
+    if "\x00" in raw_text:
+        raw_text = raw_text.replace("\x00", "")
+    with io.StringIO(raw_text, newline="") as handle:
         keyed: dict[str, dict[str, Any]] = {}
         unkeyed: list[dict[str, Any]] = []
         for row in csv.DictReader(handle):

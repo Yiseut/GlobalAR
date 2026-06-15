@@ -447,6 +447,10 @@ def write_decisions(payload: dict[str, Any]) -> Path:
 def run_python(script: Path, *args: str) -> dict[str, Any]:
     env = dict(os.environ)
     env["PYTHONIOENCODING"] = "utf-8"
+    vendor_dir = ROOT / ".vendor"
+    if vendor_dir.exists():
+        existing = env.get("PYTHONPATH", "").strip()
+        env["PYTHONPATH"] = str(vendor_dir) if not existing else os.pathsep.join([str(vendor_dir), existing])
     proc = subprocess.run(
         [sys.executable, str(script), *args],
         cwd=str(script.parent.parent),
@@ -464,6 +468,18 @@ def run_python(script: Path, *args: str) -> dict[str, Any]:
         "stdout": proc.stdout[-6000:],
         "stderr": proc.stderr[-6000:],
     }
+
+
+def finalize_summary(summary: dict[str, Any]) -> dict[str, Any]:
+    summary.setdefault("finished_at", datetime.now().isoformat(timespec="seconds"))
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = LOG_DIR / f"company_column_backfill_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    log_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    latest_path = LOG_DIR / "company_column_backfill_latest.json"
+    latest_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    summary["log_path"] = str(log_path)
+    summary["latest_log_path"] = str(latest_path)
+    return summary
 
 
 def main() -> int:
@@ -485,13 +501,13 @@ def main() -> int:
     }
     if not record:
         summary.update({"status": "no_plan_b_record", "message": "Latest briefing has no Plan B push history yet."})
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        print(json.dumps(finalize_summary(summary), ensure_ascii=False, indent=2))
         return 0
 
     company, target_date, title = resolve_published_company(record)
     if not company:
         summary.update({"status": "no_company_column", "message": "No company-column company could be resolved."})
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        print(json.dumps(finalize_summary(summary), ensure_ascii=False, indent=2))
         return 0
 
     imported = imported_review_items(company)
@@ -534,7 +550,7 @@ def main() -> int:
     )
     if not items:
         summary["status"] = "no_new_blank_fields"
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        print(json.dumps(finalize_summary(summary), ensure_ascii=False, indent=2))
         return 0
 
     apply_script = BRIEFING_ROOT / "src" / "company_backfill_apply.py"
@@ -545,7 +561,7 @@ def main() -> int:
     summary["apply_result"] = apply_result
     if apply_result["returncode"] != 0:
         summary["status"] = "apply_failed"
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        print(json.dumps(finalize_summary(summary), ensure_ascii=False, indent=2))
         return apply_result["returncode"]
 
     if not args.dry_run and not args.skip_rebuild:
@@ -557,19 +573,11 @@ def main() -> int:
         summary["rebuild_results"] = rebuild_results
         if any(result["returncode"] != 0 for result in rebuild_results):
             summary["status"] = "rebuild_or_qa_failed"
-            print(json.dumps(summary, ensure_ascii=False, indent=2))
+            print(json.dumps(finalize_summary(summary), ensure_ascii=False, indent=2))
             return 1
 
     summary["status"] = "ok"
-    summary["finished_at"] = datetime.now().isoformat(timespec="seconds")
-    log_path = LOG_DIR / f"company_column_backfill_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    log_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    (LOG_DIR / "company_column_backfill_latest.json").write_text(
-        json.dumps(summary, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    summary["log_path"] = str(log_path)
-    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    print(json.dumps(finalize_summary(summary), ensure_ascii=False, indent=2))
     return 0
 
 
