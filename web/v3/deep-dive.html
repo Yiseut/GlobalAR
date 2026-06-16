@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>深度下钻 · v3</title>
+<title>深度图谱 · v3</title>
 <link rel="icon" href="data:," />
 <link rel="stylesheet" href="./styles.css" />
 <style>
@@ -118,30 +118,30 @@
   <main class="content">
 
     <section class="page-hero">
-      <div class="eyebrow-chip"><span class="dot"></span>Drill-down · L1 › L2 › L3</div>
+      <div class="eyebrow-chip"><span class="dot"></span>Deep Map · L1 › L2 › L3</div>
       <h1>
-        深度下钻
+        深度图谱
         <span class="h1-en">Deep Drilldown · 三级分类</span>
       </h1>
       <p class="lede">单维排行和 L1×L2 矩阵之外，这一页把<strong>二级以下</strong>的真实结构摊开看 —
-        979 款产品在 <strong>材料分类 8→32→69</strong> 三级、和 <strong>商业 10→56→技术</strong> 路线上的逐层分布。
-        旭日图<strong style="color:var(--accent-2);">点扇区即下钻</strong>，每个叶子都能点开看背后企业、并一键跳到公司列表或子赛道页。</p>
+        942 款产品在 <strong>材料分类 16→47→87</strong> 三级、和 <strong>商业 9→56→技术</strong> 路线上的逐层分布。
+        旭日图呈现 L1 / L2 / L3 层级，叶子节点关联背后的企业，并与公司列表和子赛道页相互贯通。</p>
       <div class="stat-row">
-        <span><span class="num" data-count-up="979">979</span> 款产品 · <span class="num" data-count-up="362">362</span> 家企业</span>
-        <span>材料 <span class="num" data-count-up="8">8</span> · <span class="num" data-count-up="32">32</span> · <span class="num" data-count-up="69">69</span> 三级</span>
-        <span>商业 <span class="num" data-count-up="10">10</span> L1 · <span class="num" data-count-up="56">56</span> L2</span>
+        <span><span class="num" data-count-up="942">942</span> 款产品 · <span class="num" data-count-up="329">329</span> 家企业</span>
+        <span>材料 <span class="num" data-count-up="16">16</span> · <span class="num" data-count-up="47">47</span> · <span class="num" data-count-up="87">87</span> 三级</span>
+        <span>商业 <span class="num" data-count-up="9">9</span> L1 · <span class="num" data-count-up="56">56</span> L2</span>
       </div>
     </section>
 
     <!-- ============ SUNBURST · MATERIAL 3-tier ============ -->
     <section class="block">
       <div class="section-head">
-        <h2>材料三级分类 · 旭日下钻</h2>
-        <span class="cn">· L1 → L2 → L3 · 8 / 32 / 69</span><span class="en">Material 3-level · sunburst drill</span>
+        <h2>材料三级分类 · 旭日图</h2>
+        <span class="cn">· L1 → L2 → L3 · 16 / 47 / 87</span><span class="en">Material 3-level · sunburst map</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">从大类到细分材料 — 内环是 8 个材料大类，往外是 L2、L3</div>
-        <div class="chart-sub">扇区面积 ∝ 产品数。<strong style="color:var(--accent-2);">点有子级的扇区</strong>放大下钻，点最外层（L3 叶子）打开明细抽屉看具体企业；点中心或面包屑回退。右侧卡片实时跟随当前焦点。</div>
+        <div class="chart-title">从大类到细分材料 — 内环是 16 个材料大类，往外是 L2、L3</div>
+        <div class="chart-sub">扇区面积 ∝ 产品数；内外层级展示材料路径，侧边卡片随当前焦点呈现关键数据。</div>
         <div class="sb-layout">
           <div class="sb-stage">
             <div class="sb-crumb" id="sb-crumb"></div>
@@ -155,12 +155,12 @@
     <!-- ============ MILLER · COMMERCIAL L1>L2>tech ============ -->
     <section class="block">
       <div class="section-head">
-        <h2>商业路线逐列下钻</h2>
-        <span class="cn">· L1 → L2 → 技术/材料源</span><span class="en">Commercial path · column drill</span>
+        <h2>商业路线逐列图</h2>
+        <span class="cn">· L1 → L2 → 技术/材料源</span><span class="en">Commercial path · column map</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">从商业赛道到子赛道再到底层技术 — 一列点一层</div>
-        <div class="chart-sub">点第一列的 L1 赛道，第二列展开它的 L2 子赛道；再点 L2，第三列展开底层技术/材料源。点任意带 <span style="color:var(--accent-2);">›</span> 的项继续下钻，点最末项打开明细抽屉。</div>
+        <div class="chart-sub">商业路线以 L1、L2、技术 / 材料源逐列呈现，从大类到末级节点保留对应企业明细。</div>
         <div class="mc-wrap" id="mc-wrap">
           <div class="mc-col"><div class="mc-col-head">L1 · 商业赛道</div><div id="mc-l1"></div></div>
           <div class="mc-col"><div class="mc-col-head">L2 · 子赛道</div><div id="mc-l2"><div class="mc-empty">← 先选一个 L1</div></div></div>
@@ -178,7 +178,7 @@
     </section>
 
     <div class="footnote">
-      <span>v3 · 深度下钻 Deep Drilldown · 材料 8/32/69 · 商业 10/56 · <span data-bind-text="generated_at_short">—</span></span>
+      <span>v3 · 深度图谱 Deep Map · 材料 16/47/87 · 商业 9/56 · <span data-bind-text="generated_at_short">—</span></span>
       <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
     </div>
 
@@ -186,10 +186,10 @@
 </div>
 
 <div class="dd-backdrop" id="dd-backdrop"></div>
-<aside class="dd-drill" id="dd-drill" role="dialog" aria-label="明细下钻">
+<aside class="dd-drill" id="dd-drill" role="dialog" aria-label="明细详情">
   <div class="head">
     <button class="close-btn" type="button" aria-label="关闭">×</button>
-    <span class="stamp" id="dd-stamp">Leaf · drill-down</span>
+    <span class="stamp" id="dd-stamp">Leaf · detail</span>
     <h3 id="dd-title">—</h3>
     <div class="sub" id="dd-sub">—</div>
   </div>
@@ -323,7 +323,7 @@
       const arc = arcs[+el.getAttribute("data-idx")];
       el.addEventListener("mousemove", (e) => {
         const pct = ((arc.node.n / totalN) * 100).toFixed(1);
-        tip.innerHTML = `<b>${esc(arc.node.name)}</b><br>${arc.node.n} 款产品 · <span class="pct">${pct}%</span>${arc.node.children && arc.node.children.length ? " · 点击下钻" : " · 点击看明细"}`;
+        tip.innerHTML = `<b>${esc(arc.node.name)}</b><br>${arc.node.n} 款产品 · <span class="pct">${pct}%</span>${arc.node.children && arc.node.children.length ? " · 子级结构" : " · 明细"}`;
         tip.style.left = (e.clientX + 14) + "px"; tip.style.top = (e.clientY + 14) + "px"; tip.classList.add("show");
       });
       el.addEventListener("mouseleave", () => tip.classList.remove("show"));
@@ -376,7 +376,7 @@
         const hasKids = k.children && k.children.length;
         return `<div class="fc-row" data-i="${i}">
           <span class="sw" style="background:${col}"></span>
-          <span class="nm">${esc(k.name)}<small>${hasKids ? (k.children.length + " 个下级 · 点击下钻") : "叶子 · 点击看明细"}</small></span>
+          <span class="nm">${esc(k.name)}<small>${hasKids ? (k.children.length + " 个下级 · 结构") : "叶子 · 明细"}</small></span>
           <span class="n">${k.n}</span>
           <span class="bar"><i style="width:${(k.n / maxN * 100).toFixed(0)}%;background:${col}"></i></span>
         </div>`;
@@ -531,9 +531,9 @@
 
   // ===================== FINDINGS =====================
   const findings = [
-    { wash: "w-rose-deep", stamp: "Finding · 01", lead: "能量设备是最碎的大类。", num: "394", unit: "products · 7 个 L2", body: "材料 L1「能量设备」下有激光/射频/超声/光IPL 等 7 个 L2、20+ 个 L3 细分 — 没有单一霸主。下钻到 L3 才能看清「色素激光 vs 脱毛激光 vs 点阵」这种真正的竞争边界。" },
-    { wash: "w-plum", stamp: "Finding · 02", lead: "注射类高度集中在 HA。", num: "196", unit: "HA / 297 注射", body: "注射类 297 款里 196 款是透明质酸 HA（66%），其余被胶原刺激剂、美塑、肉毒分摊。这解释了为什么注射赛道的护城河更多在「材料工艺 + 监管」而非品类宽度。" },
-    { wash: "w-apricot", stamp: "Finding · 03", lead: "二级以下才看得见差异。", num: "69", unit: "L3 leaf categories", body: "只看 L1（8 类）会把「单极射频」和「微聚焦超声」混为一谈。展开到 69 个 L3 叶子，才能把监管路径、临床证据、竞争格局逐一对上 — 这正是这一页存在的意义。" },
+    { wash: "w-rose-deep", stamp: "Finding · 01", lead: "能量设备是最碎的大类。", num: "389", unit: "products · 8 个 L2", body: "材料 L1「能量设备」下有激光/射频/超声/光IPL 等 8 个 L2、30+ 个 L3 细分 — 没有单一霸主。细分到 L3 才能看清「色素激光 vs 脱毛激光 vs 点阵」这种真正的竞争边界。" },
+    { wash: "w-plum", stamp: "Finding · 02", lead: "注射类高度集中在 HA。", num: "181", unit: "HA / 286 注射", body: "注射类 286 款里 181 款是透明质酸 HA（约 63%），其余被胶原刺激剂、美塑、肉毒分摊。这解释了为什么注射赛道的护城河更多在「材料工艺 + 监管」而非品类宽度。" },
+    { wash: "w-apricot", stamp: "Finding · 03", lead: "二级以下才看得见差异。", num: "87", unit: "L3 leaf categories", body: "只看 L1（16 类）会把「单极射频」和「微聚焦超声」混为一谈。进入 87 个 L3 叶子，才能把监管路径、临床证据、竞争格局逐一对上 — 这正是这一页存在的意义。" },
   ];
   document.getElementById("finding-cards").innerHTML = findings.map(f => `
     <article class="editorial-block has-wash ${f.wash} wash-bottom-left">

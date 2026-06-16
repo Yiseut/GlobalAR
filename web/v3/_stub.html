@@ -55,7 +55,7 @@
       en: "Track Structure",
       lede: "10 个 L1 × 64 个 L2 分类的产品树。按 Candidate A 色板分层着色，堆叠柱内嵌、技术路线树都基于这套色阶。",
       modules: [
-        { wash: "w-rose-deep",  stamp: "Module 01", lead: "L1 × L2 矩阵", body: "横轴 L1、纵轴 L2，单元格显示产品数 + 公司数，点击下钻到 topic 页。" },
+        { wash: "w-rose-deep",  stamp: "Module 01", lead: "L1 × L2 矩阵", body: "L1 与 L2 共同呈现产品数和公司数，并关联到对应子赛道详情。" },
         { wash: "w-apricot",    stamp: "Module 02", lead: "技术路线 sunburst", body: "classification_layer JSON 解析后，commercial × technology × regulatory 三层旭日图。" },
         { wash: "w-plum",       stamp: "Module 03", lead: "Sub-track 时序", body: "每个 sub-track 按年份的新产品上市节奏，揭示赛道生命周期阶段。" },
       ],
@@ -89,7 +89,7 @@
       eyebrow: "Entity · Company list",
       zh: "公司列表",
       en: "Companies",
-      lede: "372 家上游企业的完整列表 — 可按主赛道、HQ 国家、上市状态、FDA 准入数、产品数排序与筛选；点击进入公司画像页。",
+      lede: "372 家上游企业的完整列表 — 可按主赛道、HQ 国家、上市状态、FDA 准入数、产品数排序与筛选，并关联到公司画像。",
       modules: [
         { wash: "w-rose-deep", stamp: "Module 01", lead: "可筛选公司表", body: "筛选器：赛道 / HQ / 上市状态 / FDA 状态 / 产品数。默认按产品数降序。" },
         { wash: "w-apricot",   stamp: "Module 02", lead: "价值链定位标签", body: "Manufacturer 316 / Brand Owner 42 / R&D-OEM 8 / Biotech 3 / Service 2 — 视化定位徽章。" },
@@ -110,10 +110,10 @@
     },
     "topic": {
       active: "topic-ebd",
-      eyebrow: "Drill-down · Sub-track topic",
+      eyebrow: "Detail · Sub-track topic",
       zh: "子赛道详情",
       en: "Sub-track Topic",
-      lede: "URL 参数 ?segment=ebd|injectables|... — 单赛道下钻页：核心指标、Top 公司、Top 品牌、监管证据、技术细分。",
+      lede: "单赛道详情页汇总核心指标、Top 公司、Top 品牌、监管证据和技术细分。",
       modules: [
         { wash: "w-rose-deep", stamp: "Module 01", lead: "赛道核心指标 + 子分布", body: "继承总览的 KPI 卡形式，但数字限定为该赛道；附 sub-track 3 档色阶堆叠柱。" },
         { wash: "w-apricot",   stamp: "Module 02", lead: "Top 公司 + 品牌矩阵", body: "Top 12 公司按产品数排序，每家展示主品牌、HQ、监管覆盖、估值带。" },

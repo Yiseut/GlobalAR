@@ -1,0 +1,212 @@
+{
+  "generated_at": "2026-06-15T15:44:04.894086+00:00",
+  "apply": true,
+  "db_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
+  "marker": "ref_hygiene_20260615",
+  "files": {
+    "manual_product_fact_evidence.csv": {
+      "status": "changed",
+      "input_rows": 15302,
+      "output_rows": 15302,
+      "changed_rows": 3352,
+      "actions": {
+        "product_family_id_clear_orphan": 320,
+        "company_id_clear_orphan": 1084,
+        "product_family_id_remap": 2203,
+        "company_id_fill_from_family": 9
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_product_fact_evidence_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "product_specification_evidence.csv": {
+      "status": "changed",
+      "input_rows": 53746,
+      "output_rows": 53746,
+      "changed_rows": 9576,
+      "actions": {
+        "product_family_id_remap": 4970,
+        "product_family_id_clear_orphan": 2984,
+        "company_id_clear_orphan": 2978,
+        "company_id_remap_by_name": 292,
+        "company_id_fill_from_family": 66
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\product_specification_evidence_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "manual_evidence_promotion_log.csv": {
+      "status": "changed",
+      "input_rows": 14312,
+      "output_rows": 14312,
+      "changed_rows": 3264,
+      "actions": {
+        "product_family_id_clear_orphan": 346,
+        "company_id_clear_orphan": 1040,
+        "product_family_id_remap": 2133
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\manual_evidence_promotion_log_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "company_media_asset_index.csv": {
+      "status": "changed",
+      "input_rows": 23308,
+      "output_rows": 23308,
+      "changed_rows": 4387,
+      "actions": {
+        "product_family_id_remap": 1878,
+        "product_family_id_clear_orphan": 1773,
+        "company_id_clear_orphan": 1794,
+        "company_id_remap_by_name": 64,
+        "company_id_fill_from_family": 37
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_media_asset_index_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "official_website_master.csv": {
+      "status": "changed",
+      "input_rows": 19866,
+      "output_rows": 19866,
+      "changed_rows": 3770,
+      "actions": {
+        "product_family_id_remap": 1549,
+        "product_family_id_clear_orphan": 1604,
+        "company_id_clear_orphan": 1638,
+        "company_id_remap_by_name": 19,
+        "company_id_fill_from_family": 37
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\official_website_master_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "company_official_source_plan.csv": {
+      "status": "changed",
+      "input_rows": 3677,
+      "output_rows": 3677,
+      "changed_rows": 762,
+      "actions": {
+        "company_id_clear_orphan": 309,
+        "product_family_id_remap": 315,
+        "product_family_id_clear_orphan": 336,
+        "company_id_fill_from_family": 9
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_official_source_plan_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "mdr_ce_search_plan.csv": {
+      "status": "changed",
+      "input_rows": 2607,
+      "output_rows": 2607,
+      "changed_rows": 510,
+      "actions": {
+        "product_family_id_remap": 309,
+        "product_family_id_clear_orphan": 201,
+        "company_id_clear_orphan": 84,
+        "company_id_fill_from_family": 9
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\mdr_ce_search_plan_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "company_official_website.csv": {
+      "status": "changed",
+      "input_rows": 368,
+      "output_rows": 315,
+      "changed_rows": 54,
+      "actions": {
+        "drop_unresolved_company_pk_row": 53,
+        "rows_dropped": 53,
+        "company_id_remap_by_name": 1
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_official_website_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "company_capital_structure.csv": {
+      "status": "changed",
+      "input_rows": 72,
+      "output_rows": 66,
+      "changed_rows": 6,
+      "actions": {
+        "drop_unresolved_company_pk_row": 6,
+        "rows_dropped": 6
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_capital_structure_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "listed_company_batch.csv": {
+      "status": "changed",
+      "input_rows": 61,
+      "output_rows": 61,
+      "changed_rows": 6,
+      "actions": {
+        "company_id_clear_orphan": 6
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\listed_company_batch_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "company_financial_metrics.csv": {
+      "status": "changed",
+      "input_rows": 16,
+      "output_rows": 16,
+      "changed_rows": 5,
+      "actions": {
+        "company_id_clear_orphan": 5
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_financial_metrics_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "registration_evidence.csv": {
+      "status": "changed",
+      "input_rows": 1583,
+      "output_rows": 1583,
+      "changed_rows": 4,
+      "actions": {
+        "company_id_remap_by_name": 4
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\registration_evidence_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "briefing_update_candidates.csv": {
+      "status": "changed",
+      "input_rows": 422,
+      "output_rows": 422,
+      "changed_rows": 37,
+      "actions": {
+        "company_id_clear_orphan": 37
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\briefing_update_candidates_backup_before_reference_key_hygiene_20260615_20260615_234404.csv"
+    },
+    "company_official_source_evidence.jsonl": {
+      "status": "changed",
+      "input_rows": 26975,
+      "output_rows": 26975,
+      "changed_rows": 5390,
+      "actions": {
+        "product_family_id_remap": 2051,
+        "product_family_id_clear_orphan": 2015,
+        "company_id_clear_orphan": 2489,
+        "company_id_remap_by_name": 94,
+        "company_id_fill_from_family": 54
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_official_source_evidence_backup_before_reference_key_hygiene_20260615_20260615_234404.jsonl"
+    },
+    "mdr_ce_evidence_candidates.jsonl": {
+      "status": "changed",
+      "input_rows": 5620,
+      "output_rows": 5620,
+      "changed_rows": 720,
+      "actions": {
+        "product_family_id_remap": 447,
+        "product_family_id_clear_orphan": 273
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\mdr_ce_evidence_candidates_backup_before_reference_key_hygiene_20260615_20260615_234404.jsonl"
+    },
+    "company_background_evidence.jsonl": {
+      "status": "changed",
+      "input_rows": 52,
+      "output_rows": 52,
+      "changed_rows": 10,
+      "actions": {
+        "company_id_clear_orphan": 10
+      },
+      "backup": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\company_background_evidence_backup_before_reference_key_hygiene_20260615_20260615_234404.jsonl"
+    }
+  },
+  "totals": {
+    "audit_actions": 37935,
+    "changed_rows": 31853,
+    "rows_dropped": 59,
+    "actions": {
+      "product_family_id_clear_orphan": 9852,
+      "company_id_clear_orphan": 11474,
+      "product_family_id_remap": 15855,
+      "company_id_fill_from_family": 221,
+      "company_id_remap_by_name": 474,
+      "drop_unresolved_company_pk_row": 59
+    }
+  }
+}

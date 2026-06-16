@@ -22,19 +22,19 @@
         监管脉搏
         <span class="h1-en">Regulatory Pulse</span>
       </h1>
-      <p class="lede">567 条注册证据 · 按年度、通道、辖区切片，识别监管节奏的加速期与品类轮动。</p>
-      <div class="stat-row">
-        <span>FDA 主导 <span class="num">462</span> 条 (81%)</span>
-        <span>CE/MDR / EUDAMED <span class="num">72</span> 条</span>
-        <span>Manufacturer IFU <span class="num">73</span> 条</span>
-        <span>近五年加速 <span class="num">110</span> 条 (2022–2026)</span>
+      <p class="lede" id="reg-hero-lede">1,599 条注册证据 · 按年度、通道、辖区切片，识别监管节奏的加速期与品类轮动。</p>
+      <div class="stat-row" id="reg-stat-row">
+        <span>US <span class="num">746</span> 条</span>
+        <span>EU / Global <span class="num">285</span> 条</span>
+        <span>510(k) <span class="num">334</span> 条</span>
+        <span>近五年 <span class="num">253</span> 条 (2022–2026)</span>
       </div>
     </section>
 
     <section class="block">
       <div class="section-head">
         <h2>核心读数</h2>
-        <span class="cn">· 567 条证据</span><span class="en">Headline numbers</span>
+        <span class="cn" id="reg-headline-count">· 1,599 条证据</span><span class="en">Headline numbers</span>
       </div>
       <div class="kpi-grid">
         <article class="kpi-cell lede has-wash w-rose-deep">
@@ -42,43 +42,43 @@
             <span class="en">2022–2026 acceleration</span>
             <span class="zh">近五年新增注册证据</span>
           </div>
-          <span class="value">110</span>
-          <span class="delta">vs 2017–2021 的 67 条 — 1.6×</span>
+          <span class="value" id="reg-kpi-recent">253</span>
+          <span class="delta" id="reg-kpi-recent-delta">vs 2017–2021 的 115 条 · 2.2×</span>
         </article>
         <article class="kpi-cell has-wash w-rose">
           <div class="label"><span class="en">510(K) pathway</span><span class="zh">510(k) 通道占比</span></div>
-          <span class="value">59%</span>
-          <span class="delta">336 / 567 总条数</span>
+          <span class="value" id="reg-kpi-top-pathway-pct">20.9%</span>
+          <span class="delta" id="reg-kpi-top-pathway-delta">510(k) · 334 / 1,599</span>
         </article>
         <article class="kpi-cell has-wash w-peach">
           <div class="label"><span class="en">FDA · EU spread</span><span class="zh">FDA / CE 比</span></div>
-          <span class="value">6.4×</span>
-          <span class="delta">FDA 462 / CE/MDR 72</span>
+          <span class="value" id="reg-kpi-us-eu">2.6×</span>
+          <span class="delta" id="reg-kpi-us-eu-delta">US 746 / EU-family 285</span>
         </article>
         <article class="kpi-cell has-wash w-slate">
           <div class="label"><span class="en">PMA · high-risk</span><span class="zh">PMA / 高风险</span></div>
-          <span class="value">7</span>
-          <span class="delta">PMA 1 + PMA Supplement 6</span>
+          <span class="value" id="reg-kpi-pma">—</span>
+          <span class="delta" id="reg-kpi-pma-delta">PMA / PMA Supplement</span>
         </article>
         <article class="kpi-cell has-wash w-sand">
           <div class="label"><span class="en">Jurisdictions</span><span class="zh">辖区数</span></div>
-          <span class="value">5</span>
-          <span class="delta">US 462 · EU/Global 72 · CN 2</span>
+          <span class="value" id="reg-kpi-jurisdictions">10</span>
+          <span class="delta" id="reg-kpi-jurisdictions-delta">US · EU · CN · KR · Global</span>
         </article>
         <article class="kpi-cell has-wash w-plum">
           <div class="label"><span class="en">Pre-1990 historical</span><span class="zh">1990 前历史证据</span></div>
-          <span class="value">5</span>
-          <span class="delta">最早可回溯到 1984 年</span>
+          <span class="value" id="reg-kpi-source-classes">12</span>
+          <span class="delta">regulatory pathway classes</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
           <div class="label"><span class="en">Undated rows</span><span class="zh">无日期行</span></div>
-          <span class="value">226</span>
-          <span class="delta">IFU/标签证据多未带 approval date</span>
+          <span class="value" id="reg-kpi-review">120</span>
+          <span class="delta">needs review / new candidate</span>
         </article>
         <article class="kpi-cell has-wash w-lavender">
           <div class="label"><span class="en">2022 peak</span><span class="zh">2022 单年峰值</span></div>
-          <span class="value">30</span>
-          <span class="delta">2024 次高 29 · 2025 共 23</span>
+          <span class="value" id="reg-kpi-peak-year">77</span>
+          <span class="delta" id="reg-kpi-peak-year-delta">2024 peak</span>
         </article>
       </div>
     </section>
@@ -102,38 +102,40 @@
     <section class="block">
       <div class="section-head">
         <h2>监管通道分类</h2>
-        <span class="cn">· 567 records</span><span class="en">Regulatory pathway breakdown</span>
+        <span class="cn" id="reg-pathway-count">· 1,599 records</span><span class="en">Regulatory pathway breakdown</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">监管通道与文档类型的构成</div>
         <div class="chart-sub">510(k) 占主导是 EBD/注射赛道的本质 — 多数为 Class II 设备 / 已上市等同性比较。PMA 数量极少，意味着 Class III / 高风险植入物在样本中稀缺。</div>
-        <div class="donut-row">
+        <div class="donut-row" id="reg-pathway-donut">
           <div class="donut-wrap">
             <svg width="280" height="280" viewBox="0 0 280 280" aria-label="监管通道分布">
               <g transform="rotate(-90 140 140)">
-                <!-- circumference 2π*98 ≈ 615.75 ; total 567 -->
-                <circle class="reg-slice" data-pathway="510(k)" data-n="337" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="366.05 249.70" stroke-dashoffset="0"/>
-                <circle class="reg-slice" data-pathway="FDA label/summary/IFU" data-n="118" r="98" cx="140" cy="140" fill="none" stroke="#4A3D52" stroke-width="38" stroke-dasharray="128.16 487.59" stroke-dashoffset="-366.05"/>
-                <circle class="reg-slice" data-pathway="Manufacturer IFU" data-n="73" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="79.28 536.47" stroke-dashoffset="-494.21"/>
-                <circle class="reg-slice" data-pathway="EUDAMED" data-n="16" r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="17.38 598.37" stroke-dashoffset="-573.49"/>
-                <circle class="reg-slice" data-pathway="CE/MDR" data-n="16" r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="17.38 598.37" stroke-dashoffset="-590.87"/>
-                <circle class="reg-slice" data-pathway="PMA Supplement" data-n="6" r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="6.52 609.23" stroke-dashoffset="-608.25"/>
-                <circle class="reg-slice" data-pathway="PMA" data-n="1" r="98" cx="140" cy="140" fill="none" stroke="#EC9B73" stroke-width="38" stroke-dasharray="1.09 614.66" stroke-dashoffset="-614.77"/>
+                <!-- circumference 2π*98 ≈ 615.75 ; total 1,599 -->
+                <circle class="reg-slice" data-pathway="510(k)" data-n="334" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="128.62 487.13" stroke-dashoffset="0"/>
+                <circle class="reg-slice" data-pathway="Automated official-source reacquisition closure" data-n="332" r="98" cx="140" cy="140" fill="none" stroke="#4A3D52" stroke-width="38" stroke-dasharray="127.85 487.90" stroke-dashoffset="-128.62"/>
+                <circle class="reg-slice" data-pathway="user-confirmed candidate link / regulatory status" data-n="135" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="51.99 563.76" stroke-dashoffset="-256.47"/>
+                <circle class="reg-slice" data-pathway="FDA label / summary / IFU" data-n="107" r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="41.20 574.55" stroke-dashoffset="-308.45"/>
+                <circle class="reg-slice" data-pathway="Medical device registration" data-n="82" r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="31.58 584.17" stroke-dashoffset="-349.66"/>
+                <circle class="reg-slice" data-pathway="IFU / official labeling" data-n="71" r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="27.34 588.41" stroke-dashoffset="-381.23"/>
+                <circle class="reg-slice" data-pathway="direct normalization of existing evidence" data-n="65" r="98" cx="140" cy="140" fill="none" stroke="#EC9B73" stroke-width="38" stroke-dasharray="25.03 590.72" stroke-dashoffset="-408.57"/>
+                <circle class="reg-slice" data-pathway="Other pathways" data-n="473" r="98" cx="140" cy="140" fill="none" stroke="#A8B59A" stroke-width="38" stroke-dasharray="182.14 433.61" stroke-dashoffset="-433.61"/>
               </g>
             </svg>
             <div class="donut-center">
-              <span class="big">567</span>
+              <span class="big">1,599</span>
               <span class="small">registration records</span>
             </div>
           </div>
           <div class="donut-list">
-            <div class="row reg-row" data-pathway="510(k)"><span class="sw" style="background:#8E3A3A"></span><span class="name">510(k) · 美国 Class II 等同</span><span class="num">337</span><span class="pct">59.4%</span></div>
-            <div class="row reg-row" data-pathway="FDA label/summary/IFU"><span class="sw" style="background:#4A3D52"></span><span class="name">FDA label / summary / IFU</span><span class="num">118</span><span class="pct">20.8%</span></div>
-            <div class="row reg-row" data-pathway="Manufacturer IFU"><span class="sw" style="background:#6B5A75"></span><span class="name">IFU · 厂家说明书</span><span class="num">73</span><span class="pct">12.9%</span></div>
-            <div class="row reg-row" data-pathway="EUDAMED"><span class="sw" style="background:#5A6878"></span><span class="name">EUDAMED · 欧盟数据库</span><span class="num">16</span><span class="pct">2.8%</span></div>
-            <div class="row reg-row" data-pathway="CE/MDR"><span class="sw" style="background:#D9AE91"></span><span class="name">CE/MDR · 证书或声明</span><span class="num">16</span><span class="pct">2.8%</span></div>
-            <div class="row reg-row" data-pathway="PMA Supplement"><span class="sw" style="background:#CFB58E"></span><span class="name">PMA Supplement · Class III 增补</span><span class="num">6</span><span class="pct">1.1%</span></div>
-            <div class="row reg-row" data-pathway="PMA"><span class="sw" style="background:#EC9B73"></span><span class="name">PMA · Class III 原始</span><span class="num">1</span><span class="pct">0.2%</span></div>
+            <div class="row reg-row" data-pathway="510(k)"><span class="sw" style="background:#8E3A3A"></span><span class="name">510(k) · 美国 Class II 等同</span><span class="num">334</span><span class="pct">20.9%</span></div>
+            <div class="row reg-row" data-pathway="Automated official-source reacquisition closure"><span class="sw" style="background:#4A3D52"></span><span class="name">Official-source closure</span><span class="num">332</span><span class="pct">20.8%</span></div>
+            <div class="row reg-row" data-pathway="user-confirmed candidate link / regulatory status"><span class="sw" style="background:#6B5A75"></span><span class="name">User-confirmed candidate link</span><span class="num">135</span><span class="pct">8.4%</span></div>
+            <div class="row reg-row" data-pathway="FDA label / summary / IFU"><span class="sw" style="background:#5A6878"></span><span class="name">FDA label / summary / IFU</span><span class="num">107</span><span class="pct">6.7%</span></div>
+            <div class="row reg-row" data-pathway="Medical device registration"><span class="sw" style="background:#D9AE91"></span><span class="name">Medical device registration</span><span class="num">82</span><span class="pct">5.1%</span></div>
+            <div class="row reg-row" data-pathway="IFU / official labeling"><span class="sw" style="background:#CFB58E"></span><span class="name">IFU / official labeling</span><span class="num">71</span><span class="pct">4.4%</span></div>
+            <div class="row reg-row" data-pathway="direct normalization of existing evidence"><span class="sw" style="background:#EC9B73"></span><span class="name">Direct normalization evidence</span><span class="num">65</span><span class="pct">4.1%</span></div>
+            <div class="row reg-row" data-pathway="Other pathways"><span class="sw" style="background:#A8B59A"></span><span class="name">Other pathways</span><span class="num">473</span><span class="pct">29.6%</span></div>
           </div>
         </div>
       </div>
@@ -178,35 +180,35 @@
 
     <section class="block">
       <div class="section-head">
-        <h2>解读与下钻</h2>
-        <span class="cn">· 三组发现</span><span class="en">Interpretation & drill-down</span>
+        <h2>解读与延伸</h2>
+        <span class="cn">· 三组发现</span><span class="en">Interpretation & detail</span>
       </div>
       <div class="editorial-row">
         <article class="editorial-block has-wash w-rose-deep wash-bottom-left">
           <span class="stamp">Finding · 01</span>
-          <div class="lead"><em>2022</em> 之后年度证据量翻倍。</div>
-          <div class="num-pair"><span class="num">1.6×</span><span class="unit">2022-26 vs 2017-21</span></div>
-          <div class="body">2017–2021 共 <em>67</em> 条；2022–2026 已抓到 <em>110</em> 条，年均 <em>22</em> 条。2022 单年 <em>30</em> 条创历史高，2024 <em>29</em> 条紧随。Merz / Allergan / Revance / Apyx / Lumenis 五家在 2022 后密集追加 510(k)。</div>
-          <a class="cta" href="./tracks.html?segment=ebd">查看 EBD 头部公司 ↗</a>
+          <div class="lead"><em>2022</em> 之后年度证据量继续抬升。</div>
+          <div class="num-pair"><span class="num" id="reg-finding-recent-ratio">—</span><span class="unit">2022-26 vs 2017-21</span></div>
+          <div class="body" id="reg-finding-recent-body">近五年与前五年的对比会随 build 数据自动刷新，用来观察注册证据采集与监管活动的加速段。</div>
+          <a class="cta" href="./tracks.html?segment=ebd">进入 EBD 头部公司 ↗</a>
         </article>
         <article class="editorial-block has-wash w-apricot wash-bottom-left">
           <span class="stamp">Finding · 02</span>
           <div class="lead">CE/MDR 仍是结构性缺口。</div>
-          <div class="num-pair"><span class="num">72</span><span class="unit">vs FDA 462 条</span></div>
-          <div class="body">本轮补到 <em>72</em> 条 CE/EU 类证据（EUDAMED <em>16</em> + CE/MDR 证书 <em>16</em> + Manufacturer IFU 引用 <em>40</em>）vs <em>462</em> 条 FDA。后续 CE/MDR 只按定期后台计划补充，不再把内部工作清单暴露在仪表盘页面里。</div>
+          <div class="num-pair"><span class="num" id="reg-finding-eu-count">—</span><span class="unit" id="reg-finding-eu-unit">EU-family evidence</span></div>
+          <div class="body" id="reg-finding-eu-body">EU-family 证据与 US 证据的比例会随最新注册证据表刷新。后续 CE/MDR 只按定期后台计划补充，不再把内部工作清单暴露在仪表盘页面里。</div>
         </article>
         <article class="editorial-block has-wash w-plum wash-bottom-left">
           <span class="stamp">Finding · 03</span>
           <div class="lead">PMA 稀缺意味着风险等级倾斜。</div>
-          <div class="num-pair"><span class="num">7</span><span class="unit">class III · entire dataset</span></div>
-          <div class="body">PMA + PMA Supplement 共 <em>7</em> 条 — 全球医美主流停在 Class II/IIa；植入物、神经调控等高风险路径在本库证据仍单薄。</div>
-          <a class="cta" href="./tracks.html?segment=implants">查看植入物赛道 ↗</a>
+          <div class="num-pair"><span class="num" id="reg-finding-pma-count">—</span><span class="unit">PMA-family rows</span></div>
+          <div class="body" id="reg-finding-pma-body">PMA-family 证据占比会随监管通道表刷新。全球医美主流仍以 Class II / IIa 和官方标签、IFU、注册证据为主，高风险路径需要单独持续补证。</div>
+          <a class="cta" href="./tracks.html?segment=implants">进入植入物赛道 ↗</a>
         </article>
       </div>
     </section>
 
     <div class="footnote">
-      <span>v3 · 监管脉搏 Regulatory Pulse · 567 records · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span id="reg-footnote">v3 · 监管脉搏 Regulatory Pulse · 1,599 records · updated <span data-bind-text="generated_at_short">—</span></span>
       <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
     </div>
 
@@ -235,6 +237,103 @@
     if (d && d.generated_at) {
       const s = d.generated_at.slice(0,10).replace(/-/g,"·");
       document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = s; });
+    }
+  })();
+
+  (function renderRegulatorySnapshot () {
+    const d = window.GLOBAL_AESTHETICS_DATA || {};
+    const summary = d.summary || {};
+    const reg = d.registration_evidence || {};
+    const total = Number(summary.registration_evidence || 0);
+    if (!total) return;
+    const fmt = (n) => Number(n || 0).toLocaleString("en-US");
+    const pct = (n, denom = total) => denom ? `${((Number(n || 0) / denom) * 100).toFixed(1)}%` : "0.0%";
+    const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+    })[ch]);
+    const val = (rows, matcher) => (rows || []).filter(r => matcher(r.name || "")).reduce((sum, r) => sum + Number(r.value || 0), 0);
+    const pathways = (reg.pathways || []).slice();
+    const jurisdictions = reg.jurisdictions || [];
+    const timeline = reg.timeline || [];
+    const usRows = val(jurisdictions, name => name === "US" || name.includes("US /"));
+    const euRows = val(jurisdictions, name => name === "EU" || name.includes("EU"));
+    const recent = timeline.filter(r => Number(r.year) >= 2022 && Number(r.year) <= 2026).reduce((s, r) => s + Number(r.total || 0), 0);
+    const prior = timeline.filter(r => Number(r.year) >= 2017 && Number(r.year) <= 2021).reduce((s, r) => s + Number(r.total || 0), 0);
+    const peak = timeline.slice().sort((a, b) => Number(b.total || 0) - Number(a.total || 0))[0] || {};
+    const topPathway = pathways[0] || { name: "—", value: 0 };
+    const pmaRows = pathways.filter(r => /pma/i.test(r.name || "")).reduce((s, r) => s + Number(r.value || 0), 0);
+
+    document.getElementById("reg-hero-lede").textContent = `${fmt(total)} 条注册证据 · 按年度、通道、辖区切片，识别监管节奏的加速期与品类轮动。`;
+    document.getElementById("reg-headline-count").textContent = `· ${fmt(total)} 条证据`;
+    document.getElementById("reg-pathway-count").textContent = `· ${fmt(total)} records`;
+    const foot = document.getElementById("reg-footnote");
+    if (foot) foot.innerHTML = `v3 · 监管脉搏 Regulatory Pulse · ${fmt(total)} records · updated <span data-bind-text="generated_at_short">—</span>`;
+    const stat = document.getElementById("reg-stat-row");
+    if (stat) {
+      stat.innerHTML = `
+        <span>US <span class="num">${fmt(usRows)}</span> 条</span>
+        <span>EU-family <span class="num">${fmt(euRows)}</span> 条</span>
+        <span>${esc(topPathway.name)} <span class="num">${fmt(topPathway.value)}</span> 条</span>
+        <span>近五年 <span class="num">${fmt(recent)}</span> 条 (2022–2026)</span>
+      `;
+    }
+    document.getElementById("reg-kpi-recent").textContent = fmt(recent);
+    document.getElementById("reg-kpi-recent-delta").textContent = `vs 2017–2021 的 ${fmt(prior)} 条 · ${prior ? (recent / prior).toFixed(1) : "—"}×`;
+    document.getElementById("reg-kpi-top-pathway-pct").textContent = pct(topPathway.value);
+    document.getElementById("reg-kpi-top-pathway-delta").textContent = `${topPathway.name} · ${fmt(topPathway.value)} / ${fmt(total)}`;
+    document.getElementById("reg-kpi-us-eu").textContent = euRows ? `${(usRows / euRows).toFixed(1)}×` : "—";
+    document.getElementById("reg-kpi-us-eu-delta").textContent = `US ${fmt(usRows)} / EU-family ${fmt(euRows)}`;
+    document.getElementById("reg-kpi-pma").textContent = fmt(pmaRows);
+    document.getElementById("reg-kpi-pma-delta").textContent = `PMA-family · ${pct(pmaRows)}`;
+    document.getElementById("reg-kpi-jurisdictions").textContent = fmt(jurisdictions.length);
+    document.getElementById("reg-kpi-jurisdictions-delta").textContent = jurisdictions.slice(0, 5).map(r => `${r.name} ${fmt(r.value)}`).join(" · ");
+    document.getElementById("reg-kpi-source-classes").textContent = fmt(pathways.length);
+    document.getElementById("reg-kpi-review").textContent = fmt((reg.review_status || []).filter(r => /needs_review|manual_new/i.test(r.name || "")).reduce((s, r) => s + Number(r.value || 0), 0));
+    document.getElementById("reg-kpi-peak-year").textContent = fmt(peak.total || 0);
+    document.getElementById("reg-kpi-peak-year-delta").textContent = `${peak.year || "—"} peak`;
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+    const setHTML = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = value;
+    };
+    const recentRatio = prior ? (recent / prior).toFixed(1) : "—";
+    setText("reg-finding-recent-ratio", `${recentRatio}×`);
+    setHTML("reg-finding-recent-body", `2017–2021 共 <em>${fmt(prior)}</em> 条；2022–2026 已抓到 <em>${fmt(recent)}</em> 条。当前峰值为 <em>${peak.year || "—"}</em> 年 <em>${fmt(peak.total || 0)}</em> 条，后续新增证据会在 build 后自动并入。`);
+    setText("reg-finding-eu-count", fmt(euRows));
+    setText("reg-finding-eu-unit", `vs US ${fmt(usRows)} 条`);
+    setHTML("reg-finding-eu-body", `当前 EU-family 证据为 <em>${fmt(euRows)}</em> 条，US 证据为 <em>${fmt(usRows)}</em> 条，US/EU-family 比约 <em>${euRows ? (usRows / euRows).toFixed(1) : "—"}×</em>。后续 CE/MDR 只按定期后台计划补充，不再把内部工作清单暴露在仪表盘页面里。`);
+    setText("reg-finding-pma-count", fmt(pmaRows));
+    setHTML("reg-finding-pma-body", `PMA-family 共 <em>${fmt(pmaRows)}</em> 条，占全部注册证据 <em>${pct(pmaRows)}</em>。全球医美主流仍以 Class II / IIa 和官方标签、IFU、注册证据为主，高风险路径需要单独持续补证。`);
+
+    const colors = ["#8E3A3A", "#4A3D52", "#6B5A75", "#5A6878", "#D9AE91", "#CFB58E", "#EC9B73", "#A8B59A"];
+    const top = pathways.slice(0, 7);
+    const other = pathways.slice(7).reduce((s, r) => s + Number(r.value || 0), 0);
+    const rows = other ? top.concat([{ name: "Other pathways", value: other }]) : top;
+    const circumference = 615.75;
+    let offset = 0;
+    const circles = rows.map((row, index) => {
+      const len = circumference * Number(row.value || 0) / total;
+      const html = `<circle class="reg-slice" data-pathway="${esc(row.name)}" data-n="${Number(row.value || 0)}" r="98" cx="140" cy="140" fill="none" stroke="${colors[index % colors.length]}" stroke-width="38" stroke-dasharray="${len.toFixed(2)} ${(circumference - len).toFixed(2)}" stroke-dashoffset="${(-offset).toFixed(2)}"/>`;
+      offset += len;
+      return html;
+    }).join("");
+    const list = rows.map((row, index) => `
+      <div class="row reg-row" data-pathway="${esc(row.name)}"><span class="sw" style="background:${colors[index % colors.length]}"></span><span class="name">${esc(row.name)}</span><span class="num">${fmt(row.value)}</span><span class="pct">${pct(row.value)}</span></div>
+    `).join("");
+    const donut = document.getElementById("reg-pathway-donut");
+    if (donut && rows.length) {
+      donut.innerHTML = `
+        <div class="donut-wrap">
+          <svg width="280" height="280" viewBox="0 0 280 280" aria-label="监管通道分布">
+            <g transform="rotate(-90 140 140)">${circles}</g>
+          </svg>
+          <div class="donut-center"><span class="big">${fmt(total)}</span><span class="small">registration records</span></div>
+        </div>
+        <div class="donut-list">${list}</div>
+      `;
     }
   })();
 
@@ -298,6 +397,11 @@
         [2013, 11], [2014, 15], [2015, 22], [2016, 12], [2017, 7], [2018, 9], [2019, 21],
         [2020, 17], [2021, 13], [2022, 30], [2023, 23], [2024, 29], [2025, 23], [2026, 6],
       ];
+      const regData = (window.GLOBAL_AESTHETICS_DATA && window.GLOBAL_AESTHETICS_DATA.registration_evidence) || {};
+      const dynamicRows = (regData.timeline || [])
+        .map(r => [Number(r.year), Number(r.total || 0)])
+        .filter(([year, value]) => Number.isFinite(year) && year > 0 && value > 0);
+      if (dynamicRows.length > 1) rows.splice(0, rows.length, ...dynamicRows);
       const width = 1200;
       const height = 260;
       const pad = { top: 26, right: 36, bottom: 46, left: 36 };
@@ -349,13 +453,13 @@
       window.V3Tooltip.attach(col, () => ({
         title: fullYear,
         lines: [`<em>${n}</em> registration records`],
-        hint: "click → companies active that year",
+        hint: "年度活跃企业",
       }));
       col.addEventListener("click", () => {
         // Find companies that filed in this year (lens2 has per-company year cells)
         if (!lens2) {
           window.V3DrillPanel.open({
-            stamp: "Year · drill",
+            stamp: "Year · detail",
             title: fullYear,
             sub: `${n} records · 详细数据请加载 cross-analysis 数据`,
             rows: [],
@@ -369,7 +473,7 @@
             : null;
         }).filter(Boolean).sort((a, b) => b.cell.total - a.cell.total);
         window.V3DrillPanel.open({
-          stamp: "Year timeline · drill",
+          stamp: "Year timeline · detail",
           title: `${fullYear} · ${n} registrations`,
           sub: `${matching.length} 头部公司在该年有新增证据`,
           summary: [
@@ -414,12 +518,13 @@
     document.querySelectorAll(".reg-slice").forEach(s => {
       const pathway = s.getAttribute("data-pathway");
       const n = parseInt(s.getAttribute("data-n") || "0", 10);
+      const regTotal = Number(((window.GLOBAL_AESTHETICS_DATA || {}).summary || {}).registration_evidence || 0) || 1;
       window.V3Tooltip.attach(s, () => ({
         title: pathway,
         lines: [
-          `<em>${n}</em> records · ${(n / 567 * 100).toFixed(1)}% of total`,
+          `<em>${n}</em> records · ${(n / regTotal * 100).toFixed(1)}% of total`,
         ],
-        hint: "click → top companies in pathway",
+        hint: "通道头部企业",
       }));
       s.addEventListener("click", () => openPathwayDrill(pathway, n));
     });
@@ -429,7 +534,7 @@
       window.V3Tooltip.attach(row, () => ({
         title: pathway,
         lines: [`<em>${n}</em> records`],
-        hint: "click → top companies in pathway",
+        hint: "通道头部企业",
       }));
       row.addEventListener("click", () => openPathwayDrill(pathway, n));
     });

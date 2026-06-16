@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-06-15T19:20:48.5717099+08:00",
-  "generated_by": "manual_scope_refresh_20260615",
-  "products": 942,
+  "as_of": "2026-06-16T13:11:38+08:00",
+  "generated_by": "build_data.py",
+  "products": 943,
   "companies": 329,
   "brands": 921,
-  "registrations": 1583
+  "registrations": 1599
 }

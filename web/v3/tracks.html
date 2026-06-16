@@ -22,11 +22,11 @@
         赛道结构
         <span class="h1-en">Track Structure</span>
       </h1>
-      <p class="lede">973 款产品在 9 个商业 L1 × 60 个 L2 × 235 个技术分类上的真实分布 — 一张矩阵看清医美产业的「真」segmentation。<br><small style="opacity:0.65;font-style:italic;">Services 类已排除（独立准入机制 + 商业模式不同）。</small></p>
-      <div class="stat-row">
-        <span><span class="num" data-count-up="9">9</span> 个一级商业赛道 · <span class="num" data-count-up="60">60</span> 个二级</span>
-        <span><span class="num" data-count-up="235">235</span> 个技术分类 · 跨 <span class="num" data-count-up="367">367</span> 家企业</span>
-        <span>头部赛道 EBD <span class="num" data-count-up="480">480</span> · 头部技术 HA <span class="num" data-count-up="184">184</span></span>
+      <p class="lede" id="track-hero-lede">942 款产品在 9 个商业 L1 × 56 个 L2 × 267 个技术分类上的真实分布 — 一张矩阵看清医美产业的「真」segmentation。<br><small style="opacity:0.65;font-style:italic;">Services 类已排除（独立准入机制 + 商业模式不同）。</small></p>
+      <div class="stat-row" id="track-stat-row">
+        <span><span class="num" data-count-up="9">9</span> 个一级商业赛道 · <span class="num" data-count-up="56">56</span> 个二级</span>
+        <span><span class="num" data-count-up="267">267</span> 个技术分类 · 跨 <span class="num" data-count-up="329">329</span> 家企业</span>
+        <span>头部赛道 EBD <span class="num" data-count-up="467">467</span> · 头部技术 Hyaluronic Acid <span class="num" data-count-up="160">160</span></span>
       </div>
     </section>
 
@@ -41,7 +41,7 @@
             <span class="en">Total products</span>
             <span class="zh">产品线总数</span>
           </div>
-          <span class="value" id="kpi-total">975</span>
+          <span class="value" id="kpi-total">942</span>
           <span class="delta">across 9 commercial L1 categories</span>
         </article>
         <article class="kpi-cell has-wash w-slate">
@@ -51,32 +51,32 @@
         </article>
         <article class="kpi-cell has-wash w-peach">
           <div class="label"><span class="en">L2 sub-tracks</span><span class="zh">二级子赛道</span></div>
-          <span class="value" id="kpi-l2">62</span>
+          <span class="value" id="kpi-l2">56</span>
           <span class="delta">avg 6 per L1</span>
         </article>
         <article class="kpi-cell has-wash w-sand">
           <div class="label"><span class="en">Tech codes</span><span class="zh">技术细分</span></div>
-          <span class="value" id="kpi-tech">239</span>
+          <span class="value" id="kpi-tech">267</span>
           <span class="delta">material / energy source taxonomy</span>
         </article>
         <article class="kpi-cell value-text has-wash w-plum">
           <div class="label"><span class="en">Top L1</span><span class="zh">头部赛道</span></div>
           <span class="value" id="kpi-top-l1">EBD</span>
-          <span class="delta" id="kpi-top-l1-n">480 products</span>
+          <span class="delta" id="kpi-top-l1-n">467 products</span>
         </article>
         <article class="kpi-cell value-text has-wash w-rose">
           <div class="label"><span class="en">Top tech</span><span class="zh">头部技术</span></div>
-          <span class="value" id="kpi-top-tech">HA</span>
-          <span class="delta" id="kpi-top-tech-n">184 products</span>
+          <span class="value" id="kpi-top-tech">Hyaluronic Acid</span>
+          <span class="delta" id="kpi-top-tech-n">160 products</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
           <div class="label"><span class="en">Products / company</span><span class="zh">单家产品数</span></div>
-          <span class="value" id="kpi-ppc">2.63</span>
+          <span class="value" id="kpi-ppc">2.86</span>
           <span class="delta">platform vs single-product mix</span>
         </article>
         <article class="kpi-cell has-wash w-lavender">
           <div class="label"><span class="en">Companies covered</span><span class="zh">覆盖企业</span></div>
-          <span class="value" id="kpi-companies">371</span>
+          <span class="value" id="kpi-companies">329</span>
           <span class="delta">upstream brand owners</span>
         </article>
       </div>
@@ -89,7 +89,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title" id="trk-ml-headline">— 个材料一级赛道 · — 个二级 · 共 — 款产品</div>
-        <div class="chart-sub">每张卡片是一个 material L1。<strong style="color:var(--accent-2);">点击 L1 卡片</strong>看 L2 panel 详情（KPI + L3 pills），<strong style="color:var(--accent-2);">点击 L2 子卡片</strong>直接进 L2 详情（L3 + 公司 + 产品）。</div>
+        <div class="chart-sub">材料一级赛道呈现产品规模、二级结构和头部细分，一级与二级都保留可追溯的公司、产品和 L3 明细。</div>
         <div class="ml-grid" id="trk-ml-grid"></div>
       </div>
     </section>
@@ -101,7 +101,7 @@
       </div>
       <div class="chart-card tracks-l1l2">
         <div class="chart-title">每一级赛道的二级构成</div>
-        <div class="chart-sub">每行一个 L1 商业赛道；条段是 L2 子分类，按产品数从大到小排列。同 L1 内段色用赛道主色的不同明度交替，宽段直接显示 L2 名；窄段悬停看 tooltip。<strong style="color:var(--accent-2);">点击任意段</strong>打开 L2 drawer（含公司/产品/注册）。</div>
+        <div class="chart-sub">一级赛道保留绝对体量差异，二级子分类按产品规模堆叠；宽段展示主导技术线，窄段构成长尾结构。</div>
         <div id="l1l2-bars"></div>
         <div class="l1l2-pin" id="l1l2-pin"></div>
       </div>
@@ -112,7 +112,7 @@
         <h2>L1 内部技术构成</h2>
         <span class="cn">· 技术霸主 vs 混战</span><span class="en">Tech mix per L1</span>
       </div>
-      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">同一个商业 L1 下技术路线可能高度集中（注射 = HA 主导），也可能极度分散（EBD 没有单一霸主，10+ 技术并存）。这决定了下钻的方法：单霸主用 L1 视角，混战用 technology_path 视角。</p>
+        <p class="lede" style="margin-bottom:18px;font-size:13.5px;">同一个商业 L1 下技术路线可能高度集中（注射 = HA 主导），也可能极度分散（EBD 没有单一霸主，10+ 技术并存）。集中型赛道看主材，混战型赛道更依赖技术路径。</p>
       <div class="l1-card-grid" id="l1-tech-cards"></div>
     </section>
 
@@ -122,8 +122,8 @@
         <span class="cn">· 主流通道</span><span class="en">Regulatory pathway mix</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">每个 L1 在五大监管通道的证据数</div>
-        <div class="chart-sub">FDA 510(k) · CE-MDR (含 EUDAMED / Notified Body) · NMPA · Manufacturer IFU · 其它。每个单元格深色程度反映强度（同行内归一化）。FDA 是 EBD 的主战场，注射类则 IFU + FDA 并重。</div>
+        <div class="chart-title">五大监管通道的 L1 证据分布</div>
+        <div class="chart-sub">FDA 510(k) · CE-MDR（含 EUDAMED / Notified Body）· NMPA · Manufacturer IFU · 其它。色深体现同赛道内的相对强度；EBD 以 FDA 为主战场，注射类则呈现 IFU + FDA 并重。</div>
         <div class="reg-matrix" id="reg-matrix"></div>
       </div>
     </section>
@@ -135,7 +135,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">官方认证适应症在各 L1 的覆盖</div>
-        <div class="chart-sub">取官方适应症数据 (official_indication_evidence) 出现频率 Top 10 的适应症桶。色块越深表示该 L1 在该适应症上的覆盖越多。注射赛道在「祛皱」「面部组织缺陷」上一骑绝尘，EBD 主要在「皱纹/皮肤年轻化」。</div>
+        <div class="chart-sub">官方适应症证据 Top 10 展示各赛道的临床需求重心。注射赛道在「祛皱」「面部组织缺陷」上占优，EBD 主要集中在「皱纹/皮肤年轻化」。</div>
         <div class="ind-heatmap" id="ind-heatmap"></div>
       </div>
     </section>
@@ -147,7 +147,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">按监管证据 approval_date 推断的赛道节奏</div>
-        <div class="chart-sub">每张小卡片是一个 L1 赛道，曲线高度代表该年获得监管证据（FDA 510(k) / CE / IFU 等）的产品数。受底库覆盖度影响，注射类的早期数据稀疏（多数没有公开 approval_date），EBD 数据最完整。这个角度看到的是「监管节奏」而非「产品上市节奏」。</div>
+        <div class="chart-sub">各 L1 的年度曲线呈现监管证据出现节奏。EBD 证据链最完整，注射类早期公开日期相对稀疏，因此这里反映的是监管可见度，而非完整上市节奏。</div>
         <div class="timeseries-grid" id="ts-grid"></div>
       </div>
     </section>
@@ -159,7 +159,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">最热门的 15 个技术 / 材料</div>
-        <div class="chart-sub">不分商业赛道，纯按 technology_path 维度聚合。HA 一枝独秀（几乎全在注射赛道），Diode / HIFU / CO2 / RF 等光电技术虽然单家不大但加起来撑起 EBD。</div>
+        <div class="chart-sub">不分商业赛道，按技术路线聚合。HA 一枝独秀（几乎全在注射赛道），Diode / HIFU / CO2 / RF 等光电技术虽然单家不大但加起来撑起 EBD。</div>
         <div class="tech-ranking-list" id="tech-ranking"></div>
       </div>
     </section>
@@ -185,7 +185,7 @@
     </section>
 
     <div class="footnote">
-      <span>v3 · 赛道结构 Track Structure · 975 products · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span id="track-footnote">v3 · 赛道结构 Track Structure · 942 products · updated <span data-bind-text="generated_at_short">—</span></span>
       <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
     </div>
 
@@ -254,7 +254,7 @@
           </header>
           <div class="ml-l2-grid">${l2Html}</div>
           <div class="ml-l1-foot">
-            <span class="ml-l1-drill">点 L1 看 L2 panel · 点 L2 直入 L3+公司+产品 →</span>
+            <span class="ml-l1-drill">L2 / L3 / 公司 / 产品明细</span>
           </div>
         </article>
       `;
@@ -311,6 +311,22 @@
     const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
 
     const s = data.summary;
+    const appSummary = (window.GLOBAL_AESTHETICS_DATA && window.GLOBAL_AESTHETICS_DATA.summary) || {};
+    const totalCompanies = appSummary.companies || appSummary.company_master || 0;
+    const hero = document.getElementById("track-hero-lede");
+    if (hero) {
+      hero.innerHTML = `${fmt(s.total_products)} 款产品在 ${fmt(s.l1_count)} 个商业 L1 × ${fmt(s.l2_count)} 个 L2 × ${fmt(s.tech_count)} 个技术分类上的真实分布 — 一张矩阵看清医美产业的「真」segmentation。<br><small style="opacity:0.65;font-style:italic;">Services 类已排除（独立准入机制 + 商业模式不同）。</small>`;
+    }
+    const statRow = document.getElementById("track-stat-row");
+    if (statRow) {
+      statRow.innerHTML = `
+        <span><span class="num" data-count-up="${s.l1_count}">${fmt(s.l1_count)}</span> 个一级商业赛道 · <span class="num" data-count-up="${s.l2_count}">${fmt(s.l2_count)}</span> 个二级</span>
+        <span><span class="num" data-count-up="${s.tech_count}">${fmt(s.tech_count)}</span> 个技术分类 · 跨 <span class="num" data-count-up="${totalCompanies}">${fmt(totalCompanies)}</span> 家企业</span>
+        <span>头部赛道 ${esc(displayL1(s.top_l1))} <span class="num" data-count-up="${s.top_l1_products}">${fmt(s.top_l1_products)}</span> · 头部技术 ${esc(String(s.top_tech || "—"))} <span class="num" data-count-up="${s.top_tech_products}">${fmt(s.top_tech_products)}</span></span>
+      `;
+    }
+    const foot = document.getElementById("track-footnote");
+    if (foot) foot.innerHTML = `v3 · 赛道结构 Track Structure · ${fmt(s.total_products)} products · updated <span data-bind-text="generated_at_short">—</span>`;
     // numeric KPIs use count-up animation
     countUp(document.getElementById("kpi-total"), s.total_products);
     countUp(document.getElementById("kpi-l1"), s.l1_count);
@@ -321,7 +337,7 @@
     setText("kpi-top-tech", String(s.top_tech || "—"));
     setText("kpi-top-tech-n", `${fmt(s.top_tech_products)} products`);
     setText("kpi-ppc", s.avg_products_per_company);
-    countUp(document.getElementById("kpi-companies"), 367);
+    countUp(document.getElementById("kpi-companies"), totalCompanies);
 
     // ---- L1 × L2 stacked bars ----
     // Use HSL lightness alternation for max contrast within a single L1 row.

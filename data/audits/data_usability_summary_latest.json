@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-06-01T10:26:50.582011+00:00",
+  "generated_at": "2026-06-16T05:12:16.973813+00:00",
   "audited_tables": 41,
-  "audited_rows": 181115,
-  "usable_or_reference_rows": 156517,
-  "planned_or_review_rows": 0,
-  "excluded_or_noise_rows": 24598,
-  "covered_rows": 181115,
+  "audited_rows": 186598,
+  "usable_or_reference_rows": 161979,
+  "planned_or_review_rows": 3,
+  "excluded_or_noise_rows": 24616,
+  "covered_rows": 186598,
   "missing_owner_or_status_rows": 0,
   "every_row_has_status_and_owner": true,
   "by_coverage_class": {
-    "reference_or_registry": 119260,
-    "excluded_or_noise": 24598,
-    "usable_master": 37257
+    "reference_or_registry": 124865,
+    "excluded_or_noise": 24616,
+    "usable_master": 37114,
+    "planned_or_review": 3
   },
   "top_responsible_modules": [
     [
@@ -28,15 +29,19 @@
     ],
     [
       "official_website_review",
-      20189
+      20138
     ],
     [
       "evidence_promotion_pipeline",
-      15614
+      15588
     ],
     [
       "product_fact_promotion_pipeline",
       15282
+    ],
+    [
+      "reference_data_maintenance",
+      11399
     ],
     [
       "spec_extractor_quality_filter",
@@ -51,16 +56,12 @@
       6264
     ],
     [
-      "reference_data_maintenance",
-      5585
-    ],
-    [
       "product_hierarchy_mapping_backfill",
       2220
     ],
     [
       "product_hierarchy_maintenance",
-      2042
+      1974
     ]
   ],
   "top_operational_status": [
@@ -70,7 +71,7 @@
     ],
     [
       "promoted_fact_trace",
-      15614
+      15588
     ],
     [
       "promoted_to_product_master",
@@ -89,8 +90,12 @@
       11918
     ],
     [
+      "indexed_reference_data",
+      11399
+    ],
+    [
       "official_surface_indexed",
-      10228
+      10177
     ],
     [
       "candidate",
@@ -107,10 +112,6 @@
     [
       "plan_missing_product_family",
       6264
-    ],
-    [
-      "indexed_reference_data",
-      5585
     ]
   ],
   "ledger_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\data_usability_ledger_latest.csv",

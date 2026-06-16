@@ -22,11 +22,11 @@
         技术树
         <span class="h1-en">Technology Tree</span>
       </h1>
-      <p class="lede">235 种技术 / 物质 / 能量在 973 款产品上的分布。这是商业赛道的「反向视角」 — 不问「这家公司做什么生意」，问「这种技术撑了多少生意」。</p>
-      <div class="stat-row">
-        <span><span class="num" data-count-up="235">235</span> 种核心技术 · <span class="num" data-count-up="10">10</span> 大技术族</span>
-        <span>头部 HA <span class="num" data-count-up="184">184</span> 款 · 占 <span class="num" data-count-up="19">19</span>%</span>
-        <span>跨多赛道平台技术 <span class="num" data-count-up="6">6</span> 种</span>
+      <p class="lede" id="tech-hero-lede">267 种技术 / 物质 / 能量在 942 款产品上的分布。这是商业赛道的「反向视角」 — 不问「这家公司做什么生意」，问「这种技术撑了多少生意」。</p>
+      <div class="stat-row" id="tech-stat-row">
+        <span><span class="num" data-count-up="267">267</span> 种核心技术 · <span class="num" data-count-up="10">10</span> 大技术族</span>
+        <span>头部 Hyaluronic Acid <span class="num" data-count-up="160">160</span> 款 · 占 <span class="num" data-count-up="17">17</span>%</span>
+        <span>跨多赛道平台技术 <span class="num" data-count-up="1">1</span> 种</span>
       </div>
     </section>
 
@@ -46,7 +46,7 @@
         </article>
         <article class="kpi-cell has-wash w-peach">
           <div class="label"><span class="en">Distinct techs</span><span class="zh">独立技术数</span></div>
-          <span class="value" id="kpi-total-techs">235</span>
+          <span class="value" id="kpi-total-techs">267</span>
           <span class="delta">material / energy source taxonomy</span>
         </article>
         <article class="kpi-cell has-wash w-sand">
@@ -87,7 +87,7 @@
         <h2>技术族</h2>
         <span class="cn">· 10 大族 · 物质 / 能量分类</span><span class="en">Technology families</span>
       </div>
-      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">把 235 种技术按「物质 / 能量来源」聚成 10 族。这是医美技术的核心 taxonomy — 公司可以在族内做平行扩张（如同时做 HA + HA crosslinked），但跨族扩张（HA → 激光）通常意味着收购或战略转型。</p>
+      <p class="lede" id="tech-family-lede" style="margin-bottom:18px;font-size:13.5px;">把 267 种技术按「物质 / 能量来源」聚成 10 族。这是医美技术的核心 taxonomy — 公司可以在族内做平行扩张（如同时做 HA + HA crosslinked），但跨族扩张（HA → 激光）通常意味着收购或战略转型。</p>
       <div class="tech-family-grid" id="family-grid"></div>
     </section>
 
@@ -98,7 +98,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">每种技术撑了多少产品 + 主要服务哪个商业赛道</div>
-        <div class="chart-sub">条形长度归一化到 HA = 100%。右侧标注 "产品数 · 公司数"，下方小 chip 显示 top 2 服务的 L1。点击展开详情：top L2 子分类 + 完整 L1 分布。</div>
+        <div class="chart-sub">条形长度以 HA 为参照，呈现产品数、公司数与主要服务赛道；高频材料的 L2 子分类和 L1 分布保留完整明细。</div>
         <div class="tech-rank-list" id="tech-rank-list"></div>
         <div class="ind-detail" id="tech-detail"></div>
       </div>
@@ -111,7 +111,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">每种技术服务于哪些商业 L1</div>
-        <div class="chart-sub">行 = top 10 技术；列 = top 6 商业 L1。色块按 L1 自己的色染（玫红 = EBD，紫 = Injectables 等）。多色横行的技术（如 Microneedling）= 平台型；单色横行（如 Hyaluronic Acid）= 单赛道专精。这跟 tracks 页面的"L1 × Tech"是同一份数据的 转置视图。</div>
+        <div class="chart-sub">头部技术与商业 L1 形成交叉分布，色块沿用各赛道主色。多赛道覆盖的技术更偏平台型，单赛道集中的技术更偏专精型，并与 tracks 页的 L1 × Tech 形成互证。</div>
         <div class="tech-l1-matrix" id="tech-l1-matrix"></div>
       </div>
     </section>
@@ -134,7 +134,7 @@
     </section>
 
     <div class="footnote">
-      <span>v3 · 技术树 Technology Tree · 235 techs · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span id="tech-footnote">v3 · 技术树 Technology Tree · 267 techs · updated <span data-bind-text="generated_at_short">—</span></span>
       <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
     </div>
 
@@ -167,9 +167,30 @@
       "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
     };
     const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
+    const fmt = (value) => typeof value === "number" ? value.toLocaleString("en-US") : (value || "—");
 
     // ---- KPI ----
     const s = data.summary;
+    const appSummary = (window.GLOBAL_AESTHETICS_DATA && window.GLOBAL_AESTHETICS_DATA.summary) || {};
+    const totalProducts = s.total_products || appSummary.products || 0;
+    const hero = document.getElementById("tech-hero-lede");
+    if (hero) {
+      hero.textContent = `${fmt(s.total_techs)} 种技术 / 物质 / 能量在 ${fmt(totalProducts)} 款产品上的分布。这是商业赛道的「反向视角」 — 不问「这家公司做什么生意」，问「这种技术撑了多少生意」。`;
+    }
+    const statRow = document.getElementById("tech-stat-row");
+    if (statRow) {
+      statRow.innerHTML = `
+        <span><span class="num" data-count-up="${s.total_techs}">${fmt(s.total_techs)}</span> 种核心技术 · <span class="num" data-count-up="${s.total_families}">${fmt(s.total_families)}</span> 大技术族</span>
+        <span>头部 ${esc(s.top_tech || "—")} <span class="num" data-count-up="${s.top_tech_n}">${fmt(s.top_tech_n)}</span> 款 · 占 <span class="num" data-count-up="${Math.round(s.top_tech_share || 0)}">${fmt(s.top_tech_share)}</span>%</span>
+        <span>跨多赛道平台技术 <span class="num" data-count-up="${s.cross_app_count}">${fmt(s.cross_app_count)}</span> 种</span>
+      `;
+    }
+    const familyLede = document.getElementById("tech-family-lede");
+    if (familyLede) {
+      familyLede.textContent = `把 ${fmt(s.total_techs)} 种技术按「物质 / 能量来源」聚成 ${fmt(s.total_families)} 族。这是医美技术的核心 taxonomy — 公司可以在族内做平行扩张（如同时做 HA + HA crosslinked），但跨族扩张（HA → 激光）通常意味着收购或战略转型。`;
+    }
+    const foot = document.getElementById("tech-footnote");
+    if (foot) foot.innerHTML = `v3 · 技术树 Technology Tree · ${fmt(s.total_techs)} techs · updated <span data-bind-text="generated_at_short">—</span>`;
     setText("kpi-top-tech", String(s.top_tech || "—"));
     setText("kpi-top-tech-share", `${s.top_tech_n} · ${s.top_tech_share}% share`);
     countUp(document.getElementById("kpi-total-techs"), s.total_techs);
@@ -248,7 +269,7 @@
             t.top_l1[0] ? `Top L1 ${displayL1(t.top_l1[0].l1)} (${t.top_l1[0].n})` : "",
             t.first_year ? `Active ${t.first_year}–${t.last_year || t.first_year}` : "",
           ].filter(Boolean),
-          hint: "click → expand detail",
+            hint: "材料详情",
         }));
       });
     }

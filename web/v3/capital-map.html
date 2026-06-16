@@ -22,9 +22,10 @@
         资本地图
         <span class="h1-en">Capital Map &amp; Valuation Bands</span>
       </h1>
-      <p class="lede">61 家已上市主体 · 15 个交易所 · 估值带、交易所、母子结构 + 金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。</p>
-      <div class="stat-row">
-        <span>已上市 <span class="num">61</span> / 372 = <span class="num">16</span>%</span>
+      <p class="lede" id="capital-hero-lede">61 条上市/关联证据批次 · Company_Master 329 家公司中 43 家 active public · 估值带、交易所、母子结构 + 金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。</p>
+      <div class="stat-row" id="capital-stat-row">
+        <span>Active public <span class="num">43</span> / 329 = <span class="num">13</span>%</span>
+        <span>上市证据批次 <span class="num">61</span> 条</span>
         <span>主交易所 KRX <span class="num">22</span> + NASDAQ <span class="num">15</span></span>
         <span>巨盘 <span class="num">3</span> · 大盘 <span class="num">3</span> · 中盘 <span class="num">12</span> · 小盘 <span class="num">30</span></span>
       </div>
@@ -41,8 +42,8 @@
             <span class="en">Listing rate</span>
             <span class="zh">全行业上市率</span>
           </div>
-          <span class="value">16%</span>
-          <span class="delta">61 / 372 上游企业上市</span>
+          <span class="value" id="capital-kpi-listing-rate">13%</span>
+          <span class="delta" id="capital-kpi-listing-delta">43 / 329 active public · 61 listed batch rows</span>
         </article>
         <article class="kpi-cell has-wash w-plum">
           <div class="label"><span class="en">Small cap dominance</span><span class="zh">小盘占比</span></div>
@@ -66,18 +67,18 @@
         </article>
         <article class="kpi-cell has-wash w-slate">
           <div class="label"><span class="en">Subsidiaries</span><span class="zh">子公司 / 关联</span></div>
-          <span class="value">15</span>
-          <span class="delta">46 主体 + 15 子结构</span>
+          <span class="value" id="capital-kpi-subsidiary">13</span>
+          <span class="delta" id="capital-kpi-subsidiary-delta">Company_Master subsidiary rows</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
-          <div class="label"><span class="en">Pending valuation</span><span class="zh">估值待补</span></div>
+          <div class="label"><span class="en">Pending valuation</span><span class="zh">估值暂缺</span></div>
           <span class="value">13</span>
           <span class="delta">本批次未抓到市值快照</span>
         </article>
         <article class="kpi-cell has-wash w-lavender">
           <div class="label"><span class="en">Private companies</span><span class="zh">私营企业</span></div>
-          <span class="value">309</span>
-          <span class="delta">83% 全行业以私营为主</span>
+          <span class="value" id="capital-kpi-private">272</span>
+          <span class="delta" id="capital-kpi-private-delta">83% 全行业以私营为主</span>
         </article>
       </div>
     </section>
@@ -120,7 +121,7 @@
           <div class="bar-total">3</div>
         </div>
         <div class="bar-row val-band-row" data-band="pending" data-n="13">
-          <div class="label">待补 Pending<small>本轮未抓取</small></div>
+          <div class="label">暂缺 Pending<small>暂无行情快照</small></div>
           <div class="bar-track">
             <div class="bar-seg" style="background:#A99FB3; flex:13"></div>
           </div>
@@ -141,31 +142,31 @@
           <div class="donut-wrap">
             <svg width="280" height="280" viewBox="0 0 280 280" aria-label="交易所分布">
               <g transform="rotate(-90 140 140)">
-                <!-- circumference 2π*98 ≈ 615.75 ; total 62 -->
-                <circle class="exch-slice" data-exchange="KRX" data-n="22" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="218.45 397.30" stroke-dashoffset="0"/>
-                <circle class="exch-slice" data-exchange="NASDAQ" data-n="15" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="148.94 466.81" stroke-dashoffset="-218.45"/>
-                <circle class="exch-slice" data-exchange="Borsa Italiana" data-n="5" r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="49.65 566.10" stroke-dashoffset="-367.39"/>
-                <circle class="exch-slice" data-exchange="Paris" data-n="3" r="98" cx="140" cy="140" fill="none" stroke="#C76B68" stroke-width="38" stroke-dasharray="29.79 585.96" stroke-dashoffset="-417.04"/>
-                <circle class="exch-slice" data-exchange="SZSE" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="19.86 595.89" stroke-dashoffset="-446.83"/>
-                <circle class="exch-slice" data-exchange="TW" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="19.86 595.89" stroke-dashoffset="-466.69"/>
-                <circle class="exch-slice" data-exchange="TA" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#A8B59A" stroke-width="38" stroke-dasharray="19.86 595.89" stroke-dashoffset="-486.55"/>
-                <circle class="exch-slice" data-exchange="Other" data-n="11" r="98" cx="140" cy="140" fill="none" stroke="#8C7B91" stroke-width="38" stroke-dasharray="109.21 506.54" stroke-dashoffset="-506.41"/>
+                <!-- circumference 2π*98 ≈ 615.75 ; total 61 -->
+                <circle class="exch-slice" data-exchange="KRX" data-n="22" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="222.07 393.68" stroke-dashoffset="0"/>
+                <circle class="exch-slice" data-exchange="NASDAQ" data-n="15" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="151.41 464.34" stroke-dashoffset="-222.07"/>
+                <circle class="exch-slice" data-exchange="Borsa Italiana" data-n="5" r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="50.47 565.28" stroke-dashoffset="-373.49"/>
+                <circle class="exch-slice" data-exchange="Paris" data-n="3" r="98" cx="140" cy="140" fill="none" stroke="#C76B68" stroke-width="38" stroke-dasharray="30.28 585.47" stroke-dashoffset="-423.96"/>
+                <circle class="exch-slice" data-exchange="SZSE" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="20.19 595.56" stroke-dashoffset="-454.24"/>
+                <circle class="exch-slice" data-exchange="TW" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="20.19 595.56" stroke-dashoffset="-474.43"/>
+                <circle class="exch-slice" data-exchange="TA" data-n="2" r="98" cx="140" cy="140" fill="none" stroke="#A8B59A" stroke-width="38" stroke-dasharray="20.19 595.56" stroke-dashoffset="-494.62"/>
+                <circle class="exch-slice" data-exchange="Other" data-n="10" r="98" cx="140" cy="140" fill="none" stroke="#8C7B91" stroke-width="38" stroke-dasharray="100.94 514.81" stroke-dashoffset="-514.81"/>
               </g>
             </svg>
             <div class="donut-center">
-              <span class="big">62</span>
+              <span class="big">61</span>
               <span class="small">listed records</span>
             </div>
           </div>
           <div class="donut-list">
-            <div class="row exch-row" data-exchange="KRX"><span class="sw" style="background:#8E3A3A"></span><span class="name">KRX · 韩国交易所</span><span class="num">22</span><span class="pct">35.5%</span></div>
-            <div class="row exch-row" data-exchange="NASDAQ"><span class="sw" style="background:#6B5A75"></span><span class="name">NASDAQ · 美国</span><span class="num">15</span><span class="pct">24.2%</span></div>
-            <div class="row exch-row" data-exchange="Borsa Italiana"><span class="sw" style="background:#D9AE91"></span><span class="name">Borsa Italiana · 意大利</span><span class="num">5</span><span class="pct">8.1%</span></div>
-            <div class="row exch-row" data-exchange="Paris"><span class="sw" style="background:#C76B68"></span><span class="name">Paris (PA) · 法国</span><span class="num">3</span><span class="pct">4.8%</span></div>
-            <div class="row exch-row" data-exchange="SZSE"><span class="sw" style="background:#5A6878"></span><span class="name">SZSE · 深圳</span><span class="num">2</span><span class="pct">3.2%</span></div>
-            <div class="row exch-row" data-exchange="TW"><span class="sw" style="background:#CFB58E"></span><span class="name">TW / TWO · 台湾</span><span class="num">2</span><span class="pct">3.2%</span></div>
-            <div class="row exch-row" data-exchange="TA"><span class="sw" style="background:#A8B59A"></span><span class="name">TA · 特拉维夫</span><span class="num">2</span><span class="pct">3.2%</span></div>
-            <div class="row exch-row" data-exchange="Other"><span class="sw" style="background:#8C7B91"></span><span class="name">SIX · BR · T · HKEX · ASX · JSE · OTC</span><span class="num">11</span><span class="pct">17.7%</span></div>
+            <div class="row exch-row" data-exchange="KRX"><span class="sw" style="background:#8E3A3A"></span><span class="name">KRX · 韩国交易所</span><span class="num">22</span><span class="pct">36.1%</span></div>
+            <div class="row exch-row" data-exchange="NASDAQ"><span class="sw" style="background:#6B5A75"></span><span class="name">NASDAQ · 美国</span><span class="num">15</span><span class="pct">24.6%</span></div>
+            <div class="row exch-row" data-exchange="Borsa Italiana"><span class="sw" style="background:#D9AE91"></span><span class="name">Borsa Italiana · 意大利</span><span class="num">5</span><span class="pct">8.2%</span></div>
+            <div class="row exch-row" data-exchange="Paris"><span class="sw" style="background:#C76B68"></span><span class="name">Paris (PA) · 法国</span><span class="num">3</span><span class="pct">4.9%</span></div>
+            <div class="row exch-row" data-exchange="SZSE"><span class="sw" style="background:#5A6878"></span><span class="name">SZSE · 深圳</span><span class="num">2</span><span class="pct">3.3%</span></div>
+            <div class="row exch-row" data-exchange="TW"><span class="sw" style="background:#CFB58E"></span><span class="name">TW / TWO · 台湾</span><span class="num">2</span><span class="pct">3.3%</span></div>
+            <div class="row exch-row" data-exchange="TA"><span class="sw" style="background:#A8B59A"></span><span class="name">TA · 特拉维夫</span><span class="num">2</span><span class="pct">3.3%</span></div>
+            <div class="row exch-row" data-exchange="Other"><span class="sw" style="background:#8C7B91"></span><span class="name">SIX · BR · T · HKEX · ASX · JSE · OTC · Unknown</span><span class="num">10</span><span class="pct">16.4%</span></div>
           </div>
         </div>
       </div>
@@ -221,7 +222,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">SEC 14 家（XBRL 自动）+ 非美 IR 手工候选 2 家（El.En. · Galderma），10 家在采集队列。</div>
-        <div class="chart-sub">P/S 用当前 market_snapshot 的市值 ÷ 年度营收；股价、总市值、P/E、P/B、EPS 走行情快照，净利润增长优先走 SEC XBRL / IR 年报口径。Allergan 在母公司 AbbVie (ABBV) 合并报表；Solta 在 Bausch Health (BHC) 合并报表。Cutera 2024 后停 SEC 备案，仅有 FY2020 数据；Novartis 非美 IR 待补。</div>
+        <div class="chart-sub">P/S 以市值 ÷ 年度营收计算；股价、总市值、P/E、P/B、EPS 来自行情快照，净利润增长优先采用 SEC XBRL / IR 年报。Allergan 与 Solta 并入母公司报表，部分非美公司财务覆盖仍在完善。</div>
 
         <div class="table-card" style="margin-top:14px;">
           <table>
@@ -234,14 +235,14 @@
                 <th class="num">Revenue $M</th>
                 <th class="num">Gross Margin</th>
                 <th class="num">P/S Ratio</th>
-                <th>口径备注</th>
+                <th>数据说明</th>
               </tr>
             </thead>
             <tbody>
               <tr><td>01</td><td>Johnson &amp; Johnson</td><td>JNJ</td><td>FY25</td><td class="num">94,193</td><td class="num">67.9%</td><td class="num">5.7×</td><td>合并报表 · 含 J&amp;J MedTech / Pharma</td></tr>
               <tr><td>02</td><td>AbbVie (Allergan Aesthetics 母公司)</td><td>ABBV</td><td>FY25</td><td class="num">61,160</td><td class="num">19.7%</td><td class="num">6.0×</td><td>合并报表 · 医美仅子部门</td></tr>
               <tr><td>03</td><td>Bausch Health (Solta 母公司)</td><td>BHC</td><td>FY25</td><td class="num">10,266</td><td class="num">—</td><td class="num">0.2×</td><td>合并报表 · 含 Bausch+Lomb 等</td></tr>
-              <tr><td>04</td><td>Halozyme Therapeutics</td><td>HALO</td><td>FY25</td><td class="num">1,397</td><td class="num">0.4%</td><td class="num">6.0×</td><td>毛利率口径异常 · XBRL revenue concept 待复核</td></tr>
+              <tr><td>04</td><td>Halozyme Therapeutics</td><td>HALO</td><td>FY25</td><td class="num">1,397</td><td class="num">0.4%</td><td class="num">6.0×</td><td>毛利率与营收概念存在异常，需结合年报阅读</td></tr>
               <tr><td>05</td><td>InMode</td><td>INMD</td><td>FY25</td><td class="num">370</td><td class="num">78.5%</td><td class="num">2.3×</td><td>EBD 头部纯医美标的</td></tr>
               <tr><td>06</td><td>Beauty Health</td><td>SKIN</td><td>FY25</td><td class="num">301</td><td class="num">65.3%</td><td class="num">0.3×</td><td>HydraFacial · 增长放缓导致 P/S 压缩</td></tr>
               <tr><td>07</td><td>Evolus</td><td>EOLS</td><td>FY25</td><td class="num">297</td><td class="num">66.3%</td><td class="num">1.4×</td><td>Jeuveau 神经毒素 · 增长导向</td></tr>
@@ -250,7 +251,7 @@
               <tr><td>10</td><td>Venus Concept</td><td>VERO</td><td>FY24</td><td class="num">65</td><td class="num">68.3%</td><td class="num">0.01×</td><td>资本结构受压 · 市值近零</td></tr>
               <tr><td>11</td><td>Apyx Medical</td><td>APYX</td><td>FY25</td><td class="num">53</td><td class="num">62.5%</td><td class="num">3.2×</td><td>Renuvion 等离子能量平台</td></tr>
               <tr><td>12</td><td>Cutera</td><td>CUTR</td><td>FY20</td><td class="num">50</td><td class="num">83.1%</td><td class="num">—</td><td>2024 后停止 SEC 备案，数据已过期</td></tr>
-              <tr><td>13</td><td>Novartis</td><td>NOVN</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>SIX 上市 · 不走 SEC 口径</td></tr>
+              <tr><td>13</td><td>Novartis</td><td>NOVN</td><td>—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>SIX 上市 · 非 SEC 财报体系</td></tr>
               <tr style="background:rgba(168,181,154,0.06);"><td>14</td><td>El.En. Group</td><td>ELN</td><td>FY24</td><td class="num">735</td><td class="num">~37%</td><td class="num">1.8×</td><td><strong>NEW</strong> · 合并 Quanta / DEKA / Asclepion · IR 候选 · 待核实</td></tr>
               <tr style="background:rgba(168,181,154,0.06);"><td>15</td><td>Galderma</td><td>GALD</td><td>FY24</td><td class="num">4,359</td><td class="num">~74%</td><td class="num">11.1×</td><td><strong>NEW</strong> · SIX 上市 · 注射 + 功能性护肤品旗舰 · 待核实</td></tr>
             </tbody>
@@ -263,10 +264,10 @@
     <section class="block">
       <div class="section-head">
         <h2>集团树</h2>
-        <span class="cn">· 21 条已识别母子关系 / 16 个 ultimate</span><span class="en">Corporate family tree</span>
+        <span class="cn">· parent / affiliate trace</span><span class="en">Corporate family tree</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">21 / 371 公司有可信母公司归属；其余 350 家按"独立运营或未识别"处理。</div>
+        <div class="chart-title">Company_Master 当前识别 3 个 corporate family；本页保留可追踪 parent / affiliate 样例。</div>
         <div class="chart-sub">关系来源：`listed_company_batch` 资本结构字段 + 公开并购公告。本表只列出可在事实层引用的关系，"未核实"标签的不写入 registered_evidence。Lumenis → Boston Scientific 字段使用 U+2192 箭头字符，需要 UI 字体能渲染（部分终端会显示为方块）。</div>
 
         <div class="group-tree" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; margin-top:12px;">
@@ -369,7 +370,7 @@
 
         </div>
       </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">"listed_relationship_seed" 来自 listed_company_batch 资本结构字段；"needs_verification" 来自公开并购公告，未在事实层使用。剩余 350 家公司按"独立运营或未识别"处理 — 不强行写入未核实的 M&amp;A 传闻。</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">"listed_relationship_seed" 来自 listed_company_batch 资本结构字段；"needs_verification" 来自公开并购公告，未在事实层使用。其余公司按"独立运营或未识别"处理 — 不强行写入未核实的 M&amp;A 传闻。</p>
     </section>
 
     <section class="block">
@@ -400,7 +401,7 @@
     </section>
 
     <div class="footnote">
-      <span>v3 · 资本地图 Capital Map · 61 listed · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span>v3 · 资本地图 Capital Map · 43 public / 61 listed batch · updated <span data-bind-text="generated_at_short">—</span></span>
       <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
     </div>
 
@@ -476,6 +477,37 @@
     const financialLast = refresh && (refresh.latest_updated_at || refresh.market_last_updated_at || refresh.financial_last_updated_at);
     document.querySelectorAll("[data-bind-text='financial_last_updated']").forEach(el => { el.textContent = fmt(financialLast); });
   })();
+  (function renderCapitalSnapshot () {
+    const summary = (window.V3_COMPANIES_DATA && window.V3_COMPANIES_DATA.summary) || {};
+    const globalSummary = (window.GLOBAL_AESTHETICS_DATA && window.GLOBAL_AESTHETICS_DATA.summary) || {};
+    const total = Number(summary.total || globalSummary.companies || 0);
+    const publicCompanies = Number(summary.listed || 0);
+    const listedBatch = Number(globalSummary.listed_company_batch || 61);
+    if (!total || !publicCompanies) return;
+    const fmt = (n) => Number(n || 0).toLocaleString("en-US");
+    const pct = Math.round(publicCompanies / total * 100);
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+    const setHTML = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = value;
+    };
+    setText("capital-hero-lede", `${fmt(listedBatch)} 条上市/关联证据批次 · Company_Master ${fmt(total)} 家公司中 ${fmt(publicCompanies)} 家 active public · 估值带、交易所、母子结构 + 金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。`);
+    setHTML("capital-stat-row", `
+      <span>Active public <span class="num">${fmt(publicCompanies)}</span> / ${fmt(total)} = <span class="num">${pct}</span>%</span>
+      <span>上市证据批次 <span class="num">${fmt(listedBatch)}</span> 条</span>
+      <span>主交易所 KRX <span class="num">22</span> + NASDAQ <span class="num">15</span></span>
+      <span>巨盘 <span class="num">3</span> · 大盘 <span class="num">3</span> · 中盘 <span class="num">12</span> · 小盘 <span class="num">30</span></span>
+    `);
+    setText("capital-kpi-listing-rate", `${pct}%`);
+    setText("capital-kpi-listing-delta", `${fmt(publicCompanies)} / ${fmt(total)} active public · ${fmt(listedBatch)} listed batch rows`);
+    setText("capital-kpi-subsidiary", fmt(summary.subsidiary || 0));
+    setText("capital-kpi-subsidiary-delta", `${fmt(summary.corporate_families || 0)} corporate families in Company_Master`);
+    setText("capital-kpi-private", fmt(summary.private || 0));
+    setText("capital-kpi-private-delta", `${Math.round(Number(summary.private || 0) / total * 100)}% 全行业以私营为主`);
+  })();
   if (window.V3CompanyDetail) {
     window.V3CompanyDetail.attachToTable(".table-card table tbody tr", { nameCellSelector: "td:nth-child(2)" });
   }
@@ -520,12 +552,12 @@
       window.V3Tooltip.attach(row, () => ({
         title: labelText,
         lines: [`<em>${n}</em> listed companies in this band`],
-        hint: "click → see companies",
+        hint: "相关企业",
       }));
       row.addEventListener("click", () => {
         const cos = bandMembers[band] || [];
         window.V3DrillPanel.open({
-          stamp: "Valuation band · drill",
+          stamp: "Valuation band · detail",
           title: labelText,
           sub: `${cos.length} matched in V3_COMPANIES_DATA (~${n} 总 listed)`,
           summary: [
@@ -567,7 +599,7 @@
     function openExchangeDrill (exch, n) {
       const matches = publicCompanies.filter(c => exchangeMatch(exch, c.stock_code));
       window.V3DrillPanel.open({
-        stamp: "Exchange · drill",
+        stamp: "Exchange · detail",
         title: exch,
         sub: `${matches.length} matched · ${n} 全 listed records`,
         summary: [
@@ -586,10 +618,11 @@
     document.querySelectorAll(".exch-slice").forEach(s => {
       const exch = s.getAttribute("data-exchange");
       const n = parseInt(s.getAttribute("data-n") || "0", 10);
+      const listedBatchTotal = Number(((window.GLOBAL_AESTHETICS_DATA || {}).summary || {}).listed_company_batch || 61);
       window.V3Tooltip.attach(s, () => ({
         title: exch,
-        lines: [`<em>${n}</em> listed · ${(n / 62 * 100).toFixed(1)}% of total`],
-        hint: "click → see listed companies",
+        lines: [`<em>${n}</em> listed · ${(n / listedBatchTotal * 100).toFixed(1)}% of total`],
+        hint: "上市公司",
       }));
       s.addEventListener("click", () => openExchangeDrill(exch, n));
     });
@@ -599,7 +632,7 @@
       window.V3Tooltip.attach(row, () => ({
         title: exch,
         lines: [`<em>${n}</em> listed`],
-        hint: "click → see listed companies",
+        hint: "上市公司",
       }));
       row.addEventListener("click", () => openExchangeDrill(exch, n));
     });

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-01T10:28:35.579222+00:00",
+  "generated_at": "2026-06-16T05:12:15.247458+00:00",
   "database": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
   "overall_passed": true,
   "metrics": [
@@ -19,11 +19,11 @@
       "section": "A",
       "metric_id": "A2_active_product_ownership_completeness",
       "label": "Active products have company, legal_manufacturer, and marketing_holder",
-      "current_value": "100.0% (979/979)",
+      "current_value": "100.0% (943/943)",
       "threshold": "100%",
       "passed": true,
       "details": {
-        "active_products": 979,
+        "active_products": 943,
         "missing_company": 0,
         "missing_legal_manufacturer": 0,
         "missing_marketing_holder": 0
@@ -46,12 +46,12 @@
       "section": "B",
       "metric_id": "B1_inclusion_and_material_path_coverage",
       "label": "inclusion_status is filled for all Product_Master rows and material_taxonomy_path_cn is filled for active products",
-      "current_value": "inclusion 100.0% (979/979); material path 100.0% (979/979)",
+      "current_value": "inclusion 100.0% (943/943); material path 100.0% (943/943)",
       "threshold": "100% / 100%",
       "passed": true,
       "details": {
-        "product_master_rows": 979,
-        "active_products": 979
+        "product_master_rows": 943,
+        "active_products": 943
       },
       "next_action": "Preserve existing classification fields when rebuilding Product_Master."
     },
@@ -66,23 +66,23 @@
         "status_counts": [
           {
             "status": "auto_applied",
-            "count": 671
-          },
-          {
-            "status": "accepted",
-            "count": 105
+            "count": 649
           },
           {
             "status": "manual_verified",
-            "count": 82
+            "count": 89
+          },
+          {
+            "status": "accepted",
+            "count": 85
           },
           {
             "status": "confirmed",
-            "count": 81
+            "count": 79
           },
           {
             "status": "user_confirmed",
-            "count": 40
+            "count": 41
           }
         ],
         "hold_candidate_count": 0,
@@ -94,12 +94,12 @@
       "section": "B",
       "metric_id": "B3_material_family_coverage",
       "label": "material_family coverage among active products",
-      "current_value": "100.0% (979/979)",
+      "current_value": "100.0% (943/943)",
       "threshold": ">= 95%",
       "passed": true,
       "details": {
-        "active_products": 979,
-        "filled": 979
+        "active_products": 943,
+        "filled": 943
       },
       "next_action": "Backfill material_family from confirmed taxonomy/SKU family assignments."
     },
@@ -107,12 +107,12 @@
       "section": "B",
       "metric_id": "B4_registered_name_regulated_subset",
       "label": "registered_name coverage among products with regulatory evidence",
-      "current_value": "99.7% (903/906)",
+      "current_value": "99.8% (882/884)",
       "threshold": ">= 90%",
       "passed": true,
       "details": {
-        "regulated_products": 906,
-        "registered_name_filled": 903
+        "regulated_products": 884,
+        "registered_name_filled": 882
       },
       "next_action": "Promote registered names from Registration_Evidence into Product_Master."
     },
@@ -127,15 +127,15 @@
         "status_counts": [
           {
             "status": "family_level",
-            "count": 635
+            "count": 614
           },
           {
             "status": "variant_catalogued",
-            "count": 223
+            "count": 207
           },
           {
             "status": "sku_variant_catalogued",
-            "count": 100
+            "count": 104
           },
           {
             "status": "sku_or_model_candidate",
@@ -143,7 +143,7 @@
           },
           {
             "status": "family_sku_expanded",
-            "count": 38
+            "count": 39
           }
         ]
       },
@@ -153,11 +153,11 @@
       "section": "B",
       "metric_id": "B6a_spec_evidence_product_id_mapping",
       "label": "Product_Spec_Evidence product_id-level mapping has expanded beyond the initial 11-product baseline",
-      "current_value": "755",
+      "current_value": "722",
       "threshold": "> 11 products",
       "passed": true,
       "details": {
-        "distinct_products_with_product_id_spec_evidence": 755
+        "distinct_products_with_product_id_spec_evidence": 722
       },
       "next_action": "Map family-level spec evidence to product_id before judging technical_specs_json coverage."
     },
@@ -165,12 +165,12 @@
       "section": "B",
       "metric_id": "B6b_technical_specs_json_spec_subset",
       "label": "technical_specs_json coverage among products with product_id-level specification evidence",
-      "current_value": "98.5% (744/755)",
+      "current_value": "98.5% (711/722)",
       "threshold": ">= 85%",
       "passed": true,
       "details": {
-        "spec_evidence_products": 755,
-        "technical_specs_json_filled": 744
+        "spec_evidence_products": 722,
+        "technical_specs_json_filled": 711
       },
       "next_action": "Promote verified specification evidence into Product_Master.technical_specs_json."
     },
@@ -178,12 +178,12 @@
       "section": "B",
       "metric_id": "B6c_spec_candidate_conversion",
       "label": "Product_Spec_Evidence candidate conversion rate (promoted or cross_checked)",
-      "current_value": "66.7% (35821/53676)",
+      "current_value": "65.9% (35399/53676)",
       "threshold": ">= 60%",
       "passed": true,
       "details": {
         "promoted_spec_ids": 422,
-        "converted_spec_ids": 35821,
+        "converted_spec_ids": 35399,
         "operational_triaged_promote_or_crosscheck_rows": 20626,
         "operational_status_file_rows": 53746
       },
@@ -199,32 +199,32 @@
       "details": {
         "status_counts": [
           {
-            "status": "unavailable_verified_no_public_indication_after_exa_api_search",
-            "count": 349
+            "status": "auto_cross_checked",
+            "count": 355
           },
           {
-            "status": "auto_cross_checked",
-            "count": 328
+            "status": "unavailable_verified_no_public_indication_after_exa_api_search",
+            "count": 332
           },
           {
             "status": "user_confirmed_registration_candidate_or_not_required",
-            "count": 136
+            "count": 135
           },
           {
             "status": "user_confirmed",
-            "count": 127
+            "count": 128
           },
           {
             "status": "official_record_confirmed",
             "count": 113
           },
           {
-            "status": "needs_review",
-            "count": 73
+            "status": "auto_refined_not_explicit_direct_existing_text",
+            "count": 65
           },
           {
-            "status": "auto_refined_not_explicit_direct_existing_text",
-            "count": 67
+            "status": "needs_review",
+            "count": 62
           },
           {
             "status": "manual_new_product_candidate",
@@ -232,19 +232,19 @@
           },
           {
             "status": "user_confirmed_official_indication",
-            "count": 50
+            "count": 49
           },
           {
             "status": "auto_extracted_official_indication",
             "count": 36
           },
           {
-            "status": "auto_promoted_exa_source_curated",
+            "status": "manual_excluded_out_of_scope",
             "count": 29
           },
           {
-            "status": "manual_excluded_out_of_scope",
-            "count": 29
+            "status": "auto_promoted_exa_source_curated",
+            "count": 28
           }
         ]
       },
@@ -254,13 +254,13 @@
       "section": "C",
       "metric_id": "C2_registration_indication_coverage",
       "label": "approved_indication and intended_use coverage in Registration_Evidence",
-      "current_value": "approved_indication 100.0% (1605/1605); intended_use 100.0% (1605/1605)",
+      "current_value": "approved_indication 100.0% (1599/1599); intended_use 100.0% (1599/1599)",
       "threshold": ">= 60% / >= 60%",
       "passed": true,
       "details": {
-        "registration_rows": 1605,
-        "approved_indication_filled": 1605,
-        "intended_use_filled": 1605
+        "registration_rows": 1599,
+        "approved_indication_filled": 1599,
+        "intended_use_filled": 1599
       },
       "next_action": "Promote official indications from regulator/IFU evidence or mark unavailable after source follow-up."
     },
@@ -287,12 +287,12 @@
       "section": "D",
       "metric_id": "D1_public_market_cap_coverage",
       "label": "Market_Cap_USD_M coverage among public companies",
-      "current_value": "100.0% (45/45)",
+      "current_value": "100.0% (43/43)",
       "threshold": "100%",
       "passed": true,
       "details": {
-        "public_companies": 45,
-        "filled": 45
+        "public_companies": 43,
+        "filled": 43
       },
       "next_action": "Refresh public-company market-cap snapshots for blank rows."
     },
@@ -300,12 +300,12 @@
       "section": "D",
       "metric_id": "D2_public_revenue_coverage",
       "label": "Revenue_USD_M + Revenue_Year coverage among public companies",
-      "current_value": "100.0% (45/45)",
+      "current_value": "100.0% (43/43)",
       "threshold": ">= 90%",
       "passed": true,
       "details": {
-        "public_companies": 45,
-        "filled": 45
+        "public_companies": 43,
+        "filled": 43
       },
       "next_action": "Collect annual report/XBRL revenue and fiscal year for public companies."
     },
@@ -313,12 +313,12 @@
       "section": "D",
       "metric_id": "D3_public_stock_code_coverage",
       "label": "Stock_Code coverage among public companies",
-      "current_value": "100.0% (45/45)",
+      "current_value": "100.0% (43/43)",
       "threshold": "100%",
       "passed": true,
       "details": {
-        "public_companies": 45,
-        "filled": 45
+        "public_companies": 43,
+        "filled": 43
       },
       "next_action": "Backfill exchange/ticker identifiers from listed-company batch evidence."
     },
@@ -326,12 +326,12 @@
       "section": "D",
       "metric_id": "D4_public_aesthetics_revenue_pct_coverage",
       "label": "Aesthetics_Revenue_Pct coverage among public companies",
-      "current_value": "51.1% (23/45)",
+      "current_value": "51.2% (22/43)",
       "threshold": ">= 50%",
       "passed": true,
       "details": {
-        "public_companies": 45,
-        "filled": 23
+        "public_companies": 43,
+        "filled": 22
       },
       "next_action": "Extract aesthetics segment revenue share from annual report segment notes."
     },
@@ -339,15 +339,45 @@
       "section": "D",
       "metric_id": "D5_parent_company_known_group_subset",
       "label": "Parent_Company coverage among known group/subsidiary relationships",
-      "current_value": "95.1% (58/61)",
+      "current_value": "90.2% (55/61)",
       "threshold": ">= 90%",
       "passed": true,
       "details": {
         "known_group_rows": 61,
-        "filled": 58,
+        "filled": 55,
         "sample_missing": [
           {
-            "company_id": "co_03ea2a65c5ba",
+            "company_id": "",
+            "company": "Bayer",
+            "relation_to_listed_entity": "listed_entity_self",
+            "parent_company_seed": "",
+            "ultimate_parent_seed": "Bayer",
+            "cm_parent": null,
+            "cm_ultimate": null,
+            "companies_parent": null
+          },
+          {
+            "company_id": "",
+            "company": "Obagi",
+            "relation_to_listed_entity": "subsidiary_or_affiliate",
+            "parent_company_seed": "",
+            "ultimate_parent_seed": "Obagi",
+            "cm_parent": null,
+            "cm_ultimate": null,
+            "companies_parent": null
+          },
+          {
+            "company_id": "",
+            "company": "Waldencast",
+            "relation_to_listed_entity": "listed_entity_self",
+            "parent_company_seed": "",
+            "ultimate_parent_seed": "Waldencast",
+            "cm_parent": null,
+            "cm_ultimate": null,
+            "companies_parent": null
+          },
+          {
+            "company_id": "",
             "company": "Fagron Genomics",
             "relation_to_listed_entity": "subsidiary_or_affiliate",
             "parent_company_seed": "",
@@ -357,7 +387,7 @@
             "companies_parent": null
           },
           {
-            "company_id": "co_5bcf2c648760",
+            "company_id": "",
             "company": "Novartis",
             "relation_to_listed_entity": "listed_entity_self",
             "parent_company_seed": "",
@@ -367,7 +397,7 @@
             "companies_parent": null
           },
           {
-            "company_id": "co_d7eb81741934",
+            "company_id": "",
             "company": "Osteopore",
             "relation_to_listed_entity": "listed_entity_self",
             "parent_company_seed": "",
@@ -389,7 +419,7 @@
       "passed": true,
       "details": {
         "manual_product_fact_rows": 15302,
-        "promotion_log_rows": 29925,
+        "promotion_log_rows": 29900,
         "sample_missing": []
       },
       "next_action": "Write or repair Evidence_Promotion_Log rows for promoted facts before field promotion is accepted."
@@ -402,7 +432,16 @@
       "threshold": "= 0 high open rows",
       "passed": true,
       "details": {
-        "severity_counts": []
+        "severity_counts": [
+          {
+            "status": "medium",
+            "count": 2
+          },
+          {
+            "status": "low",
+            "count": 1
+          }
+        ]
       },
       "next_action": "Resolve high-severity seed integrity issues before final acceptance."
     }

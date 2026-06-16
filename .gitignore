@@ -19,6 +19,7 @@ assets/official_media/
 data/*
 !data/audits/
 !data/audits/**
+!data/manual_product_line_supplement.csv
 !data/company_logo_manifest.csv
 !data/company_logo_report.md
 

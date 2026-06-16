@@ -1,11 +1,11 @@
 # Data Usability Ledger
 
-- Generated: 2026-06-01T10:26:50.582011+00:00
-- Audited rows: 181115
+- Generated: 2026-06-16T05:12:16.973813+00:00
+- Audited rows: 186598
 - Audited tables: 41
-- Usable/reference rows: 156517
-- Planned/review rows: 0
-- Excluded/noise rows: 24598
+- Usable/reference rows: 161979
+- Planned/review rows: 3
+- Excluded/noise rows: 24616
 - Missing owner/status rows: 0
 - Every row has status and owner: True
 
@@ -13,9 +13,9 @@
 
 | Table | Planned/Review | Top Planned Status | Top Planned Owner |
 |---|---:|---|---|
+| seed_integrity_issues | 3 | open:3 | data_quality_audit:3 |
 | brands | 0 |  |  |
 | briefing_fulltext_rescue | 0 |  |  |
-| briefing_product_gap_candidates | 0 |  |  |
 | briefing_update_candidates | 0 |  |  |
 | briefing_verified_update_events | 0 |  |  |
 | companies | 0 |  |  |

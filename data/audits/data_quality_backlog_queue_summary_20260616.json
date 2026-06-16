@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-16T13:12:13+08:00",
+  "database_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
+  "queues": [
+    {
+      "name": "entity_resolution_review_queue",
+      "rows": 10,
+      "latest_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\entity_resolution_review_queue_latest.csv",
+      "dated_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\entity_resolution_review_queue_20260616.csv"
+    },
+    {
+      "name": "registration_review_queue",
+      "rows": 120,
+      "latest_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\registration_review_queue_latest.csv",
+      "dated_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\registration_review_queue_20260616.csv"
+    },
+    {
+      "name": "aesthetics_revenue_pct_collection_queue",
+      "rows": 21,
+      "latest_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\aesthetics_revenue_pct_collection_queue_latest.csv",
+      "dated_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\aesthetics_revenue_pct_collection_queue_20260616.csv"
+    }
+  ],
+  "checks": {
+    "financial_blank_company_id": 4,
+    "listed_blank_company_id": 6,
+    "registration_review_backlog": 120,
+    "public_aesthetics_revenue_pct_backlog": 21,
+    "registration_by_review_status": {
+      "manual_new_product_candidate": 58,
+      "needs_review": 62
+    },
+    "registration_by_triage_bucket": {
+      "new_product_candidate_resolution": 58,
+      "seed_registration_verification": 62
+    },
+    "entity_by_source_table": {
+      "listed_company_batch": 6,
+      "company_financial_metrics": 4
+    },
+    "aesthetics_revenue_by_priority": {
+      "P1": 10,
+      "P2": 4,
+      "P3": 7
+    }
+  }
+}

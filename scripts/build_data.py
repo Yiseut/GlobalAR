@@ -41,12 +41,16 @@ DATA_DIR = PROJECT_DIR / "data"
 WEB_DIR = PROJECT_DIR / "web"
 DB_PATH = DATA_DIR / "global_aesthetics.db"
 SNAPSHOT_PATH = WEB_DIR / "app-data.js"
+V3_DATA_AS_OF_PATH = WEB_DIR / "v3" / "data-as-of.json"
+V3_OPERATIONS_DATA_PATH = WEB_DIR / "v3" / "v3-operations.js"
+V3_SEARCH_DATA_PATH = WEB_DIR / "v3" / "v3-search.js"
 MANIFEST_PATH = DATA_DIR / "import_manifest.json"
 STAGING_JSONL_PATH = DATA_DIR / "verification_evidence_staging.jsonl"
 DATA_QUALITY_ISSUES_PATH = DATA_DIR / "seed_integrity_issues.csv"
 DATA_QUALITY_REPORT_PATH = DATA_DIR / "seed_integrity_report.md"
 DATA_QUALITY_SUMMARY_PATH = DATA_DIR / "seed_integrity_summary.json"
 PRODUCT_MASTER_PATH = DATA_DIR / "product_master.csv"
+MANUAL_PRODUCT_LINE_SUPPLEMENT_PATH = DATA_DIR / "manual_product_line_supplement.csv"
 REGISTRATION_EVIDENCE_PATH = DATA_DIR / "registration_evidence.csv"
 PRODUCT_FAMILY_MASTER_PATH = DATA_DIR / "product_family_master.csv"
 PRODUCT_SKU_MASTER_PATH = DATA_DIR / "product_sku_master.csv"
@@ -85,6 +89,11 @@ DATA_USABILITY_LEDGER_PATH = DATA_DIR / "audits" / "data_usability_ledger_latest
 DATA_USABILITY_ROW_STATUS_PATH = DATA_DIR / "audits" / "data_usability_row_status_latest.csv"
 DATA_USABILITY_MISSING_OWNER_PATH = DATA_DIR / "audits" / "data_usability_missing_owner_latest.csv"
 DATA_USABILITY_SUMMARY_PATH = DATA_DIR / "audits" / "data_usability_summary_latest.json"
+DATABASE_GUARDRAIL_VALIDATION_PATH = DATA_DIR / "audits" / "database_guardrail_validation_latest.json"
+DATA_QUALITY_BACKLOG_SUMMARY_PATH = DATA_DIR / "audits" / "data_quality_backlog_queue_summary_latest.json"
+ENTITY_RESOLUTION_REVIEW_QUEUE_PATH = DATA_DIR / "audits" / "entity_resolution_review_queue_latest.csv"
+REGISTRATION_REVIEW_QUEUE_PATH = DATA_DIR / "audits" / "registration_review_queue_latest.csv"
+AESTHETICS_REVENUE_QUEUE_PATH = DATA_DIR / "audits" / "aesthetics_revenue_pct_collection_queue_latest.csv"
 
 CURRENT_PHASE_CHANNELS = {"fda", "ce", "company_official"}
 EXTERNAL_PROJECT_CHANNELS = {"nmpa"}
@@ -2468,6 +2477,7 @@ def build_product_master(products: list[dict[str, Any]], company_id_map: dict[st
         official_override = source_marker == "official_company_fact_override"
         official_fact_promoted = source_marker == "official_product_fact_promoted"
         taxonomy_correction = source_marker == "taxonomy_conflict_correction"
+        official_manual_supplement = norm(product.get("Record_ID")).startswith("MANUAL_") and "official" in source_marker.lower()
         verification_status = "unverified_seed"
         source_status = "seed_from_workbook"
         if official_override:
@@ -2479,6 +2489,9 @@ def build_product_master(products: list[dict[str, Any]], company_id_map: dict[st
         elif taxonomy_correction:
             verification_status = "taxonomy_conflict_corrected"
             source_status = "taxonomy_conflict_correction"
+        elif official_manual_supplement:
+            verification_status = "official_source_manual_supplement"
+            source_status = f"manual_product_line_supplement, {source_marker}"
         rows.append(
             {
                 "product_id": product_id_for(product),
@@ -2505,7 +2518,10 @@ def build_product_master(products: list[dict[str, Any]], company_id_map: dict[st
                 "material_or_energy_source": product.get("Tech_Type_Std") or product.get("Tech_Type_Original"),
                 "core_product": product.get("Core_Product"),
                 "legal_manufacturer": product.get("Manufactured_By") or product.get("Company"),
+                "brand_owner": product.get("Brand_Owner"),
                 "marketing_holder": product.get("Company"),
+                "distributor": product.get("Distributor"),
+                "relationship_type": product.get("Relationship_Type"),
                 "local_holder": "",
                 "oem_for": product.get("OEM_For"),
                 "manufactured_by": product.get("Manufactured_By"),
@@ -2530,7 +2546,11 @@ def build_product_master(products: list[dict[str, Any]], company_id_map: dict[st
                     ensure_ascii=False,
                 ),
                 "verification_status": verification_status,
-                "review_status": "queued" if any(has_value(product, field) for field in ["FDA_Status", "NMPA_Status", "CE_Status", "KFDA_Status"]) else "backlog",
+                "review_status": (
+                    "queued"
+                    if any(has_value(product, field) for field in ["FDA_Status", "NMPA_Status", "CE_Status", "KFDA_Status"])
+                    else ("manual_verified" if official_manual_supplement else "backlog")
+                ),
                 "source_status": source_status,
                 "search_blob": text_blob(product),
             }
@@ -2615,6 +2635,11 @@ def build_product_hierarchy(products: list[dict[str, Any]], company_id_map: dict
                 "inclusion_status": canonical_material["inclusion_status"],
                 "tech_type": canonical.get("Tech_Type_Std"),
                 "material_or_energy_source": canonical.get("Tech_Type_Std") or canonical.get("Tech_Type_Original"),
+                "legal_manufacturer": canonical.get("Manufactured_By") or canonical.get("Company"),
+                "brand_owner": canonical.get("Brand_Owner"),
+                "marketing_holder": canonical.get("Company"),
+                "distributor": canonical.get("Distributor"),
+                "relationship_type": canonical.get("Relationship_Type"),
                 "primary_record_count": 0,
                 "duplicate_record_count": 0,
                 "sku_candidate_count": 0,
@@ -2747,7 +2772,8 @@ def write_product_hierarchy_outputs(hierarchy: dict[str, list[dict[str, Any]]]) 
             writer = csv.DictWriter(handle, fieldnames=fieldnames)
             if fieldnames:
                 writer.writeheader()
-                writer.writerows(rows)
+                for row in rows:
+                    writer.writerow({field: csv_safe_value(row.get(field, "")) for field in fieldnames})
 
 
 def write_source_authority_policy_output() -> None:
@@ -3082,12 +3108,22 @@ def drop_superseded_seed_registration_rows(rows: list[dict[str, Any]]) -> list[d
     return filtered
 
 
+def csv_safe_value(value: Any) -> Any:
+    if isinstance(value, str):
+        return value.replace("\x00", "")
+    return value
+
+
+def clean_record_text(row: dict[str, Any]) -> dict[str, Any]:
+    return {key: csv_safe_value(value) for key, value in row.items()}
+
+
 def write_rows_csv(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]) -> None:
     with path.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
-            writer.writerow({field: row.get(field, "") for field in fieldnames})
+            writer.writerow({field: csv_safe_value(row.get(field, "")) for field in fieldnames})
 
 
 def write_product_master_output(product_master: list[dict[str, Any]]) -> None:
@@ -3155,7 +3191,7 @@ def build_registration_evidence_output(
         for item in promoted_registration_rows
         if allowed_product_ids is None or norm(item.get("product_id")) in allowed_product_ids
     )
-    return drop_superseded_seed_registration_rows(dedupe_registration_evidence_rows(rows))
+    return [clean_record_text(row) for row in drop_superseded_seed_registration_rows(dedupe_registration_evidence_rows(rows))]
 
 
 def derived_registration_counts(registration_rows: list[dict[str, Any]]) -> dict[str, Counter[str]]:
@@ -3407,7 +3443,7 @@ def load_staging_records() -> list[dict[str, Any]]:
         try:
             payload = json.loads(line)
             if isinstance(payload, dict):
-                records.append(canonicalize_company_fields(payload))
+                records.append(clean_record_text(canonicalize_company_fields(payload)))
         except json.JSONDecodeError:
             continue
     return records
@@ -3421,7 +3457,9 @@ def load_company_background_evidence() -> list[dict[str, Any]]:
         if not line.strip():
             continue
         try:
-            records.append(json.loads(line))
+            payload = json.loads(line)
+            if isinstance(payload, dict):
+                records.append(clean_record_text(payload))
         except json.JSONDecodeError:
             continue
     return records
@@ -3473,7 +3511,7 @@ def load_company_official_source_evidence() -> list[dict[str, Any]]:
             continue
         if not isinstance(payload, dict):
             continue
-        record = canonicalize_company_fields(payload)
+        record = clean_record_text(canonicalize_company_fields(payload))
         if company_exclusion_reason(record) == "no_medical_aesthetic_product":
             continue
         record_id = norm(record.get("evidence_id")) or norm(record.get("id"))
@@ -3495,7 +3533,10 @@ def load_mdr_ce_evidence_candidates() -> list[dict[str, Any]]:
             record = json.loads(line)
         except json.JSONDecodeError:
             continue
-        if isinstance(record, dict) and company_exclusion_reason(record) == "no_medical_aesthetic_product":
+        if not isinstance(record, dict):
+            continue
+        record = clean_record_text(record)
+        if company_exclusion_reason(record) == "no_medical_aesthetic_product":
             continue
         records.append(record)
     return records
@@ -6524,21 +6565,29 @@ def build_subtrack_slices(
     return slices
 
 
+def normalize_product_line_record(row: dict[str, Any]) -> dict[str, Any]:
+    record = {key: norm(value) for key, value in row.items()}
+    record["Company"] = canonical_company_name(record.get("Company"))
+    record = apply_product_fact_override(record)
+    blob = text_blob(record)
+    override = PRODUCT_FACT_OVERRIDES.get(norm(record.get("Record_ID")))
+    segments = [item.strip() for item in norm(override.get("_segments") if override else "").split(",") if item.strip()]
+    if not segments:
+        segments = detect_segments(blob, record.get("Category_L1", ""))
+    record["Segments"] = ",".join(segments)
+    record["Primary_Segment"] = segments[0] if segments else "other"
+    return record
+
+
+def load_manual_product_line_supplements() -> list[dict[str, Any]]:
+    rows = load_generated_csv(MANUAL_PRODUCT_LINE_SUPPLEMENT_PATH)
+    return [normalize_product_line_record(row) for row in rows if norm(row.get("Record_ID"))]
+
+
 def load_products(company_book: Path) -> list[dict[str, Any]]:
     rows = read_sheet_dicts(company_book, "Product_Lines")
-    products = []
-    for row in rows:
-        record = {key: norm(value) for key, value in row.items()}
-        record["Company"] = canonical_company_name(record.get("Company"))
-        record = apply_product_fact_override(record)
-        blob = text_blob(record)
-        override = PRODUCT_FACT_OVERRIDES.get(norm(record.get("Record_ID")))
-        segments = [item.strip() for item in norm(override.get("_segments") if override else "").split(",") if item.strip()]
-        if not segments:
-            segments = detect_segments(blob, record.get("Category_L1", ""))
-        record["Segments"] = ",".join(segments)
-        record["Primary_Segment"] = segments[0]
-        products.append(record)
+    products = [normalize_product_line_record(row) for row in rows]
+    products.extend(load_manual_product_line_supplements())
     return products
 
 
@@ -7153,8 +7202,9 @@ def create_database(
           material_taxonomy_confidence TEXT, material_taxonomy_review_status TEXT,
           material_family TEXT, inclusion_status TEXT,
           technology_path_l1 TEXT, technology_path_l2 TEXT, material_or_energy_source TEXT,
-          core_product TEXT, legal_manufacturer TEXT, marketing_holder TEXT, local_holder TEXT,
-          oem_for TEXT, manufactured_by TEXT, r_and_d_origin_status TEXT,
+          core_product TEXT, legal_manufacturer TEXT, brand_owner TEXT,
+          marketing_holder TEXT, distributor TEXT, relationship_type TEXT,
+          local_holder TEXT, oem_for TEXT, manufactured_by TEXT, r_and_d_origin_status TEXT,
           claim_text TEXT, verified_differentiator TEXT, feature_tags TEXT,
           technical_specs_json TEXT, technical_specs_summary TEXT,
           spec_evidence_count TEXT, spec_review_status TEXT,
@@ -7170,7 +7220,9 @@ def create_database(
           material_taxonomy_l3_cn TEXT, material_taxonomy_path_cn TEXT,
           material_taxonomy_confidence TEXT, material_taxonomy_review_status TEXT,
           material_family TEXT, inclusion_status TEXT,
-          tech_type TEXT, material_or_energy_source TEXT, primary_record_count INTEGER,
+          tech_type TEXT, material_or_energy_source TEXT,
+          legal_manufacturer TEXT, brand_owner TEXT, marketing_holder TEXT,
+          distributor TEXT, relationship_type TEXT, primary_record_count INTEGER,
           duplicate_record_count INTEGER, sku_candidate_count INTEGER,
           countries TEXT, source_record_ids TEXT, duplicate_record_ids TEXT,
           sku_candidate_names TEXT, regulatory_channels TEXT,
@@ -7643,7 +7695,10 @@ def create_database(
             "material_or_energy_source",
             "core_product",
             "legal_manufacturer",
+            "brand_owner",
             "marketing_holder",
+            "distributor",
+            "relationship_type",
             "local_holder",
             "oem_for",
             "manufactured_by",
@@ -7683,6 +7738,11 @@ def create_database(
             "inclusion_status",
             "tech_type",
             "material_or_energy_source",
+            "legal_manufacturer",
+            "brand_owner",
+            "marketing_holder",
+            "distributor",
+            "relationship_type",
             "primary_record_count",
             "duplicate_record_count",
             "sku_candidate_count",
@@ -9946,6 +10006,9 @@ def build_snapshot(
                 + Counter(item.get("jurisdiction") or "Unknown" for item in promoted_registration_rows),
                 10,
             ),
+            "pathways": top_counts(Counter(item.get("regulatory_pathway") or "Unknown" for item in registration_evidence_rows), 24),
+            "regulators": top_counts(Counter(item.get("regulator") or "Unknown" for item in registration_evidence_rows), 12),
+            "review_status": top_counts(Counter(item.get("review_status") or "Unknown" for item in registration_evidence_rows), 12),
             "timeline": [
                 {
                     "year": str(year),
@@ -9955,7 +10018,7 @@ def build_snapshot(
                     "nmpa": 0,
                     "launch": 0,
                 }
-                for year in sorted(registration_years)[-10:]
+                for year in sorted(registration_years)
             ],
             "source_note": "Rows here are long-form evidence records: product x jurisdiction x regulator x registration number x approved indication x approval/expiry date x source.",
             "current_scope_note": "Registration_Evidence now separates seed rows, FDA/openFDA API rows, and promoted FDA/IFU/certificate/EUDAMED records. Country-level indications are read from long rows only.",
@@ -9982,16 +10045,645 @@ def build_snapshot(
     return snapshot
 
 
+def read_json_audit(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8-sig"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def read_csv_preview(path: Path, limit: int = 12) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    try:
+        with path.open("r", encoding="utf-8-sig", newline="") as handle:
+            return [dict(row) for _, row in zip(range(limit), csv.DictReader(handle))]
+    except OSError:
+        return []
+
+
+def db_scalar(cur: sqlite3.Cursor, sql: str) -> int:
+    try:
+        value = cur.execute(sql).fetchone()[0]
+    except (sqlite3.Error, TypeError):
+        return 0
+    return int(value or 0)
+
+
+def db_top_counts(cur: sqlite3.Cursor, sql: str) -> list[dict[str, Any]]:
+    try:
+        rows = cur.execute(sql).fetchall()
+    except sqlite3.Error:
+        return []
+    return [{"name": row[0] or "Unknown", "value": int(row[1] or 0)} for row in rows]
+
+
+def build_v3_operations_data(snapshot: dict[str, Any]) -> dict[str, Any]:
+    guardrail = read_json_audit(DATABASE_GUARDRAIL_VALIDATION_PATH)
+    backlog_summary = read_json_audit(DATA_QUALITY_BACKLOG_SUMMARY_PATH)
+    entity_preview = read_csv_preview(ENTITY_RESOLUTION_REVIEW_QUEUE_PATH, 10)
+    registration_preview = read_csv_preview(REGISTRATION_REVIEW_QUEUE_PATH, 12)
+    revenue_preview = read_csv_preview(AESTHETICS_REVENUE_QUEUE_PATH, 10)
+
+    checks = guardrail.get("checks", {}) if isinstance(guardrail.get("checks"), dict) else {}
+    business_caveats = checks.get("business_caveats", {}) if isinstance(checks.get("business_caveats"), dict) else {}
+    owner_consistency = checks.get("owner_consistency", {}) if isinstance(checks.get("owner_consistency"), dict) else {}
+    data_usability = checks.get("data_usability", {}) if isinstance(checks.get("data_usability"), dict) else {}
+    traceability = checks.get("traceability", {}) if isinstance(checks.get("traceability"), dict) else {}
+    backlog_checks = backlog_summary.get("checks", {}) if isinstance(backlog_summary.get("checks"), dict) else {}
+
+    computed: dict[str, Any] = {}
+    if DB_PATH.exists():
+        conn = sqlite3.connect(DB_PATH)
+        try:
+            cur = conn.cursor()
+            computed = {
+                "listed_blank_company_id": db_scalar(
+                    cur,
+                    "SELECT COUNT(*) FROM listed_company_batch WHERE NULLIF(TRIM(company_id), '') IS NULL",
+                ),
+                "financial_blank_company_id": db_scalar(
+                    cur,
+                    "SELECT COUNT(*) FROM company_financial_metrics WHERE NULLIF(TRIM(company_id), '') IS NULL",
+                ),
+                "registration_review_backlog": db_scalar(
+                    cur,
+                    """
+                    SELECT COUNT(*)
+                    FROM registration_evidence
+                    WHERE review_status LIKE '%needs_review%'
+                       OR review_status = 'manual_new_product_candidate'
+                    """,
+                ),
+                "registration_by_review_status": db_top_counts(
+                    cur,
+                    """
+                    SELECT review_status, COUNT(*)
+                    FROM registration_evidence
+                    WHERE review_status LIKE '%needs_review%'
+                       OR review_status = 'manual_new_product_candidate'
+                    GROUP BY review_status
+                    ORDER BY COUNT(*) DESC
+                    """,
+                ),
+                "public_company_count": db_scalar(
+                    cur,
+                    "SELECT COUNT(*) FROM companies WHERE ownership = 'Public' AND status = 'Active'",
+                ),
+                "public_aesthetics_revenue_pct_backlog": db_scalar(
+                    cur,
+                    """
+                    SELECT COUNT(*)
+                    FROM companies
+                    WHERE ownership = 'Public'
+                      AND status = 'Active'
+                      AND NULLIF(TRIM(COALESCE(aesthetics_revenue_pct, '')), '') IS NULL
+                    """,
+                ),
+            }
+        finally:
+            conn.close()
+
+    listed_blank = computed.get("listed_blank_company_id", business_caveats.get("listed_company_batch_blank_company_id", 0))
+    financial_blank = computed.get("financial_blank_company_id", business_caveats.get("company_financial_metrics_blank_company_id", 0))
+    registration_backlog = computed.get("registration_review_backlog", business_caveats.get("registration_needs_review", 0))
+    revenue_backlog = computed.get("public_aesthetics_revenue_pct_backlog", business_caveats.get("public_companies_without_aesthetics_revenue_pct", 0))
+    entity_backlog = int(listed_blank or 0) + int(financial_blank or 0)
+    public_total = computed.get("public_company_count", 43)
+    public_revenue_filled = max(0, int(public_total or 0) - int(revenue_backlog or 0))
+    review_backlog_total = int(entity_backlog) + int(registration_backlog or 0) + int(revenue_backlog or 0)
+
+    summary = snapshot.get("summary", {})
+    operations = {
+        "generated_at": snapshot.get("generated_at"),
+        "source": {
+            "database": str(DB_PATH),
+            "guardrail": str(DATABASE_GUARDRAIL_VALIDATION_PATH),
+            "backlog_summary": str(DATA_QUALITY_BACKLOG_SUMMARY_PATH),
+        },
+        "headline": {
+            "overall_assessment": guardrail.get("overall_assessment") or "Ready to share",
+            "failure_count": int(guardrail.get("failure_count") or 0),
+            "warning_count": int(guardrail.get("warning_count") or len(guardrail.get("warnings") or [])),
+            "review_backlog_total": review_backlog_total,
+            "entity_resolution_backlog": entity_backlog,
+            "registration_review_backlog": int(registration_backlog or 0),
+            "aesthetics_revenue_pct_backlog": int(revenue_backlog or 0),
+            "affiliate_trace_rows": int(
+                owner_consistency.get(
+                    "duplicate_or_affiliate_sku_family_cross_company",
+                    business_caveats.get("duplicate_or_affiliate_sku_family_cross_company", 0),
+                )
+                or 0
+            ),
+        },
+        "guardrails": {
+            "row_counts": checks.get("row_counts") or {},
+            "foreign_key_orphans": checks.get("foreign_key_orphans") or [],
+            "data_usability_missing_owner_rows": int(data_usability.get("missing_owner_rows") or 0),
+            "promoted_fact_missing_logs": int(traceability.get("promoted_fact_missing_logs") or 0),
+            "business_caveats": business_caveats,
+            "warnings": guardrail.get("warnings") or [],
+            "failures": guardrail.get("failures") or [],
+        },
+        "queues": {
+            "entity_resolution": {
+                "rows": entity_backlog,
+                "listed_blank_company_id": int(listed_blank or 0),
+                "financial_blank_company_id": int(financial_blank or 0),
+                "by_source_table": backlog_checks.get("entity_by_source_table") or {
+                    "listed_company_batch": int(listed_blank or 0),
+                    "company_financial_metrics": int(financial_blank or 0),
+                },
+                "preview": entity_preview,
+            },
+            "registration_review": {
+                "rows": int(registration_backlog or 0),
+                "by_review_status": backlog_checks.get("registration_by_review_status")
+                or {item["name"]: item["value"] for item in computed.get("registration_by_review_status", [])},
+                "by_triage_bucket": backlog_checks.get("registration_by_triage_bucket") or {},
+                "preview": registration_preview,
+            },
+            "aesthetics_revenue_pct": {
+                "rows": int(revenue_backlog or 0),
+                "public_company_count": int(public_total or 0),
+                "filled_count": public_revenue_filled,
+                "coverage_pct": round((public_revenue_filled / public_total) * 100, 1) if public_total else 0,
+                "by_priority": backlog_checks.get("aesthetics_revenue_by_priority") or {},
+                "preview": revenue_preview,
+            },
+        },
+        "build_delta": {
+            "briefing_update_candidates": summary.get("briefing_update_candidates", 0),
+            "briefing_verified_update_events": summary.get("briefing_verified_update_events", 0),
+            "briefing_fulltext_rescue": summary.get("briefing_fulltext_rescue", 0),
+            "briefing_product_gap_candidates": summary.get("briefing_product_gap_candidates", 0),
+            "raw_products": summary.get("raw_products", 0),
+            "active_products": summary.get("products", 0),
+            "excluded_products": summary.get("dashboard_excluded_products", 0),
+            "raw_companies": summary.get("raw_companies", 0),
+            "active_companies": summary.get("companies", 0),
+            "excluded_companies": summary.get("dashboard_excluded_companies", 0),
+        },
+        "source_note": (
+            "Operations data is generated from the current SQLite database plus latest guardrail/backlog audit files. "
+            "Medium warnings are interpretation caveats, not acceptance failures."
+        ),
+    }
+    return operations
+
+
+def short_text(value: Any, limit: int = 320) -> str:
+    text = norm(value)
+    if len(text) <= limit:
+        return text
+    return text[: max(0, limit - 1)].rstrip() + "..."
+
+
+def parse_json_text(value: Any) -> Any:
+    text = norm(value)
+    if not text:
+        return None
+    try:
+        return json.loads(text)
+    except (TypeError, json.JSONDecodeError):
+        return None
+
+
+def build_v3_search_data(snapshot: dict[str, Any]) -> dict[str, Any]:
+    """Build a compact global-search index for the v3 static dashboard."""
+    search = {
+        "generated_at": snapshot.get("generated_at"),
+        "counts": {
+            "products": 0,
+            "families": 0,
+            "companies": 0,
+            "registrations": 0,
+        },
+        "items": [],
+        "source_note": (
+            "Search index is regenerated from SQLite product/company masters plus "
+            "registration, specification, and manual product-fact evidence."
+        ),
+    }
+    if not DB_PATH.exists():
+        return search
+
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    try:
+        cur = conn.cursor()
+        company_by_id = {
+            row["company_id"]: dict(row)
+            for row in cur.execute(
+                """
+                SELECT company_id, canonical_name, aliases, hq_country, region,
+                       ownership, business_role, status, parent_company,
+                       stock_code, product_count, brand_count, primary_track,
+                       verification_status, review_status, source_status, search_blob
+                FROM company_master
+                """
+            )
+        }
+
+        registration_by_product: dict[str, dict[str, Any]] = defaultdict(
+            lambda: {"total": 0, "official": 0, "jurisdictions": set(), "samples": []}
+        )
+        registration_rows = cur.execute(
+            """
+            SELECT product_id, jurisdiction, regulator, status, registration_no,
+                   approval_date, expiry_date, registered_name, legal_manufacturer,
+                   local_holder, source_type, evidence_title, source_url,
+                   review_status, confidence
+            FROM registration_evidence
+            WHERE NULLIF(TRIM(COALESCE(product_id, '')), '') IS NOT NULL
+            ORDER BY id
+            """
+        ).fetchall()
+        for row in registration_rows:
+            product_id = row["product_id"]
+            bucket = registration_by_product[product_id]
+            source_type = norm(row["source_type"]).lower()
+            review_status = norm(row["review_status"]).lower()
+            confidence = norm(row["confidence"]).lower()
+            is_official = (
+                "official" in source_type
+                or "regulator" in source_type
+                or "official" in confidence
+                or review_status
+                in {
+                    "user_confirmed",
+                    "promoted",
+                    "manual_verified",
+                    "auto_cross_checked",
+                    "cross_checked_source_screened",
+                }
+            )
+            bucket["total"] += 1
+            bucket["official"] += 1 if is_official else 0
+            if norm(row["jurisdiction"]):
+                bucket["jurisdictions"].add(norm(row["jurisdiction"]))
+            if len(bucket["samples"]) < 4:
+                bucket["samples"].append(
+                    {
+                        "jurisdiction": norm(row["jurisdiction"]),
+                        "regulator": norm(row["regulator"]),
+                        "status": short_text(row["status"], 180),
+                        "registration_no": norm(row["registration_no"]),
+                        "approval_date": norm(row["approval_date"]),
+                        "expiry_date": norm(row["expiry_date"]),
+                        "registered_name": norm(row["registered_name"]),
+                        "legal_manufacturer": norm(row["legal_manufacturer"]),
+                        "local_holder": norm(row["local_holder"]),
+                        "source_type": norm(row["source_type"]),
+                        "evidence_title": short_text(row["evidence_title"], 160),
+                        "source_url": norm(row["source_url"]),
+                        "review_status": norm(row["review_status"]),
+                        "confidence": norm(row["confidence"]),
+                    }
+                )
+
+        spec_count_by_product = Counter(
+            row[0]
+            for row in cur.execute(
+                """
+                SELECT product_id
+                FROM product_specification_evidence
+                WHERE NULLIF(TRIM(COALESCE(product_id, '')), '') IS NOT NULL
+                """
+            )
+        )
+        fact_count_by_product = Counter(
+            row[0]
+            for row in cur.execute(
+                """
+                SELECT product_id
+                FROM manual_product_fact_evidence
+                WHERE NULLIF(TRIM(COALESCE(product_id, '')), '') IS NOT NULL
+                """
+            )
+        )
+
+        def evidence_level(product_id: str, product_row: sqlite3.Row | None = None) -> dict[str, Any]:
+            reg = registration_by_product.get(product_id, {})
+            reg_total = int(reg.get("total") or 0)
+            reg_official = int(reg.get("official") or 0)
+            spec_count = int(spec_count_by_product.get(product_id, 0))
+            fact_count = int(fact_count_by_product.get(product_id, 0))
+            source_text = ""
+            if product_row is not None:
+                source_text = " | ".join(
+                    norm(product_row[key])
+                    for key in ["source_status", "verification_status", "search_blob"]
+                    if key in product_row.keys() and norm(product_row[key])
+                ).lower()
+            if reg_official:
+                level = "strong"
+                label = "监管/官方证据"
+                note = "已连接注册长表或官方证据；仍需逐条看证书号、适用市场和有效期。"
+            elif reg_total or spec_count or fact_count:
+                level = "source"
+                label = "来源证据"
+                note = "有官网、规格或事实证据；监管注册仍需补强或复核。"
+            elif "official" in source_text or "manual_product_line_supplement" in source_text:
+                level = "source"
+                label = "来源证据"
+                note = "产品主数据来自人工补录的官方手册或官网来源；监管注册仍需另行连接。"
+            else:
+                level = "seed"
+                label = "种子/待证实"
+                note = "当前库内未连接官方或监管证据，不能据此判断为真实注册产品。"
+            return {
+                "level": level,
+                "label": label,
+                "note": note,
+                "registration_count": reg_total,
+                "official_registration_count": reg_official,
+                "spec_count": spec_count,
+                "manual_fact_count": fact_count,
+                "jurisdictions": sorted(reg.get("jurisdictions") or []),
+                "samples": reg.get("samples") or [],
+            }
+
+        product_rows = cur.execute(
+            """
+            SELECT product_id, seed_record_id, company_id, company, brand,
+                   brand_role, standard_product_name, registered_name,
+                   model_or_sku, commercial_path_l1, commercial_path_l2,
+                   material_taxonomy_path_cn, material_family,
+                   technology_path_l1, technology_path_l2,
+                   material_or_energy_source, core_product, legal_manufacturer,
+                   brand_owner, marketing_holder, distributor, relationship_type,
+                   local_holder, oem_for, manufactured_by, claim_text,
+                   verified_differentiator, feature_tags,
+                   verification_status, review_status, source_status, search_blob
+            FROM product_master
+            ORDER BY company, brand, standard_product_name
+            """
+        ).fetchall()
+        for row in product_rows:
+            company = company_by_id.get(row["company_id"], {})
+            evidence = evidence_level(row["product_id"], row)
+            title = norm(row["brand"]) or norm(row["registered_name"]) or norm(row["standard_product_name"])
+            product_name = norm(row["standard_product_name"]) or norm(row["core_product"])
+            search_fields = [
+                "product",
+                title,
+                product_name,
+                row["registered_name"],
+                row["model_or_sku"],
+                row["company"],
+                company.get("canonical_name"),
+                company.get("aliases"),
+                row["legal_manufacturer"],
+                row["brand_owner"],
+                row["manufactured_by"],
+                row["marketing_holder"],
+                row["distributor"],
+                row["relationship_type"],
+                row["commercial_path_l1"],
+                row["commercial_path_l2"],
+                row["material_taxonomy_path_cn"],
+                row["material_family"],
+                row["technology_path_l1"],
+                row["technology_path_l2"],
+                row["material_or_energy_source"],
+                row["feature_tags"],
+                row["search_blob"],
+            ]
+            for sample in evidence["samples"]:
+                search_fields.extend(
+                    [
+                        sample.get("registered_name"),
+                        sample.get("registration_no"),
+                        sample.get("legal_manufacturer"),
+                        sample.get("evidence_title"),
+                    ]
+                )
+            search["items"].append(
+                {
+                    "type": "product",
+                    "id": row["product_id"],
+                    "product_id": row["product_id"],
+                    "seed_record_id": norm(row["seed_record_id"]),
+                    "company_id": norm(row["company_id"]),
+                    "title": title or product_name or "Unnamed product",
+                    "brand": norm(row["brand"]),
+                    "product_name": product_name,
+                    "registered_name": norm(row["registered_name"]),
+                    "model_or_sku": norm(row["model_or_sku"]),
+                    "company": norm(row["company"]),
+                    "country": norm(company.get("hq_country")),
+                    "region": norm(company.get("region")),
+                    "track": norm(row["commercial_path_l1"]),
+                    "subtrack": norm(row["commercial_path_l2"]),
+                    "material_path": norm(row["material_taxonomy_path_cn"]),
+                    "material_family": norm(row["material_family"]),
+                    "technology": " / ".join(
+                        part
+                        for part in [norm(row["technology_path_l1"]), norm(row["technology_path_l2"])]
+                        if part
+                    ),
+                    "legal_manufacturer": norm(row["legal_manufacturer"]),
+                    "brand_owner": norm(row["brand_owner"]),
+                    "manufactured_by": norm(row["manufactured_by"]),
+                    "marketing_holder": norm(row["marketing_holder"]),
+                    "distributor": norm(row["distributor"]),
+                    "relationship_type": norm(row["relationship_type"]),
+                    "local_holder": norm(row["local_holder"]),
+                    "oem_for": norm(row["oem_for"]),
+                    "claim_text": short_text(row["claim_text"], 260),
+                    "verified_differentiator": short_text(row["verified_differentiator"], 160),
+                    "verification_status": norm(row["verification_status"]),
+                    "review_status": norm(row["review_status"]),
+                    "source_status": short_text(row["source_status"], 220),
+                    "evidence": evidence,
+                    "search_text": text_blob({"text": " | ".join(norm(v) for v in search_fields if norm(v))}),
+                }
+            )
+
+        family_rows = cur.execute(
+            """
+            SELECT product_family_id, company_id, company, brand, brand_type,
+                   product_family, category_l1, category_l2, material_taxonomy_path_cn,
+                   material_family, tech_type, material_or_energy_source,
+                   legal_manufacturer, brand_owner, marketing_holder, distributor,
+                   relationship_type,
+                   primary_record_count, duplicate_record_count, sku_candidate_count,
+                   countries, regulatory_channels, hierarchy_status, review_status,
+                   source_status, search_blob
+            FROM product_family_master
+            ORDER BY company, brand, product_family
+            """
+        ).fetchall()
+        for row in family_rows:
+            company = company_by_id.get(row["company_id"], {})
+            title_parts = [norm(row["brand"]), norm(row["product_family"])]
+            title = " / ".join(dict.fromkeys(part for part in title_parts if part))
+            search["items"].append(
+                {
+                    "type": "family",
+                    "id": row["product_family_id"],
+                    "product_family_id": row["product_family_id"],
+                    "company_id": norm(row["company_id"]),
+                    "title": title or "Unnamed family",
+                    "brand": norm(row["brand"]),
+                    "product_name": norm(row["product_family"]),
+                    "company": norm(row["company"]),
+                    "country": norm(company.get("hq_country")),
+                    "region": norm(company.get("region")),
+                    "track": norm(row["category_l1"]),
+                    "subtrack": norm(row["category_l2"]),
+                    "material_path": norm(row["material_taxonomy_path_cn"]),
+                    "material_family": norm(row["material_family"]),
+                    "technology": norm(row["tech_type"]),
+                    "legal_manufacturer": norm(row["legal_manufacturer"]),
+                    "brand_owner": norm(row["brand_owner"]),
+                    "marketing_holder": norm(row["marketing_holder"]),
+                    "distributor": norm(row["distributor"]),
+                    "relationship_type": norm(row["relationship_type"]),
+                    "primary_record_count": safe_int(row["primary_record_count"]),
+                    "duplicate_record_count": safe_int(row["duplicate_record_count"]),
+                    "sku_candidate_count": safe_int(row["sku_candidate_count"]),
+                    "countries": norm(row["countries"]),
+                    "regulatory_channels": norm(row["regulatory_channels"]),
+                    "hierarchy_status": norm(row["hierarchy_status"]),
+                    "review_status": norm(row["review_status"]),
+                    "source_status": short_text(row["source_status"], 180),
+                    "evidence": {
+                        "level": "family",
+                        "label": "产品族",
+                        "note": "产品族结果用于定位品牌/系列；真伪和注册状态需打开具体产品证据。"
+                    },
+                    "search_text": text_blob(
+                        {
+                            "text": " | ".join(
+                                norm(v)
+                                for v in [
+                                    "family",
+                                    row["brand"],
+                                    row["product_family"],
+                                    row["company"],
+                                    company.get("aliases"),
+                                    row["legal_manufacturer"],
+                                    row["brand_owner"],
+                                    row["marketing_holder"],
+                                    row["distributor"],
+                                    row["relationship_type"],
+                                    row["category_l1"],
+                                    row["category_l2"],
+                                    row["material_taxonomy_path_cn"],
+                                    row["tech_type"],
+                                    row["countries"],
+                                    row["regulatory_channels"],
+                                    row["search_blob"],
+                                ]
+                                if norm(v)
+                            )
+                        }
+                    ),
+                }
+            )
+
+        for row in company_by_id.values():
+            aliases = parse_json_text(row.get("aliases"))
+            aliases_text = " | ".join(aliases) if isinstance(aliases, list) else norm(row.get("aliases"))
+            search["items"].append(
+                {
+                    "type": "company",
+                    "id": row["company_id"],
+                    "company_id": row["company_id"],
+                    "title": norm(row["canonical_name"]),
+                    "company": norm(row["canonical_name"]),
+                    "aliases": aliases if isinstance(aliases, list) else [],
+                    "country": norm(row["hq_country"]),
+                    "region": norm(row["region"]),
+                    "ownership": norm(row["ownership"]),
+                    "business_role": norm(row["business_role"]),
+                    "status": norm(row["status"]),
+                    "parent_company": norm(row["parent_company"]),
+                    "stock_code": norm(row["stock_code"]),
+                    "track": norm(row["primary_track"]),
+                    "product_count": safe_int(row["product_count"]),
+                    "brand_count": safe_int(row["brand_count"]),
+                    "verification_status": norm(row["verification_status"]),
+                    "review_status": norm(row["review_status"]),
+                    "source_status": short_text(row["source_status"], 180),
+                    "evidence": {
+                        "level": "company",
+                        "label": "企业主数据",
+                        "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
+                    },
+                    "search_text": text_blob(
+                        {
+                            "text": " | ".join(
+                                norm(v)
+                                for v in [
+                                    "company",
+                                    row["canonical_name"],
+                                    aliases_text,
+                                    row["hq_country"],
+                                    row["region"],
+                                    row["ownership"],
+                                    row["business_role"],
+                                    row["parent_company"],
+                                    row["stock_code"],
+                                    row["primary_track"],
+                                    row["search_blob"],
+                                ]
+                                if norm(v)
+                            )
+                        }
+                    ),
+                }
+            )
+
+        search["counts"] = {
+            "products": len(product_rows),
+            "families": len(family_rows),
+            "companies": len(company_by_id),
+            "registrations": len(registration_rows),
+        }
+    finally:
+        conn.close()
+    return search
+
+
 def write_snapshot(snapshot: dict[str, Any]) -> None:
     WEB_DIR.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(snapshot, ensure_ascii=False, indent=2)
     SNAPSHOT_PATH.write_text(f"window.GLOBAL_AESTHETICS_DATA = {payload};\n", encoding="utf-8")
+    V3_DATA_AS_OF_PATH.parent.mkdir(parents=True, exist_ok=True)
+    V3_DATA_AS_OF_PATH.write_text(
+        json.dumps(
+            {
+                "as_of": snapshot["generated_at"],
+                "generated_by": "build_data.py",
+                "products": snapshot["summary"].get("products"),
+                "companies": snapshot["summary"].get("companies"),
+                "brands": snapshot["summary"].get("brands"),
+                "registrations": snapshot["summary"].get("registration_evidence"),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    operations_payload = json.dumps(build_v3_operations_data(snapshot), ensure_ascii=False, indent=2)
+    V3_OPERATIONS_DATA_PATH.write_text(f"window.V3_OPERATIONS_DATA = {operations_payload};\n", encoding="utf-8")
+    search_payload = json.dumps(build_v3_search_data(snapshot), ensure_ascii=False, indent=2)
+    V3_SEARCH_DATA_PATH.write_text(f"window.V3_SEARCH_DATA = {search_payload};\n", encoding="utf-8")
     MANIFEST_PATH.write_text(
         json.dumps(
             {
                 "generated_at": snapshot["generated_at"],
                 "db_path": str(DB_PATH),
                 "snapshot_path": str(SNAPSHOT_PATH),
+                "v3_search_path": str(V3_SEARCH_DATA_PATH),
                 "summary": snapshot["summary"],
                 "source_root": str(SOURCE_DIR),
             },

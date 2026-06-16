@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-16T00:17:34+08:00",
+  "mode": "dry_run",
+  "planned_rows": 0,
+  "planned_actions": {},
+  "nul_chars_removed_when_applied": {},
+  "backfill_log_additions": 0,
+  "changed_files": [],
+  "plan_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\integrity_residual_repair_plan_20260615_latest.csv"
+}

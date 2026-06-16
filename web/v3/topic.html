@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>子赛道下钻 · v3</title>
+<title>子赛道详情 · v3</title>
 <link rel="icon" href="data:," />
 <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -474,6 +474,9 @@
       "ebd":"topic-ebd","injectables":"topic-injectables",
       "regenerative":"topic-regenerative","regen":"topic-regenerative",
       "skincare":"topic-skincare",
+      "consumables":"topic-consumables","implants":"topic-implants",
+      "diagnostics":"topic-diagnostics","surgical":"topic-surgical",
+      "pharma":"topic-pharma",
     };
     const s = document.createElement("script");
     s.src = "./_nav.js";
@@ -524,7 +527,7 @@
     if (!L1) {
       root.innerHTML = `
         <section class="page-hero">
-          <div class="eyebrow-chip"><span class="dot"></span>Drill-down · invalid segment</div>
+          <div class="eyebrow-chip"><span class="dot"></span>Topic Detail · invalid segment</div>
           <h1>选择一个赛道</h1>
           <p class="lede">URL 参数 <code style="font-family:var(--f-mono);">?segment=ebd|injectables|skincare|regenerative|consumables|implants|diagnostics|surgical|pharma</code></p>
           <div class="filter-row">
@@ -582,7 +585,7 @@
     // Build page
     root.innerHTML = `
       <section class="page-hero">
-        <div class="eyebrow-chip" style="color:${baseColor};"><span class="dot" style="background:${baseColor};"></span>Drill-down · ${esc(tagline.en)}</div>
+        <div class="eyebrow-chip" style="color:${baseColor};"><span class="dot" style="background:${baseColor};"></span>Topic Detail · ${esc(tagline.en)}</div>
         <h1>
           ${esc(tagline.zh)}
           <span class="h1-en">${esc(tagline.en)}</span>
@@ -657,7 +660,7 @@
           <h2>L2 子赛道</h2>
           <span class="cn">· ${l1l2Row.segments.length} 个子分类</span><span class="en">L2 sub-tracks</span>
         </div>
-        <p class="lede" style="margin-bottom:18px;font-size:13.5px;">每张卡片是一个 L2 子赛道：产品数 / 注册企业 / 适应症数三个核心指标 + 最新申报年份。同赛道主色逐档减淡，share 角标显示该 L2 占 L1 的比例。</p>
+        <p class="lede" style="margin-bottom:18px;font-size:13.5px;">L2 子赛道以产品数、注册企业、适应症数和最新申报年份形成对比，同赛道主色体现层级关系，share 角标显示该 L2 占 L1 的比例。</p>
         <div class="l2-cards-grid" id="l2-cards"></div>
       </section>
 
@@ -683,7 +686,7 @@
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 内企业的角色分布 — 制造 / 品牌 / R&D-OEM / 生物科技</div>
-          <div class="chart-sub">条形长度归一化到 L1 头部角色。看出本赛道是制造驱动还是品牌驱动。</div>
+          <div class="chart-sub">头部角色按产品数对齐，展示本赛道更偏制造驱动还是品牌驱动。</div>
           <div class="vc-bars" id="vc-bars"></div>
         </div>
       </section>
@@ -691,12 +694,12 @@
       <!-- ============ Lifecycle scatter ============ -->
       <section class="block">
         <div class="section-head">
-          <h2>子赛道生命周期</h2>
+          <h2>L2 生命周期 · 近 3 年动能 × 企业数 × 产品数</h2>
           <span class="cn">· 规模 × 3 年动能 × 企业数</span><span class="en">Sub-track lifecycle</span>
         </div>
         <div class="chart-card">
-          <div class="chart-title">每个 L2 是一个圆点 — 横轴近 3 年动能 / 纵轴企业数 / 圆点大小 = 产品数</div>
-          <div class="chart-sub">右上 = 高动能 + 高企业数 (生长期) · 左上 = 老成熟期 · 右下 = 新兴未拥挤 · 左下 = 衰退或冷门。<strong style="color:var(--accent-2);">点击</strong>圆点跳到该 L2 的代表公司列表。</div>
+          <div class="chart-title">L2 子赛道生命周期 · 动能 / 企业数 / 产品数</div>
+          <div class="chart-sub">四象限定位近 3 年动能、企业数量与产品规模：高动能高企业数代表生长期，新兴低拥挤赛道保留更高观察价值。</div>
           <div class="lc-scatter" id="lc-scatter">
             <div class="lc-axis x-label">→ 近 3 年动能 %</div>
             <div class="lc-axis y-label">→ 企业数</div>
@@ -716,7 +719,7 @@
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 内官方获批适应症在四大监管通道的分布</div>
-          <div class="chart-sub">单元格 = 该 (适应症桶, 监管) 内的产品级证据条数 · 单元格底色越深越集中 · <strong style="color:var(--accent-2);">点击</strong>看产品列表。<small style="color:var(--muted);font-style:italic;">L1 覆盖率仍低，部分赛道为空属正常。</small></div>
+          <div class="chart-sub">单元格呈现该 (适应症桶, 监管) 组合内的产品级证据，色深代表集中度。<small style="color:var(--muted);font-style:italic;">L1 覆盖率仍低，部分赛道为空属正常。</small></div>
           <div id="ind-heatmap"></div>
         </div>
       </section>
@@ -729,7 +732,7 @@
         </div>
         <div class="chart-card">
           <div class="chart-title">谁在过去 24 月真正"动起来" — 新进入 vs 多频次申报</div>
-          <div class="chart-sub">左侧 = 首次在 ${esc(displayL1)} 提交注册的全新公司（按时间倒序）· 右侧 = 同一窗口内提交次数最多的活跃公司（无论是否新入）。</div>
+          <div class="chart-sub">近 24 个月的新进入公司与活跃申报公司并列，展示新玩家进入速度和既有玩家活跃度。</div>
           <div class="entrants-wrap">
             <div class="entrants-col">
               <h4>新进入 New entrants</h4>
@@ -752,7 +755,7 @@
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 赛道做产品最多的 12 家公司</div>
-          <div class="chart-sub">按产品数降序，点击公司去公司画像。Ownership 徽章揭示资本属性。</div>
+          <div class="chart-sub">按产品数降序，Ownership 徽章揭示资本属性和公司层级。</div>
           <div class="table-card" style="padding:0;">
             <table class="companies-table">
               <thead>
@@ -779,7 +782,7 @@
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 用了哪些技术</div>
-          <div class="chart-sub">条形按产品数归一化到 L1 头部技术。${breakdown.tech_top.length > 1 && breakdown.tech_top[0][1] / breakdown.products < 0.5 ? "技术分散 — 没有单一技术霸主，赛道是「多技术混战」。" : "技术集中 — 头部技术占据主导。"}</div>
+          <div class="chart-sub">头部技术按产品数对齐。${breakdown.tech_top.length > 1 && breakdown.tech_top[0][1] / breakdown.products < 0.5 ? "技术分散 — 没有单一技术霸主，赛道是「多技术混战」。" : "技术集中 — 头部技术占据主导。"}</div>
           <div class="tech-list" id="tech-list"></div>
         </div>
       </section>
@@ -791,7 +794,7 @@
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 企业的国家分布</div>
-          <div class="chart-sub">Top 8 国家按公司数排序；产品数显示在右侧。${topCountries[0] ? `${esc(topCountries[0].country)} 一国就占 ${((topCountries[0].companies / breakdown.companies) * 100).toFixed(0)}% 企业数。` : ""}</div>
+          <div class="chart-sub">Top 8 国家按公司数排序，并同步呈现产品数。${topCountries[0] ? `${esc(topCountries[0].country)} 一国就占 ${((topCountries[0].companies / breakdown.companies) * 100).toFixed(0)}% 企业数。` : ""}</div>
           <div class="country-list" id="topic-country-list"></div>
         </div>
       </section>
@@ -803,14 +806,14 @@
           <span class="cn">· top 8 国 × top 6 L2</span><span class="en">Country × L2</span>
         </div>
         <div class="chart-card">
-          <div class="chart-title">每个主要国家在本赛道的子分类渗透 — 谁专精谁全面</div>
-          <div class="chart-sub">行 = 国家、列 = L2 子赛道、单元格 = 产品数。色深 = 高产品集中度。<strong style="color:var(--accent-2);">点击</strong>看具体公司列表。</div>
+          <div class="chart-title">主要国家的 L2 子分类渗透</div>
+          <div class="chart-sub">国家与 L2 子赛道交叉呈现产品数，色深反映集中度。</div>
           <div id="cl-matrix-wrap"></div>
         </div>
       </section>
 
       <div class="footnote">
-        <span>v3 · drill-down · ${esc(displayL1)} · ${breakdown.products} products</span>
+        <span>v3 · topic detail · ${esc(displayL1)} · ${breakdown.products} products</span>
         <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
       </div>
     `;
@@ -831,7 +834,7 @@
       // 数据来源 v3-l2-detail.js → window.V3_L2_DETAIL[L1][L2].
       const hasDrill = (seg.company_ids && seg.company_ids.length) ? true : false;
       return `
-        <article class="l2-card${hasDrill ? " l2-card-clickable" : ""}" style="--l2-color: ${l2Color}; --card-opacity:${opacity};"${hasDrill ? ` data-l2="${esc(seg.l2)}" tabindex="0" role="button" aria-label="查看${esc(seg.l2)}的${seg.companies}家公司详情"` : ""}>
+        <article class="l2-card${hasDrill ? " l2-card-clickable" : ""}" style="--l2-color: ${l2Color}; --card-opacity:${opacity};"${hasDrill ? ` data-l2="${esc(seg.l2)}" tabindex="0" role="button" aria-label="${esc(seg.l2)} · ${seg.companies} 家公司"` : ""}>
           <div class="l2-card-head">
             <h4>${esc(seg.l2)}</h4>
             <span class="share">${pct.toFixed(1)}%</span>
@@ -978,7 +981,7 @@
       // Top 10 list
       const top10wrap = document.getElementById("conc-top10");
       const max = c.top10[0] ? c.top10[0].share_pct : 1;
-      top10wrap.innerHTML = `<div style="font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin:10px 0 4px;">Top 10 头部公司份额 · click for portfolio</div>`
+      top10wrap.innerHTML = `<div style="font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin:10px 0 4px;">Top 10 头部公司份额 · portfolio signal</div>`
         + c.top10.map((co, i) => {
           const pct = (co.share_pct / max) * 100;
           return `
@@ -1136,7 +1139,7 @@
     function renderIndicationHeatmap (ih) {
       const wrap = document.getElementById("ind-heatmap");
       if (!ih.buckets.length) {
-        wrap.innerHTML = `<div style="padding:24px 0;text-align:center;font-style:italic;color:var(--muted);">本赛道暂无官方适应症证据 — 等下一轮 backfill</div>`;
+        wrap.innerHTML = `<div style="padding:24px 0;text-align:center;font-style:italic;color:var(--muted);">本赛道暂无官方适应症证据</div>`;
         return;
       }
       // max across all cells

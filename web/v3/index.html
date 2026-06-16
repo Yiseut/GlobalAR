@@ -6,7 +6,7 @@
 <title>全球医美情报 · 总览 · v3</title>
 <link rel="icon" href="data:," />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
-<link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="./styles.css?v=20260613-stack-pct" />
 </head>
 <body>
 
@@ -109,7 +109,7 @@
         </article>
         <article class="kpi-cell has-wash w-rose">
           <div class="label"><span class="en">Reg. evidence</span><span class="zh">监管注册证据</span></div>
-          <span class="value" data-bind="registration_evidence">1,583</span>
+          <span class="value" data-bind="registration_evidence">1,599</span>
           <span class="delta">multi-region registration evidence</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
@@ -132,8 +132,23 @@
       </div>
       <div class="chart-card">
         <div class="chart-title" id="ml-headline">— 个材料一级赛道 · — 个二级 · 共 — 款产品</div>
-        <div class="chart-sub">每张卡片是一个材料一级赛道（material taxonomy L1）。左上是该 L1 的产品数，下方按产品数 desc 列出二级赛道与各自数量。这是现象层 —— 行业的真实分布格局，**先看见**再下结论。</div>
+        <div class="chart-sub">材料一级赛道按产品规模与二级结构呈现，既保留大类体量，也露出内部细分的集中与分散。</div>
         <div class="ml-grid" id="ml-grid"></div>
+      </div>
+      <div class="chart-card ml-stack-card">
+        <div class="chart-title">材料 L1 × L2 堆积图</div>
+        <div class="chart-sub">横向长度保留一级赛道的绝对规模差异，色块展示二级赛道构成；大赛道的集中度与长尾结构一并可见。</div>
+        <div class="ml-stack" id="ml-stack-chart" aria-label="材料赛道 L1 与 L2 堆积图"></div>
+      </div>
+      <div class="chart-card ml-stack-card ml-percent-stack-card">
+        <div class="chart-title">材料 L1 × L2 百分比堆积图</div>
+        <div class="chart-sub">各一级赛道统一到 100%，小众市场的内部结构被放大呈现；标签保留真实产品基数，便于和绝对规模图互相校验。</div>
+        <div class="ml-stack-scale" aria-hidden="true">
+          <span></span>
+          <span class="scale-marks"><i>0%</i><i>25%</i><i>50%</i><i>75%</i><i>100%</i></span>
+          <span></span>
+        </div>
+        <div class="ml-stack ml-stack-percent" id="ml-percent-stack-chart" aria-label="材料赛道 L1 与 L2 百分比堆积图"></div>
       </div>
     </section>
 
@@ -145,24 +160,24 @@
       <div class="editorial-row">
         <article class="editorial-block has-wash w-rose-deep wash-bottom-left">
           <span class="stamp">Lens 01 · Regulatory pulse</span>
-          <div class="lead">FDA clearance 节奏 <em>2022</em> 后跳台。</div>
-          <div class="num-pair"><span class="num">110</span><span class="unit">clearances · 2022–2026</span></div>
-          <div class="body">2017-21 共 <em>67</em> 条 → 2022-26 已 <em>110</em> 条；CE/MDR 同期补到 <em>72</em>，仍是缺口；NMPA / MFDS 由独立队列覆盖。</div>
-          <a class="cta" href="./regulatory-pulse.html">展开监管脉搏 ↗</a>
+          <div class="lead">监管证据池扩展到 <em>1,599</em> 条。</div>
+          <div class="num-pair"><span class="num">1,599</span><span class="unit">registration evidence rows</span></div>
+          <div class="body">当前 510(k) 为 <em>334</em> 条；仍有 <em>120</em> 条 review / new-candidate 类监管证据进入运营队列，NMPA / MFDS 由独立队列覆盖。</div>
+          <a class="cta" href="./regulatory-pulse.html">进入监管脉搏 ↗</a>
         </article>
         <article class="editorial-block has-wash w-apricot wash-bottom-left">
           <span class="stamp">Lens 02 · Korea factor</span>
-          <div class="lead">韩国占全球上游企业 <em>28</em>%。</div>
-          <div class="num-pair"><span class="num">105</span><span class="unit">companies · 274 products</span></div>
-          <div class="body">远超美国 <em>60</em> / 意大利 <em>36</em>；上市仅 <em>22</em> 家，私营出口集群。</div>
-          <a class="cta" href="./geo-deep-dive.html">展开韩国画像 ↗</a>
+          <div class="lead">韩国占全球上游企业约 <em>32</em>%。</div>
+          <div class="num-pair"><span class="num">105</span><span class="unit">companies · 269 products</span></div>
+          <div class="body">远超美国 <em>52</em> / 意大利 <em>30</em>；Company_Master 中 active public 为 <em>19</em> 家，listed batch 为 <em>22</em> 条。</div>
+          <a class="cta" href="./geo-deep-dive.html">进入韩国画像 ↗</a>
         </article>
         <article class="editorial-block has-wash w-plum wash-bottom-left">
           <span class="stamp">Lens 03 · Capital band skew</span>
-          <div class="lead">已上市 <em>64</em> 家，半数为小盘。</div>
+          <div class="lead">Active public <em>43</em> 家，上市证据批次 <em>61</em> 条。</div>
           <div class="num-pair"><span class="num">30</span><span class="unit">small cap · 3 mega cap</span></div>
-          <div class="body">大市值集中在 NASDAQ；KRX <em>22</em> 家小盘构成韩股板块。</div>
-          <a class="cta" href="./capital-map.html">展开资本地图 ↗</a>
+          <div class="body">大市值集中在 NASDAQ；KRX <em>22</em> 条上市批次构成韩股板块。公司口径与上市批次口径在资本页分开呈现。</div>
+          <a class="cta" href="./capital-map.html">进入资本地图 ↗</a>
         </article>
       </div>
     </section>
@@ -213,7 +228,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">头部 5 国 = 全球上游供给约 70%</div>
-        <div class="chart-sub">每行一国，按企业数排序；条形长度 = 产品线总数（normalized to max），色由该国主赛道决定。前 5 国（韩国 / 美国 / 意大利 / 法国 / 西班牙）合计撑起约 7 成全球上游供给；剩下 30 多个国家分散在长尾。</div>
+        <div class="chart-sub">头部国家承载全球上游供给的主干，产品线规模与主赛道颜色共同呈现各国产业重心；韩国、美国、意大利、法国、西班牙合计接近七成。</div>
         <div id="country-bars"></div>
 
         <div class="country-findings">
@@ -242,7 +257,7 @@
         <span class="cn">· 6 大区</span><span class="en">Region mix</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">每行一个区域，按产品线数 desc</div>
+        <div class="chart-title">区域产品线规模</div>
         <div class="chart-sub">单维全景：区域内有多少款产品线。欧洲 / 亚太 / 北美 三足鼎立。</div>
         <div class="ov-bars" id="ov-region-bars"></div>
       </div>
@@ -254,7 +269,7 @@
         <span class="cn">· 临床需求频次</span><span class="en">Top 12 indications</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">每行一个适应症桶，按官方证据条数 desc</div>
+        <div class="chart-title">官方适应症证据 Top 12</div>
         <div class="chart-sub">单维全景：行业被监管认可最广的临床需求。多维分析（适应症 × 技术 / 监管）在「适应症星图」页。</div>
         <div class="ov-bars" id="ov-indication-bars"></div>
       </div>
@@ -431,7 +446,7 @@
             `主赛道 ${TRACK_LABEL_ZH[agg.dominantTrack] || agg.dominantTrack}`,
             `${agg.region}`,
           ],
-          hint: "click → list companies",
+            hint: "相关企业",
         }));
         row.addEventListener("click", () => {
           const cosInCountry = data.geo_companies.filter(c => c.country === country)
@@ -464,7 +479,7 @@
         const publicCt = cosInTrack.filter(c => c.ownership === "Public").length;
         const countryCt = new Set(cosInTrack.map(c => c.country)).size;
         window.V3DrillPanel.open({
-          stamp: "L1 track · drill",
+          stamp: "L1 track · detail",
           title: displayTrack(track),
           sub: `${TRACK_LABEL_ZH[track] || ""} · ${cosInTrack.length} companies in ${countryCt} countries`,
           summary: [
@@ -494,7 +509,7 @@
             `<em>${TRACK_PRODUCTS[track] || 0}</em> products · ${TRACK_LABEL_ZH[track] || ""}`,
             `${((TRACK_PRODUCTS[track] || 0) / TRACK_TOTAL_PRODUCTS * 100).toFixed(1)}% of total`,
           ],
-          hint: "click → companies",
+          hint: "相关企业",
         }));
         slice.addEventListener("click", () => openL1Drill(track));
       });
@@ -505,7 +520,7 @@
         window.V3Tooltip.attach(row, () => ({
           title: displayTrack(track),
           lines: [`<em>${TRACK_PRODUCTS[track] || 0}</em> products`],
-          hint: "click → companies",
+          hint: "相关企业",
         }));
       });
     }
@@ -525,6 +540,8 @@
     const data = window.V3_MATERIAL_LANDSCAPE;
     const grid = document.getElementById("ml-grid");
     const headline = document.getElementById("ml-headline");
+    const stack = document.getElementById("ml-stack-chart");
+    const percentStack = document.getElementById("ml-percent-stack-chart");
     if (!data || !grid) return;
 
     const TRACK_COLORS = {
@@ -535,6 +552,25 @@
     const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({
       "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
     })[ch]);
+    const fmtNum = (n) => Number(n || 0).toLocaleString("en-US");
+    const hexToRgb = (hex) => {
+      const clean = String(hex || "").replace("#", "");
+      if (clean.length !== 6) return null;
+      const value = parseInt(clean, 16);
+      return {
+        r: (value >> 16) & 255,
+        g: (value >> 8) & 255,
+        b: value & 255,
+      };
+    };
+    const mixHex = (hex, mix = "#fdfaf2", amount = 0.35) => {
+      const a = hexToRgb(hex);
+      const b = hexToRgb(mix);
+      if (!a || !b) return hex;
+      const m = Math.max(0, Math.min(1, amount));
+      const channel = (x, y) => Math.round(x * (1 - m) + y * m).toString(16).padStart(2, "0");
+      return `#${channel(a.r, b.r)}${channel(a.g, b.g)}${channel(a.b, b.b)}`;
+    };
 
     const s = data.summary;
     headline.textContent = `${s.l1_count} 个材料一级赛道 · ${s.l2_count} 个二级 · 共 ${s.total_products_classified} 款分类产品（全库 ${s.total_products_all}）`;
@@ -556,7 +592,7 @@
                   type="button"
                   data-l1="${esc(c.name)}" data-l2="${esc(l2.name)}"
                   style="--accent:${color}; --intensity:${intensity.toFixed(2)};"
-                  title="${esc(l2.name)} · ${l2.n_products} 款 · 点击查看 L3 + 公司 + 产品">
+                  title="${esc(l2.name)} · ${l2.n_products} 款 · L3 / 公司 / 产品明细">
             <span class="ml-l2-name">${esc(l2.name)}</span>
             <span class="ml-l2-n">${l2.n_products}</span>
           </button>
@@ -591,6 +627,89 @@
         }
       });
     });
+
+    function renderStackChart (container, opts = {}) {
+      if (!container) return;
+      const cards = data.l1_cards || [];
+      const maxProducts = Math.max(1, ...cards.map(c => Number(c.n_products || 0)));
+      const totalProducts = Math.max(1, Number(s.total_products_classified || 0));
+      const isPercent = opts.mode === "percent";
+      const compactAt = isPercent ? 0.08 : 0.14;
+      const microAt = isPercent ? 0.035 : 0.055;
+      container.innerHTML = cards.map(c => {
+        const nProducts = Number(c.n_products || 0);
+        const color = TRACK_COLORS[c.dom_commercial_l1] || "var(--accent-2)";
+        const rowWidth = isPercent ? 100 : Math.max(0.5, nProducts / maxProducts * 100);
+        const rowMeta = isPercent
+          ? `${fmtNum(c.l2_count)} 个 L2 · 基数 ${fmtNum(nProducts)} 款`
+          : `${fmtNum(c.l2_count)} 个 L2 · ${((nProducts / totalProducts) * 100).toFixed(1)}%`;
+        const rowTotal = isPercent ? "100%" : fmtNum(nProducts);
+        const l2Segments = (c.l2_list || []).map((l2, index) => {
+          const n = Number(l2.n_products || 0);
+          const shareL1 = nProducts ? n / nProducts : 0;
+          const shareTotal = n / totalProducts;
+          const segmentColor = mixHex(color, "#fdfaf2", Math.min(0.58, 0.12 + index * 0.052));
+          const compact = shareL1 < compactAt ? " is-compact" : "";
+          const micro = shareL1 < microAt ? " is-micro" : "";
+          return `
+            <button class="ml-stack-seg${compact}${micro}"
+                    type="button"
+                    data-l1="${esc(c.name)}"
+                    data-l2="${esc(l2.name)}"
+                    data-products="${n}"
+                    data-share-l1="${(shareL1 * 100).toFixed(1)}"
+                    data-share-total="${(shareTotal * 100).toFixed(1)}"
+                    data-stack-mode="${isPercent ? "percent" : "absolute"}"
+                    style="--v:${Math.max(1, n)}; --seg:${segmentColor}; --accent:${color}; --delay:${(index * 0.035).toFixed(3)}s;"
+                    title="${esc(c.name)} / ${esc(l2.name)} · ${fmtNum(n)} 款 · L1 内 ${(shareL1 * 100).toFixed(1)}%">
+              <span>${esc(l2.name)}</span>
+              <em>${fmtNum(n)}</em>
+            </button>
+          `;
+        }).join("");
+        return `
+          <div class="ml-stack-row" style="--accent:${color};">
+            <div class="ml-stack-label">
+              <strong>${esc(c.name)}</strong>
+              <span>${rowMeta}</span>
+            </div>
+            <div class="ml-stack-shell">
+              <div class="ml-stack-track" style="--row-w:${rowWidth.toFixed(2)}%;">
+                ${l2Segments}
+              </div>
+            </div>
+            <div class="ml-stack-total">${rowTotal}</div>
+          </div>
+        `;
+      }).join("");
+
+      container.querySelectorAll(".ml-stack-seg").forEach(seg => {
+        const l1 = seg.getAttribute("data-l1");
+        const l2 = seg.getAttribute("data-l2");
+        const products = seg.getAttribute("data-products");
+        const shareL1 = seg.getAttribute("data-share-l1");
+        const shareTotal = seg.getAttribute("data-share-total");
+        const mode = seg.getAttribute("data-stack-mode");
+        if (window.V3Tooltip) {
+          window.V3Tooltip.attach(seg, () => ({
+            title: l2,
+            lines: [
+              `<em>${fmtNum(products)}</em> products · ${l1}`,
+              `${shareL1}% of this L1 · ${shareTotal}% of classified products`,
+              mode === "percent" ? "normalized row width = 100%" : "row width = absolute L1 scale",
+            ],
+            hint: "L3 / companies / products",
+          }));
+        }
+        seg.addEventListener("click", () => {
+          if (l1 && l2 && window.V3MaterialDrawer) {
+            window.V3MaterialDrawer.show({ l1, l2 });
+          }
+        });
+      });
+    }
+    renderStackChart(stack, { mode: "absolute" });
+    renderStackChart(percentStack, { mode: "percent" });
 
     // ── Region + Indication single-dimension bars (phenomenon-level only) ──
     const gd = window.GLOBAL_AESTHETICS_DATA || {};
@@ -675,7 +794,7 @@
          开启方法：<b style="color:#f0d9c8;">浏览器设置 → 系统 → 打开「使用硬件加速模式」</b>，然后重启浏览器；<br>
          可在 <code style="font-family:var(--f-mono);">chrome://gpu</code>（Edge 为 <code style="font-family:var(--f-mono);">edge://gpu</code>）查看 WebGL 是否为 <i>Hardware accelerated</i>。<br>
          若仍空白，可能是显卡 / 驱动被屏蔽，换一个浏览器再试。<br>
-         <span style="opacity:.85;">下方「国家分布」「赛道分布」仍可查看全部全球数据。</span>`;
+         <span style="opacity:.85;">「国家分布」「赛道分布」仍保留完整全球数据。</span>`;
     div.innerHTML = `
       <div style="font-size:34px;opacity:.7;">🌐</div>
       <div style="font-family:var(--f-display);font-size:21px;color:#f3ece1;">${title}</div>
@@ -1327,7 +1446,7 @@
       drawer.innerHTML = `
         <div class="drawer-head">
           <button class="drawer-close" type="button" aria-label="关闭">×</button>
-          <span class="stamp">City · drill-down</span>
+        <span class="stamp">City · detail</span>
           <h3>${escapeHtml(city.city)}${city.country ? `<span style="font-family:var(--f-body); font-size:13.5px; color:rgba(216,196,198,0.7); letter-spacing:0; margin-left:8px; font-weight:300;">${escapeHtml(city.country)}</span>` : ""}</h3>
           <div class="sub">${escapeHtml(city.region || "")} · stats in the title strip ↑</div>
         </div>
@@ -1645,7 +1764,7 @@
           const r = Math.max(3, Math.min(14, Math.sqrt(city.companies.length) * 2.5 + 2));
           const topCompanyId = city.companies.slice().sort((a, b) => (b.products || 0) - (a.products || 0))[0].company_id || "";
           dotsMarkup += `<circle class="city-marker-halo" style="color:${color}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(r + 4).toFixed(1)}"></circle>`;
-          dotsMarkup += `<circle class="city-marker" data-city-key="${escapeHtml(city.city || "")}|${city.lat.toFixed(2)}|${city.lon.toFixed(2)}" data-top-company-id="${escapeHtml(topCompanyId)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${color}"><title>${escapeHtml(city.city || "")} · ${city.companies.length} cos · click for detail</title></circle>`;
+          dotsMarkup += `<circle class="city-marker" data-city-key="${escapeHtml(city.city || "")}|${city.lat.toFixed(2)}|${city.lon.toFixed(2)}" data-top-company-id="${escapeHtml(topCompanyId)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${color}"><title>${escapeHtml(city.city || "")} · ${city.companies.length} companies · detail</title></circle>`;
         });
 
       return `
@@ -1655,7 +1774,7 @@
             ${dotsMarkup}
           </svg>
           <div class="country-minimap-meta">
-            <span>Map · flat projection · click dot</span>
+            <span>Map · flat projection</span>
             <span>${cityMap.size} cities</span>
           </div>
         </div>
@@ -1731,7 +1850,7 @@
       drawer.innerHTML = `
         <div class="drawer-head">
           <button class="drawer-close" type="button" aria-label="关闭">×</button>
-          <span class="stamp">Country · drill-down</span>
+        <span class="stamp">Country · detail</span>
           <h3>${escapeHtml(country)}</h3>
           <div class="sub">${escapeHtml(region || "")} · stats in the title strip ↑</div>
         </div>

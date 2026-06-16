@@ -242,7 +242,7 @@
       <p class="lede">每家公司在 <em>material_taxonomy_l2_cn</em> 14 个主要材料赛道上的产品布局。<strong>覆盖赛道数越多 = 平台型；单赛道但产品多 = 王者型</strong>。默认只显示覆盖 ≥3 个材料赛道的公司（≈ 62 家），其余 3 百家长尾可通过左侧滑杆放开。</p>
       <div class="stat-row">
         <span><span class="num" id="cm-stat-companies">—</span> 家公司入矩阵 · 全库 <span class="num" id="cm-stat-total">—</span> 家</span>
-        <span>列 = 14 个主流材料赛道 · 覆盖 <span class="num" id="cm-stat-coverage">—</span>% 产品</span>
+        <span>14 个主流材料赛道 · 覆盖 <span class="num" id="cm-stat-coverage">—</span>% 产品</span>
         <span>头部 <span class="num" id="cm-stat-top">—</span> 个赛道（全库最多）</span>
       </div>
     </section>
@@ -254,8 +254,8 @@
       </div>
 
       <div class="chart-card">
-        <div class="chart-title">每格 = 该公司在该材料赛道的产品数</div>
-        <div class="chart-sub">行 = 公司，**按"覆盖材料赛道数 DESC → 总产品数 DESC"排序**（可在工具栏切换）。列 = top 14 材料二级赛道（HA / Laser / RF / 医学护肤活性 / ...）。**色越深 = 该公司在该赛道产品越多**。<strong style="color:var(--accent-2);">点击公司名</strong> → 完整产品库 drawer；**悬停色块**看产品名。</div>
+        <div class="chart-title">公司在材料赛道中的产品密度</div>
+        <div class="chart-sub">公司按材料赛道覆盖广度与产品规模排序，列为 14 个主流材料二级赛道；色深代表该公司在对应赛道的产品密度。</div>
 
         <div class="cm-toolbar" id="cm-toolbar">
           <label>最少赛道
@@ -465,7 +465,7 @@
         // Tooltip: first 6 product names (rest in drawer)
         const sample = (cell.products || []).slice(0, 6).map(p => p.name).join(" · ");
         const more = (cell.products || []).length > 6 ? ` · +${cell.products.length - 6}` : "";
-        const tip = `${esc(r.name)} · ${esc(c.name)} (${esc(g.l1)})\n${n} 款 — 点击查看完整列表\n${esc(sample)}${more}`;
+        const tip = `${esc(r.name)} · ${esc(c.name)} (${esc(g.l1)})\n${n} 款产品\n${esc(sample)}${more}`;
         return `<div class="cm-cell cm-val${startCls}" style="--intensity:${intensity.toFixed(2)}; ${groupStyle}; cursor:pointer;" title="${tip}" data-cell-co="${esc(r.company_id)}" data-cell-l2="${esc(c.name)}" data-cell-l1="${esc(g.l1)}">${n}</div>`;
       }).join("");
       // Badges: show ONLY what's visible in the matrix (user requirement
@@ -482,7 +482,7 @@
       return `
         ${groupDivider}
         <div class="cm-cell cm-row-label" style="--row-color:${trackColor}">
-          <button class="cm-co-name" type="button" data-company-id="${esc(r.company_id)}" title="打开 ${esc(r.name)} 完整产品库 ↗">${esc(r.name)}</button>
+          <button class="cm-co-name" type="button" data-company-id="${esc(r.company_id)}" title="${esc(r.name)} 产品谱系">${esc(r.name)}</button>
           <span class="cm-badge cm-tracks" title="${trackTitle}">${r.track_count_in_matrix} 赛道</span>
           <span class="cm-badge" title="${prodTitle}">${r.in_matrix_products} 款</span>
         </div>
@@ -615,7 +615,7 @@
       wash: "w-apricot",
       lead: `<em>${fourPlusBig.length}</em> 家公司是「≥4 赛道 + ≥15 产品」组合 — 资源最厚。`,
       num: fourPlusBig.length, unit: "platform-heavy",
-      body: `${fourPlusBig.length} 家公司同时满足 in-matrix tracks ≥4 + 总产品 ≥15：${fourPlusBig.map(c => `<em>${esc(c.name)}</em>(${c.track_count_in_matrix}赛/${c.total_products}款)`).join(" · ")}。它们在每个赛道里产品都多，是行业「重量级 platform」。`,
+      body: `${fourPlusBig.length} 家公司同时覆盖 ≥4 个主流材料赛道且总产品 ≥15：${fourPlusBig.map(c => `<em>${esc(c.name)}</em>(${c.track_count_in_matrix}赛/${c.total_products}款)`).join(" · ")}。它们在多个赛道里都有产品厚度，是行业里的重量级平台型企业。`,
     },
   ].map(f => `
     <article class="editorial-block has-wash ${f.wash} wash-bottom-left">

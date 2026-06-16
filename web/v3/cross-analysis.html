@@ -382,7 +382,7 @@
         交叉分析
         <span class="h1-en">Cross Analysis · multi-dimensional</span>
       </h1>
-      <p class="lede">单维排行已经覆盖。这一页是<strong>四组立体透视</strong> — 把地理、赛道、资本、监管、时间、适应症交织起来看，外加一个<strong>可自由切换维度的 4D 透视矩阵</strong>。每个单元格都可点开看背后那一群企业，并跳转到公司列表 / 子赛道页。</p>
+      <p class="lede">单维排行已经覆盖。这一页是<strong>四组立体透视</strong> — 把地理、赛道、资本、监管、时间、适应症交织起来看，外加一个<strong>可自由切换维度的 4D 透视矩阵</strong>，并保留企业明细和公司 / 子赛道关联。</p>
       <div class="stat-row">
         <span><span class="num" id="kpi-cells">—</span> 个非空交叉单元 · 3 组 lens</span>
         <span>Lens 1 · <span class="num" id="kpi-l1">—</span> cells · 4D (FDA)</span>
@@ -396,11 +396,11 @@
       <span class="lens-stamp">Lens 01 · 4D heatmap</span>
       <div class="section-head">
         <h2>国家 × 赛道 × 资本结构 × FDA 命中</h2>
-        <span class="cn">· 12 国 × 10 L1 × 3 ownership × FDA dot</span><span class="en">Country × Track × Ownership × FDA</span>
+        <span class="cn">· 12 国 × 9 L1 × 3 ownership × FDA dot</span><span class="en">Country × Track × Ownership × FDA</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">每格 = (国家, 赛道) 的企业数 · 暖色越深越集中 · 右上小红点表示该格有 FDA 命中</div>
-        <div class="chart-sub">用 ownership 滑动条切换三种视角：全部 / 仅上市 / 仅私营。每一格可<strong style="color:var(--accent-2);">点击</strong>看背后是哪几家企业。</div>
+        <div class="chart-title">国家 × 赛道企业密度 · FDA 命中标记</div>
+        <div class="chart-sub">所有制维度分为全部、上市、私营三种视角；暖色深浅呈现企业集中度，红点标记有 FDA 准入的组合。</div>
 
         <div class="ownership-toggle" id="ownership-toggle">
           <button class="filter-pill active" data-slice="all">全部 All</button>
@@ -428,7 +428,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">头部 20 家企业的监管节奏 — 每年新增证据按通道堆叠</div>
-        <div class="chart-sub">条段色 = 监管通道（FDA 暖红 · CE/EU 紫 · NMPA 桃 · KFDA 蓝灰 · Other 沙）· 段高 = 当年该通道的证据数 · 数字 = 总数。点击单元格看那一年的具体证据。</div>
+        <div class="chart-sub">监管通道按色系区分，段高与数字共同呈现年度证据规模，展示不同市场的申报节奏。</div>
 
         <div id="lens2-grid"></div>
 
@@ -450,8 +450,8 @@
         <span class="cn">· 12 个适应症桶 × 5 监管 × 5 区域</span><span class="en">Indication × Regulator × Region</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">82 条官方适应症证据按"适应症 → 监管 → 区域"展开 — 哪个适应症在哪里被官方背书</div>
-        <div class="chart-sub">每行一个适应症桶（按出现次数降序）；右侧 5 列 = 监管机构；单元格内的数字 = 区域内的证据条数。底层数据覆盖率仍低（4%），后续 backfill 后会更密。</div>
+        <div class="chart-title">官方适应症证据的监管与区域分布</div>
+        <div class="chart-sub">适应症证据按监管机构和区域展开，展示各类需求在不同市场的官方背书密度；当前覆盖仍低，后续样本会继续加密。</div>
         <div id="lens3-list"></div>
       </div>
     </section>
@@ -465,7 +465,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">自选任意三个维度交叉 — 行、列、单元内堆叠色；点单元钻取背后企业并一键跳转</div>
-        <div class="chart-sub">先点一个<strong style="color:var(--accent-2);">预设组合</strong>，或用下面三个下拉自由切换。单元格深浅 ∝ 数量，单元内细条 = 第三维(堆叠色)的构成。监管 / 适应症是多值维度（一个产品可命中多个）。每格可<strong style="color:var(--accent-2);">点击</strong>看背后企业并跳到公司列表 / 子赛道页。</div>
+        <div class="chart-sub">预设组合与自定义维度并列，单元深浅表示数量，细条呈现第三维构成；监管 / 适应症是多值维度，一个产品可命中多个维度。</div>
         <div class="pv-presets" id="pv-presets"></div>
         <div class="pv-controls">
           <div class="pv-field"><label>行 Row</label><select id="pv-row"></select></div>
@@ -521,10 +521,10 @@
 
 <!-- Cell drill-down backdrop + panel -->
 <div class="xa-drill-backdrop" id="xa-drill-backdrop"></div>
-<aside class="xa-drill" id="xa-drill" role="dialog" aria-label="cell drill-down">
+<aside class="xa-drill" id="xa-drill" role="dialog" aria-label="矩阵单元详情">
   <div class="head">
     <button class="close-btn" type="button" aria-label="关闭">×</button>
-    <span class="stamp" id="drill-stamp">Cell · drill-down</span>
+    <span class="stamp" id="drill-stamp">Cell · detail</span>
     <h3 id="drill-title">—</h3>
     <div class="sub" id="drill-sub">—</div>
   </div>
@@ -743,7 +743,7 @@
           rows: [{
             company_id: row.company_id,
             name: row.company,
-            hint: `${row.primary_track || "—"} · ${row.country || "—"} · 点击查看完整产品树`,
+            hint: `${row.primary_track || "—"} · ${row.country || "—"} · 产品谱系`,
             color: TRACK_COLORS[row.primary_track] || "#888",
             badge: `${cell.total} reg`,
           }],
