@@ -263,11 +263,30 @@
 
     <section class="block">
       <div class="section-head">
+        <h2>资本流向故事线</h2>
+        <span class="cn">· 交易链 / 集团网 / 战略持股</span><span class="en">Capital flow storylines</span>
+      </div>
+      <div class="chart-card capital-flow-card">
+        <div class="chart-title">把“谁买了谁、后来又归谁”画成可阅读的资本路径。</div>
+        <div class="chart-sub">优先展示官方公告、SEC/交易所和本地 listed_company_batch 已能支撑的关系；待核验关系只作为线索，不进入确定事实层。</div>
+
+        <div class="capital-flow-tabs" id="capital-flow-tabs" aria-label="资本故事线"></div>
+        <div class="capital-flow-context" id="capital-flow-context"></div>
+        <div class="capital-flow-layout">
+          <div class="capital-flow-timeline" id="capital-flow-timeline"></div>
+          <div class="capital-flow-map" id="capital-flow-map" aria-label="资本关系图"></div>
+        </div>
+        <div class="capital-flow-sources" id="capital-flow-sources"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
         <h2>集团树</h2>
         <span class="cn">· parent / affiliate trace</span><span class="en">Corporate family tree</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">Company_Master 当前识别 3 个 corporate family；本页保留可追踪 parent / affiliate 样例。</div>
+        <div class="chart-title">Company_Master + listed_company_batch 当前识别多组 corporate family；本页保留可追踪 parent / affiliate 样例。</div>
         <div class="chart-sub">关系来源：`listed_company_batch` 资本结构字段 + 公开并购公告。本表只列出可在事实层引用的关系，"未核实"标签的不写入 registered_evidence。Lumenis → Boston Scientific 字段使用 U+2192 箭头字符，需要 UI 字体能渲染（部分终端会显示为方块）。</div>
 
         <div class="group-tree" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; margin-top:12px;">
@@ -452,11 +471,254 @@
     font-weight: 600;
     letter-spacing: 0.08em;
   }
+  .capital-flow-card {
+    overflow: hidden;
+  }
+  .capital-flow-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .capital-flow-tabs button {
+    appearance: none;
+    border: 1px solid rgba(142, 58, 58, 0.18);
+    border-radius: 6px;
+    background: rgba(255, 252, 245, 0.78);
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--f-body);
+    font-size: 12px;
+    line-height: 1.25;
+    min-height: 34px;
+    padding: 8px 12px;
+    transition: background-color .14s ease, border-color .14s ease, color .14s ease;
+  }
+  .capital-flow-tabs button:hover,
+  .capital-flow-tabs button.is-active {
+    background: rgba(142, 58, 58, 0.08);
+    border-color: rgba(142, 58, 58, 0.36);
+    color: var(--ink);
+  }
+  .capital-flow-context {
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 12px;
+    line-height: 1.55;
+    margin-top: 10px;
+  }
+  .capital-flow-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.95fr) minmax(420px, 1.25fr);
+    gap: 18px;
+    margin-top: 16px;
+  }
+  .capital-flow-timeline {
+    border: 1px solid rgba(83, 72, 78, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 252, 245, 0.55);
+    padding: 10px 12px;
+    position: relative;
+  }
+  .capital-flow-timeline:before {
+    background: rgba(142, 58, 58, 0.18);
+    bottom: 20px;
+    content: "";
+    left: 82px;
+    position: absolute;
+    top: 20px;
+    width: 1px;
+  }
+  .capital-flow-event {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 18px;
+    padding: 12px 0;
+    position: relative;
+  }
+  .capital-flow-event + .capital-flow-event {
+    border-top: 1px solid rgba(83, 72, 78, 0.08);
+  }
+  .capital-flow-event:before {
+    background: var(--surface-2);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    content: "";
+    height: 9px;
+    left: 65px;
+    position: absolute;
+    top: 18px;
+    width: 9px;
+    z-index: 1;
+  }
+  .capital-flow-year {
+    color: var(--accent);
+    font-family: var(--f-display);
+    font-size: 18px;
+    line-height: 1;
+  }
+  .capital-flow-copy strong {
+    color: var(--ink);
+    display: block;
+    font-family: var(--f-display-cn);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+  .capital-flow-copy p {
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .capital-flow-status {
+    border: 1px solid rgba(142, 58, 58, 0.14);
+    border-radius: 999px;
+    color: var(--accent);
+    display: inline-flex;
+    font-family: var(--f-sans);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    margin-top: 8px;
+    padding: 5px 7px;
+    text-transform: uppercase;
+  }
+  .capital-flow-map {
+    background:
+      linear-gradient(rgba(83, 72, 78, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(83, 72, 78, 0.045) 1px, transparent 1px),
+      rgba(255, 252, 245, 0.58);
+    background-size: 36px 36px;
+    border: 1px solid rgba(83, 72, 78, 0.1);
+    border-radius: 8px;
+    min-height: 390px;
+    overflow: hidden;
+    position: relative;
+  }
+  .capital-flow-svg {
+    inset: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .capital-flow-svg line,
+  .capital-flow-svg path {
+    stroke: rgba(142, 58, 58, 0.42);
+    stroke-width: 1.15;
+    vector-effect: non-scaling-stroke;
+  }
+  .capital-flow-node {
+    --tone: #8E3A3A;
+    background: rgba(255, 252, 245, 0.95);
+    border: 1px solid rgba(83, 72, 78, 0.12);
+    border-left: 4px solid var(--tone);
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(56, 47, 52, 0.08);
+    left: calc(var(--x) * 1%);
+    min-height: 72px;
+    padding: 12px 12px 10px;
+    position: absolute;
+    top: calc(var(--y) * 1%);
+    transform: translate(-50%, -50%);
+    width: min(176px, 24vw);
+    z-index: 2;
+  }
+  .capital-flow-node strong {
+    color: var(--ink);
+    display: block;
+    font-family: var(--f-display-cn);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .capital-flow-node span {
+    color: var(--muted);
+    display: block;
+    font-family: var(--f-body);
+    font-size: 11px;
+    line-height: 1.4;
+    margin-top: 5px;
+  }
+  .capital-flow-edge-label {
+    background: rgba(244, 238, 227, 0.9);
+    border: 1px solid rgba(142, 58, 58, 0.12);
+    border-radius: 999px;
+    color: var(--accent);
+    font-family: var(--f-sans);
+    font-size: 10px;
+    left: calc(var(--x) * 1%);
+    line-height: 1;
+    max-width: 160px;
+    padding: 5px 7px;
+    position: absolute;
+    top: calc(var(--y) * 1%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    z-index: 1;
+  }
+  .capital-flow-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .capital-flow-sources a,
+  .capital-flow-sources span {
+    border: 1px solid rgba(83, 72, 78, 0.1);
+    border-radius: 999px;
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 11px;
+    line-height: 1.2;
+    padding: 6px 9px;
+    text-decoration: none;
+  }
+  .capital-flow-sources a:hover {
+    border-color: rgba(142, 58, 58, 0.32);
+    color: var(--accent);
+  }
   @media (max-width: 760px) {
     .section-head .financial-update-badge {
       margin-left: 0;
       width: 100%;
       justify-content: space-between;
+    }
+    .capital-flow-tabs button {
+      flex: 1 1 calc(50% - 8px);
+    }
+    .capital-flow-layout {
+      grid-template-columns: 1fr;
+    }
+    .capital-flow-timeline:before {
+      left: 72px;
+    }
+    .capital-flow-event {
+      grid-template-columns: 48px 1fr;
+      gap: 18px;
+    }
+    .capital-flow-event:before {
+      left: 55px;
+    }
+    .capital-flow-map {
+      min-height: 430px;
+    }
+    .capital-flow-node {
+      left: clamp(68px, calc(var(--x) * 1%), calc(100% - 68px));
+      padding: 10px 9px 9px;
+      width: 116px;
+    }
+    .capital-flow-node strong {
+      font-size: 12px;
+    }
+    .capital-flow-node span {
+      font-size: 10px;
+    }
+    .capital-flow-edge-label {
+      display: none;
     }
   }
 </style>
@@ -507,6 +769,214 @@
     setText("capital-kpi-subsidiary-delta", `${fmt(summary.corporate_families || 0)} corporate families in Company_Master`);
     setText("capital-kpi-private", fmt(summary.private || 0));
     setText("capital-kpi-private-delta", `${Math.round(Number(summary.private || 0) / total * 100)}% 全行业以私营为主`);
+  })();
+  (function renderCapitalFlowStories () {
+    const tabs = document.getElementById("capital-flow-tabs");
+    const context = document.getElementById("capital-flow-context");
+    const timeline = document.getElementById("capital-flow-timeline");
+    const map = document.getElementById("capital-flow-map");
+    const sources = document.getElementById("capital-flow-sources");
+    if (!tabs || !context || !timeline || !map || !sources) return;
+
+    const tones = {
+      asset: "#C76B68",
+      buyer: "#8E3A3A",
+      fund: "#6B5A75",
+      listed: "#5A6878",
+      strategic: "#A8B59A",
+      group: "#CFB58E",
+      peer: "#8C7B91",
+    };
+    const esc = (value) => String(value ?? "").replace(/[&<>"']/g, ch => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    }[ch]));
+
+    const stories = [
+      {
+        id: "obagi",
+        title: "Obagi 多次转手",
+        subtitle: "独立上市公司 -> Valeant/Bausch -> 海通基金 -> Waldencast/Nasdaq",
+        nodes: [
+          { id: "obagi", label: "Obagi", sub: "医师端护肤资产", x: 15, y: 56, tone: "asset" },
+          { id: "valeant", label: "Valeant / Bausch", sub: "2013 收购方", x: 38, y: 30, tone: "buyer" },
+          { id: "haitong", label: "Haitong fund", sub: "2017 买方", x: 61, y: 58, tone: "fund" },
+          { id: "waldencast", label: "Waldencast plc", sub: "当前 Nasdaq 平台", x: 84, y: 32, tone: "listed" },
+        ],
+        edges: [
+          { from: "obagi", to: "valeant", label: "2013 $24/share" },
+          { from: "valeant", to: "haitong", label: "2017 $190M sale" },
+          { from: "haitong", to: "waldencast", label: "2022 combination" },
+        ],
+        events: [
+          { year: "2013", title: "Valeant 收购 Obagi", body: "Valeant/Obagi 将收购价提高至 $24.00/share；Obagi 从独立上市资产进入 specialty pharma 并购链。", status: "官方公告", sourceName: "Bausch/Valeant archive", sourceUrl: "https://ir.bauschhealth.com/news-releases/archive/2013/03-04-2013" },
+          { year: "2017", title: "Valeant 出售 Obagi", body: "Valeant 将 Obagi business 以 $190M cash 出售给 Haitong International Zhonghua Finance Acquisition Fund I, L.P. 及 Obagi Cosmeceuticals。", status: "官方公告", sourceName: "Bausch Health archive", sourceUrl: "https://ir.bauschhealth.com/news-releases/archive/2017/11-10-2017-120030149" },
+          { year: "2022", title: "Waldencast 合并平台", body: "Obagi Skincare、Milk Makeup 与 Waldencast 完成 business combination，合并公司 Waldencast plc 开始在 Nasdaq 交易。", status: "官方公告", sourceName: "Waldencast newsroom", sourceUrl: "https://www.waldencast.com/newsroom/obagi-skincare-milk-makeup-and-waldencast-close-business-combination-combined-company-to-begin-trading-on-nasdaq/" },
+          { year: "当前", title: "当前归属", body: "本地 listed_company_batch 将 Obagi 标为 Waldencast plc / NASDAQ:WALD 的 subsidiary_or_affiliate；历史转手链将继续沉淀进结构化事实表。", status: "本地资本表", sourceName: "listed_company_batch", sourceUrl: "#" },
+        ],
+      },
+      {
+        id: "galderma",
+        title: "Galderma / L'Oréal 回流",
+        subtitle: "L'Oréal + Nestlé 共创 -> Nestlé 全资 -> EQT carve-out -> SIX IPO -> L'Oréal 20%",
+        nodes: [
+          { id: "loreal", label: "L'Oréal", sub: "共同创始 / 战略持股", x: 16, y: 26, tone: "strategic" },
+          { id: "nestle", label: "Nestlé", sub: "2014 全资", x: 36, y: 64, tone: "buyer" },
+          { id: "eqt", label: "EQT-led consortium", sub: "2019 carve-out", x: 57, y: 28, tone: "fund" },
+          { id: "galderma", label: "Galderma", sub: "SIX:GALD", x: 82, y: 58, tone: "listed" },
+          { id: "alastin", label: "ALASTIN", sub: "2022 bolt-on", x: 82, y: 22, tone: "asset" },
+        ],
+        edges: [
+          { from: "loreal", to: "nestle", label: "1981 JV / 2014 sale" },
+          { from: "nestle", to: "eqt", label: "2019 CHF 10.2B" },
+          { from: "eqt", to: "galderma", label: "2024 IPO" },
+          { from: "loreal", to: "galderma", label: "2024-2026 20%" },
+          { from: "alastin", to: "galderma", label: "2022 acquired" },
+        ],
+        events: [
+          { year: "1981", title: "L'Oréal + Nestlé 创建 Galderma", body: "Galderma 自述其 1981 年作为 L'Oréal 和 Nestlé 的合资公司成立。", status: "官方历史", sourceName: "Galderma at a glance", sourceUrl: "https://www.galderma.com/glance" },
+          { year: "2014", title: "Nestlé 买入 L'Oréal 的 50%", body: "Nestlé 完成收购 L'Oréal 持有的 Galderma 50% 股权，Galderma 随后成为 Nestlé Skin Health 核心资产。", status: "官方公告", sourceName: "Nestlé", sourceUrl: "https://www.nestle.com/media/pressreleases/allpressreleases/nestle-acquisition-loreal-galderma-complete" },
+          { year: "2019", title: "EQT/ADIA carve-out", body: "Galderma 完成 CHF 10.2B 的 Nestlé Skin Health carve-out，变成独立 dermatology company。", status: "官方公告", sourceName: "Galderma", sourceUrl: "https://www.galderma.com/news/galderma-become-worlds-largest-independent-global-dermatology-company-after-completion-chf-102" },
+          { year: "2022", title: "收购 ALASTIN", body: "Galderma 完成对 physician-dispensed skincare 品牌 ALASTIN Skincare 的收购，补强医美术后/医师端护肤。", status: "官方公告", sourceName: "Galderma", sourceUrl: "https://www.galderma.com/news/galderma-successfully-completes-acquisition-alastin-skincarer" },
+          { year: "2024", title: "SIX IPO", body: "Galderma 以 CHF 53/share 定价 IPO，并在 SIX 以 GALD 交易。", status: "官方公告", sourceName: "Galderma IPO", sourceUrl: "https://www.galderma.com/news/galderma-prices-ipo-chf-53-share-and-will-start-trading-six-swiss-exchange-tomorrow" },
+          { year: "2026", title: "L'Oréal 持股升至 20%", body: "L'Oréal 2025 results 披露追加 10% Galderma 股权交易已于 2026-02-10 完成，持股升至 20%。", status: "官方公告", sourceName: "L'Oréal Finance", sourceUrl: "https://www.loreal-finance.com/eng/press-release/2025-annual-results" },
+        ],
+      },
+      {
+        id: "loreal",
+        title: "L'Oréal 医师端入口",
+        subtitle: "专业护肤收购 + dermatology 战略持股 + BOLD 生物技术投资",
+        nodes: [
+          { id: "loreal", label: "L'Oréal Groupe", sub: "上市平台 OR.PA", x: 18, y: 46, tone: "listed" },
+          { id: "skinbetter", label: "Skinbetter Science", sub: "2022 acquisition", x: 45, y: 20, tone: "asset" },
+          { id: "galderma", label: "Galderma", sub: "2024-2026 20% stake", x: 48, y: 70, tone: "strategic" },
+          { id: "bold", label: "BOLD fund", sub: "venture arm", x: 70, y: 44, tone: "fund" },
+          { id: "biotech", label: "Debut / Timeline", sub: "ingredient + longevity biotech", x: 82, y: 44, tone: "peer" },
+        ],
+        edges: [
+          { from: "loreal", to: "skinbetter", label: "physician-dispensed" },
+          { from: "loreal", to: "galderma", label: "strategic stake" },
+          { from: "loreal", to: "bold", label: "venture capital" },
+          { from: "bold", to: "biotech", label: "minority investments" },
+        ],
+        events: [
+          { year: "2022", title: "收购 Skinbetter Science", body: "L'Oréal 签署收购 Skinbetter Science 协议，直接进入 physician-dispensed professional skincare。", status: "官方公告", sourceName: "L'Oréal", sourceUrl: "https://www.loreal.com/en/press-release/group/l-oreal-signs-an-agreement-to-acquire-skinbetter-science/" },
+          { year: "2023", title: "BOLD 投资 Debut", body: "L'Oréal 的 venture capital fund BOLD 投资 biotech company Debut，把活性成分和可持续生物制造纳入上游技术线。", status: "官方公告", sourceName: "L'Oréal BOLD", sourceUrl: "https://www.loreal.com/en/press-release/research-and-innovation/bold-invests-in-biotech-company-debut/" },
+          { year: "2024", title: "买入 Galderma 10%", body: "L'Oréal 收购 Galderma 10% 股权，同时双方宣布科学合作，重新连接 dermatology / aesthetics 资产。", status: "官方公告", sourceName: "L'Oréal / Galderma", sourceUrl: "https://www.loreal.com/en/press-release/group/loreal-groupe-acquires-a-10-percent-stake-in-galderma/" },
+          { year: "2025", title: "BOLD 投资 Timeline", body: "BOLD 投资瑞士 longevity biotech company Timeline，体现 L'Oréal 对健康老龄化和细胞能量方向的上游布局。", status: "官方公告", sourceName: "L'Oréal Finance", sourceUrl: "https://www.loreal-finance.com/eng/news-event/bold-loreals-venture-capital-fund-invests-timeline-swiss-longevity-biotech-company" },
+          { year: "2026", title: "Galderma 持股升至 20%", body: "追加 10% Galderma 股权交易于 2026-02-10 完成，L'Oréal 的医美/皮肤科学资本入口从少数持股变成更核心的战略持仓。", status: "官方公告", sourceName: "L'Oréal Finance", sourceUrl: "https://www.loreal-finance.com/eng/press-release/2025-annual-results" },
+        ],
+      },
+      {
+        id: "korea",
+        title: "韩国集团网络",
+        subtitle: "Hugel / Classys / Huons 是集团线，Medytox / Caregen 等是独立 KRX 上市池",
+        nodes: [
+          { id: "hugel", label: "Hugel", sub: "KRX:145020", x: 17, y: 30, tone: "listed" },
+          { id: "across", label: "Across", sub: "Hugel affiliate", x: 17, y: 70, tone: "asset" },
+          { id: "classys", label: "Classys", sub: "KRX:214150", x: 42, y: 28, tone: "listed" },
+          { id: "ilooda", label: "Ilooda", sub: "Classys affiliate", x: 42, y: 70, tone: "asset" },
+          { id: "huons", label: "Huons Global", sub: "group parent", x: 66, y: 30, tone: "group" },
+          { id: "humedix", label: "Humedix / Huons Meditech", sub: "aesthetics subsidiaries", x: 66, y: 70, tone: "asset" },
+          { id: "independent", label: "Medytox / Caregen / PharmaResearch", sub: "独立 KRX 上市池", x: 82, y: 50, tone: "peer" },
+        ],
+        edges: [
+          { from: "hugel", to: "across", label: "subsidiary" },
+          { from: "classys", to: "ilooda", label: "subsidiary" },
+          { from: "huons", to: "humedix", label: "group" },
+          { from: "hugel", to: "independent", label: "KRX peer pool" },
+          { from: "classys", to: "independent", label: "KRX peer pool" },
+        ],
+        events: [
+          { year: "Group A", title: "Hugel -> Across", body: "listed_company_batch 已把 Hugel 和 Across 放在同一 KRX:145020 关系组，适合讲注射剂集团线。", status: "本地资本表", sourceName: "listed_company_batch", sourceUrl: "#" },
+          { year: "Group B", title: "Classys -> Ilooda", body: "listed_company_batch 已把 Classys 和 Ilooda 放在同一 KRX:214150 关系组，适合讲 EBD 平台扩张。", status: "本地资本表", sourceName: "listed_company_batch", sourceUrl: "#" },
+          { year: "Group C", title: "Huons Global -> Humedix / Huons Meditech", body: "manual_company_relationship_supplement 已确认 Humedix 是 Huons Group aesthetic subsidiary；Huons Meditech 也在 KRX 关联线中。", status: "本地+官方", sourceName: "Huons Global", sourceUrl: "https://huonsglobal.com/eng/home.php?field=&go=Bmenu_03&go_pds=pds_text_list&mode=&num=3275&pds_num=60&s_memo_2=&s_que=&start=10" },
+          { year: "Peer", title: "独立 KRX 小盘池", body: "Medytox、Caregen、PharmaResearch、Wontech、ViOL 等更像独立上市公司池；它们与集团线并列构成韩国资本叙事。", status: "本地资本表", sourceName: "company_capital_structure / listed_company_batch", sourceUrl: "#" },
+        ],
+      },
+    ];
+
+    function getNode(story, id) {
+      return story.nodes.find(node => node.id === id);
+    }
+    function labelPoint(a, b) {
+      return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+    }
+    function render(storyId) {
+      const story = stories.find(item => item.id === storyId) || stories[0];
+      tabs.innerHTML = stories.map(item => `
+        <button type="button" class="${item.id === story.id ? "is-active" : ""}" data-story="${esc(item.id)}" aria-pressed="${item.id === story.id}">
+          ${esc(item.title)}
+        </button>
+      `).join("");
+      context.textContent = story.subtitle;
+      timeline.innerHTML = story.events.map(event => `
+        <article class="capital-flow-event">
+          <div class="capital-flow-year">${esc(event.year)}</div>
+          <div class="capital-flow-copy">
+            <strong>${esc(event.title)}</strong>
+            <p>${esc(event.body)}</p>
+            <span class="capital-flow-status">${esc(event.status)}</span>
+          </div>
+        </article>
+      `).join("");
+
+      const nodeById = new Map(story.nodes.map(node => [node.id, node]));
+      const lines = story.edges.map(edge => {
+        const from = nodeById.get(edge.from);
+        const to = nodeById.get(edge.to);
+        if (!from || !to) return "";
+        return `<line x1="${from.x}" y1="${from.y}" x2="${to.x}" y2="${to.y}" marker-end="url(#capital-flow-arrow)"></line>`;
+      }).join("");
+      const labels = story.edges.map(edge => {
+        const from = getNode(story, edge.from);
+        const to = getNode(story, edge.to);
+        if (!from || !to) return "";
+        const point = labelPoint(from, to);
+        return `<div class="capital-flow-edge-label" style="--x:${point.x};--y:${point.y};">${esc(edge.label)}</div>`;
+      }).join("");
+      const nodes = story.nodes.map(node => `
+        <div class="capital-flow-node" style="--x:${node.x};--y:${node.y};--tone:${tones[node.tone] || tones.buyer};">
+          <strong>${esc(node.label)}</strong>
+          <span>${esc(node.sub)}</span>
+        </div>
+      `).join("");
+      map.innerHTML = `
+        <svg class="capital-flow-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <marker id="capital-flow-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+              <path d="M0,0 L0,7 L6,3.5 z" fill="rgba(142, 58, 58, 0.55)"></path>
+            </marker>
+          </defs>
+          ${lines}
+        </svg>
+        ${labels}
+        ${nodes}
+      `;
+
+      const seen = new Set();
+      sources.innerHTML = story.events
+        .filter(event => {
+          const key = `${event.sourceName}|${event.sourceUrl}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .map(event => {
+          if (!event.sourceUrl || event.sourceUrl === "#") return `<span>${esc(event.sourceName)}</span>`;
+          return `<a href="${esc(event.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(event.sourceName)}</a>`;
+        })
+        .join("");
+
+      tabs.querySelectorAll("button").forEach(button => {
+        button.addEventListener("click", () => render(button.getAttribute("data-story")));
+      });
+    }
+
+    render("obagi");
   })();
   if (window.V3CompanyDetail) {
     window.V3CompanyDetail.attachToTable(".table-card table tbody tr", { nameCellSelector: "td:nth-child(2)" });
