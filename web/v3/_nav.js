@@ -127,14 +127,12 @@
           <div class="nav-item ${item.children && item.children.length ? "has-tree" : ""}">
             <a href="${item.href}" class="${item.id === active ? "active" : ""}"${item.title ? ` title="${item.title}"` : ""}>
               <span class="nav-zh">${item.zh}</span>
-              <span class="nav-en">${item.en}</span>
             </a>
             ${item.children && item.children.length ? `
               <div class="nav-tree" role="menu" aria-label="${item.zh} 二级菜单">
                 ${item.children.map(child => `
                   <a class="nav-tree-link" href="${child.href}" role="menuitem">
                     <span>${child.zh}</span>
-                    <small>${child.en}</small>
                   </a>
                 `).join("")}
               </div>
