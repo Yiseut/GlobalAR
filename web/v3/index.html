@@ -7,6 +7,163 @@
 <link rel="icon" href="data:," />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
 <link rel="stylesheet" href="./styles.css?v=20260613-stack-pct" />
+<style>
+  .overview-track-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.96fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .overview-track-grid:first-of-type {
+    margin-top: 0;
+  }
+  .overview-track-kpis {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .overview-track-kpi {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: rgba(255,252,245,0.7);
+    padding: 12px;
+    min-width: 0;
+  }
+  .overview-track-kpi .label {
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  .overview-track-kpi .value {
+    display: block;
+    color: var(--ink);
+    font-family: var(--f-display);
+    font-size: 28px;
+    line-height: 1.05;
+    margin-top: 8px;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .overview-track-kpi .delta {
+    display: block;
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 11px;
+    line-height: 1.35;
+    margin-top: 6px;
+  }
+  .overview-track-list {
+    display: grid;
+    gap: 9px;
+    margin-top: 10px;
+  }
+  .overview-track-row {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) 48px;
+    gap: 10px;
+    align-items: center;
+    color: var(--ink-2);
+    font-family: var(--f-body);
+    font-size: 12px;
+  }
+  .overview-track-row .rank {
+    color: var(--muted);
+    font-family: var(--f-mono);
+    font-size: 10px;
+  }
+  .overview-track-row .name {
+    min-width: 0;
+    position: relative;
+  }
+  .overview-track-row .bar {
+    display: block;
+    height: 4px;
+    margin-top: 5px;
+    border-radius: 999px;
+    background: var(--bar-color, var(--accent));
+    opacity: 0.55;
+  }
+  .overview-track-row .n {
+    color: var(--ink);
+    font-family: var(--f-mono);
+    text-align: right;
+  }
+  .overview-density-row {
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr) 42px;
+    gap: 10px;
+    align-items: center;
+    color: var(--ink-2);
+    font-family: var(--f-body);
+    font-size: 12px;
+  }
+  .overview-density-row .density-track {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .overview-density-row .density-bar {
+    height: 7px;
+    border-radius: 999px;
+    background: rgba(83,72,78,0.08);
+    overflow: hidden;
+  }
+  .overview-density-row .density-bar span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--bar-color, var(--accent));
+    width: var(--bar-pct, 0%);
+  }
+  .overview-density-row .density-n {
+    color: var(--ink);
+    font-family: var(--f-mono);
+    text-align: right;
+  }
+  .overview-track-findings {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .overview-track-finding {
+    border: 1px solid var(--hairline-2);
+    border-left: 4px solid var(--finding-color, var(--accent));
+    border-radius: 8px;
+    background: rgba(255,252,245,0.72);
+    padding: 11px 12px;
+  }
+  .overview-track-finding .stamp {
+    color: var(--muted);
+    display: block;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .overview-track-finding strong {
+    color: var(--ink);
+    display: block;
+    font-family: var(--f-display-cn);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .overview-track-finding p {
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 6px 0 0;
+  }
+  @media (max-width: 980px) {
+    .overview-track-grid,
+    .overview-track-kpis {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -125,14 +282,45 @@
       </div>
     </section>
 
-    <section class="block">
+    <section class="block" id="track-structure">
       <div class="section-head">
-        <h2>赛道格局</h2>
-        <span class="cn">· 材料 taxonomy 全景</span><span class="en">Track structure</span>
+        <h2>赛道结构</h2>
+        <span class="cn">· 合并到总览</span><span class="en">Product structure snapshot</span>
+      </div>
+      <div class="overview-track-grid">
+        <article class="chart-card">
+          <div class="chart-title">产品赛道骨架</div>
+          <div class="chart-sub">决策层先看 L1 / L2 / 技术 / 密度读数；细分产品、公司和 L3 证据从下方 taxonomy 下钻。</div>
+          <div class="overview-track-kpis" id="overview-track-kpis"></div>
+        </article>
+        <article class="chart-card">
+          <div class="chart-title">热门技术 / 材料 Top 8</div>
+          <div class="chart-sub">按产品主表聚合，不分商业赛道；用于快速判断技术路线的集中度。</div>
+          <div class="overview-track-list" id="overview-tech-ranking"></div>
+        </article>
+      </div>
+      <div class="overview-track-grid">
+        <article class="chart-card">
+          <div class="chart-title">产品密度 · 平台化程度</div>
+          <div class="chart-sub">产品 / 公司越高，越像平台型产品组合；越低，越像单品或专精型赛道。</div>
+          <div class="overview-track-list" id="overview-density-bars"></div>
+        </article>
+        <article class="chart-card">
+          <div class="chart-title">结构解读</div>
+          <div class="chart-sub">作为总览层结论展示，详细 L2/L3 仍可在下方材料 taxonomy 中点击下钻。</div>
+          <div class="overview-track-findings" id="overview-track-findings"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="material-taxonomy">
+      <div class="section-head">
+        <h2>材料 taxonomy 全景</h2>
+        <span class="cn">· L1 / L2 / L3 下钻</span><span class="en">Material taxonomy landscape</span>
       </div>
       <div class="chart-card">
         <div class="chart-title" id="ml-headline">— 个材料一级赛道 · — 个二级 · 共 — 款产品</div>
-        <div class="chart-sub">材料一级赛道按产品规模与二级结构呈现，既保留大类体量，也露出内部细分的集中与分散。</div>
+        <div class="chart-sub">材料一级赛道按产品规模与二级结构呈现，既保留大类体量，也露出内部细分的集中与分散；这里保留可追溯明细层。</div>
         <div class="ml-grid" id="ml-grid"></div>
       </div>
       <div class="chart-card ml-stack-card">
@@ -275,50 +463,6 @@
       </div>
     </section>
 
-    <section class="block">
-      <div class="section-head">
-        <h2>赛道分布</h2>
-        <span class="cn">· L1 nine categories</span><span class="en">Track share</span>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title">9 个一级赛道的产品线分布</div>
-        <div class="chart-sub">按当前产品主表统计，展示各一级赛道的产品线占比。</div>
-        <div class="donut-row">
-          <div class="donut-wrap">
-            <svg width="280" height="280" viewBox="0 0 280 280" aria-label="L1 赛道产品线分布">
-              <g transform="rotate(-90 140 140)">
-                <!-- circumference 2π*98 ≈ 615.75 ; total 942 -->
-                <circle class="donut-slice" data-track="EBD"          data-n="467" r="98" cx="140" cy="140" fill="none" stroke="#8E3A3A" stroke-width="38" stroke-dasharray="305.26 310.49" stroke-dashoffset="0"/>
-                <circle class="donut-slice" data-track="Injectables"  data-n="328" r="98" cx="140" cy="140" fill="none" stroke="#6B5A75" stroke-width="38" stroke-dasharray="214.40 401.35" stroke-dashoffset="-305.26"/>
-                <circle class="donut-slice" data-track="Skincare"     data-n="49"  r="98" cx="140" cy="140" fill="none" stroke="#D9AE91" stroke-width="38" stroke-dasharray="32.03 583.72" stroke-dashoffset="-519.66"/>
-                <circle class="donut-slice" data-track="Implants"     data-n="28"  r="98" cx="140" cy="140" fill="none" stroke="#CFB58E" stroke-width="38" stroke-dasharray="18.30 597.45" stroke-dashoffset="-551.69"/>
-                <circle class="donut-slice" data-track="Regenerative" data-n="25"  r="98" cx="140" cy="140" fill="none" stroke="#A8B59A" stroke-width="38" stroke-dasharray="16.34 599.41" stroke-dashoffset="-570.00"/>
-                <circle class="donut-slice" data-track="Consumables"  data-n="23"  r="98" cx="140" cy="140" fill="none" stroke="#5A6878" stroke-width="38" stroke-dasharray="15.03 600.72" stroke-dashoffset="-586.34"/>
-                <circle class="donut-slice" data-track="Surgical"     data-n="10"  r="98" cx="140" cy="140" fill="none" stroke="#8C7B91" stroke-width="38" stroke-dasharray="6.54 609.22" stroke-dashoffset="-601.37"/>
-                <circle class="donut-slice" data-track="Diagnostics"  data-n="9"   r="98" cx="140" cy="140" fill="none" stroke="#C76B68" stroke-width="38" stroke-dasharray="5.88 609.87" stroke-dashoffset="-607.91"/>
-                <circle class="donut-slice" data-track="Pharma"       data-n="3"   r="98" cx="140" cy="140" fill="none" stroke="#EC9B73" stroke-width="38" stroke-dasharray="1.96 613.79" stroke-dashoffset="-613.79"/>
-              </g>
-            </svg>
-            <div class="donut-center">
-              <span class="big">942</span>
-              <span class="small">product lines</span>
-            </div>
-          </div>
-          <div class="donut-list">
-            <div class="row donut-row" data-track="EBD"><span class="sw" style="background:#8E3A3A"></span><span class="name">EBD · 光电</span><span class="num">467</span><span class="pct">49.6%</span></div>
-            <div class="row donut-row" data-track="Injectables"><span class="sw" style="background:#6B5A75"></span><span class="name">Injectables · 注射</span><span class="num">328</span><span class="pct">34.8%</span></div>
-            <div class="row donut-row" data-track="Skincare"><span class="sw" style="background:#D9AE91"></span><span class="name">Cosmeceutical · 功能性护肤品</span><span class="num">49</span><span class="pct">5.2%</span></div>
-            <div class="row donut-row" data-track="Implants"><span class="sw" style="background:#CFB58E"></span><span class="name">Implants · 植入物</span><span class="num">28</span><span class="pct">3.0%</span></div>
-            <div class="row donut-row" data-track="Regenerative"><span class="sw" style="background:#A8B59A"></span><span class="name">Regenerative · 再生</span><span class="num">25</span><span class="pct">2.7%</span></div>
-            <div class="row donut-row" data-track="Consumables"><span class="sw" style="background:#5A6878"></span><span class="name">Consumables · 耗材</span><span class="num">23</span><span class="pct">2.4%</span></div>
-            <div class="row donut-row" data-track="Surgical"><span class="sw" style="background:#8C7B91"></span><span class="name">Surgical · 外科</span><span class="num">10</span><span class="pct">1.1%</span></div>
-            <div class="row donut-row" data-track="Diagnostics"><span class="sw" style="background:#C76B68"></span><span class="name">Diagnostics · 诊断</span><span class="num">9</span><span class="pct">1.0%</span></div>
-            <div class="row donut-row" data-track="Pharma"><span class="sw" style="background:#EC9B73"></span><span class="name">Pharma · 药物</span><span class="num">3</span><span class="pct">0.3%</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <div class="footnote">
       <span>v3 · 总览 Overview · 数据更新 <span data-bind-text="generated_at_short">—</span></span>
       <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
@@ -330,6 +474,7 @@
 <!-- Local data + interaction scripts first so country bars / donut wire up
      even before globe libs load -->
 <script src="../app-data.js?v=20260616"></script>
+<script src="./v3-tracks.js?v=20260616"></script>
 <script src="./v3-products.js?v=20260616"></script>
 <script src="./v3-companies.js?v=20260616"></script>
 <script src="./v3-product-tree.js?v=20260616"></script>
@@ -372,6 +517,97 @@
       const short = stamp.slice(0, 10).replace(/-/g, "·");
       document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => { el.textContent = short; });
     }
+  })();
+
+  (function renderTrackStructureSummary () {
+    const data = window.V3_TRACKS_DATA;
+    if (!data || !data.summary) return;
+    const kpis = document.getElementById("overview-track-kpis");
+    const techWrap = document.getElementById("overview-tech-ranking");
+    const densityWrap = document.getElementById("overview-density-bars");
+    const findingsWrap = document.getElementById("overview-track-findings");
+    if (!kpis || !techWrap || !densityWrap || !findingsWrap) return;
+
+    const TRACK_COLORS = {
+      "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+    };
+    const esc = (value) => String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;",
+    })[ch]);
+    const fmt = (value) => Number(value || 0).toLocaleString("en-US");
+    const displayTrack = (track) => track === "Skincare" ? "Cosmeceutical" : (track || "—");
+    const stripTags = (value) => String(value || "").replace(/<[^>]*>/g, "");
+    const summary = data.summary;
+    const globalSummary = (window.GLOBAL_AESTHETICS_DATA && window.GLOBAL_AESTHETICS_DATA.summary) || {};
+    const companies = globalSummary.companies || globalSummary.company_master || 0;
+    const ebdFinding = (data.findings || []).find(row => String(row.lead || "").includes("EBD")) || (data.findings || [])[0] || {};
+    const ebdTechCount = ebdFinding.num_pair && ebdFinding.num_pair.num;
+
+    const kpiRows = [
+      ["产品线", fmt(summary.total_products), `${fmt(summary.l1_count)} L1 · ${fmt(summary.l2_count)} L2`],
+      ["技术分类", fmt(summary.tech_count), "material / energy taxonomy"],
+      ["头部赛道", displayTrack(summary.top_l1), `${fmt(summary.top_l1_products)} products`],
+      ["头部技术", summary.top_tech || "—", `${fmt(summary.top_tech_products)} products`],
+      ["产品/公司", summary.avg_products_per_company, `${fmt(companies)} upstream companies`],
+      ["结构信号", "EBD 混战", `${ebdTechCount || "100+"} tech families`],
+    ];
+    kpis.innerHTML = kpiRows.map(([label, value, delta]) => `
+      <div class="overview-track-kpi">
+        <span class="label">${esc(label)}</span>
+        <span class="value">${esc(value)}</span>
+        <span class="delta">${esc(delta)}</span>
+      </div>
+    `).join("");
+
+    const techOwner = {};
+    (data.l1_breakdown || []).forEach(row => {
+      (row.tech_top || []).forEach(([name, n]) => {
+        if (!techOwner[name] || Number(techOwner[name].n || 0) < Number(n || 0)) {
+          techOwner[name] = { l1: row.l1, n };
+        }
+      });
+    });
+    const topTechs = (data.tech_ranking || []).slice(0, 8);
+    const maxTech = Math.max(1, ...topTechs.map(row => Number(row.n || 0)));
+    techWrap.innerHTML = topTechs.map((row, index) => {
+      const owner = techOwner[row.name] || {};
+      const color = TRACK_COLORS[owner.l1] || "var(--accent)";
+      const pct = Math.max(2, Number(row.n || 0) / maxTech * 100);
+      return `
+        <div class="overview-track-row" style="--bar-color:${color};">
+          <span class="rank">${String(index + 1).padStart(2, "0")}</span>
+          <span class="name">${esc(row.name)}<span class="bar" style="width:${pct.toFixed(1)}%;"></span></span>
+          <span class="n">${fmt(row.n)}</span>
+        </div>
+      `;
+    }).join("");
+
+    const density = (data.density || []).slice().sort((a, b) => Number(b.ppc || 0) - Number(a.ppc || 0));
+    const maxDensity = Math.max(1, ...density.map(row => Number(row.ppc || 0)));
+    densityWrap.innerHTML = density.map(row => {
+      const color = TRACK_COLORS[row.l1] || "var(--accent)";
+      const pct = Math.max(2, Number(row.ppc || 0) / maxDensity * 100);
+      return `
+        <div class="overview-density-row">
+          <span class="density-track">${esc(displayTrack(row.l1))}</span>
+          <span class="density-bar"><span style="--bar-color:${color};--bar-pct:${pct.toFixed(1)}%;"></span></span>
+          <span class="density-n">${esc(row.ppc)}</span>
+        </div>
+      `;
+    }).join("");
+
+    findingsWrap.innerHTML = (data.findings || []).slice(0, 3).map((finding, index) => {
+      const color = ["#8E3A3A", "#D9AE91", "#6B5A75"][index] || "var(--accent)";
+      return `
+        <article class="overview-track-finding" style="--finding-color:${color};">
+          <span class="stamp">${esc(finding.stamp || `Finding ${index + 1}`)}</span>
+          <strong>${esc(stripTags(finding.lead))}</strong>
+          <p>${esc(stripTags(finding.body))}</p>
+        </article>
+      `;
+    }).join("");
   })();
 
   /* ============ Country distribution block — top 10 ranked horizontal bars ============ */
@@ -576,8 +812,8 @@
     headline.textContent = `${s.l1_count} 个材料一级赛道 · ${s.l2_count} 个二级 · 共 ${s.total_products_classified} 款分类产品（全库 ${s.total_products_all}）`;
 
     // Render: every L1 = a card. Per user feedback 2026-06-04:
-    //  - L1 card itself is NOT clickable here (the L1→L2 panel view is over
-    //    on tracks.html; on overview it'd just repeat info the user can see
+    //  - L1 card itself is NOT clickable here; on overview it'd just repeat
+    //    info the user can see
     //    inline in the L2 sub-cards below).
     //  - Each L2 sub-card IS clickable → opens V3MaterialDrawer in L2 mode,
     //    showing the L2's own market: L3 breakdown + companies + products
