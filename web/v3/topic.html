@@ -24,6 +24,7 @@
 <script src="./v3-companies.js?v=20260616"></script>
 <script src="./v3-topic-deep.js?v=20260616"></script>
 <script src="./v3-product-tree.js?v=20260616"></script>
+<script src="./v3-deep-dive.js?v=20260616"></script>
 <script src="./v3-company-detail.js?v=20260616"></script>
 <script src="./v3-l2-detail.js?v=20260616"></script>
 <script src="./v3-l2-drawer.js?v=20260616"></script>
@@ -146,6 +147,113 @@
     font-size: 12px;
     color: var(--ink-2);
     text-align: right;
+  }
+
+  /* ============ Focused L2 analysis ============ */
+  .subtrack-analysis {
+    border-top: 3px solid var(--topic-color, var(--accent));
+  }
+  .subtrack-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 16px 0 14px;
+  }
+  .subtrack-kpi {
+    background: var(--surface-3);
+    border: 1px solid var(--hairline-2);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .subtrack-kpi .k {
+    display: block;
+    font-family: var(--f-body);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .subtrack-kpi .v {
+    display: block;
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-size: 38px;
+    line-height: 1;
+    margin-top: 8px;
+    color: var(--topic-color, var(--accent-2));
+  }
+  .subtrack-kpi .d {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .subtrack-analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .subtrack-chart {
+    background: var(--surface-3);
+    border: 1px solid var(--hairline-2);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .subtrack-chart.wide {
+    grid-column: 1 / -1;
+  }
+  .subtrack-chart h3 {
+    margin: 0 0 10px;
+    font-family: var(--f-body);
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .subtrack-bar-list {
+    display: grid;
+    gap: 8px;
+  }
+  .subtrack-bar-row {
+    display: grid;
+    grid-template-columns: minmax(110px, 170px) 1fr 74px;
+    gap: 10px;
+    align-items: center;
+    min-height: 24px;
+    font-family: var(--f-body);
+    font-size: 12.5px;
+    color: var(--ink);
+  }
+  .subtrack-bar-row .name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .subtrack-bar-row .track {
+    height: 14px;
+    background: var(--surface);
+    border: 1px solid var(--hairline-2);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .subtrack-bar-row .fill {
+    display: block;
+    height: 100%;
+    width: var(--pct, 0%);
+    background: var(--topic-color, var(--accent));
+    border-radius: 99px;
+  }
+  .subtrack-bar-row .n {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    color: var(--ink-2);
+    text-align: right;
+  }
+  .subtrack-empty {
+    padding: 16px 0;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 13px;
   }
 
   /* ============ Lifecycle scatter ============ */
@@ -515,6 +623,9 @@
     .conc-grid { grid-template-columns: 1fr 1fr; }
     .entrants-wrap { grid-template-columns: 1fr; }
     .topic-mega-grid { grid-template-columns: 1fr; }
+    .subtrack-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .subtrack-analysis-grid { grid-template-columns: 1fr; }
+    .subtrack-bar-row { grid-template-columns: minmax(90px, 140px) 1fr 64px; }
   }
 </style>
 <script>
@@ -532,7 +643,7 @@
       "pharma":"topic-other",
     };
     const s = document.createElement("script");
-    s.src = "./_nav.js?v=20260620-cn-nav";
+    s.src = "./_nav.js?v=20260620-subtrack-analysis";
     s.dataset.active = SLUG_TO_TOPIC[seg] || "topic-ebd";
     document.currentScript.parentNode.insertBefore(s, document.currentScript);
   })();
@@ -589,7 +700,9 @@
       "Pharma":       { en: "Pharma", zh: "药物赛道", note: "口服 / 局部药物形态。多数被监管划分到非医美。" },
     };
 
-    const segment = (new URLSearchParams(location.search).get("segment") || "ebd").toLowerCase();
+    const params = new URLSearchParams(location.search);
+    const segment = (params.get("segment") || "ebd").toLowerCase();
+    const focusKey = slugify(params.get("focus") || "");
     const L1 = SLUG_TO_L1[segment];
     const root = document.getElementById("topic-content");
 
@@ -681,9 +794,9 @@
         </div>
       </section>
 
-      ${megaTrackHtml}
+      ${renderSubtrackAnalysis(focusKey, L1, baseColor)}
 
-      <section class="block">
+      <section class="block" id="topic-analysis">
         <div class="section-head">
           <h2>核心读数</h2>
           <span class="cn">· ${esc(displayL1)} 赛道</span><span class="en">Headline numbers</span>
@@ -730,15 +843,6 @@
             <span class="delta">FDA records (510k + label + IFU)</span>
           </article>
         </div>
-      </section>
-
-      <section class="block" id="l2-subtracks">
-        <div class="section-head">
-          <h2>L2 子赛道</h2>
-          <span class="cn">· ${l1l2Row.segments.length} 个子分类</span><span class="en">L2 sub-tracks</span>
-        </div>
-        <p class="lede" style="margin-bottom:18px;font-size:13.5px;">L2 子赛道以产品数、注册企业、适应症数和最新申报年份形成对比，同赛道主色体现层级关系，share 角标显示该 L2 占 L1 的比例。</p>
-        <div class="l2-cards-grid" id="l2-cards"></div>
       </section>
 
       <!-- ============ Concentration (CR5/CR10/HHI) ============ -->
@@ -887,6 +991,17 @@
           <div class="chart-sub">国家与 L2 子赛道交叉呈现产品数，色深反映集中度。</div>
           <div id="cl-matrix-wrap"></div>
         </div>
+      </section>
+
+      ${megaTrackHtml}
+
+      <section class="block" id="l2-subtracks">
+        <div class="section-head">
+          <h2>L2 子赛道索引</h2>
+          <span class="cn">· ${l1l2Row.segments.length} 个子分类</span><span class="en">Product list index</span>
+        </div>
+        <p class="lede" style="margin-bottom:18px;font-size:13.5px;">这里作为产品与公司清单入口。市场结构、热力图、生命周期和国家交叉分析已放在上方，点卡片可继续查看对应 L2 的产品清单。</p>
+        <div class="l2-cards-grid" id="l2-cards"></div>
       </section>
 
       <div class="footnote">
@@ -1410,6 +1525,289 @@
       if (drillBg) drillBg.classList.remove("show");
     }
 
+    function renderSubtrackAnalysis(focus, l1, color) {
+      if (!focus) return "";
+      const cfg = getFocusConfig(focus);
+      if (!cfg) return "";
+      const facts = (((window.V3_PIVOT_DATA || {}).facts) || []);
+      if (!facts.length) return "";
+      const productRows = uniqueProductRows(facts.filter(f => cfg.match(f)));
+      if (!productRows.length) return "";
+
+      const baseL1 = cfg.baseL1 || l1;
+      const baseLabel = cfg.baseLabel || ((L1_TAGLINE[baseL1] || {}).zh) || baseL1;
+      const titleSuffix = /[A-Za-z0-9]$/.test(cfg.title || "") ? " 分析" : "分析";
+      const universeRows = uniqueProductRows(facts.filter(f => f.l1 === baseL1));
+      const denominator = universeRows.length || productRows.length || 1;
+      const companies = uniqueCount(productRows, f => f.ci || f.co);
+      const countries = uniqueCount(productRows, f => f.cy);
+      const regulators = uniqueCount(productRows.flatMap(f => arrayify(f.reg)), v => v);
+      const share = productRows.length / denominator * 100;
+
+      const l2Rows = topCounts(productRows, f => f.l2, 8);
+      const techRows = topCounts(productRows, f => f.t || f.m3 || f.m2, 8);
+      const countryRows = topCounts(productRows, f => f.cy, 8);
+      const regRows = topMultiCounts(productRows, "reg", 8);
+      const indicationRowsRaw = topMultiCounts(productRows, "ind", 8);
+      const indicationRows = indicationRowsRaw.filter(r => !/未标注|待补|unknown/i.test(r.name));
+      const companyRows = topCounts(productRows, f => f.co, 8);
+      const l2Total = l2Rows.reduce((sum, r) => sum + r.n, 0);
+      const regTotal = regRows.reduce((sum, r) => sum + r.n, 0);
+      const indTotal = (indicationRows.length ? indicationRows : indicationRowsRaw).reduce((sum, r) => sum + r.n, 0);
+
+      return `
+        <section class="block subtrack-analysis" id="subtrack-analysis" style="--topic-color:${color};">
+          <div class="section-head">
+            <h2>${esc(cfg.title)}${titleSuffix}</h2>
+            <span class="cn">· ${esc(cfg.scopeLabel || "二级赛道")}</span><span class="en">Sub-track lens</span>
+          </div>
+          <p class="lede" style="margin-bottom:12px;font-size:13.5px;">先看当前二级赛道的市场结构、国家分布、技术材料、监管通道和适应症，再进入下方产品与公司清单。</p>
+          <div class="subtrack-kpi-grid">
+            <div class="subtrack-kpi">
+              <span class="k">产品线</span>
+              <span class="v">${productRows.length}</span>
+              <span class="d">${esc(baseLabel)}内 ${share.toFixed(1)}%</span>
+            </div>
+            <div class="subtrack-kpi">
+              <span class="k">公司</span>
+              <span class="v">${companies}</span>
+              <span class="d">品牌方 / 制造商</span>
+            </div>
+            <div class="subtrack-kpi">
+              <span class="k">国家 / 地区</span>
+              <span class="v">${countries}</span>
+              <span class="d">商业覆盖</span>
+            </div>
+            <div class="subtrack-kpi">
+              <span class="k">监管通道</span>
+              <span class="v">${regulators}</span>
+              <span class="d">多监管证据</span>
+            </div>
+          </div>
+          <div class="subtrack-analysis-grid">
+            ${l2Rows.length > 1 ? `
+              <div class="subtrack-chart wide">
+                <h3>二级构成</h3>
+                <div class="subtrack-bar-list">${renderSubtrackBars(l2Rows, l2Total || productRows.length, color)}</div>
+              </div>
+            ` : ""}
+            <div class="subtrack-chart">
+              <h3>技术 / 材料构成</h3>
+              <div class="subtrack-bar-list">${renderSubtrackBars(techRows, productRows.length, color)}</div>
+            </div>
+            <div class="subtrack-chart">
+              <h3>国家分布</h3>
+              <div class="subtrack-bar-list">${renderSubtrackBars(countryRows, productRows.length, color)}</div>
+            </div>
+            <div class="subtrack-chart">
+              <h3>监管通道</h3>
+              <div class="subtrack-bar-list">${renderSubtrackBars(regRows, regTotal || productRows.length, color)}</div>
+            </div>
+            <div class="subtrack-chart">
+              <h3>适应症分布</h3>
+              <div class="subtrack-bar-list">${renderSubtrackBars(indicationRows.length ? indicationRows : indicationRowsRaw, indTotal || productRows.length, color)}</div>
+            </div>
+            <div class="subtrack-chart wide">
+              <h3>头部公司集中度</h3>
+              <div class="subtrack-bar-list">${renderSubtrackBars(companyRows, productRows.length, color)}</div>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function getFocusConfig(focus) {
+      const cfg = {
+        "ha-fillers": {
+          title: "HA 填充",
+          scopeLabel: "透明质酸填充剂",
+          baseL1: "Injectables",
+          match: f => f.l1 === "Injectables" && f.l2 === "Dermal Filler" && hasAny(f, ["hyaluronic", "透明质酸", "ha dermal", "ha filler", "交联ha"]),
+        },
+        "skin-boosters": {
+          title: "Skin Booster / 中胚层",
+          scopeLabel: "肤质改善与周期治疗",
+          baseL1: "Injectables",
+          match: f => f.l1 === "Injectables" && (["Skin Booster", "Mesotherapy"].includes(f.l2) || hasAny(f, ["skin booster", "mesotherapy", "水光", "中胚层"])),
+        },
+        "neurotoxin": {
+          title: "肉毒毒素",
+          scopeLabel: "毒素注射",
+          baseL1: "Injectables",
+          match: f => f.l1 === "Injectables" && (f.l2 === "Neurotoxin" || hasAny(f, ["botulinum", "toxin", "肉毒"])),
+        },
+        "biostimulators": {
+          title: "生物刺激剂",
+          scopeLabel: "胶原刺激与长效再生",
+          baseL1: "Injectables",
+          match: f => f.l1 === "Injectables" && (f.l2 === "Biostimulator" || hasAny(f, ["biostimulator", "plla", "pdlla", "pcl", "caha", "poly-l-lactic"])),
+        },
+        "collagen-nucleotides": {
+          title: "胶原 / PN / PDRN",
+          scopeLabel: "修复与再生注射材料",
+          baseL1: "Injectables",
+          match: f => f.l1 === "Injectables" && hasAny(f, ["collagen", "polynucleotide", "pdrn", " pn ", "胶原", "多聚核苷酸"]),
+        },
+        "threads": {
+          title: "埋线提升",
+          scopeLabel: "耗材 / 提升线",
+          baseL1: "Injectables",
+          match: f => hasAny(f, ["thread lift", "thread", "埋线", "提升线"]),
+        },
+        "laser-ipl": {
+          title: "激光 / IPL",
+          scopeLabel: "光源设备",
+          baseL1: "EBD",
+          match: f => f.l1 === "EBD" && (["Laser", "IPL", "LED/Light Therapy", "Hair Removal"].includes(f.l2) || hasAny(f, ["laser", "ipl", "picosecond", "nd:yag", "co2", "alexandrite", "光疗"])),
+        },
+        "rf": {
+          title: "射频 / RF",
+          scopeLabel: "热刺激与紧致",
+          baseL1: "EBD",
+          match: f => f.l1 === "EBD" && (f.l2 === "Radiofrequency" || hasAny(f, ["radiofrequency", " rf ", "fractional rf", "射频"])),
+        },
+        "hifu-ultrasound": {
+          title: "HIFU / 超声",
+          scopeLabel: "聚焦超声与提拉",
+          baseL1: "EBD",
+          match: f => f.l1 === "EBD" && (["HIFU", "Ultrasound"].includes(f.l2) || hasAny(f, ["hifu", "ultrasound", "lipus", "超声"])),
+        },
+        "microneedling": {
+          title: "微针 / RF 微针",
+          scopeLabel: "微针与复合导入",
+          baseL1: "EBD",
+          match: f => f.l1 === "EBD" && (f.l2 === "Microneedling" || hasAny(f, ["microneedling", "micro-needle", "微针"])),
+        },
+        "body-shaping": {
+          title: "身体塑形 / EMS",
+          scopeLabel: "塑形、减脂与肌肉刺激",
+          baseL1: "EBD",
+          match: f => f.l1 === "EBD" && (["Body Contouring", "EMS", "Cryotherapy", "Shockwave"].includes(f.l2) || hasAny(f, ["body", "ems", "hifem", "cryo", "cryolipolysis", "muscle", "lipolysis", "身体塑形"])),
+        },
+        "hybrid-energy": {
+          title: "联合能源 / 其他",
+          scopeLabel: "多能量平台与边缘设备",
+          baseL1: "EBD",
+          match: f => f.l1 === "EBD" && (["Other EBD", "Platform", "Plasma", "Injection Devices", "Skin Management", "Professional Treatment"].includes(f.l2) || hasAny(f, ["multi-platform", "hybrid", "plasma", "electroporation", "carboxytherapy"])),
+        },
+        "exosome": {
+          title: "外泌体",
+          scopeLabel: "再生外泌体",
+          baseL1: "Regenerative",
+          match: f => f.l1 === "Regenerative" && (f.l2 === "Exosome" || hasAny(f, ["exosome", "外泌体"])),
+        },
+        "prp-prf": {
+          title: "PRP / PRF",
+          scopeLabel: "自体血液来源",
+          baseL1: "Regenerative",
+          match: f => f.l1 === "Regenerative" && (f.l2 === "PRP-PRF" || hasAny(f, ["prp", "prf", "platelet", "血小板"])),
+        },
+        "stem-cell": {
+          title: "干细胞",
+          scopeLabel: "细胞治疗",
+          baseL1: "Regenerative",
+          match: f => f.l1 === "Regenerative" && (f.l2 === "Cell Therapy" || hasAny(f, ["stem cell", "干细胞", "cell therapy"])),
+        },
+        "growth-factor": {
+          title: "生长因子",
+          scopeLabel: "因子与生物活性物",
+          baseL1: "Regenerative",
+          match: f => f.l1 === "Regenerative" && (["Growth Factor", "Biologics"].includes(f.l2) || hasAny(f, ["growth factor", "peptide", "生长因子"])),
+        },
+      };
+      return cfg[focus] || null;
+    }
+
+    function renderSubtrackBars(rows, total, color) {
+      if (!rows || !rows.length) {
+        return `<div class="subtrack-empty">暂无可聚合记录</div>`;
+      }
+      const max = Math.max(1, ...rows.map(r => r.n));
+      return rows.map(r => {
+        const pctOfMax = r.n / max * 100;
+        const share = total ? r.n / total * 100 : 0;
+        return `
+          <div class="subtrack-bar-row" title="${esc(r.name)} · ${r.n} · ${share.toFixed(1)}%">
+            <span class="name">${esc(abbr(r.name, 30))}</span>
+            <span class="track"><span class="fill" style="--topic-color:${color}; --pct:${pctOfMax.toFixed(1)}%;"></span></span>
+            <span class="n">${r.n} · ${share.toFixed(1)}%</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function uniqueProductRows(rows) {
+      const seen = new Set();
+      return (rows || []).filter(row => {
+        const id = row.p || `${row.co || ""}|${row.nm || ""}|${row.l1 || ""}|${row.l2 || ""}`;
+        if (seen.has(id)) return false;
+        seen.add(id);
+        return true;
+      });
+    }
+
+    function topCounts(rows, getter, limit) {
+      const counts = new Map();
+      (rows || []).forEach(row => {
+        const raw = getter(row);
+        const key = String(raw || "未标注").trim() || "未标注";
+        counts.set(key, (counts.get(key) || 0) + 1);
+      });
+      return Array.from(counts, ([name, n]) => ({ name, n }))
+        .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name))
+        .slice(0, limit || 8);
+    }
+
+    function topMultiCounts(rows, key, limit) {
+      const counts = new Map();
+      (rows || []).forEach(row => {
+        const values = arrayify(row[key]);
+        (values.length ? values : ["未标注"]).forEach(value => {
+          const name = String(value || "未标注").trim() || "未标注";
+          counts.set(name, (counts.get(name) || 0) + 1);
+        });
+      });
+      return Array.from(counts, ([name, n]) => ({ name, n }))
+        .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name))
+        .slice(0, limit || 8);
+    }
+
+    function uniqueCount(rows, getter) {
+      const s = new Set();
+      (rows || []).forEach(row => {
+        const value = getter(row);
+        if (value !== null && value !== undefined && value !== "") s.add(String(value));
+      });
+      return s.size;
+    }
+
+    function arrayify(value) {
+      if (Array.isArray(value)) return value.filter(v => v !== null && v !== undefined && v !== "");
+      if (value === null || value === undefined || value === "") return [];
+      return [value];
+    }
+
+    function hasAny(fact, keys) {
+      const hay = factText(fact);
+      return (keys || []).some(key => hay.includes(String(key).toLowerCase()));
+    }
+
+    function factText(fact) {
+      return [
+        fact.l1, fact.l2, fact.m1, fact.m2, fact.m3, fact.t,
+        fact.b, fact.nm, fact.co, fact.cy, fact.rg,
+      ].filter(Boolean).join(" ").toLowerCase();
+    }
+
+    function slugify(value) {
+      return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/_/g, "-")
+        .replace(/[^a-z0-9-]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
     function renderOtherProductsOverview(tracks, appData) {
       const rows = OTHER_TOPIC_LINKS.map(item => {
         const breakdown = (tracks.l1_breakdown || []).find(row => row.l1 === item.l1) || {};
@@ -1479,27 +1877,26 @@
     function renderMegaTrackTabs(l1, segments, color, techRows) {
       const groups = {
         "Injectables": [
-          { label: "HA 填充", en: "HA fillers", keys: ["dermal filler", "hyaluronic", "ha "], note: "容量、轮廓和基础填充主干" },
-          { label: "Skin Booster / 中胚层", en: "skin boosters", keys: ["skin booster", "mesotherapy"], note: "肤质改善和周期治疗" },
-          { label: "肉毒毒素", en: "botulinum toxins", keys: ["neurotoxin", "botulinum", "toxin"], note: "动态纹、肌肉和复合适应症" },
-          { label: "生物刺激剂", en: "biostimulators", keys: ["biostimulator", "plla", "pcl", "caha"], note: "胶原刺激和长效再生" },
-          { label: "胶原 / PN / PDRN", en: "collagen and nucleotides", keys: ["collagen", "pdrn", "pn", "polynucleotide"], note: "修复、再生和肤质替代路线" },
-          { label: "埋线提升", en: "threads", keys: ["thread"], note: "提升、支撑和材料迭代" },
+          { focus: "ha-fillers", label: "HA 填充", en: "HA fillers", keys: ["dermal filler", "hyaluronic", "ha "], note: "容量、轮廓和基础填充主干" },
+          { focus: "skin-boosters", label: "Skin Booster / 中胚层", en: "skin boosters", keys: ["skin booster", "mesotherapy"], note: "肤质改善和周期治疗" },
+          { focus: "neurotoxin", label: "肉毒毒素", en: "botulinum toxins", keys: ["neurotoxin", "botulinum", "toxin"], note: "动态纹、肌肉和复合适应症" },
+          { focus: "biostimulators", label: "生物刺激剂", en: "biostimulators", keys: ["biostimulator", "plla", "pcl", "caha"], note: "胶原刺激和长效再生" },
+          { focus: "collagen-nucleotides", label: "胶原 / PN / PDRN", en: "collagen and nucleotides", keys: ["collagen", "pdrn", "pn", "polynucleotide"], note: "修复、再生和肤质替代路线" },
         ],
         "EBD": [
-          { label: "激光 / IPL", en: "laser and light", keys: ["laser", "ipl", "picosecond", "co2"], note: "色素、嫩肤、脱毛和换肤" },
-          { label: "射频 / RF", en: "radiofrequency", keys: ["radiofrequency", "rf"], note: "紧致、微针和热刺激" },
-          { label: "HIFU / 超声", en: "hifu and ultrasound", keys: ["hifu", "ultrasound", "lipus"], note: "深层提拉和组织加热" },
-          { label: "微针 / RF 微针", en: "microneedling", keys: ["microneedling"], note: "瘢痕、毛孔和复合导入" },
-          { label: "身体塑形 / EMS", en: "body shaping", keys: ["ems", "body", "muscle", "cryo"], note: "塑形、减脂和肌肉刺激" },
-          { label: "联合能源 / 其他", en: "hybrid energy", keys: ["plasma", "led", "electroporation", "multi"], note: "多能量组合和设备平台化" },
+          { focus: "laser-ipl", label: "激光 / IPL", en: "laser and light", keys: ["laser", "ipl", "picosecond", "co2"], note: "色素、嫩肤、脱毛和换肤" },
+          { focus: "rf", label: "射频 / RF", en: "radiofrequency", keys: ["radiofrequency", "rf"], note: "紧致、微针和热刺激" },
+          { focus: "hifu-ultrasound", label: "HIFU / 超声", en: "hifu and ultrasound", keys: ["hifu", "ultrasound", "lipus"], note: "深层提拉和组织加热" },
+          { focus: "microneedling", label: "微针 / RF 微针", en: "microneedling", keys: ["microneedling"], note: "瘢痕、毛孔和复合导入" },
+          { focus: "body-shaping", label: "身体塑形 / EMS", en: "body shaping", keys: ["ems", "body", "muscle", "cryo"], note: "塑形、减脂和肌肉刺激" },
+          { focus: "hybrid-energy", label: "联合能源 / 其他", en: "hybrid energy", keys: ["plasma", "led", "electroporation", "multi"], note: "多能量组合和设备平台化" },
         ],
       }[l1];
       if (!groups) return "";
       const rows = groups.map(group => {
         const n = countMegaGroup(segments, group.keys) || countMegaGroupTech(techRows, group.keys);
         return `
-          <a class="topic-mega-card" href="#l2-subtracks" style="--topic-color:${color};">
+          <a class="topic-mega-card" href="?segment=${segment}&focus=${group.focus}#subtrack-analysis" style="--topic-color:${color};">
             <span>
               <strong>${esc(group.label)}</strong>
               <span>${esc(group.en)} · ${esc(group.note)}</span>
