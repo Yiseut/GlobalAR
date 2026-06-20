@@ -17,23 +17,74 @@
   <main class="content">
 
     <section class="page-hero">
-      <div class="eyebrow-chip"><span class="dot"></span>Entity · Company list</div>
+      <div class="eyebrow-chip"><span class="dot"></span>Entity graph · ownership & flows</div>
       <h1>
         公司列表
-        <span class="h1-en">Companies</span>
+        <span class="h1-en">Company Relationships</span>
       </h1>
-      <p class="lede">329 家上游医美企业的完整画像 — 业务类型 / HQ / 主赛道 / 产品规模 / 资本结构 / 母子关系，串联集团结构与国家×上市矩阵。</p>
+      <p class="lede">这里不重复上市公司财务分析，而是把 329 家上游医美企业组织成关系图谱：母公司、子公司、控股归属、集团组合和潜在资本流向，用来理解谁在买谁、谁归属于谁、哪些非上市企业已经嵌入集团结构。</p>
       <div class="stat-row">
-        <span><span class="num" data-count-up="329">329</span> 家上游企业 · <span class="num" data-count-up="43">43</span> 家公开上市</span>
-        <span>Manufacturer <span class="num" data-count-up="290">290</span> · Brand Owner <span class="num" data-count-up="25">25</span></span>
-        <span>头部 Allergan <span class="num" data-count-up="19">19</span> 款产品</span>
+        <span><span class="num" data-count-up="329">329</span> 家上游企业 · <span class="num" data-count-up="24">24</span> 条母子/控股关系</span>
+        <span><span class="num" data-count-up="4">4</span> 个多子公司集团 · <span class="num" data-count-up="13">13</span> 家子公司</span>
+        <span>上市财务表现请看 <a href="./capital-map.html">资本地图</a></span>
       </div>
     </section>
 
     <section class="block">
       <div class="section-head">
-        <h2>核心读数</h2>
-        <span class="cn">· 企业结构</span><span class="en">Headline numbers</span>
+        <h2>两张资本叙事地图</h2>
+        <span class="cn">· 上市表现 vs 企业关系</span><span class="en">Capital narrative split</span>
+      </div>
+      <div class="company-story-split">
+        <article class="company-story-card">
+          <span class="story-kicker">Public company lens</span>
+          <h3>资本地图</h3>
+          <p>讲上市企业的故事：交易所、估值、市值带、收入、财务表现和资本市场可见度。</p>
+          <a href="./capital-map.html">进入资本地图</a>
+        </article>
+        <article class="company-story-card active">
+          <span class="story-kicker">Entity relationship lens</span>
+          <h3>公司列表</h3>
+          <p>讲资本流向和商业关系：母公司、子公司、集团归属、非上市公司被并入集团后的产业位置。</p>
+          <a href="#relationship-flow">查看关系流向</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="relationship-flow">
+      <div class="section-head">
+        <h2>资本流向故事线</h2>
+        <span class="cn">· parent → company</span><span class="en">Relationship flows</span>
+      </div>
+      <div class="relation-overview">
+        <article class="relation-stat">
+          <strong id="rel-parent-count">—</strong>
+          <span>可追踪母公司 / 控股方</span>
+        </article>
+        <article class="relation-stat">
+          <strong id="rel-link-count">—</strong>
+          <span>母子、控股或集团归属关系</span>
+        </article>
+        <article class="relation-stat">
+          <strong id="rel-cross-border-count">—</strong>
+          <span>跨国家/地区关系</span>
+        </article>
+        <article class="relation-stat">
+          <strong id="rel-listed-parent-count">—</strong>
+          <span>连接上市主体或上市母公司</span>
+        </article>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">母公司 → 子公司 / 资产：先看“谁控制了谁”</div>
+        <div class="chart-sub">这组关系不要求主体上市；只要能从 company_master 的 parent / ultimate_parent 识别出资本或集团归属，就进入公司关系图谱。上市财务表现仍放在资本地图阅读。</div>
+        <div class="relation-flow-list" id="relation-flow-list"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>关系图谱核心读数</h2>
+        <span class="cn">· 企业结构</span><span class="en">Entity graph numbers</span>
       </div>
       <div class="kpi-grid">
         <article class="kpi-cell lede has-wash w-rose-deep">
@@ -96,10 +147,10 @@
 
     <section class="block">
       <div class="section-head">
-        <h2>集团结构</h2>
+        <h2>多子公司集团</h2>
         <span class="cn">· ultimate_parent ≥ 2 subsidiaries</span><span class="en">Corporate families</span>
       </div>
-      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">行业并购整合处于早期。当前样本中，明确呈现多子公司关系的集团仍然有限；Huons Global 已作为公司族显示 Humedix 与 Huons BioPharma，后续可继续补齐 Huons Meditech 等成员关系。</p>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">这里展示已经形成“集团组合”的企业族。它和资本地图不同：不只看上市身份，也看非上市子公司、被收购资产和跨国集团归属。</p>
       <div class="family-grid" id="family-grid"></div>
     </section>
 
@@ -233,6 +284,8 @@
     countUp(document.getElementById("kpi-sub"), s.subsidiary);
     countUp(document.getElementById("kpi-fam"), s.corporate_families);
 
+    renderRelationshipFlows();
+
     // ---- Value chain bars ----
     const roleWrap = document.getElementById("role-bars");
     const roleTotal = data.business_role_mix.reduce((a, b) => a + b.n, 0);
@@ -252,6 +305,68 @@
         </div>
       `;
     }).join("");
+
+    function renderRelationshipFlows () {
+      const companies = Array.isArray(data.companies) ? data.companies : [];
+      const byName = new Map(companies.map(c => [c.name, c]));
+      const rows = companies
+        .map(c => {
+          const parent = (c.parent || (c.ultimate_parent && c.ultimate_parent !== c.name ? c.ultimate_parent : "") || "").trim();
+          if (!parent || parent === c.name) return null;
+          const parentRecord = byName.get(parent);
+          const crossBorder = !!(parentRecord && parentRecord.country && c.country && parentRecord.country !== c.country);
+          const listedLink = !!(c.stock_code || (parentRecord && parentRecord.stock_code));
+          return {
+            parent,
+            parentRecord,
+            child: c,
+            crossBorder,
+            listedLink,
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (b.child.products || 0) - (a.child.products || 0) || a.parent.localeCompare(b.parent));
+
+      countUp(document.getElementById("rel-parent-count"), new Set(rows.map(r => r.parent)).size);
+      countUp(document.getElementById("rel-link-count"), rows.length);
+      countUp(document.getElementById("rel-cross-border-count"), rows.filter(r => r.crossBorder).length);
+      countUp(document.getElementById("rel-listed-parent-count"), rows.filter(r => r.listedLink).length);
+
+      const flowList = document.getElementById("relation-flow-list");
+      if (!flowList) return;
+      flowList.innerHTML = rows.slice(0, 18).map(r => {
+        const c = r.child;
+        const parentMeta = r.parentRecord
+          ? [r.parentRecord.country, r.parentRecord.primary_track].filter(Boolean).join(" · ")
+          : "控股方 / 母公司";
+        const childMeta = [c.country, c.primary_track, `${c.products || 0} products`].filter(Boolean).join(" · ");
+        const stock = c.stock_code || (r.parentRecord && r.parentRecord.stock_code) || "private / unlisted";
+        return `
+          <div class="relation-flow-row" data-company-id="${esc(c.company_id || "")}" tabindex="0" role="button" aria-label="${esc(r.parent)} controls ${esc(c.name)}">
+            <span class="parent"><strong>${esc(r.parent)}</strong><small>${esc(parentMeta)}</small></span>
+            <span class="arrow">→</span>
+            <span class="child"><strong>${esc(c.name)}</strong><small>${esc(childMeta)}</small></span>
+            <span class="meta">
+              <span class="ownership-badge ${(c.ownership || "").toLowerCase()}">${esc(c.ownership || "—")}</span>
+              ${r.crossBorder ? `<small>跨国家/地区</small>` : `<small>同市场或母公司国家待补</small>`}
+            </span>
+            <span class="stock">${esc(stock)}</span>
+          </div>
+        `;
+      }).join("") || `<div class="relation-flow-row"><span class="child"><strong>暂无母子关系</strong><small>当前公司主数据没有可展示的 parent / ultimate_parent 关系。</small></span></div>`;
+      flowList.querySelectorAll(".relation-flow-row[data-company-id]").forEach(row => {
+        row.addEventListener("click", () => {
+          const cid = row.getAttribute("data-company-id");
+          if (cid && window.V3CompanyDetail) window.V3CompanyDetail.show(cid);
+        });
+        row.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            row.click();
+          }
+        });
+      });
+    }
 
     // ---- The companies table — with filter/search/sort ----
     const tbody = document.getElementById("co-tbody");

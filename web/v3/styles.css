@@ -785,6 +785,12 @@ main.content {
   font-size: 1.05em;
   color: var(--accent-2);
 }
+.page-hero .stat-row a {
+  color: var(--accent-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rose-dust);
+  padding-bottom: 1px;
+}
 .page-hero .filter-row {
   margin-top: 26px;
   display: flex;
@@ -3257,6 +3263,144 @@ main.content {
   margin-right: 4px;
 }
 
+.company-story-split,
+.relation-overview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.company-story-card,
+.relation-stat {
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  background: rgba(253,250,242,0.72);
+  box-shadow: var(--shadow-card);
+  min-width: 0;
+}
+.company-story-card {
+  padding: 20px 22px;
+}
+.company-story-card.active {
+  border-color: rgba(142,58,58,0.34);
+  background: linear-gradient(135deg, rgba(184,89,87,0.08), rgba(255,252,245,0.74));
+}
+.company-story-card .story-kicker {
+  display: block;
+  color: var(--accent-2);
+  font-family: var(--f-sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.company-story-card h3 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.1;
+}
+.company-story-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.company-story-card a {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--accent-2);
+  font-family: var(--f-sans);
+  font-size: 12px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rose-dust);
+  padding-bottom: 2px;
+}
+.relation-overview {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+.relation-stat {
+  padding: 16px 18px;
+}
+.relation-stat strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1;
+}
+.relation-stat span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.relation-flow-list {
+  display: grid;
+  gap: 8px;
+}
+.relation-flow-row {
+  display: grid;
+  grid-template-columns: minmax(150px, .85fr) 28px minmax(170px, 1fr) minmax(150px, .9fr) auto;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--hairline-2);
+  border-radius: 8px;
+  background: rgba(255,252,245,0.70);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color .14s var(--ease-quiet), background .14s var(--ease-quiet);
+}
+.relation-flow-row:hover {
+  border-color: rgba(184,89,87,0.26);
+  background: rgba(184,89,87,0.06);
+}
+.relation-flow-row .parent,
+.relation-flow-row .child {
+  min-width: 0;
+}
+.relation-flow-row strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.relation-flow-row small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+.relation-flow-row .arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-2);
+  font-family: var(--f-mono);
+  font-size: 13px;
+}
+.relation-flow-row .meta {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+.relation-flow-row .stock {
+  justify-self: end;
+  color: var(--accent-2);
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .companies-table th.sortable {
   cursor: pointer;
   user-select: none;
@@ -3439,6 +3583,11 @@ main.content {
 .co-matrix .co-val.zero { color: var(--subtle); font-size: 13px; }
 
 @media (max-width: 1100px) {
+  .company-story-split,
+  .relation-overview { grid-template-columns: 1fr; }
+  .relation-flow-row { grid-template-columns: 1fr; }
+  .relation-flow-row .arrow { justify-content: flex-start; }
+  .relation-flow-row .stock { justify-self: start; }
   .family-grid { grid-template-columns: 1fr; }
   .co-matrix { grid-template-columns: 100px repeat(5, 1fr); font-size: 12px; }
 }

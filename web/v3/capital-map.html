@@ -17,12 +17,12 @@
   <main class="content">
 
     <section class="page-hero">
-      <div class="eyebrow-chip"><span class="dot"></span>Lens 03 · New dimension</div>
+      <div class="eyebrow-chip"><span class="dot"></span>Public company lens · capital market</div>
       <h1>
         资本地图
         <span class="h1-en">Capital Map &amp; Valuation Bands</span>
       </h1>
-      <p class="lede" id="capital-hero-lede">61 条上市/关联证据批次 · Company_Master 329 家公司中 43 家 active public · 估值带、交易所、母子结构 + 金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。</p>
+      <p class="lede" id="capital-hero-lede">资本地图专注上市企业：61 条上市/关联证据批次 · Company_Master 329 家公司中 43 家 active public · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。</p>
       <div class="stat-row" id="capital-stat-row">
         <span>Active public <span class="num">43</span> / 329 = <span class="num">13</span>%</span>
         <span>上市证据批次 <span class="num">61</span> 条</span>
@@ -33,7 +33,7 @@
 
     <section class="block">
       <div class="section-head">
-        <h2>核心读数</h2>
+        <h2>上市企业核心读数</h2>
         <span class="cn">· 上市分布</span><span class="en">Headline numbers</span>
       </div>
       <div class="kpi-grid">
@@ -263,12 +263,12 @@
 
     <section class="block">
       <div class="section-head">
-        <h2>资本流向故事线</h2>
-        <span class="cn">· 交易链 / 集团网 / 战略持股</span><span class="en">Capital flow storylines</span>
+        <h2>上市资产交易故事线</h2>
+        <span class="cn">· 上市平台 / 官方交易链</span><span class="en">Public capital storylines</span>
       </div>
       <div class="chart-card capital-flow-card">
-        <div class="chart-title">把“谁买了谁、后来又归谁”画成可阅读的资本路径。</div>
-        <div class="chart-sub">优先展示官方公告、SEC/交易所和本地 listed_company_batch 已能支撑的关系；待核验关系只作为线索，不进入确定事实层。</div>
+        <div class="chart-title">把上市平台、官方交易链和战略持股画成可阅读的资本路径。</div>
+        <div class="chart-sub">这里保留和上市企业、官方公告、SEC/交易所直接相关的资本故事。非上市集团、子公司和更完整的母子关系请到公司列表阅读。</div>
 
         <div class="capital-flow-tabs" id="capital-flow-tabs" aria-label="资本故事线"></div>
         <div class="capital-flow-context" id="capital-flow-context"></div>
@@ -280,7 +280,7 @@
       </div>
     </section>
 
-    <section class="block">
+    <section class="block" data-backstage="1" hidden>
       <div class="section-head">
         <h2>集团树</h2>
         <span class="cn">· parent / affiliate trace</span><span class="en">Corporate family tree</span>
@@ -756,7 +756,7 @@
       const el = document.getElementById(id);
       if (el) el.innerHTML = value;
     };
-    setText("capital-hero-lede", `${fmt(listedBatch)} 条上市/关联证据批次 · Company_Master ${fmt(total)} 家公司中 ${fmt(publicCompanies)} 家 active public · 估值带、交易所、母子结构 + 金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。`);
+    setHTML("capital-hero-lede", `资本地图专注上市企业：${fmt(listedBatch)} 条上市/关联证据批次 · Company_Master ${fmt(total)} 家公司中 ${fmt(publicCompanies)} 家 active public · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。`);
     setHTML("capital-stat-row", `
       <span>Active public <span class="num">${fmt(publicCompanies)}</span> / ${fmt(total)} = <span class="num">${pct}</span>%</span>
       <span>上市证据批次 <span class="num">${fmt(listedBatch)}</span> 条</span>
