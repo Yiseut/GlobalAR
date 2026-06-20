@@ -1,0 +1,1165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>自定义分析 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .ca-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+    gap: 32px;
+    align-items: end;
+  }
+  .ca-field-library {
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    background: var(--surface-2);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-card);
+  }
+  .ca-field-library .kicker,
+  .ca-template-kicker,
+  .ca-control label,
+  .ca-status,
+  .ca-detail .detail-kicker {
+    font-family: var(--f-sans);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ca-field-library h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 8px 0 12px;
+  }
+  .ca-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ca-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-family: var(--f-sans);
+    font-size: 11px;
+    color: var(--ink-2);
+    background: var(--surface);
+    white-space: nowrap;
+  }
+  .ca-chip strong {
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--accent-2);
+  }
+  .ca-template-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 22px;
+  }
+  .ca-template-title {
+    font-family: var(--f-display);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 4px 0 6px;
+  }
+  .ca-template-sub {
+    font-family: var(--f-body);
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 80ch;
+  }
+  .ca-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .ca-button {
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink-2);
+    font-family: var(--f-sans);
+    font-size: 11px;
+    line-height: 1;
+    padding: 9px 12px;
+    cursor: pointer;
+    transition: border-color .14s ease, background .14s ease, color .14s ease;
+  }
+  .ca-button:hover,
+  .ca-button:focus-visible {
+    border-color: var(--rule);
+    color: var(--ink);
+    outline: none;
+  }
+  .ca-button.primary {
+    background: var(--plum-deep);
+    border-color: var(--plum-deep);
+    color: var(--surface-2);
+  }
+  .ca-controls {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(160px, 1fr)) repeat(2, minmax(98px, .55fr));
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 22px;
+  }
+  .ca-control {
+    min-width: 0;
+  }
+  .ca-control label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--ink-2);
+  }
+  .ca-control select {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+  .ca-control select:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+  .ca-pivot-wrap {
+    max-width: 100%;
+    overflow: auto;
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: var(--surface-3);
+  }
+  .ca-pivot {
+    display: grid;
+    min-width: 900px;
+    background: var(--surface-3);
+  }
+  .ca-head,
+  .ca-row-label,
+  .ca-cell {
+    min-height: 54px;
+    border-right: 1px solid var(--hairline-2);
+    border-bottom: 1px solid var(--hairline-2);
+    padding: 9px 8px;
+  }
+  .ca-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    text-align: center;
+  }
+  .ca-corner {
+    justify-content: flex-start;
+    color: var(--muted);
+  }
+  .ca-row-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--surface-2);
+    border-right: 2px solid var(--rose-dust);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 12.5px;
+  }
+  .ca-row-label small {
+    margin-top: 3px;
+    font-family: var(--f-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  .ca-cell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background:
+      linear-gradient(135deg,
+        rgba(184, 89, 87, calc(var(--intensity, 0) * .36)),
+        rgba(107, 90, 117, calc(var(--intensity, 0) * .26))),
+      var(--surface-3);
+    color: var(--ink);
+  }
+  .ca-cell.has-data {
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .ca-cell.has-data:hover,
+  .ca-cell.has-data:focus-visible {
+    transform: scale(1.035);
+    z-index: 3;
+    box-shadow: 0 5px 16px rgba(58, 51, 64, 0.18);
+    outline: none;
+  }
+  .ca-cell.zero {
+    color: var(--subtle);
+    opacity: .44;
+  }
+  .ca-cell .value {
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .ca-stack {
+    display: flex;
+    width: min(88%, 120px);
+    height: 5px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(0,0,0,.06);
+  }
+  .ca-stack i {
+    display: block;
+    height: 100%;
+  }
+  .ca-meta-line,
+  .ca-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+    margin-top: 12px;
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+  .ca-legend .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink-2);
+  }
+  .ca-legend .sw {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+  .ca-detail {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--hairline);
+  }
+  .ca-detail h3 {
+    font-family: var(--f-display);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 6px 0 4px;
+  }
+  .ca-detail .detail-sub {
+    font-family: var(--f-body);
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .ca-detail-list {
+    display: grid;
+    gap: 7px;
+  }
+  .ca-detail-row {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(220px, 2fr) auto;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid var(--hairline-2);
+    border-radius: 6px;
+    background: var(--surface);
+    padding: 9px 10px;
+    font-family: var(--f-body);
+    font-size: 12.5px;
+    color: var(--ink-2);
+  }
+  .ca-detail-row strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .ca-detail-row .tag {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+  }
+  .ca-toast {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 90;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: var(--plum-deep);
+    color: var(--surface-2);
+    box-shadow: var(--shadow-card);
+    padding: 10px 14px;
+    font-family: var(--f-sans);
+    font-size: 12px;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .ca-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (max-width: 1180px) {
+    .ca-hero-grid,
+    .ca-template-head {
+      grid-template-columns: 1fr;
+    }
+    .ca-actions {
+      justify-content: flex-start;
+    }
+    .ca-controls {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 720px) {
+    main.content {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    .ca-controls,
+    .ca-detail-row {
+      grid-template-columns: 1fr;
+    }
+    .ca-detail-row .tag {
+      text-align: left;
+    }
+    .ca-pivot {
+      min-width: 760px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+    <section class="page-hero">
+      <div class="ca-hero-grid">
+        <div>
+          <div class="eyebrow-chip"><span class="dot"></span>Custom Analysis · Pivot lab</div>
+          <h1>
+            自定义分析
+            <span class="h1-en">Custom Analysis · three live pivot templates</span>
+          </h1>
+          <p class="lede">三张默认透视表保留为范本；行、列、堆叠和度量都可以更换，用同一套变量库重新组合公司、监管、赛道、适应症和地区数据。</p>
+          <div class="stat-row">
+            <span><span class="num">3</span> 个默认范本</span>
+            <span><span class="num" id="ca-field-count">—</span> 个可选变量</span>
+            <span>CSV / SVG 截图</span>
+            <span>本地保存默认</span>
+          </div>
+        </div>
+        <aside class="ca-field-library" aria-label="变量库摘要">
+          <div class="kicker">Field library</div>
+          <h2>变量库</h2>
+          <div class="ca-chip-row" id="ca-field-library"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>三个默认范本</h2>
+        <span class="cn">· 可替换行列与堆叠变量</span><span class="en">Pivot templates</span>
+      </div>
+      <div id="ca-templates"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 自定义分析 Custom Analysis · 三张默认透视范本</span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+  </main>
+</div>
+
+<div class="ca-toast" id="ca-toast" role="status" aria-live="polite"></div>
+
+<script src="../app-data.js?v=20260616"></script>
+<script src="./v3-companies.js?v=20260616"></script>
+<script src="./v3-cross-analysis.js?v=20260616"></script>
+<script src="./v3-company-detail.js?v=20260616"></script>
+<script src="./_nav.js" data-active="custom-analysis"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  const STORAGE_KEY = "aestrat.customAnalysis.defaults.v1";
+  const REGULATOR_KEYS = [
+    ["fda", "FDA"],
+    ["ce_eu", "CE/EU"],
+    ["nmpa", "NMPA"],
+    ["kfda", "KFDA"],
+    ["other", "Other"],
+  ];
+  const COLORS = ["#8E3A3A", "#6B5A75", "#D9AE91", "#5A6878", "#A8B59A", "#CFB58E", "#9D6A83", "#75889A", "#B88957", "#7C6B5F"];
+  const REGION_ORDER = ["North America", "Europe", "Asia-Pacific", "Middle East", "Latin America", "Global", "Unknown"];
+  const REGULATOR_ORDER = ["FDA", "CE/EU", "NMPA", "KFDA", "Other"];
+
+  const companiesData = window.V3_COMPANIES_DATA || {};
+  const crossData = window.V3_CROSS_ANALYSIS_DATA || {};
+
+  const datasets = buildDatasets();
+  const savedDefaults = readSavedDefaults();
+
+  const templates = [
+    {
+      id: "company-density",
+      dataset: "company",
+      title: "国家 × 赛道 × 所有制",
+      kicker: "Template 01 · company density",
+      subtitle: "默认复刻“国家-赛道-资本结构”视角，基于上游企业主数据；可切换到地区、上市状态、交易所、产品数分层和母公司。",
+      source: "企业主数据 · 329 upstream companies",
+      defaults: { row: "country", col: "track", stack: "ownership", measure: "companies", rowLimit: 12, colLimit: 10 },
+      measures: [
+        { key: "companies", label: "公司数" },
+        { key: "products", label: "产品数" },
+        { key: "brands", label: "品牌数" },
+        { key: "fda", label: "FDA 命中" },
+      ],
+      fields: [
+        { key: "country", label: "国家/地区" },
+        { key: "region", label: "区域" },
+        { key: "track", label: "赛道" },
+        { key: "ownership", label: "所有制" },
+        { key: "listing", label: "上市状态" },
+        { key: "exchange", label: "交易所" },
+        { key: "business_role", label: "业务角色" },
+        { key: "product_bucket", label: "产品数分层" },
+        { key: "fda_bucket", label: "FDA 分层" },
+        { key: "ultimate_parent", label: "最终母公司" },
+      ],
+    },
+    {
+      id: "regulatory-rhythm",
+      dataset: "regulatory",
+      title: "公司 × 年份 × 监管通道",
+      kicker: "Template 02 · regulatory rhythm",
+      subtitle: "默认复刻“公司-监管通道-年份”视角，把年度证据按 FDA、CE/EU、NMPA、KFDA 和 Other 拆开。",
+      source: "监管证据时间轴 · V3 cross-analysis lens",
+      defaults: { row: "company", col: "year", stack: "regulator", measure: "evidence", rowLimit: 20, colLimit: 12 },
+      measures: [
+        { key: "evidence", label: "证据数" },
+        { key: "companies", label: "公司数" },
+      ],
+      fields: [
+        { key: "company", label: "公司" },
+        { key: "country", label: "国家/地区" },
+        { key: "track", label: "赛道" },
+        { key: "year", label: "年份" },
+        { key: "regulator", label: "监管通道" },
+        { key: "timing", label: "时间段" },
+      ],
+    },
+    {
+      id: "indication-evidence",
+      dataset: "indication",
+      title: "适应症 × 监管 × 区域",
+      kicker: "Template 03 · indication evidence",
+      subtitle: "默认复刻“适应症桶-监管机构-区域”视角，把产品证据样本拆成可更换的公司、品牌、国家和产品维度。",
+      source: "适应症证据 · V3 cross-analysis lens",
+      defaults: { row: "bucket", col: "regulator", stack: "region", measure: "evidence", rowLimit: 12, colLimit: 8 },
+      measures: [
+        { key: "evidence", label: "证据数" },
+        { key: "companies", label: "公司数" },
+        { key: "products", label: "产品数" },
+      ],
+      fields: [
+        { key: "bucket", label: "适应症桶" },
+        { key: "regulator", label: "监管机构" },
+        { key: "region", label: "区域" },
+        { key: "company", label: "公司" },
+        { key: "country", label: "国家/地区" },
+        { key: "brand", label: "品牌" },
+        { key: "product", label: "产品" },
+      ],
+    },
+  ].map(t => ({ ...t, config: { ...t.defaults, ...(savedDefaults[t.id] || {}) } }));
+
+  renderFieldLibrary();
+  renderTemplates();
+
+  function buildDatasets () {
+    const companies = Array.isArray(companiesData.companies) ? companiesData.companies : [];
+    const company = companies.map(row => {
+      const products = toNumber(row.products);
+      const fda = toNumber(row.fda);
+      return {
+        _type: "company",
+        _weight: 1,
+        company_id: row.company_id || row.name,
+        company: clean(row.name),
+        country: clean(row.country),
+        region: clean(row.region),
+        city: clean(row.city),
+        track: clean(row.primary_track),
+        ownership: clean(row.ownership),
+        listing: row.stock_code || row.ticker ? "Listed / parent-linked" : "Private / unlisted",
+        exchange: clean(row.exchange || "Unlisted"),
+        business_role: clean(row.business_role),
+        parent: clean(row.parent || "Independent"),
+        ultimate_parent: clean(row.ultimate_parent || row.parent || "Independent"),
+        product_bucket: bucket(products, [[10, "10+"], [5, "5-9"], [2, "2-4"]], "1"),
+        fda_bucket: bucket(fda, [[5, "FDA 5+"], [1, "FDA 1-4"]], "No FDA"),
+        products,
+        brands: toNumber(row.brands),
+        fda,
+      };
+    });
+
+    const regulatory = [];
+    const lens2 = crossData.lens2 || {};
+    (Array.isArray(lens2.rows) ? lens2.rows : []).forEach(row => {
+      (Array.isArray(row.cells) ? row.cells : []).forEach(cell => {
+        REGULATOR_KEYS.forEach(([key, label]) => {
+          const count = toNumber(cell[key]);
+          if (!count) return;
+          regulatory.push({
+            _type: "regulatory",
+            _weight: count,
+            company_id: row.company_id || row.company,
+            company: clean(row.company),
+            country: clean(row.country),
+            track: clean(row.primary_track),
+            year: clean(cell.year),
+            timing: yearBand(cell.year),
+            regulator: label,
+            evidence_ids: Array.isArray(cell.evidence_ids) ? cell.evidence_ids : [],
+          });
+        });
+      });
+    });
+
+    const indication = [];
+    const lens3 = crossData.lens3 || {};
+    (Array.isArray(lens3.rows) ? lens3.rows : []).forEach(row => {
+      (Array.isArray(row.cells) ? row.cells : []).forEach(cell => {
+        const products = Array.isArray(cell.products) ? cell.products : [];
+        if (products.length) {
+          products.forEach(product => {
+            indication.push({
+              _type: "indication",
+              _weight: 1,
+              bucket: clean(row.bucket),
+              regulator: clean(cell.regulator),
+              region: clean(cell.region),
+              company: clean(product.company),
+              country: clean(product.country),
+              brand: clean(product.brand),
+              product: clean(product.product),
+              company_id: product.company_id || product.company,
+              product_id: product.product_id || product.id || product.product,
+            });
+          });
+        } else if (toNumber(cell.count)) {
+          indication.push({
+            _type: "indication",
+            _weight: toNumber(cell.count),
+            bucket: clean(row.bucket),
+            regulator: clean(cell.regulator),
+            region: clean(cell.region),
+            company: "未展开样本",
+            country: "未标注",
+            brand: "未标注",
+            product: "未展开样本",
+            company_id: `${row.bucket}-${cell.regulator}-${cell.region}`,
+            product_id: `${row.bucket}-${cell.regulator}-${cell.region}`,
+          });
+        }
+      });
+    });
+
+    return { company, regulatory, indication };
+  }
+
+  function renderFieldLibrary () {
+    const fieldKeys = new Set();
+    templates.forEach(t => t.fields.forEach(field => fieldKeys.add(field.key)));
+    const fieldCount = document.getElementById("ca-field-count");
+    if (fieldCount) fieldCount.textContent = String(fieldKeys.size);
+    const library = document.getElementById("ca-field-library");
+    if (!library) return;
+    library.innerHTML = templates.map(t => {
+      const rows = datasets[t.dataset] || [];
+      return `<span class="ca-chip"><strong>${rows.length.toLocaleString("en-US")}</strong>${esc(t.title.split(" × ")[0])} · ${t.fields.length} fields</span>`;
+    }).join("");
+  }
+
+  function renderTemplates () {
+    const host = document.getElementById("ca-templates");
+    if (!host) return;
+    host.innerHTML = templates.map(template => renderTemplateShell(template)).join("");
+    templates.forEach(template => {
+      populateControls(template);
+      bindTemplate(template);
+      renderPivot(template);
+    });
+  }
+
+  function renderTemplateShell (template) {
+    return `
+      <article class="chart-card ca-template" id="template-${escAttr(template.id)}" data-template="${escAttr(template.id)}">
+        <div class="ca-template-head">
+          <div>
+            <div class="ca-template-kicker">${esc(template.kicker)}</div>
+            <h3 class="ca-template-title">${esc(template.title)}</h3>
+            <div class="ca-template-sub">${esc(template.subtitle)}</div>
+          </div>
+          <div class="ca-actions" aria-label="${escAttr(template.title)} 操作">
+            <button class="ca-button" type="button" data-action="export">导出 CSV</button>
+            <button class="ca-button" type="button" data-action="snapshot">下载截图 SVG</button>
+            <button class="ca-button primary" type="button" data-action="save">另存为默认</button>
+            <button class="ca-button" type="button" data-action="reset">重置</button>
+          </div>
+        </div>
+        <div class="ca-controls">
+          <div class="ca-control"><label>行 Row</label><select data-role="row"></select></div>
+          <div class="ca-control"><label>列 Column</label><select data-role="col"></select></div>
+          <div class="ca-control"><label>堆叠 Stack</label><select data-role="stack"></select></div>
+          <div class="ca-control"><label>度量 Measure</label><select data-role="measure"></select></div>
+          <div class="ca-control"><label>行数 Rows</label><select data-role="rowLimit">${limitOptions()}</select></div>
+          <div class="ca-control"><label>列数 Columns</label><select data-role="colLimit">${limitOptions()}</select></div>
+        </div>
+        <div class="ca-export-frame">
+          <div class="ca-pivot-wrap">
+            <div class="ca-pivot" data-role="pivot"></div>
+          </div>
+          <div class="ca-meta-line" data-role="note"></div>
+          <div class="ca-legend" data-role="legend"></div>
+        </div>
+        <div class="ca-detail" data-role="detail" hidden></div>
+        <div class="ca-status">${esc(template.source)}</div>
+      </article>
+    `;
+  }
+
+  function limitOptions () {
+    return [6, 8, 10, 12, 16, 20, 30, "all"].map(v => {
+      const label = v === "all" ? "全部" : `前 ${v}`;
+      return `<option value="${v}">${label}</option>`;
+    }).join("");
+  }
+
+  function populateControls (template) {
+    const card = cardFor(template);
+    if (!card) return;
+    const fieldOptions = template.fields.map(field => `<option value="${escAttr(field.key)}">${esc(field.label)}</option>`).join("");
+    ["row", "col", "stack"].forEach(role => {
+      const select = card.querySelector(`[data-role="${role}"]`);
+      if (select) {
+        select.innerHTML = fieldOptions;
+        select.value = template.config[role];
+      }
+    });
+    const measure = card.querySelector('[data-role="measure"]');
+    if (measure) {
+      measure.innerHTML = template.measures.map(m => `<option value="${escAttr(m.key)}">${esc(m.label)}</option>`).join("");
+      measure.value = template.config.measure;
+    }
+    const rowLimit = card.querySelector('[data-role="rowLimit"]');
+    const colLimit = card.querySelector('[data-role="colLimit"]');
+    if (rowLimit) rowLimit.value = String(template.config.rowLimit || template.defaults.rowLimit);
+    if (colLimit) colLimit.value = String(template.config.colLimit || template.defaults.colLimit);
+  }
+
+  function bindTemplate (template) {
+    const card = cardFor(template);
+    if (!card) return;
+    card.querySelectorAll("select").forEach(select => {
+      select.addEventListener("change", () => {
+        template.config = readConfig(template);
+        renderPivot(template);
+      });
+    });
+    card.querySelectorAll("[data-action]").forEach(button => {
+      button.addEventListener("click", () => {
+        const action = button.getAttribute("data-action");
+        if (action === "export") exportCsv(template);
+        if (action === "snapshot") downloadSnapshot(template);
+        if (action === "save") saveDefault(template);
+        if (action === "reset") resetDefault(template);
+      });
+    });
+  }
+
+  function readConfig (template) {
+    const card = cardFor(template);
+    const cfg = { ...template.config };
+    ["row", "col", "stack", "measure", "rowLimit", "colLimit"].forEach(role => {
+      const select = card && card.querySelector(`[data-role="${role}"]`);
+      if (select) cfg[role] = select.value;
+    });
+    cfg.rowLimit = parseLimit(cfg.rowLimit);
+    cfg.colLimit = parseLimit(cfg.colLimit);
+    return cfg;
+  }
+
+  function renderPivot (template) {
+    const card = cardFor(template);
+    if (!card) return;
+    template.config = readConfig(template);
+    const pivot = buildPivot(template);
+    template._lastPivot = pivot;
+
+    const grid = card.querySelector('[data-role="pivot"]');
+    if (!grid) return;
+    grid.style.gridTemplateColumns = `minmax(170px, 220px) repeat(${Math.max(1, pivot.cols.length)}, minmax(86px, 1fr))`;
+    let html = `<div class="ca-head ca-corner">${esc(labelFor(template, template.config.row))} ╲ ${esc(labelFor(template, template.config.col))}</div>`;
+    pivot.cols.forEach(col => {
+      html += `<div class="ca-head" title="${escAttr(col)}">${esc(abbr(col, 14))}</div>`;
+    });
+    pivot.rows.forEach(row => {
+      const rowTotal = measureValue(pivot.rowTotals.get(row), template.config.measure, template);
+      html += `<div class="ca-row-label" title="${escAttr(row)}">${esc(abbr(row, 20))}<small>${formatNumber(rowTotal)}</small></div>`;
+      pivot.cols.forEach(col => {
+        const key = joinKey(row, col);
+        const cell = pivot.cells.get(key);
+        const value = cell ? measureValue(cell, template.config.measure, template) : 0;
+        if (!value) {
+          html += `<button class="ca-cell zero" type="button" disabled>·</button>`;
+          return;
+        }
+        const segs = stackSegments(cell, template, pivot.stackColors);
+        html += `
+          <button class="ca-cell has-data" type="button" data-row="${escAttr(row)}" data-col="${escAttr(col)}" style="--intensity:${Math.min(1, value / pivot.maxValue).toFixed(2)}" title="${escAttr(row)} × ${escAttr(col)} · ${formatNumber(value)}">
+            <span class="value">${formatNumber(value)}</span>
+            <span class="ca-stack">${segs}</span>
+          </button>
+        `;
+      });
+    });
+    grid.innerHTML = html;
+    grid.querySelectorAll(".ca-cell.has-data").forEach(cell => {
+      cell.addEventListener("click", () => renderDetail(template, cell.getAttribute("data-row"), cell.getAttribute("data-col")));
+    });
+
+    const moreRows = pivot.allRows.length - pivot.rows.length;
+    const moreCols = pivot.allCols.length - pivot.cols.length;
+    const note = card.querySelector('[data-role="note"]');
+    if (note) {
+      note.textContent = [
+        `行 = ${labelFor(template, template.config.row)} (${pivot.allRows.length}${moreRows > 0 ? `，显示 ${pivot.rows.length}` : ""})`,
+        `列 = ${labelFor(template, template.config.col)} (${pivot.allCols.length}${moreCols > 0 ? `，显示 ${pivot.cols.length}` : ""})`,
+        `堆叠 = ${labelFor(template, template.config.stack)}`,
+        `度量 = ${measureLabel(template, template.config.measure)}`,
+      ].join(" · ");
+    }
+    const legend = card.querySelector('[data-role="legend"]');
+    if (legend) {
+      const topStacks = pivot.stackValues.slice(0, 12);
+      legend.innerHTML = `<span style="font-style:italic;color:var(--muted);">堆叠色：</span>` +
+        topStacks.map(v => `<span class="item"><span class="sw" style="background:${pivot.stackColors[v]}"></span>${esc(abbr(v, 18))}</span>`).join("");
+    }
+    const detail = card.querySelector('[data-role="detail"]');
+    if (detail) detail.hidden = true;
+  }
+
+  function buildPivot (template) {
+    const cfg = template.config;
+    const rows = datasets[template.dataset] || [];
+    const cells = new Map();
+    const rowTotals = new Map();
+    const colTotals = new Map();
+    const stackTotals = new Map();
+
+    rows.forEach(record => {
+      const rv = valueOf(record, cfg.row);
+      const cv = valueOf(record, cfg.col);
+      const sv = valueOf(record, cfg.stack);
+      const key = joinKey(rv, cv);
+      let cell = cells.get(key);
+      if (!cell) {
+        cell = newBucket();
+        cells.set(key, cell);
+      }
+      addRecord(cell, record);
+
+      const stack = cell.stacks.get(sv) || newBucket();
+      addRecord(stack, record);
+      cell.stacks.set(sv, stack);
+
+      addTotal(rowTotals, rv, record, cfg.measure, template);
+      addTotal(colTotals, cv, record, cfg.measure, template);
+      addTotal(stackTotals, sv, record, cfg.measure, template);
+    });
+
+    const allRows = sortValues([...rowTotals.keys()], cfg.row, rowTotals);
+    const allCols = sortValues([...colTotals.keys()], cfg.col, colTotals);
+    const pivotRows = capValues(allRows, cfg.rowLimit);
+    const pivotCols = capValues(allCols, cfg.colLimit);
+    const stackValues = sortValues([...stackTotals.keys()], cfg.stack, stackTotals);
+    const stackColors = {};
+    stackValues.forEach((value, idx) => {
+      stackColors[value] = colorFor(value, idx);
+    });
+    let maxValue = 1;
+    pivotRows.forEach(row => pivotCols.forEach(col => {
+      const cell = cells.get(joinKey(row, col));
+      const value = cell ? measureValue(cell, cfg.measure, template) : 0;
+      if (value > maxValue) maxValue = value;
+    }));
+    return { cells, rowTotals, colTotals, stackTotals, rows: pivotRows, cols: pivotCols, allRows, allCols, stackValues, stackColors, maxValue };
+  }
+
+  function newBucket () {
+    return { records: [], weight: 0, products: 0, brands: 0, fda: 0, companyIds: new Set(), productIds: new Set(), stacks: new Map() };
+  }
+
+  function addRecord (bucketObj, record) {
+    bucketObj.records.push(record);
+    bucketObj.weight += toNumber(record._weight || 1);
+    bucketObj.products += toNumber(record.products);
+    bucketObj.brands += toNumber(record.brands);
+    bucketObj.fda += toNumber(record.fda);
+    if (record.company_id || record.company) bucketObj.companyIds.add(record.company_id || record.company);
+    if (record.product_id || record.product) bucketObj.productIds.add(record.product_id || record.product);
+  }
+
+  function addTotal (map, key, record, measure, template) {
+    let bucketObj = map.get(key);
+    if (!bucketObj) {
+      bucketObj = newBucket();
+      map.set(key, bucketObj);
+    }
+    addRecord(bucketObj, record);
+    bucketObj._value = measureValue(bucketObj, measure, template);
+  }
+
+  function measureValue (bucketObj, measure, template) {
+    if (!bucketObj) return 0;
+    if (measure === "companies") return bucketObj.companyIds.size;
+    if (measure === "products") return template.dataset === "company" ? bucketObj.products : bucketObj.productIds.size;
+    if (measure === "brands") return bucketObj.brands;
+    if (measure === "fda") return bucketObj.fda;
+    return bucketObj.weight;
+  }
+
+  function stackSegments (cell, template, stackColors) {
+    const entries = [...cell.stacks.entries()].sort((a, b) => measureValue(b[1], template.config.measure, template) - measureValue(a[1], template.config.measure, template));
+    const total = entries.reduce((sum, [, bucketObj]) => sum + measureValue(bucketObj, template.config.measure, template), 0) || 1;
+    return entries.map(([value, bucketObj]) => {
+      const n = measureValue(bucketObj, template.config.measure, template);
+      const width = Math.max(4, n / total * 100).toFixed(1);
+      return `<i style="width:${width}%;background:${stackColors[value] || "#bbb"}" title="${escAttr(value)}: ${formatNumber(n)}"></i>`;
+    }).join("");
+  }
+
+  function renderDetail (template, row, col) {
+    const card = cardFor(template);
+    const detail = card && card.querySelector('[data-role="detail"]');
+    const pivot = template._lastPivot;
+    if (!detail || !pivot) return;
+    const cell = pivot.cells.get(joinKey(row, col));
+    if (!cell) return;
+    const value = measureValue(cell, template.config.measure, template);
+    const records = detailRecords(cell.records, template).slice(0, 9);
+    detail.hidden = false;
+    detail.innerHTML = `
+      <div class="detail-kicker">Cell detail</div>
+      <h3>${esc(row)} × ${esc(col)}</h3>
+      <div class="detail-sub">${formatNumber(value)} ${esc(measureLabel(template, template.config.measure))} · 显示前 ${records.length} 条代表记录</div>
+      <div class="ca-detail-list">
+        ${records.map(record => detailRow(record, template)).join("")}
+      </div>
+    `;
+  }
+
+  function detailRecords (records, template) {
+    if (template.dataset === "company") {
+      return records.sort((a, b) => toNumber(b.products) - toNumber(a.products));
+    }
+    if (template.dataset === "regulatory") {
+      return records.sort((a, b) => toNumber(b._weight) - toNumber(a._weight));
+    }
+    const seen = new Set();
+    return records.filter(record => {
+      const key = record.product_id || `${record.company}-${record.product}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function detailRow (record, template) {
+    if (template.dataset === "company") {
+      return `
+        <div class="ca-detail-row">
+          <strong>${esc(record.company)}</strong>
+          <span>${esc([record.country, record.track, record.ownership].filter(Boolean).join(" · "))}</span>
+          <span class="tag">${formatNumber(record.products)} products</span>
+        </div>
+      `;
+    }
+    if (template.dataset === "regulatory") {
+      return `
+        <div class="ca-detail-row">
+          <strong>${esc(record.company)}</strong>
+          <span>${esc([record.country, record.track, record.year, record.regulator].filter(Boolean).join(" · "))}</span>
+          <span class="tag">${formatNumber(record._weight)} evidence</span>
+        </div>
+      `;
+    }
+    return `
+      <div class="ca-detail-row">
+        <strong>${esc(record.product)}</strong>
+        <span>${esc([record.company, record.brand, record.country, record.bucket].filter(Boolean).join(" · "))}</span>
+        <span class="tag">${esc(record.regulator)} · ${esc(record.region)}</span>
+      </div>
+    `;
+  }
+
+  function exportCsv (template) {
+    const pivot = template._lastPivot || buildPivot(template);
+    const cfg = template.config;
+    const lines = [["template", "row_field", "row", "column_field", "column", "stack_field", "measure", "value", "stack_breakdown"]];
+    pivot.rows.forEach(row => {
+      pivot.cols.forEach(col => {
+        const cell = pivot.cells.get(joinKey(row, col));
+        const value = cell ? measureValue(cell, cfg.measure, template) : 0;
+        const breakdown = cell ? [...cell.stacks.entries()]
+          .map(([stack, bucketObj]) => `${stack}:${measureValue(bucketObj, cfg.measure, template)}`)
+          .join("; ") : "";
+        lines.push([template.title, labelFor(template, cfg.row), row, labelFor(template, cfg.col), col, labelFor(template, cfg.stack), measureLabel(template, cfg.measure), value, breakdown]);
+      });
+    });
+    downloadBlob(`\uFEFF${lines.map(row => row.map(csvCell).join(",")).join("\n")}`, `${template.id}-pivot.csv`, "text/csv;charset=utf-8");
+    showToast("CSV 已导出");
+  }
+
+  function downloadSnapshot (template) {
+    const card = cardFor(template);
+    if (!card) return;
+    const frame = card.querySelector(".ca-export-frame");
+    const width = Math.max(960, frame.scrollWidth + 40);
+    const height = Math.max(520, frame.scrollHeight + 140);
+    const root = getComputedStyle(document.documentElement);
+    const vars = ["--surface", "--surface-2", "--surface-3", "--ink", "--ink-2", "--muted", "--subtle", "--hairline", "--hairline-2", "--rose-dust", "--plum-deep", "--accent", "--accent-2", "--f-display", "--f-body", "--f-sans", "--f-mono", "--f-serif-it"]
+      .map(name => `${name}:${root.getPropertyValue(name)};`).join("");
+    const style = `
+      :root{${vars}}
+      *{box-sizing:border-box}
+      body{margin:0;background:var(--surface-2);color:var(--ink);font-family:var(--f-body)}
+      .snapshot{padding:24px;background:var(--surface-2);width:${width}px}
+      h1{font-family:var(--f-display);font-weight:400;font-size:28px;margin:0 0 12px;color:var(--ink)}
+      ${document.querySelector("style").textContent}
+    `;
+    const clone = frame.cloneNode(true);
+    const html = `<div xmlns="http://www.w3.org/1999/xhtml" class="snapshot"><style>${style}</style><h1>${esc(template.title)}</h1>${clone.outerHTML}</div>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><foreignObject width="100%" height="100%">${html}</foreignObject></svg>`;
+    downloadBlob(svg, `${template.id}-snapshot.svg`, "image/svg+xml;charset=utf-8");
+    showToast("SVG 截图已下载");
+  }
+
+  function saveDefault (template) {
+    const next = readSavedDefaults();
+    next[template.id] = { ...template.config };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    showToast("已保存为默认配置");
+  }
+
+  function resetDefault (template) {
+    const next = readSavedDefaults();
+    delete next[template.id];
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+    template.config = { ...template.defaults };
+    populateControls(template);
+    renderPivot(template);
+    showToast("已恢复默认范本");
+  }
+
+  function readSavedDefaults () {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") || {};
+    } catch (err) {
+      return {};
+    }
+  }
+
+  function cardFor (template) {
+    return document.getElementById(`template-${template.id}`);
+  }
+
+  function labelFor (template, key) {
+    const field = template.fields.find(item => item.key === key);
+    return field ? field.label : key;
+  }
+
+  function measureLabel (template, key) {
+    const measure = template.measures.find(item => item.key === key);
+    return measure ? measure.label : key;
+  }
+
+  function valueOf (record, key) {
+    const value = record[key];
+    if (value === null || value === undefined || value === "") return "未标注";
+    return String(value);
+  }
+
+  function sortValues (values, fieldKey, totals) {
+    const order = fieldKey === "year" ? yearOrder(values)
+      : fieldKey === "regulator" ? REGULATOR_ORDER
+      : fieldKey === "region" ? REGION_ORDER
+      : null;
+    if (order) {
+      const rank = new Map(order.map((value, index) => [value, index]));
+      return values.sort((a, b) => {
+        const ra = rank.has(a) ? rank.get(a) : 999;
+        const rb = rank.has(b) ? rank.get(b) : 999;
+        return ra - rb || totalValue(totals, b) - totalValue(totals, a) || a.localeCompare(b, "zh-Hans-CN");
+      });
+    }
+    return values.sort((a, b) => totalValue(totals, b) - totalValue(totals, a) || a.localeCompare(b, "zh-Hans-CN"));
+  }
+
+  function yearOrder (values) {
+    return [...values].sort((a, b) => {
+      const na = Number(a);
+      const nb = Number(b);
+      if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
+      if (Number.isFinite(na)) return -1;
+      if (Number.isFinite(nb)) return 1;
+      return String(a).localeCompare(String(b));
+    });
+  }
+
+  function totalValue (totals, key) {
+    const bucketObj = totals.get(key);
+    return bucketObj && Number.isFinite(bucketObj._value) ? bucketObj._value : 0;
+  }
+
+  function capValues (values, limit) {
+    if (limit === "all") return values;
+    return values.slice(0, Number(limit) || values.length);
+  }
+
+  function parseLimit (value) {
+    return value === "all" ? "all" : Number(value);
+  }
+
+  function colorFor (value, index) {
+    let hash = 0;
+    String(value).split("").forEach(ch => { hash = (hash * 31 + ch.charCodeAt(0)) >>> 0; });
+    return COLORS[(hash + index) % COLORS.length];
+  }
+
+  function yearBand (value) {
+    const year = Number(value);
+    if (!Number.isFinite(year)) return "Unknown";
+    if (year <= 2020) return "2020 及以前";
+    if (year <= 2023) return "2021-2023";
+    return "2024 以后";
+  }
+
+  function bucket (value, bands, fallback) {
+    for (const [min, label] of bands) {
+      if (value >= min) return label;
+    }
+    return fallback;
+  }
+
+  function joinKey (a, b) {
+    return `${a}||${b}`;
+  }
+
+  function clean (value) {
+    const text = String(value || "").trim();
+    return text || "未标注";
+  }
+
+  function toNumber (value) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : 0;
+  }
+
+  function formatNumber (value) {
+    return Number(value || 0).toLocaleString("en-US");
+  }
+
+  function abbr (value, max) {
+    const text = String(value || "");
+    return text.length > max ? `${text.slice(0, max - 1)}…` : text;
+  }
+
+  function csvCell (value) {
+    const text = String(value === null || value === undefined ? "" : value);
+    return `"${text.replace(/"/g, '""')}"`;
+  }
+
+  function downloadBlob (content, filename, type) {
+    const blob = new Blob([content], { type });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1200);
+  }
+
+  function showToast (message) {
+    const toast = document.getElementById("ca-toast");
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(showToast._timer);
+    showToast._timer = setTimeout(() => toast.classList.remove("show"), 1800);
+  }
+
+  function esc (value) {
+    return String(value || "").replace(/[&<>"']/g, ch => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    })[ch]);
+  }
+
+  function escAttr (value) {
+    return esc(value).replace(/`/g, "&#96;");
+  }
+})();
+</script>
+
+</body>
+</html>
