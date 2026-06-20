@@ -44,10 +44,12 @@
     {
       title: "情报视角",
       items: [
+        { id: "project-overview", href: "./project-overview.html", zh: "项目总览", count: "roadmap" },
         { id: "overview",   href: "./index.html",            zh: "总览",     count: null },
         { id: "regulatory", href: "./regulatory-pulse.html", zh: "监管脉搏", countKey: "registration_evidence" },
         { id: "geo",        href: "./geo-deep-dive.html",    zh: "地域深掘", countKey: "countries", countSuffix: " 国" },
         { id: "capital",    href: "./capital-map.html",      zh: "资本地图", count: "61" },
+        { id: "market-intelligence", href: "./market-intelligence.html", zh: "商业格局", countKey: "commercial_claims" },
         { id: "tracks",     href: "./tracks.html",           zh: "赛道结构", count: "9 L1" },
         { id: "cross",      href: "./cross-analysis.html",   zh: "交叉分析", count: "4 lens" },
         { id: "deep",       href: "./deep-dive.html",        zh: "深度图谱", count: "L1·L2·L3" },
@@ -345,6 +347,7 @@
     const rows = [
       ["公司", item.company],
       ["国家/地区", [item.country, item.region].filter(Boolean).join(" · ")],
+      ["集团/母公司", item.parent_company],
       ["赛道", [item.track, item.subtrack].filter(Boolean).join(" · ")],
       ["产品名", item.product_name],
       ["注册名", item.registered_name],

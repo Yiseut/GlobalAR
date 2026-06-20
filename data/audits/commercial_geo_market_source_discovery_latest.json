@@ -1,0 +1,561 @@
+{
+  "status": "ok",
+  "generated_at": "2026-06-20T11:55:55+08:00",
+  "inventory_path": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\commercial_geo_market_source_discovery_latest.csv",
+  "raw_dir": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\commercial_sources\\geo_market_sources",
+  "source_count": 36,
+  "total_rows": 472,
+  "downloaded_artifacts": 49,
+  "download_failures": 0,
+  "fetch_failures": 0,
+  "sources": [
+    {
+      "source_id": "aesthetic_society_statistics",
+      "country_or_region": "USA",
+      "data_role": "treatment_volume_country_year",
+      "rows": 1,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "asps_plastic_surgery_statistics",
+      "country_or_region": "USA",
+      "data_role": "treatment_volume_country_year",
+      "rows": 1,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "brazil_cfm_medical_demography",
+      "country_or_region": "Brazil",
+      "data_role": "surgeon_denominator_proxy",
+      "rows": 34,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [
+        "2001",
+        "2009",
+        "2009-2010",
+        "2011",
+        "2013",
+        "2016",
+        "2018",
+        "2020",
+        "2023",
+        "2024"
+      ],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "brazil_sbcp_pesquisas_censo",
+      "country_or_region": "Brazil",
+      "data_role": "treatment_volume_candidate_and_surgeon_demography",
+      "rows": 25,
+      "downloaded": 1,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [
+        "2017",
+        "2019"
+      ],
+      "artifact_types": [
+        "html_link",
+        "html_source_page",
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "brazil_sbcp_surgeon_locator",
+      "country_or_region": "Brazil",
+      "data_role": "surgeon_density_proxy",
+      "rows": 44,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "canada_cihi_physician_specialty",
+      "country_or_region": "Canada",
+      "data_role": "surgeon_denominator_proxy",
+      "rows": 24,
+      "downloaded": 1,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page",
+        "xlsx"
+      ]
+    },
+    {
+      "source_id": "canada_csaps_surgeon_locator",
+      "country_or_region": "Canada",
+      "data_role": "surgeon_density_proxy",
+      "rows": 7,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "canada_csps_society_context",
+      "country_or_region": "Canada",
+      "data_role": "association_context_proxy",
+      "rows": 25,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "cms_open_payments",
+      "country_or_region": "USA",
+      "data_role": "company_physician_touchpoint_proxy",
+      "rows": 1,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "czech_cspch_society_context",
+      "country_or_region": "Czech Republic",
+      "data_role": "association_context_proxy",
+      "rows": 7,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "czech_nrpzs_provider_registry",
+      "country_or_region": "Czech Republic",
+      "data_role": "provider_channel_density_proxy",
+      "rows": 1,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "france_cnom_medical_demography_atlas",
+      "country_or_region": "France",
+      "data_role": "surgeon_denominator_proxy",
+      "rows": 1,
+      "downloaded": 1,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "france_sofcep_surgery_context",
+      "country_or_region": "France",
+      "data_role": "surgeon_density_context_proxy",
+      "rows": 2,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "germany_dgaepc_statistics",
+      "country_or_region": "Germany",
+      "data_role": "procedure_mix_country_year",
+      "rows": 18,
+      "downloaded": 10,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "artifact_types": [
+        "html_link",
+        "html_source_page",
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "hong_kong_consumer_medical_beauty_complaints",
+      "country_or_region": "Hong Kong",
+      "data_role": "consumer_risk_heat_proxy",
+      "rows": 19,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "hong_kong_dh_day_procedure_centres",
+      "country_or_region": "Hong Kong",
+      "data_role": "provider_channel_density_proxy",
+      "rows": 4,
+      "downloaded": 4,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "csv",
+        "json"
+      ]
+    },
+    {
+      "source_id": "hong_kong_dh_medical_beauty_guidance",
+      "country_or_region": "Hong Kong",
+      "data_role": "regulatory_context_proxy",
+      "rows": 8,
+      "downloaded": 6,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page",
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "israel_ima_society_context",
+      "country_or_region": "Israel",
+      "data_role": "association_context_proxy",
+      "rows": 10,
+      "downloaded": 4,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page",
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "israel_plastic_surgery_society_news",
+      "country_or_region": "Israel",
+      "data_role": "association_survey_interest_proxy",
+      "rows": 5,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [
+        "2025",
+        "2026"
+      ],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "italy_aicpe_observatory_statistics",
+      "country_or_region": "Italy",
+      "data_role": "treatment_volume_country_year_candidate",
+      "rows": 7,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "italy_sicpre_isaps_statistics",
+      "country_or_region": "Italy",
+      "data_role": "treatment_volume_secondary_isaps_commentary",
+      "rows": 35,
+      "downloaded": 2,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [
+        "2023",
+        "2024"
+      ],
+      "artifact_types": [
+        "html_link",
+        "html_source_page",
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "japan_mhlw_aesthetic_medicine_status",
+      "country_or_region": "Japan",
+      "data_role": "physician_specialty_demand_proxy",
+      "rows": 1,
+      "downloaded": 1,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "japan_mhlw_medical_info_net",
+      "country_or_region": "Japan",
+      "data_role": "provider_channel_density_proxy",
+      "rows": 15,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "korea_khiss_health_industry_stats",
+      "country_or_region": "South Korea",
+      "data_role": "health_industry_portal",
+      "rows": 4,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "korea_mohw_foreign_patient_stats",
+      "country_or_region": "South Korea",
+      "data_role": "medical_tourism_specialty_proxy",
+      "rows": 6,
+      "downloaded": 2,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "download",
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "poland_nil_physician_statistics",
+      "country_or_region": "Poland",
+      "data_role": "surgeon_denominator_proxy",
+      "rows": 8,
+      "downloaded": 7,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_source_page",
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "poland_ptchprie_surgeon_locator",
+      "country_or_region": "Poland",
+      "data_role": "surgeon_density_proxy",
+      "rows": 8,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "spain_secpre_aesthetic_surgery_report",
+      "country_or_region": "Spain",
+      "data_role": "treatment_volume_country_year_candidate",
+      "rows": 1,
+      "downloaded": 1,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "pdf"
+      ]
+    },
+    {
+      "source_id": "sweden_sfep_surgeon_locator",
+      "country_or_region": "Sweden",
+      "data_role": "surgeon_density_proxy",
+      "rows": 14,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "sweden_socialstyrelsen_hosp_register",
+      "country_or_region": "Sweden",
+      "data_role": "surgeon_denominator_proxy",
+      "rows": 34,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "sweden_spkf_society_context",
+      "country_or_region": "Sweden",
+      "data_role": "association_context_proxy",
+      "rows": 28,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "switzerland_fmh_physician_statistics",
+      "country_or_region": "Switzerland",
+      "data_role": "surgeon_denominator_proxy",
+      "rows": 1,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "switzerland_plastic_surgery_society",
+      "country_or_region": "Switzerland",
+      "data_role": "association_context_proxy",
+      "rows": 44,
+      "downloaded": 0,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country_or_region": "Taiwan",
+      "data_role": "provider_channel_density_proxy",
+      "rows": 13,
+      "downloaded": 1,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "download",
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "taiwan_mohw_medical_facility_open_data",
+      "country_or_region": "Taiwan",
+      "data_role": "provider_denominator",
+      "rows": 5,
+      "downloaded": 1,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [],
+      "artifact_types": [
+        "download",
+        "html_link",
+        "html_source_page"
+      ]
+    },
+    {
+      "source_id": "uk_baaps_annual_audit",
+      "country_or_region": "United Kingdom",
+      "data_role": "treatment_volume_country_year",
+      "rows": 11,
+      "downloaded": 7,
+      "fetch_failed": 0,
+      "download_failed": 0,
+      "years": [
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "artifact_types": [
+        "html_link",
+        "html_source_page",
+        "pdf"
+      ]
+    }
+  ]
+}

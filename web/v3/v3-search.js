@@ -1,5 +1,5 @@
 window.V3_SEARCH_DATA = {
-  "generated_at": "2026-06-16T13:11:38+08:00",
+  "generated_at": "2026-06-20T14:03:18+08:00",
   "counts": {
     "products": 943,
     "families": 927,
@@ -14308,7 +14308,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | AMINO-JAL / JALUCOMPLEX | Mesotherapy Solution | AMINO-JAL / JALUCOMPLEX | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | Injectables | Skin Booster | 皮肤动能素/水光 > 非交联/微交联HA复配 > 浅层微滴注射 | HA皮肤动能素 | HA + Amino Acid Biorevitalization | Non-crosslinked HA + amino-acid matrix | HA + Amino Acid Biorevitalization | injectables, skin-booster, hyaluronic-acid, amino-acids, biorevitalization | REC_0032 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | Injectables | Skin Booster | HA + Amino Acid Biorevitalization | AMINO-JAL / JALUCOMPLEX | Product | Mesotherapy Solution | CE certification confirmed by user; certificate number pending | injectables, skin-booster, hyaluronic-acid, amino-acids, biorevitalization | True | prod_d65d153564df | Non-crosslinked HA + amino-acid matrix | [非交联 HA 氨基酸动能素] AMINO-JAL/JALUCOMPLEX 用于生物重组再生、浅表细纹改善与真皮层水分补充。 | 皮肤动能素/水光 | 非交联/微交联HA复配 | 浅层微滴注射 | 皮肤动能素/水光 > 非交联/微交联HA复配 > 浅层微滴注射 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | HA皮肤动能素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | ha,botulinum,mesotherapy | ha | AMINO-JAL / JALUCOMPLEX | BioFormula | BioFormula AMINO-JAL / JALUCOMPLEX user-confirmed indication"
+      "search_text": "product | AMINO-JAL / JALUCOMPLEX | Mesotherapy Solution | AMINO-JAL / JALUCOMPLEX | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | Injectables | Skin Booster | 皮肤动能素/水光 > 非交联/微交联HA复配 > 浅层微滴注射 | HA皮肤动能素 | HA + Amino Acid Biorevitalization | Non-crosslinked HA + amino-acid matrix | HA + Amino Acid Biorevitalization | injectables, skin-booster, hyaluronic-acid, amino-acids, biorevitalization | REC_0032 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | Injectables | Skin Booster | HA + Amino Acid Biorevitalization | AMINO-JAL / JALUCOMPLEX | Product | Mesotherapy Solution | CE certification confirmed by user; certificate number pending | injectables, skin-booster, hyaluronic-acid, amino-acids, biorevitalization | True | prod_d65d153564df | Non-crosslinked HA + amino-acid matrix | [非交联 HA 氨基酸动能素] AMINO-JAL/JALUCOMPLEX 用于生物重组再生、浅表细纹改善与真皮层水分补充。 | 非交联HA氨基酸动能素 | 皮肤动能素/水光 | 非交联/微交联HA复配 | 浅层微滴注射 | 皮肤动能素/水光 > 非交联/微交联HA复配 > 浅层微滴注射 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | HA皮肤动能素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | ha,botulinum,mesotherapy | ha | AMINO-JAL / JALUCOMPLEX | BioFormula | BioFormula AMINO-JAL / JALUCOMPLEX user-confirmed indication"
     },
     {
       "type": "product",
@@ -14372,7 +14372,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Cellulysis / Phosphatidylcholine | Body Contouring / Lipolysis | Body Contouring / Lipolysis | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | EBD | Body Contouring | 注射类 > 美塑成分 > 脂解剂 | 脂解剂 | PPC / Deoxycholate Lipolysis | PPC / Deoxycholate Lipolysis | EBD, Body Contouring, PPC / Deoxycholate Lipolysis | REC_0110 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | EBD | Body Contouring | PPC / Deoxycholate Lipolysis | Cellulysis / Phosphatidylcholine | Product | Body Contouring / Lipolysis | True | prod_13d2bdde8bc8 | 去橘皮/溶脂溶液。含有磷脂酰胆碱 (PPC) 和脱氧胆酸钠 (Deoxycholate) 的经典配方，专门用于身体局部顽固脂肪和橘皮组织的消融。由于其属于无菌小瓶装，常被医生用于“身体美塑”疗程。 | 注射类 | 美塑成分 | 脂解剂 | 注射类 > 美塑成分 > 脂解剂 | rule:ebd_fallback_extension | low | confirmed | EBD row without precise material/energy signal; classification path is outside current manual and may require taxonomy extension | active | [orig:注射类 > 美塑成分 > 脂解剂] 磷脂酰胆碱/去氧胆酸溶脂针剂，是注射脂解剂非设备 | ebd | ebd | Body Contouring / Lipolysis | BioFormula | LIQUID PHOSPHATIDYLCHOLINE - Bioformula"
+      "search_text": "product | Cellulysis / Phosphatidylcholine | Body Contouring / Lipolysis | Body Contouring / Lipolysis | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | EBD | Body Contouring | 注射类 > 美塑成分 > 脂解剂 | 脂解剂 | PPC / Deoxycholate Lipolysis | PPC / Deoxycholate Lipolysis | EBD, Body Contouring, PPC / Deoxycholate Lipolysis | REC_0110 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | EBD | Body Contouring | PPC / Deoxycholate Lipolysis | Cellulysis / Phosphatidylcholine | Product | Body Contouring / Lipolysis | True | prod_13d2bdde8bc8 | 去橘皮/溶脂溶液。含有磷脂酰胆碱 (PPC) 和脱氧胆酸钠 (Deoxycholate) 的经典配方，专门用于身体局部顽固脂肪和橘皮组织的消融。由于其属于无菌小瓶装，常被医生用于“身体美塑”疗程。 | 脱氧胆酸盐溶脂溶液 / PPC | 注射类 | 美塑成分 | 脂解剂 | 注射类 > 美塑成分 > 脂解剂 | rule:ebd_fallback_extension | low | confirmed | EBD row without precise material/energy signal; classification path is outside current manual and may require taxonomy extension | active | [orig:注射类 > 美塑成分 > 脂解剂] 磷脂酰胆碱/去氧胆酸溶脂针剂，是注射脂解剂非设备 | ebd | ebd | Body Contouring / Lipolysis | BioFormula | LIQUID PHOSPHATIDYLCHOLINE - Bioformula"
     },
     {
       "type": "product",
@@ -14436,7 +14436,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Evanthia | HA Dermal Filler | HA Dermal Filler | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Injectables, Dermal Filler, Hyaluronic Acid, HA | REC_0249 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | Evanthia | Product | HA Dermal Filler | True | prod_44dee492f5a9 | 单相交联玻尿酸填充剂。拥有 CE 认证的填充系列，分为 15/20/25 不同浓度。主打高纯度和良好的流变性，虽然品牌溢价不如瑞蓝、乔雅登，但在欧洲作为“高性价比填充剂”被广泛用于嘴唇和法令纹填充。 | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha | ha | HA Dermal Filler | BioFormula | EVANTHIA 20 - medium - Bioformula"
+      "search_text": "product | Evanthia | HA Dermal Filler | HA Dermal Filler | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Injectables, Dermal Filler, Hyaluronic Acid, HA | REC_0249 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | Evanthia | Product | HA Dermal Filler | True | prod_44dee492f5a9 | 单相交联玻尿酸填充剂。拥有 CE 认证的填充系列，分为 15/20/25 不同浓度。主打高纯度和良好的流变性，虽然品牌溢价不如瑞蓝、乔雅登，但在欧洲作为“高性价比填充剂”被广泛用于嘴唇和法令纹填充。 | 单相交联玻尿酸填充剂 | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha | ha | HA Dermal Filler | BioFormula | EVANTHIA 20 - medium - Bioformula"
     },
     {
       "type": "product",
@@ -14500,7 +14500,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Peeling Kits | Chemical Peel | Chemical Peel | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | Skincare | Chemical Peel | 功效性护肤品 > 化学焕肤 > 果酸/水杨酸/TCA等 | 果酸/水杨酸/TCA等 | Chemical Peel | Chemical Peel | Skincare, Chemical Peel | REC_0534 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | Skincare | Chemical Peel | Chemical Peel | Peeling Kits | Product | Chemical Peel | True | prod_d7da8e93ddaf | 专业刷酸套组。提供从浅层（扁桃酸、水杨酸）到深层（TCA、杰士纳溶液）的全系列酸。其特点是采用了特殊的凝胶基质或自中和技术，增加了操作的安全性，防止酸液流淌灼伤皮肤。 | 功效性护肤品 | 化学焕肤 | 果酸/水杨酸/TCA等 | 功效性护肤品 > 化学焕肤 > 果酸/水杨酸/TCA等 | rule:topical_chemical_peel | high | auto_applied | chemical peel/acids term | active | other | other | Chemical Peel | BioFormula | Face Imperfections Treatment Powder - Bioformula"
+      "search_text": "product | Peeling Kits | Chemical Peel | Chemical Peel | BioFormula | BioFormula | [\"BioFormula\"] | BioFormula | BioFormula | Skincare | Chemical Peel | 功效性护肤品 > 化学焕肤 > 果酸/水杨酸/TCA等 | 果酸/水杨酸/TCA等 | Chemical Peel | Chemical Peel | Skincare, Chemical Peel | REC_0534 | BioFormula | Italy | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | Skincare | Chemical Peel | Chemical Peel | Peeling Kits | Product | Chemical Peel | True | prod_d7da8e93ddaf | 专业刷酸套组。提供从浅层（扁桃酸、水杨酸）到深层（TCA、杰士纳溶液）的全系列酸。其特点是采用了特殊的凝胶基质或自中和技术，增加了操作的安全性，防止酸液流淌灼伤皮肤。 | 化学换肤套组 | 功效性护肤品 | 化学焕肤 | 果酸/水杨酸/TCA等 | 功效性护肤品 > 化学焕肤 > 果酸/水杨酸/TCA等 | rule:topical_chemical_peel | high | auto_applied | chemical peel/acids term | active | other | other | Chemical Peel | BioFormula | Face Imperfections Treatment Powder - Bioformula"
     },
     {
       "type": "product",
@@ -15157,7 +15157,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | MPGUN | AI Mesotherapy Gun | AI Mesotherapy Gun | Biopark Medical | Biopark Medical | [\"Biopark Medical\"] | Biopark Medical | Biopark Medical | Injectables | Mesotherapy | 能量设备 > 光/IPL > LED光疗/光动力 PDT | LED光疗/光动力 PDT | Mesotherapy | Mesotherapy | AI_Enabled | REC_0469 | Biopark Medical | Turkey | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | Injectables | Mesotherapy | Mesotherapy | MPGUN | Product | AI Mesotherapy Gun | AI_Enabled | True | prod_b60505f69d9e | AI 智能水光枪。这是公司的核心硬件产品。它号称是全球首款人工智能驱动的美塑注射枪，内置 AI 算法可根据皮肤阻力自动调整推注压力，支持“笔式”和“枪式”两种模式，最高射速可达 1500 次/分钟，主打无痛和精准给药。 | 能量设备 | 光/IPL | LED光疗/光动力 PDT | 能量设备 > 光/IPL > LED光疗/光动力 PDT | rule:ebd_led_pdt | high | auto_applied | LED/PDT/light-therapy term | active | ebd,mesotherapy | ebd | AI Mesotherapy Gun | Biopark Medical | No public official indication closure"
+      "search_text": "product | MPGUN | AI Mesotherapy Gun | AI Mesotherapy Gun | Biopark Medical | Biopark Medical | [\"Biopark Medical\"] | Biopark Medical | Biopark Medical | Injectables | Mesotherapy | 能量设备 > 光/IPL > LED光疗/光动力 PDT | LED光疗/光动力 PDT | Mesotherapy | Mesotherapy | AI_Enabled | REC_0469 | Biopark Medical | Turkey | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | Injectables | Mesotherapy | Mesotherapy | MPGUN | Product | AI Mesotherapy Gun | AI_Enabled | True | prod_b60505f69d9e | AI 智能水光枪。这是公司的核心硬件产品。它号称是全球首款人工智能驱动的美塑注射枪，内置 AI 算法可根据皮肤阻力自动调整推注压力，支持“笔式”和“枪式”两种模式，最高射速可达 1500 次/分钟，主打无痛和精准给药。 | AI Mesotherapy Gun | 能量设备 | 光/IPL | LED光疗/光动力 PDT | 能量设备 > 光/IPL > LED光疗/光动力 PDT | rule:ebd_led_pdt | high | auto_applied | LED/PDT/light-therapy term | active | ebd,mesotherapy | ebd | AI Mesotherapy Gun | Biopark Medical | No public official indication closure"
     },
     {
       "type": "product",
@@ -15221,7 +15221,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Mesopotamia | mi-RNA / Exosomes | mi-RNA / Exosomes | Biopark Medical | Biopark Medical | [\"Biopark Medical\"] | Biopark Medical | Biopark Medical | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Injectables, Dermal Filler, Hyaluronic Acid, HA, Exosome | REC_0443 | Biopark Medical | Turkey | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | Mesopotamia | Product | mi-RNA / Exosomes | True | prod_91e576f8273b | 美索不达米亚系列。这是一套结合了mi-RNA（微小核糖核酸）、外泌体 (Exosomes) 和植物干细胞的高端美塑疗法溶液。不同于普通的玻尿酸复配液，它强调从基因表达层面调节细胞再生，涵盖祛斑、抗衰和生发 (Hair) 等多种配方。 | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha,exosome,mesotherapy | ha | mi-RNA / Exosomes | Biopark Medical | Brand Inventory | e-EXOSOMES"
+      "search_text": "product | Mesopotamia | mi-RNA / Exosomes | mi-RNA / Exosomes | Biopark Medical | Biopark Medical | [\"Biopark Medical\"] | Biopark Medical | Biopark Medical | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Injectables, Dermal Filler, Hyaluronic Acid, HA, Exosome | REC_0443 | Biopark Medical | Turkey | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | Mesopotamia | Product | mi-RNA / Exosomes | True | prod_91e576f8273b | 美索不达米亚系列。这是一套结合了mi-RNA（微小核糖核酸）、外泌体 (Exosomes) 和植物干细胞的高端美塑疗法溶液。不同于普通的玻尿酸复配液，它强调从基因表达层面调节细胞再生，涵盖祛斑、抗衰和生发 (Hair) 等多种配方。 | Exosomes 溶液 / mi-RNA | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha,exosome,mesotherapy | ha | mi-RNA / Exosomes | Biopark Medical | Brand Inventory | e-EXOSOMES"
     },
     {
       "type": "product",
@@ -15285,7 +15285,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Messenger | Booster | Booster | Biopark Medical | Biopark Medical | [\"Biopark Medical\"] | Biopark Medical | Biopark Medical | Injectables | Mesotherapy | 注射类 > 美塑成分 > 生长因子/多肽鸡尾酒 | 生长因子/多肽鸡尾酒 | Mesotherapy | Mesotherapy | Injectables, Mesotherapy | REC_0450 | Biopark Medical | Turkey | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | Injectables | Mesotherapy | Mesotherapy | Messenger | Product | Booster | True | prod_e0c34f70a096 | 信使系列。这是配合其 MPGUN 使用的特定助推剂或功能性溶液系列，通常与 Mesopotamia 系列搭配使用，通过 MPGUN 的 AI 控制实现精准导入。 | 注射类 | 美塑成分 | 生长因子/多肽鸡尾酒 | 注射类 > 美塑成分 > 生长因子/多肽鸡尾酒 | rule:injectable_mesotherapy_fallback | low | accepted | injectable/mesotherapy row without precise material signal | v4 closure: accepted current taxonomy path for usable database; no hold taxonomy decision required | active | [v4_material_review_closure] non-hold backlog closed as accepted | mesotherapy | mesotherapy | Booster | Biopark Medical | No public official indication closure"
+      "search_text": "product | Messenger | Booster | Booster | Biopark Medical | Biopark Medical | [\"Biopark Medical\"] | Biopark Medical | Biopark Medical | Injectables | Mesotherapy | 注射类 > 美塑成分 > 生长因子/多肽鸡尾酒 | 生长因子/多肽鸡尾酒 | Mesotherapy | Mesotherapy | Injectables, Mesotherapy | REC_0450 | Biopark Medical | Turkey | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | Injectables | Mesotherapy | Mesotherapy | Messenger | Product | Booster | True | prod_e0c34f70a096 | 信使系列。这是配合其 MPGUN 使用的特定助推剂或功能性溶液系列，通常与 Mesopotamia 系列搭配使用，通过 MPGUN 的 AI 控制实现精准导入。 | Booster 助推剂 | 注射类 | 美塑成分 | 生长因子/多肽鸡尾酒 | 注射类 > 美塑成分 > 生长因子/多肽鸡尾酒 | rule:injectable_mesotherapy_fallback | low | accepted | injectable/mesotherapy row without precise material signal | v4 closure: accepted current taxonomy path for usable database; no hold taxonomy decision required | active | [v4_material_review_closure] non-hold backlog closed as accepted | mesotherapy | mesotherapy | Booster | Biopark Medical | No public official indication closure"
     },
     {
       "type": "product",
@@ -101369,7 +101369,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Galderma | Galderma | Switzerland | Europe | Public | Manufacturer | SIX:GALD | Injectables | Galderma | Switzerland | Switzerland | 1 | Europe | Zug, Switzerland | Public | Manufacturer | Active | SIX:GALD | 4359 | 2024 | 74 | 48412.45 | 2026-06-15T08:18:00+08:00 | 11.1 | 17 | 16 | Injectables | 0 | 0 | 172.15 | CHF | 2.14 | https://query1.finance.yahoo.com/v8/finance/chart/GALD.SW?range=5d&interval=1d | 2026-06-12T23:31:00+08:00 | https://www.galderma.com/investors | manual_pending_verification | 2026-06-12T23:31:00+08:00 | FY2024 | 2025-02-26 | Manual IR annual report | 2026-06-15T08:18:00+08:00"
+      "search_text": "company | Galderma | Galderma | Switzerland | Europe | Public | Manufacturer | SIX:GALD | Injectables | Galderma | Switzerland | Switzerland | 1 | Europe | Zug, Switzerland | Public | Manufacturer | Active | SIX:GALD | 4359 | 2024 | 74 | 48412.45 | 2026-06-15T08:18:00+08:00 | 11.1 | 17 | 16 | Injectables | 0 | 0 | 172.15 | CHF | 2.14 | https://query1.finance.yahoo.com/v8/finance/chart/GALD.SW?range=5d&interval=1d | 2026-06-12T23:31:00+08:00 | https://www.galderma.com/investors | manual_pending_verification | 2026-06-12T23:31:00+08:00 | FY2024 | 2025-02-26 | Manual IR annual report | 2026-06-15T08:18:00+08:00 | Galderma"
     },
     {
       "type": "company",
@@ -101398,7 +101398,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | InMode | InMode | Israel | Middle East | Public | Manufacturer | NASDAQ:INMD | EBD | InMode | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | NASDAQ:INMD | 370.5 | 2025 | 78.54 | 840.99 | 2026-06-15T08:17:36+08:00 | 2.27 | 100 | 17 | 15 | EBD | 0 | 0 | 13.45 | USD | -0.3 | https://query1.finance.yahoo.com/v8/finance/chart/INMD?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001742692.json | official_sec_xbrl_auto | 8.96 | 1.23 | 1.43 | 1.43 | -48.24 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-02-10 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | InMode | InMode | Israel | Middle East | Public | Manufacturer | NASDAQ:INMD | EBD | InMode | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | NASDAQ:INMD | 370.5 | 2025 | 78.54 | 840.99 | 2026-06-15T08:17:36+08:00 | 2.27 | 100 | 17 | 15 | EBD | 0 | 0 | 13.45 | USD | -0.3 | https://query1.finance.yahoo.com/v8/finance/chart/INMD?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001742692.json | official_sec_xbrl_auto | 8.96 | 1.23 | 1.43 | 1.43 | -48.24 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-02-10 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | InMode"
     },
     {
       "type": "company",
@@ -101428,7 +101428,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | IBSA Derma | IBSA Derma | IBSA Group | Switzerland | Europe | Private | Manufacturer | IBSA Group | Injectables | IBSA Derma | Switzerland | Italy, Switzerland | 2 | Europe | Lodi, Italy | Private | Manufacturer | Active | IBSA Group | 14 | 13 | Injectables | 0 | 0"
+      "search_text": "company | IBSA Derma | IBSA Derma | IBSA Group | Switzerland | Europe | Private | Manufacturer | IBSA Group | Injectables | IBSA Derma | Switzerland | Italy, Switzerland | 2 | Europe | Lodi, Italy | Private | Manufacturer | Active | IBSA Group | 14 | 13 | Injectables | 0 | 0 | IBSA Group"
     },
     {
       "type": "company",
@@ -101458,7 +101458,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cynosure | Cynosure | Hahn & Company | USA | North America | Private | Manufacturer | Hahn & Company | EBD | Cynosure | USA | USA | 1 | North America | Westford, MA, USA | Private | Manufacturer | Active | Hahn & Company | 14 | 13 | EBD | 0 | 0"
+      "search_text": "company | Cynosure | Cynosure | Hahn & Company | USA | North America | Private | Manufacturer | Hahn & Company | EBD | Cynosure | USA | USA | 1 | North America | Westford, MA, USA | Private | Manufacturer | Active | Hahn & Company | 14 | 13 | EBD | 0 | 0 | Hahn & Company"
     },
     {
       "type": "company",
@@ -101488,7 +101488,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Alma Lasers | Alma Lasers | Sisram Medical | Israel | Middle East | Public | Manufacturer | Sisram Medical | HKEX:1696 | EBD | Alma Lasers | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | Sisram Medical | HKEX:1696 | 365.35 | 2025 | 58.89 | 173.44 | 2026-05-26T16:08:21+08:00 | 0.47 | 100 | 14 | 13 | EBD | 0 | 0 | 全球领先的医美激光与能量设备制造商 | 2.52 | HKD | 0.4 | https://query1.finance.yahoo.com/v8/finance/chart/1696.HK?range=5d&interval=1d | 2026-06-12T15:59:27+08:00 | https://www.sisrammed.com/en/investor-relations | pending_collection | 2026-06-12T15:59:27+08:00 | IFRS_consolidated"
+      "search_text": "company | Alma Lasers | Alma Lasers | Sisram Medical | Israel | Middle East | Public | Manufacturer | Sisram Medical | HKEX:1696 | EBD | Alma Lasers | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | Sisram Medical | HKEX:1696 | 365.35 | 2025 | 58.89 | 173.44 | 2026-05-26T16:08:21+08:00 | 0.47 | 100 | 14 | 13 | EBD | 0 | 0 | 全球领先的医美激光与能量设备制造商 | 2.52 | HKD | 0.4 | https://query1.finance.yahoo.com/v8/finance/chart/1696.HK?range=5d&interval=1d | 2026-06-12T15:59:27+08:00 | https://www.sisrammed.com/en/investor-relations | pending_collection | 2026-06-12T15:59:27+08:00 | IFRS_consolidated | Sisram Medical"
     },
     {
       "type": "company",
@@ -101518,7 +101518,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Allergan | Allergan | AbbVie | USA | North America | Subsidiary | Manufacturer | AbbVie | NASDAQ:ABBV | Injectables | Allergan | USA | USA | 1 | North America | Irvine, CA, USA | Subsidiary | Manufacturer | Active | AbbVie | NASDAQ:ABBV | 61160 | 2025 | 19.73 | 367245.56 | 2026-06-15T08:17:36+08:00 | 6 | 19 | 19 | Injectables | 4 | 1 | 医美全品类巨头，艾伯维旗下 | 227.73 | USD | 1.32 | https://query1.finance.yahoo.com/v8/finance/chart/ABBV?range=5d&interval=1d | 2026-06-13T04:02:19+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001551152.json | official_sec_xbrl_auto | 86.9 | -112.31 | 2.36 | 2.36 | -1.22 | 2026-06-13T04:02:19+08:00 | FY2025 | 2026-02-20 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Allergan | Allergan | AbbVie | USA | North America | Subsidiary | Manufacturer | AbbVie | NASDAQ:ABBV | Injectables | Allergan | USA | USA | 1 | North America | Irvine, CA, USA | Subsidiary | Manufacturer | Active | AbbVie | NASDAQ:ABBV | 61160 | 2025 | 19.73 | 367245.56 | 2026-06-15T08:17:36+08:00 | 6 | 19 | 19 | Injectables | 4 | 1 | 医美全品类巨头，艾伯维旗下 | 227.73 | USD | 1.32 | https://query1.finance.yahoo.com/v8/finance/chart/ABBV?range=5d&interval=1d | 2026-06-13T04:02:19+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001551152.json | official_sec_xbrl_auto | 86.9 | -112.31 | 2.36 | 2.36 | -1.22 | 2026-06-13T04:02:19+08:00 | FY2025 | 2026-02-20 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | AbbVie"
     },
     {
       "type": "company",
@@ -101547,7 +101547,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BTL | BTL | Czech Republic | Europe | Private | Manufacturer | EBD | BTL | Czech Republic | Czech Republic | 1 | Other | Prague, Czech Republic | Private | Manufacturer | Active | 13 | 13 | EBD | 0 | 0"
+      "search_text": "company | BTL | BTL | Czech Republic | Europe | Private | Manufacturer | EBD | BTL | Czech Republic | Czech Republic | 1 | Other | Prague, Czech Republic | Private | Manufacturer | Active | 13 | 13 | EBD | 0 | 0 | BTL"
     },
     {
       "type": "company",
@@ -101576,7 +101576,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Lumenis | Lumenis | Israel | Middle East | Private | Manufacturer | EBD | Lumenis | Israel | Israel | 1 | Middle East | Yokneam, Israel | Private | Manufacturer | Active | 13 | 4 | EBD | 0 | 0"
+      "search_text": "company | Lumenis | Lumenis | Israel | Middle East | Private | Manufacturer | EBD | Lumenis | Israel | Israel | 1 | Middle East | Yokneam, Israel | Private | Manufacturer | Active | 13 | 4 | EBD | 0 | 0 | Lumenis"
     },
     {
       "type": "company",
@@ -101606,7 +101606,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Candela | Candela | Apax Partners | USA | North America | Private | Manufacturer | Apax Partners | EBD | Candela | USA | USA | 1 | North America | Marlborough, USA | Private | Manufacturer | Active | Apax Partners | 16 | 15 | EBD | 0 | 0"
+      "search_text": "company | Candela | Candela | Apax Partners | USA | North America | Private | Manufacturer | Apax Partners | EBD | Candela | USA | USA | 1 | North America | Marlborough, USA | Private | Manufacturer | Active | Apax Partners | 16 | 15 | EBD | 0 | 0 | Apax Partners"
     },
     {
       "type": "company",
@@ -101635,7 +101635,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | El.En. | El.En. | Italy | Europe | Public | Manufacturer | ELN.MI | EBD | El.En. | Italy | Germany, Italy | 2 | Europe | Jena, Germany | Public | Manufacturer | Active | ELN.MI | 685.68 | 2025 | 42.94 | 1293.02 | 2026-05-26T23:35:05+08:00 | 1.89 | 11 | 3 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00"
+      "search_text": "company | El.En. | El.En. | Italy | Europe | Public | Manufacturer | ELN.MI | EBD | El.En. | Italy | Germany, Italy | 2 | Europe | Jena, Germany | Public | Manufacturer | Active | ELN.MI | 685.68 | 2025 | 42.94 | 1293.02 | 2026-05-26T23:35:05+08:00 | 1.89 | 11 | 3 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00 | El.En."
     },
     {
       "type": "company",
@@ -101664,7 +101664,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Sciton | Sciton | USA | North America | Private | Manufacturer | EBD | Sciton | USA | USA | 1 | North America | Palo Alto, CA, USA | Private | Manufacturer | Active | 11 | 3 | EBD | 0 | 0"
+      "search_text": "company | Sciton | Sciton | USA | North America | Private | Manufacturer | EBD | Sciton | USA | USA | 1 | North America | Palo Alto, CA, USA | Private | Manufacturer | Active | 11 | 3 | EBD | 0 | 0 | Sciton"
     },
     {
       "type": "company",
@@ -101693,7 +101693,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Wontech | Wontech | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216280 | EBD | Wontech | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Public | Manufacturer | Active | KRX:216280 | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:31+08:00 | 100 | 11 | 8 | EBD | 0 | 0 | 2026-06-15T08:16:58+08:00 | https://finance.yahoo.com/quote/216280.KS/financials/ | valuation_fetch_failed | 2026-06-15T08:16:58+08:00"
+      "search_text": "company | Wontech | Wontech | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216280 | EBD | Wontech | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Public | Manufacturer | Active | KRX:216280 | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:31+08:00 | 100 | 11 | 8 | EBD | 0 | 0 | 2026-06-15T08:16:58+08:00 | https://finance.yahoo.com/quote/216280.KS/financials/ | valuation_fetch_failed | 2026-06-15T08:16:58+08:00 | Wontech"
     },
     {
       "type": "company",
@@ -101723,7 +101723,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Sinclair Pharma | Sinclair Pharma | Huadong Medicine | Israel | Middle East | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Sinclair Pharma | Israel | Bulgaria, Israel, Netherlands, Switzerland, USA | 5 | Other | Sofia, Bulgaria | Subsidiary | Manufacturer | Active | Huadong Medicine | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 13 | 8 | EBD | 0 | 0 | 29.11 | CNY | -0.07 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | 2026-06-12T15:04:42+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T15:04:42+08:00"
+      "search_text": "company | Sinclair Pharma | Sinclair Pharma | Huadong Medicine | Israel | Middle East | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Sinclair Pharma | Israel | Bulgaria, Israel, Netherlands, Switzerland, USA | 5 | Other | Sofia, Bulgaria | Subsidiary | Manufacturer | Active | Huadong Medicine | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 13 | 8 | EBD | 0 | 0 | 29.11 | CNY | -0.07 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | 2026-06-12T15:04:42+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T15:04:42+08:00 | Huadong Medicine"
     },
     {
       "type": "company",
@@ -101752,7 +101752,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Classys | Classys | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214150 | EBD | Classys | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:214150 | 235.77 | 2025 | 77.52 | 2232.75 | 2026-05-26T14:30:12+08:00 | 9.47 | 100 | 10 | 10 | EBD | 0 | 0 | 43950.0 | KRW | -6.19 | https://query1.finance.yahoo.com/v8/finance/chart/214150.KQ?range=5d&interval=1d | 2026-06-12T14:30:05+08:00 | https://www.classys.com/eng/ir/financial.php | pending_collection | 2026-06-12T14:30:05+08:00 | K_IFRS_consolidated"
+      "search_text": "company | Classys | Classys | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214150 | EBD | Classys | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:214150 | 235.77 | 2025 | 77.52 | 2232.75 | 2026-05-26T14:30:12+08:00 | 9.47 | 100 | 10 | 10 | EBD | 0 | 0 | 43950.0 | KRW | -6.19 | https://query1.finance.yahoo.com/v8/finance/chart/214150.KQ?range=5d&interval=1d | 2026-06-12T14:30:05+08:00 | https://www.classys.com/eng/ir/financial.php | pending_collection | 2026-06-12T14:30:05+08:00 | K_IFRS_consolidated | Classys"
     },
     {
       "type": "company",
@@ -101783,7 +101783,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Lutronic / Cynosure Lutronic | Lutronic | Cynosure Lutronic | Hologic (Cynosure) | South Korea | Asia-Pacific | Private | Manufacturer | Hologic (Cynosure) | EBD | Lutronic / Cynosure Lutronic | South Korea | South Korea | 1 | Asia-Pacific | Goyang, South Korea | Private | Manufacturer | Merged | Hologic (Cynosure) | 10 | 4 | EBD | 0 | 0"
+      "search_text": "company | Lutronic / Cynosure Lutronic | Lutronic | Cynosure Lutronic | Hologic (Cynosure) | South Korea | Asia-Pacific | Private | Manufacturer | Hologic (Cynosure) | EBD | Lutronic / Cynosure Lutronic | South Korea | South Korea | 1 | Asia-Pacific | Goyang, South Korea | Private | Manufacturer | Merged | Hologic (Cynosure) | 10 | 4 | EBD | 0 | 0 | Hologic (Cynosure)"
     },
     {
       "type": "company",
@@ -101812,7 +101812,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Merz | Merz | Germany | Europe | Private | Manufacturer | Injectables | Merz | Germany | Germany, Switzerland, USA | 3 | Europe | Lonay, Switzerland | Private | Manufacturer | Active | 10 | 9 | Injectables | 0 | 0"
+      "search_text": "company | Merz | Merz | Germany | Europe | Private | Manufacturer | Injectables | Merz | Germany | Germany, Switzerland, USA | 3 | Europe | Lonay, Switzerland | Private | Manufacturer | Active | 10 | 9 | Injectables | 0 | 0 | Merz"
     },
     {
       "type": "company",
@@ -101841,7 +101841,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hugel | Hugel | South Korea | Asia-Pacific | Public | Manufacturer | KRX:145020 | Injectables | Hugel | South Korea | South Korea | 1 | Asia-Pacific | Chuncheon, South Korea | Public | Manufacturer | Active | KRX:145020 | 297.58 | 2025 | 78.45 | 2012.13 | 2026-05-26T14:30:03+08:00 | 6.76 | 100 | 9 | 9 | Injectables | 0 | 0 | 244500.0 | KRW | -0.41 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://www.hugel.co.kr/eng/ir/main.do | pending_collection | 2026-06-12T14:30:30+08:00 | K_IFRS_consolidated"
+      "search_text": "company | Hugel | Hugel | South Korea | Asia-Pacific | Public | Manufacturer | KRX:145020 | Injectables | Hugel | South Korea | South Korea | 1 | Asia-Pacific | Chuncheon, South Korea | Public | Manufacturer | Active | KRX:145020 | 297.58 | 2025 | 78.45 | 2012.13 | 2026-05-26T14:30:03+08:00 | 6.76 | 100 | 9 | 9 | Injectables | 0 | 0 | 244500.0 | KRW | -0.41 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://www.hugel.co.kr/eng/ir/main.do | pending_collection | 2026-06-12T14:30:30+08:00 | K_IFRS_consolidated | Hugel"
     },
     {
       "type": "company",
@@ -101870,7 +101870,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Medytox | Medytox | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086900 | Injectables | Medytox | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:086900 | 173.1 | 2025 | 57.94 | 450.54 | 2026-05-26T14:30:14+08:00 | 2.6 | 100 | 9 | 9 | Injectables | 0 | 0 | 85000.0 | KRW | 2.16 | https://query1.finance.yahoo.com/v8/finance/chart/086900.KQ?range=5d&interval=1d | 2026-06-12T14:30:11+08:00 | https://www.medytox.com/en/ir/ir_financial.html | pending_collection | 2026-06-12T14:30:11+08:00 | K_IFRS_consolidated"
+      "search_text": "company | Medytox | Medytox | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086900 | Injectables | Medytox | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:086900 | 173.1 | 2025 | 57.94 | 450.54 | 2026-05-26T14:30:14+08:00 | 2.6 | 100 | 9 | 9 | Injectables | 0 | 0 | 85000.0 | KRW | 2.16 | https://query1.finance.yahoo.com/v8/finance/chart/086900.KQ?range=5d&interval=1d | 2026-06-12T14:30:11+08:00 | https://www.medytox.com/en/ir/ir_financial.html | pending_collection | 2026-06-12T14:30:11+08:00 | K_IFRS_consolidated | Medytox"
     },
     {
       "type": "company",
@@ -101899,7 +101899,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Fotona d.o.o. | Fotona d.o.o. | Slovenia | Europe | Private | Manufacturer | EBD | Fotona d.o.o. | Slovenia | Slovenia | 1 | Other | Ljubljana, Slovenia | Private | Manufacturer | Active | 10 | 4 | EBD | 0 | 0"
+      "search_text": "company | Fotona d.o.o. | Fotona d.o.o. | Slovenia | Europe | Private | Manufacturer | EBD | Fotona d.o.o. | Slovenia | Slovenia | 1 | Other | Ljubljana, Slovenia | Private | Manufacturer | Active | 10 | 4 | EBD | 0 | 0 | Fotona d.o.o."
     },
     {
       "type": "company",
@@ -101928,7 +101928,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cutera | Cutera | USA | North America | Public | Manufacturer | NASDAQ:CUTR | EBD | Cutera | USA | USA | 1 | North America | Brisbane, CA, USA | Public | Manufacturer | Active | NASDAQ:CUTR | 49.94 | 2020 | 83.08 | unavailable_verified | 2026-06-15T08:17:36+08:00 | 100 | 10 | 8 | EBD | 0 | 0 | 2026-06-15T08:17:00+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001162461.json | official_sec_xbrl_auto | -8.19 | -8.19 | -97.76 | 2026-06-15T08:17:00+08:00 | FY2020 | 2021-03-23 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Cutera | Cutera | USA | North America | Public | Manufacturer | NASDAQ:CUTR | EBD | Cutera | USA | USA | 1 | North America | Brisbane, CA, USA | Public | Manufacturer | Active | NASDAQ:CUTR | 49.94 | 2020 | 83.08 | unavailable_verified | 2026-06-15T08:17:36+08:00 | 100 | 10 | 8 | EBD | 0 | 0 | 2026-06-15T08:17:00+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001162461.json | official_sec_xbrl_auto | -8.19 | -8.19 | -97.76 | 2026-06-15T08:17:00+08:00 | FY2020 | 2021-03-23 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Cutera"
     },
     {
       "type": "company",
@@ -101957,7 +101957,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Skin Tech | Skin Tech | Spain | Europe | Private | Manufacturer | Skincare | Skin Tech | Spain | Spain | 1 | Europe | Costa Brava, Spain | Private | Manufacturer | Active | 16 | 10 | Skincare | 0 | 0"
+      "search_text": "company | Skin Tech | Skin Tech | Spain | Europe | Private | Manufacturer | Skincare | Skin Tech | Spain | Spain | 1 | Europe | Costa Brava, Spain | Private | Manufacturer | Active | 16 | 10 | Skincare | 0 | 0 | Skin Tech"
     },
     {
       "type": "company",
@@ -101986,7 +101986,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Caregen | Caregen | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214370 | Injectables | Caregen | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Public | Manufacturer | Active | KRX:214370 | 50.97 | 2025 | 71.75 | 3183.1 | 2026-05-26T14:30:07+08:00 | 62.45 | 100 | 9 | 9 | Injectables | 0 | 0 | 74800.0 | KRW | -8.78 | https://query1.finance.yahoo.com/v8/finance/chart/214370.KQ?range=5d&interval=1d | 2026-06-12T14:30:20+08:00 | https://www.caregen.com/en/investors | pending_collection | 2026-06-12T14:30:20+08:00 | K_IFRS_consolidated"
+      "search_text": "company | Caregen | Caregen | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214370 | Injectables | Caregen | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Public | Manufacturer | Active | KRX:214370 | 50.97 | 2025 | 71.75 | 3183.1 | 2026-05-26T14:30:07+08:00 | 62.45 | 100 | 9 | 9 | Injectables | 0 | 0 | 74800.0 | KRW | -8.78 | https://query1.finance.yahoo.com/v8/finance/chart/214370.KQ?range=5d&interval=1d | 2026-06-12T14:30:20+08:00 | https://www.caregen.com/en/investors | pending_collection | 2026-06-12T14:30:20+08:00 | K_IFRS_consolidated | Caregen"
     },
     {
       "type": "company",
@@ -102015,7 +102015,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Venus Concept | Venus Concept | Canada | North America | Public | Manufacturer | NASDAQ:VERO | EBD | Venus Concept | Canada | Canada | 1 | North America | Toronto, Canada | Public | Manufacturer | Active | NASDAQ:VERO | 64.83 | 2024 | 68.34 | 0.58 | 2026-06-15T08:17:36+08:00 | 0.01 | 100 | 9 | 9 | EBD | 0 | 0 | 0.311 | USD | https://query1.finance.yahoo.com/v8/finance/chart/VERO?range=5d&interval=1d | 2026-06-15T08:17:02+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001409269.json | official_sec_xbrl_auto | -0.01 | 0.24 | -71.21 | -71.21 | -26.16 | 2026-06-15T08:17:02+08:00 | FY2024 | 2025-03-31 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Venus Concept | Venus Concept | Canada | North America | Public | Manufacturer | NASDAQ:VERO | EBD | Venus Concept | Canada | Canada | 1 | North America | Toronto, Canada | Public | Manufacturer | Active | NASDAQ:VERO | 64.83 | 2024 | 68.34 | 0.58 | 2026-06-15T08:17:36+08:00 | 0.01 | 100 | 9 | 9 | EBD | 0 | 0 | 0.311 | USD | https://query1.finance.yahoo.com/v8/finance/chart/VERO?range=5d&interval=1d | 2026-06-15T08:17:02+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001409269.json | official_sec_xbrl_auto | -0.01 | 0.24 | -71.21 | -71.21 | -26.16 | 2026-06-15T08:17:02+08:00 | FY2024 | 2025-03-31 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Venus Concept"
     },
     {
       "type": "company",
@@ -102044,7 +102044,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hironic | Hironic | South Korea | Asia-Pacific | Public | Manufacturer | KRX:149980 | EBD | Hironic | South Korea | South Korea | 1 | Asia-Pacific | Yongin, South Korea | Public | Manufacturer | Active | KRX:149980 | 22.46 | 2025 | 58.93 | 61.34 | 2026-05-26T14:30:30+08:00 | 2.73 | 100 | 8 | 8 | EBD | 0 | 0 | 5610.0 | KRW | 1.08 | https://query1.finance.yahoo.com/v8/finance/chart/149980.KQ?range=5d&interval=1d | 2026-06-12T14:30:22+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/149980.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:22+08:00"
+      "search_text": "company | Hironic | Hironic | South Korea | Asia-Pacific | Public | Manufacturer | KRX:149980 | EBD | Hironic | South Korea | South Korea | 1 | Asia-Pacific | Yongin, South Korea | Public | Manufacturer | Active | KRX:149980 | 22.46 | 2025 | 58.93 | 61.34 | 2026-05-26T14:30:30+08:00 | 2.73 | 100 | 8 | 8 | EBD | 0 | 0 | 5610.0 | KRW | 1.08 | https://query1.finance.yahoo.com/v8/finance/chart/149980.KQ?range=5d&interval=1d | 2026-06-12T14:30:22+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/149980.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:22+08:00 | Hironic"
     },
     {
       "type": "company",
@@ -102073,7 +102073,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Advance Esthetic | Advance Esthetic | USA | North America | Private | Manufacturer | EBD | Advance Esthetic | USA | USA | 1 | North America | Fort Lauderdale, FL, USA | Private | Manufacturer | Active | 16 | 2 | EBD | 0 | 0 | 双品牌覆盖医美与生活美容设备"
+      "search_text": "company | Advance Esthetic | Advance Esthetic | USA | North America | Private | Manufacturer | EBD | Advance Esthetic | USA | USA | 1 | North America | Fort Lauderdale, FL, USA | Private | Manufacturer | Active | 16 | 2 | EBD | 0 | 0 | 双品牌覆盖医美与生活美容设备 | Advance Esthetic"
     },
     {
       "type": "company",
@@ -102103,7 +102103,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Quanta System | Quanta System | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Quanta System | Italy | Italy | 1 | Europe | Milan, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 7 | 5 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00"
+      "search_text": "company | Quanta System | Quanta System | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Quanta System | Italy | Italy | 1 | Europe | Milan, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 7 | 5 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102132,7 +102132,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Beauty Health | Beauty Health | USA | North America | Public | Manufacturer | NASDAQ:SKIN | EBD | Beauty Health | USA | USA | 1 | North America | Long Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:SKIN | 300.79 | 2025 | 65.28 | 84.89 | 2026-06-15T08:17:36+08:00 | 0.28 | 100 | 7 | 5 | EBD | 0 | 0 | 0.6538 | USD | 1.84 | https://query1.finance.yahoo.com/v8/finance/chart/SKIN?range=5d&interval=1d | 2026-06-13T04:00:00+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001818093.json | official_sec_xbrl_auto | -8.92 | 1.39 | -0.16 | -0.16 | 67.29 | 2026-06-13T04:00:00+08:00 | FY2025 | 2026-03-12 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Beauty Health | Beauty Health | USA | North America | Public | Manufacturer | NASDAQ:SKIN | EBD | Beauty Health | USA | USA | 1 | North America | Long Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:SKIN | 300.79 | 2025 | 65.28 | 84.89 | 2026-06-15T08:17:36+08:00 | 0.28 | 100 | 7 | 5 | EBD | 0 | 0 | 0.6538 | USD | 1.84 | https://query1.finance.yahoo.com/v8/finance/chart/SKIN?range=5d&interval=1d | 2026-06-13T04:00:00+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001818093.json | official_sec_xbrl_auto | -8.92 | 1.39 | -0.16 | -0.16 | 67.29 | 2026-06-13T04:00:00+08:00 | FY2025 | 2026-03-12 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Beauty Health"
     },
     {
       "type": "company",
@@ -102161,7 +102161,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BioPlus | BioPlus | South Korea | Asia-Pacific | Public | Manufacturer | KRX:099430 | Injectables | BioPlus | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:099430 | 63.63 | 2025 | 66.68 | 232.17 | 2026-05-26T14:30:18+08:00 | 3.65 | 100 | 5 | 5 | Injectables | 0 | 0 | 4630.0 | KRW | 1.98 | https://query1.finance.yahoo.com/v8/finance/chart/099430.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/099430.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00"
+      "search_text": "company | BioPlus | BioPlus | South Korea | Asia-Pacific | Public | Manufacturer | KRX:099430 | Injectables | BioPlus | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:099430 | 63.63 | 2025 | 66.68 | 232.17 | 2026-05-26T14:30:18+08:00 | 3.65 | 100 | 5 | 5 | Injectables | 0 | 0 | 4630.0 | KRW | 1.98 | https://query1.finance.yahoo.com/v8/finance/chart/099430.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/099430.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00 | BioPlus"
     },
     {
       "type": "company",
@@ -102191,7 +102191,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Solta Medical | Solta Medical | Bausch Health | USA | North America | Subsidiary | Manufacturer | Bausch Health | NASDAQ:BHC | EBD | Solta Medical | USA | USA | 1 | North America | Bothell, WA, USA | Subsidiary | Manufacturer | Active | Bausch Health | NASDAQ:BHC | 10266 | 2025 | 2020.5 | 2026-06-15T08:17:36+08:00 | 0.2 | 6 | 6 | EBD | 0 | 0 | 5.06 | USD | -1.94 | https://query1.finance.yahoo.com/v8/finance/chart/BHC?range=5d&interval=1d | 2026-06-13T04:00:02+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000885590.json | official_sec_xbrl_auto | 12.87 | -3.65 | 0.42 | 0.42 | 441.3 | 2026-06-13T04:00:02+08:00 | FY2025 | 2026-02-19 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Solta Medical | Solta Medical | Bausch Health | USA | North America | Subsidiary | Manufacturer | Bausch Health | NASDAQ:BHC | EBD | Solta Medical | USA | USA | 1 | North America | Bothell, WA, USA | Subsidiary | Manufacturer | Active | Bausch Health | NASDAQ:BHC | 10266 | 2025 | 2020.5 | 2026-06-15T08:17:36+08:00 | 0.2 | 6 | 6 | EBD | 0 | 0 | 5.06 | USD | -1.94 | https://query1.finance.yahoo.com/v8/finance/chart/BHC?range=5d&interval=1d | 2026-06-13T04:00:02+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000885590.json | official_sec_xbrl_auto | 12.87 | -3.65 | 0.42 | 0.42 | 441.3 | 2026-06-13T04:00:02+08:00 | FY2025 | 2026-02-19 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Bausch Health"
     },
     {
       "type": "company",
@@ -102220,7 +102220,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | EndyMed Medical | EndyMed Medical | Israel | Middle East | Public | Manufacturer | ENDY.TA | EBD | EndyMed Medical | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | ENDY.TA | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:50+08:00 | 100 | 6 | 5 | EBD | 0 | 0 | 2026-06-15T08:17:09+08:00 | https://finance.yahoo.com/quote/ENDY.TA/financials/ | valuation_fetch_failed | 2026-06-15T08:17:09+08:00"
+      "search_text": "company | EndyMed Medical | EndyMed Medical | Israel | Middle East | Public | Manufacturer | ENDY.TA | EBD | EndyMed Medical | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | ENDY.TA | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:50+08:00 | 100 | 6 | 5 | EBD | 0 | 0 | 2026-06-15T08:17:09+08:00 | https://finance.yahoo.com/quote/ENDY.TA/financials/ | valuation_fetch_failed | 2026-06-15T08:17:09+08:00 | EndyMed Medical"
     },
     {
       "type": "company",
@@ -102249,7 +102249,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Body Health | Body Health | Argentina | Latin America | Private | Manufacturer | EBD | Body Health | Argentina | Argentina | 1 | Other | Tigre, Argentina | Private | Manufacturer | Active | 6 | 6 | EBD | 0 | 0"
+      "search_text": "company | Body Health | Body Health | Argentina | Latin America | Private | Manufacturer | EBD | Body Health | Argentina | Argentina | 1 | Other | Tigre, Argentina | Private | Manufacturer | Active | 6 | 6 | EBD | 0 | 0 | Body Health"
     },
     {
       "type": "company",
@@ -102279,7 +102279,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Revance Therapeutics | Revance Therapeutics | Crown Laboratories | USA | North America | Acquired | Manufacturer | Crown Laboratories | Former NASDAQ:RVNC | Injectables | Revance Therapeutics | USA | USA | 1 | North America | Nashville, TN, USA | Acquired | Manufacturer | Acquired | Crown Laboratories | Former NASDAQ:RVNC | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:53+08:00 | 4 | 3 | Injectables | 0 | 0 | 2026-06-15T08:17:32+08:00 | https://finance.yahoo.com/quote/RVNC/financials/ | valuation_fetch_failed | 2026-06-15T08:17:32+08:00"
+      "search_text": "company | Revance Therapeutics | Revance Therapeutics | Crown Laboratories | USA | North America | Acquired | Manufacturer | Crown Laboratories | Former NASDAQ:RVNC | Injectables | Revance Therapeutics | USA | USA | 1 | North America | Nashville, TN, USA | Acquired | Manufacturer | Acquired | Crown Laboratories | Former NASDAQ:RVNC | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:53+08:00 | 4 | 3 | Injectables | 0 | 0 | 2026-06-15T08:17:32+08:00 | https://finance.yahoo.com/quote/RVNC/financials/ | valuation_fetch_failed | 2026-06-15T08:17:32+08:00 | Crown Laboratories"
     },
     {
       "type": "company",
@@ -102308,7 +102308,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Jeisys Medical | Jeisys Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Jeisys Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Private / Delisted | 5 | 2 | EBD | 0 | 0 | manual_verified_private_delisted"
+      "search_text": "company | Jeisys Medical | Jeisys Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Jeisys Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Private / Delisted | 5 | 2 | EBD | 0 | 0 | manual_verified_private_delisted | Jeisys Medical"
     },
     {
       "type": "company",
@@ -102337,7 +102337,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | ABG Lab LLC | ABG Lab LLC | USA | North America | Private | Manufacturer | Injectables | ABG Lab LLC | USA | USA | 1 | North America | New Jersey, USA | Private | Manufacturer | Active | 5 | 5 | Injectables | 0 | 0"
+      "search_text": "company | ABG Lab LLC | ABG Lab LLC | USA | North America | Private | Manufacturer | Injectables | ABG Lab LLC | USA | USA | 1 | North America | New Jersey, USA | Private | Manufacturer | Active | 5 | 5 | Injectables | 0 | 0 | ABG Lab LLC"
     },
     {
       "type": "company",
@@ -102366,7 +102366,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | APS | APS | Italy | Europe | Private | Manufacturer | EBD | APS | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | 意大利无创塑形与卡波西疗法专家"
+      "search_text": "company | APS | APS | Italy | Europe | Private | Manufacturer | EBD | APS | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | 意大利无创塑形与卡波西疗法专家 | APS"
     },
     {
       "type": "company",
@@ -102395,7 +102395,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | A.A.M.S. | A.A.M.S. | France | Europe | Private | Manufacturer | EBD | A.A.M.S. | France | France | 1 | Europe | Montrodat, France | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | A.A.M.S. | A.A.M.S. | France | Europe | Private | Manufacturer | EBD | A.A.M.S. | France | France | 1 | Europe | Montrodat, France | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | A.A.M.S."
     },
     {
       "type": "company",
@@ -102425,7 +102425,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | DEKA | DEKA | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | DEKA | Italy | Italy | 1 | Europe | Florence, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 10 | 10 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00"
+      "search_text": "company | DEKA | DEKA | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | DEKA | Italy | Italy | 1 | Europe | Florence, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 10 | 10 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102454,7 +102454,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Apyx Medical | Apyx Medical | USA | North America | Public | Manufacturer | NASDAQ:APYX | EBD | Apyx Medical | USA | USA | 1 | North America | Clearwater, FL, USA | Public | Manufacturer | Active | NASDAQ:APYX | 52.84 | 2025 | 62.53 | 171.26 | 2026-06-15T08:17:36+08:00 | 3.24 | 100 | 5 | 5 | EBD | 1 | 0 | 氦等离子体紧肤技术先驱 | 4.69 | USD | 0.86 | https://query1.finance.yahoo.com/v8/finance/chart/APYX?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000719135.json | official_sec_xbrl_auto | -15.28 | 11.78 | -0.54 | -0.54 | 52.22 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-03-10 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Apyx Medical | Apyx Medical | USA | North America | Public | Manufacturer | NASDAQ:APYX | EBD | Apyx Medical | USA | USA | 1 | North America | Clearwater, FL, USA | Public | Manufacturer | Active | NASDAQ:APYX | 52.84 | 2025 | 62.53 | 171.26 | 2026-06-15T08:17:36+08:00 | 3.24 | 100 | 5 | 5 | EBD | 1 | 0 | 氦等离子体紧肤技术先驱 | 4.69 | USD | 0.86 | https://query1.finance.yahoo.com/v8/finance/chart/APYX?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000719135.json | official_sec_xbrl_auto | -15.28 | 11.78 | -0.54 | -0.54 | 52.22 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-03-10 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Apyx Medical"
     },
     {
       "type": "company",
@@ -102483,7 +102483,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | VIVACY | VIVACY | France | Europe | Private | Manufacturer | Injectables | VIVACY | France | France | 1 | Europe | Paris, France | Private | Manufacturer | Active | 5 | 3 | Injectables | 0 | 0"
+      "search_text": "company | VIVACY | VIVACY | France | Europe | Private | Manufacturer | Injectables | VIVACY | France | France | 1 | Europe | Paris, France | Private | Manufacturer | Active | 5 | 3 | Injectables | 0 | 0 | VIVACY"
     },
     {
       "type": "company",
@@ -102512,7 +102512,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Alvi Prague | Alvi Prague | Czech Republic | Europe | Private | Manufacturer | EBD | Alvi Prague | Czech Republic | Czech Republic | 1 | Other | Prague, Czech Republic | Private | Manufacturer | Active | 5 | 5 | EBD | 0 | 0 | HIFU 与激光设备为主的捷克医美能量设备厂商"
+      "search_text": "company | Alvi Prague | Alvi Prague | Czech Republic | Europe | Private | Manufacturer | EBD | Alvi Prague | Czech Republic | Czech Republic | 1 | Other | Prague, Czech Republic | Private | Manufacturer | Active | 5 | 5 | EBD | 0 | 0 | HIFU 与激光设备为主的捷克医美能量设备厂商 | Alvi Prague"
     },
     {
       "type": "company",
@@ -102542,7 +102542,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Asclepion | Asclepion | El.En. | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 5 | 5 | EBD | 1 | 1 | 德国耶拿医美激光与能量设备制造商 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00"
+      "search_text": "company | Asclepion | Asclepion | El.En. | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 5 | 5 | EBD | 1 | 1 | 德国耶拿医美激光与能量设备制造商 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:35:11+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102572,7 +102572,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | CGBIO / Cell Growth Bio | CGBIO | Cell Growth Bio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | CGBIO / Cell Growth Bio | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Pre-IPO | 7 | 6 | Injectables | 0 | 2"
+      "search_text": "company | CGBIO / Cell Growth Bio | CGBIO | Cell Growth Bio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | CGBIO / Cell Growth Bio | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Pre-IPO | 7 | 6 | Injectables | 0 | 2 | CGBIO / Cell Growth Bio"
     },
     {
       "type": "company",
@@ -102601,7 +102601,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dongkook Pharma | Dongkook Pharma | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086450 | Injectables | Dongkook Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:086450 | 648.82 | 2025 | 54.12 | 644.02 | 2026-05-26T14:30:22+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 19180.0 | KRW | 1.27 | https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d | 2026-06-12T14:30:16+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:16+08:00"
+      "search_text": "company | Dongkook Pharma | Dongkook Pharma | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086450 | Injectables | Dongkook Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:086450 | 648.82 | 2025 | 54.12 | 644.02 | 2026-05-26T14:30:22+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 19180.0 | KRW | 1.27 | https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d | 2026-06-12T14:30:16+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:16+08:00 | Dongkook Pharma"
     },
     {
       "type": "company",
@@ -102630,7 +102630,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Daewoong | Daewoong | South Korea | Asia-Pacific | Public | Manufacturer | KRX:069620 | Injectables | Daewoong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | 1099.62 | 2025 | 52.36 | 1084.93 | 2024-07-20T04:00:00+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 118200.0 | KRW | -1.75 | https://query1.finance.yahoo.com/v8/finance/chart/069620.KQ?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://www.daewoong.co.kr/eng/ir/disclosure.php | pending_collection | 2024-07-20T04:00:00+08:00 | K_IFRS_consolidated"
+      "search_text": "company | Daewoong | Daewoong | South Korea | Asia-Pacific | Public | Manufacturer | KRX:069620 | Injectables | Daewoong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | 1099.62 | 2025 | 52.36 | 1084.93 | 2024-07-20T04:00:00+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 118200.0 | KRW | -1.75 | https://query1.finance.yahoo.com/v8/finance/chart/069620.KQ?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://www.daewoong.co.kr/eng/ir/disclosure.php | pending_collection | 2024-07-20T04:00:00+08:00 | K_IFRS_consolidated | Daewoong"
     },
     {
       "type": "company",
@@ -102659,7 +102659,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Asclepion Laser | Asclepion Laser | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion Laser | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | ELN.MI | 735 | 2024 | 37 | 1293.02 | 2026-06-15T08:18:00+08:00 | 1.76 | 5 | 5 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://www.elengroup.com/en/investors/financial-results | manual_pending_verification | 2026-06-12T23:35:11+08:00 | FY2024 | 2025-03-15 | Manual IR annual report | 2026-06-15T08:18:00+08:00"
+      "search_text": "company | Asclepion Laser | Asclepion Laser | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion Laser | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 735 | 2024 | 37 | 1293.02 | 2026-06-15T08:18:00+08:00 | 1.76 | 5 | 5 | EBD | 0 | 0 | 16.46 | EUR | -1.44 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | 2026-06-12T23:35:11+08:00 | https://www.elengroup.com/en/investors/financial-results | manual_pending_verification | 2026-06-12T23:35:11+08:00 | FY2024 | 2025-03-15 | Manual IR annual report | 2026-06-15T08:18:00+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102688,7 +102688,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Across | Across | South Korea | Asia-Pacific | Subsidiary | Manufacturer | Hugel | KRX:145020 | Injectables | Across | South Korea | South Korea | 1 | Asia-Pacific | Gangwon-do, South Korea | Subsidiary | Manufacturer | Active | KRX:145020 | 2012.13 | 2026-05-26T14:30:03+08:00 | 5 | 5 | Injectables | 0 | 0 | 244500.0 | KRW | -0.41 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00"
+      "search_text": "company | Across | Across | South Korea | Asia-Pacific | Subsidiary | Manufacturer | Hugel | KRX:145020 | Injectables | Across | South Korea | South Korea | 1 | Asia-Pacific | Gangwon-do, South Korea | Subsidiary | Manufacturer | Active | Hugel | KRX:145020 | 2012.13 | 2026-05-26T14:30:03+08:00 | 5 | 5 | Injectables | 0 | 0 | 244500.0 | KRW | -0.41 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00 | Hugel"
     },
     {
       "type": "company",
@@ -102717,7 +102717,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Canfield Scientific | Canfield Scientific | USA | North America | Private | Manufacturer | Diagnostics | Canfield Scientific | USA | USA | 1 | North America | Fairfield, NJ, USA | Private | Manufacturer | Active | 4 | 4 | Diagnostics | 0 | 0"
+      "search_text": "company | Canfield Scientific | Canfield Scientific | USA | North America | Private | Manufacturer | Diagnostics | Canfield Scientific | USA | USA | 1 | North America | Fairfield, NJ, USA | Private | Manufacturer | Active | 4 | 4 | Diagnostics | 0 | 0 | Canfield Scientific"
     },
     {
       "type": "company",
@@ -102746,7 +102746,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Celling Biosciences | Celling Biosciences | USA | North America | Private | Manufacturer | EBD | Celling Biosciences | USA | USA | 1 | North America | Austin, TX, USA | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0"
+      "search_text": "company | Celling Biosciences | Celling Biosciences | USA | North America | Private | Manufacturer | EBD | Celling Biosciences | USA | USA | 1 | North America | Austin, TX, USA | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0 | Celling Biosciences"
     },
     {
       "type": "company",
@@ -102775,7 +102775,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cha Meditech | Cha Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:085660 | Injectables | Cha Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:085660 | 762.56 | 2026-05-26T14:30:24+08:00 | 4 | 4 | Injectables | 0 | 0 | 11880.0 | KRW | 1.19 | https://query1.finance.yahoo.com/v8/finance/chart/085660.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/085660.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00"
+      "search_text": "company | Cha Meditech | Cha Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:085660 | Injectables | Cha Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:085660 | 762.56 | 2026-05-26T14:30:24+08:00 | 4 | 4 | Injectables | 0 | 0 | 11880.0 | KRW | 1.19 | https://query1.finance.yahoo.com/v8/finance/chart/085660.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/085660.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00 | Cha Meditech"
     },
     {
       "type": "company",
@@ -102804,7 +102804,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Asterasys | Asterasys | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Asterasys | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0"
+      "search_text": "company | Asterasys | Asterasys | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Asterasys | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0 | Asterasys"
     },
     {
       "type": "company",
@@ -102833,7 +102833,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Arkana Cosmetics | Arkana Cosmetics | Poland | Europe | Private | Manufacturer | Skincare | Arkana Cosmetics | Poland | Poland | 1 | Other | Wrocław, Poland | Private | Manufacturer | Active | 4 | 4 | Skincare | 0 | 0"
+      "search_text": "company | Arkana Cosmetics | Arkana Cosmetics | Poland | Europe | Private | Manufacturer | Skincare | Arkana Cosmetics | Poland | Poland | 1 | Other | Wrocław, Poland | Private | Manufacturer | Active | 4 | 4 | Skincare | 0 | 0 | Arkana Cosmetics"
     },
     {
       "type": "company",
@@ -102862,7 +102862,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Aptos | Aptos | Germany | Europe | Private | Manufacturer | Injectables | Aptos | Germany | Germany | 1 | Europe | Berlin, Germany | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0 | 德国线雕技术标杆，教科书级提拉线"
+      "search_text": "company | Aptos | Aptos | Germany | Europe | Private | Manufacturer | Injectables | Aptos | Germany | Germany | 1 | Europe | Berlin, Germany | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0 | 德国线雕技术标杆，教科书级提拉线 | Aptos"
     },
     {
       "type": "company",
@@ -102892,7 +102892,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | PharmaResearch / PR Bio | PharmaResearch | PR Bio | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214450 | Injectables | PharmaResearch / PR Bio | South Korea | South Korea | 1 | Asia-Pacific | Gangneung, South Korea | Public | Manufacturer | Active | KRX:214450 | 375.4 | 2025 | 76.68 | 2186.08 | 2026-05-26T14:30:24+08:00 | 5.82 | 100 | 4 | 1 | Injectables | 0 | 0 | 289000.0 | KRW | 0.17 | https://query1.finance.yahoo.com/v8/finance/chart/214450.KQ?range=5d&interval=1d | 2026-06-12T14:30:12+08:00 | https://www.pharmaresearchbio.com/en/investors | pending_collection | 2026-06-12T14:30:12+08:00 | K_IFRS_consolidated"
+      "search_text": "company | PharmaResearch / PR Bio | PharmaResearch | PR Bio | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214450 | Injectables | PharmaResearch / PR Bio | South Korea | South Korea | 1 | Asia-Pacific | Gangneung, South Korea | Public | Manufacturer | Active | KRX:214450 | 375.4 | 2025 | 76.68 | 2186.08 | 2026-05-26T14:30:24+08:00 | 5.82 | 100 | 4 | 1 | Injectables | 0 | 0 | 289000.0 | KRW | 0.17 | https://query1.finance.yahoo.com/v8/finance/chart/214450.KQ?range=5d&interval=1d | 2026-06-12T14:30:12+08:00 | https://www.pharmaresearchbio.com/en/investors | pending_collection | 2026-06-12T14:30:12+08:00 | K_IFRS_consolidated | PharmaResearch / PR Bio"
     },
     {
       "type": "company",
@@ -102921,7 +102921,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | NOBAMEDI | NOBAMEDI | South Korea | Asia-Pacific | Private | Manufacturer | Consumables | NOBAMEDI | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 4 | 4 | Consumables | 0 | 0"
+      "search_text": "company | NOBAMEDI | NOBAMEDI | South Korea | Asia-Pacific | Private | Manufacturer | Consumables | NOBAMEDI | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 4 | 4 | Consumables | 0 | 0 | NOBAMEDI"
     },
     {
       "type": "company",
@@ -102950,7 +102950,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Bison Medical | Bison Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Bison Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0"
+      "search_text": "company | Bison Medical | Bison Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Bison Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0 | Bison Medical"
     },
     {
       "type": "company",
@@ -102979,7 +102979,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Promoitalia | Promoitalia | Italy | Europe | Private | Manufacturer | Skincare | Promoitalia | Italy | Italy | 1 | Europe | Milan, Italy | Private | Manufacturer | Active | 4 | 3 | Skincare | 0 | 0"
+      "search_text": "company | Promoitalia | Promoitalia | Italy | Europe | Private | Manufacturer | Skincare | Promoitalia | Italy | Italy | 1 | Europe | Milan, Italy | Private | Manufacturer | Active | 4 | 3 | Skincare | 0 | 0 | Promoitalia"
     },
     {
       "type": "company",
@@ -103008,7 +103008,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Needle Concept | Needle Concept | France | Europe | Private | Manufacturer | Injectables | Needle Concept | France | France | 1 | Europe | Biarritz, France | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0"
+      "search_text": "company | Needle Concept | Needle Concept | France | Europe | Private | Manufacturer | Injectables | Needle Concept | France | France | 1 | Europe | Biarritz, France | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0 | Needle Concept"
     },
     {
       "type": "company",
@@ -103037,7 +103037,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | GANA | GANA | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | GANA | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Active | 4 | 1 | Injectables | 0 | 0"
+      "search_text": "company | GANA | GANA | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | GANA | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Active | 4 | 1 | Injectables | 0 | 0 | GANA"
     },
     {
       "type": "company",
@@ -103066,7 +103066,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Professional Derma | Professional Derma | Switzerland | Europe | Private | Manufacturer | Injectables | Professional Derma | Switzerland | Switzerland | 1 | Europe | Lugano, Switzerland | Private | Manufacturer | Active | 4 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Professional Derma | Professional Derma | Switzerland | Europe | Private | Manufacturer | Injectables | Professional Derma | Switzerland | Switzerland | 1 | Europe | Lugano, Switzerland | Private | Manufacturer | Active | 4 | 1 | Injectables | 0 | 0 | Professional Derma"
     },
     {
       "type": "company",
@@ -103095,7 +103095,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cocoon Medical | Cocoon Medical | Spain | Europe | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Cocoon Medical | Spain | Spain | 1 | Europe | Barcelona, Spain | Subsidiary | Manufacturer | Active | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 3 | 3 | EBD | 0 | 0 | 29.11 | CNY | -0.07 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | 2026-06-12T15:04:42+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T15:04:42+08:00"
+      "search_text": "company | Cocoon Medical | Cocoon Medical | Spain | Europe | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Cocoon Medical | Spain | Spain | 1 | Europe | Barcelona, Spain | Subsidiary | Manufacturer | Active | Huadong Medicine | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 3 | 3 | EBD | 0 | 0 | 29.11 | CNY | -0.07 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | 2026-06-12T15:04:42+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T15:04:42+08:00 | Huadong Medicine"
     },
     {
       "type": "company",
@@ -103124,7 +103124,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BioFormula | BioFormula | Italy | Europe | Private | Manufacturer | Injectables | BioFormula | Italy | Italy | 1 | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0"
+      "search_text": "company | BioFormula | BioFormula | Italy | Europe | Private | Manufacturer | Injectables | BioFormula | Italy | Italy | 1 | Europe | Usmate Velate, Italy | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0 | 意大利高性价比医美注射剂制造商 | BioFormula"
     },
     {
       "type": "company",
@@ -103153,7 +103153,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Koru Pharma | Koru Pharma | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Koru Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Koru Pharma | Koru Pharma | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Koru Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 2 | Injectables | 0 | 0 | Koru Pharma"
     },
     {
       "type": "company",
@@ -103182,7 +103182,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Jetema | Jetema | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216080 | Injectables | Jetema | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:216080 | 53.83 | 2025 | 47.9 | 142.73 | 2026-05-26T14:30:30+08:00 | 2.65 | 100 | 3 | 3 | Injectables | 0 | 0 | 4855.0 | KRW | 0.31 | https://query1.finance.yahoo.com/v8/finance/chart/216080.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/216080.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00"
+      "search_text": "company | Jetema | Jetema | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216080 | Injectables | Jetema | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:216080 | 53.83 | 2025 | 47.9 | 142.73 | 2026-05-26T14:30:30+08:00 | 2.65 | 100 | 3 | 3 | Injectables | 0 | 0 | 4855.0 | KRW | 0.31 | https://query1.finance.yahoo.com/v8/finance/chart/216080.KQ?range=5d&interval=1d | 2026-06-12T14:30:30+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/216080.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:30+08:00 | Jetema"
     },
     {
       "type": "company",
@@ -103211,7 +103211,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Bio-Therapeutic | Bio-Therapeutic | USA | North America | Private | Manufacturer | EBD | Bio-Therapeutic | USA | USA | 1 | North America | Seattle, WA, USA | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0"
+      "search_text": "company | Bio-Therapeutic | Bio-Therapeutic | USA | North America | Private | Manufacturer | EBD | Bio-Therapeutic | USA | USA | 1 | North America | Seattle, WA, USA | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0 | Bio-Therapeutic"
     },
     {
       "type": "company",
@@ -103240,7 +103240,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Adoderm | Adoderm | Germany | Europe | Private | Manufacturer | Injectables | Adoderm | Germany | Germany | 1 | Europe | Langenfeld, Germany | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0"
+      "search_text": "company | Adoderm | Adoderm | Germany | Europe | Private | Manufacturer | Injectables | Adoderm | Germany | Germany | 1 | Europe | Langenfeld, Germany | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0 | Adoderm"
     },
     {
       "type": "company",
@@ -103269,7 +103269,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Abio Materials | Abio Materials | South Korea | Asia-Pacific | Private | Manufacturer | Regenerative | Abio Materials | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 4 | 4 | Regenerative | 0 | 0"
+      "search_text": "company | Abio Materials | Abio Materials | South Korea | Asia-Pacific | Private | Manufacturer | Regenerative | Abio Materials | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 4 | 4 | Regenerative | 0 | 0 | Abio Materials"
     },
     {
       "type": "company",
@@ -103298,7 +103298,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Alta Care | Alta Care | France | Europe | Private | Manufacturer | Injectables | Alta Care | France | France, Italy | 2 | Europe | Paris, France | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | 法国皮肤动能素与真空护肤专家"
+      "search_text": "company | Alta Care | Alta Care | France | Europe | Private | Manufacturer | Injectables | Alta Care | France | France, Italy | 2 | Europe | Paris, France | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | 法国皮肤动能素与真空护肤专家 | Alta Care"
     },
     {
       "type": "company",
@@ -103327,7 +103327,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Advanced Aesthetic | Advanced Aesthetic | USA | North America | Private | Manufacturer | Injectables | Advanced Aesthetic | USA | USA | 1 | North America | Brookline, MA, USA | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 1 | 全球唯一琼脂糖填充剂制造商"
+      "search_text": "company | Advanced Aesthetic | Advanced Aesthetic | USA | North America | Private | Manufacturer | Injectables | Advanced Aesthetic | USA | USA | 1 | North America | Brookline, MA, USA | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 1 | 全球唯一琼脂糖填充剂制造商 | Advanced Aesthetic"
     },
     {
       "type": "company",
@@ -103356,7 +103356,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Crown | Crown | USA | North America | Private | Manufacturer | EBD | Crown | USA | USA | 1 | North America | Dallas, TX, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Crown | Crown | USA | North America | Private | Manufacturer | EBD | Crown | USA | USA | 1 | North America | Dallas, TX, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Crown"
     },
     {
       "type": "company",
@@ -103385,7 +103385,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Croma Pharma | Croma Pharma | Austria | Europe | Private | Manufacturer | Injectables | Croma Pharma | Austria | Austria | 1 | Other | Leobendorf, Austria | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0"
+      "search_text": "company | Croma Pharma | Croma Pharma | Austria | Europe | Private | Manufacturer | Injectables | Croma Pharma | Austria | Austria | 1 | Other | Leobendorf, Austria | Private | Manufacturer | Active | 4 | 4 | Injectables | 0 | 0 | Croma Pharma"
     },
     {
       "type": "company",
@@ -103414,7 +103414,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cliniccare | Cliniccare | Sweden | Europe | Private | Manufacturer | EBD | Cliniccare | Sweden | Sweden | 1 | Other | Stockholm, Sweden | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0"
+      "search_text": "company | Cliniccare | Cliniccare | Sweden | Europe | Private | Manufacturer | EBD | Cliniccare | Sweden | Sweden | 1 | Other | Stockholm, Sweden | Private | Manufacturer | Active | 4 | 4 | EBD | 0 | 0 | Cliniccare"
     },
     {
       "type": "company",
@@ -103443,7 +103443,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | HansBiomed. | HansBiomed. | South Korea | Asia-Pacific | Public | Manufacturer | KRX:042520 | Implants | HansBiomed. | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:042520 | 62.85 | 2025 | 57.38 | 219.49 | 2026-05-26T14:30:11+08:00 | 3.49 | 100 | 4 | 4 | Implants | 0 | 0 | 25400.0 | KRW | -1.36 | https://query1.finance.yahoo.com/v8/finance/chart/042520.KQ?range=5d&interval=1d | 2026-06-12T14:30:27+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/042520.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:27+08:00"
+      "search_text": "company | HansBiomed. | HansBiomed. | South Korea | Asia-Pacific | Public | Manufacturer | KRX:042520 | Implants | HansBiomed. | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:042520 | 62.85 | 2025 | 57.38 | 219.49 | 2026-05-26T14:30:11+08:00 | 3.49 | 100 | 4 | 4 | Implants | 0 | 0 | 25400.0 | KRW | -1.36 | https://query1.finance.yahoo.com/v8/finance/chart/042520.KQ?range=5d&interval=1d | 2026-06-12T14:30:27+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/042520.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:27+08:00 | HansBiomed."
     },
     {
       "type": "company",
@@ -103472,7 +103472,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Korust | Korust | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Korust | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Private | Manufacturer | Active | 3 | 2 | EBD | 0 | 0"
+      "search_text": "company | Korust | Korust | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Korust | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Private | Manufacturer | Active | 3 | 2 | EBD | 0 | 0 | Korust"
     },
     {
       "type": "company",
@@ -103501,7 +103501,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Biotec | Biotec | Italy | Europe | Private | Manufacturer | EBD | Biotec | Italy | Italy | 1 | Europe | Dueville, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Biotec | Biotec | Italy | Europe | Private | Manufacturer | EBD | Biotec | Italy | Italy | 1 | Europe | Dueville, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Biotec"
     },
     {
       "type": "company",
@@ -103530,7 +103530,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Mesoestetic Pharma | Mesoestetic Pharma | Spain | Europe | Private | Manufacturer | Skincare | Mesoestetic Pharma | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0"
+      "search_text": "company | Mesoestetic Pharma | Mesoestetic Pharma | Spain | Europe | Private | Manufacturer | Skincare | Mesoestetic Pharma | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0 | Mesoestetic Pharma"
     },
     {
       "type": "company",
@@ -103559,7 +103559,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Aquavit Pharmaceuticals | Aquavit Pharmaceuticals | USA | North America | Private | Manufacturer | Consumables | Aquavit Pharmaceuticals | USA | USA | 1 | North America | New York, USA | Private | Manufacturer | Active | 3 | 3 | Consumables | 0 | 0 | 微滴注射黄金微针开创者"
+      "search_text": "company | Aquavit Pharmaceuticals | Aquavit Pharmaceuticals | USA | North America | Private | Manufacturer | Consumables | Aquavit Pharmaceuticals | USA | USA | 1 | North America | New York, USA | Private | Manufacturer | Active | 3 | 3 | Consumables | 0 | 0 | 微滴注射黄金微针开创者 | Aquavit Pharmaceuticals"
     },
     {
       "type": "company",
@@ -103588,7 +103588,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Tentech | Tentech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Tentech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Pre-IPO | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Tentech | Tentech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Tentech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Pre-IPO | 3 | 3 | EBD | 0 | 0 | Tentech"
     },
     {
       "type": "company",
@@ -103617,7 +103617,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BR Pharm | BR Pharm | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | BR Pharm | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | BR Pharm | BR Pharm | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | BR Pharm | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | BR Pharm"
     },
     {
       "type": "company",
@@ -103646,7 +103646,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Arthrex | Arthrex | USA | North America | Private | Manufacturer | Consumables | Arthrex | USA | USA | 1 | North America | Naples, FL, USA | Private | Manufacturer | Active | 3 | 3 | Consumables | 0 | 0 | 运动医学与再生领域的全球标杆"
+      "search_text": "company | Arthrex | Arthrex | USA | North America | Private | Manufacturer | Consumables | Arthrex | USA | USA | 1 | North America | Naples, FL, USA | Private | Manufacturer | Active | 3 | 3 | Consumables | 0 | 0 | 运动医学与再生领域的全球标杆 | Arthrex"
     },
     {
       "type": "company",
@@ -103675,7 +103675,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | CMed Aesthetics | CMed Aesthetics | Italy | Europe | Private | Manufacturer | Injectables | CMed Aesthetics | Italy | Italy | 1 | Europe | Pisa, Italy | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | CMed Aesthetics | CMed Aesthetics | Italy | Europe | Private | Manufacturer | Injectables | CMed Aesthetics | Italy | Italy | 1 | Europe | Pisa, Italy | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | CMed Aesthetics"
     },
     {
       "type": "company",
@@ -103704,7 +103704,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Baz Biomedic | Baz Biomedic | South Korea | Asia-Pacific | Private | Manufacturer | Skincare | Baz Biomedic | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Skincare | 0 | 0"
+      "search_text": "company | Baz Biomedic | Baz Biomedic | South Korea | Asia-Pacific | Private | Manufacturer | Skincare | Baz Biomedic | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Skincare | 0 | 0 | Baz Biomedic"
     },
     {
       "type": "company",
@@ -103733,7 +103733,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Arion | Arion | France | Europe | Private | Manufacturer | Implants | Arion | France | France | 1 | Europe | Mandelieu-la-Napoule, France | Private | Manufacturer | Active | 3 | 3 | Implants | 0 | 0"
+      "search_text": "company | Arion | Arion | France | Europe | Private | Manufacturer | Implants | Arion | France | France | 1 | Europe | Mandelieu-la-Napoule, France | Private | Manufacturer | Active | 3 | 3 | Implants | 0 | 0 | Arion"
     },
     {
       "type": "company",
@@ -103762,7 +103762,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Zepter | Zepter | Switzerland | Europe | Private | Manufacturer | EBD | Zepter | Switzerland | Switzerland | 1 | Europe | Wollerau, Switzerland | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Zepter | Zepter | Switzerland | Europe | Private | Manufacturer | EBD | Zepter | Switzerland | Switzerland | 1 | Europe | Wollerau, Switzerland | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Zepter"
     },
     {
       "type": "company",
@@ -103791,7 +103791,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Bomtech Electronics | Bomtech Electronics | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Bomtech Electronics | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Bomtech Electronics | Bomtech Electronics | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Bomtech Electronics | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Bomtech Electronics"
     },
     {
       "type": "company",
@@ -103820,7 +103820,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dives Med | Dives Med | Poland | Europe | Private | Brand Owner | Injectables | Dives Med | Poland | Poland | 1 | Other | Warsaw, Poland | Private | Brand Owner | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | Dives Med | Dives Med | Poland | Europe | Private | Brand Owner | Injectables | Dives Med | Poland | Poland | 1 | Other | Warsaw, Poland | Private | Brand Owner | Active | 3 | 3 | Injectables | 0 | 0 | Dives Med"
     },
     {
       "type": "company",
@@ -103849,7 +103849,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dongbang Medical | Dongbang Medical | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Dongbang Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 2 | Injectables | 0 | 2"
+      "search_text": "company | Dongbang Medical | Dongbang Medical | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Dongbang Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 4 | 2 | Injectables | 0 | 2 | Dongbang Medical"
     },
     {
       "type": "company",
@@ -103878,7 +103878,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BRERA Medical | BRERA Medical | Italy | Europe | Private | Manufacturer | EBD | BRERA Medical | Italy | Italy | 1 | Europe | Ogliastro Cilento, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | BRERA Medical | BRERA Medical | Italy | Europe | Private | Manufacturer | EBD | BRERA Medical | Italy | Italy | 1 | Europe | Ogliastro Cilento, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | BRERA Medical"
     },
     {
       "type": "company",
@@ -103907,7 +103907,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BNC Korea | BNC Korea | South Korea | Asia-Pacific | Public | Manufacturer | KRX:256840 | Injectables | BNC Korea | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:256840 | 67.13 | 2025 | 41.06 | 161.78 | 2026-05-26T14:30:21+08:00 | 2.41 | 7 | 5 | Injectables | 0 | 4 | 2875.0 | KRW | 1.59 | https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d | 2026-06-12T14:30:18+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:18+08:00"
+      "search_text": "company | BNC Korea | BNC Korea | South Korea | Asia-Pacific | Public | Manufacturer | KRX:256840 | Injectables | BNC Korea | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:256840 | 67.13 | 2025 | 41.06 | 161.78 | 2026-05-26T14:30:21+08:00 | 2.41 | 7 | 5 | Injectables | 0 | 4 | 2875.0 | KRW | 1.59 | https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d | 2026-06-12T14:30:18+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:18+08:00 | BNC Korea"
     },
     {
       "type": "company",
@@ -103936,7 +103936,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Aurora Medical | Aurora Medical | Slovakia | Europe | Private | Manufacturer | EBD | Aurora Medical | Slovakia | Slovakia | 1 | Other | Košice, Slovakia | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Aurora Medical | Aurora Medical | Slovakia | Europe | Private | Manufacturer | EBD | Aurora Medical | Slovakia | Slovakia | 1 | Other | Košice, Slovakia | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Aurora Medical"
     },
     {
       "type": "company",
@@ -103965,7 +103965,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Biopark Medical | Biopark Medical | Turkey | Middle East | Private | Manufacturer | Injectables | Biopark Medical | Turkey | Turkey | 1 | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | Biopark Medical | Biopark Medical | Turkey | Middle East | Private | Manufacturer | Injectables | Biopark Medical | Turkey | Turkey | 1 | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | AI驱动的土耳其医美注射方案商 | Biopark Medical"
     },
     {
       "type": "company",
@@ -103994,7 +103994,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Biovico | Biovico | Poland | Europe | Private | Manufacturer | EBD | Biovico | Poland | Poland | 1 | Other | Gdynia, Poland | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | Biovico | Biovico | Poland | Europe | Private | Manufacturer | EBD | Biovico | Poland | Poland | 1 | Other | Gdynia, Poland | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | Biovico"
     },
     {
       "type": "company",
@@ -104023,7 +104023,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BenQ | BenQ | Taiwan | Asia-Pacific | Public | Manufacturer | 8215.TW | Skincare | BenQ | Taiwan | Taiwan | 1 | Asia-Pacific | Taoyuan, Taiwan | Public | Manufacturer | Active | 8215.TW | 567.5 | 2025 | 14.45 | 274.05 | 2026-05-26T13:30:36+08:00 | 0.48 | 3 | 3 | Skincare | 0 | 0 | 28.65 | TWD | 0.35 | https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d | 2026-06-12T13:30:07+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T13:30:07+08:00"
+      "search_text": "company | BenQ | BenQ | Taiwan | Asia-Pacific | Public | Manufacturer | 8215.TW | Skincare | BenQ | Taiwan | Taiwan | 1 | Asia-Pacific | Taoyuan, Taiwan | Public | Manufacturer | Active | 8215.TW | 567.5 | 2025 | 14.45 | 274.05 | 2026-05-26T13:30:36+08:00 | 0.48 | 3 | 3 | Skincare | 0 | 0 | 28.65 | TWD | 0.35 | https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d | 2026-06-12T13:30:07+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T13:30:07+08:00 | BenQ"
     },
     {
       "type": "company",
@@ -104052,7 +104052,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dermaceutic | Dermaceutic | France | Europe | Private | Manufacturer | Skincare | Dermaceutic | France | France | 1 | Europe | Paris, France | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0"
+      "search_text": "company | Dermaceutic | Dermaceutic | France | Europe | Private | Manufacturer | Skincare | Dermaceutic | France | France | 1 | Europe | Paris, France | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0 | Dermaceutic"
     },
     {
       "type": "company",
@@ -104081,7 +104081,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | DermapenWorld | DermapenWorld | Australia | Asia-Pacific | Private | Manufacturer | EBD | DermapenWorld | Australia | Australia | 1 | Asia-Pacific | Sydney, Australia | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | DermapenWorld | DermapenWorld | Australia | Asia-Pacific | Private | Manufacturer | EBD | DermapenWorld | Australia | Australia | 1 | Asia-Pacific | Sydney, Australia | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | DermapenWorld"
     },
     {
       "type": "company",
@@ -104110,7 +104110,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dermaroller | Dermaroller | Germany | Europe | Private | Manufacturer | EBD | Dermaroller | Germany | Germany | 1 | Europe | Wolfenbüttel, Germany | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Dermaroller | Dermaroller | Germany | Europe | Private | Manufacturer | EBD | Dermaroller | Germany | Germany | 1 | Europe | Wolfenbüttel, Germany | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Dermaroller"
     },
     {
       "type": "company",
@@ -104139,7 +104139,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dermalux | Dermalux | UK | Europe | Private | Manufacturer | EBD | Dermalux | UK | UK | 1 | Europe | Manchester, UK | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Dermalux | Dermalux | UK | Europe | Private | Manufacturer | EBD | Dermalux | UK | UK | 1 | Europe | Manchester, UK | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Dermalux"
     },
     {
       "type": "company",
@@ -104168,7 +104168,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dermoaroma | Dermoaroma | Italy | Europe | Private | Manufacturer | Skincare | Dermoaroma | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0"
+      "search_text": "company | Dermoaroma | Dermoaroma | Italy | Europe | Private | Manufacturer | Skincare | Dermoaroma | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0 | Dermoaroma"
     },
     {
       "type": "company",
@@ -104197,7 +104197,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Daeyang Medical | Daeyang Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Daeyang Medical | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Daeyang Medical | Daeyang Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Daeyang Medical | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Daeyang Medical"
     },
     {
       "type": "company",
@@ -104226,7 +104226,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dexlevo | Dexlevo | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Dexlevo | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | Dexlevo | Dexlevo | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Dexlevo | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | Dexlevo"
     },
     {
       "type": "company",
@@ -104255,7 +104255,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Deleo | Deleo | France | Europe | Private | Manufacturer | EBD | Deleo | France | France | 1 | Europe | Fréjus, France | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Deleo | Deleo | France | Europe | Private | Manufacturer | EBD | Deleo | France | France | 1 | Europe | Fréjus, France | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Deleo"
     },
     {
       "type": "company",
@@ -104284,7 +104284,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Decomedical | Decomedical | Italy | Europe | Private | Manufacturer | EBD | Decomedical | Italy | Italy | 1 | Europe | Salerno, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Decomedical | Decomedical | Italy | Europe | Private | Manufacturer | EBD | Decomedical | Italy | Italy | 1 | Europe | Salerno, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Decomedical"
     },
     {
       "type": "company",
@@ -104313,7 +104313,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Bluecore | Bluecore | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Bluecore | South Korea | South Korea | 1 | Asia-Pacific | Busan, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Bluecore | Bluecore | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Bluecore | South Korea | South Korea | 1 | Asia-Pacific | Busan, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Bluecore"
     },
     {
       "type": "company",
@@ -104342,7 +104342,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Chaeum Pharma | Chaeum Pharma | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Chaeum Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | Chaeum Pharma | Chaeum Pharma | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Chaeum Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | Chaeum Pharma"
     },
     {
       "type": "company",
@@ -104371,7 +104371,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Blue Moon | Blue Moon | Italy | Europe | Private | Manufacturer | EBD | Blue Moon | Italy | Italy | 1 | Europe | Trezzano sul Naviglio, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Blue Moon | Blue Moon | Italy | Europe | Private | Manufacturer | EBD | Blue Moon | Italy | Italy | 1 | Europe | Trezzano sul Naviglio, Italy | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Blue Moon"
     },
     {
       "type": "company",
@@ -104400,7 +104400,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Brymill | Brymill | USA | North America | Private | Manufacturer | EBD | Brymill | USA | USA | 1 | North America | Ellington, CT, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Brymill | Brymill | USA | North America | Private | Manufacturer | EBD | Brymill | USA | USA | 1 | North America | Ellington, CT, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Brymill"
     },
     {
       "type": "company",
@@ -104429,7 +104429,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BMED | BMED | Germany | Europe | Private | Manufacturer | Surgical | BMED | Germany | Germany | 1 | Europe | Tuttlingen, Germany | Private | Manufacturer | Active | 3 | 1 | Surgical | 0 | 0"
+      "search_text": "company | BMED | BMED | Germany | Europe | Private | Manufacturer | Surgical | BMED | Germany | Germany | 1 | Europe | Tuttlingen, Germany | Private | Manufacturer | Active | 3 | 1 | Surgical | 0 | 0 | BMED"
     },
     {
       "type": "company",
@@ -104458,7 +104458,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dr. Babor | Dr. Babor | Germany | Europe | Private | Manufacturer | EBD | Dr. Babor | Germany | Germany | 1 | Europe | Aachen, Germany | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | Dr. Babor | Dr. Babor | Germany | Europe | Private | Manufacturer | EBD | Dr. Babor | Germany | Germany | 1 | Europe | Aachen, Germany | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | Dr. Babor"
     },
     {
       "type": "company",
@@ -104488,7 +104488,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Pollogen | Pollogen | Lumenis → Boston Scientific | Israel | Middle East | Private | Manufacturer | Lumenis → Boston Scientific | EBD | Pollogen | Israel | Israel | 1 | Middle East | Tel Aviv, Israel | Private | Manufacturer | Acquired | Lumenis → Boston Scientific | 3 | 2 | EBD | 0 | 0"
+      "search_text": "company | Pollogen | Pollogen | Lumenis → Boston Scientific | Israel | Middle East | Private | Manufacturer | Lumenis → Boston Scientific | EBD | Pollogen | Israel | Israel | 1 | Middle East | Tel Aviv, Israel | Private | Manufacturer | Acquired | Lumenis → Boston Scientific | 3 | 2 | EBD | 0 | 0 | Lumenis → Boston Scientific"
     },
     {
       "type": "company",
@@ -104517,7 +104517,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Huons Meditech | Huons Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:243070 | Consumables | Huons Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:243070 | 281.47 | 2026-05-26T14:30:30+08:00 | 3 | 2 | Consumables | 0 | 0 | 29450.0 | KRW | -0.34 | https://query1.finance.yahoo.com/v8/finance/chart/243070.KQ?range=5d&interval=1d | 2026-06-12T14:30:23+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/243070.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:23+08:00"
+      "search_text": "company | Huons Meditech | Huons Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:243070 | Consumables | Huons Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:243070 | 281.47 | 2026-05-26T14:30:30+08:00 | 3 | 2 | Consumables | 0 | 0 | 29450.0 | KRW | -0.34 | https://query1.finance.yahoo.com/v8/finance/chart/243070.KQ?range=5d&interval=1d | 2026-06-12T14:30:23+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/243070.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:23+08:00 | Huons Meditech"
     },
     {
       "type": "company",
@@ -104546,7 +104546,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Daejoo | Daejoo | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Daejoo | South Korea | South Korea | 1 | Asia-Pacific | Gangwon-do, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Daejoo | Daejoo | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Daejoo | South Korea | South Korea | 1 | Asia-Pacific | Gangwon-do, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Daejoo"
     },
     {
       "type": "company",
@@ -104575,7 +104575,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Fillmed | Fillmed | France | Europe | Private | Brand Owner | Injectables | Fillmed | France | France | 1 | Europe | Paris, France | Private | Brand Owner | Active | 5 | 3 | Injectables | 0 | 2"
+      "search_text": "company | Fillmed | Fillmed | France | Europe | Private | Brand Owner | Injectables | Fillmed | France | France | 1 | Europe | Paris, France | Private | Brand Owner | Active | 5 | 3 | Injectables | 0 | 2 | Fillmed"
     },
     {
       "type": "company",
@@ -104605,7 +104605,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Collagen Matrix / Regenity Biosciences | Collagen Matrix | Regenity Biosciences | USA | North America | Private | Manufacturer | Injectables | Collagen Matrix / Regenity Biosciences | USA | USA | 1 | North America | Oakland, NJ, USA | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Collagen Matrix / Regenity Biosciences | Collagen Matrix | Regenity Biosciences | USA | North America | Private | Manufacturer | Injectables | Collagen Matrix / Regenity Biosciences | USA | USA | 1 | North America | Oakland, NJ, USA | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Collagen Matrix / Regenity Biosciences"
     },
     {
       "type": "company",
@@ -104634,7 +104634,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Evolus | Evolus | USA | North America | Public | Manufacturer | NASDAQ:EOLS | Injectables | Evolus | USA | USA | 1 | North America | Newport Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:EOLS | 297.18 | 2025 | 66.33 | 428.06 | 2026-06-15T08:17:36+08:00 | 1.44 | 100 | 2 | 2 | Injectables | 0 | 0 | 6.73 | USD | 3.38 | https://query1.finance.yahoo.com/v8/finance/chart/EOLS?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001570562.json | official_sec_xbrl_auto | -8.29 | -18.53 | -0.8 | -0.8 | -2.42 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-03-03 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Evolus | Evolus | USA | North America | Public | Manufacturer | NASDAQ:EOLS | Injectables | Evolus | USA | USA | 1 | North America | Newport Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:EOLS | 297.18 | 2025 | 66.33 | 428.06 | 2026-06-15T08:17:36+08:00 | 1.44 | 100 | 2 | 2 | Injectables | 0 | 0 | 6.73 | USD | 3.38 | https://query1.finance.yahoo.com/v8/finance/chart/EOLS?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001570562.json | official_sec_xbrl_auto | -8.29 | -18.53 | -0.8 | -0.8 | -2.42 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-03-03 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Evolus"
     },
     {
       "type": "company",
@@ -104663,7 +104663,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | DTS MG | DTS MG | South Korea | Asia-Pacific | Private | Manufacturer | EBD | DTS MG | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | DTS MG | DTS MG | South Korea | Asia-Pacific | Private | Manufacturer | EBD | DTS MG | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | DTS MG"
     },
     {
       "type": "company",
@@ -104692,7 +104692,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | DFK Biolab | DFK Biolab | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | DFK Biolab | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | DFK Biolab | DFK Biolab | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | DFK Biolab | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | DFK Biolab"
     },
     {
       "type": "company",
@@ -104722,7 +104722,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Eclipse | Eclipse | Apyx Medical | USA | North America | Private | Manufacturer | Apyx Medical | EBD | Eclipse | USA | USA | 1 | North America | Dallas, TX, USA | Private | Manufacturer | Acquired | Apyx Medical | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Eclipse | Eclipse | Apyx Medical | USA | North America | Private | Manufacturer | Apyx Medical | EBD | Eclipse | USA | USA | 1 | North America | Dallas, TX, USA | Private | Manufacturer | Acquired | Apyx Medical | 1 | 1 | EBD | 0 | 0 | Apyx Medical"
     },
     {
       "type": "company",
@@ -104751,7 +104751,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Energist | Energist | UK | Europe | Private | Manufacturer | EBD | Energist | UK | UK | 1 | Europe | Swansea, UK | Private | Manufacturer | Active | 3 | 2 | EBD | 0 | 0"
+      "search_text": "company | Energist | Energist | UK | Europe | Private | Manufacturer | EBD | Energist | UK | UK | 1 | Europe | Swansea, UK | Private | Manufacturer | Active | 3 | 2 | EBD | 0 | 0 | Energist"
     },
     {
       "type": "company",
@@ -104780,7 +104780,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | ExoCoBio | ExoCoBio | South Korea | Asia-Pacific | Private | Manufacturer | Regenerative | ExoCoBio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Regenerative | 0 | 0"
+      "search_text": "company | ExoCoBio | ExoCoBio | South Korea | Asia-Pacific | Private | Manufacturer | Regenerative | ExoCoBio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 3 | 3 | Regenerative | 0 | 0 | ExoCoBio"
     },
     {
       "type": "company",
@@ -104809,7 +104809,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Establishment Labs | Establishment Labs | Costa Rica | Latin America | Public | Manufacturer | NASDAQ:ESTA | Implants | Establishment Labs | Costa Rica | Costa Rica | 1 | Latin America | Alajuela, Costa Rica | Public | Manufacturer | Active | NASDAQ:ESTA | 211.08 | 2025 | 69.32 | 2035.99 | 2026-06-15T08:17:36+08:00 | 9.65 | 100 | 3 | 2 | Implants | 0 | 0 | 82.14 | USD | -3.49 | https://query1.finance.yahoo.com/v8/finance/chart/ESTA?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001688757.json | official_sec_xbrl_auto | -39.87 | 86.46 | -1.72 | -1.72 | 39.64 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-02-27 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Establishment Labs | Establishment Labs | Costa Rica | Latin America | Public | Manufacturer | NASDAQ:ESTA | Implants | Establishment Labs | Costa Rica | Costa Rica | 1 | Latin America | Alajuela, Costa Rica | Public | Manufacturer | Active | NASDAQ:ESTA | 211.08 | 2025 | 69.32 | 2035.99 | 2026-06-15T08:17:36+08:00 | 9.65 | 100 | 3 | 2 | Implants | 0 | 0 | 82.14 | USD | -3.49 | https://query1.finance.yahoo.com/v8/finance/chart/ESTA?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001688757.json | official_sec_xbrl_auto | -39.87 | 86.46 | -1.72 | -1.72 | 39.64 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-02-27 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Establishment Labs"
     },
     {
       "type": "company",
@@ -104838,7 +104838,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Eneomey | Eneomey | France | Europe | Private | Brand Owner | Skincare | Eneomey | France | France | 1 | Europe | Mougins, France | Private | Brand Owner | Active | 3 | 1 | Skincare | 0 | 0"
+      "search_text": "company | Eneomey | Eneomey | France | Europe | Private | Brand Owner | Skincare | Eneomey | France | France | 1 | Europe | Mougins, France | Private | Brand Owner | Active | 3 | 1 | Skincare | 0 | 0 | Eneomey"
     },
     {
       "type": "company",
@@ -104867,7 +104867,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Eunsung | Eunsung | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Eunsung | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 3 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Eunsung | Eunsung | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Eunsung | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 3 | 1 | Injectables | 0 | 0 | Eunsung"
     },
     {
       "type": "company",
@@ -104896,7 +104896,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ipsen Pharma | Ipsen Pharma | France | Europe | Public | Manufacturer | IPN.PA | Injectables | Ipsen Pharma | France | France | 1 | Europe | Paris, France | Public | Manufacturer | Active | IPN.PA | 4559.84 | 2025 | 80.89 | 15852.17 | 2026-05-26T23:39:42+08:00 | 3.48 | 1 | 1 | Injectables | 0 | 0 | 157.8 | EUR | 0.45 | https://query1.finance.yahoo.com/v8/finance/chart/IPN.PA?range=5d&interval=1d | 2026-06-12T23:35:01+08:00 | https://www.ipsen.com/investor-relations/ | pending_collection | 2026-06-12T23:35:01+08:00 | IFRS_consolidated"
+      "search_text": "company | Ipsen Pharma | Ipsen Pharma | France | Europe | Public | Manufacturer | IPN.PA | Injectables | Ipsen Pharma | France | France | 1 | Europe | Paris, France | Public | Manufacturer | Active | IPN.PA | 4559.84 | 2025 | 80.89 | 15852.17 | 2026-05-26T23:39:42+08:00 | 3.48 | 1 | 1 | Injectables | 0 | 0 | 157.8 | EUR | 0.45 | https://query1.finance.yahoo.com/v8/finance/chart/IPN.PA?range=5d&interval=1d | 2026-06-12T23:35:01+08:00 | https://www.ipsen.com/investor-relations/ | pending_collection | 2026-06-12T23:35:01+08:00 | IFRS_consolidated | Ipsen Pharma"
     },
     {
       "type": "company",
@@ -104925,7 +104925,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Benev | Benev | USA | North America | Private | Manufacturer | Skincare | Benev | USA | USA | 1 | North America | Mission Viejo, CA, USA | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0"
+      "search_text": "company | Benev | Benev | USA | North America | Private | Manufacturer | Skincare | Benev | USA | USA | 1 | North America | Mission Viejo, CA, USA | Private | Manufacturer | Active | 3 | 3 | Skincare | 0 | 0 | Benev"
     },
     {
       "type": "company",
@@ -104954,7 +104954,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Beamed | Beamed | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Beamed | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | 韩国平价调Q激光专家"
+      "search_text": "company | Beamed | Beamed | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Beamed | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | 韩国平价调Q激光专家 | Beamed"
     },
     {
       "type": "company",
@@ -104983,7 +104983,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Aerolase | Aerolase | USA | North America | Private | Manufacturer | EBD | Aerolase | USA | USA | 1 | North America | Tarrytown, NY, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | 深色皮肤激光治疗的黄金标准"
+      "search_text": "company | Aerolase | Aerolase | USA | North America | Private | Manufacturer | EBD | Aerolase | USA | USA | 1 | North America | Tarrytown, NY, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | 深色皮肤激光治疗的黄金标准 | Aerolase"
     },
     {
       "type": "company",
@@ -105012,7 +105012,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BeautyBio | BeautyBio | USA | North America | Private | Manufacturer | EBD | BeautyBio | USA | USA | 1 | North America | Dallas, TX, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0"
+      "search_text": "company | BeautyBio | BeautyBio | USA | North America | Private | Manufacturer | EBD | BeautyBio | USA | USA | 1 | North America | Dallas, TX, USA | Private | Manufacturer | Active | 3 | 3 | EBD | 0 | 0 | BeautyBio"
     },
     {
       "type": "company",
@@ -105041,7 +105041,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BioScience | BioScience | Germany | Europe | Private | Manufacturer | Injectables | BioScience | Germany | Germany | 1 | Europe | Dümmer, Germany | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | BioScience | BioScience | Germany | Europe | Private | Manufacturer | Injectables | BioScience | Germany | Germany | 1 | Europe | Dümmer, Germany | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | BioScience"
     },
     {
       "type": "company",
@@ -105070,7 +105070,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Suisselle | Suisselle | Switzerland | Europe | Private | Manufacturer | Injectables | Suisselle | Switzerland | Switzerland | 1 | Europe | Yverdon-les-Bains, Switzerland | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | Suisselle | Suisselle | Switzerland | Europe | Private | Manufacturer | Injectables | Suisselle | Switzerland | Switzerland | 1 | Europe | Yverdon-les-Bains, Switzerland | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | Suisselle"
     },
     {
       "type": "company",
@@ -105099,7 +105099,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | MI Medical | MI Medical | France | Europe | Private | Manufacturer | Injectables | MI Medical | France | France | 1 | Europe | Chantelle, France | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0"
+      "search_text": "company | MI Medical | MI Medical | France | Europe | Private | Manufacturer | Injectables | MI Medical | France | France | 1 | Europe | Chantelle, France | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | MI Medical"
     },
     {
       "type": "company",
@@ -105128,7 +105128,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Sofwave Medical | Sofwave Medical | Israel | Middle East | Public | Manufacturer | SOFW.TA | EBD | Sofwave Medical | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | SOFW.TA | 87.64 | 2025 | 75.27 | 527.24 | 2026-05-26T22:24:01+08:00 | 6.02 | 100 | 3 | 2 | EBD | 0 | 0 | 4280.0 | ILA | 1.64 | https://query1.finance.yahoo.com/v8/finance/chart/SOFW.TA?range=5d&interval=1d | 2026-06-12T18:44:05+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/SOFW.TA?range=5d&interval=1d | valuation_missing_price_only | 2026-06-12T18:44:05+08:00"
+      "search_text": "company | Sofwave Medical | Sofwave Medical | Israel | Middle East | Public | Manufacturer | SOFW.TA | EBD | Sofwave Medical | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | SOFW.TA | 87.64 | 2025 | 75.27 | 527.24 | 2026-05-26T22:24:01+08:00 | 6.02 | 100 | 3 | 2 | EBD | 0 | 0 | 4280.0 | ILA | 1.64 | https://query1.finance.yahoo.com/v8/finance/chart/SOFW.TA?range=5d&interval=1d | 2026-06-12T18:44:05+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/SOFW.TA?range=5d&interval=1d | valuation_missing_price_only | 2026-06-12T18:44:05+08:00 | Sofwave Medical"
     },
     {
       "type": "company",
@@ -105157,7 +105157,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Relife | Relife | Italy | Europe | Private | Manufacturer | Injectables | Relife | Italy | Italy | 1 | Europe | Florence, Italy | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Relife | Relife | Italy | Europe | Private | Manufacturer | Injectables | Relife | Italy | Italy | 1 | Europe | Florence, Italy | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0 | Relife"
     },
     {
       "type": "company",
@@ -105186,7 +105186,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dermakor | Dermakor | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Dermakor | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Dermakor | Dermakor | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Dermakor | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Dermakor"
     },
     {
       "type": "company",
@@ -105215,7 +105215,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Zimmer MedizinSysteme | Zimmer MedizinSysteme | Germany | Europe | Private | Manufacturer | EBD | Zimmer MedizinSysteme | Germany | Germany | 1 | Europe | Neu-Ulm, Germany | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0"
+      "search_text": "company | Zimmer MedizinSysteme | Zimmer MedizinSysteme | Germany | Europe | Private | Manufacturer | EBD | Zimmer MedizinSysteme | Germany | Germany | 1 | Europe | Neu-Ulm, Germany | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0 | Zimmer MedizinSysteme"
     },
     {
       "type": "company",
@@ -105244,7 +105244,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Revitacare | Revitacare | France | Europe | Subsidiary | Manufacturer | Injectables | Revitacare | France | France | 1 | Europe | Eaubonne, France | Subsidiary | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Revitacare | Revitacare | France | Europe | Subsidiary | Manufacturer | Injectables | Revitacare | France | France | 1 | Europe | Eaubonne, France | Subsidiary | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Revitacare"
     },
     {
       "type": "company",
@@ -105273,7 +105273,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | TSK Laboratory | TSK Laboratory | Japan | Asia-Pacific | Private | Manufacturer | Consumables | TSK Laboratory | Japan | Japan | 1 | Asia-Pacific | Tochigi, Japan | Private | Manufacturer | Active | 2 | 1 | Consumables | 0 | 0"
+      "search_text": "company | TSK Laboratory | TSK Laboratory | Japan | Asia-Pacific | Private | Manufacturer | Consumables | TSK Laboratory | Japan | Japan | 1 | Asia-Pacific | Tochigi, Japan | Private | Manufacturer | Active | 2 | 1 | Consumables | 0 | 0 | TSK Laboratory"
     },
     {
       "type": "company",
@@ -105302,7 +105302,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Teoxane Laboratories | Teoxane Laboratories | Switzerland | Europe | Private | Manufacturer | Injectables | Teoxane Laboratories | Switzerland | Switzerland | 1 | Europe | Geneva, Switzerland | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Teoxane Laboratories | Teoxane Laboratories | Switzerland | Europe | Private | Manufacturer | Injectables | Teoxane Laboratories | Switzerland | Switzerland | 1 | Europe | Geneva, Switzerland | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0 | Teoxane Laboratories"
     },
     {
       "type": "company",
@@ -105331,7 +105331,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Christina Cosmeceuticals | Christina Cosmeceuticals | Israel | Middle East | Private | Manufacturer | EBD | Christina Cosmeceuticals | Israel | Israel | 1 | Middle East | Tel Aviv, Israel | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | Christina Cosmeceuticals | Christina Cosmeceuticals | Israel | Middle East | Private | Manufacturer | EBD | Christina Cosmeceuticals | Israel | Israel | 1 | Middle East | Tel Aviv, Israel | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | Christina Cosmeceuticals"
     },
     {
       "type": "company",
@@ -105360,7 +105360,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Fijie | Fijie | France | Europe | Private | Brand Owner | Injectables | Fijie | France | France, South Korea | 2 | Europe | Paris, France | Private | Brand Owner | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Fijie | Fijie | France | Europe | Private | Brand Owner | Injectables | Fijie | France | France, South Korea | 2 | Europe | Paris, France | Private | Brand Owner | Active | 2 | 2 | Injectables | 0 | 0 | Fijie"
     },
     {
       "type": "company",
@@ -105389,7 +105389,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | European Wellness Biomedical | European Wellness Biomedical | Malaysia | Asia-Pacific | Private | Manufacturer | Regenerative | European Wellness Biomedical | Malaysia | Malaysia | 1 | Other | Kota Kinabalu, Malaysia | Private | Manufacturer | Active | 2 | 2 | Regenerative | 0 | 0"
+      "search_text": "company | European Wellness Biomedical | European Wellness Biomedical | Malaysia | Asia-Pacific | Private | Manufacturer | Regenerative | European Wellness Biomedical | Malaysia | Malaysia | 1 | Other | Kota Kinabalu, Malaysia | Private | Manufacturer | Active | 2 | 2 | Regenerative | 0 | 0 | European Wellness Biomedical"
     },
     {
       "type": "company",
@@ -105418,7 +105418,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | FotoFinder Systems | FotoFinder Systems | Germany | Europe | Private | Manufacturer | Diagnostics | FotoFinder Systems | Germany | Germany | 1 | Europe | Bad Birnbach, Germany | Private | Manufacturer | Active | 2 | 2 | Diagnostics | 0 | 0"
+      "search_text": "company | FotoFinder Systems | FotoFinder Systems | Germany | Europe | Private | Manufacturer | Diagnostics | FotoFinder Systems | Germany | Germany | 1 | Europe | Bad Birnbach, Germany | Private | Manufacturer | Active | 2 | 2 | Diagnostics | 0 | 0 | FotoFinder Systems"
     },
     {
       "type": "company",
@@ -105447,7 +105447,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Eufoton Medical Lasers | Eufoton Medical Lasers | Italy | Europe | Private | Manufacturer | EBD | Eufoton Medical Lasers | Italy | Italy | 1 | Europe | Trieste, Italy | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0"
+      "search_text": "company | Eufoton Medical Lasers | Eufoton Medical Lasers | Italy | Europe | Private | Manufacturer | EBD | Eufoton Medical Lasers | Italy | Italy | 1 | Europe | Trieste, Italy | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0 | Eufoton Medical Lasers"
     },
     {
       "type": "company",
@@ -105476,7 +105476,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Euroresearch | Euroresearch | Italy | Europe | Private | Manufacturer | Injectables | Euroresearch | Italy | Italy | 1 | Europe | Milan, Italy | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Euroresearch | Euroresearch | Italy | Europe | Private | Manufacturer | Injectables | Euroresearch | Italy | Italy | 1 | Europe | Milan, Italy | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Euroresearch"
     },
     {
       "type": "company",
@@ -105505,7 +105505,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | FB Dermatology | FB Dermatology | Denmark | Europe | Private | Brand Owner | EBD | FB Dermatology | Denmark | Denmark | 1 | Other | Ballerup, Denmark | Private | Brand Owner | Active | 2 | 1 | EBD | 0 | 0"
+      "search_text": "company | FB Dermatology | FB Dermatology | Denmark | Europe | Private | Brand Owner | EBD | FB Dermatology | Denmark | Denmark | 1 | Other | Ballerup, Denmark | Private | Brand Owner | Active | 2 | 1 | EBD | 0 | 0 | FB Dermatology"
     },
     {
       "type": "company",
@@ -105534,7 +105534,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | EmCyte | EmCyte | USA | North America | Private | Manufacturer | Regenerative | EmCyte | USA | USA | 1 | North America | Fort Myers, FL, USA | Private | Manufacturer | Active | 2 | 2 | Regenerative | 0 | 0"
+      "search_text": "company | EmCyte | EmCyte | USA | North America | Private | Manufacturer | Regenerative | EmCyte | USA | USA | 1 | North America | Fort Myers, FL, USA | Private | Manufacturer | Active | 2 | 2 | Regenerative | 0 | 0 | EmCyte"
     },
     {
       "type": "company",
@@ -105563,7 +105563,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | GC Aesthetics | GC Aesthetics | France | Europe | Private | Manufacturer | Implants | GC Aesthetics | France | France, UK | 2 | Europe | Apt, France | Private | Manufacturer | Active | 2 | 2 | Implants | 0 | 0"
+      "search_text": "company | GC Aesthetics | GC Aesthetics | France | Europe | Private | Manufacturer | Implants | GC Aesthetics | France | France, UK | 2 | Europe | Apt, France | Private | Manufacturer | Active | 2 | 2 | Implants | 0 | 0 | GC Aesthetics"
     },
     {
       "type": "company",
@@ -105592,7 +105592,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Novasonix Technology | Novasonix Technology | Spain | Europe | Private | Manufacturer | EBD | Novasonix Technology | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0"
+      "search_text": "company | Novasonix Technology | Novasonix Technology | Spain | Europe | Private | Manufacturer | EBD | Novasonix Technology | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0 | Novasonix Technology"
     },
     {
       "type": "company",
@@ -105622,7 +105622,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | HOYA ConBio | HOYA ConBio | Cynosure | USA | North America | Private | Manufacturer | Cynosure | EBD | HOYA ConBio | USA | USA | 1 | North America | Fremont, CA, USA | Private | Manufacturer | Acquired | Cynosure | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | HOYA ConBio | HOYA ConBio | Cynosure | USA | North America | Private | Manufacturer | Cynosure | EBD | HOYA ConBio | USA | USA | 1 | North America | Fremont, CA, USA | Private | Manufacturer | Acquired | Cynosure | 2 | 2 | EBD | 0 | 0 | Cynosure"
     },
     {
       "type": "company",
@@ -105652,7 +105652,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ilooda | Ilooda | Classys | South Korea | Asia-Pacific | Subsidiary | Manufacturer | Classys | EBD | Ilooda | South Korea | South Korea | 1 | Asia-Pacific | Suwon, South Korea | Subsidiary | Manufacturer | Subsidiary | Classys | 2232.75 | 2026-05-26T14:30:12+08:00 | 2 | 2 | EBD | 0 | 0 | 51000.0 | KRW | -6.76 | https://query1.finance.yahoo.com/v8/finance/chart/214150.KQ?range=5d&interval=1d | 2026-05-13T14:30:16+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/214150.KQ?range=5d&interval=1d | live_price_fetched"
+      "search_text": "company | Ilooda | Ilooda | Classys | South Korea | Asia-Pacific | Subsidiary | Manufacturer | Classys | EBD | Ilooda | South Korea | South Korea | 1 | Asia-Pacific | Suwon, South Korea | Subsidiary | Manufacturer | Subsidiary | Classys | 2232.75 | 2026-05-26T14:30:12+08:00 | 2 | 2 | EBD | 0 | 0 | 51000.0 | KRW | -6.76 | https://query1.finance.yahoo.com/v8/finance/chart/214150.KQ?range=5d&interval=1d | 2026-05-13T14:30:16+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/214150.KQ?range=5d&interval=1d | live_price_fetched | Classys"
     },
     {
       "type": "company",
@@ -105681,7 +105681,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Haim Aesthetics | Haim Aesthetics | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | Haim Aesthetics | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Brand Owner | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Haim Aesthetics | Haim Aesthetics | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | Haim Aesthetics | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Brand Owner | Active | 2 | 2 | Injectables | 0 | 0 | Haim Aesthetics"
     },
     {
       "type": "company",
@@ -105710,7 +105710,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | HJorations | HJorations | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | HJorations | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | HJorations | HJorations | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | HJorations | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | HJorations"
     },
     {
       "type": "company",
@@ -105739,7 +105739,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hyalure | Hyalure | Italy | Europe | Private | Manufacturer | Injectables | Hyalure | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Hyalure | Hyalure | Italy | Europe | Private | Manufacturer | Injectables | Hyalure | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Hyalure"
     },
     {
       "type": "company",
@@ -105768,7 +105768,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | RecensMedical | RecensMedical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | RecensMedical | South Korea | South Korea | 1 | Asia-Pacific | Hwaseong-si, Gyeonggi-do, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | RecensMedical | RecensMedical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | RecensMedical | South Korea | South Korea | 1 | Asia-Pacific | Hwaseong-si, Gyeonggi-do, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | RecensMedical"
     },
     {
       "type": "company",
@@ -105797,7 +105797,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Oreon Life Science | Oreon Life Science | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Oreon Life Science | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Oreon Life Science | Oreon Life Science | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Oreon Life Science | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Oreon Life Science"
     },
     {
       "type": "company",
@@ -105826,7 +105826,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dr. Korman | Dr. Korman | Israel | Middle East | Private | Manufacturer | Injectables | Dr. Korman | Israel | Israel | 1 | Middle East | Kiryat Bialik, Israel | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Dr. Korman | Dr. Korman | Israel | Middle East | Private | Manufacturer | Injectables | Dr. Korman | Israel | Israel | 1 | Middle East | Kiryat Bialik, Israel | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Dr. Korman"
     },
     {
       "type": "company",
@@ -105855,7 +105855,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dr. PRP | Dr. PRP | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Dr. PRP | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | Dr. PRP | Dr. PRP | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Dr. PRP | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | Dr. PRP"
     },
     {
       "type": "company",
@@ -105884,7 +105884,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ostin Bio | Ostin Bio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Ostin Bio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Ostin Bio | Ostin Bio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Ostin Bio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Ostin Bio"
     },
     {
       "type": "company",
@@ -105913,7 +105913,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | K1 Med | K1 Med | South Korea | Asia-Pacific | Private | Manufacturer | EBD | K1 Med | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0"
+      "search_text": "company | K1 Med | K1 Med | South Korea | Asia-Pacific | Private | Manufacturer | EBD | K1 Med | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 1 | EBD | 0 | 0 | K1 Med"
     },
     {
       "type": "company",
@@ -105942,7 +105942,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Kaneka Corporation | Kaneka Corporation | Japan | Asia-Pacific | Public | Manufacturer | 4118.T | Injectables | Kaneka Corporation | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Public | Manufacturer | Active | 4118.T | 5085.36 | 2025 | 27.95 | 1964.25 | 2026-05-26T14:30:00+08:00 | 0.39 | 2 | 1 | Injectables | 0 | 0 | 5683.0 | JPY | 2.07 | https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d | 2026-06-15T08:02:23+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-15T08:02:23+08:00"
+      "search_text": "company | Kaneka Corporation | Kaneka Corporation | Japan | Asia-Pacific | Public | Manufacturer | 4118.T | Injectables | Kaneka Corporation | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Public | Manufacturer | Active | 4118.T | 5085.36 | 2025 | 27.95 | 1964.25 | 2026-05-26T14:30:00+08:00 | 0.39 | 2 | 1 | Injectables | 0 | 0 | 5683.0 | JPY | 2.07 | https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d | 2026-06-15T08:02:23+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-15T08:02:23+08:00 | Kaneka Corporation"
     },
     {
       "type": "company",
@@ -105971,7 +105971,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | L'Oréal | L'Oréal | France | Europe | Public | Manufacturer | OR.PA | EBD | L'Oréal | France | France | 1 | Europe | Clichy, France | Public | Manufacturer | Active | OR.PA | 51122.35 | 2025 | 74.32 | 222238.52 | 2026-05-26T23:37:20+08:00 | 4.35 | 1 | 1 | EBD | 0 | 0 | 390.25 | EUR | 1.81 | https://query1.finance.yahoo.com/v8/finance/chart/OR.PA?range=5d&interval=1d | 2026-06-12T23:36:42+08:00 | https://www.loreal-finance.com/en/annual-report-2024 | pending_collection | 2026-06-12T23:36:42+08:00 | IFRS_consolidated"
+      "search_text": "company | L'Oréal | L'Oréal | France | Europe | Public | Manufacturer | OR.PA | EBD | L'Oréal | France | France | 1 | Europe | Clichy, France | Public | Manufacturer | Active | OR.PA | 51122.35 | 2025 | 74.32 | 222238.52 | 2026-05-26T23:37:20+08:00 | 4.35 | 1 | 1 | EBD | 0 | 0 | 390.25 | EUR | 1.81 | https://query1.finance.yahoo.com/v8/finance/chart/OR.PA?range=5d&interval=1d | 2026-06-12T23:36:42+08:00 | https://www.loreal-finance.com/en/annual-report-2024 | pending_collection | 2026-06-12T23:36:42+08:00 | IFRS_consolidated | L'Oréal"
     },
     {
       "type": "company",
@@ -106000,7 +106000,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | SkinQRI | SkinQRI | USA | North America | Private | Brand Owner | Regenerative | SkinQRI | USA | USA | 1 | North America | Ocala, FL, USA | Private | Brand Owner | Active | 2 | 2 | Regenerative | 0 | 0"
+      "search_text": "company | SkinQRI | SkinQRI | USA | North America | Private | Brand Owner | Regenerative | SkinQRI | USA | USA | 1 | North America | Ocala, FL, USA | Private | Brand Owner | Active | 2 | 2 | Regenerative | 0 | 0 | SkinQRI"
     },
     {
       "type": "company",
@@ -106029,7 +106029,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Bioxis Pharmaceuticals | Bioxis Pharmaceuticals | France | Europe | Private | Manufacturer | Injectables | Bioxis Pharmaceuticals | France | France | 1 | Europe | Lyon, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Bioxis Pharmaceuticals | Bioxis Pharmaceuticals | France | Europe | Private | Manufacturer | Injectables | Bioxis Pharmaceuticals | France | France | 1 | Europe | Lyon, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Bioxis Pharmaceuticals"
     },
     {
       "type": "company",
@@ -106058,7 +106058,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Innoaesthetics | Innoaesthetics | Spain | Europe | Private | Manufacturer | Injectables | Innoaesthetics | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Innoaesthetics | Innoaesthetics | Spain | Europe | Private | Manufacturer | Injectables | Innoaesthetics | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0 | Innoaesthetics"
     },
     {
       "type": "company",
@@ -106087,7 +106087,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Induction Therapies | Induction Therapies | USA | North America | Private | Manufacturer | EBD | Induction Therapies | USA | USA | 1 | North America | Louisville, KY, USA | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | Induction Therapies | Induction Therapies | USA | North America | Private | Manufacturer | EBD | Induction Therapies | USA | USA | 1 | North America | Louisville, KY, USA | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | Induction Therapies"
     },
     {
       "type": "company",
@@ -106116,7 +106116,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Johnson & Johnson | Johnson & Johnson | USA | North America | Public | Manufacturer | NASDAQ:JNJ | Implants | Johnson & Johnson | USA | USA | 1 | North America | New Brunswick, NJ, USA | Public | Manufacturer | Active | NASDAQ:JNJ | 94193 | 2025 | 67.88 | 539842.46 | 2026-06-15T08:17:36+08:00 | 5.73 | 12 | 2 | Implants | 7 | 1 | 全球医疗健康龙头；旗下 Mentor 是全球乳房假体与乳房重建核心品牌，覆盖硅凝胶、盐水、可调式盐水、组织扩张器和配套试模系统。 | 240.87 | USD | 1.07 | https://query1.finance.yahoo.com/v8/finance/chart/JNJ?range=5d&interval=1d | 2026-06-13T04:00:02+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000200406.json | official_sec_xbrl_auto | 20.14 | 6.62 | 11.03 | 11.03 | 90.56 | 2026-06-13T04:00:02+08:00 | FY2025 | 2026-02-11 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Johnson & Johnson | Johnson & Johnson | USA | North America | Public | Manufacturer | NASDAQ:JNJ | Implants | Johnson & Johnson | USA | USA | 1 | North America | New Brunswick, NJ, USA | Public | Manufacturer | Active | NASDAQ:JNJ | 94193 | 2025 | 67.88 | 539842.46 | 2026-06-15T08:17:36+08:00 | 5.73 | 12 | 2 | Implants | 7 | 1 | 全球医疗健康龙头；旗下 Mentor 是全球乳房假体与乳房重建核心品牌，覆盖硅凝胶、盐水、可调式盐水、组织扩张器和配套试模系统。 | 240.87 | USD | 1.07 | https://query1.finance.yahoo.com/v8/finance/chart/JNJ?range=5d&interval=1d | 2026-06-13T04:00:02+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000200406.json | official_sec_xbrl_auto | 20.14 | 6.62 | 11.03 | 11.03 | 90.56 | 2026-06-13T04:00:02+08:00 | FY2025 | 2026-02-11 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Johnson & Johnson"
     },
     {
       "type": "company",
@@ -106146,7 +106146,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Japan Bio Products / JBP | Japan Bio Products | JBP | Japan | Asia-Pacific | Private | Manufacturer | EBD | Japan Bio Products / JBP | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | Japan Bio Products / JBP | Japan Bio Products | JBP | Japan | Asia-Pacific | Private | Manufacturer | EBD | Japan Bio Products / JBP | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | Japan Bio Products / JBP"
     },
     {
       "type": "company",
@@ -106175,7 +106175,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Jion Meditech | Jion Meditech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Jion Meditech | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0"
+      "search_text": "company | Jion Meditech | Jion Meditech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Jion Meditech | South Korea | South Korea | 1 | Asia-Pacific | Gyeonggi-do, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | Jion Meditech"
     },
     {
       "type": "company",
@@ -106204,7 +106204,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Lameditech | Lameditech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Lameditech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Lameditech | Lameditech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Lameditech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Lameditech"
     },
     {
       "type": "company",
@@ -106233,7 +106233,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Matex Lab | Matex Lab | Italy | Europe | Private | Manufacturer | Injectables | Matex Lab | Italy | Italy | 1 | Europe | Brindisi, Italy | Private | Manufacturer | Active | 3 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Matex Lab | Matex Lab | Italy | Europe | Private | Manufacturer | Injectables | Matex Lab | Italy | Italy | 1 | Europe | Brindisi, Italy | Private | Manufacturer | Active | 3 | 2 | Injectables | 0 | 0 | Matex Lab"
     },
     {
       "type": "company",
@@ -106262,7 +106262,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Biotekne | Biotekne | Italy | Europe | Private | Manufacturer | Injectables | Biotekne | Italy | Italy | 1 | Europe | Bologna, Italy | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0"
+      "search_text": "company | Biotekne | Biotekne | Italy | Europe | Private | Manufacturer | Injectables | Biotekne | Italy | Italy | 1 | Europe | Bologna, Italy | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Biotekne"
     },
     {
       "type": "company",
@@ -106291,7 +106291,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BioElectronics | BioElectronics | USA | North America | Public | Manufacturer | OTC:BIEL | EBD | BioElectronics | USA | USA | 1 | North America | Frederick, MD, USA | Public | Manufacturer | Active | OTC:BIEL | unavailable_verified | unavailable_verified | 9.88 | 2026-05-27T00:22:58+08:00 | 1 | 1 | EBD | 0 | 0 | 0.0003 | USD | -0 | https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d | 2026-06-13T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-13T04:00:00+08:00"
+      "search_text": "company | BioElectronics | BioElectronics | USA | North America | Public | Manufacturer | OTC:BIEL | EBD | BioElectronics | USA | USA | 1 | North America | Frederick, MD, USA | Public | Manufacturer | Active | OTC:BIEL | unavailable_verified | unavailable_verified | 9.88 | 2026-05-27T00:22:58+08:00 | 1 | 1 | EBD | 0 | 0 | 脉冲短波疗法电子创可贴 | 0.0003 | USD | -0 | https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d | 2026-06-13T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-13T04:00:00+08:00 | BioElectronics"
     },
     {
       "type": "company",
@@ -106320,7 +106320,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Be Aes Labs | Be Aes Labs | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Be Aes Labs | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | 能量源设备厂商"
+      "search_text": "company | Be Aes Labs | Be Aes Labs | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Be Aes Labs | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | EBD | 0 | 0 | 能量源设备厂商 | Be Aes Labs"
     },
     {
       "type": "company",
@@ -106349,7 +106349,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ultra V | Ultra V | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Ultra V | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Ultra V | Ultra V | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Ultra V | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 1 | Injectables | 0 | 0 | Ultra V"
     },
     {
       "type": "company",
@@ -106378,7 +106378,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Agnes Medical | Agnes Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Agnes Medical | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | 根治痤疮的绝缘微针射频"
+      "search_text": "company | Agnes Medical | Agnes Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Agnes Medical | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | 根治痤疮的绝缘微针射频 | Agnes Medical"
     },
     {
       "type": "company",
@@ -106407,7 +106407,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | TransLite | TransLite | USA | North America | Private | Manufacturer | EBD | TransLite | USA | USA | 1 | North America | Sugar Land, TX, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | TransLite | TransLite | USA | North America | Private | Manufacturer | EBD | TransLite | USA | USA | 1 | North America | Sugar Land, TX, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | TransLite"
     },
     {
       "type": "company",
@@ -106436,7 +106436,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Union Medical | Union Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Union Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Union Medical | Union Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Union Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Union Medical"
     },
     {
       "type": "company",
@@ -106465,7 +106465,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Utsukusy Cosmetics | Utsukusy Cosmetics | Spain | Europe | Private | Brand Owner | EBD | Utsukusy Cosmetics | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Utsukusy Cosmetics | Utsukusy Cosmetics | Spain | Europe | Private | Brand Owner | EBD | Utsukusy Cosmetics | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0 | Utsukusy Cosmetics"
     },
     {
       "type": "company",
@@ -106494,7 +106494,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | VSoft Lift | VSoft Lift | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | VSoft Lift | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | VSoft Lift | VSoft Lift | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | VSoft Lift | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | VSoft Lift"
     },
     {
       "type": "company",
@@ -106523,7 +106523,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Vaim | Vaim | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Vaim | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Vaim | Vaim | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Vaim | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Vaim"
     },
     {
       "type": "company",
@@ -106552,7 +106552,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | ViOL | ViOL | South Korea | Asia-Pacific | Public | Manufacturer | KRX:335890 | EBD | ViOL | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:335890 | 40.74 | 2024 | 82.55 | 505.25 | 2024-07-20T04:00:00+08:00 | 12.4 | 100 | 1 | 1 | EBD | 0 | 0 | 10340.0 | KRW | https://query1.finance.yahoo.com/v8/finance/chart/335890.KS?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/335890.KS?range=5d&interval=1d | valuation_missing_price_only | 2024-07-20T04:00:00+08:00"
+      "search_text": "company | ViOL | ViOL | South Korea | Asia-Pacific | Public | Manufacturer | KRX:335890 | EBD | ViOL | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:335890 | 40.74 | 2024 | 82.55 | 505.25 | 2024-07-20T04:00:00+08:00 | 12.4 | 100 | 1 | 1 | EBD | 0 | 0 | 10340.0 | KRW | https://query1.finance.yahoo.com/v8/finance/chart/335890.KS?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/335890.KS?range=5d&interval=1d | valuation_missing_price_only | 2024-07-20T04:00:00+08:00 | ViOL"
     },
     {
       "type": "company",
@@ -106581,7 +106581,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Vydence Medical | Vydence Medical | Brazil | Latin America | Private | Manufacturer | EBD | Vydence Medical | Brazil | Brazil | 1 | Latin America | São Carlos, Brazil | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Vydence Medical | Vydence Medical | Brazil | Latin America | Private | Manufacturer | EBD | Vydence Medical | Brazil | Brazil | 1 | Latin America | São Carlos, Brazil | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Vydence Medical"
     },
     {
       "type": "company",
@@ -106610,7 +106610,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | SharpLight | SharpLight | Israel | Middle East | Private | Manufacturer | EBD | SharpLight | Israel | Israel | 1 | Middle East | Rishon LeZion, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | SharpLight | SharpLight | Israel | Middle East | Private | Manufacturer | EBD | SharpLight | Israel | Israel | 1 | Middle East | Rishon LeZion, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | SharpLight"
     },
     {
       "type": "company",
@@ -106639,7 +106639,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | ShenB | ShenB | South Korea | Asia-Pacific | Private | Manufacturer | EBD | ShenB | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | ShenB | ShenB | South Korea | Asia-Pacific | Private | Manufacturer | EBD | ShenB | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | ShenB"
     },
     {
       "type": "company",
@@ -106668,7 +106668,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Skinderma Medical | Skinderma Medical | Spain | Europe | Private | Brand Owner | Injectables | Skinderma Medical | Spain | Spain | 1 | Europe | Valencia, Spain | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Skinderma Medical | Skinderma Medical | Spain | Europe | Private | Brand Owner | Injectables | Skinderma Medical | Spain | Spain | 1 | Europe | Valencia, Spain | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | Skinderma Medical"
     },
     {
       "type": "company",
@@ -106697,7 +106697,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Skymedic | Skymedic | Spain | Europe | Private | Brand Owner | EBD | Skymedic | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Skymedic | Skymedic | Spain | Europe | Private | Brand Owner | EBD | Skymedic | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0 | Skymedic"
     },
     {
       "type": "company",
@@ -106726,7 +106726,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Solawave | Solawave | USA | North America | Private | Brand Owner | EBD | Solawave | USA | USA | 1 | North America | Los Angeles, USA | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Solawave | Solawave | USA | North America | Private | Brand Owner | EBD | Solawave | USA | USA | 1 | North America | Los Angeles, USA | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0 | Solawave"
     },
     {
       "type": "company",
@@ -106755,7 +106755,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Storz Medical | Storz Medical | Switzerland | Europe | Private | Manufacturer | EBD | Storz Medical | Switzerland | Switzerland | 1 | Europe | Tägerwilen, Switzerland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Storz Medical | Storz Medical | Switzerland | Europe | Private | Manufacturer | EBD | Storz Medical | Switzerland | Switzerland | 1 | Europe | Tägerwilen, Switzerland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Storz Medical"
     },
     {
       "type": "company",
@@ -106784,7 +106784,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Implantech Associates | Implantech Associates | USA | North America | Private | Manufacturer | Implants | Implantech Associates | USA | USA | 1 | North America | Ventura, CA, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0"
+      "search_text": "company | Implantech Associates | Implantech Associates | USA | North America | Private | Manufacturer | Implants | Implantech Associates | USA | USA | 1 | North America | Ventura, CA, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0 | Implantech Associates"
     },
     {
       "type": "company",
@@ -106813,7 +106813,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Indiba | Indiba | Spain | Europe | Private | Manufacturer | EBD | Indiba | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Indiba | Indiba | Spain | Europe | Private | Manufacturer | EBD | Indiba | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Indiba"
     },
     {
       "type": "company",
@@ -106842,7 +106842,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Innea Aesthetics | Innea Aesthetics | Switzerland | Europe | Private | Brand Owner | Injectables | Innea Aesthetics | Switzerland | Switzerland | 1 | Europe | Viganello, Switzerland | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Innea Aesthetics | Innea Aesthetics | Switzerland | Europe | Private | Brand Owner | Injectables | Innea Aesthetics | Switzerland | Switzerland | 1 | Europe | Viganello, Switzerland | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | Innea Aesthetics"
     },
     {
       "type": "company",
@@ -106871,7 +106871,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Innolux | Innolux | Finland | Europe | Private | Manufacturer | EBD | Innolux | Finland | Finland | 1 | Other | Helsinki, Finland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Innolux | Innolux | Finland | Europe | Private | Manufacturer | EBD | Innolux | Finland | Finland | 1 | Other | Helsinki, Finland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Innolux"
     },
     {
       "type": "company",
@@ -106900,7 +106900,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Institute BCN | Institute BCN | Spain | Europe | Private | Manufacturer | Injectables | Institute BCN | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Institute BCN | Institute BCN | Spain | Europe | Private | Manufacturer | Injectables | Institute BCN | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Institute BCN"
     },
     {
       "type": "company",
@@ -106929,7 +106929,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Intraceuticals | Intraceuticals | Australia | Asia-Pacific | Private | Manufacturer | EBD | Intraceuticals | Australia | Australia | 1 | Asia-Pacific | Melbourne, Australia | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Intraceuticals | Intraceuticals | Australia | Asia-Pacific | Private | Manufacturer | EBD | Intraceuticals | Australia | Australia | 1 | Asia-Pacific | Melbourne, Australia | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Intraceuticals"
     },
     {
       "type": "company",
@@ -106958,7 +106958,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Iskra Medical | Iskra Medical | Slovenia | Europe | Private | Manufacturer | EBD | Iskra Medical | Slovenia | Slovenia | 1 | Other | Ljubljana, Slovenia | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Iskra Medical | Iskra Medical | Slovenia | Europe | Private | Manufacturer | EBD | Iskra Medical | Slovenia | Slovenia | 1 | Other | Ljubljana, Slovenia | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Iskra Medical"
     },
     {
       "type": "company",
@@ -106987,7 +106987,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | ItalFarmacia | ItalFarmacia | Italy | Europe | Private | Manufacturer | Injectables | ItalFarmacia | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | ItalFarmacia | ItalFarmacia | Italy | Europe | Private | Manufacturer | Injectables | ItalFarmacia | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | ItalFarmacia"
     },
     {
       "type": "company",
@@ -107016,7 +107016,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | JDBIO | JDBIO | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | JDBIO | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | JDBIO | JDBIO | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | JDBIO | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | JDBIO"
     },
     {
       "type": "company",
@@ -107045,7 +107045,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | JMBiotech | JMBiotech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | JMBiotech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | JMBiotech | JMBiotech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | JMBiotech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | JMBiotech"
     },
     {
       "type": "company",
@@ -107074,7 +107074,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | JYSUNG Meditech | JYSUNG Meditech | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | JYSUNG Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | JYSUNG Meditech | JYSUNG Meditech | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | JYSUNG Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | JYSUNG Meditech"
     },
     {
       "type": "company",
@@ -107104,7 +107104,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Jaysean / J Syeon | Jaysean | J Syeon | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Jaysean / J Syeon | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Jaysean / J Syeon | Jaysean | J Syeon | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Jaysean / J Syeon | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Jaysean / J Syeon"
     },
     {
       "type": "company",
@@ -107133,7 +107133,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Jskbiomed | Jskbiomed | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Jskbiomed | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Jskbiomed | Jskbiomed | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Jskbiomed | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Jskbiomed"
     },
     {
       "type": "company",
@@ -107162,7 +107162,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Julphar | Julphar | UAE | Middle East | Public | Manufacturer | JULPHAR | Pharma | Julphar | UAE | UAE | 1 | Other | Ras Al Khaimah, UAE | Public | Manufacturer | Active | JULPHAR | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:53:27+08:00 | 1 | 1 | Pharma | 0 | 0 | 2026-06-15T08:17:27+08:00 | https://finance.yahoo.com/quote/JULPHAR/financials/ | valuation_fetch_failed | 2026-06-15T08:17:27+08:00"
+      "search_text": "company | Julphar | Julphar | UAE | Middle East | Public | Manufacturer | JULPHAR | Pharma | Julphar | UAE | UAE | 1 | Other | Ras Al Khaimah, UAE | Public | Manufacturer | Active | JULPHAR | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:53:27+08:00 | 1 | 1 | Pharma | 0 | 0 | 2026-06-15T08:17:27+08:00 | https://finance.yahoo.com/quote/JULPHAR/financials/ | valuation_fetch_failed | 2026-06-15T08:17:27+08:00 | Julphar"
     },
     {
       "type": "company",
@@ -107191,7 +107191,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Juvaplus | Juvaplus | Switzerland | Europe | Private | Manufacturer | Consumables | Juvaplus | Switzerland | Switzerland | 1 | Europe | Chur, Switzerland | Private | Manufacturer | Active | 1 | 1 | Consumables | 0 | 0"
+      "search_text": "company | Juvaplus | Juvaplus | Switzerland | Europe | Private | Manufacturer | Consumables | Juvaplus | Switzerland | Switzerland | 1 | Europe | Chur, Switzerland | Private | Manufacturer | Active | 1 | 1 | Consumables | 0 | 0 | Juvaplus"
     },
     {
       "type": "company",
@@ -107221,7 +107221,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | K-Surgery / Ksurgery MED | K-Surgery | Ksurgery MED | Italy | Europe | Private | Manufacturer | Injectables | K-Surgery / Ksurgery MED | Italy | Italy | 1 | Europe | Carpi, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | K-Surgery / Ksurgery MED | K-Surgery | Ksurgery MED | Italy | Europe | Private | Manufacturer | Injectables | K-Surgery / Ksurgery MED | Italy | Italy | 1 | Europe | Carpi, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | K-Surgery / Ksurgery MED"
     },
     {
       "type": "company",
@@ -107250,7 +107250,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Kaizen Endustri | Kaizen Endustri | Turkey | Middle East | Private | Manufacturer | EBD | Kaizen Endustri | Turkey | Turkey | 1 | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Kaizen Endustri | Kaizen Endustri | Turkey | Middle East | Private | Manufacturer | EBD | Kaizen Endustri | Turkey | Turkey | 1 | Middle East | Istanbul, Turkey | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Kaizen Endustri"
     },
     {
       "type": "company",
@@ -107279,7 +107279,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Korman Laboratories | Korman Laboratories | Israel | Middle East | Private | Manufacturer | Injectables | Korman Laboratories | Israel | Israel | 1 | Middle East | Kiryat Shmona, Israel | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Korman Laboratories | Korman Laboratories | Israel | Middle East | Private | Manufacturer | Injectables | Korman Laboratories | Israel | Israel | 1 | Middle East | Kiryat Shmona, Israel | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Korman Laboratories"
     },
     {
       "type": "company",
@@ -107308,7 +107308,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Kysense | Kysense | Switzerland | Europe | Private | Brand Owner | Injectables | Kysense | Switzerland | Switzerland | 1 | Europe | Plan-les-Ouates, Switzerland | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Kysense | Kysense | Switzerland | Europe | Private | Brand Owner | Injectables | Kysense | Switzerland | Switzerland | 1 | Europe | Plan-les-Ouates, Switzerland | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | Kysense"
     },
     {
       "type": "company",
@@ -107337,7 +107337,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | L'Esthétic | L'Esthétic | France | Europe | Private | Manufacturer | Injectables | L'Esthétic | France | France | 1 | Europe | Paris, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | L'Esthétic | L'Esthétic | France | Europe | Private | Manufacturer | Injectables | L'Esthétic | France | France | 1 | Europe | Paris, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | L'Esthétic"
     },
     {
       "type": "company",
@@ -107366,7 +107366,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | LG Chem | LG Chem | South Korea | Asia-Pacific | Public | Manufacturer | KRX:051910 | Injectables | LG Chem | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:051910 | 32152.52 | 2025 | 17 | 17218.33 | 2024-07-20T04:00:00+08:00 | 0.54 | 1 | 1 | Injectables | 0 | 0 | 333500.0 | KRW | 5.37 | https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d | valuation_missing_price_only | 2024-07-20T04:00:00+08:00"
+      "search_text": "company | LG Chem | LG Chem | South Korea | Asia-Pacific | Public | Manufacturer | KRX:051910 | Injectables | LG Chem | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:051910 | 32152.52 | 2025 | 17 | 17218.33 | 2024-07-20T04:00:00+08:00 | 0.54 | 1 | 1 | Injectables | 0 | 0 | 333500.0 | KRW | 5.37 | https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d | valuation_missing_price_only | 2024-07-20T04:00:00+08:00 | LG Chem"
     },
     {
       "type": "company",
@@ -107395,7 +107395,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | LPG Systems | LPG Systems | France | Europe | Private | Manufacturer | EBD | LPG Systems | France | France | 1 | Europe | Valence, France | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | LPG Systems | LPG Systems | France | Europe | Private | Manufacturer | EBD | LPG Systems | France | France | 1 | Europe | Valence, France | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | LPG Systems"
     },
     {
       "type": "company",
@@ -107424,7 +107424,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Laboratoire Nouveau Visage | Laboratoire Nouveau Visage | France | Europe | Private | Brand Owner | Regenerative | Laboratoire Nouveau Visage | France | France | 1 | Europe | Paris, France | Private | Brand Owner | Active | 1 | 1 | Regenerative | 0 | 0"
+      "search_text": "company | Laboratoire Nouveau Visage | Laboratoire Nouveau Visage | France | Europe | Private | Brand Owner | Regenerative | Laboratoire Nouveau Visage | France | France | 1 | Europe | Paris, France | Private | Brand Owner | Active | 1 | 1 | Regenerative | 0 | 0 | Laboratoire Nouveau Visage"
     },
     {
       "type": "company",
@@ -107453,7 +107453,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Laboratoire Skin France | Laboratoire Skin France | France | Europe | Private | Manufacturer | Injectables | Laboratoire Skin France | France | France | 1 | Europe | Bordeaux, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Laboratoire Skin France | Laboratoire Skin France | France | Europe | Private | Manufacturer | Injectables | Laboratoire Skin France | France | France | 1 | Europe | Bordeaux, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Laboratoire Skin France"
     },
     {
       "type": "company",
@@ -107482,7 +107482,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Lipoelastic | Lipoelastic | Czech Republic | Europe | Private | Manufacturer | Consumables | Lipoelastic | Czech Republic | Czech Republic | 1 | Other | Broumov, Czech Republic | Private | Manufacturer | Active | 1 | 1 | Consumables | 0 | 0"
+      "search_text": "company | Lipoelastic | Lipoelastic | Czech Republic | Europe | Private | Manufacturer | Consumables | Lipoelastic | Czech Republic | Czech Republic | 1 | Other | Broumov, Czech Republic | Private | Manufacturer | Active | 1 | 1 | Consumables | 0 | 0 | Lipoelastic"
     },
     {
       "type": "company",
@@ -107511,7 +107511,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Love Cosmedical | Love Cosmedical | Italy | Europe | Private | Manufacturer | Injectables | Love Cosmedical | Italy | Italy | 1 | Europe | Pisa, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Love Cosmedical | Love Cosmedical | Italy | Europe | Private | Manufacturer | Injectables | Love Cosmedical | Italy | Italy | 1 | Europe | Pisa, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Love Cosmedical"
     },
     {
       "type": "company",
@@ -107540,7 +107540,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Lumibird | Lumibird | France | Europe | Public | Manufacturer | LBIRD.PA | EBD | Lumibird | France | France | 1 | Europe | Cournon, France | Public | Manufacturer | Active | LBIRD.PA | 265.21 | 2025 | 63.99 | 590.33 | 2026-05-26T23:35:00+08:00 | 2.23 | 1 | 1 | EBD | 0 | 0 | 24.0 | EUR | 2.13 | https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d | 2026-06-12T23:38:09+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:38:09+08:00"
+      "search_text": "company | Lumibird | Lumibird | France | Europe | Public | Manufacturer | LBIRD.PA | EBD | Lumibird | France | France | 1 | Europe | Cournon, France | Public | Manufacturer | Active | LBIRD.PA | 265.21 | 2025 | 63.99 | 590.33 | 2026-05-26T23:35:00+08:00 | 2.23 | 1 | 1 | EBD | 0 | 0 | 24.0 | EUR | 2.13 | https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d | 2026-06-12T23:38:09+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T23:38:09+08:00 | Lumibird"
     },
     {
       "type": "company",
@@ -107569,7 +107569,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Lynton Lasers | Lynton Lasers | UK | Europe | Private | Manufacturer | EBD | Lynton Lasers | UK | UK | 1 | Europe | Holmes Chapel, UK | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Lynton Lasers | Lynton Lasers | UK | Europe | Private | Manufacturer | EBD | Lynton Lasers | UK | UK | 1 | Europe | Holmes Chapel, UK | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Lynton Lasers"
     },
     {
       "type": "company",
@@ -107598,7 +107598,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | MD Skin Solutions | MD Skin Solutions | Luxembourg | Europe | Private | Manufacturer | Injectables | MD Skin Solutions | Luxembourg | Luxembourg | 1 | Other | Luxembourg | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | MD Skin Solutions | MD Skin Solutions | Luxembourg | Europe | Private | Manufacturer | Injectables | MD Skin Solutions | Luxembourg | Luxembourg | 1 | Other | Luxembourg | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | MD Skin Solutions"
     },
     {
       "type": "company",
@@ -107628,7 +107628,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Maxigen Biotech / MBI | Maxigen Biotech | MBI | Taiwan | Asia-Pacific | Public | Manufacturer | 1783.TWO | Injectables | Maxigen Biotech / MBI | Taiwan | Taiwan | 1 | Asia-Pacific | Taipei, Taiwan | Public | Manufacturer | Active | 1783.TWO | 25.81 | 2025 | 69.46 | 109.49 | 2026-05-26T13:30:33+08:00 | 4.24 | 1 | 1 | Injectables | 0 | 0 | 39.0 | TWD | 1.04 | https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d | 2026-06-12T13:30:28+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T13:30:28+08:00"
+      "search_text": "company | Maxigen Biotech / MBI | Maxigen Biotech | MBI | Taiwan | Asia-Pacific | Public | Manufacturer | 1783.TWO | Injectables | Maxigen Biotech / MBI | Taiwan | Taiwan | 1 | Asia-Pacific | Taipei, Taiwan | Public | Manufacturer | Active | 1783.TWO | 25.81 | 2025 | 69.46 | 109.49 | 2026-05-26T13:30:33+08:00 | 4.24 | 1 | 1 | Injectables | 0 | 0 | 39.0 | TWD | 1.04 | https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d | 2026-06-12T13:30:28+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T13:30:28+08:00 | Maxigen Biotech / MBI"
     },
     {
       "type": "company",
@@ -107657,7 +107657,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Meddrop BMT | Meddrop BMT | Germany | Europe | Private | Manufacturer | EBD | Meddrop BMT | Germany | Germany | 1 | Europe | Hamburg, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Meddrop BMT | Meddrop BMT | Germany | Europe | Private | Manufacturer | EBD | Meddrop BMT | Germany | Germany | 1 | Europe | Hamburg, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Meddrop BMT"
     },
     {
       "type": "company",
@@ -107686,7 +107686,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Medency | Medency | Italy | Europe | Private | Manufacturer | EBD | Medency | Italy | Italy | 1 | Europe | Vicenza, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Medency | Medency | Italy | Europe | Private | Manufacturer | EBD | Medency | Italy | Italy | 1 | Europe | Vicenza, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Medency"
     },
     {
       "type": "company",
@@ -107715,7 +107715,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Medikan International | Medikan International | South Korea | Asia-Pacific | Private | Manufacturer | Surgical | Medikan International | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Surgical | 0 | 0"
+      "search_text": "company | Medikan International | Medikan International | South Korea | Asia-Pacific | Private | Manufacturer | Surgical | Medikan International | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Surgical | 0 | 0 | Medikan International"
     },
     {
       "type": "company",
@@ -107744,7 +107744,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | MedixSysteme | MedixSysteme | France | Europe | Private | Manufacturer | EBD | MedixSysteme | France | France | 1 | Europe | Nimes, France | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | MedixSysteme | MedixSysteme | France | Europe | Private | Manufacturer | EBD | MedixSysteme | France | France | 1 | Europe | Nimes, France | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | MedixSysteme"
     },
     {
       "type": "company",
@@ -107773,7 +107773,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Medixa | Medixa | Italy | Europe | Private | Manufacturer | Injectables | Medixa | Italy | Italy | 1 | Europe | Vicenza, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Medixa | Medixa | Italy | Europe | Private | Manufacturer | Injectables | Medixa | Italy | Italy | 1 | Europe | Vicenza, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Medixa"
     },
     {
       "type": "company",
@@ -107802,7 +107802,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Melsmon Pharmaceutical | Melsmon Pharmaceutical | Japan | Asia-Pacific | Private | Manufacturer | Regenerative | Melsmon Pharmaceutical | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Private | Manufacturer | Active | 1 | 1 | Regenerative | 0 | 0"
+      "search_text": "company | Melsmon Pharmaceutical | Melsmon Pharmaceutical | Japan | Asia-Pacific | Private | Manufacturer | Regenerative | Melsmon Pharmaceutical | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Private | Manufacturer | Active | 1 | 1 | Regenerative | 0 | 0 | Melsmon Pharmaceutical"
     },
     {
       "type": "company",
@@ -107831,7 +107831,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Meta Biomed | Meta Biomed | South Korea | Asia-Pacific | Public | Manufacturer | KRX:059210 | Injectables | Meta Biomed | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:059210 | 72.07 | 2025 | 52.06 | 72.05 | 2026-05-26T14:30:30+08:00 | 1 | 1 | 1 | Injectables | 0 | 0 | 3795.0 | KRW | 2.57 | https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d | 2026-06-12T14:30:23+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:23+08:00"
+      "search_text": "company | Meta Biomed | Meta Biomed | South Korea | Asia-Pacific | Public | Manufacturer | KRX:059210 | Injectables | Meta Biomed | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:059210 | 72.07 | 2025 | 52.06 | 72.05 | 2026-05-26T14:30:30+08:00 | 1 | 1 | 1 | Injectables | 0 | 0 | 3795.0 | KRW | 2.57 | https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d | 2026-06-12T14:30:23+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T14:30:23+08:00 | Meta Biomed"
     },
     {
       "type": "company",
@@ -107860,7 +107860,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | MicroAire Surgical Instruments | MicroAire Surgical Instruments | USA | North America | Private | Manufacturer | EBD | MicroAire Surgical Instruments | USA | USA | 1 | North America | Charlottesville, VA, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | MicroAire Surgical Instruments | MicroAire Surgical Instruments | USA | North America | Private | Manufacturer | EBD | MicroAire Surgical Instruments | USA | USA | 1 | North America | Charlottesville, VA, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | MicroAire Surgical Instruments"
     },
     {
       "type": "company",
@@ -107889,7 +107889,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Milesman | Milesman | Spain | Europe | Private | Manufacturer | EBD | Milesman | Spain | Spain | 1 | Europe | Madrid, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Milesman | Milesman | Spain | Europe | Private | Manufacturer | EBD | Milesman | Spain | Spain | 1 | Europe | Madrid, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Milesman"
     },
     {
       "type": "company",
@@ -107918,7 +107918,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | My Med Aesthetics | My Med Aesthetics | Hungary | Europe | Private | Manufacturer | Injectables | My Med Aesthetics | Hungary | Hungary | 1 | Other | Pilisborosjenő, Hungary | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | My Med Aesthetics | My Med Aesthetics | Hungary | Europe | Private | Manufacturer | Injectables | My Med Aesthetics | Hungary | Hungary | 1 | Other | Pilisborosjenő, Hungary | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | My Med Aesthetics"
     },
     {
       "type": "company",
@@ -107947,7 +107947,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Möller Medical | Möller Medical | Germany | Europe | Private | Manufacturer | Surgical | Möller Medical | Germany | Germany | 1 | Europe | Fulda, Germany | Private | Manufacturer | Active | 1 | 1 | Surgical | 0 | 0"
+      "search_text": "company | Möller Medical | Möller Medical | Germany | Europe | Private | Manufacturer | Surgical | Möller Medical | Germany | Germany | 1 | Europe | Fulda, Germany | Private | Manufacturer | Active | 1 | 1 | Surgical | 0 | 0 | Möller Medical"
     },
     {
       "type": "company",
@@ -107976,7 +107976,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | N-Finders | N-Finders | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | N-Finders | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | N-Finders | N-Finders | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | N-Finders | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | N-Finders"
     },
     {
       "type": "company",
@@ -108005,7 +108005,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | NeoDr | NeoDr | South Korea | Asia-Pacific | Private | Manufacturer | EBD | NeoDr | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | NeoDr | NeoDr | South Korea | Asia-Pacific | Private | Manufacturer | EBD | NeoDr | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | NeoDr"
     },
     {
       "type": "company",
@@ -108034,7 +108034,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Neogenesis | Neogenesis | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Neogenesis | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Neogenesis | Neogenesis | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Neogenesis | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Neogenesis"
     },
     {
       "type": "company",
@@ -108063,7 +108063,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Newpong | Newpong | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Newpong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Newpong | Newpong | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Newpong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Newpong"
     },
     {
       "type": "company",
@@ -108092,7 +108092,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Nexgen Biopharma | Nexgen Biopharma | UK | Europe | Private | Brand Owner | Injectables | Nexgen Biopharma | UK | UK | 1 | Europe | London, UK | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Nexgen Biopharma | Nexgen Biopharma | UK | Europe | Private | Brand Owner | Injectables | Nexgen Biopharma | UK | UK | 1 | Europe | London, UK | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | Nexgen Biopharma"
     },
     {
       "type": "company",
@@ -108121,7 +108121,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Nordberg Medical | Nordberg Medical | Sweden | Europe | Private | Manufacturer | Injectables | Nordberg Medical | Sweden | Sweden | 1 | Other | Stockholm, Sweden | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Nordberg Medical | Nordberg Medical | Sweden | Europe | Private | Manufacturer | Injectables | Nordberg Medical | Sweden | Sweden | 1 | Other | Stockholm, Sweden | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Nordberg Medical"
     },
     {
       "type": "company",
@@ -108150,7 +108150,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Norseld | Norseld | Australia | Asia-Pacific | Private | Manufacturer | EBD | Norseld | Australia | Australia | 1 | Asia-Pacific | Adelaide, Australia | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Norseld | Norseld | Australia | Asia-Pacific | Private | Manufacturer | EBD | Norseld | Australia | Australia | 1 | Asia-Pacific | Adelaide, Australia | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Norseld"
     },
     {
       "type": "company",
@@ -108179,7 +108179,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Novoxel | Novoxel | Israel | Middle East | Private | Manufacturer | EBD | Novoxel | Israel | Israel | 1 | Middle East | Netanya, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Novoxel | Novoxel | Israel | Middle East | Private | Manufacturer | EBD | Novoxel | Israel | Israel | 1 | Middle East | Netanya, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Novoxel"
     },
     {
       "type": "company",
@@ -108208,7 +108208,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Onetech | Onetech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Onetech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Onetech | Onetech | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Onetech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Onetech"
     },
     {
       "type": "company",
@@ -108237,7 +108237,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Opatra London | Opatra London | UK | Europe | Private | Brand Owner | EBD | Opatra London | UK | UK | 1 | Europe | London, UK | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Opatra London | Opatra London | UK | Europe | Private | Brand Owner | EBD | Opatra London | UK | UK | 1 | Europe | London, UK | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0 | Opatra London"
     },
     {
       "type": "company",
@@ -108266,7 +108266,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | GCS | GCS | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | GCS | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | GCS | GCS | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | GCS | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | GCS"
     },
     {
       "type": "company",
@@ -108295,7 +108295,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | GME German Medical Engineering | GME German Medical Engineering | Germany | Europe | Private | Manufacturer | EBD | GME German Medical Engineering | Germany | Germany | 1 | Europe | Erlangen, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | GME German Medical Engineering | GME German Medical Engineering | Germany | Europe | Private | Manufacturer | EBD | GME German Medical Engineering | Germany | Germany | 1 | Europe | Erlangen, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | GME German Medical Engineering"
     },
     {
       "type": "company",
@@ -108324,7 +108324,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | GMV | GMV | Italy | Europe | Private | Manufacturer | EBD | GMV | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | GMV | GMV | Italy | Europe | Private | Manufacturer | EBD | GMV | Italy | Italy | 1 | Europe | Rome, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | GMV"
     },
     {
       "type": "company",
@@ -108353,7 +108353,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | GTG Wellness | GTG Wellness | South Korea | Asia-Pacific | Public | Manufacturer | KRX:219750 | EBD | GTG Wellness | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:219750 | 22.42 | 2025 | 21.13 | 28.71 | 2026-05-26T14:30:30+08:00 | 1.28 | 100 | 1 | 1 | EBD | 0 | 0 | 571.0 | KRW | -3.07 | https://query1.finance.yahoo.com/v8/finance/chart/219750.KQ?range=5d&interval=1d | 2026-06-02T14:30:02+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/219750.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-06-02T14:30:02+08:00"
+      "search_text": "company | GTG Wellness | GTG Wellness | South Korea | Asia-Pacific | Public | Manufacturer | KRX:219750 | EBD | GTG Wellness | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:219750 | 22.42 | 2025 | 21.13 | 28.71 | 2026-05-26T14:30:30+08:00 | 1.28 | 100 | 1 | 1 | EBD | 0 | 0 | 571.0 | KRW | -3.07 | https://query1.finance.yahoo.com/v8/finance/chart/219750.KQ?range=5d&interval=1d | 2026-06-02T14:30:02+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/219750.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-06-02T14:30:02+08:00 | GTG Wellness"
     },
     {
       "type": "company",
@@ -108382,7 +108382,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | General Project | General Project | Italy | Europe | Private | Manufacturer | EBD | General Project | Italy | Italy | 1 | Europe | Florence, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | General Project | General Project | Italy | Europe | Private | Manufacturer | EBD | General Project | Italy | Italy | 1 | Europe | Florence, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | General Project"
     },
     {
       "type": "company",
@@ -108411,7 +108411,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Genoss | Genoss | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Genoss | South Korea | South Korea | 1 | Asia-Pacific | Suwon, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Genoss | Genoss | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Genoss | South Korea | South Korea | 1 | Asia-Pacific | Suwon, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Genoss"
     },
     {
       "type": "company",
@@ -108440,7 +108440,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Glyance | Glyance | Israel | Middle East | Private | Manufacturer | Injectables | Glyance | Israel | Israel | 1 | Middle East | Petah Tikva, Israel | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Glyance | Glyance | Israel | Middle East | Private | Manufacturer | Injectables | Glyance | Israel | Israel | 1 | Middle East | Petah Tikva, Israel | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Glyance"
     },
     {
       "type": "company",
@@ -108469,7 +108469,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Grand Aespio | Grand Aespio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Grand Aespio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Grand Aespio | Grand Aespio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Grand Aespio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Grand Aespio"
     },
     {
       "type": "company",
@@ -108498,7 +108498,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Halozyme Therapeutics | Halozyme Therapeutics | USA | North America | Public | Manufacturer | NASDAQ:HALO | Injectables | Halozyme Therapeutics | USA | USA | 1 | North America | San Diego, CA, USA | Public | Manufacturer | Active | NASDAQ:HALO | 1396.61 | 2025 | 0.44 | 8413.22 | 2026-06-15T08:17:36+08:00 | 6.02 | 1 | 1 | Injectables | 0 | 0 | 69.5 | USD | -1.74 | https://query1.finance.yahoo.com/v8/finance/chart/HALO?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json | official_sec_xbrl_auto | 26.55 | 172.35 | 2.56 | 2.56 | -28.64 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-02-17 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00"
+      "search_text": "company | Halozyme Therapeutics | Halozyme Therapeutics | USA | North America | Public | Manufacturer | NASDAQ:HALO | Injectables | Halozyme Therapeutics | USA | USA | 1 | North America | San Diego, CA, USA | Public | Manufacturer | Active | NASDAQ:HALO | 1396.61 | 2025 | 0.44 | 8413.22 | 2026-06-15T08:17:36+08:00 | 6.02 | 1 | 1 | Injectables | 0 | 0 | 69.5 | USD | -1.74 | https://query1.finance.yahoo.com/v8/finance/chart/HALO?range=5d&interval=1d | 2026-06-13T04:00:01+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json | official_sec_xbrl_auto | 26.55 | 172.35 | 2.56 | 2.56 | -28.64 | 2026-06-13T04:00:01+08:00 | FY2025 | 2026-02-17 | SEC annual XBRL companyfacts | 2026-06-15T08:17:36+08:00 | Halozyme Therapeutics"
     },
     {
       "type": "company",
@@ -108527,7 +108527,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hanson Medical | Hanson Medical | USA | North America | Private | Manufacturer | Implants | Hanson Medical | USA | USA | 1 | North America | Kingston, WA, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0"
+      "search_text": "company | Hanson Medical | Hanson Medical | USA | North America | Private | Manufacturer | Implants | Hanson Medical | USA | USA | 1 | North America | Kingston, WA, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0 | Hanson Medical"
     },
     {
       "type": "company",
@@ -108556,7 +108556,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Healux | Healux | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Healux | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Healux | Healux | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Healux | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Healux"
     },
     {
       "type": "company",
@@ -108585,7 +108585,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Human Med AG | Human Med AG | Germany | Europe | Private | Manufacturer | EBD | Human Med AG | Germany | Germany | 1 | Europe | Schwerin, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Human Med AG | Human Med AG | Germany | Europe | Private | Manufacturer | EBD | Human Med AG | Germany | Germany | 1 | Europe | Schwerin, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Human Med AG"
     },
     {
       "type": "company",
@@ -108614,7 +108614,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hydrinity Skin Science | Hydrinity Skin Science | USA | North America | Private | Brand Owner | Injectables | Hydrinity Skin Science | USA | USA | 1 | North America | Palm Beach, FL, USA | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Hydrinity Skin Science | Hydrinity Skin Science | USA | North America | Private | Brand Owner | Injectables | Hydrinity Skin Science | USA | USA | 1 | North America | Palm Beach, FL, USA | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | Hydrinity Skin Science"
     },
     {
       "type": "company",
@@ -108643,7 +108643,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hyundae Meditech | Hyundae Meditech | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Hyundae Meditech | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Hyundae Meditech | Hyundae Meditech | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Hyundae Meditech | South Korea | South Korea | 1 | Asia-Pacific | Wonju, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Hyundae Meditech"
     },
     {
       "type": "company",
@@ -108673,7 +108673,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | IDS / Innovative Device Solutions | IDS | Innovative Device Solutions | South Korea | Asia-Pacific | Private | Manufacturer | EBD | IDS / Innovative Device Solutions | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | IDS / Innovative Device Solutions | IDS | Innovative Device Solutions | South Korea | Asia-Pacific | Private | Manufacturer | EBD | IDS / Innovative Device Solutions | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | IDS / Innovative Device Solutions"
     },
     {
       "type": "company",
@@ -108702,7 +108702,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | ITC | ITC | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | ITC | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | ITC | ITC | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | ITC | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | ITC"
     },
     {
       "type": "company",
@@ -108732,7 +108732,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Palomar Medical | Palomar Medical | Cynosure | USA | North America | Private | Manufacturer | Cynosure | EBD | Palomar Medical | USA | USA | 1 | North America | Westford, MA, USA | Private | Manufacturer | Acquired | Cynosure | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Palomar Medical | Palomar Medical | Cynosure | USA | North America | Private | Manufacturer | Cynosure | EBD | Palomar Medical | USA | USA | 1 | North America | Westford, MA, USA | Private | Manufacturer | Acquired | Cynosure | 1 | 1 | EBD | 0 | 0 | Cynosure"
     },
     {
       "type": "company",
@@ -108761,7 +108761,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Phiderma | Phiderma | France | Europe | Private | Brand Owner | Injectables | Phiderma | France | France | 1 | Europe | Paris, France | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Phiderma | Phiderma | France | Europe | Private | Brand Owner | Injectables | Phiderma | France | France | 1 | Europe | Paris, France | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | Phiderma"
     },
     {
       "type": "company",
@@ -108790,7 +108790,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Physioquanta | Physioquanta | France | Europe | Private | Manufacturer | EBD | Physioquanta | France | France | 1 | Europe | Montpellier, France | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Physioquanta | Physioquanta | France | Europe | Private | Manufacturer | EBD | Physioquanta | France | France | 1 | Europe | Montpellier, France | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Physioquanta"
     },
     {
       "type": "company",
@@ -108819,7 +108819,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Planmeca | Planmeca | Finland | Europe | Private | Manufacturer | EBD | Planmeca | Finland | Finland | 1 | Other | Helsinki, Finland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Planmeca | Planmeca | Finland | Europe | Private | Manufacturer | EBD | Planmeca | Finland | Finland | 1 | Other | Helsinki, Finland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Planmeca"
     },
     {
       "type": "company",
@@ -108848,7 +108848,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Polytech Health & Aesthetics | Polytech Health & Aesthetics | Germany | Europe | Private | Manufacturer | Implants | Polytech Health & Aesthetics | Germany | Germany | 1 | Europe | Dieburg, Germany | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0"
+      "search_text": "company | Polytech Health & Aesthetics | Polytech Health & Aesthetics | Germany | Europe | Private | Manufacturer | Implants | Polytech Health & Aesthetics | Germany | Germany | 1 | Europe | Dieburg, Germany | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0 | Polytech Health & Aesthetics"
     },
     {
       "type": "company",
@@ -108877,7 +108877,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Primoris International | Primoris International | South Korea | Asia-Pacific | Private | R&D/OEM | Regenerative | Primoris International | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | R&D/OEM | Active | 1 | 1 | Regenerative | 0 | 0"
+      "search_text": "company | Primoris International | Primoris International | South Korea | Asia-Pacific | Private | R&D/OEM | Regenerative | Primoris International | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | R&D/OEM | Active | 1 | 1 | Regenerative | 0 | 0 | Primoris International"
     },
     {
       "type": "company",
@@ -108906,7 +108906,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Prodermis | Prodermis | UK | Europe | Private | Brand Owner | Injectables | Prodermis | UK | UK | 1 | Europe | London, UK | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Prodermis | Prodermis | UK | Europe | Private | Brand Owner | Injectables | Prodermis | UK | UK | 1 | Europe | London, UK | Private | Brand Owner | Active | 1 | 1 | Injectables | 0 | 0 | Prodermis"
     },
     {
       "type": "company",
@@ -108935,7 +108935,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Prollenium | Prollenium | Canada | North America | Private | Manufacturer | Injectables | Prollenium | Canada | Canada | 1 | North America | Aurora, Canada | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Prollenium | Prollenium | Canada | North America | Private | Manufacturer | Injectables | Prollenium | Canada | Canada | 1 | North America | Aurora, Canada | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Prollenium"
     },
     {
       "type": "company",
@@ -108964,7 +108964,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Prollenium Medical | Prollenium Medical | Canada | North America | Private | Manufacturer | Injectables | Prollenium Medical | Canada | Canada | 1 | North America | Aurora, ON, Canada | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Prollenium Medical | Prollenium Medical | Canada | North America | Private | Manufacturer | Injectables | Prollenium Medical | Canada | Canada | 1 | North America | Aurora, ON, Canada | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Prollenium Medical"
     },
     {
       "type": "company",
@@ -108993,7 +108993,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Protect-Laserschutz | Protect-Laserschutz | Germany | Europe | Private | Manufacturer | EBD | Protect-Laserschutz | Germany | Germany | 1 | Europe | Nuremberg, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Protect-Laserschutz | Protect-Laserschutz | Germany | Europe | Private | Manufacturer | EBD | Protect-Laserschutz | Germany | Germany | 1 | Europe | Nuremberg, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Protect-Laserschutz"
     },
     {
       "type": "company",
@@ -109023,7 +109023,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Q-Med AB | Q-Med AB | Galderma | Sweden | Europe | Private | Manufacturer | Galderma | Injectables | Q-Med AB | Sweden | Sweden | 1 | Other | Uppsala, Sweden | Private | Manufacturer | Acquired | Galderma | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Q-Med AB | Q-Med AB | Galderma | Sweden | Europe | Private | Manufacturer | Galderma | Injectables | Q-Med AB | Sweden | Sweden | 1 | Other | Uppsala, Sweden | Private | Manufacturer | Acquired | Galderma | 1 | 1 | Injectables | 0 | 0 | Galderma"
     },
     {
       "type": "company",
@@ -109052,7 +109052,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Qosmedix | Qosmedix | USA | North America | Private | Supplier | Consumables | Qosmedix | USA | USA | 1 | North America | Ronkonkoma, NY, USA | Private | Supplier | Active | 1 | 1 | Consumables | 0 | 0"
+      "search_text": "company | Qosmedix | Qosmedix | USA | North America | Private | Supplier | Consumables | Qosmedix | USA | USA | 1 | North America | Ronkonkoma, NY, USA | Private | Supplier | Active | 1 | 1 | Consumables | 0 | 0 | Qosmedix"
     },
     {
       "type": "company",
@@ -109081,7 +109081,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Quantificare | Quantificare | France | Europe | Private | Manufacturer | Diagnostics | Quantificare | France | France | 1 | Europe | Biot, France | Private | Manufacturer | Active | 1 | 1 | Diagnostics | 0 | 0"
+      "search_text": "company | Quantificare | Quantificare | France | Europe | Private | Manufacturer | Diagnostics | Quantificare | France | France | 1 | Europe | Biot, France | Private | Manufacturer | Active | 1 | 1 | Diagnostics | 0 | 0 | Quantificare"
     },
     {
       "type": "company",
@@ -109110,7 +109110,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | RFBio | RFBio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | RFBio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | RFBio | RFBio | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | RFBio | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | RFBio"
     },
     {
       "type": "company",
@@ -109139,7 +109139,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Reanzen | Reanzen | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Reanzen | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Reanzen | Reanzen | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Reanzen | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Reanzen"
     },
     {
       "type": "company",
@@ -109168,7 +109168,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Receptura Apotheke | Receptura Apotheke | Germany | Europe | Private | Manufacturer | Injectables | Receptura Apotheke | Germany | Germany | 1 | Europe | Frankfurt, Germany | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Receptura Apotheke | Receptura Apotheke | Germany | Europe | Private | Manufacturer | Injectables | Receptura Apotheke | Germany | Germany | 1 | Europe | Frankfurt, Germany | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Receptura Apotheke"
     },
     {
       "type": "company",
@@ -109197,7 +109197,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Recros Medica | Recros Medica | USA | North America | Private | Manufacturer | EBD | Recros Medica | USA | USA | 1 | North America | San Diego, CA, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Recros Medica | Recros Medica | USA | North America | Private | Manufacturer | EBD | Recros Medica | USA | USA | 1 | North America | San Diego, CA, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Recros Medica"
     },
     {
       "type": "company",
@@ -109226,7 +109226,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Refine | Refine | USA | North America | Private | Manufacturer | EBD | Refine | USA | USA | 1 | North America | Jacksonville, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Refine | Refine | USA | North America | Private | Manufacturer | EBD | Refine | USA | USA | 1 | North America | Jacksonville, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Refine"
     },
     {
       "type": "company",
@@ -109255,7 +109255,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Eberlin | Eberlin | Spain | Europe | Private | Brand Owner | Regenerative | Eberlin | Spain | Spain | 1 | Europe | Madrid, Spain | Private | Brand Owner | Active | 1 | 1 | Regenerative | 0 | 0"
+      "search_text": "company | Eberlin | Eberlin | Spain | Europe | Private | Brand Owner | Regenerative | Eberlin | Spain | Spain | 1 | Europe | Madrid, Spain | Private | Brand Owner | Active | 1 | 1 | Regenerative | 0 | 0 | Eberlin"
     },
     {
       "type": "company",
@@ -109284,7 +109284,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Eltech K-Laser | Eltech K-Laser | Italy | Europe | Private | Manufacturer | EBD | Eltech K-Laser | Italy | Italy | 1 | Europe | Treviso, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Eltech K-Laser | Eltech K-Laser | Italy | Europe | Private | Manufacturer | EBD | Eltech K-Laser | Italy | Italy | 1 | Europe | Treviso, Italy | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Eltech K-Laser"
     },
     {
       "type": "company",
@@ -109313,7 +109313,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ema Aesthetics | Ema Aesthetics | Ireland | Europe | Private | R&D/OEM | EBD | Ema Aesthetics | Ireland | Ireland | 1 | Other | Dublin, Ireland | Private | R&D/OEM | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Ema Aesthetics | Ema Aesthetics | Ireland | Europe | Private | R&D/OEM | EBD | Ema Aesthetics | Ireland | Ireland | 1 | Other | Dublin, Ireland | Private | R&D/OEM | Active | 1 | 1 | EBD | 0 | 0 | Ema Aesthetics"
     },
     {
       "type": "company",
@@ -109342,7 +109342,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Fidia Farmaceutici | Fidia Farmaceutici | Italy | Europe | Private | Manufacturer | Injectables | Fidia Farmaceutici | Italy | Italy | 1 | Europe | Abano Terme, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Fidia Farmaceutici | Fidia Farmaceutici | Italy | Europe | Private | Manufacturer | Injectables | Fidia Farmaceutici | Italy | Italy | 1 | Europe | Abano Terme, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Fidia Farmaceutici"
     },
     {
       "type": "company",
@@ -109371,7 +109371,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | FineMEC | FineMEC | South Korea | Asia-Pacific | Private | Manufacturer | EBD | FineMEC | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | FineMEC | FineMEC | South Korea | Asia-Pacific | Private | Manufacturer | EBD | FineMEC | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | FineMEC"
     },
     {
       "type": "company",
@@ -109400,7 +109400,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Fusion Meso | Fusion Meso | Spain | Europe | Private | Manufacturer | Injectables | Fusion Meso | Spain | Spain | 1 | Europe | Tarragona, Spain | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Fusion Meso | Fusion Meso | Spain | Europe | Private | Manufacturer | Injectables | Fusion Meso | Spain | Spain | 1 | Europe | Tarragona, Spain | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Fusion Meso"
     },
     {
       "type": "company",
@@ -109429,7 +109429,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cryoalfa | Cryoalfa | Germany | Europe | Private | Manufacturer | EBD | Cryoalfa | Germany | Germany | 1 | Europe | Herborn, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Cryoalfa | Cryoalfa | Germany | Europe | Private | Manufacturer | EBD | Cryoalfa | Germany | Germany | 1 | Europe | Herborn, Germany | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Cryoalfa"
     },
     {
       "type": "company",
@@ -109458,7 +109458,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | W.L. Gore & Associates | W.L. Gore & Associates | USA | North America | Private | Manufacturer | Implants | W.L. Gore & Associates | USA | USA | 1 | North America | Newark, DE, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0"
+      "search_text": "company | W.L. Gore & Associates | W.L. Gore & Associates | USA | North America | Private | Manufacturer | Implants | W.L. Gore & Associates | USA | USA | 1 | North America | Newark, DE, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0 | W.L. Gore & Associates"
     },
     {
       "type": "company",
@@ -109487,7 +109487,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Wells Johnson | Wells Johnson | USA | North America | Private | Manufacturer | Consumables | Wells Johnson | USA | USA | 1 | North America | Tucson, AZ, USA | Private | Manufacturer | Active | 1 | 1 | Consumables | 0 | 0"
+      "search_text": "company | Wells Johnson | Wells Johnson | USA | North America | Private | Manufacturer | Consumables | Wells Johnson | USA | USA | 1 | North America | Tucson, AZ, USA | Private | Manufacturer | Active | 1 | 1 | Consumables | 0 | 0 | Wells Johnson"
     },
     {
       "type": "company",
@@ -109516,7 +109516,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Wonder Technology | Wonder Technology | Spain | Europe | Private | Manufacturer | EBD | Wonder Technology | Spain | Spain | 1 | Europe | Madrid, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Wonder Technology | Wonder Technology | Spain | Europe | Private | Manufacturer | EBD | Wonder Technology | Spain | Spain | 1 | Europe | Madrid, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Wonder Technology"
     },
     {
       "type": "company",
@@ -109545,7 +109545,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Woorhi Mecha | Woorhi Mecha | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Woorhi Mecha | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Woorhi Mecha | Woorhi Mecha | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Woorhi Mecha | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Woorhi Mecha"
     },
     {
       "type": "company",
@@ -109574,7 +109574,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | World Dermic | World Dermic | Spain | Europe | Private | Manufacturer | EBD | World Dermic | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | World Dermic | World Dermic | Spain | Europe | Private | Manufacturer | EBD | World Dermic | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | World Dermic"
     },
     {
       "type": "company",
@@ -109603,7 +109603,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Xcelens | Xcelens | Switzerland | Europe | Private | Manufacturer | Injectables | Xcelens | Switzerland | Switzerland | 1 | Europe | Lugano, Switzerland | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Xcelens | Xcelens | Switzerland | Europe | Private | Manufacturer | Injectables | Xcelens | Switzerland | Switzerland | 1 | Europe | Lugano, Switzerland | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Xcelens"
     },
     {
       "type": "company",
@@ -109632,7 +109632,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Xcite | Xcite | USA | North America | Private | Manufacturer | EBD | Xcite | USA | USA | 1 | North America | Nashville, TN, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Xcite | Xcite | USA | North America | Private | Manufacturer | EBD | Xcite | USA | USA | 1 | North America | Nashville, TN, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Xcite"
     },
     {
       "type": "company",
@@ -109661,7 +109661,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ycellbio Medical | Ycellbio Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Ycellbio Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Ycellbio Medical | Ycellbio Medical | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Ycellbio Medical | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Ycellbio Medical"
     },
     {
       "type": "company",
@@ -109690,7 +109690,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Youthera | Youthera | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Youthera | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Youthera | Youthera | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Youthera | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Youthera"
     },
     {
       "type": "company",
@@ -109719,7 +109719,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Zero Gravity | Zero Gravity | USA | North America | Private | Brand Owner | EBD | Zero Gravity | USA | USA | 1 | North America | Miami, FL, USA | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Zero Gravity | Zero Gravity | USA | North America | Private | Brand Owner | EBD | Zero Gravity | USA | USA | 1 | North America | Miami, FL, USA | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0 | Zero Gravity"
     },
     {
       "type": "company",
@@ -109748,7 +109748,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Zishel | Zishel | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Zishel | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Zishel | Zishel | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Zishel | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Zishel"
     },
     {
       "type": "company",
@@ -109777,7 +109777,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Regen Biotech | Regen Biotech | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Regen Biotech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Regen Biotech 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。"
+      "search_text": "company | Regen Biotech | Regen Biotech | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Regen Biotech | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 2 | 2 | Injectables | 0 | 0 | Regen Biotech 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。 | Regen Biotech"
     },
     {
       "type": "company",
@@ -109806,7 +109806,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Regen Lab SA | Regen Lab SA | Switzerland | Europe | Private | Manufacturer | EBD | Regen Lab SA | Switzerland | Switzerland | 1 | Europe | Le Mont-sur-Lausanne, Switzerland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Regen Lab SA | Regen Lab SA | Switzerland | Europe | Private | Manufacturer | EBD | Regen Lab SA | Switzerland | Switzerland | 1 | Europe | Le Mont-sur-Lausanne, Switzerland | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Regen Lab SA"
     },
     {
       "type": "company",
@@ -109835,7 +109835,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Reneve | Reneve | Monaco | Europe | Private | Manufacturer | EBD | Reneve | Monaco | Monaco | 1 | Other | Monaco | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Reneve | Reneve | Monaco | Europe | Private | Manufacturer | EBD | Reneve | Monaco | Monaco | 1 | Other | Monaco | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Reneve"
     },
     {
       "type": "company",
@@ -109864,7 +109864,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Reveal Lasers | Reveal Lasers | Israel | Middle East | Private | Manufacturer | EBD | Reveal Lasers | Israel | Israel | 1 | Middle East | Yokneam, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Reveal Lasers | Reveal Lasers | Israel | Middle East | Private | Manufacturer | EBD | Reveal Lasers | Israel | Israel | 1 | Middle East | Yokneam, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Reveal Lasers"
     },
     {
       "type": "company",
@@ -109893,7 +109893,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Rion Aesthetics | Rion Aesthetics | USA | North America | Private | Biotech | Regenerative | Rion Aesthetics | USA | USA | 1 | North America | Rochester, MN, USA | Private | Biotech | Active | 1 | 1 | Regenerative | 0 | 0"
+      "search_text": "company | Rion Aesthetics | Rion Aesthetics | USA | North America | Private | Biotech | Regenerative | Rion Aesthetics | USA | USA | 1 | North America | Rochester, MN, USA | Private | Biotech | Active | 1 | 1 | Regenerative | 0 | 0 | Rion Aesthetics"
     },
     {
       "type": "company",
@@ -109922,7 +109922,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Rohrer Aesthetics | Rohrer Aesthetics | USA | North America | Private | Manufacturer | EBD | Rohrer Aesthetics | USA | USA | 1 | North America | Homewood, AL, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Rohrer Aesthetics | Rohrer Aesthetics | USA | North America | Private | Manufacturer | EBD | Rohrer Aesthetics | USA | USA | 1 | North America | Homewood, AL, USA | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Rohrer Aesthetics"
     },
     {
       "type": "company",
@@ -109951,7 +109951,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | S. Thepharm | S. Thepharm | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | S. Thepharm | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | S. Thepharm | S. Thepharm | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | S. Thepharm | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | S. Thepharm"
     },
     {
       "type": "company",
@@ -109980,7 +109980,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Samyang Holdings | Samyang Holdings | South Korea | Asia-Pacific | Public | Manufacturer | KRX:000070 | Injectables | Samyang Holdings | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:000070 | 2343.8 | 2025 | 17.35 | 312.47 | 2024-07-20T04:00:00+08:00 | 0.13 | 1 | 1 | Injectables | 0 | 0 | 69500.0 | KRW | 26.36 | https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d | valuation_missing_price_only | 2024-07-20T04:00:00+08:00"
+      "search_text": "company | Samyang Holdings | Samyang Holdings | South Korea | Asia-Pacific | Public | Manufacturer | KRX:000070 | Injectables | Samyang Holdings | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:000070 | 2343.8 | 2025 | 17.35 | 312.47 | 2024-07-20T04:00:00+08:00 | 0.13 | 1 | 1 | Injectables | 0 | 0 | 69500.0 | KRW | 26.36 | https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d | 2024-07-20T04:00:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d | valuation_missing_price_only | 2024-07-20T04:00:00+08:00 | Samyang Holdings"
     },
     {
       "type": "company",
@@ -110009,7 +110009,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | SciVision Biotech | SciVision Biotech | Taiwan | Asia-Pacific | Public | Manufacturer | 1786.TW | Injectables | SciVision Biotech | Taiwan | Taiwan | 1 | Asia-Pacific | Kaohsiung, Taiwan | Public | Manufacturer | Active | 1786.TW | 28.19 | 2025 | 72 | 129.08 | 2026-05-26T13:30:40+08:00 | 4.58 | 1 | 1 | Injectables | 0 | 0 | 56.4 | TWD | -0.53 | https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d | 2026-06-12T13:30:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T13:30:11+08:00"
+      "search_text": "company | SciVision Biotech | SciVision Biotech | Taiwan | Asia-Pacific | Public | Manufacturer | 1786.TW | Injectables | SciVision Biotech | Taiwan | Taiwan | 1 | Asia-Pacific | Kaohsiung, Taiwan | Public | Manufacturer | Active | 1786.TW | 28.19 | 2025 | 72 | 129.08 | 2026-05-26T13:30:40+08:00 | 4.58 | 1 | 1 | Injectables | 0 | 0 | 56.4 | TWD | -0.53 | https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d | 2026-06-12T13:30:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-12T13:30:11+08:00 | SciVision Biotech"
     },
     {
       "type": "company",
@@ -110038,7 +110038,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Seoulin Medicare | Seoulin Medicare | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Seoulin Medicare | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Seoulin Medicare | Seoulin Medicare | South Korea | Asia-Pacific | Private | Manufacturer | EBD | Seoulin Medicare | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Seoulin Medicare"
     },
     {
       "type": "company",
@@ -110067,7 +110067,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Aspen Pharmacare | Aspen Pharmacare | South Africa | Africa | Public | Manufacturer | APN.JSE | Pharma | Aspen Pharmacare | South Africa | South Africa | 1 | Africa | Durban, South Africa | Public | Manufacturer | Active | APN.JSE | 2636.47 | 2025 | 44.11 | 3681.25 | 2026-05-26T23:00:53+08:00 | 1.4 | 1 | 1 | Pharma | 0 | 0 | 14649.0 | ZAc | 1.46 | https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d | 2026-06-12T23:02:34+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d | valuation_missing_price_only | 2026-06-12T23:02:34+08:00"
+      "search_text": "company | Aspen Pharmacare | Aspen Pharmacare | South Africa | Africa | Public | Manufacturer | APN.JSE | Pharma | Aspen Pharmacare | South Africa | South Africa | 1 | Africa | Durban, South Africa | Public | Manufacturer | Active | APN.JSE | 2636.47 | 2025 | 44.11 | 3681.25 | 2026-05-26T23:00:53+08:00 | 1.4 | 1 | 1 | Pharma | 0 | 0 | 14649.0 | ZAc | 1.46 | https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d | 2026-06-12T23:02:34+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d | valuation_missing_price_only | 2026-06-12T23:02:34+08:00 | Aspen Pharmacare"
     },
     {
       "type": "company",
@@ -110096,7 +110096,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Sunekos | Sunekos | Italy | Europe | Private | Manufacturer | Injectables | Sunekos | Italy | Italy | 1 | Europe | Milan, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Sunekos | Sunekos | Italy | Europe | Private | Manufacturer | Injectables | Sunekos | Italy | Italy | 1 | Europe | Milan, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Sunekos"
     },
     {
       "type": "company",
@@ -110125,7 +110125,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Suneva Medical | Suneva Medical | USA | North America | Private | Manufacturer | Injectables | Suneva Medical | USA | USA | 1 | North America | San Diego, CA, USA | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Suneva Medical | Suneva Medical | USA | North America | Private | Manufacturer | Injectables | Suneva Medical | USA | USA | 1 | North America | San Diego, CA, USA | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Suneva Medical"
     },
     {
       "type": "company",
@@ -110154,7 +110154,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Swiss Scientific Lab | Swiss Scientific Lab | Switzerland | Europe | Private | Manufacturer | Injectables | Swiss Scientific Lab | Switzerland | Switzerland | 1 | Europe | Lugano, Switzerland | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Swiss Scientific Lab | Swiss Scientific Lab | Switzerland | Europe | Private | Manufacturer | Injectables | Swiss Scientific Lab | Switzerland | Switzerland | 1 | Europe | Lugano, Switzerland | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Swiss Scientific Lab"
     },
     {
       "type": "company",
@@ -110183,7 +110183,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Sylton | Sylton | Netherlands | Europe | Private | Manufacturer | Diagnostics | Sylton | Netherlands | Netherlands | 1 | Europe | Veldhoven, Netherlands | Private | Manufacturer | Active | 1 | 1 | Diagnostics | 0 | 0"
+      "search_text": "company | Sylton | Sylton | Netherlands | Europe | Private | Manufacturer | Diagnostics | Sylton | Netherlands | Netherlands | 1 | Europe | Veldhoven, Netherlands | Private | Manufacturer | Active | 1 | 1 | Diagnostics | 0 | 0 | Sylton"
     },
     {
       "type": "company",
@@ -110212,7 +110212,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Symatese | Symatese | France | Europe | Private | Manufacturer | Injectables | Symatese | France | France | 1 | Europe | Chaponost, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Symatese | Symatese | France | Europe | Private | Manufacturer | Injectables | Symatese | France | France | 1 | Europe | Chaponost, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Symatese"
     },
     {
       "type": "company",
@@ -110241,7 +110241,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | TRIA Beauty | TRIA Beauty | USA | North America | Private | Brand Owner | EBD | TRIA Beauty | USA | USA | 1 | North America | Dublin, CA, USA | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | TRIA Beauty | TRIA Beauty | USA | North America | Private | Brand Owner | EBD | TRIA Beauty | USA | USA | 1 | North America | Dublin, CA, USA | Private | Brand Owner | Active | 1 | 1 | EBD | 0 | 0 | TRIA Beauty"
     },
     {
       "type": "company",
@@ -110270,7 +110270,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Tav-Tech | Tav-Tech | Israel | Middle East | Private | Manufacturer | EBD | Tav-Tech | Israel | Israel | 1 | Middle East | Yehud, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Tav-Tech | Tav-Tech | Israel | Middle East | Private | Manufacturer | EBD | Tav-Tech | Israel | Israel | 1 | Middle East | Yehud, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Tav-Tech"
     },
     {
       "type": "company",
@@ -110299,7 +110299,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Tavger | Tavger | Israel | Middle East | Private | Manufacturer | EBD | Tavger | Israel | Israel | 1 | Middle East | Katzrin, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0"
+      "search_text": "company | Tavger | Tavger | Israel | Middle East | Private | Manufacturer | EBD | Tavger | Israel | Israel | 1 | Middle East | Katzrin, Israel | Private | Manufacturer | Active | 1 | 1 | EBD | 0 | 0 | Tavger"
     },
     {
       "type": "company",
@@ -110328,7 +110328,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Tema Medicina | Tema Medicina | Italy | Europe | Private | Manufacturer | Injectables | Tema Medicina | Italy | Italy | 1 | Europe | Bologna, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Tema Medicina | Tema Medicina | Italy | Europe | Private | Manufacturer | Injectables | Tema Medicina | Italy | Italy | 1 | Europe | Bologna, Italy | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Tema Medicina"
     },
     {
       "type": "company",
@@ -110357,7 +110357,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | 1st SurgiConcept | 1st SurgiConcept | France | Europe | Private | Manufacturer | Injectables | 1st SurgiConcept | France | France | 1 | Europe | Valbonne, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | 1st SurgiConcept | 1st SurgiConcept | France | Europe | Private | Manufacturer | Injectables | 1st SurgiConcept | France | France | 1 | Europe | Valbonne, France | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | 1st SurgiConcept"
     },
     {
       "type": "company",
@@ -110386,7 +110386,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | e Sebbin | e Sebbin | France | Europe | Private | Manufacturer | Implants | e Sebbin | France | France | 1 | Europe | Boissy-l'Aillerie, France | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0"
+      "search_text": "company | e Sebbin | e Sebbin | France | Europe | Private | Manufacturer | Implants | e Sebbin | France | France | 1 | Europe | Boissy-l'Aillerie, France | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0 | e Sebbin"
     },
     {
       "type": "company",
@@ -110415,7 +110415,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Tesslift | Tesslift | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Tesslift | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Tesslift | Tesslift | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | Tesslift | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Tesslift"
     },
     {
       "type": "company",
@@ -110444,7 +110444,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Tiger Aesthetics | Tiger Aesthetics | USA | North America | Private | Manufacturer | Implants | Tiger Aesthetics | USA | USA | 1 | North America | Irvine, CA, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0"
+      "search_text": "company | Tiger Aesthetics | Tiger Aesthetics | USA | North America | Private | Manufacturer | Implants | Tiger Aesthetics | USA | USA | 1 | North America | Irvine, CA, USA | Private | Manufacturer | Active | 1 | 1 | Implants | 0 | 0 | Tiger Aesthetics"
     },
     {
       "type": "company",
@@ -110473,7 +110473,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Toskani | Toskani | Spain | Europe | Private | Manufacturer | Injectables | Toskani | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0"
+      "search_text": "company | Toskani | Toskani | Spain | Europe | Private | Manufacturer | Injectables | Toskani | Spain | Spain | 1 | Europe | Barcelona, Spain | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 0 | Toskani"
     },
     {
       "type": "company",
@@ -110503,7 +110503,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | SCL CO., LTD. | SCL CO. | LTD. | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | SCL CO., LTD. | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 韩国透明质酸填充剂制造商，VIEARCHEE/A-Viearchee 产品线。"
+      "search_text": "company | SCL CO., LTD. | SCL CO. | LTD. | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | SCL CO., LTD. | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 韩国透明质酸填充剂制造商，VIEARCHEE/A-Viearchee 产品线。 | SCL CO., LTD."
     },
     {
       "type": "company",
@@ -110532,7 +110532,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Forest Hills Lab Korea | Forest Hills Lab Korea | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | Forest Hills Lab Korea | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 韩国/亚洲市场 Rejeunesse 透明质酸填充剂相关公司。"
+      "search_text": "company | Forest Hills Lab Korea | Forest Hills Lab Korea | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | Forest Hills Lab Korea | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 韩国/亚洲市场 Rejeunesse 透明质酸填充剂相关公司。 | Forest Hills Lab Korea"
     },
     {
       "type": "company",
@@ -110561,7 +110561,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | S&V Technologies GmbH | S&V Technologies GmbH | Germany | Europe | Private | Manufacturer / Brand Owner | Injectables | S&V Technologies GmbH | Germany | Germany | 1 | Europe | Germany | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 德国 amalian 透明质酸填充剂与医美产品制造商。"
+      "search_text": "company | S&V Technologies GmbH | S&V Technologies GmbH | Germany | Europe | Private | Manufacturer / Brand Owner | Injectables | S&V Technologies GmbH | Germany | Germany | 1 | Europe | Germany | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 德国 amalian 透明质酸填充剂与医美产品制造商。 | S&V Technologies GmbH"
     },
     {
       "type": "company",
@@ -110590,7 +110590,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hafod Bioscience B.V. | Hafod Bioscience B.V. | Netherlands | Europe | Private | Manufacturer / Brand Owner | Injectables | Hafod Bioscience B.V. | Netherlands | Netherlands | 1 | Europe | Netherlands | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 荷兰 ArteColl 胶原/PMMA 皮下植入填充剂相关公司。"
+      "search_text": "company | Hafod Bioscience B.V. | Hafod Bioscience B.V. | Netherlands | Europe | Private | Manufacturer / Brand Owner | Injectables | Hafod Bioscience B.V. | Netherlands | Netherlands | 1 | Europe | Netherlands | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | 0 | 1 | 荷兰 ArteColl 胶原/PMMA 皮下植入填充剂相关公司。 | Hafod Bioscience B.V."
     },
     {
       "type": "company",
@@ -110620,7 +110620,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Huons BioPharma | Huons BioPharma | Huons Global | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Huons Global | Injectables | Huons BioPharma | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | Huons Global | 1 | 1 | Injectables | 0 | 1 | 韩国 HUTOX/LIZTOX A型肉毒毒素制造商。"
+      "search_text": "company | Huons BioPharma | Huons BioPharma | Huons Global | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Huons Global | Injectables | Huons BioPharma | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | Huons Global | 1 | 1 | Injectables | 0 | 1 | 韩国 HUTOX/LIZTOX A型肉毒毒素制造商。 | Huons Global"
     },
     {
       "type": "company",
@@ -110650,7 +110650,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | PRP Science | PRP Science | PRP Life Science | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | PRP Life Science | Injectables | PRP Science | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | PRP Life Science | 1 | 1 | Injectables | 0 | 1 | 韩国 Olidia 聚左旋乳酸 PLLA 胶原刺激剂制造商。"
+      "search_text": "company | PRP Science | PRP Science | PRP Life Science | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | PRP Life Science | Injectables | PRP Science | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer / Brand Owner | Active | PRP Life Science | 1 | 1 | Injectables | 0 | 1 | 韩国 Olidia 聚左旋乳酸 PLLA 胶原刺激剂制造商。 | PRP Life Science"
     },
     {
       "type": "company",
@@ -110679,7 +110679,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | WEDERM | WEDERM | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | WEDERM | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Brand Owner | Active | 1 | 1 | Injectables | WEDERM 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。"
+      "search_text": "company | WEDERM | WEDERM | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | WEDERM | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Private | Brand Owner | Active | 1 | 1 | Injectables | WEDERM 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。 | WEDERM"
     },
     {
       "type": "company",
@@ -110708,7 +110708,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Meamo Labs | Meamo Labs | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | Meamo Labs | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Brand Owner | Active | 2 | 2 | Injectables | Meamo Labs 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。"
+      "search_text": "company | Meamo Labs | Meamo Labs | South Korea | Asia-Pacific | Private | Brand Owner | Injectables | Meamo Labs | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Brand Owner | Active | 2 | 2 | Injectables | Meamo Labs 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。 | Meamo Labs"
     },
     {
       "type": "company",
@@ -110737,7 +110737,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | USCAREPHARM | USCAREPHARM | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | USCAREPHARM | South Korea | South Korea | 1 | Asia-Pacific | Suwon, South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | USCAREPHARM 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。"
+      "search_text": "company | USCAREPHARM | USCAREPHARM | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | USCAREPHARM | South Korea | South Korea | 1 | Asia-Pacific | Suwon, South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | USCAREPHARM 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。 | USCAREPHARM"
     },
     {
       "type": "company",
@@ -110766,7 +110766,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Aezian | Aezian | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | Aezian | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | Aezian 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。"
+      "search_text": "company | Aezian | Aezian | South Korea | Asia-Pacific | Private | Manufacturer / Brand Owner | Injectables | Aezian | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Private | Manufacturer / Brand Owner | Active | 1 | 1 | Injectables | Aezian 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。 | Aezian"
     },
     {
       "type": "company",
@@ -110795,7 +110795,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | FacePharm Korea | FacePharm Korea | South Korea | Asia-Pacific | Private | Brand Owner / Distributor | Injectables | FacePharm Korea | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Brand Owner / Distributor | Active | 1 | 1 | Injectables | FacePharm Korea 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。"
+      "search_text": "company | FacePharm Korea | FacePharm Korea | South Korea | Asia-Pacific | Private | Brand Owner / Distributor | Injectables | FacePharm Korea | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Brand Owner / Distributor | Active | 1 | 1 | Injectables | FacePharm Korea 的韩国 PLA/PLLA/PDLLA 胶原刺激产品线已纳入本轮补录。 | FacePharm Korea"
     },
     {
       "type": "company",
@@ -110824,7 +110824,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Taumedika SRL | Taumedika SRL | Italy | Europe | Private | Brand owner / manufacturer | Injectables | Taumedika SRL | Italy | Italy | 1 | Europe | Rome, Italy | Private | Brand owner / manufacturer | Active | 1 | 1 | Injectables | 意大利重组胶原/Rh collagen 注射再生品牌方，代表产品 Karisma FACE Rh Collagen。"
+      "search_text": "company | Taumedika SRL | Taumedika SRL | Italy | Europe | Private | Brand owner / manufacturer | Injectables | Taumedika SRL | Italy | Italy | 1 | Europe | Rome, Italy | Private | Brand owner / manufacturer | Active | 1 | 1 | Injectables | 意大利重组胶原/Rh collagen 注射再生品牌方，代表产品 Karisma FACE Rh Collagen。 | Taumedika SRL"
     },
     {
       "type": "company",
@@ -110840,20 +110840,20 @@ window.V3_SEARCH_DATA = {
       "ownership": "Public",
       "business_role": "Manufacturer",
       "status": "Active",
-      "parent_company": "",
+      "parent_company": "Huons Global",
       "stock_code": "KOSDAQ:200670",
       "track": "Injectables",
       "product_count": 2,
       "brand_count": 2,
       "verification_status": "unverified_seed",
-      "review_status": "backlog",
-      "source_status": "seed_from_workbook",
+      "review_status": "manual_verified",
+      "source_status": "manual_company_relationship_supplement, Huons Global official news",
       "evidence": {
         "level": "company",
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Humedix | Humedix | South Korea | Asia-Pacific | Public | Manufacturer | KOSDAQ:200670 | Injectables | Humedix | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Public | Manufacturer | Active | KOSDAQ:200670 | 73 | 2026 | 12.7 | 207.7 | 2026-06-01T01:43:21+08:00 | 2.85 | 2 | 2 | Injectables | 0 | 1 | 韩国 Humedix 玻尿酸填充剂进口注册主体；NMPA-IMP-02/03 用户确认新增。 | 28300.0 | KRW | 2.54 | https://query1.finance.yahoo.com/v8/finance/chart/200670.KQ?range=5d&interval=1d | 2026-06-12T14:30:15+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/200670.KQ?range=5d&interval=1d | pending_live_fetch | 2026-06-12T14:30:15+08:00"
+      "search_text": "company | Humedix | Humedix | South Korea | Asia-Pacific | Public | Manufacturer | Huons Global | KOSDAQ:200670 | Injectables | Humedix | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Public | Manufacturer | Active | Huons Global | KOSDAQ:200670 | 73 | 2026 | 12.7 | 207.7 | 2026-06-01T01:43:21+08:00 | 2.85 | 2 | 2 | Injectables | 0 | 1 | 韩国 Humedix 玻尿酸填充剂进口注册主体；NMPA-IMP-02/03 用户确认新增。 | 28300.0 | KRW | 2.54 | https://query1.finance.yahoo.com/v8/finance/chart/200670.KQ?range=5d&interval=1d | 2026-06-12T14:30:15+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/200670.KQ?range=5d&interval=1d | pending_live_fetch | 2026-06-12T14:30:15+08:00 | Huons Global | aesthetic_subsidiary_of_huons_group | Huons Global official news | https://huonsglobal.com/eng/home.php?field=&go=Bmenu_03&go_pds=pds_text_list&mode=&num=3275&pds_num=60&s_memo_2=&s_que=&start=10 | Keep Humedix as a public listed operating company while grouping it under Huons Global / Huons Group for corporate-family analysis."
     },
     {
       "type": "company",
@@ -110882,7 +110882,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | YooYoung Pharmaceutical | YooYoung Pharmaceutical | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | YooYoung Pharmaceutical | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 1 | 韩国 YooYoung 玻尿酸填充剂进口注册主体；NMPA-IMP-04 用户确认新增。 | pending_company_background_review"
+      "search_text": "company | YooYoung Pharmaceutical | YooYoung Pharmaceutical | South Korea | Asia-Pacific | Private | Manufacturer | Injectables | YooYoung Pharmaceutical | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Private | Manufacturer | Active | 1 | 1 | Injectables | 0 | 1 | 韩国 YooYoung 玻尿酸填充剂进口注册主体；NMPA-IMP-04 用户确认新增。 | pending_company_background_review | YooYoung Pharmaceutical"
     },
     {
       "type": "company",
@@ -110911,7 +110911,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Bimini Health Tech | Bimini Health Tech | USA | North America | Private | Manufacturer | Surgical | Bimini Health Tech | USA | USA | 1 | North America | Plano, Texas, USA | Private | Manufacturer | Active | 2 | 2 | Surgical | 自体脂肪移植系统与脂肪处理耗材平台 | private_company_reference_only"
+      "search_text": "company | Bimini Health Tech | Bimini Health Tech | USA | North America | Private | Manufacturer | Surgical | Bimini Health Tech | USA | USA | 1 | North America | Plano, Texas, USA | Private | Manufacturer | Active | 2 | 2 | Surgical | 自体脂肪移植系统与脂肪处理耗材平台 | private_company_reference_only | Bimini Health Tech"
     }
   ],
   "source_note": "Search index is regenerated from SQLite product/company masters plus registration, specification, and manual product-fact evidence."

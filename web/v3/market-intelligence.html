@@ -1,0 +1,2670 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>商业格局 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+
+  <main class="content">
+    <section class="page-hero mi-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Market Intelligence · Opportunity view</div>
+      <h1>
+        商业格局
+        <span class="h1-en">Market Intelligence</span>
+      </h1>
+      <p class="lede" id="mi-lede">用市场容量、增长速度、需求体量和上市公司热度，判断不同地区与赛道的商业机会。</p>
+      <div class="stat-row" id="mi-stat-row">
+        <span>Countries <span class="num">—</span></span>
+        <span>Market metrics <span class="num">—</span></span>
+        <span>Opportunities <span class="num">—</span></span>
+      </div>
+      <div class="mi-segmented" aria-label="商业格局视图">
+        <button type="button" class="active" data-mode="all">全部</button>
+        <button type="button" data-mode="market">市场指标</button>
+        <button type="button" data-mode="geo">国家来源</button>
+        <button type="button" data-mode="financial">财务估值</button>
+        <button type="button" data-mode="signals">日报信号</button>
+        <button type="button" data-mode="conflicts">矛盾点</button>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="all">
+      <div class="section-head">
+        <h2>全球机会地图</h2>
+        <span class="cn">· 地区 × 赛道</span><span class="en">Market opportunity map</span>
+      </div>
+      <div class="mi-map-layout">
+        <article class="mi-panel mi-map-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>容量、增速、需求和商业热度</h3>
+              <p>点的位置代表地区，大小代表机会指数；颜色代表赛道。</p>
+            </div>
+          </div>
+          <div class="mi-world-map" id="mi-world-map"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>重点结论</h3>
+              <p>用于直接回答“哪里值得看、为什么”。</p>
+            </div>
+          </div>
+          <div class="mi-highlight-list" id="mi-highlight-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="market">
+      <div class="section-head">
+        <h2>市场数据立方</h2>
+        <span class="cn">· 地区 × 赛道 × KPI</span><span class="en">Market cube</span>
+      </div>
+      <div class="mi-analysis-grid mi-cube-layout">
+        <article class="mi-panel mi-matrix-panel mi-cube-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>地区 / 国家 × 赛道指标矩阵</h3>
+              <p>每一行是一个市场切片；列展示市场规模、医美治疗数量、增长率、份额、销量和其他指标。</p>
+            </div>
+          </div>
+          <div class="mi-matrix" id="mi-market-matrix"></div>
+        </article>
+        <article class="mi-panel mi-cube-read-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>KPI 读数</h3>
+              <p>从同一矩阵中提取最大规模、最高增速、最大治疗需求和当前缺口。</p>
+            </div>
+          </div>
+          <div class="mi-cube-insights" id="mi-cube-insights"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="geo">
+      <div class="section-head">
+        <h2>国家级来源发现</h2>
+        <span class="cn">· 主干候选与 proxy 分流</span><span class="en">Country source discovery</span>
+      </div>
+      <div class="mi-geo-dashboard-grid">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>覆盖状态</h3>
+              <p>先看企业 Top 15 国家是否有可追踪行业数据，再判断哪些能进入事实主干。</p>
+            </div>
+          </div>
+          <div class="mi-geo-kpi-grid" id="mi-geo-kpi-grid"></div>
+          <div class="mi-method-strip" id="mi-geo-method-strip"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head mi-head-row">
+            <div>
+              <h3>Top 15 覆盖分布</h3>
+              <p>企业数决定优先级，覆盖等级决定下一步动作。</p>
+            </div>
+            <div class="mi-cube-control" id="mi-geo-tier-filter"></div>
+          </div>
+          <div class="mi-geo-coverage-bars" id="mi-geo-top15-bars"></div>
+        </article>
+      </div>
+      <div class="mi-analysis-grid mi-geo-layout">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>地区来源板</h3>
+              <p>把企业 Top 15 国家和地区来源分成治疗量主干、渠道密度、需求热度和监管 context。</p>
+            </div>
+          </div>
+          <div class="mi-geo-source-grid" id="mi-geo-source-grid"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>数据角色分布</h3>
+              <p>看哪些来源可以进入硬事实主干，哪些只能作为 proxy。</p>
+            </div>
+          </div>
+          <div class="mi-geo-summary" id="mi-geo-summary"></div>
+          <div class="mi-geo-next-list" id="mi-geo-priority-queue"></div>
+          <div class="mi-bar-list" id="mi-geo-role-bars"></div>
+        </article>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>企业 Top 15 国家覆盖</h3>
+            <p>按当前公司列表总部国家排序，检查是否已有可用行业数据源。</p>
+          </div>
+        </div>
+        <div class="mi-table-wrap">
+          <table>
+            <thead>
+              <tr><th>排名 / 国家</th><th class="num">企业数</th><th>覆盖等级</th><th>行业数据来源</th><th>下一步</th></tr>
+            </thead>
+            <tbody id="mi-geo-top15-rows"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>抽取队列</h3>
+            <p>每个国家/地区来源对应的下一步动作和验收边界。</p>
+          </div>
+        </div>
+        <div class="mi-table-wrap">
+          <table>
+            <thead>
+              <tr><th>来源</th><th>阶段</th><th>状态</th><th>范围</th><th>下一步</th><th>验收口径</th></tr>
+            </thead>
+            <tbody id="mi-geo-backlog-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="signals" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>商业动向雷达</h2>
+        <span class="cn">· 日报信号结构</span><span class="en">Signal movement</span>
+      </div>
+      <div class="mi-analysis-grid">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>月度信号构成</h3>
+              <p>商业表现、渠道覆盖、新品动态三类信号的相对变化。</p>
+            </div>
+          </div>
+          <div class="mi-stacked-timeline" id="mi-signal-timeline"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>公司热度排行</h3>
+              <p>把日报阅读工作转成公司优先级池。</p>
+            </div>
+          </div>
+          <div class="mi-company-rank" id="mi-company-rank"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="financial">
+      <div class="section-head">
+        <h2>估值 × 商业热度</h2>
+        <span class="cn">· 上市公司象限</span><span class="en">Valuation vs market heat</span>
+      </div>
+      <div class="mi-analysis-grid">
+        <article class="mi-panel mi-scatter-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>谁是高估值高热度</h3>
+              <p>横轴为商业热度，纵轴为上市公司市值；点大小近似收入规模。</p>
+            </div>
+          </div>
+          <div class="mi-scatter" id="mi-valuation-scatter"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>象限摘要</h3>
+              <p>用于区分成熟龙头、安静大公司和新近商业热度公司。</p>
+            </div>
+          </div>
+          <div class="mi-quadrants" id="mi-valuation-quadrants"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="all" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>核心读数</h2>
+        <span class="cn">· 商业证据层</span><span class="en">Commercial evidence layer</span>
+      </div>
+      <div class="kpi-grid" id="mi-kpis"></div>
+    </section>
+
+    <section class="block" data-mode-block="market" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>市场规模 / 医美治疗数量</h2>
+        <span class="cn">· 指标口径</span><span class="en">Market metrics</span>
+      </div>
+      <div class="mi-split">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>指标类型</h3>
+              <p id="mi-metric-sub">按 claim 类型和来源口径汇总。</p>
+            </div>
+          </div>
+          <div class="mi-bar-list" id="mi-type-bars"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>赛道覆盖</h3>
+              <p>数值指标覆盖到的商业赛道与地区。</p>
+            </div>
+          </div>
+          <div class="mi-bar-list" id="mi-category-bars"></div>
+        </article>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head mi-head-row">
+          <div>
+            <h3>指标明细</h3>
+            <p>数值型 claim 保留来源、年份、地区和单位。</p>
+          </div>
+          <div class="mi-filter-row" id="mi-metric-filters"></div>
+        </div>
+        <div class="mi-table-wrap">
+          <table>
+            <thead>
+              <tr><th>指标</th><th>赛道</th><th>地区</th><th>期间</th><th class="num">数值</th><th>来源</th><th>状态</th></tr>
+            </thead>
+            <tbody id="mi-market-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="financial" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>上市公司财务与估值</h2>
+        <span class="cn">· 财务快照</span><span class="en">Financial snapshots</span>
+      </div>
+      <div class="mi-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>估值与收入读数</h3>
+            <p>价格、估值和财务字段仅作为市场表现侧证。</p>
+          </div>
+        </div>
+        <div class="mi-finance-grid" id="mi-finance-grid"></div>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="signals" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>日报商业信号</h2>
+        <span class="cn">· 可信信号</span><span class="en">Trusted signals</span>
+      </div>
+      <div class="mi-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>渠道、商业表现与新品动态</h3>
+            <p>日报来源作为可信商业信号进入分析；涉及主事实更新时保留确认状态。</p>
+          </div>
+        </div>
+        <div class="mi-signal-grid" id="mi-signal-grid"></div>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="conflicts" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>来源与矛盾点</h2>
+        <span class="cn">· 冲突审阅</span><span class="en">Source conflict review</span>
+      </div>
+      <div class="mi-split mi-conflict-split">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>冲突组</h3>
+              <p>仅在同指标、同地区、同期间、同单位下比较差异。</p>
+            </div>
+          </div>
+          <div class="mi-table-wrap">
+            <table>
+              <thead><tr><th>指标</th><th>范围</th><th class="num">差异</th><th>来源</th><th>状态</th></tr></thead>
+              <tbody id="mi-conflict-rows"></tbody>
+            </table>
+          </div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>来源结构</h3>
+              <p>报告、结构化表与日报信号的来源分布。</p>
+            </div>
+          </div>
+          <div class="mi-bar-list" id="mi-source-bars"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>来源清单</h2>
+        <span class="cn">· 文件与摘录</span><span class="en">Source inventory</span>
+      </div>
+      <div class="mi-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>可追溯来源</h3>
+            <p>仅展示元数据和短摘录；报告正文不进入前台。</p>
+          </div>
+        </div>
+        <div class="mi-source-grid" id="mi-source-grid"></div>
+      </div>
+    </section>
+
+    <section class="block" data-backstage="1" hidden>
+      <div class="section-head">
+        <h2>待核验队列</h2>
+        <span class="cn">· 分析边界</span><span class="en">Review queue</span>
+      </div>
+      <div class="mi-split">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>需确认信号</h3>
+              <p>可信信号进入分析；进入主事实前需保持边界。</p>
+            </div>
+          </div>
+          <div class="mi-queue-list" id="mi-review-queue"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>校验状态</h3>
+              <p>商业 claim 的来源、置信度、审核状态和数值字段校验。</p>
+            </div>
+          </div>
+          <div class="mi-validation-list" id="mi-validation-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 商业格局 Market Intelligence · updated <span data-bind-text="mi-asof">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+  </main>
+</div>
+
+<aside class="mi-drawer" id="mi-drawer" hidden aria-label="来源详情">
+  <button type="button" class="mi-drawer-close" id="mi-drawer-close" aria-label="关闭">×</button>
+  <div id="mi-drawer-body"></div>
+</aside>
+<div class="mi-drawer-backdrop" id="mi-drawer-backdrop" hidden></div>
+
+<script src="../app-data.js?v=20260619"></script>
+<script src="./v3-market-intelligence.js?v=20260619"></script>
+<script src="./_nav.js" data-active="market-intelligence"></script>
+<style>
+  .mi-hero .lede { max-width: 760px; }
+  .mi-hero .stat-row {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  .content .page-hero,
+  .content .block,
+  .content .kpi-cell {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .mi-segmented {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .mi-segmented button,
+  .mi-filter-row button {
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: rgba(253,250,242,0.78);
+    color: var(--ink-2);
+    font-family: var(--f-sans);
+    font-size: 12px;
+    line-height: 1;
+    padding: 9px 12px;
+    cursor: pointer;
+  }
+  .mi-segmented button.active,
+  .mi-filter-row button.active {
+    color: #fff;
+    background: var(--plum-deep);
+    border-color: var(--plum-deep);
+  }
+  .mi-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .mi-analysis-grid,
+  .mi-insight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .mi-cube-layout {
+    grid-template-columns: minmax(0, 1.58fr) minmax(300px, 0.42fr);
+  }
+  .mi-map-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+    gap: 16px;
+  }
+  .mi-world-map {
+    position: relative;
+    min-height: 460px;
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 22% 38%, rgba(90,104,120,0.12), transparent 18%),
+      radial-gradient(ellipse at 50% 34%, rgba(107,90,117,0.12), transparent 16%),
+      radial-gradient(ellipse at 70% 45%, rgba(168,181,154,0.14), transparent 20%),
+      linear-gradient(180deg, rgba(255,252,245,0.82), rgba(239,234,224,0.9));
+  }
+  .mi-world-map::before {
+    content: "";
+    position: absolute;
+    inset: 9% 6%;
+    border: 1px solid rgba(80,60,70,0.08);
+    border-radius: 45% 48% 44% 47%;
+    background:
+      radial-gradient(ellipse at 18% 35%, rgba(90,104,120,0.16) 0 12%, transparent 13%),
+      radial-gradient(ellipse at 48% 31%, rgba(142,58,58,0.11) 0 14%, transparent 15%),
+      radial-gradient(ellipse at 64% 46%, rgba(107,90,117,0.13) 0 16%, transparent 17%),
+      radial-gradient(ellipse at 53% 66%, rgba(217,174,145,0.12) 0 10%, transparent 11%),
+      radial-gradient(ellipse at 31% 72%, rgba(168,181,154,0.12) 0 12%, transparent 13%);
+    opacity: 0.92;
+  }
+  .mi-map-point {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--s);
+    height: var(--s);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(255,252,245,0.92);
+    background: var(--c);
+    box-shadow: 0 12px 26px -14px rgba(58,51,64,0.55);
+    cursor: pointer;
+  }
+  .mi-map-label {
+    position: absolute;
+    left: var(--x);
+    top: calc(var(--y) + 14px);
+    transform: translateX(-50%);
+    color: var(--ink-2);
+    font-size: 10px;
+    line-height: 1.15;
+    max-width: 110px;
+    text-align: center;
+    pointer-events: none;
+  }
+  .mi-map-legend {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 12px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .mi-map-legend i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background: var(--c);
+  }
+  .mi-highlight-list {
+    display: grid;
+    gap: 12px;
+  }
+  .mi-highlight-card {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 13px;
+    background: rgba(255,252,245,0.70);
+  }
+  .mi-highlight-card .market {
+    color: var(--accent-2);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .mi-highlight-card h3 {
+    margin: 8px 0 6px;
+    font-family: var(--f-display);
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+  .mi-highlight-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .mi-highlight-card .entry {
+    margin-top: 9px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--ink-2);
+    font-size: 12px;
+  }
+  .mi-geo-layout {
+    grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
+  }
+  .mi-geo-dashboard-grid {
+    display: grid;
+    grid-template-columns: minmax(340px, 0.72fr) minmax(0, 1.28fr);
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .mi-geo-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .mi-geo-kpi {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255,252,245,0.74);
+    min-width: 0;
+  }
+  .mi-geo-kpi strong {
+    display: block;
+    font-family: var(--f-display);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .mi-geo-kpi span {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .mi-method-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+  }
+  .mi-method-strip span {
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    padding: 5px 8px;
+    background: rgba(246,241,230,0.68);
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .mi-geo-coverage-bars,
+  .mi-geo-next-list {
+    display: grid;
+    gap: 10px;
+  }
+  .mi-coverage-row {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.78fr) minmax(160px, 1fr) minmax(116px, auto);
+    gap: 10px;
+    align-items: center;
+    min-width: 0;
+  }
+  .mi-coverage-row .country-label {
+    min-width: 0;
+  }
+  .mi-coverage-row .country-label strong {
+    display: block;
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mi-coverage-row .country-label span {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mi-coverage-track {
+    position: relative;
+    height: 12px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(80,60,70,0.10);
+  }
+  .mi-coverage-track span {
+    display: block;
+    width: var(--w);
+    height: 100%;
+    border-radius: inherit;
+    background: #998f9b;
+  }
+  .mi-coverage-track .hard { background: linear-gradient(90deg, #8e3a3a, #c76b68); }
+  .mi-coverage-track .qa { background: linear-gradient(90deg, #b97954, #d9ae91); }
+  .mi-coverage-track .proxy { background: linear-gradient(90deg, #5a6878, #8fa0ac); }
+  .mi-coverage-track .context { background: linear-gradient(90deg, #6f7d60, #a8b59a); }
+  .mi-next-item {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 10px;
+    background: rgba(255,252,245,0.66);
+  }
+  .mi-next-item strong {
+    display: block;
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  .mi-next-item span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+  .mi-geo-source-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .mi-geo-card {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 13px;
+    background: rgba(255,252,245,0.72);
+    min-width: 0;
+  }
+  .mi-geo-card .topline,
+  .mi-geo-card .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+  }
+  .mi-geo-card .country {
+    color: var(--accent-2);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .mi-geo-card h3 {
+    margin: 8px 0 8px;
+    font-family: var(--f-display);
+    font-size: 23px;
+    line-height: 1.1;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+  .mi-geo-card p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.48;
+    overflow-wrap: anywhere;
+  }
+  .mi-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(70,55,65,0.14);
+    background: rgba(246,241,230,0.75);
+    color: var(--ink-2);
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .mi-pill.hard { background: rgba(142,58,58,0.10); color: #7a3434; }
+  .mi-pill.proxy { background: rgba(90,104,120,0.11); color: #465465; }
+  .mi-pill.context { background: rgba(168,181,154,0.16); color: #58664f; }
+  .mi-pill.qa { background: rgba(217,174,145,0.17); color: #7f5b43; }
+  .mi-geo-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .mi-geo-summary .tile {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255,252,245,0.72);
+  }
+  .mi-geo-summary .tile strong {
+    display: block;
+    font-family: var(--f-display);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .mi-geo-summary .tile span {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .mi-insight-card {
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 18px;
+    background: linear-gradient(135deg, rgba(253,250,242,0.92), rgba(239,205,203,0.36));
+    min-width: 0;
+    overflow: hidden;
+  }
+  .mi-insight-card .label {
+    color: var(--accent-2);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .mi-insight-card h3 {
+    margin: 10px 0 8px;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.22;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .mi-insight-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .mi-insight-meter {
+    margin-top: 14px;
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(80,60,70,0.10);
+  }
+  .mi-insight-meter span {
+    display: block;
+    height: 100%;
+    width: var(--w);
+    background: linear-gradient(90deg, var(--accent-2), #5a6878);
+  }
+  .mi-conflict-split { grid-template-columns: minmax(0, 1.22fr) minmax(280px, 0.78fr); }
+  .mi-panel {
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    background: rgba(253,250,242,0.72);
+    box-shadow: var(--shadow-card);
+    padding: 16px;
+    min-width: 0;
+  }
+  .mi-wide-panel { margin-top: 16px; }
+  .mi-panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .mi-panel-head h3 {
+    margin: 0;
+    font-family: var(--f-display-cn);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  .mi-panel-head p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .mi-head-row { align-items: center; }
+  .mi-filter-row { display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; }
+  .mi-bar-list { display: grid; gap: 12px; }
+  .mi-matrix {
+    display: grid;
+    gap: 12px;
+    overflow-x: auto;
+  }
+  .mi-cube-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 14px;
+  }
+  .mi-cube-control {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    min-width: 0;
+  }
+  .mi-cube-control button {
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: rgba(253,250,242,0.78);
+    color: var(--ink-2);
+    font-family: var(--f-sans);
+    font-size: 11px;
+    line-height: 1;
+    padding: 8px 10px;
+    cursor: pointer;
+  }
+  .mi-cube-control button.active {
+    color: #fff;
+    background: var(--plum-deep);
+    border-color: var(--plum-deep);
+  }
+  .mi-cube-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .mi-cube-meta span {
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    padding: 5px 8px;
+    background: rgba(255,252,245,0.62);
+  }
+  .mi-cube-table {
+    display: grid;
+    gap: 6px;
+    min-width: 1040px;
+  }
+  .mi-matrix-row,
+  .mi-matrix-head {
+    display: grid;
+    grid-template-columns: minmax(142px, 0.82fr) minmax(124px, 0.72fr) repeat(6, minmax(112px, 0.62fr));
+    gap: 6px;
+    align-items: stretch;
+  }
+  .mi-matrix-head {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .mi-matrix-cell {
+    border: 1px solid var(--hairline-2);
+    border-radius: 7px;
+    min-height: 48px;
+    padding: 8px;
+    background: rgba(255,252,245,0.72);
+    color: var(--ink-2);
+    font-size: 12px;
+    line-height: 1.2;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .mi-matrix-cell.geo,
+  .mi-matrix-cell.segment {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .mi-matrix-cell.geo small,
+  .mi-matrix-cell.segment small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .mi-matrix-cell.heat {
+    background: color-mix(in srgb, var(--accent-2) calc(var(--p) * 1%), rgba(255,252,245,0.82));
+    color: color-mix(in srgb, var(--ink) 68%, white calc(var(--p) * .32%));
+  }
+  .mi-matrix-cell.empty {
+    background: rgba(80,60,70,0.045);
+    color: rgba(80,60,70,0.32);
+  }
+  .mi-matrix-cell .value {
+    display: block;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mi-matrix-cell .meta {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-family: var(--f-sans);
+    font-size: 10px;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mi-cube-insights {
+    display: grid;
+    gap: 10px;
+  }
+  .mi-cube-insight {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255,252,245,0.68);
+  }
+  .mi-cube-insight .label {
+    display: block;
+    color: var(--accent-2);
+    font-size: 10px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .mi-cube-insight strong {
+    display: block;
+    margin: 6px 0 4px;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  .mi-cube-insight span:last-child {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .mi-composition,
+  .mi-stacked-timeline,
+  .mi-company-rank,
+  .mi-quadrants {
+    display: grid;
+    gap: 12px;
+  }
+  .mi-composition-row,
+  .mi-company-row,
+  .mi-quadrant-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.8fr) minmax(150px, 1fr) 58px;
+    gap: 10px;
+    align-items: center;
+  }
+  .mi-composition-row .track,
+  .mi-company-row .track,
+  .mi-quadrant-row .track {
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(80,60,70,0.10);
+  }
+  .mi-composition-row .fill,
+  .mi-company-row .fill,
+  .mi-quadrant-row .fill {
+    display: block;
+    height: 100%;
+    width: var(--w);
+    background: linear-gradient(90deg, #8e3a3a, #6b5a75, #5a6878);
+  }
+  .mi-composition-row .label,
+  .mi-company-row .label,
+  .mi-quadrant-row .label {
+    min-width: 0;
+    color: var(--ink-2);
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mi-composition-row .n,
+  .mi-company-row .n,
+  .mi-quadrant-row .n {
+    text-align: right;
+    font-family: var(--f-mono);
+    font-size: 12px;
+    color: var(--plum-deep);
+  }
+  .mi-timeline-row {
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr) 46px;
+    gap: 10px;
+    align-items: center;
+  }
+  .mi-stack {
+    display: flex;
+    height: 18px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(80,60,70,0.10);
+  }
+  .mi-stack span {
+    display: block;
+    width: var(--w);
+    background: var(--c);
+  }
+  .mi-stack-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .mi-stack-legend i {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border-radius: 2px;
+    background: var(--c);
+  }
+  .mi-scatter {
+    position: relative;
+    min-height: 360px;
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background:
+      linear-gradient(90deg, transparent 49.7%, rgba(80,60,70,0.12) 50%, transparent 50.3%),
+      linear-gradient(0deg, transparent 49.7%, rgba(80,60,70,0.12) 50%, transparent 50.3%),
+      rgba(255,252,245,0.58);
+    overflow: hidden;
+  }
+  .mi-point {
+    position: absolute;
+    left: var(--x);
+    bottom: var(--y);
+    width: var(--s);
+    height: var(--s);
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    background: rgba(142,58,58,0.72);
+    border: 2px solid rgba(255,252,245,0.92);
+    box-shadow: 0 8px 20px -12px rgba(58,51,64,0.45);
+  }
+  .mi-point-label {
+    position: absolute;
+    left: var(--x);
+    bottom: calc(var(--y) + 10px);
+    transform: translateX(-50%);
+    max-width: 110px;
+    color: var(--ink-2);
+    font-size: 10px;
+    line-height: 1.15;
+    text-align: center;
+  }
+  .mi-axis-label {
+    position: absolute;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .mi-axis-label.x { right: 12px; bottom: 8px; }
+  .mi-axis-label.y { left: 10px; top: 10px; }
+  .mi-method-note {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(90,104,120,0.09);
+    color: var(--ink-2);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  .mi-bar-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.72fr) minmax(150px, 1fr) 58px;
+    gap: 10px;
+    align-items: center;
+  }
+  .mi-bar-row .label {
+    min-width: 0;
+    color: var(--ink-2);
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .mi-bar-row .track {
+    height: 9px;
+    border-radius: 99px;
+    background: rgba(80,60,70,0.10);
+    overflow: hidden;
+  }
+  .mi-bar-row .fill {
+    display: block;
+    height: 100%;
+    width: var(--w);
+    border-radius: inherit;
+    background: linear-gradient(90deg, #8e3a3a, #5a6878);
+  }
+  .mi-bar-row .n {
+    text-align: right;
+    font-family: var(--f-mono);
+    color: var(--plum-deep);
+    font-size: 12px;
+  }
+  .mi-table-wrap {
+    width: 100%;
+    overflow: auto;
+    border-top: 1px solid var(--hairline-2);
+  }
+  .mi-table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+  }
+  .mi-table-wrap th,
+  .mi-table-wrap td {
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--hairline-2);
+    text-align: left;
+    vertical-align: top;
+    font-size: 12px;
+  }
+  .mi-table-wrap th {
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .mi-table-wrap .num { text-align: right; }
+  .mi-status {
+    display: inline-flex;
+    max-width: 100%;
+    align-items: center;
+    border-radius: 999px;
+    padding: 4px 8px;
+    background: rgba(168,181,154,0.25);
+    color: #4d6047;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+  .mi-status.warn {
+    background: rgba(207,181,142,0.25);
+    color: #745b2e;
+  }
+  .mi-status.needs {
+    background: rgba(184,89,87,0.16);
+    color: var(--accent-2);
+  }
+  .mi-source-link {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--accent-2);
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .mi-finance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .mi-finance-card {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 13px;
+    background: rgba(255,252,245,0.66);
+  }
+  .mi-finance-card .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .mi-finance-card h4 {
+    margin: 8px 0 10px;
+    font-family: var(--f-display);
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .mi-finance-card .value {
+    display: block;
+    font-family: var(--f-display);
+    font-size: 28px;
+    color: var(--accent-2);
+    line-height: 1;
+  }
+  .mi-finance-card .meta {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .mi-signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .mi-signal-card {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,252,245,0.82), rgba(247,241,230,0.62));
+    padding: 13px;
+    min-width: 0;
+  }
+  .mi-signal-card .tagline {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .mi-signal-card h4 {
+    margin: 8px 0;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.3;
+  }
+  .mi-signal-card p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  .mi-source-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .mi-source-card {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255,252,245,0.70);
+    cursor: pointer;
+  }
+  .mi-source-card .kind,
+  .mi-source-card .path {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .mi-source-card strong {
+    display: block;
+    margin: 5px 0;
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 13px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .mi-queue-list,
+  .mi-validation-list {
+    display: grid;
+    gap: 10px;
+  }
+  .mi-queue-item,
+  .mi-validation-item {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 11px;
+    background: rgba(255,252,245,0.62);
+  }
+  .mi-queue-item strong,
+  .mi-validation-item strong {
+    display: block;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .mi-queue-item span,
+  .mi-validation-item span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .mi-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(58,51,64,0.24);
+    z-index: 90;
+  }
+  .mi-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: min(460px, 100vw);
+    height: 100vh;
+    padding: 28px;
+    background: var(--surface-2);
+    border-left: 1px solid var(--hairline);
+    box-shadow: -24px 0 60px -36px rgba(58,51,64,0.45);
+    overflow: auto;
+  }
+  .mi-drawer-close {
+    position: sticky;
+    top: 0;
+    margin-left: auto;
+    display: block;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .mi-drawer h3 {
+    margin: 14px 0 8px;
+    font-family: var(--f-display-cn);
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+  .mi-drawer dl {
+    display: grid;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .mi-drawer dt {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .mi-drawer dd {
+    margin: 2px 0 0;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  .mi-drawer p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  @media (max-width: 1100px) {
+    .mi-finance-grid,
+    .mi-signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 860px) {
+    body { overflow-x: hidden; }
+    .content {
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 0;
+    }
+    .mi-insight-grid,
+    .mi-analysis-grid,
+    .mi-panel,
+    .mi-insight-card {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+    .mi-insight-card h3 {
+      font-size: 21px;
+      word-break: break-all;
+      white-space: normal;
+    }
+    .mi-insight-card p {
+      font-size: 12px;
+      word-break: break-all;
+      white-space: normal;
+    }
+    .topbar {
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 14px;
+      padding: 12px 18px;
+      overflow-x: auto;
+    }
+    .topbar .brand-cn {
+      font-size: 12px;
+      letter-spacing: 0.10em;
+      max-width: 150px;
+    }
+    .topbar nav {
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+      gap: 18px;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding-bottom: 4px;
+    }
+    .topbar .topbar-asof {
+      order: 2;
+      width: 100%;
+      max-width: none;
+      margin-left: 0;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .topbar nav { order: 4; }
+    .global-search-trigger span:not(.search-mark) { display: none; }
+    .mi-hero .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 12px;
+    }
+    .mi-hero .stat-row span {
+      min-width: 0;
+      white-space: normal;
+    }
+    .mi-split,
+    .mi-conflict-split,
+    .mi-map-layout,
+    .mi-analysis-grid,
+    .mi-insight-grid,
+    .mi-geo-dashboard-grid,
+    .mi-finance-grid,
+    .mi-signal-grid,
+    .mi-source-grid,
+    .mi-geo-source-grid,
+    .mi-geo-summary { grid-template-columns: 1fr; }
+    .mi-geo-kpi-grid,
+    .mi-coverage-row { grid-template-columns: 1fr; }
+    .mi-method-strip span { white-space: normal; }
+    .mi-head-row { align-items: flex-start; flex-direction: column; }
+    .mi-filter-row { justify-content: flex-start; }
+    .mi-bar-row { grid-template-columns: 1fr; gap: 6px; }
+    .mi-bar-row .n { text-align: left; }
+    .mi-composition-row,
+    .mi-company-row,
+    .mi-quadrant-row { grid-template-columns: 1fr; gap: 6px; }
+    .mi-composition-row .n,
+    .mi-company-row .n,
+    .mi-quadrant-row .n { text-align: left; }
+    .mi-scatter { min-height: 300px; }
+  }
+</style>
+<script>
+  (function () {
+    const app = window.GLOBAL_AESTHETICS_DATA || {};
+    const data = window.V3_MARKET_INTELLIGENCE_DATA || {};
+    const summary = data.summary || {};
+    const docs = Array.isArray(data.sourceDocuments) ? data.sourceDocuments : [];
+    const metrics = Array.isArray(data.marketMetrics) ? data.marketMetrics : [];
+    const financial = Array.isArray(data.financialSnapshots) ? data.financialSnapshots : [];
+    const signals = Array.isArray(data.briefingSignals) ? data.briefingSignals : [];
+    const conflicts = Array.isArray(data.conflictGroups) ? data.conflictGroups : [];
+    const sourceRegistry = Array.isArray(data.sourceRegistry) ? data.sourceRegistry : [];
+    const collectionBacklog = Array.isArray(data.collectionBacklog) ? data.collectionBacklog : [];
+    const geoSourceDiscovery = Array.isArray(data.geoSourceDiscovery) ? data.geoSourceDiscovery : [];
+    const geoSourceSummary = data.geoSourceSummary || {};
+    const topCompanyCountries = Array.isArray(data.topCompanyCountries) ? data.topCompanyCountries : [];
+    const queues = data.reviewQueues || {};
+    const validation = data.validation || {};
+    const analysis = data.analysis || {};
+    const sourceById = new Map(docs.map(doc => [doc.sourceDocumentId, doc]));
+    const registryById = new Map(sourceRegistry.map(row => [row.sourceId, row]));
+    const state = { metricType: "all", mode: "all", cubeScope: "all", cubeSegment: "all", geoTier: "all" };
+    const kpiColumns = [
+      { key: "market_size", label: "市场规模" },
+      { key: "procedure_volume", label: "医美治疗数量" },
+      { key: "growth_rate", label: "增长率" },
+      { key: "market_share", label: "市场份额" },
+      { key: "sales_volume", label: "销量" },
+      { key: "source_stated_metric", label: "其他市场指标" },
+    ];
+    const kpiKeys = new Set(kpiColumns.map(col => col.key));
+    const signalColors = {
+      commercial_performance: "#8e3a3a",
+      channel_coverage: "#5a6878",
+      product_launch: "#6b5a75",
+      regulatory_approval: "#d9ae91",
+      indication_expansion: "#a8b59a",
+      unassigned: "#998f9b"
+    };
+    const segmentColors = {
+      "Injectables": "#8e3a3a",
+      "EBD": "#5a6878",
+      "Regenerative": "#6b5a75",
+      "Procedure demand": "#d9ae91",
+      "Treatment demand": "#d9ae91",
+      "Overall market": "#a8b59a",
+      "Non-surgical": "#c76b68",
+      "Facial rejuvenation": "#8c7b91",
+      "Demand drivers": "#cfb58e",
+      "Cosmeceutical": "#c76b68",
+      "Surgical": "#8c7b91",
+      "Threads": "#cfb58e",
+      "Other product lines": "#998f9b"
+    };
+    const segmentDisplay = value => ({
+      "Injectables": "注射类",
+      "EBD": "EBD",
+      "Regenerative": "再生类",
+      "Procedure demand": "医美治疗需求",
+      "Treatment demand": "医美治疗需求",
+      "Overall market": "整体市场",
+      "Non-surgical": "非手术",
+      "Facial rejuvenation": "面部年轻化",
+      "Demand drivers": "需求驱动",
+      "Cosmeceutical": "功效护肤",
+      "Surgical": "手术",
+      "Threads": "埋线",
+      "Other non-surgical": "其他非手术",
+      "Other product lines": "其他",
+      "Other": "其他"
+    })[value] || value || "未分类";
+
+    const esc = (value) => String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;"
+    })[ch]);
+    const fmt = (value) => {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return value == null || value === "" ? "—" : String(value);
+      return n.toLocaleString("en-US", { maximumFractionDigits: Math.abs(n) >= 100 ? 0 : 2 });
+    };
+    const compact = (value) => {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return fmt(value);
+      if (Math.abs(n) >= 1000000) return `${fmt(n / 1000000)}M`;
+      if (Math.abs(n) >= 1000) return `${fmt(n / 1000)}K`;
+      return fmt(n);
+    };
+    const pct = (value) => {
+      const n = Number(value);
+      return Number.isFinite(n) ? `${(n * 100).toFixed(1)}%` : "—";
+    };
+    const shortDate = (value) => value ? String(value).replace("T", " ").slice(0, 16) : "—";
+    const typeLabel = (value) => ({
+      market_size: "市场规模",
+      procedure_volume: "医美治疗数量",
+      growth_rate: "增长率",
+      market_share: "市场份额",
+      sales_volume: "销量",
+      source_stated_metric: "其他市场指标",
+      company_financial: "财务指标",
+      valuation_snapshot: "估值快照",
+      briefing_signal: "商业动态",
+      verified_business_event: "已核验商业事件"
+    })[value] || value || "未分类";
+    const groupLabel = (value) => ({
+      commercial_performance: "商业表现",
+      channel_coverage: "渠道覆盖",
+      product_launch: "产品动态",
+      regulatory_approval: "监管进展",
+      indication_expansion: "适应症扩展"
+    })[value] || value || "未分组";
+    const quadrantLabel = (value) => ({
+      "Low signal / smaller cap": "低热度 / 小市值",
+      "High value / quiet signal": "高市值 / 低热度",
+      "Emerging signal": "新近高热度",
+      "High value / high signal": "高市值 / 高热度"
+    })[value] || value || "未分组";
+    const sourceKindLabel = (value) => ({
+      industry_report: "行业报告",
+      report_note: "报告笔记",
+      report_image: "报告图片",
+      structured_market_table: "结构化市场表",
+      structured_market_note: "市场笔记",
+      daily_briefing: "日报信号",
+      market_metric_source: "市场指标来源",
+      financial_metric_table: "财务表",
+      valuation_snapshot_table: "估值表",
+      verified_event_source: "核验证据"
+    })[value] || value || "来源";
+    const dataRoleLabel = (value) => ({
+      treatment_volume_country_year: "治疗量主干",
+      treatment_volume_country_year_candidate: "治疗量候选",
+      treatment_volume_secondary_isaps_commentary: "ISAPS 二级 commentary",
+      procedure_mix_country_year: "项目结构候选",
+      treatment_volume_candidate_and_surgeon_demography: "治疗量候选 / 医师结构",
+      physician_specialty_demand_proxy: "医师/专科需求 proxy",
+      company_physician_touchpoint_proxy: "公司-医生触达 proxy",
+      provider_channel_density_proxy: "渠道密度 proxy",
+      provider_denominator: "机构分母",
+      surgeon_density_proxy: "医师密度 proxy",
+      surgeon_density_context_proxy: "医师密度 context",
+      surgeon_denominator_proxy: "医师分母",
+      medical_tourism_specialty_proxy: "跨境需求 proxy",
+      health_industry_portal: "健康产业入口",
+      regulatory_context_proxy: "监管 context",
+      association_survey_interest_proxy: "协会调查/热度 proxy",
+      association_context_proxy: "协会 context",
+      consumer_risk_heat_proxy: "投诉/热度 proxy"
+    })[value] || value || "未分类";
+    const coverageTierLabel = value => ({
+      treatment_volume: "已有治疗量主干",
+      metric_qa_candidate: "治疗量候选待 QA",
+      channel_density_proxy: "渠道/医师 proxy",
+      context_or_demand_proxy: "context / 需求 proxy",
+      source_discovered: "已发现来源",
+      gap: "暂缺来源"
+    })[value] || "待确认";
+    const coverageTierTone = value => ({
+      treatment_volume: "hard",
+      metric_qa_candidate: "qa",
+      channel_density_proxy: "proxy",
+      context_or_demand_proxy: "context",
+      source_discovered: "proxy",
+      gap: "context"
+    })[value] || "";
+    const phaseLabel = value => ({
+      1: "治疗数量",
+      2: "公司收入",
+      3: "渠道密度",
+      4: "宏观/热度"
+    })[Number(value)] || `Phase ${value || "—"}`;
+    const roleTone = value => {
+      const text = String(value || "").toLowerCase();
+      if (text.includes("treatment_volume_country_year")) return "hard";
+      if (text.includes("candidate") || text.includes("procedure_mix")) return "qa";
+      if (text.includes("context") || text.includes("consumer")) return "context";
+      if (text.includes("proxy") || text.includes("denominator") || text.includes("portal")) return "proxy";
+      return "";
+    };
+    const statusTone = (value) => {
+      const text = String(value || "").toLowerCase();
+      if (text.includes("requires") || text.includes("needs") || text.includes("pending")) return "needs";
+      if (text.includes("unreviewed") || text.includes("source_stated")) return "warn";
+      return "";
+    };
+
+    function countRows(rows, keyFn) {
+      const map = new Map();
+      rows.forEach(row => {
+        const key = keyFn(row) || "未分类";
+        map.set(key, (map.get(key) || 0) + 1);
+      });
+      return Array.from(map, ([label, count]) => ({ label, count }))
+        .sort((a, b) => b.count - a.count || String(a.label).localeCompare(String(b.label)));
+    }
+
+    function renderBars(id, rows, labelFn = x => x.label) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const max = Math.max(1, ...rows.map(row => Number(row.count) || 0));
+      el.innerHTML = rows.slice(0, 12).map((row, index) => `
+        <div class="mi-bar-row">
+          <span class="label" title="${esc(labelFn(row))}">${esc(labelFn(row))}</span>
+          <span class="track"><span class="fill" style="--w:${Math.max(4, (row.count / max) * 100).toFixed(1)}%;"></span></span>
+          <span class="n">${fmt(row.count)}</span>
+        </div>
+      `).join("") || `<div class="mi-queue-item"><strong>暂无数据</strong><span>当前快照未包含该类记录。</span></div>`;
+    }
+
+    function sourceButton(sourceDocumentId, label) {
+      const doc = sourceById.get(sourceDocumentId);
+      if (!doc) return esc(label || "来源");
+      return `<button type="button" class="mi-source-link" data-source-id="${esc(sourceDocumentId)}">${esc(label || doc.publisher || doc.title || "来源")}</button>`;
+    }
+
+    const geoAliases = {
+      "全球": "Global",
+      "美国": "USA",
+      "United States": "USA",
+      "欧洲": "Europe",
+      "北美": "North America",
+      "亚太": "Asia-Pacific",
+      "Asia Pacific": "Asia-Pacific",
+      "澳大利亚": "Australia",
+      "巴西": "Brazil",
+      "韩国": "South Korea",
+      "日本": "Japan",
+      "英国": "UK",
+      "意大利": "Italy",
+      "德国": "Germany",
+      "法国": "France",
+      "西班牙": "Spain",
+      "印度": "India",
+      "墨西哥": "Mexico",
+      "土耳其": "Turkiye",
+      "阿联酋": "UAE",
+      "希腊": "Greece",
+      "中国台湾": "Chinese Taipei",
+      "台湾": "Chinese Taipei",
+      "沙特": "Saudi Arabia",
+      "哥伦比亚": "Colombia",
+      "阿根廷": "Argentina",
+      "越南": "Vietnam",
+      "伊朗": "Iran"
+    };
+    const regionGeos = new Set(["Global", "Europe", "North America", "Asia-Pacific", "Latin America", "Middle East", "GCC"]);
+    const normalizeGeo = value => {
+      const text = String(value || "").trim();
+      if (!text) return "Unspecified";
+      return geoAliases[text] || text;
+    };
+    const geoScope = geo => regionGeos.has(geo) ? "region" : "country";
+    const geoScopeLabel = scope => scope === "country" ? "国家" : "区域/大洲";
+    const extractYear = row => {
+      const text = String(row?.period || row?.year || "");
+      const match = text.match(/20\d{2}|19\d{2}/);
+      return match ? Number(match[0]) : 0;
+    };
+    const includesAny = (text, words) => words.some(word => text.includes(word));
+    function metricSegment(row) {
+      const rawCategory = String(row.category || "");
+      const first = rawCategory.split("/")[0].trim().toLowerCase();
+      const text = [row.category, row.metric, row.entity].filter(Boolean).join(" ").toLowerCase();
+      if (first.includes("all procedures")) return "Overall market";
+      if (first.includes("non-surgical procedures")) return "Non-surgical";
+      if (first.includes("surgical procedures")) return "Surgical";
+      if (first.includes("injectables")) return "Injectables";
+      if (first.includes("facial rejuvenation")) return "Facial rejuvenation";
+      if (first.includes("other non-surgical")) return "Other non-surgical";
+      if (includesAny(text, ["注射", "inject", "filler", "填充", "toxin", "botulinum", "肉毒", "hyaluronic", "mesotherapy", "中胚", "plla", "caha", "hydroxylapatite"])) return "Injectables";
+      if (includesAny(text, ["device", "设备", "energy", "ebd", "laser", "rf", "ultrasound", "skin tightening", "紧肤", "hair removal", "fat reduction", "tattoo", "家用设备"])) return "EBD";
+      if (includesAny(text, ["surgical", "surgery", "手术", "整形手术"])) return "Surgical";
+      if (includesAny(text, ["facial rejuvenation", "chemical peel", "ablative", "面部年轻化"])) return "Facial rejuvenation";
+      if (includesAny(text, ["cosmeceutical", "功效护肤"])) return "Cosmeceutical";
+      if (includesAny(text, ["医美综合", "医美整体", "医美市场", "aesthetic medicine", "medical aesthetics", "overall", "总体市场", "总量"])) return "Overall market";
+      if (row.type === "procedure_volume") return "Treatment demand";
+      if (includesAny(text, ["人口", "consumer", "消费者", "偏好"])) return "Demand drivers";
+      return "Other";
+    }
+    function usdMillionValue(row) {
+      const value = Number(row?.value);
+      if (!Number.isFinite(value)) return null;
+      const unit = String(row?.unit || "").toLowerCase();
+      if (unit.includes("billion") || unit.includes("十亿")) return value * 1000;
+      if (unit.includes("million") || unit.includes("百万")) return value;
+      if (unit.includes("usd") || unit.includes("美元")) return value;
+      return null;
+    }
+    function comparableValue(row) {
+      if (!row) return 0;
+      if (row.type === "market_size") return usdMillionValue(row) ?? Number(row.value || 0);
+      return Number(row.value || 0);
+    }
+    function formatUsdM(value) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "—";
+      if (Math.abs(n) >= 1000) return `$${fmt(n / 1000)}B`;
+      return `$${fmt(n)}M`;
+    }
+    function unitLabel(unit) {
+      const text = String(unit || "").trim();
+      if (!text) return "";
+      if (text.toLowerCase() === "procedures") return "次";
+      return text;
+    }
+    function formatCubeValue(row) {
+      if (!row || row.value == null) return "—";
+      const value = Number(row.value);
+      if (row.type === "market_size") return formatUsdM(usdMillionValue(row) ?? value);
+      if (row.type === "growth_rate" || row.type === "market_share") return `${fmt(value)}%`;
+      if (row.type === "procedure_volume") return `${compact(value)} 次`;
+      if (row.type === "sales_volume") return `${compact(value)} ${unitLabel(row.unit)}`.trim();
+      if (String(row.unit || "").includes("%")) return `${fmt(value)}%`;
+      const usdM = usdMillionValue(row);
+      if (usdM != null) return formatUsdM(usdM);
+      return `${compact(value)} ${unitLabel(row.unit)}`.trim();
+    }
+    function metricMetaLabel(row) {
+      const raw = String(row?.metric || "").trim();
+      if (!raw || raw === row.type || raw === "procedure_volume" || raw === "market_size_forecast") return typeLabel(row.type);
+      if (raw === "CAGR" || raw === "复合增长率") return "CAGR";
+      if (raw === "市场规模") return "市场规模";
+      if (raw === "市场份额") return "市场份额";
+      return raw;
+    }
+    function chooseCubeCell(current, next) {
+      if (!current) return next;
+      const yearDiff = extractYear(next) - extractYear(current);
+      if (yearDiff !== 0) return yearDiff > 0 ? next : current;
+      const nextValue = comparableValue(next);
+      const currentValue = comparableValue(current);
+      return nextValue >= currentValue ? next : current;
+    }
+    function buildMarketCubeRows() {
+      const grouped = new Map();
+      metrics
+        .filter(row => kpiKeys.has(row.type) && row.value != null && normalizeGeo(row.geo || row.entity) !== "Unspecified")
+        .forEach(row => {
+          const geo = normalizeGeo(row.geo || row.entity);
+          const segment = metricSegment(row);
+          const key = `${geo}|${segment}`;
+          if (!grouped.has(key)) {
+            grouped.set(key, { geo, segment, scope: geoScope(geo), cells: {}, latestYear: 0 });
+          }
+          const cubeRow = grouped.get(key);
+          cubeRow.cells[row.type] = chooseCubeCell(cubeRow.cells[row.type], row);
+          cubeRow.latestYear = Math.max(cubeRow.latestYear, extractYear(row));
+        });
+      return Array.from(grouped.values())
+        .map(row => {
+          const filled = kpiColumns.reduce((sum, col) => sum + (row.cells[col.key] ? 1 : 0), 0);
+          const market = comparableValue(row.cells.market_size);
+          const treatment = comparableValue(row.cells.procedure_volume);
+          const growth = comparableValue(row.cells.growth_rate);
+          const share = comparableValue(row.cells.market_share);
+          const sales = comparableValue(row.cells.sales_volume);
+          row.filled = filled;
+          row.sortScore =
+            filled * 120000000000 +
+            market * 1000000 +
+            treatment * 10 +
+            growth * 100000 +
+            share * 10000 +
+            sales;
+          return row;
+        })
+        .filter(row => row.filled > 0)
+        .sort((a, b) => b.sortScore - a.sortScore || String(a.geo).localeCompare(String(b.geo)));
+    }
+
+    function renderHero() {
+      const asOf = summary.asOf || app.generated_at || "";
+      document.querySelectorAll("[data-bind-text='mi-asof']").forEach(el => { el.textContent = shortDate(asOf); });
+      document.getElementById("mi-lede").textContent =
+        `${fmt(app.summary?.countries || 34)} 个国家 · ${fmt(summary.marketMetricClaims)} 个市场指标 · ${fmt(financial.length)} 个上市公司/估值快照 · ${fmt(geoSourceSummary.sources || 0)} 个地区级来源。`;
+      document.getElementById("mi-stat-row").innerHTML = `
+        <span>Countries <span class="num" data-cu-started="1">${fmt(app.summary?.countries || 34)}</span></span>
+        <span>Market metrics <span class="num" data-cu-started="1">${fmt(summary.marketMetricClaims)}</span></span>
+        <span>Financial snapshots <span class="num" data-cu-started="1">${fmt(financial.length)}</span></span>
+        <span>Geo sources <span class="num" data-cu-started="1">${fmt(geoSourceSummary.sources || 0)}</span></span>
+      `;
+      const kpis = [
+        { wash: "w-rose-deep", en: "Source docs", zh: "来源文件", value: summary.sourceDocuments, delta: `${fmt((summary.sourceKinds || []).length)} source types` },
+        { wash: "w-slate", en: "Commercial claims", zh: "商业声明", value: summary.claims, delta: `${fmt(summary.reviewedClaims)} reviewed / trusted` },
+        { wash: "w-peach", en: "Market metrics", zh: "市场指标", value: summary.marketMetricClaims, delta: "size / treatments / CAGR / share" },
+        { wash: "w-sage", en: "Geo sources", zh: "国家来源", value: geoSourceSummary.sources || 0, delta: `${fmt(geoSourceSummary.downloadedArtifacts || 0)} downloaded artifacts` },
+        { wash: "w-sage", en: "Daily signals", zh: "日报可信信号", value: summary.briefingSignals, delta: "commercial / channel / launch" },
+        { wash: "w-plum", en: "Financial claims", zh: "财务估值", value: summary.financialClaims, delta: `${fmt(financial.length)} listed snapshots` },
+        { wash: "w-sand", en: "Conflict groups", zh: "矛盾点", value: summary.conflictGroups, delta: "same scope comparison only" },
+        { wash: "w-rose", en: "Needs review", zh: "需确认", value: summary.needsReviewClaims, delta: `${fmt((queues.needsVerification || []).length)} queue rows shown` },
+        { wash: "w-lavender", en: "Validation", zh: "校验状态", value: validation.status === "passed" ? "OK" : "Check", delta: `${fmt((validation.issues || []).reduce((sum, row) => sum + Number(row.count || 0), 0))} flagged fields` },
+      ];
+      document.getElementById("mi-kpis").innerHTML = kpis.map(k => `
+        <article class="kpi-cell has-wash ${k.wash}">
+          <div class="label"><span class="en">${esc(k.en)}</span><span class="zh">${esc(k.zh)}</span></div>
+          <span class="value" data-cu-started="1">${esc(fmt(k.value))}</span>
+          <span class="delta">${esc(k.delta)}</span>
+        </article>
+      `).join("");
+    }
+
+    function renderInsights() {
+      const cards = (Array.isArray(analysis.insightCards) ? analysis.insightCards : [])
+        .filter(card => !["source", "signal"].includes(card.tone))
+        .map(card => {
+          if (card.tone !== "company") return card;
+          const company = String(card.headline || "").split(" 位于")[0] || "重点公司";
+          return {
+            ...card,
+            label: "公司商业热度",
+            headline: `${company} 位于商业热度首位`,
+            takeaway: `Top 5 公司贡献 ${fmt(card.metric || 0)} 条商业动态，适合进入重点跟踪池。`
+          };
+        });
+      document.getElementById("mi-insight-grid").innerHTML = cards.map(card => {
+        const metric = Number(card.metric || 0);
+        const denominator = Math.max(1, Number(card.denominator || 1));
+        const width = Math.max(4, Math.min(100, (metric / denominator) * 100));
+        return `
+          <article class="mi-insight-card">
+            <span class="label">${esc(card.label || "Insight")}</span>
+            <h3>${esc(card.headline || "—")}</h3>
+            <p>${esc(card.takeaway || "")}</p>
+            <div class="mi-insight-meter"><span style="--w:${width.toFixed(1)}%;"></span></div>
+          </article>
+        `;
+      }).join("") || `<article class="mi-insight-card"><span class="label">Insight</span><h3>暂无分析结论</h3><p>当前快照缺少分析聚合。</p></article>`;
+    }
+
+    function mapXY(lat, lon) {
+      const x = ((Number(lon) + 180) / 360) * 100;
+      const y = ((90 - Number(lat)) / 180) * 100;
+      return { x: Math.max(10, Math.min(90, x)), y: Math.max(9, Math.min(91, y)) };
+    }
+
+    function renderOpportunityMap() {
+      const points = Array.isArray(analysis.opportunityMap) ? analysis.opportunityMap : [];
+      const hasMarketMetric = point =>
+        point.marketSizeUsdM != null ||
+        point.growthRatePct != null ||
+        point.procedureVolume != null ||
+        point.marketSharePct != null;
+      const top = points
+        .filter(hasMarketMetric)
+        .filter(point => ["Europe", "USA", "Brazil", "North America", "Asia Pacific", "Australia", "South Korea"].includes(point.geo) || point.potentialIndex >= 25)
+        .slice(0, 42);
+      const max = Math.max(1, ...top.map(point => Number(point.potentialIndex || 0)));
+      const labels = new Set(["Europe|Injectables", "USA|EBD", "Brazil|Procedure demand"]);
+      const legendSegments = Array.from(new Set(top.map(point => point.segment))).slice(0, 7);
+      document.getElementById("mi-world-map").innerHTML = `
+        ${top.map(point => {
+          const { x, y } = mapXY(point.lat, point.lon);
+          const size = 10 + (Number(point.potentialIndex || 0) / max) * 26;
+          const color = segmentColors[point.segment] || "#998f9b";
+          const title = `${point.geo} · ${segmentDisplay(point.segment)} · opportunity index ${fmt(point.potentialIndex)}`;
+          const key = `${point.geo}|${point.segment}`;
+          return `
+            <button type="button" class="mi-map-point" style="--x:${x.toFixed(1)}%;--y:${y.toFixed(1)}%;--s:${size.toFixed(1)}px;--c:${color};" title="${esc(title)}"></button>
+            ${labels.has(key) ? `<span class="mi-map-label" style="--x:${x.toFixed(1)}%;--y:${y.toFixed(1)}%;">${esc(point.geo)}<br>${esc(segmentDisplay(point.segment))}</span>` : ""}
+          `;
+        }).join("")}
+        <div class="mi-map-legend">
+          ${legendSegments.map(segment => `<span><i style="--c:${segmentColors[segment] || "#998f9b"}"></i>${esc(segmentDisplay(segment))}</span>`).join("")}
+        </div>
+      `;
+    }
+
+    function renderOpportunityHighlights() {
+      const rows = Array.isArray(analysis.opportunityHighlights) ? analysis.opportunityHighlights : [];
+      const subhead = row => ({
+        "USA · EBD": "North America share proxy; used as capacity lens.",
+        "Brazil · Aesthetic demand": "High treatment volume; CAGR should not be inferred directly."
+      })[row.market] || row.subhead || "";
+      const headline = row => ({
+        "Brazil · Aesthetic demand": `${fmt(String(row.headline || "").replace(/[^\d.]/g, ""))} treatments`
+      })[row.market] || row.headline || "";
+      const takeaway = row => ({
+        "Europe · Injectables": "欧洲注射剂的可见增长速度接近北美同口径，适合进一步比较价格带、治疗场景和渠道成熟度。",
+        "USA · EBD": "美国 EBD 容量读数需要按北美份额做代理；适合继续用市场容量和上市公司热度交叉判断。",
+        "Brazil · Aesthetic demand": "巴西医美治疗数量高，适合放在需求潜力视角，而不是直接套 CAGR。"
+      })[row.market] || row.takeaway || "";
+      document.getElementById("mi-highlight-list").innerHTML = rows.map(row => `
+        <article class="mi-highlight-card">
+          <span class="market">${esc(row.market)}</span>
+          <h3>${esc(headline(row))}</h3>
+          <p>${esc(subhead(row))}</p>
+          <p style="margin-top:8px;">${esc(takeaway(row))}</p>
+        </article>
+      `).join("");
+    }
+
+    function filteredCubeRows(allRows = buildMarketCubeRows()) {
+      return allRows.filter(row =>
+        (state.cubeScope === "all" || row.scope === state.cubeScope) &&
+        (state.cubeSegment === "all" || row.segment === state.cubeSegment)
+      );
+    }
+
+    function renderMarketMatrix() {
+      const allRows = buildMarketCubeRows();
+      const rows = filteredCubeRows(allRows);
+      const segmentOrder = ["Overall market", "Injectables", "EBD", "Surgical", "Non-surgical", "Facial rejuvenation", "Other non-surgical", "Cosmeceutical", "Demand drivers", "Other"];
+      const segmentCounts = countRows(allRows, row => row.segment);
+      const segmentNames = segmentCounts
+        .map(row => row.label)
+        .sort((a, b) => {
+          const ai = segmentOrder.indexOf(a);
+          const bi = segmentOrder.indexOf(b);
+          if (ai !== -1 || bi !== -1) return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+          return String(a).localeCompare(String(b));
+        });
+      const maxByKey = Object.fromEntries(kpiColumns.map(col => [
+        col.key,
+        Math.max(1, ...rows.map(row => comparableValue(row.cells[col.key])))
+      ]));
+      const filledCells = rows.reduce((sum, row) => sum + row.filled, 0);
+      const shown = rows.slice(0, state.cubeScope === "country" ? 28 : 24);
+      const cellHtml = (row, col) => {
+        const cell = row.cells[col.key];
+        if (!cell) {
+          return `<div class="mi-matrix-cell empty"><span class="value">—</span><span class="meta">暂无数值</span></div>`;
+        }
+        const value = comparableValue(cell);
+        const heat = Math.max(8, Math.min(88, (value / maxByKey[col.key]) * 88));
+        const meta = [cell.period, metricMetaLabel(cell)].filter(Boolean).join(" · ");
+        const title = [cell.category, cell.geo, cell.period, formatCubeValue(cell)].filter(Boolean).join(" · ");
+        return `
+          <div class="mi-matrix-cell heat" style="--p:${heat.toFixed(1)};" title="${esc(title)}">
+            <span class="value">${esc(formatCubeValue(cell))}</span>
+            <span class="meta">${esc(meta || typeLabel(cell.type))}</span>
+          </div>
+        `;
+      };
+      document.getElementById("mi-market-matrix").innerHTML = `
+        <div class="mi-cube-toolbar">
+          <div class="mi-cube-control" aria-label="地理范围">
+            ${[
+              ["all", "全部"],
+              ["region", "区域/大洲"],
+              ["country", "国家"]
+            ].map(([value, label]) => `
+              <button type="button" class="${state.cubeScope === value ? "active" : ""}" data-cube-scope="${esc(value)}">${esc(label)}</button>
+            `).join("")}
+          </div>
+          <div class="mi-cube-control" aria-label="赛道">
+            <button type="button" class="${state.cubeSegment === "all" ? "active" : ""}" data-cube-segment="all">全部赛道</button>
+            ${segmentNames.slice(0, 8).map(segment => `
+              <button type="button" class="${state.cubeSegment === segment ? "active" : ""}" data-cube-segment="${esc(segment)}">${esc(segmentDisplay(segment))}</button>
+            `).join("")}
+          </div>
+          <div class="mi-cube-meta">
+            <span>${fmt(rows.length)} 个市场切片</span>
+            <span>${fmt(filledCells)} / ${fmt(rows.length * kpiColumns.length)} KPI 单元</span>
+          </div>
+        </div>
+        <div class="mi-cube-table">
+          <div class="mi-matrix-head">
+            <span>地区/国家</span>
+            <span>赛道</span>
+            ${kpiColumns.map(col => `<span>${esc(col.label)}</span>`).join("")}
+          </div>
+          ${shown.map(row => `
+            <div class="mi-matrix-row">
+              <div class="mi-matrix-cell geo">${esc(row.geo)}<small>${esc(geoScopeLabel(row.scope))}</small></div>
+              <div class="mi-matrix-cell segment">${esc(segmentDisplay(row.segment))}<small>${fmt(row.filled)} / ${kpiColumns.length} KPI</small></div>
+              ${kpiColumns.map(col => cellHtml(row, col)).join("")}
+            </div>
+          `).join("") || `
+            <div class="mi-matrix-row">
+              <div class="mi-matrix-cell geo">暂无匹配</div>
+              <div class="mi-matrix-cell segment">—</div>
+              ${kpiColumns.map(() => `<div class="mi-matrix-cell empty"><span class="value">—</span><span class="meta">暂无数值</span></div>`).join("")}
+            </div>
+          `}
+        </div>
+      `;
+      document.querySelectorAll("[data-cube-scope]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.cubeScope = button.getAttribute("data-cube-scope") || "all";
+          renderMarketMatrix();
+          renderCubeInsights();
+        });
+      });
+      document.querySelectorAll("[data-cube-segment]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.cubeSegment = button.getAttribute("data-cube-segment") || "all";
+          renderMarketMatrix();
+          renderCubeInsights();
+        });
+      });
+    }
+
+    function renderCubeInsights() {
+      const rows = filteredCubeRows();
+      const best = key => rows
+        .filter(row => row.cells[key])
+        .sort((a, b) => comparableValue(b.cells[key]) - comparableValue(a.cells[key]))[0];
+      const largestMarket = best("market_size");
+      const fastestGrowth = best("growth_rate");
+      const largestTreatment = best("procedure_volume");
+      const kpiCoverage = kpiColumns.map(col => ({
+        ...col,
+        count: rows.filter(row => row.cells[col.key]).length
+      })).sort((a, b) => a.count - b.count);
+      const sparse = kpiCoverage[0];
+      const totalCells = Math.max(1, rows.length * kpiColumns.length);
+      const filledCells = rows.reduce((sum, row) => sum + row.filled, 0);
+      const insightCard = (label, row, key, fallback) => {
+        if (!row) {
+          return `<article class="mi-cube-insight"><span class="label">${esc(label)}</span><strong>暂无可比较读数</strong><span>${esc(fallback)}</span></article>`;
+        }
+        const cell = row.cells[key];
+        return `
+          <article class="mi-cube-insight">
+            <span class="label">${esc(label)}</span>
+            <strong>${esc(row.geo)} · ${esc(segmentDisplay(row.segment))}</strong>
+            <span>${esc(formatCubeValue(cell))} · ${esc([cell.period, metricMetaLabel(cell)].filter(Boolean).join(" · "))}</span>
+          </article>
+        `;
+      };
+      document.getElementById("mi-cube-insights").innerHTML = [
+        insightCard("最大收入池", largestMarket, "market_size", "当前筛选下没有市场规模读数。"),
+        insightCard("最高增速", fastestGrowth, "growth_rate", "当前筛选下没有增长率读数。"),
+        insightCard("最大治疗需求", largestTreatment, "procedure_volume", "当前筛选下没有医美治疗数量读数。"),
+        `<article class="mi-cube-insight">
+          <span class="label">覆盖缺口</span>
+          <strong>${fmt(filledCells)} / ${fmt(totalCells)} KPI 单元已填</strong>
+          <span>${esc(sparse ? `${sparse.label}最稀疏，当前只有 ${fmt(sparse.count)} 个市场切片有数值。` : "当前筛选下暂无可比较数据。")}</span>
+        </article>`
+      ].join("");
+    }
+
+    function renderSignalTimeline() {
+      const rows = Array.isArray(analysis.signalTimeline) ? analysis.signalTimeline : [];
+      const groups = Array.isArray(analysis.signalGroupOrder) ? analysis.signalGroupOrder : [];
+      const max = Math.max(1, ...rows.map(row => Number(row.total || 0)));
+      document.getElementById("mi-signal-timeline").innerHTML = `
+        ${rows.map(row => `
+          <div class="mi-timeline-row">
+            <span class="label">${esc(row.month || "—")}</span>
+            <span class="mi-stack" title="${esc(fmt(row.total))} signals">
+              ${groups.map(group => {
+                const value = Number((row.groups || {})[group] || 0);
+                const w = row.total ? (value / Number(row.total)) * 100 : 0;
+                return value ? `<span style="--w:${w.toFixed(1)}%;--c:${signalColors[group] || "#998f9b"}"></span>` : "";
+              }).join("")}
+            </span>
+            <span class="n">${fmt(row.total)}</span>
+          </div>
+        `).join("")}
+        <div class="mi-stack-legend">
+          ${groups.map(group => `<span><i style="--c:${signalColors[group] || "#998f9b"}"></i>${esc(groupLabel(group))}</span>`).join("")}
+        </div>
+      `;
+    }
+
+    function renderCompanyRank() {
+      const rows = Array.isArray(analysis.signalCompanyRank) ? analysis.signalCompanyRank : [];
+      const max = Math.max(1, ...rows.map(row => Number(row.total || 0)));
+      document.getElementById("mi-company-rank").innerHTML = rows.slice(0, 12).map(row => `
+        <div class="mi-company-row">
+          <span class="label" title="${esc(row.company)}">${esc(row.company || "—")}</span>
+          <span class="track"><span class="fill" style="--w:${Math.max(4, (Number(row.total || 0) / max) * 100).toFixed(1)}%;"></span></span>
+          <span class="n">${fmt(row.total)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderValuation() {
+      const rows = Array.isArray(analysis.valuationPoints) ? analysis.valuationPoints : [];
+      const maxSignal = Math.max(1, ...rows.map(row => Number(row.signals || 0)));
+      const maxCap = Math.max(1, ...rows.map(row => Number(row.marketCapUsdM || 0)));
+      const maxRevenue = Math.max(1, ...rows.map(row => Number(row.revenueUsdM || 0)));
+      document.getElementById("mi-valuation-scatter").innerHTML = `
+        <span class="mi-axis-label y">Market cap</span>
+        <span class="mi-axis-label x">Market heat</span>
+        ${rows.slice(0, 34).map((row, index) => {
+          const x = 8 + (Number(row.signals || 0) / maxSignal) * 84;
+          const y = 8 + (Math.sqrt(Number(row.marketCapUsdM || 0)) / Math.sqrt(maxCap)) * 84;
+          const s = 10 + (Math.sqrt(Number(row.revenueUsdM || 0)) / Math.sqrt(maxRevenue)) * 22;
+          const showLabel = index < 10 || Number(row.signals || 0) >= 8;
+          return `
+            <span class="mi-point" style="--x:${x.toFixed(1)}%;--y:${y.toFixed(1)}%;--s:${s.toFixed(1)}px;" title="${esc(row.company)} · heat ${fmt(row.signals)} · $${compact(row.marketCapUsdM)}M"></span>
+            ${showLabel ? `<span class="mi-point-label" style="--x:${x.toFixed(1)}%;--y:${y.toFixed(1)}%;">${esc(row.company)}</span>` : ""}
+          `;
+        }).join("")}
+      `;
+      const quadrants = Array.isArray(analysis.valuationQuadrants) ? analysis.valuationQuadrants : [];
+      const max = Math.max(1, ...quadrants.map(row => Number(row.value || 0)));
+      document.getElementById("mi-valuation-quadrants").innerHTML = quadrants.map(row => `
+        <div class="mi-quadrant-row">
+          <span class="label">${esc(quadrantLabel(row.name))}</span>
+          <span class="track"><span class="fill" style="--w:${Math.max(4, (Number(row.value || 0) / max) * 100).toFixed(1)}%;"></span></span>
+          <span class="n">${fmt(row.value)}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderAnalysis() {
+      renderOpportunityMap();
+      renderOpportunityHighlights();
+      renderMarketMatrix();
+      renderCubeInsights();
+      renderSignalTimeline();
+      renderCompanyRank();
+      renderValuation();
+    }
+
+    function hideBackstageBlocks() {
+      [
+        "mi-kpis",
+        "mi-type-bars",
+        "mi-market-rows",
+        "mi-finance-grid",
+        "mi-signal-timeline",
+        "mi-company-rank",
+        "mi-signal-grid",
+        "mi-conflict-rows",
+        "mi-source-bars",
+        "mi-source-grid",
+        "mi-review-queue",
+        "mi-validation-list",
+      ].forEach(id => {
+        const el = document.getElementById(id);
+        const block = el && el.closest(".block");
+        if (block) {
+          block.dataset.backstage = "1";
+          block.hidden = true;
+        }
+      });
+    }
+
+    function renderMetricFilters() {
+      const types = countRows(metrics, row => row.type);
+      const el = document.getElementById("mi-metric-filters");
+      el.innerHTML = [
+        `<button type="button" class="${state.metricType === "all" ? "active" : ""}" data-metric-type="all">全部</button>`,
+        ...types.slice(0, 7).map(row => `
+          <button type="button" class="${state.metricType === row.label ? "active" : ""}" data-metric-type="${esc(row.label)}">${esc(typeLabel(row.label))}</button>
+        `)
+      ].join("");
+      el.querySelectorAll("[data-metric-type]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.metricType = button.getAttribute("data-metric-type") || "all";
+          renderMetricFilters();
+          renderMetricRows();
+        });
+      });
+    }
+
+    function renderMetricRows() {
+      const rows = metrics.filter(row => state.metricType === "all" || row.type === state.metricType);
+      document.getElementById("mi-market-rows").innerHTML = rows.slice(0, 80).map(row => {
+        const value = row.value == null ? "—" : `${compact(row.value)} ${row.unit || ""}`.trim();
+        return `
+          <tr>
+            <td><strong>${esc(typeLabel(row.type))}</strong><br><span>${esc(row.metric || "")}</span></td>
+            <td>${esc(row.category || "—")}</td>
+            <td>${esc(row.geo || "—")}</td>
+            <td>${esc(row.period || "—")}</td>
+            <td class="num">${esc(value)}</td>
+            <td>${sourceButton(row.sourceDocumentId, row.source || "来源")}</td>
+            <td><span class="mi-status ${statusTone(row.reviewStatus)}">${esc(row.reviewStatus || row.confidence || "source")}</span></td>
+          </tr>
+        `;
+      }).join("") || `<tr><td colspan="7">暂无匹配指标</td></tr>`;
+      bindSourceButtons();
+    }
+
+    function renderMarket() {
+      renderBars("mi-type-bars", countRows(metrics, row => row.type), row => typeLabel(row.label));
+      renderBars("mi-category-bars", countRows(metrics, row => row.category || row.entity || row.geo));
+      renderMetricFilters();
+      renderMetricRows();
+    }
+
+    function renderGeoSources() {
+      const geoSourceIds = new Set(geoSourceDiscovery.map(row => row.sourceId).filter(Boolean));
+      const sourceRoleRows = Array.from(geoSourceIds).map(sourceId => {
+        const sample = geoSourceDiscovery.find(row => row.sourceId === sourceId) || {};
+        const meta = registryById.get(sourceId) || {};
+        return {
+          sourceId,
+          country: sample.countryOrRegion || meta.geoGrain || "Unspecified",
+          dataRole: sample.dataRole || meta.kpiFamilies || "Unclassified",
+          phase: meta.phase,
+        };
+      });
+      const byCountry = new Map();
+      geoSourceDiscovery.forEach(row => {
+        const country = row.countryOrRegion || "Unspecified";
+        const item = byCountry.get(country) || {
+          country,
+          region: row.regionGroup || "",
+          sourceIds: new Set(),
+          roles: new Map(),
+          downloaded: 0,
+          records: 0,
+          artifacts: new Set(),
+          pages: new Set(),
+        };
+        item.records += 1;
+        if (row.sourceId) item.sourceIds.add(row.sourceId);
+        if (row.dataRole) item.roles.set(row.dataRole, (item.roles.get(row.dataRole) || 0) + 1);
+        if (row.status === "downloaded") item.downloaded += 1;
+        if (row.artifactType) item.artifacts.add(row.artifactType);
+        if (row.discoveredUrl) item.pages.add(row.discoveredUrl);
+        byCountry.set(country, item);
+      });
+      const sourceCountryRank = new Map(topCompanyCountries.map(row => [row.sourceCountry || row.country, row.rank]));
+      const order = ["South Korea", "USA", "Italy", "France", "Germany", "Israel", "Spain", "Switzerland", "United Kingdom", "Japan", "Czech Republic", "Canada", "Poland", "Sweden", "Taiwan", "Brazil", "Hong Kong"];
+      const countryRows = Array.from(byCountry.values()).sort((a, b) => {
+        const ar = sourceCountryRank.get(a.country);
+        const br = sourceCountryRank.get(b.country);
+        if (ar || br) return (ar || 999) - (br || 999);
+        const ai = order.indexOf(a.country);
+        const bi = order.indexOf(b.country);
+        if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+        return a.country.localeCompare(b.country);
+      });
+      const sourceTasks = collectionBacklog.filter(row => geoSourceIds.has(row.sourceId));
+      const taskBySource = new Map();
+      sourceTasks.forEach(row => {
+        const list = taskBySource.get(row.sourceId) || [];
+        list.push(row);
+        taskBySource.set(row.sourceId, list);
+      });
+      const rolePill = role => `<span class="mi-pill ${roleTone(role)}">${esc(dataRoleLabel(role))}</span>`;
+      const topRows = topCompanyCountries || [];
+      const topSourceIds = new Set(topRows.flatMap(row => row.sourceIds || []));
+      const coveredTopRows = topRows.filter(row => Number(row.sourceCount) > 0);
+      const hardTopRows = topRows.filter(row => row.coverageTier === "treatment_volume");
+      const qaTopRows = topRows.filter(row => row.coverageTier === "metric_qa_candidate");
+      const proxyTopRows = topRows.filter(row => row.coverageTier === "channel_density_proxy");
+      const contextTopRows = topRows.filter(row => row.coverageTier === "context_or_demand_proxy");
+      const selectedTier = state.geoTier || "all";
+      const filteredTopRows = selectedTier === "all" ? topRows : topRows.filter(row => row.coverageTier === selectedTier);
+      const maxCompanyCount = Math.max(1, ...topRows.map(row => Number(row.companyCount) || 0));
+      const tierOptions = [
+        { key: "all", label: "全部" },
+        { key: "treatment_volume", label: "治疗量" },
+        { key: "metric_qa_candidate", label: "待 QA" },
+        { key: "channel_density_proxy", label: "渠道" },
+        { key: "context_or_demand_proxy", label: "需求" },
+      ];
+      const kpiRows = [
+        {
+          value: `${coveredTopRows.length}/${topRows.length || 15}`,
+          label: `Top 15 国家覆盖 · ${topRows.length - coveredTopRows.length} gap`,
+        },
+        {
+          value: hardTopRows.length,
+          label: "可直接进入治疗量主干",
+        },
+        {
+          value: qaTopRows.length,
+          label: "治疗量候选，需 count/share QA",
+        },
+        {
+          value: proxyTopRows.length + contextTopRows.length,
+          label: "渠道、医生、需求或协会 context proxy",
+        },
+      ];
+      document.getElementById("mi-geo-kpi-grid").innerHTML = kpiRows.map(row => `
+        <div class="mi-geo-kpi"><strong>${esc(fmt(row.value))}</strong><span>${esc(row.label)}</span></div>
+      `).join("");
+      document.getElementById("mi-geo-method-strip").innerHTML = [
+        `Top 15: 公司总部国家`,
+        `${fmt(topSourceIds.size)} source ids`,
+        `${fmt(geoSourceSummary.records || geoSourceDiscovery.length)} discovery rows`,
+        `${fmt(geoSourceSummary.downloadedArtifacts || 0)} files downloaded`,
+      ].map(label => `<span>${esc(label)}</span>`).join("");
+      document.getElementById("mi-geo-tier-filter").innerHTML = tierOptions.map(option => `
+        <button type="button" data-geo-tier="${esc(option.key)}" class="${selectedTier === option.key ? "active" : ""}">${esc(option.label)}</button>
+      `).join("");
+      document.querySelectorAll("[data-geo-tier]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.geoTier = button.dataset.geoTier || "all";
+          renderGeoSources();
+        });
+      });
+      document.getElementById("mi-geo-top15-bars").innerHTML = filteredTopRows.map(row => {
+        const tone = coverageTierTone(row.coverageTier);
+        const width = Math.max(5, ((Number(row.companyCount) || 0) / maxCompanyCount) * 100).toFixed(1);
+        return `
+          <div class="mi-coverage-row">
+            <div class="country-label">
+              <strong>#${esc(row.rank)} ${esc(row.country)}</strong>
+              <span>${fmt(row.companyCount || 0)} companies · ${fmt(row.sourceCount || 0)} sources</span>
+            </div>
+            <span class="mi-coverage-track"><span class="${esc(tone)}" style="--w:${width}%;"></span></span>
+            <span class="mi-pill ${esc(tone)}">${esc(coverageTierLabel(row.coverageTier))}</span>
+          </div>
+        `;
+      }).join("") || `<div class="mi-queue-item"><strong>暂无匹配国家</strong><span>切换筛选条件查看其他覆盖等级。</span></div>`;
+      const priorityRows = topRows
+        .filter(row => row.nextAction)
+        .slice()
+        .sort((a, b) => {
+          const tierRank = { treatment_volume: 1, metric_qa_candidate: 2, channel_density_proxy: 3, context_or_demand_proxy: 4 };
+          return (tierRank[a.coverageTier] || 9) - (tierRank[b.coverageTier] || 9) || a.rank - b.rank;
+        })
+        .slice(0, 5);
+      document.getElementById("mi-geo-priority-queue").innerHTML = priorityRows.map(row => `
+        <div class="mi-next-item">
+          <strong>#${esc(row.rank)} ${esc(row.country)} · ${esc(coverageTierLabel(row.coverageTier))}</strong>
+          <span>${esc(row.nextAction)}</span>
+        </div>
+      `).join("") || `<div class="mi-next-item"><strong>暂无下一步队列</strong><span>Top 15 覆盖表中尚未生成待办动作。</span></div>`;
+      document.getElementById("mi-geo-summary").innerHTML = [
+        ["国家/地区", geoSourceSummary.countries || countryRows.length],
+        ["来源入口", geoSourceSummary.sources || geoSourceIds.size],
+        ["发现记录", geoSourceSummary.records || geoSourceDiscovery.length],
+        ["已下载文件", geoSourceSummary.downloadedArtifacts || geoSourceDiscovery.filter(row => row.status === "downloaded").length],
+      ].map(([label, value]) => `
+        <div class="tile"><strong>${esc(fmt(value))}</strong><span>${esc(label)}</span></div>
+      `).join("");
+      renderBars("mi-geo-role-bars", countRows(sourceRoleRows, row => row.dataRole), row => dataRoleLabel(row.label));
+      document.getElementById("mi-geo-source-grid").innerHTML = countryRows.map(row => {
+        const sourceIds = Array.from(row.sourceIds);
+        const roleNames = Array.from(row.roles.keys()).slice(0, 4);
+        const sourceNames = sourceIds.map(sourceId => {
+          const meta = registryById.get(sourceId) || {};
+          const sample = geoSourceDiscovery.find(item => item.sourceId === sourceId) || {};
+          return meta.sourceName || sample.sourceName || sourceId;
+        });
+        const tasks = sourceIds.flatMap(sourceId => taskBySource.get(sourceId) || []);
+        const firstTask = tasks.sort((a, b) => (a.phase - b.phase) || (a.priority - b.priority))[0];
+        const hardCount = sourceIds.filter(sourceId => {
+          const sample = geoSourceDiscovery.find(item => item.sourceId === sourceId) || {};
+          return roleTone(sample.dataRole) === "hard";
+        }).length;
+        const qaCount = sourceIds.filter(sourceId => {
+          const sample = geoSourceDiscovery.find(item => item.sourceId === sourceId) || {};
+          return roleTone(sample.dataRole) === "qa";
+        }).length;
+        const positioning = hardCount ? "可进入治疗量主干" : (qaCount ? "先做 metric QA" : "作为 proxy / context");
+        return `
+          <article class="mi-geo-card">
+            <div class="topline">
+              <span class="country">${esc(row.country)}</span>
+              <span class="mi-pill ${hardCount ? "hard" : (qaCount ? "qa" : "proxy")}">${esc(positioning)}</span>
+            </div>
+            <h3>${esc(sourceNames.slice(0, 2).join(" / ") || "来源待确认")}</h3>
+            <div class="meta-row">
+              <span class="mi-pill">${fmt(sourceIds.length)} sources</span>
+              <span class="mi-pill">${fmt(row.downloaded)} files</span>
+              <span class="mi-pill">${fmt(row.records)} records</span>
+            </div>
+            <div class="meta-row" style="margin-top:8px;">
+              ${roleNames.map(rolePill).join("")}
+            </div>
+            <p>${esc(firstTask ? firstTask.nextAction : "已进入来源发现清单，后续按数据角色拆成治疗量、渠道密度或需求 proxy。")}</p>
+          </article>
+        `;
+      }).join("") || `<article class="mi-geo-card"><span class="country">No data</span><h3>暂无国家级来源发现</h3><p>请先运行 geo source discovery 采集脚本。</p></article>`;
+
+      const top15El = document.getElementById("mi-geo-top15-rows");
+      if (top15El) {
+        top15El.innerHTML = topCompanyCountries.map(row => {
+          const roleLabels = (row.dataRoles || []).slice(0, 3).map(role => `<span class="mi-pill ${roleTone(role)}">${esc(dataRoleLabel(role))}</span>`).join("");
+          const sourceNames = (row.sourceNames || []).slice(0, 3).join(" / ");
+          const tone = coverageTierTone(row.coverageTier);
+          return `
+            <tr>
+              <td><strong>#${esc(row.rank)} ${esc(row.country)}</strong><br><span>${esc(row.sourceCountry || row.country)}</span></td>
+              <td class="num">${fmt(row.companyCount || 0)}</td>
+              <td><span class="mi-pill ${esc(tone)}">${esc(coverageTierLabel(row.coverageTier))}</span><br><span>${fmt(row.sourceCount || 0)} sources · ${fmt(row.downloadedArtifacts || 0)} files</span></td>
+              <td><strong>${esc(sourceNames || "暂无")}</strong><br><span>${roleLabels || "—"}</span></td>
+              <td>${esc(row.nextAction || "先补官方/协会来源入口，再判定是否可抽数。")}</td>
+            </tr>
+          `;
+        }).join("") || `<tr><td colspan="5">暂无 Top 15 覆盖数据</td></tr>`;
+      }
+
+      document.getElementById("mi-geo-backlog-rows").innerHTML = sourceTasks
+        .slice()
+        .sort((a, b) => (a.phase - b.phase) || (a.priority - b.priority) || String(a.sourceId).localeCompare(String(b.sourceId)))
+        .map(row => {
+          const meta = registryById.get(row.sourceId) || {};
+          const label = meta.sourceName || row.sourceId;
+          const sourceUrl = meta.sourceUrl || "";
+          return `
+            <tr>
+              <td><strong>${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noreferrer">${esc(label)}</a>` : esc(label)}</strong><br><span>${esc(row.sourceId || "")}</span></td>
+              <td>${esc(phaseLabel(row.phase))}<br><span>P${esc(row.priority || "—")}</span></td>
+              <td><span class="mi-status ${statusTone(row.status)}">${esc(row.status || "planned")}</span></td>
+              <td>${esc(row.scope || "—")}<br><span>${esc(row.years || "")}</span></td>
+              <td>${esc(row.nextAction || "—")}</td>
+              <td>${esc(row.acceptanceCheck || "—")}</td>
+            </tr>
+          `;
+        }).join("") || `<tr><td colspan="6">暂无国家来源抽取队列</td></tr>`;
+    }
+
+    function renderFinancial() {
+      document.getElementById("mi-finance-grid").innerHTML = financial.slice(0, 24).map(row => {
+        const cap = row.marketCapUsdM == null ? "—" : `$${compact(row.marketCapUsdM)}M`;
+        const rev = row.revenueUsdM == null ? "Revenue —" : `Revenue $${compact(row.revenueUsdM)}M`;
+        return `
+          <article class="mi-finance-card">
+            <div class="top"><span>${esc(row.stock || row.exchange || "Listed")}</span><span>${esc(row.period || "—")}</span></div>
+            <h4>${esc(row.company || "Unnamed")}</h4>
+            <span class="value">${esc(cap)}</span>
+            <div class="meta">${esc(rev)} · P/E ${esc(fmt(row.peRatio))} · P/S ${esc(fmt(row.psRatio))}</div>
+            <div class="meta">${sourceButton(row.sourceDocumentId, row.source || "market source")} · <span class="mi-status ${statusTone(row.reviewStatus)}">${esc(row.reviewStatus || "snapshot")}</span></div>
+          </article>
+        `;
+      }).join("") || `<div class="mi-queue-item"><strong>暂无财务快照</strong><span>当前快照未包含上市公司市场数据。</span></div>`;
+      bindSourceButtons();
+    }
+
+    function renderSignals() {
+      renderBars("mi-source-bars", countRows(docs, row => row.sourceKind), row => sourceKindLabel(row.label));
+      document.getElementById("mi-signal-grid").innerHTML = signals.slice(0, 36).map(row => `
+        <article class="mi-signal-card">
+          <div class="tagline"><span>${esc(groupLabel(row.eventGroup))}</span><span>${esc(row.date || row.period || "—")}</span></div>
+          <h4>${esc(row.entity || row.metric || "商业信号")}</h4>
+          <p>${esc(row.excerpt || row.metric || "—")}</p>
+          <div class="tagline">
+            <span class="mi-status ${statusTone(row.reviewStatus)}">${esc(row.reviewStatus || row.confidence || "trusted signal")}</span>
+            ${sourceButton(row.sourceDocumentId, row.source || "来源")}
+          </div>
+        </article>
+      `).join("") || `<div class="mi-queue-item"><strong>暂无日报信号</strong><span>当前快照未包含商业表现、渠道或新品动态。</span></div>`;
+      bindSourceButtons();
+    }
+
+    function renderConflicts() {
+      document.getElementById("mi-conflict-rows").innerHTML = conflicts.slice(0, 40).map(row => {
+        const range = `${compact(row.minValue)} - ${compact(row.maxValue)} ${row.unit || ""}`.trim();
+        return `
+          <tr>
+            <td><strong>${esc(typeLabel(row.claimType))}</strong><br><span>${esc(row.metricName || "")}</span></td>
+            <td>${esc([row.category, row.geo, row.year].filter(Boolean).join(" · ") || "—")}</td>
+            <td class="num">${esc(pct(row.spreadPct))}</td>
+            <td>${esc(range)}<br><span>${fmt(row.sourceCount)} sources</span></td>
+            <td><span class="mi-status needs">${esc(row.reviewStatus || "needs review")}</span></td>
+          </tr>
+        `;
+      }).join("") || `<tr><td colspan="5">当前未识别同口径数值冲突</td></tr>`;
+    }
+
+    function renderSources() {
+      const preferred = docs
+        .slice()
+        .sort((a, b) => {
+          const aw = a.sourceKind === "daily_briefing" ? 2 : (a.sourceKind === "industry_report" ? 1 : 0);
+          const bw = b.sourceKind === "daily_briefing" ? 2 : (b.sourceKind === "industry_report" ? 1 : 0);
+          return bw - aw || String(b.publishedYear || "").localeCompare(String(a.publishedYear || ""));
+        })
+        .slice(0, 80);
+      document.getElementById("mi-source-grid").innerHTML = preferred.map(doc => `
+        <button type="button" class="mi-source-card" data-source-id="${esc(doc.sourceDocumentId)}">
+          <span class="kind">${esc(sourceKindLabel(doc.sourceKind))} · ${esc(doc.publisher || doc.sourceRoot || "")}</span>
+          <strong>${esc(doc.title || doc.fileName || "Untitled source")}</strong>
+          <span class="path">${esc([doc.publishedYear, doc.fileName].filter(Boolean).join(" · "))}</span>
+        </button>
+      `).join("") || `<div class="mi-queue-item"><strong>暂无来源</strong><span>当前快照未包含来源文件。</span></div>`;
+      bindSourceButtons();
+    }
+
+    function renderQueues() {
+      const queue = Array.isArray(queues.needsVerification) ? queues.needsVerification : [];
+      document.getElementById("mi-review-queue").innerHTML = queue.slice(0, 18).map(row => `
+        <article class="mi-queue-item">
+          <strong>${esc([typeLabel(row.type), row.entity || row.geo].filter(Boolean).join(" · ") || "待确认项")}</strong>
+          <span>${esc([row.period, row.source, row.reviewStatus].filter(Boolean).join(" · "))}</span>
+          <span>${esc(row.excerpt || row.metric || "")}</span>
+        </article>
+      `).join("") || `<article class="mi-queue-item"><strong>暂无阻塞项</strong><span>当前商业层没有缺来源、缺置信度或必须确认的高优先级项。</span></article>`;
+
+      const issues = Array.isArray(validation.issues) ? validation.issues : [];
+      document.getElementById("mi-validation-list").innerHTML = issues.map(row => `
+        <article class="mi-validation-item">
+          <strong>${esc(row.check || "check")} · ${esc(row.severity || "ok")}</strong>
+          <span>${fmt(row.count || 0)} flagged rows</span>
+        </article>
+      `).join("") || `<article class="mi-validation-item"><strong>未见校验结果</strong><span>当前快照没有商业层校验摘要。</span></article>`;
+    }
+
+    function openSource(sourceDocumentId) {
+      const doc = sourceById.get(sourceDocumentId);
+      if (!doc) return;
+      const drawer = document.getElementById("mi-drawer");
+      const backdrop = document.getElementById("mi-drawer-backdrop");
+      document.getElementById("mi-drawer-body").innerHTML = `
+        <span class="mi-status">${esc(sourceKindLabel(doc.sourceKind))}</span>
+        <h3>${esc(doc.title || doc.fileName || "来源")}</h3>
+        <dl>
+          <div><dt>Publisher</dt><dd>${esc(doc.publisher || "—")}</dd></div>
+          <div><dt>Year</dt><dd>${esc(doc.publishedYear || "—")}</dd></div>
+          <div><dt>File</dt><dd>${esc(doc.fileName || "—")}</dd></div>
+          <div><dt>Path</dt><dd>${esc(doc.path || doc.sourceUrl || "—")}</dd></div>
+          <div><dt>Status</dt><dd>${esc([doc.sourceStatus, doc.textExtractStatus].filter(Boolean).join(" · ") || "indexed")}</dd></div>
+        </dl>
+        <p>${esc(doc.textExcerpt || "该来源仅进入元数据索引，前台不展示全文。")}</p>
+      `;
+      drawer.hidden = false;
+      backdrop.hidden = false;
+    }
+
+    function closeSource() {
+      document.getElementById("mi-drawer").hidden = true;
+      document.getElementById("mi-drawer-backdrop").hidden = true;
+    }
+
+    function bindSourceButtons() {
+      document.querySelectorAll("[data-source-id]").forEach(button => {
+        if (button.dataset.bound) return;
+        button.dataset.bound = "1";
+        button.addEventListener("click", event => {
+          event.preventDefault();
+          openSource(button.getAttribute("data-source-id"));
+        });
+      });
+    }
+
+    function setMode(mode) {
+      state.mode = mode;
+      document.querySelectorAll("[data-mode]").forEach(button => {
+        button.classList.toggle("active", button.getAttribute("data-mode") === mode);
+      });
+      document.querySelectorAll("[data-mode-block]").forEach(section => {
+        if (section.dataset.backstage === "1") {
+          section.hidden = true;
+          return;
+        }
+        const block = section.getAttribute("data-mode-block");
+        section.hidden = mode !== "all" && block !== mode && block !== "all";
+      });
+    }
+
+    document.querySelectorAll("[data-mode]").forEach(button => {
+      button.addEventListener("click", () => setMode(button.getAttribute("data-mode") || "all"));
+    });
+    document.getElementById("mi-drawer-close").addEventListener("click", closeSource);
+    document.getElementById("mi-drawer-backdrop").addEventListener("click", closeSource);
+
+    renderHero();
+    renderAnalysis();
+    renderMarket();
+    renderGeoSources();
+    renderFinancial();
+    renderSignals();
+    renderConflicts();
+    renderSources();
+    renderQueues();
+    setMode("all");
+    hideBackstageBlocks();
+  })();
+</script>
+</body>
+</html>

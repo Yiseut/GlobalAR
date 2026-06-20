@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import html as html_lib
 import io
 import json
 import os
@@ -44,12 +45,14 @@ SNAPSHOT_PATH = WEB_DIR / "app-data.js"
 V3_DATA_AS_OF_PATH = WEB_DIR / "v3" / "data-as-of.json"
 V3_OPERATIONS_DATA_PATH = WEB_DIR / "v3" / "v3-operations.js"
 V3_SEARCH_DATA_PATH = WEB_DIR / "v3" / "v3-search.js"
+V3_MARKET_INTELLIGENCE_DATA_PATH = WEB_DIR / "v3" / "v3-market-intelligence.js"
 MANIFEST_PATH = DATA_DIR / "import_manifest.json"
 STAGING_JSONL_PATH = DATA_DIR / "verification_evidence_staging.jsonl"
 DATA_QUALITY_ISSUES_PATH = DATA_DIR / "seed_integrity_issues.csv"
 DATA_QUALITY_REPORT_PATH = DATA_DIR / "seed_integrity_report.md"
 DATA_QUALITY_SUMMARY_PATH = DATA_DIR / "seed_integrity_summary.json"
 PRODUCT_MASTER_PATH = DATA_DIR / "product_master.csv"
+MANUAL_COMPANY_RELATIONSHIP_SUPPLEMENT_PATH = DATA_DIR / "manual_company_relationship_supplement.csv"
 MANUAL_PRODUCT_LINE_SUPPLEMENT_PATH = DATA_DIR / "manual_product_line_supplement.csv"
 REGISTRATION_EVIDENCE_PATH = DATA_DIR / "registration_evidence.csv"
 PRODUCT_FAMILY_MASTER_PATH = DATA_DIR / "product_family_master.csv"
@@ -80,9 +83,13 @@ MANUAL_NMPA_REGISTRATION_EVIDENCE_PATH = DATA_DIR / "manual_nmpa_registration_ev
 MANUAL_REGISTRATION_NAME_EVIDENCE_PATH = DATA_DIR / "manual_registration_name_evidence.csv"
 MANUAL_EVIDENCE_PROMOTION_LOG_PATH = DATA_DIR / "manual_evidence_promotion_log.csv"
 ISAPS_MARKET_METRICS_PATH = DATA_DIR / "isaps_market_metrics.csv"
+ASPS_MARKET_METRICS_PATH = DATA_DIR / "asps_market_metrics.csv"
 MARKET_SNAPSHOT_LIVE_PATH = DATA_DIR / "market_snapshot_live.csv"
 COMPANY_FINANCIAL_METRICS_PATH = DATA_DIR / "company_financial_metrics.csv"
 COMPANY_REVENUE_COLLECTION_PLAN_PATH = DATA_DIR / "audits" / "company_revenue_collection_plan_latest.csv"
+COMMERCIAL_DATA_SOURCE_REGISTRY_PATH = DATA_DIR / "commercial_data_source_registry.csv"
+COMMERCIAL_DATA_COLLECTION_BACKLOG_PATH = DATA_DIR / "audits" / "commercial_data_collection_backlog_latest.csv"
+COMMERCIAL_GEO_SOURCE_DISCOVERY_PATH = DATA_DIR / "audits" / "commercial_geo_market_source_discovery_latest.csv"
 FIELD_DICTIONARY_PATH = DATA_DIR / "field_dictionary.csv"
 COMPANY_PORTFOLIO_CASES_PATH = DATA_DIR / "company_portfolio_cases.json"
 DATA_USABILITY_LEDGER_PATH = DATA_DIR / "audits" / "data_usability_ledger_latest.csv"
@@ -94,6 +101,16 @@ DATA_QUALITY_BACKLOG_SUMMARY_PATH = DATA_DIR / "audits" / "data_quality_backlog_
 ENTITY_RESOLUTION_REVIEW_QUEUE_PATH = DATA_DIR / "audits" / "entity_resolution_review_queue_latest.csv"
 REGISTRATION_REVIEW_QUEUE_PATH = DATA_DIR / "audits" / "registration_review_queue_latest.csv"
 AESTHETICS_REVENUE_QUEUE_PATH = DATA_DIR / "audits" / "aesthetics_revenue_pct_collection_queue_latest.csv"
+COMMERCIAL_SOURCE_ROOTS = [
+    {"label": "commercial_acquired_sources", "path": DATA_DIR / "commercial_sources"},
+    {"label": "local_report_notes", "path": SOURCE_DIR / "行业报告"},
+    {"label": "structured_market_data", "path": SOURCE_DIR / "医美行业数据"},
+    {"label": "industry_report_archive", "path": Path(r"E:\shared\行业报告")},
+    {"label": "daily_briefing_library", "path": Path(r"E:\shared\code\briefing_v6\output")},
+]
+COMMERCIAL_SOURCE_EXTENSIONS = {".pdf", ".pptx", ".md", ".html", ".csv", ".xlsx", ".json", ".txt", ".jpg", ".jpeg", ".png"}
+COMMERCIAL_TEXT_EXTENSIONS = {".md", ".txt", ".csv", ".json", ".html"}
+MARKET_METRIC_SNAPSHOT_LIMIT = 5000
 
 CURRENT_PHASE_CHANNELS = {"fda", "ce", "company_official"}
 EXTERNAL_PROJECT_CHANNELS = {"nmpa"}
@@ -1975,22 +1992,58 @@ def listed_relationship_lookup() -> dict[str, dict[str, str]]:
     return lookup
 
 
+def manual_company_relationship_lookup() -> dict[str, dict[str, str]]:
+    rows = load_generated_csv(MANUAL_COMPANY_RELATIONSHIP_SUPPLEMENT_PATH)
+    lookup: dict[str, dict[str, str]] = {}
+    for row in rows:
+        company = canonical_company_name(row.get("Company"))
+        company_id = norm(row.get("Company_ID")) or (stable_id("co", company) if company else "")
+        parent = canonical_company_name(row.get("Parent_Company"))
+        ultimate = canonical_company_name(row.get("Ultimate_Parent")) or parent
+        payload = {
+            "parent_company": parent,
+            "ultimate_parent": ultimate,
+            "relationship_type": norm(row.get("Relationship_Type")),
+            "ownership_override": norm(row.get("Ownership_Override")),
+            "acquisition_status": norm(row.get("Acquisition_Status")) or "manual_group_relationship_confirmed",
+            "acquisition_timeline": norm(row.get("Acquisition_Timeline")),
+            "source_name": norm(row.get("Source_Name")),
+            "source_url": norm(row.get("Source_URL")),
+            "source_excerpt": norm(row.get("Source_Excerpt")),
+            "review_status": norm(row.get("Review_Status")),
+            "confidence": norm(row.get("Confidence")),
+            "notes": norm(row.get("Notes")),
+        }
+        if company:
+            lookup[company] = payload
+        if company_id:
+            lookup[company_id] = payload
+    return lookup
+
+
 def build_company_master(companies: list[dict[str, Any]]) -> list[dict[str, Any]]:
     selected_names = {item.get("Company"): rank for rank, item in enumerate(select_priority_companies(companies), start=1)}
     listed_relationships = listed_relationship_lookup()
+    manual_relationships = manual_company_relationship_lookup()
     rows = []
     for company in companies:
         stock = split_stock_code(company.get("Stock_Code"))
         aliases = alias_list(company.get("Company"), company.get("Parent_Company"))
         company_id = stable_id("co", company.get("Company"))
         listed_relationship = listed_relationships.get(company_id) or listed_relationships.get(norm(company.get("Company"))) or {}
-        parent_company = company.get("Parent_Company") or listed_relationship.get("parent_company")
+        manual_relationship = manual_relationships.get(company_id) or manual_relationships.get(norm(company.get("Company"))) or {}
+        parent_company = manual_relationship.get("parent_company") or company.get("Parent_Company") or listed_relationship.get("parent_company")
         ultimate_parent = (
-            company.get("Parent_Company")
+            manual_relationship.get("ultimate_parent")
+            or company.get("Parent_Company")
             or listed_relationship.get("ultimate_parent")
             or listed_relationship.get("parent_company")
             or company.get("Company")
         )
+        relationship_source = "manual_company_relationship_supplement" if manual_relationship else "seed_from_workbook"
+        source_status = relationship_source
+        if manual_relationship.get("source_url"):
+            source_status = f"{source_status}, {manual_relationship.get('source_name') or manual_relationship.get('source_url')}"
         rows.append(
             {
                 "company_id": company_id,
@@ -2000,14 +2053,14 @@ def build_company_master(companies: list[dict[str, Any]]) -> list[dict[str, Any]
                 "countries_all": company.get("Countries_All"),
                 "region": dashboard_region(company.get("Region"), company.get("HQ_Country")),
                 "location_full": company.get("Location_Full"),
-                "ownership": company.get("Ownership"),
+                "ownership": manual_relationship.get("ownership_override") or company.get("Ownership"),
                 "business_role": company.get("Business_Role"),
                 "status": company.get("Status"),
                 "parent_company": parent_company,
                 "positioning_cn": company.get("Positioning_CN"),
                 "ultimate_parent": ultimate_parent,
-                "acquisition_status": listed_relationship.get("acquisition_status") or "needs_verification",
-                "acquisition_timeline": listed_relationship.get("acquisition_timeline") or "",
+                "acquisition_status": manual_relationship.get("acquisition_status") or listed_relationship.get("acquisition_status") or "needs_verification",
+                "acquisition_timeline": manual_relationship.get("acquisition_timeline") or listed_relationship.get("acquisition_timeline") or "",
                 "stock_code": company.get("Stock_Code"),
                 "exchange": stock["exchange"],
                 "ticker_symbol": stock["ticker_symbol"],
@@ -2018,10 +2071,20 @@ def build_company_master(companies: list[dict[str, Any]]) -> list[dict[str, Any]
                 "primary_track": company.get("Primary_Track"),
                 "priority_rank": selected_names.get(company.get("Company")),
                 "verification_status": "unverified_seed",
-                "review_status": "queued" if company.get("Company") in selected_names else "backlog",
-                "source_status": "seed_from_workbook",
+                "review_status": manual_relationship.get("review_status") or ("queued" if company.get("Company") in selected_names else "backlog"),
+                "source_status": source_status,
                 "search_queries": json.dumps(alias_list(company.get("Company"), company.get("Stock_Code")), ensure_ascii=False),
-                "search_blob": text_blob(company),
+                "search_blob": text_blob(
+                    {
+                        **company,
+                        "Parent_Company": parent_company,
+                        "Ultimate_Parent": ultimate_parent,
+                        "Relationship_Type": manual_relationship.get("relationship_type"),
+                        "Relationship_Source": manual_relationship.get("source_name"),
+                        "Relationship_Source_URL": manual_relationship.get("source_url"),
+                        "Relationship_Notes": manual_relationship.get("notes"),
+                    }
+                ),
             }
         )
     return rows
@@ -6834,8 +6897,10 @@ def load_market_metrics() -> list[dict[str, Any]]:
                         "confidence": norm(row.get("可信度")),
                     }
                 )
-    if ISAPS_MARKET_METRICS_PATH.exists():
-        with ISAPS_MARKET_METRICS_PATH.open("r", encoding="utf-8-sig", newline="") as handle:
+    for association_metrics_path in [ISAPS_MARKET_METRICS_PATH, ASPS_MARKET_METRICS_PATH]:
+        if not association_metrics_path.exists():
+            continue
+        with association_metrics_path.open("r", encoding="utf-8-sig", newline="") as handle:
             for row in csv.DictReader(handle):
                 if not norm(row.get("data_type")):
                     continue
@@ -6986,6 +7051,1593 @@ def load_reports() -> list[dict[str, Any]]:
     return reports
 
 
+def commercial_source_kind(root_label: str, path: Path) -> str:
+    suffix = path.suffix.lower()
+    if root_label == "daily_briefing_library":
+        return "daily_briefing"
+    if root_label == "structured_market_data":
+        return "structured_market_table" if suffix in {".csv", ".xlsx"} else "structured_market_note"
+    if suffix in {".pdf", ".pptx"}:
+        return "industry_report"
+    if suffix in {".jpg", ".jpeg", ".png"}:
+        return "report_image"
+    if suffix in {".md", ".txt", ".html"}:
+        return "report_note"
+    return "source_file"
+
+
+def include_commercial_source_path(path: Path, root_label: str, root: Path) -> bool:
+    name = path.name
+    if name.startswith("~$") or name.startswith("."):
+        return False
+    if path.suffix.lower() not in COMMERCIAL_SOURCE_EXTENSIONS:
+        return False
+    if root_label != "daily_briefing_library":
+        return True
+    rel = path.relative_to(root).as_posix().lower()
+    if name.startswith("全球行业资讯-") and path.suffix.lower() == ".html":
+        return True
+    return rel.startswith("ready/") and path.suffix.lower() in {".html", ".md", ".txt"}
+
+
+def read_text_sample(path: Path, limit: int = 80000) -> str:
+    try:
+        with path.open("rb") as handle:
+            raw = handle.read(limit)
+    except OSError:
+        return ""
+    for encoding in ("utf-8", "utf-8-sig", "gb18030"):
+        try:
+            return raw.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def html_to_text_sample(text: str) -> str:
+    text = re.sub(r"(?is)<(script|style).*?>.*?</\1>", " ", text)
+    title_match = re.search(r"(?is)<title[^>]*>(.*?)</title>", text)
+    title = title_match.group(1).strip() if title_match else ""
+    text = re.sub(r"(?s)<[^>]+>", " ", text)
+    text = html_lib.unescape(text)
+    text = re.sub(r"\s+", " ", text).strip()
+    if title and title not in text[:200]:
+        text = f"{html_lib.unescape(title)} | {text}"
+    return text
+
+
+def xlsx_text_sample(path: Path) -> str:
+    if not zipfile.is_zipfile(path):
+        return ""
+    try:
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    except Exception:
+        return ""
+    try:
+        parts = []
+        for sheet_name in wb.sheetnames[:4]:
+            ws = wb[sheet_name]
+            rows = []
+            for row in ws.iter_rows(values_only=True):
+                values = [norm(value) for value in row if norm(value)]
+                if values:
+                    rows.append(" / ".join(values[:12]))
+                if len(rows) >= 4:
+                    break
+            if rows:
+                parts.append(f"{sheet_name}: {' | '.join(rows)}")
+        return " || ".join(parts)
+    finally:
+        wb.close()
+
+
+def source_document_excerpt(path: Path) -> tuple[str, str]:
+    suffix = path.suffix.lower()
+    if suffix in COMMERCIAL_TEXT_EXTENSIONS:
+        text = read_text_sample(path)
+        if suffix == ".html":
+            text = html_to_text_sample(text)
+        elif suffix == ".json":
+            text = re.sub(r"\s+", " ", text).strip()
+        else:
+            text = re.sub(r"\s+", " ", text).strip()
+        return short_text(text, 900), "short_excerpt"
+    if suffix == ".xlsx":
+        text = xlsx_text_sample(path)
+        return short_text(text, 900), "workbook_headers"
+    if suffix in {".pdf", ".pptx"}:
+        return "", "indexed_metadata_only"
+    if suffix in {".jpg", ".jpeg", ".png"}:
+        return "", "image_metadata_only"
+    return "", "indexed_metadata_only"
+
+
+def infer_commercial_title(path: Path, text_excerpt: str = "") -> str:
+    if path.suffix.lower() == ".md" and text_excerpt:
+        for line in text_excerpt.splitlines():
+            clean = line.strip()
+            if clean.startswith("#"):
+                return clean.strip("# ").strip() or path.stem
+    if path.suffix.lower() == ".html":
+        title = text_excerpt.split("|", 1)[0].strip()
+        if title and len(title) <= 160:
+            return title
+    return path.stem
+
+
+def infer_commercial_publisher(path: Path, title: str) -> str:
+    text = f"{path.name} {title}".lower()
+    publisher_patterns = [
+        ("isaps", "ISAPS"),
+        ("deloitte", "Deloitte"),
+        ("frost", "Frost & Sullivan"),
+        ("iresearch", "iResearch"),
+        ("艾瑞", "iResearch"),
+        ("meituan", "Meituan"),
+        ("美团", "Meituan"),
+        ("precedence", "Precedence Research"),
+        ("grand view", "Grand View Research"),
+        ("marketsandmarkets", "MarketsandMarkets"),
+        ("fortune business", "Fortune Business Insights"),
+        ("allergan", "AbbVie / Allergan"),
+        ("abbvie", "AbbVie"),
+        ("cutera", "Cutera"),
+        ("cynosure", "Cynosure"),
+        ("sisram", "Sisram Medical"),
+        ("fotona", "Fotona"),
+    ]
+    for token, publisher in publisher_patterns:
+        if token in text:
+            return publisher
+    return ""
+
+
+def source_path_key(value: Any) -> str:
+    text = norm(value).replace("\\", "/")
+    return text.lower()
+
+
+def add_source_lookup_keys(lookup: dict[str, str], doc: dict[str, Any]) -> None:
+    for key in [
+        doc.get("path"),
+        doc.get("file_name"),
+        doc.get("_absolute_path"),
+        doc.get("source_url"),
+        doc.get("title"),
+    ]:
+        clean = source_path_key(key)
+        if clean:
+            lookup[clean] = doc["source_document_id"]
+    path_text = norm(doc.get("path"))
+    if path_text:
+        lookup[source_path_key(Path(path_text).name)] = doc["source_document_id"]
+
+
+def source_document_from_path(path: Path, root_label: str, root: Path) -> dict[str, Any]:
+    excerpt, extract_status = source_document_excerpt(path)
+    title = infer_commercial_title(path, excerpt)
+    try:
+        file_size = path.stat().st_size
+        captured_at = datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).astimezone().isoformat(timespec="seconds")
+    except OSError:
+        file_size = 0
+        captured_at = ""
+    rel = path.relative_to(root).as_posix()
+    display_path = f"{root_label}/{rel}"
+    publisher = infer_commercial_publisher(path, title)
+    doc = {
+        "source_document_id": stable_id("csd", root_label, rel),
+        "source_root": root_label,
+        "source_kind": commercial_source_kind(root_label, path),
+        "path": display_path,
+        "file_name": path.name,
+        "extension": path.suffix.lower().lstrip("."),
+        "title": title,
+        "publisher": publisher,
+        "published_year": detect_year(path.name, title, excerpt),
+        "captured_at": captured_at,
+        "file_size": file_size,
+        "text_excerpt": excerpt,
+        "text_extract_status": extract_status,
+        "source_status": "indexed",
+        "rights_note": "metadata and bounded excerpt only",
+        "source_url": "",
+        "search_blob": text_blob({"title": title, "publisher": publisher, "path": display_path, "excerpt": excerpt}),
+        "_absolute_path": str(path),
+    }
+    return doc
+
+
+def load_commercial_source_documents() -> list[dict[str, Any]]:
+    documents: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for root_info in COMMERCIAL_SOURCE_ROOTS:
+        root_label = root_info["label"]
+        root = Path(root_info["path"])
+        if not root.exists():
+            continue
+        for path in sorted(root.rglob("*")):
+            if not path.is_file() or not include_commercial_source_path(path, root_label, root):
+                continue
+            doc = source_document_from_path(path, root_label, root)
+            if doc["source_document_id"] in seen:
+                continue
+            seen.add(doc["source_document_id"])
+            documents.append(doc)
+    documents.sort(key=lambda row: (norm(row.get("source_root")), norm(row.get("path")).lower()))
+    return documents
+
+
+def find_or_create_source_document(
+    documents: list[dict[str, Any]],
+    lookup: dict[str, str],
+    *,
+    source_file: Any = "",
+    source_url: Any = "",
+    title: Any = "",
+    source_kind: str = "structured_reference",
+    source_root: str = "generated_reference",
+) -> str:
+    candidates = [source_file, source_url, title]
+    for candidate in candidates:
+        clean = source_path_key(candidate)
+        if clean and clean in lookup:
+            return lookup[clean]
+        if clean:
+            name_key = source_path_key(Path(norm(candidate)).name)
+            if name_key and name_key in lookup:
+                return lookup[name_key]
+    source_file_text = norm(source_file)
+    if source_file_text:
+        path = Path(source_file_text)
+        if not path.is_absolute():
+            for base in [SOURCE_DIR, PROJECT_DIR, DATA_DIR]:
+                candidate_path = base / path
+                if candidate_path.exists() and candidate_path.is_file():
+                    doc = source_document_from_path(candidate_path, source_root, candidate_path.parent)
+                    doc["source_root"] = source_root
+                    doc["path"] = source_file_text
+                    documents.append(doc)
+                    add_source_lookup_keys(lookup, doc)
+                    return doc["source_document_id"]
+        elif path.exists() and path.is_file():
+            doc = source_document_from_path(path, source_root, path.parent)
+            doc["source_root"] = source_root
+            doc["path"] = source_file_text
+            documents.append(doc)
+            add_source_lookup_keys(lookup, doc)
+            return doc["source_document_id"]
+
+    display_title = norm(title) or (Path(source_file_text).stem if source_file_text else norm(source_url) or source_kind)
+    document_id = stable_id("csd", source_root, source_kind, source_file_text, source_url, display_title)
+    if document_id not in {doc["source_document_id"] for doc in documents}:
+        doc = {
+            "source_document_id": document_id,
+            "source_root": source_root,
+            "source_kind": source_kind,
+            "path": source_file_text or norm(source_url) or display_title,
+            "file_name": Path(source_file_text).name if source_file_text else "",
+            "extension": Path(source_file_text).suffix.lower().lstrip(".") if source_file_text else "",
+            "title": display_title,
+            "publisher": "",
+            "published_year": detect_year(display_title, source_file_text),
+            "captured_at": "",
+            "file_size": 0,
+            "text_excerpt": "",
+            "text_extract_status": "structured_row_reference",
+            "source_status": "referenced",
+            "rights_note": "structured reference row",
+            "source_url": norm(source_url),
+            "search_blob": text_blob({"title": display_title, "path": source_file_text, "url": source_url}),
+        }
+        documents.append(doc)
+        add_source_lookup_keys(lookup, doc)
+    return document_id
+
+
+def metric_claim_type(metric: dict[str, Any]) -> str:
+    text = text_blob(metric, ["data_type", "category_l1", "category_l2", "category_l3", "note"]).lower()
+    if any(token in text for token in ["procedure", "procedures", "case", "surgeries", "程序", "手术量", "例数"]):
+        return "procedure_volume"
+    if any(token in text for token in ["market_size", "market size", "market规模", "市场规模", "revenue"]):
+        return "market_size"
+    if any(token in text for token in ["cagr", "growth", "增长", "复合"]):
+        return "growth_rate"
+    if any(token in text for token in ["share", "份额", "penetration"]):
+        return "market_share"
+    if any(token in text for token in ["sales", "volume", "销量", "销售量"]):
+        return "sales_volume"
+    return "source_stated_metric"
+
+
+def metric_confidence(metric: dict[str, Any]) -> str:
+    confidence = norm(metric.get("confidence"))
+    if confidence:
+        return confidence
+    source = norm(metric.get("source_org")).lower()
+    if "isaps" in source:
+        return "official_association_report"
+    if any(token in source for token in ["sec", "annual report", "10-k", "20-f"]):
+        return "official_financial_report"
+    return "source_stated"
+
+
+def metric_review_status(metric: dict[str, Any]) -> str:
+    confidence = metric_confidence(metric)
+    source = norm(metric.get("source_org")).lower()
+    if "isaps" in source or confidence.startswith("official"):
+        return "indexed_primary_source"
+    return "source_stated_unreviewed"
+
+
+def commercial_mapping_status(company_id: Any = "", product_id: Any = "", raw_entity: Any = "") -> str:
+    if norm(product_id):
+        return "matched_product"
+    if norm(company_id):
+        return "matched_company"
+    if norm(raw_entity):
+        return "raw_entity_only"
+    return "market_level"
+
+
+def truthy_text(value: Any) -> bool:
+    return norm(value).lower() in {"1", "true", "yes", "y", "是", "需要", "需"}
+
+
+def briefing_signal_confidence(item: dict[str, Any]) -> str:
+    score = norm(item.get("confidence_score"))
+    return f"trusted_daily_signal:{score}" if score else "trusted_daily_signal"
+
+
+def briefing_signal_review_status(item: dict[str, Any]) -> str:
+    status = norm(item.get("status"))
+    if status in {"promoted", "user_curated", "verified"}:
+        return status
+    if truthy_text(item.get("needs_official_verification")):
+        return "trusted_signal_requires_official_confirmation"
+    return "trusted_signal"
+
+
+def commercial_conflict_key(claim: dict[str, Any]) -> str:
+    return "|".join(
+        compact_key(value)
+        for value in [
+            claim.get("claim_type"),
+            claim.get("metric_name"),
+            claim.get("category_l1"),
+            claim.get("category_l2"),
+            claim.get("geo"),
+            claim.get("year"),
+            claim.get("unit"),
+        ]
+        if compact_key(value)
+    )
+
+
+def compact_claim_for_review(claim: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "claimId": claim.get("claim_id"),
+        "type": claim.get("claim_type"),
+        "metric": claim.get("metric_name"),
+        "entity": claim.get("company") or claim.get("brand") or claim.get("raw_entity") or claim.get("geo"),
+        "geo": claim.get("geo"),
+        "period": claim.get("period") or claim.get("year"),
+        "value": claim.get("value"),
+        "unit": claim.get("unit"),
+        "source": claim.get("source_org") or claim.get("report_title"),
+        "confidence": claim.get("confidence"),
+        "reviewStatus": claim.get("review_status"),
+        "mappingStatus": claim.get("mapping_status"),
+        "excerpt": short_text(claim.get("source_excerpt"), 220),
+    }
+
+
+def build_commercial_conflict_groups(claims: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for claim in claims:
+        value = safe_float(claim.get("value"))
+        if value is None or not claim.get("conflict_key"):
+            continue
+        if claim.get("claim_type") not in {"market_size", "procedure_volume", "growth_rate", "market_share", "sales_volume", "source_stated_metric"}:
+            continue
+        grouped[claim["conflict_key"]].append(claim)
+
+    conflicts: list[dict[str, Any]] = []
+    for key, rows in grouped.items():
+        values = [safe_float(row.get("value")) for row in rows if safe_float(row.get("value")) is not None]
+        sources = {norm(row.get("source_org")) or norm(row.get("source_document_id")) for row in rows}
+        if len(values) < 2 or len(sources) < 2:
+            continue
+        min_value = min(values)
+        max_value = max(values)
+        if max_value == min_value:
+            continue
+        spread_abs = max_value - min_value
+        spread_pct = spread_abs / abs(min_value) if min_value else None
+        sample = rows[0]
+        source_summary = [
+            {
+                "claim_id": row.get("claim_id"),
+                "source": row.get("source_org") or row.get("report_title") or row.get("source_document_id"),
+                "value": row.get("value"),
+                "unit": row.get("unit"),
+                "confidence": row.get("confidence"),
+            }
+            for row in sorted(rows, key=lambda row: (safe_float(row.get("value")) or 0, norm(row.get("source_org"))))[:8]
+        ]
+        conflicts.append(
+            {
+                "conflict_group_id": stable_id("ccg", key),
+                "conflict_key": key,
+                "claim_type": sample.get("claim_type"),
+                "metric_name": sample.get("metric_name"),
+                "category_l1": sample.get("category_l1"),
+                "category_l2": sample.get("category_l2"),
+                "geo": sample.get("geo"),
+                "year": sample.get("year"),
+                "unit": sample.get("unit"),
+                "claim_count": len(rows),
+                "source_count": len(sources),
+                "min_value": min_value,
+                "max_value": max_value,
+                "spread_abs": spread_abs,
+                "spread_pct": spread_pct,
+                "confidence_mix": ", ".join(sorted({norm(row.get("confidence")) for row in rows if norm(row.get("confidence"))})),
+                "review_status": "needs_review",
+                "source_summary": source_summary,
+                "representative_claim_ids": [row.get("claim_id") for row in rows[:8]],
+                "note": "Same metric, geography, period and unit; values differ across sources.",
+            }
+        )
+    conflicts.sort(key=lambda row: (row.get("spread_pct") is not None, row.get("spread_pct") or 0, row.get("spread_abs") or 0), reverse=True)
+    return conflicts
+
+
+def validate_commercial_intelligence(
+    source_documents: list[dict[str, Any]],
+    claims: list[dict[str, Any]],
+    conflict_groups: list[dict[str, Any]],
+) -> dict[str, Any]:
+    source_ids = {doc.get("source_document_id") for doc in source_documents}
+    missing_source = [claim for claim in claims if not claim.get("source_document_id") or claim.get("source_document_id") not in source_ids]
+    missing_confidence = [claim for claim in claims if not norm(claim.get("confidence"))]
+    missing_review = [claim for claim in claims if not norm(claim.get("review_status"))]
+    numeric_missing_unit_period = [
+        claim
+        for claim in claims
+        if safe_float(claim.get("value")) is not None
+        and (not norm(claim.get("unit")) or not (claim.get("year") or norm(claim.get("period"))))
+    ]
+    conflict_mixed_scope = [
+        group
+        for group in conflict_groups
+        if not group.get("unit") or not group.get("year") or not group.get("geo")
+    ]
+    issues = [
+        {"check": "claim_source", "count": len(missing_source), "severity": "high" if missing_source else "ok"},
+        {"check": "claim_confidence", "count": len(missing_confidence), "severity": "high" if missing_confidence else "ok"},
+        {"check": "claim_review_status", "count": len(missing_review), "severity": "high" if missing_review else "ok"},
+        {"check": "numeric_claim_unit_period", "count": len(numeric_missing_unit_period), "severity": "medium" if numeric_missing_unit_period else "ok"},
+        {"check": "conflict_scope_guard", "count": len(conflict_mixed_scope), "severity": "medium" if conflict_mixed_scope else "ok"},
+    ]
+    blocking_count = sum(item["count"] for item in issues if item["severity"] == "high")
+    return {
+        "status": "passed" if blocking_count == 0 else "needs_attention",
+        "issues": issues,
+        "sample_missing_source": [compact_claim_for_review(claim) for claim in missing_source[:10]],
+        "sample_numeric_missing_unit_period": [compact_claim_for_review(claim) for claim in numeric_missing_unit_period[:10]],
+        "source_kind_counts": top_counts(Counter(doc.get("source_kind") or "unknown" for doc in source_documents), 12),
+        "claim_type_counts": top_counts(Counter(claim.get("claim_type") or "unknown" for claim in claims), 12),
+    }
+
+
+def build_commercial_intelligence(
+    products: list[dict[str, Any]],
+    companies: list[dict[str, Any]],
+    metrics: list[dict[str, Any]],
+    reports: list[dict[str, Any]],
+    market_snapshots: list[dict[str, Any]],
+    company_financial_metrics: list[dict[str, Any]],
+    briefing_update_candidates: list[dict[str, Any]],
+    briefing_verified_update_events: list[dict[str, Any]],
+) -> dict[str, Any]:
+    source_documents = load_commercial_source_documents()
+    source_lookup: dict[str, str] = {}
+    for doc in source_documents:
+        add_source_lookup_keys(source_lookup, doc)
+
+    company_id_map = company_ids(companies)
+    claims: list[dict[str, Any]] = []
+    market_metric_claims: list[dict[str, Any]] = []
+    financial_snapshot_rows: list[dict[str, Any]] = []
+    briefing_signal_claims: list[dict[str, Any]] = []
+    claim_id_counts: Counter = Counter()
+
+    def append_claim(claim: dict[str, Any]) -> None:
+        base_claim_id = norm(claim.get("claim_id")) or stable_id("cc", text_blob(claim))
+        claim_id_counts[base_claim_id] += 1
+        if claim_id_counts[base_claim_id] > 1:
+            claim["claim_id"] = stable_id(
+                "cc",
+                base_claim_id,
+                claim_id_counts[base_claim_id],
+                claim.get("period"),
+                claim.get("raw_entity"),
+                claim.get("source_excerpt"),
+            )
+        else:
+            claim["claim_id"] = base_claim_id
+        claim["conflict_key"] = claim.get("conflict_key") or commercial_conflict_key(claim)
+        claim["search_blob"] = text_blob(
+            claim,
+            [
+                "claim_type",
+                "metric_name",
+                "event_group",
+                "event_type",
+                "category_l1",
+                "category_l2",
+                "category_l3",
+                "geo",
+                "company",
+                "brand",
+                "raw_entity",
+                "source_org",
+                "report_title",
+                "source_excerpt",
+                "note",
+            ],
+        )
+        claims.append(claim)
+
+    for item in metrics:
+        source_doc_id = find_or_create_source_document(
+            source_documents,
+            source_lookup,
+            source_file=item.get("source_file"),
+            source_url=item.get("url"),
+            title=item.get("report_title") or item.get("source_org"),
+            source_kind="market_metric_source",
+            source_root="structured_market_metrics",
+        )
+        claim_type = metric_claim_type(item)
+        metric_name = norm(item.get("data_type")) or claim_type
+        year = safe_int(item.get("year")) or detect_year(item.get("year"), item.get("report_title"), item.get("note"))
+        period = str(year) if year else norm(item.get("period"))
+        value = safe_float(item.get("value"))
+        confidence = metric_confidence(item)
+        claim = {
+            "claim_id": stable_id(
+                "cc",
+                "market_metric",
+                source_doc_id,
+                metric_name,
+                item.get("category_l1"),
+                item.get("category_l2"),
+                item.get("geo"),
+                year,
+                value,
+                item.get("unit"),
+            ),
+            "source_document_id": source_doc_id,
+            "claim_type": claim_type,
+            "metric_name": metric_name,
+            "event_group": "",
+            "event_type": "",
+            "category_l1": norm(item.get("category_l1")),
+            "category_l2": norm(item.get("category_l2")),
+            "category_l3": norm(item.get("category_l3")),
+            "geo": norm(item.get("geo")) or "Global",
+            "year": year,
+            "period": period,
+            "value": value,
+            "unit": norm(item.get("unit")),
+            "company_id": "",
+            "product_id": "",
+            "company": "",
+            "brand": "",
+            "raw_entity": norm(item.get("geo")) or "Global",
+            "source_org": norm(item.get("source_org")),
+            "report_title": norm(item.get("report_title")),
+            "source_url": norm(item.get("url")),
+            "source_excerpt": short_text(item.get("note"), 500),
+            "confidence": confidence,
+            "review_status": metric_review_status(item),
+            "mapping_status": "market_level",
+            "segments": norm(item.get("segments")),
+            "note": norm(item.get("note")),
+        }
+        append_claim(claim)
+        market_metric_claims.append(claim)
+
+    financial_source_doc_id = find_or_create_source_document(
+        source_documents,
+        source_lookup,
+        source_file=str(COMPANY_FINANCIAL_METRICS_PATH),
+        title="上市公司财务指标快照",
+        source_kind="financial_metric_table",
+        source_root="structured_financial_metrics",
+    )
+    for item in company_financial_metrics:
+        company = norm(item.get("company"))
+        company_id = norm(item.get("company_id")) or company_id_map.get(company, "")
+        fiscal_year = safe_int(item.get("fiscal_year")) or detect_year(item.get("financial_period"), item.get("filing_date"))
+        for field, metric_name, unit in [
+            ("revenue_usd_m", "revenue_usd_m", "USD million"),
+            ("gross_margin_pct", "gross_margin_pct", "%"),
+            ("net_income_usd_m", "net_income_usd_m", "USD million"),
+        ]:
+            value = safe_float(item.get(field))
+            if value is None:
+                continue
+            source_doc_id = find_or_create_source_document(
+                source_documents,
+                source_lookup,
+                source_file=str(COMPANY_FINANCIAL_METRICS_PATH),
+                source_url=item.get("source_url"),
+                title=item.get("sec_entity_name") or company or "financial metric",
+                source_kind="financial_metric_table",
+                source_root="structured_financial_metrics",
+            ) or financial_source_doc_id
+            claim = {
+                "claim_id": stable_id("cc", "financial", source_doc_id, company_id, metric_name, fiscal_year, value),
+                "source_document_id": source_doc_id,
+                "claim_type": "company_financial",
+                "metric_name": metric_name,
+                "event_group": "",
+                "event_type": "",
+                "category_l1": "上市公司财务",
+                "category_l2": "",
+                "category_l3": "",
+                "geo": norm(item.get("listing_country")),
+                "year": fiscal_year,
+                "period": norm(item.get("financial_period")) or str(fiscal_year or ""),
+                "value": value,
+                "unit": unit,
+                "company_id": company_id,
+                "product_id": "",
+                "company": company,
+                "brand": "",
+                "raw_entity": company,
+                "source_org": norm(item.get("sec_entity_name")) or "Company filing",
+                "report_title": norm(item.get("financial_period")) or "Financial statement metric",
+                "source_url": norm(item.get("source_url")),
+                "source_excerpt": short_text(item.get("note"), 500),
+                "confidence": norm(item.get("review_status")) or "official_financial_report",
+                "review_status": norm(item.get("review_status")) or "official_financial_report",
+                "mapping_status": commercial_mapping_status(company_id=company_id, raw_entity=company),
+                "segments": "",
+                "note": norm(item.get("note")),
+            }
+            append_claim(claim)
+
+    market_snapshot_source_doc_id = find_or_create_source_document(
+        source_documents,
+        source_lookup,
+        source_file=str(MARKET_SNAPSHOT_LIVE_PATH),
+        title="上市公司市场估值快照",
+        source_kind="valuation_snapshot_table",
+        source_root="structured_financial_metrics",
+    )
+    for item in market_snapshots:
+        company = norm(item.get("company"))
+        company_id = norm(item.get("company_id")) or company_id_map.get(company, "")
+        year = detect_year(item.get("as_of"), item.get("market_refreshed_at"))
+        source_doc_id = find_or_create_source_document(
+            source_documents,
+            source_lookup,
+            source_file=str(MARKET_SNAPSHOT_LIVE_PATH),
+            source_url=item.get("source_url"),
+            title=item.get("source") or company or "market snapshot",
+            source_kind="valuation_snapshot_table",
+            source_root="structured_financial_metrics",
+        ) or market_snapshot_source_doc_id
+        financial_snapshot_rows.append(
+            {
+                "companyId": company_id,
+                "company": company,
+                "stock": norm(item.get("stock_code")),
+                "exchange": norm(item.get("exchange")),
+                "period": norm(item.get("as_of")) or norm(item.get("market_refreshed_at")),
+                "price": safe_float(item.get("price")),
+                "currency": norm(item.get("currency")),
+                "marketCapUsdM": safe_float(item.get("market_cap_usd_m")),
+                "revenueUsdM": safe_float(item.get("revenue_usd_m")),
+                "revenueYear": safe_int(item.get("revenue_year")) or None,
+                "peRatio": safe_float(item.get("pe_ratio")),
+                "pbRatio": safe_float(item.get("pb_ratio")),
+                "psRatio": safe_float(item.get("ps_ratio")),
+                "grossMarginPct": safe_float(item.get("gross_margin_pct")),
+                "source": norm(item.get("source")),
+                "sourceUrl": norm(item.get("source_url")),
+                "confidence": norm(item.get("snapshot_status")) or norm(item.get("financial_review_status")) or "market_snapshot",
+                "reviewStatus": norm(item.get("snapshot_status")) or norm(item.get("financial_review_status")) or "market_snapshot",
+                "sourceDocumentId": source_doc_id,
+            }
+        )
+        for field, metric_name, unit in [
+            ("market_cap_usd_m", "market_cap_usd_m", "USD million"),
+            ("price", "share_price", norm(item.get("currency")) or "local currency"),
+            ("pe_ratio", "pe_ratio", "x"),
+        ]:
+            value = safe_float(item.get(field))
+            if value is None:
+                continue
+            claim = {
+                "claim_id": stable_id("cc", "valuation", source_doc_id, company_id, metric_name, item.get("as_of"), value),
+                "source_document_id": source_doc_id,
+                "claim_type": "valuation_snapshot",
+                "metric_name": metric_name,
+                "event_group": "",
+                "event_type": "",
+                "category_l1": "上市公司估值",
+                "category_l2": "",
+                "category_l3": "",
+                "geo": norm(item.get("listing_country")),
+                "year": year,
+                "period": norm(item.get("as_of")) or norm(item.get("market_refreshed_at")),
+                "value": value,
+                "unit": unit,
+                "company_id": company_id,
+                "product_id": "",
+                "company": company,
+                "brand": "",
+                "raw_entity": company,
+                "source_org": norm(item.get("source")) or "market snapshot",
+                "report_title": "Market valuation snapshot",
+                "source_url": norm(item.get("source_url")),
+                "source_excerpt": short_text(item.get("note"), 500),
+                "confidence": norm(item.get("snapshot_status")) or "market_snapshot",
+                "review_status": norm(item.get("snapshot_status")) or "market_snapshot",
+                "mapping_status": commercial_mapping_status(company_id=company_id, raw_entity=company),
+                "segments": "",
+                "note": norm(item.get("note")),
+            }
+            append_claim(claim)
+
+    commercial_signal_groups = {"commercial_performance", "channel_coverage", "product_launch"}
+    for item in briefing_update_candidates:
+        event_group = norm(item.get("event_group"))
+        if event_group not in commercial_signal_groups:
+            continue
+        company = norm(item.get("company"))
+        company_id = norm(item.get("company_id")) or company_id_map.get(company, "")
+        product_id = norm(item.get("product_id"))
+        source_doc_id = find_or_create_source_document(
+            source_documents,
+            source_lookup,
+            source_file=item.get("briefing_file"),
+            source_url=item.get("article_url"),
+            title=item.get("article_title") or item.get("event_type") or item.get("source_domain"),
+            source_kind="daily_briefing",
+            source_root="daily_briefing_library",
+        )
+        year = detect_year(item.get("article_date"), item.get("briefing_file"))
+        review_status = briefing_signal_review_status(item)
+        confidence = briefing_signal_confidence(item)
+        claim = {
+            "claim_id": stable_id("cc", "briefing", item.get("candidate_id"), source_doc_id),
+            "source_document_id": source_doc_id,
+            "claim_type": "briefing_signal",
+            "metric_name": norm(item.get("event_type")) or event_group,
+            "event_group": event_group,
+            "event_type": norm(item.get("event_type")),
+            "category_l1": event_group,
+            "category_l2": norm(item.get("promotion_target")),
+            "category_l3": "",
+            "geo": norm(item.get("market_or_jurisdiction")),
+            "year": year,
+            "period": norm(item.get("article_date")),
+            "value": None,
+            "unit": "",
+            "company_id": company_id,
+            "product_id": product_id,
+            "company": company,
+            "brand": norm(item.get("brand")),
+            "raw_entity": company or norm(item.get("product_name")) or norm(item.get("source_domain")),
+            "source_org": norm(item.get("source_domain")),
+            "report_title": norm(item.get("article_title")) or norm(item.get("briefing_file")),
+            "source_url": norm(item.get("article_url")),
+            "source_excerpt": short_text(item.get("excerpt"), 500),
+            "confidence": confidence,
+            "review_status": review_status,
+            "mapping_status": commercial_mapping_status(company_id=company_id, product_id=product_id, raw_entity=company),
+            "segments": "",
+            "note": "official confirmation needed before master-fact promotion" if truthy_text(item.get("needs_official_verification")) else "",
+            "conflict_key": "",
+        }
+        append_claim(claim)
+        briefing_signal_claims.append(claim)
+
+    for item in briefing_verified_update_events:
+        event_group = norm(item.get("event_group"))
+        if event_group not in commercial_signal_groups and event_group not in {"regulatory_approval", "indication_expansion"}:
+            continue
+        company = norm(item.get("company"))
+        company_id = norm(item.get("company_id")) or company_id_map.get(company, "")
+        product_id = norm(item.get("product_id"))
+        source_doc_id = find_or_create_source_document(
+            source_documents,
+            source_lookup,
+            source_url=item.get("official_source_url"),
+            title=item.get("official_title") or item.get("event_type") or company,
+            source_kind="verified_event_source",
+            source_root="daily_briefing_library",
+        )
+        year = detect_year(item.get("article_date"), item.get("checked_at"))
+        review_status = norm(item.get("verification_status")) or norm(item.get("promotion_status")) or "verified_event"
+        claim = {
+            "claim_id": stable_id("cc", "verified_event", item.get("event_id"), source_doc_id),
+            "source_document_id": source_doc_id,
+            "claim_type": "verified_business_event",
+            "metric_name": norm(item.get("event_type")) or event_group,
+            "event_group": event_group,
+            "event_type": norm(item.get("event_type")),
+            "category_l1": event_group,
+            "category_l2": norm(item.get("promoted_target")),
+            "category_l3": "",
+            "geo": "",
+            "year": year,
+            "period": norm(item.get("article_date")) or norm(item.get("checked_at")),
+            "value": None,
+            "unit": "",
+            "company_id": company_id,
+            "product_id": product_id,
+            "company": company,
+            "brand": norm(item.get("brand")),
+            "raw_entity": company or norm(item.get("product_name")),
+            "source_org": norm(item.get("official_source_type")) or "official source",
+            "report_title": norm(item.get("official_title")),
+            "source_url": norm(item.get("official_source_url")),
+            "source_excerpt": short_text(item.get("official_excerpt"), 500),
+            "confidence": "verified_official_or_promoted",
+            "review_status": review_status,
+            "mapping_status": norm(item.get("mapping_status")) or commercial_mapping_status(company_id=company_id, product_id=product_id, raw_entity=company),
+            "segments": "",
+            "note": norm(item.get("remaining_gap")),
+            "conflict_key": "",
+        }
+        append_claim(claim)
+        briefing_signal_claims.append(claim)
+
+    conflict_groups = build_commercial_conflict_groups(claims)
+    public_documents = [{key: value for key, value in doc.items() if not key.startswith("_")} for doc in source_documents]
+    validation = validate_commercial_intelligence(public_documents, claims, conflict_groups)
+
+    market_metric_claims.sort(key=lambda row: (safe_int(row.get("year")), safe_float(row.get("value")) or 0), reverse=True)
+    briefing_signal_claims.sort(key=lambda row: (norm(row.get("period")), norm(row.get("company"))), reverse=True)
+    financial_snapshot_rows.sort(key=lambda row: (safe_float(row.get("marketCapUsdM")) or 0, norm(row.get("company"))), reverse=True)
+    public_documents.sort(key=lambda row: (safe_int(row.get("published_year")), norm(row.get("captured_at"))), reverse=True)
+
+    reviewed_claims = sum(1 for claim in claims if "unreviewed" not in norm(claim.get("review_status")).lower() and "candidate" not in norm(claim.get("review_status")).lower())
+    source_roots = Counter(doc.get("source_root") or "unknown" for doc in public_documents)
+    summary = {
+        "sourceDocuments": len(public_documents),
+        "claims": len(claims),
+        "marketMetricClaims": len(market_metric_claims),
+        "financialClaims": sum(1 for claim in claims if claim.get("claim_type") in {"company_financial", "valuation_snapshot"}),
+        "briefingSignals": len(briefing_signal_claims),
+        "conflictGroups": len(conflict_groups),
+        "reviewedClaims": reviewed_claims,
+        "needsReviewClaims": len(claims) - reviewed_claims,
+        "sourceRoots": top_counts(source_roots, 8),
+        "sourceKinds": top_counts(Counter(doc.get("source_kind") or "unknown" for doc in public_documents), 12),
+        "claimTypes": top_counts(Counter(claim.get("claim_type") or "unknown" for claim in claims), 12),
+        "signalGroups": top_counts(Counter(claim.get("event_group") or "unassigned" for claim in briefing_signal_claims), 8),
+        "asOf": datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds"),
+    }
+    review_queues = {
+        "needsVerification": [
+            compact_claim_for_review(claim)
+            for claim in claims
+            if any(token in norm(claim.get("review_status")).lower() for token in ["unreviewed", "requires", "needs", "pending"])
+        ][:80],
+        "unmappedEntities": [
+            compact_claim_for_review(claim)
+            for claim in claims
+            if claim.get("mapping_status") == "raw_entity_only"
+        ][:80],
+        "conflicts": conflict_groups[:50],
+        "validationIssues": validation["issues"],
+    }
+
+    def compact_claim_with(claim: dict[str, Any], extra: dict[str, Any]) -> dict[str, Any]:
+        row = compact_claim_for_review(claim)
+        row.update(extra)
+        return row
+
+    return {
+        "summary": summary,
+        "source_documents": public_documents,
+        "claims": claims,
+        "market_metrics": [
+            compact_claim_with(
+                claim,
+                {
+                    "category": " / ".join(x for x in [claim.get("category_l1"), claim.get("category_l2"), claim.get("category_l3")] if x),
+                    "sourceDocumentId": claim.get("source_document_id"),
+                    "sourceUrl": claim.get("source_url"),
+                },
+            )
+            for claim in market_metric_claims[:MARKET_METRIC_SNAPSHOT_LIMIT]
+        ],
+        "financial_snapshots": financial_snapshot_rows[:120],
+        "briefing_signals": [
+            compact_claim_with(
+                claim,
+                {
+                    "eventGroup": claim.get("event_group"),
+                    "eventType": claim.get("event_type"),
+                    "date": claim.get("period"),
+                    "companyId": claim.get("company_id"),
+                    "productId": claim.get("product_id"),
+                    "brand": claim.get("brand"),
+                    "sourceUrl": claim.get("source_url"),
+                    "sourceDocumentId": claim.get("source_document_id"),
+                },
+            )
+            for claim in briefing_signal_claims[:180]
+        ],
+        "conflict_groups": conflict_groups[:80],
+        "review_queues": review_queues,
+        "validation": validation,
+    }
+
+
+def build_v3_market_intelligence_payload(
+    commercial: dict[str, Any],
+    products: list[dict[str, Any]] | None = None,
+    source_registry: list[dict[str, Any]] | None = None,
+    collection_backlog: list[dict[str, Any]] | None = None,
+    geo_source_discovery: list[dict[str, Any]] | None = None,
+    companies: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    def analysis_segment(value: Any) -> str:
+        text = norm(value).lower()
+        if not text:
+            return "Unclassified"
+        if any(token in text for token in ["all procedures", "non-surgical", "facial rejuvenation", "other non-surgical", "procedure", "total"]):
+            return "Procedure demand"
+        if any(token in text for token in ["inject", "注射", "filler", "填充", "toxin", "肉毒", "mesotherapy", "中胚", "hyaluronic", "玻尿酸", "皮肤填充"]):
+            return "Injectables"
+        if any(token in text for token in ["device", "设备", "ebd", "laser", "rf", "radiofrequency", "ultrasound", "energy"]):
+            return "EBD"
+        if any(token in text for token in ["pdrn", "pn", "exosome", "regen", "再生", "regenerative"]):
+            return "Regenerative"
+        if any(token in text for token in ["skincare", "护肤", "cosmeceutical"]):
+            return "Cosmeceutical"
+        if any(token in text for token in ["surgery", "surgical", "手术"]):
+            return "Surgical"
+        if any(token in text for token in ["medical aesthetics", "医美", "aesthetic"]):
+            return "Overall market"
+        return norm(value)
+
+    def canonical_market_geo(value: Any) -> str:
+        text = norm(value)
+        aliases = {
+            "美国": "USA",
+            "United States": "USA",
+            "US": "USA",
+            "U.S.": "USA",
+            "欧洲": "Europe",
+            "北美": "North America",
+            "亚太": "Asia Pacific",
+            "全球": "Global",
+            "澳大利亚": "Australia",
+            "英国": "UK",
+            "韩国": "South Korea",
+            "巴西": "Brazil",
+        }
+        return aliases.get(text, COUNTRY_ALIASES.get(text, text))
+
+    def geo_lat_lon(geo: str) -> tuple[float | None, float | None]:
+        if geo in COUNTRY_COORDS:
+            return COUNTRY_COORDS[geo]
+        return {
+            "Europe": (50.5, 12.5),
+            "North America": (45.0, -102.0),
+            "Asia Pacific": (18.0, 112.0),
+            "Global": (10.0, 0.0),
+            "Latin America": (-14.0, -60.0),
+        }.get(geo, (None, None))
+
+    def normalize_market_size_usd_m(value: Any, unit: Any) -> float | None:
+        number = safe_float(value)
+        if number is None:
+            return None
+        unit_text = norm(unit).lower()
+        if "billion" in unit_text or "十亿" in unit_text or "usd billion" in unit_text:
+            return number * 1000
+        if "million" in unit_text or "百万" in unit_text:
+            return number
+        return number
+
+    def product_segment_label(value: Any) -> str:
+        code = norm(value).lower()
+        return {
+            "ebd": "EBD",
+            "ha": "Injectables",
+            "botulinum": "Injectables",
+            "mesotherapy": "Injectables",
+            "caha": "Injectables",
+            "pcl": "Regenerative",
+            "plla": "Regenerative",
+            "pn_pdrn": "Regenerative",
+            "exosome": "Regenerative",
+            "threads": "Threads",
+            "other": "Other product lines",
+        }.get(code, norm(value) or "Unclassified")
+
+    def build_analysis() -> dict[str, Any]:
+        claims = commercial.get("claims", [])
+        product_rows = products or []
+        market_types = ["procedure_volume", "market_size", "growth_rate", "market_share", "sales_volume", "source_stated_metric"]
+        signal_types = {"briefing_signal", "verified_business_event"}
+        market_claims = [claim for claim in claims if claim.get("claim_type") in market_types]
+        signal_claims = [claim for claim in claims if claim.get("claim_type") in signal_types]
+
+        market_type_counts = Counter(claim.get("claim_type") or "unknown" for claim in market_claims)
+        market_segments: dict[str, Counter] = defaultdict(Counter)
+        segment_examples: dict[str, set[str]] = defaultdict(set)
+        for claim in market_claims:
+            segment = analysis_segment(claim.get("category_l1") or claim.get("category_l2") or claim.get("metric_name"))
+            market_segments[segment][claim.get("claim_type") or "unknown"] += 1
+            for field in ["category_l1", "category_l2", "geo"]:
+                value = norm(claim.get(field))
+                if value and len(segment_examples[segment]) < 4:
+                    segment_examples[segment].add(value)
+
+        matrix_rows = []
+        for segment, counts in market_segments.items():
+            score = (
+                counts.get("market_size", 0) * 3
+                + counts.get("growth_rate", 0) * 2
+                + counts.get("market_share", 0) * 2
+                + counts.get("procedure_volume", 0)
+                + counts.get("sales_volume", 0) * 2
+                + counts.get("source_stated_metric", 0)
+            )
+            matrix_rows.append(
+                {
+                    "segment": segment,
+                    "score": score,
+                    "total": sum(counts.values()),
+                    "procedureVolume": counts.get("procedure_volume", 0),
+                    "marketSize": counts.get("market_size", 0),
+                    "growthRate": counts.get("growth_rate", 0),
+                    "marketShare": counts.get("market_share", 0),
+                    "salesVolume": counts.get("sales_volume", 0),
+                    "sourceMetric": counts.get("source_stated_metric", 0),
+                    "examples": sorted(segment_examples[segment]),
+                }
+            )
+        matrix_rows.sort(key=lambda row: (row["score"], row["total"], row["segment"]), reverse=True)
+
+        signal_group_counts = Counter(claim.get("event_group") or "unassigned" for claim in signal_claims)
+        month_groups: dict[str, Counter] = defaultdict(Counter)
+        company_signal_counts: dict[str, Counter] = defaultdict(Counter)
+        company_signal_sources: dict[str, set[str]] = defaultdict(set)
+        for claim in signal_claims:
+            period = norm(claim.get("period"))
+            month = period[:7] if re.match(r"^\d{4}-\d{2}", period) else "undated"
+            group = claim.get("event_group") or "unassigned"
+            month_groups[month][group] += 1
+            company = norm(claim.get("company"))
+            if company:
+                company_signal_counts[company][group] += 1
+                if norm(claim.get("source_org")):
+                    company_signal_sources[company].add(norm(claim.get("source_org")))
+
+        group_order = [name for name, _ in signal_group_counts.most_common()]
+        signal_timeline = [
+            {
+                "month": month,
+                "total": sum(counter.values()),
+                "groups": {group: counter.get(group, 0) for group in group_order},
+            }
+            for month, counter in sorted(month_groups.items())
+        ]
+        company_rank = []
+        for company, counter in company_signal_counts.items():
+            company_rank.append(
+                {
+                    "company": company,
+                    "total": sum(counter.values()),
+                    "groups": {group: counter.get(group, 0) for group in group_order},
+                    "groupCount": sum(1 for value in counter.values() if value),
+                    "sourceCount": len(company_signal_sources[company]),
+                }
+            )
+        company_rank.sort(key=lambda row: (row["total"], row["groupCount"], row["sourceCount"], row["company"]), reverse=True)
+
+        financial_rows = commercial.get("financial_snapshots", [])
+        market_caps = [safe_float(row.get("marketCapUsdM")) for row in financial_rows if safe_float(row.get("marketCapUsdM")) is not None]
+        revenues = [safe_float(row.get("revenueUsdM")) for row in financial_rows if safe_float(row.get("revenueUsdM")) is not None]
+        median_cap = sorted(market_caps)[len(market_caps) // 2] if market_caps else 0
+        median_revenue = sorted(revenues)[len(revenues) // 2] if revenues else 0
+        signal_total_by_company = {row["company"]: row["total"] for row in company_rank}
+        valuation_points = []
+        quadrant_counts: Counter = Counter()
+        for row in financial_rows:
+            company = norm(row.get("company"))
+            cap = safe_float(row.get("marketCapUsdM"))
+            revenue = safe_float(row.get("revenueUsdM"))
+            signals = signal_total_by_company.get(company, 0)
+            if cap is None and revenue is None and not signals:
+                continue
+            if cap is not None and cap >= median_cap and signals >= 6:
+                quadrant = "High value / high signal"
+            elif cap is not None and cap >= median_cap:
+                quadrant = "High value / quiet signal"
+            elif signals >= 6:
+                quadrant = "Emerging signal"
+            else:
+                quadrant = "Low signal / smaller cap"
+            quadrant_counts[quadrant] += 1
+            valuation_points.append(
+                {
+                    "company": company,
+                    "marketCapUsdM": cap,
+                    "revenueUsdM": revenue,
+                    "signals": signals,
+                    "peRatio": safe_float(row.get("peRatio")),
+                    "period": row.get("period"),
+                    "quadrant": quadrant,
+                }
+            )
+        valuation_points.sort(key=lambda row: (row["signals"], row.get("marketCapUsdM") or 0), reverse=True)
+
+        procedure_count = market_type_counts.get("procedure_volume", 0)
+        market_claim_count = len(market_claims) or 1
+        top_signal_groups = signal_group_counts.most_common(3)
+        top_signal_total = sum(count for _, count in top_signal_groups) or 1
+        top_company = company_rank[0] if company_rank else {"company": "—", "total": 0, "groupCount": 0}
+        top_five_signal = sum(row["total"] for row in company_rank[:5])
+        source_counts = Counter(doc.get("source_kind") or "unknown" for doc in commercial.get("source_documents", []))
+        report_count = source_counts.get("industry_report", 0)
+        daily_count = source_counts.get("daily_briefing", 0)
+        insight_cards = [
+            {
+                "label": "市场指标结构",
+                "headline": f"{procedure_count / market_claim_count:.0%} 是程序量/需求侧指标",
+                "takeaway": "当前商业指标更适合判断需求热区和地区程序量，不宜直接等同为销售额分布。",
+                "metric": procedure_count,
+                "denominator": market_claim_count,
+                "tone": "demand",
+            },
+            {
+                "label": "日报信号结构",
+                "headline": "商业表现、渠道、新品三类信号接近均衡",
+                "takeaway": "日报流不是单一监管流，已经可以作为商业动向监控面板的主信号源。",
+                "metric": top_signal_total,
+                "denominator": len(signal_claims) or 1,
+                "tone": "signal",
+            },
+            {
+                "label": "公司热度集中度",
+                "headline": f"{top_company['company']} 位于信号强度首位",
+                "takeaway": f"Top 5 公司贡献 {top_five_signal} 条信号，适合做重点跟踪池而不是逐条阅读日报。",
+                "metric": top_five_signal,
+                "denominator": len(signal_claims) or 1,
+                "tone": "company",
+            },
+            {
+                "label": "来源结构",
+                "headline": f"{daily_count} 个日报来源 + {report_count} 份报告",
+                "takeaway": "报告负责市场口径和历史估算，日报负责当下商业动向；两者应并列呈现而非互相覆盖。",
+                "metric": daily_count + report_count,
+                "denominator": len(commercial.get("source_documents", [])) or 1,
+                "tone": "source",
+            },
+        ]
+
+        product_geo_segments: dict[tuple[str, str], Counter] = defaultdict(Counter)
+        product_geo_companies: dict[tuple[str, str], set[str]] = defaultdict(set)
+        country_totals: Counter = Counter()
+        for product in product_rows:
+            geo = canonical_market_geo(product.get("Country"))
+            segment = product_segment_label(product.get("Primary_Segment"))
+            if not geo:
+                continue
+            product_geo_segments[(geo, segment)]["product_lines"] += 1
+            product_geo_companies[(geo, segment)].add(norm(product.get("Company")))
+            country_totals[geo] += 1
+            region = dashboard_region(product.get("Region"), geo)
+            if region and region != geo and region not in {"Other", "Unknown"}:
+                product_geo_segments[(region, segment)]["product_lines"] += 1
+                product_geo_companies[(region, segment)].add(norm(product.get("Company")))
+
+        market_geo_segment: dict[tuple[str, str], dict[str, Any]] = defaultdict(dict)
+        for claim in market_claims:
+            geo = canonical_market_geo(claim.get("geo"))
+            segment = analysis_segment(claim.get("category_l1") or claim.get("category_l2") or claim.get("metric_name"))
+            key = (geo, segment)
+            claim_type = claim.get("claim_type")
+            year = safe_int(claim.get("year"))
+            value = safe_float(claim.get("value"))
+            if claim_type == "market_size":
+                usd_m = normalize_market_size_usd_m(value, claim.get("unit"))
+                current = market_geo_segment[key].get("marketSizeUsdM")
+                current_year = safe_int(market_geo_segment[key].get("marketSizeYear"))
+                if usd_m is not None and year >= current_year:
+                    market_geo_segment[key]["marketSizeUsdM"] = usd_m
+                    market_geo_segment[key]["marketSizeYear"] = year
+            elif claim_type == "growth_rate" and value is not None and norm(claim.get("unit")) == "%":
+                current_year = safe_int(market_geo_segment[key].get("growthYear"))
+                if year >= current_year:
+                    market_geo_segment[key]["growthRatePct"] = value
+                    market_geo_segment[key]["growthYear"] = year
+            elif claim_type == "procedure_volume" and value is not None:
+                current_year = safe_int(market_geo_segment[key].get("procedureYear"))
+                current_value = safe_float(market_geo_segment[key].get("procedureVolume")) or 0
+                if year > current_year or (year == current_year and value > current_value):
+                    market_geo_segment[key]["procedureVolume"] = value
+                    market_geo_segment[key]["procedureYear"] = year
+            elif claim_type == "market_share" and value is not None:
+                current_year = safe_int(market_geo_segment[key].get("shareYear"))
+                if year >= current_year:
+                    market_geo_segment[key]["marketSharePct"] = value
+                    market_geo_segment[key]["shareYear"] = year
+
+        # Proxy regional EBD capacity where only global size and regional share are available.
+        global_ebd = market_geo_segment.get(("Global", "EBD"), {})
+        north_america_ebd = market_geo_segment.get(("North America", "EBD"), {})
+        if global_ebd.get("marketSizeUsdM") and north_america_ebd.get("marketSharePct"):
+            market_geo_segment[("USA", "EBD")]["marketSizeUsdM"] = round(
+                global_ebd["marketSizeUsdM"] * north_america_ebd["marketSharePct"] / 100,
+                2,
+            )
+            market_geo_segment[("USA", "EBD")]["marketSizeYear"] = global_ebd.get("marketSizeYear")
+            market_geo_segment[("USA", "EBD")]["basis"] = "North America share proxy"
+
+        opportunity_points = []
+        keys = set(product_geo_segments) | set(market_geo_segment)
+        for geo, segment in keys:
+            lat, lon = geo_lat_lon(geo)
+            if lat is None or lon is None:
+                continue
+            product_lines = product_geo_segments[(geo, segment)].get("product_lines", 0)
+            companies_count = len([name for name in product_geo_companies[(geo, segment)] if name])
+            metric = market_geo_segment.get((geo, segment), {})
+            procedure = safe_float(metric.get("procedureVolume")) or 0
+            growth = safe_float(metric.get("growthRatePct")) or 0
+            size = safe_float(metric.get("marketSizeUsdM")) or 0
+            entry_gap = 1 / max(1, product_lines)
+            potential_index = round(
+                min(100, growth * 4 + min(45, size / 75) + min(35, procedure / 120000) + entry_gap * 10),
+                1,
+            )
+            opportunity_points.append(
+                {
+                    "geo": geo,
+                    "segment": segment,
+                    "lat": lat,
+                    "lon": lon,
+                    "region": dashboard_region("", geo),
+                    "productLines": product_lines,
+                    "companies": companies_count,
+                    "marketSizeUsdM": metric.get("marketSizeUsdM"),
+                    "marketSizeYear": metric.get("marketSizeYear"),
+                    "growthRatePct": metric.get("growthRatePct"),
+                    "growthYear": metric.get("growthYear"),
+                    "procedureVolume": metric.get("procedureVolume"),
+                    "procedureYear": metric.get("procedureYear"),
+                    "marketSharePct": metric.get("marketSharePct"),
+                    "basis": metric.get("basis", ""),
+                    "potentialIndex": potential_index,
+                }
+            )
+        opportunity_points.sort(key=lambda row: (row["potentialIndex"], row.get("marketSizeUsdM") or 0, row["productLines"]), reverse=True)
+
+        def find_point(geo: str, segment: str) -> dict[str, Any]:
+            for point in opportunity_points:
+                if point["geo"] == geo and point["segment"] == segment:
+                    return point
+            return {"geo": geo, "segment": segment}
+
+        europe_injectables = find_point("Europe", "Injectables")
+        usa_ebd = find_point("USA", "EBD")
+        brazil_demand = find_point("Brazil", "Procedure demand")
+        brazil_ebd = find_point("Brazil", "EBD")
+        opportunity_highlights = [
+            {
+                "market": "Europe · Injectables",
+                "headline": f"{europe_injectables.get('growthRatePct', 0):.2f}% CAGR",
+                "subhead": f"2025 size ${safe_float(europe_injectables.get('marketSizeUsdM')) or 0:,.0f}M; 2035 forecast visible in market layer.",
+                "productLines": europe_injectables.get("productLines", 0),
+                "companies": europe_injectables.get("companies", 0),
+                "takeaway": "欧洲注射剂的可见增长速度接近北美同口径，且产品进入不是空白，适合看竞争密度与细分定位。",
+                "geo": "Europe",
+                "segment": "Injectables",
+            },
+            {
+                "market": "USA · EBD",
+                "headline": f"${safe_float(usa_ebd.get('marketSizeUsdM')) or 0:,.0f}M capacity proxy",
+                "subhead": f"{usa_ebd.get('productLines', 0)} EBD product lines; proxy from North America device share.",
+                "productLines": usa_ebd.get("productLines", 0),
+                "companies": usa_ebd.get("companies", 0),
+                "takeaway": "美国上游 EBD 供给密度最高，容量读数需要按北美份额做代理，但产品线进入已经非常充分。",
+                "geo": "USA",
+                "segment": "EBD",
+            },
+            {
+                "market": "Brazil · Aesthetic demand",
+                "headline": f"{safe_float(brazil_demand.get('procedureVolume')) or 0:,.0f} procedures",
+                "subhead": f"{brazil_ebd.get('productLines', 0)} visible upstream EBD product line; potential index {max(brazil_demand.get('potentialIndex') or 0, brazil_ebd.get('potentialIndex') or 0):.1f}.",
+                "productLines": brazil_ebd.get("productLines", 0),
+                "companies": brazil_ebd.get("companies", 0),
+                "takeaway": "巴西是需求体量高、上游可见进入低的市场；这里更适合用“需求-供给缺口”看潜力，而不是直接套 CAGR。",
+                "geo": "Brazil",
+                "segment": "Procedure demand",
+            },
+        ]
+
+        return {
+            "insightCards": insight_cards,
+            "marketTypeMix": top_counts(market_type_counts, 12),
+            "marketMatrix": matrix_rows[:16],
+            "signalGroupMix": top_counts(signal_group_counts, 8),
+            "signalGroupOrder": group_order,
+            "signalTimeline": signal_timeline,
+            "signalCompanyRank": company_rank[:24],
+            "valuationPoints": valuation_points[:60],
+            "valuationQuadrants": top_counts(quadrant_counts, 8),
+            "sourceMix": top_counts(source_counts, 12),
+            "opportunityMap": opportunity_points[:120],
+            "opportunityHighlights": opportunity_highlights,
+            "productLineEntry": [
+                {
+                    "geo": geo,
+                    "segment": segment,
+                    "productLines": counts.get("product_lines", 0),
+                    "companies": len([name for name in product_geo_companies[(geo, segment)] if name]),
+                }
+                for (geo, segment), counts in sorted(product_geo_segments.items(), key=lambda item: item[1].get("product_lines", 0), reverse=True)[:80]
+            ],
+            "countryProductTotals": top_counts(country_totals, 24),
+            "metricDefinitions": [
+                {"name": "Evidence score", "definition": "market size x3, growth/share/sales x2, procedure/source metrics x1; used only for evidence coverage, not market attractiveness."},
+                {"name": "Trusted signal", "definition": "Daily briefing and verified update events treated as credible commercial signals; official confirmation is still required before master-fact promotion."},
+                {"name": "Valuation quadrant", "definition": "Market cap compared with current listed-company median; signal threshold is 6 commercial/update signals in the current evidence layer."},
+            ],
+        }
+
+    def source_doc(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "sourceDocumentId": row.get("source_document_id"),
+            "sourceRoot": row.get("source_root"),
+            "sourceKind": row.get("source_kind"),
+            "path": row.get("path"),
+            "fileName": row.get("file_name"),
+            "extension": row.get("extension"),
+            "title": row.get("title"),
+            "publisher": row.get("publisher"),
+            "publishedYear": row.get("published_year"),
+            "capturedAt": row.get("captured_at"),
+            "fileSize": row.get("file_size"),
+            "textExcerpt": row.get("text_excerpt"),
+            "textExtractStatus": row.get("text_extract_status"),
+            "sourceStatus": row.get("source_status"),
+            "rightsNote": row.get("rights_note"),
+            "sourceUrl": row.get("source_url"),
+        }
+
+    def registry_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "sourceId": row.get("source_id"),
+            "phase": safe_int(row.get("phase")),
+            "sourceName": row.get("source_name"),
+            "sourceFamily": row.get("source_family"),
+            "sourceUrl": row.get("source_url"),
+            "accessModel": row.get("access_model"),
+            "authorityTier": row.get("authority_tier"),
+            "kpiFamilies": row.get("kpi_families"),
+            "geoGrain": row.get("geo_grain"),
+            "timeGrain": row.get("time_grain"),
+            "segmentGrain": row.get("segment_grain"),
+            "fieldsAvailable": row.get("fields_available"),
+            "extractionMethod": row.get("extraction_method"),
+            "targetDataset": row.get("target_dataset"),
+            "refreshCadence": row.get("refresh_cadence"),
+            "implementationStatus": row.get("implementation_status"),
+            "priority": safe_int(row.get("priority")),
+            "notes": row.get("notes"),
+        }
+
+    def backlog_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "taskId": row.get("task_id"),
+            "phase": safe_int(row.get("phase")),
+            "priority": safe_int(row.get("priority")),
+            "workstream": row.get("workstream"),
+            "sourceId": row.get("source_id"),
+            "targetDataset": row.get("target_dataset"),
+            "targetTable": row.get("target_table"),
+            "scope": row.get("scope"),
+            "years": row.get("years"),
+            "segments": row.get("segments"),
+            "metrics": row.get("metrics"),
+            "method": row.get("method"),
+            "status": row.get("status"),
+            "blockingDependency": row.get("blocking_dependency"),
+            "nextAction": row.get("next_action"),
+            "acceptanceCheck": row.get("acceptance_check"),
+        }
+
+    def geo_discovery_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "sourceId": row.get("source_id"),
+            "regionGroup": row.get("region_group"),
+            "countryOrRegion": row.get("country_or_region"),
+            "sourceName": row.get("source_name"),
+            "sourceFamily": row.get("source_family"),
+            "authorityTier": row.get("authority_tier"),
+            "dataRole": row.get("data_role"),
+            "metricPotential": row.get("metric_potential"),
+            "sourceUrl": row.get("source_url"),
+            "sourcePageTitle": row.get("source_page_title"),
+            "discoveredUrl": row.get("discovered_url"),
+            "linkText": row.get("link_text"),
+            "year": row.get("year"),
+            "artifactType": row.get("artifact_type"),
+            "status": row.get("status"),
+            "httpStatus": row.get("http_status"),
+            "contentType": row.get("content_type"),
+            "localPath": row.get("local_path"),
+            "bytes": safe_int(row.get("bytes")),
+            "capturedAt": row.get("captured_at"),
+            "note": row.get("note"),
+        }
+
+    def canonical_company_country(value: Any) -> str:
+        text = norm(value)
+        aliases = {
+            "US": "USA",
+            "U.S.": "USA",
+            "United States": "USA",
+            "United States of America": "USA",
+            "United Kingdom": "UK",
+            "Great Britain": "UK",
+            "中国台湾": "Taiwan",
+            "Chinese Taipei": "Taiwan",
+        }
+        return aliases.get(text, COUNTRY_ALIASES.get(text, text or "Unknown"))
+
+    def source_country_for_company_country(country: str) -> str:
+        return {
+            "UK": "United Kingdom",
+            "USA": "USA",
+            "Taiwan": "Taiwan",
+        }.get(country, country)
+
+    def industry_coverage_tier(roles: list[str]) -> str:
+        text = " ".join(roles).lower()
+        role_set = {role.lower() for role in roles}
+        if any("candidate" in role or "secondary" in role or "procedure_mix" in role for role in role_set):
+            return "metric_qa_candidate"
+        if "treatment_volume_country_year" in role_set:
+            return "treatment_volume"
+        if "treatment_volume" in text:
+            return "metric_qa_candidate"
+        if any(token in text for token in ["provider", "locator", "surgeon", "physician", "denominator", "touchpoint"]):
+            return "channel_density_proxy"
+        if any(token in text for token in ["tourism", "heat", "context", "portal", "regulatory", "risk"]):
+            return "context_or_demand_proxy"
+        return "source_discovered" if roles else "gap"
+
+    def build_top_company_country_coverage() -> list[dict[str, Any]]:
+        company_rows = companies or []
+        country_counts = Counter(
+            canonical_company_country(row.get("HQ_Country") or row.get("country"))
+            for row in company_rows
+            if canonical_company_country(row.get("HQ_Country") or row.get("country")) != "Unknown"
+        )
+        top_countries = country_counts.most_common(15)
+        geo_by_country: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for row in geo_rows:
+            country = norm(row.get("country_or_region"))
+            if country:
+                geo_by_country[country].append(row)
+        backlog_by_source: dict[str, list[dict[str, Any]]] = defaultdict(list)
+        for row in backlog_rows:
+            source_id = norm(row.get("source_id"))
+            if source_id:
+                backlog_by_source[source_id].append(row)
+
+        rows: list[dict[str, Any]] = []
+        for rank, (country, count) in enumerate(top_countries, start=1):
+            source_country = source_country_for_company_country(country)
+            source_rows = geo_by_country.get(source_country, [])
+            source_ids = sorted({norm(row.get("source_id")) for row in source_rows if norm(row.get("source_id"))})
+            roles = sorted({norm(row.get("data_role")) for row in source_rows if norm(row.get("data_role"))})
+            source_names: list[str] = []
+            for source_id in source_ids:
+                meta = next((row for row in registry_rows if norm(row.get("source_id")) == source_id), {})
+                sample = next((row for row in source_rows if norm(row.get("source_id")) == source_id), {})
+                name = norm(meta.get("source_name") or sample.get("source_name") or source_id)
+                if name:
+                    source_names.append(name)
+            tasks = [
+                task
+                for source_id in source_ids
+                for task in backlog_by_source.get(source_id, [])
+            ]
+            tasks.sort(key=lambda item: (safe_int(item.get("phase")), safe_int(item.get("priority")), norm(item.get("task_id"))))
+            tier = industry_coverage_tier(roles)
+            rows.append(
+                {
+                    "rank": rank,
+                    "country": country,
+                    "sourceCountry": source_country,
+                    "companyCount": count,
+                    "sourceCount": len(source_ids),
+                    "recordCount": len(source_rows),
+                    "downloadedArtifacts": sum(1 for row in source_rows if norm(row.get("status")) == "downloaded"),
+                    "dataRoles": roles,
+                    "coverageTier": tier,
+                    "sourceIds": source_ids,
+                    "sourceNames": source_names[:4],
+                    "backlogCount": len(tasks),
+                    "nextAction": tasks[0].get("next_action") if tasks else "",
+                    "acceptanceCheck": tasks[0].get("acceptance_check") if tasks else "",
+                }
+            )
+        return rows
+
+    def conflict(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "conflictGroupId": row.get("conflict_group_id"),
+            "conflictKey": row.get("conflict_key"),
+            "claimType": row.get("claim_type"),
+            "metricName": row.get("metric_name"),
+            "category": " / ".join(x for x in [row.get("category_l1"), row.get("category_l2")] if x),
+            "geo": row.get("geo"),
+            "year": row.get("year"),
+            "unit": row.get("unit"),
+            "claimCount": row.get("claim_count"),
+            "sourceCount": row.get("source_count"),
+            "minValue": row.get("min_value"),
+            "maxValue": row.get("max_value"),
+            "spreadAbs": row.get("spread_abs"),
+            "spreadPct": row.get("spread_pct"),
+            "confidenceMix": row.get("confidence_mix"),
+            "reviewStatus": row.get("review_status"),
+            "sourceSummary": row.get("source_summary") or [],
+            "representativeClaimIds": row.get("representative_claim_ids") or [],
+            "note": row.get("note"),
+        }
+
+    registry_rows = source_registry or []
+    backlog_rows = collection_backlog or []
+    geo_rows = geo_source_discovery or []
+    geo_countries = {norm(row.get("country_or_region")) for row in geo_rows if norm(row.get("country_or_region"))}
+    geo_sources = {norm(row.get("source_id")) for row in geo_rows if norm(row.get("source_id"))}
+    downloaded_geo = sum(1 for row in geo_rows if norm(row.get("status")) == "downloaded")
+
+    return {
+        "summary": commercial.get("summary", {}),
+        "analysis": build_analysis(),
+        "marketMetrics": commercial.get("market_metrics", []),
+        "financialSnapshots": commercial.get("financial_snapshots", []),
+        "briefingSignals": commercial.get("briefing_signals", []),
+        "conflictGroups": [conflict(row) for row in commercial.get("conflict_groups", [])],
+        "sourceDocuments": [source_doc(row) for row in commercial.get("source_documents", [])[:260]],
+        "sourceRegistry": [registry_item(row) for row in registry_rows],
+        "collectionBacklog": [backlog_item(row) for row in backlog_rows],
+        "geoSourceDiscovery": [geo_discovery_item(row) for row in geo_rows],
+        "geoSourceSummary": {
+            "countries": len(geo_countries),
+            "sources": len(geo_sources),
+            "records": len(geo_rows),
+            "downloadedArtifacts": downloaded_geo,
+            "countriesList": sorted(geo_countries),
+        },
+        "topCompanyCountries": build_top_company_country_coverage(),
+        "reviewQueues": commercial.get("review_queues", {}),
+        "validation": commercial.get("validation", {}),
+    }
+
+
 def social_status() -> list[dict[str, Any]]:
     yt_config = Path.home() / "AppData" / "Roaming" / "yt-dlp" / "config"
     yt_note = "ready for search/subtitles/comments via yt-dlp"
@@ -7053,6 +8705,9 @@ def create_database(
     market_snapshots = build_market_snapshots(company_master)
     company_financial_metrics = load_generated_csv(COMPANY_FINANCIAL_METRICS_PATH)
     company_revenue_collection_plan = load_audit_csv(COMPANY_REVENUE_COLLECTION_PLAN_PATH)
+    commercial_data_source_registry = load_audit_csv(COMMERCIAL_DATA_SOURCE_REGISTRY_PATH)
+    commercial_data_collection_backlog = load_audit_csv(COMMERCIAL_DATA_COLLECTION_BACKLOG_PATH)
+    commercial_geo_source_discovery = load_audit_csv(COMMERCIAL_GEO_SOURCE_DISCOVERY_PATH)
     verification_queue = build_verification_queue(company_master)
     staging_records = load_staging_records()
     company_background_evidence = load_company_background_evidence()
@@ -7071,6 +8726,16 @@ def create_database(
     news_regulatory_event_candidates = load_news_regulatory_event_candidates()
     briefing_update_candidates = load_briefing_update_candidates()
     briefing_verified_update_events = load_briefing_verified_update_events()
+    commercial_intelligence = build_commercial_intelligence(
+        products,
+        companies,
+        metrics,
+        reports,
+        market_snapshots,
+        company_financial_metrics,
+        briefing_update_candidates,
+        briefing_verified_update_events,
+    )
     briefing_fulltext_rescue = load_briefing_fulltext_rescue()
     briefing_product_gap_candidates = load_briefing_product_gap_candidates()
     data_usability_ledger = load_audit_csv(DATA_USABILITY_LEDGER_PATH)
@@ -7592,6 +9257,57 @@ def create_database(
           category_l3 TEXT, geo TEXT, value REAL, unit TEXT, year INTEGER,
           source_org TEXT, report_title TEXT, url TEXT, note TEXT, confidence TEXT,
           segments TEXT, search_blob TEXT
+        );
+
+        CREATE TABLE commercial_source_documents (
+          source_document_id TEXT PRIMARY KEY,
+          source_root TEXT, source_kind TEXT, path TEXT, file_name TEXT,
+          extension TEXT, title TEXT, publisher TEXT, published_year INTEGER,
+          captured_at TEXT, file_size INTEGER, text_excerpt TEXT,
+          text_extract_status TEXT, source_status TEXT, rights_note TEXT,
+          source_url TEXT, search_blob TEXT
+        );
+
+        CREATE TABLE commercial_claims (
+          claim_id TEXT PRIMARY KEY,
+          source_document_id TEXT, claim_type TEXT, metric_name TEXT,
+          event_group TEXT, event_type TEXT,
+          category_l1 TEXT, category_l2 TEXT, category_l3 TEXT,
+          geo TEXT, year INTEGER, period TEXT, value REAL, unit TEXT,
+          company_id TEXT, product_id TEXT, company TEXT, brand TEXT,
+          raw_entity TEXT, source_org TEXT, report_title TEXT, source_url TEXT,
+          source_excerpt TEXT, confidence TEXT, review_status TEXT,
+          mapping_status TEXT, conflict_key TEXT, segments TEXT, note TEXT,
+          search_blob TEXT
+        );
+
+        CREATE TABLE commercial_conflict_groups (
+          conflict_group_id TEXT PRIMARY KEY,
+          conflict_key TEXT, claim_type TEXT, metric_name TEXT,
+          category_l1 TEXT, category_l2 TEXT, geo TEXT, year INTEGER, unit TEXT,
+          claim_count INTEGER, source_count INTEGER, min_value REAL, max_value REAL,
+          spread_abs REAL, spread_pct REAL, confidence_mix TEXT,
+          review_status TEXT, source_summary TEXT, representative_claim_ids TEXT,
+          note TEXT
+        );
+
+        CREATE TABLE commercial_data_source_registry (
+          source_id TEXT PRIMARY KEY,
+          phase INTEGER, source_name TEXT, source_family TEXT, source_url TEXT,
+          access_model TEXT, authority_tier TEXT, kpi_families TEXT,
+          geo_grain TEXT, time_grain TEXT, segment_grain TEXT,
+          fields_available TEXT, extraction_method TEXT, target_dataset TEXT,
+          refresh_cadence TEXT, implementation_status TEXT, priority INTEGER,
+          notes TEXT, search_blob TEXT
+        );
+
+        CREATE TABLE commercial_data_collection_backlog (
+          task_id TEXT PRIMARY KEY,
+          phase INTEGER, priority INTEGER, workstream TEXT, source_id TEXT,
+          target_dataset TEXT, target_table TEXT, scope TEXT, years TEXT,
+          segments TEXT, metrics TEXT, method TEXT, status TEXT,
+          blocking_dependency TEXT, next_action TEXT, acceptance_check TEXT,
+          search_blob TEXT
         );
 
         CREATE TABLE reports (
@@ -9067,6 +10783,185 @@ def create_database(
             ),
         )
 
+    for item in commercial_intelligence.get("source_documents", []):
+        fields = [
+            "source_document_id",
+            "source_root",
+            "source_kind",
+            "path",
+            "file_name",
+            "extension",
+            "title",
+            "publisher",
+            "published_year",
+            "captured_at",
+            "file_size",
+            "text_excerpt",
+            "text_extract_status",
+            "source_status",
+            "rights_note",
+            "source_url",
+            "search_blob",
+        ]
+        cur.execute(
+            f"INSERT OR REPLACE INTO commercial_source_documents VALUES ({','.join(['?'] * len(fields))})",
+            [item.get(field, "") for field in fields],
+        )
+
+    for item in commercial_intelligence.get("claims", []):
+        fields = [
+            "claim_id",
+            "source_document_id",
+            "claim_type",
+            "metric_name",
+            "event_group",
+            "event_type",
+            "category_l1",
+            "category_l2",
+            "category_l3",
+            "geo",
+            "year",
+            "period",
+            "value",
+            "unit",
+            "company_id",
+            "product_id",
+            "company",
+            "brand",
+            "raw_entity",
+            "source_org",
+            "report_title",
+            "source_url",
+            "source_excerpt",
+            "confidence",
+            "review_status",
+            "mapping_status",
+            "conflict_key",
+            "segments",
+            "note",
+            "search_blob",
+        ]
+        cur.execute(
+            f"INSERT OR REPLACE INTO commercial_claims VALUES ({','.join(['?'] * len(fields))})",
+            [item.get(field, "") for field in fields],
+        )
+        value = item.get("value")
+        value_text = f"{value} {item.get('unit')}" if value is not None and norm(item.get("unit")) else norm(value)
+        cur.execute(
+            """
+            INSERT INTO evidence
+            (content_type, title, subtitle, body, url, source_file, source_sheet, confidence, year,
+             segment, region, country, company, brand)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                "commercial_claim",
+                " · ".join(x for x in [item.get("claim_type"), item.get("metric_name"), item.get("company") or item.get("geo")] if x),
+                " · ".join(x for x in [value_text, item.get("source_org"), item.get("review_status")] if x),
+                item.get("search_blob") or item.get("source_excerpt"),
+                item.get("source_url"),
+                item.get("source_document_id"),
+                "commercial_claims",
+                item.get("confidence"),
+                item.get("year"),
+                item.get("segments"),
+                "",
+                item.get("geo"),
+                item.get("company"),
+                item.get("brand"),
+            ),
+        )
+
+    for item in commercial_intelligence.get("conflict_groups", []):
+        fields = [
+            "conflict_group_id",
+            "conflict_key",
+            "claim_type",
+            "metric_name",
+            "category_l1",
+            "category_l2",
+            "geo",
+            "year",
+            "unit",
+            "claim_count",
+            "source_count",
+            "min_value",
+            "max_value",
+            "spread_abs",
+            "spread_pct",
+            "confidence_mix",
+            "review_status",
+            "source_summary",
+            "representative_claim_ids",
+            "note",
+        ]
+        values = []
+        for field in fields:
+            value = item.get(field, "")
+            if field in {"source_summary", "representative_claim_ids"} and not isinstance(value, str):
+                value = json.dumps(value or [], ensure_ascii=False)
+            values.append(value)
+        cur.execute(
+            f"INSERT OR REPLACE INTO commercial_conflict_groups VALUES ({','.join(['?'] * len(fields))})",
+            values,
+        )
+
+    for item in commercial_data_source_registry:
+        fields = [
+            "source_id",
+            "phase",
+            "source_name",
+            "source_family",
+            "source_url",
+            "access_model",
+            "authority_tier",
+            "kpi_families",
+            "geo_grain",
+            "time_grain",
+            "segment_grain",
+            "fields_available",
+            "extraction_method",
+            "target_dataset",
+            "refresh_cadence",
+            "implementation_status",
+            "priority",
+            "notes",
+            "search_blob",
+        ]
+        record = {field: item.get(field, "") for field in fields}
+        record["search_blob"] = text_blob(item)
+        cur.execute(
+            f"INSERT OR REPLACE INTO commercial_data_source_registry VALUES ({','.join(['?'] * len(fields))})",
+            [record.get(field, "") for field in fields],
+        )
+
+    for item in commercial_data_collection_backlog:
+        fields = [
+            "task_id",
+            "phase",
+            "priority",
+            "workstream",
+            "source_id",
+            "target_dataset",
+            "target_table",
+            "scope",
+            "years",
+            "segments",
+            "metrics",
+            "method",
+            "status",
+            "blocking_dependency",
+            "next_action",
+            "acceptance_check",
+            "search_blob",
+        ]
+        record = {field: item.get(field, "") for field in fields}
+        record["search_blob"] = text_blob(item)
+        cur.execute(
+            f"INSERT OR REPLACE INTO commercial_data_collection_backlog VALUES ({','.join(['?'] * len(fields))})",
+            [record.get(field, "") for field in fields],
+        )
+
     try:
         cur.execute(
             """
@@ -9115,6 +11010,9 @@ def build_snapshot(
     market_snapshots = build_market_snapshots(company_master)
     company_financial_metrics = load_generated_csv(COMPANY_FINANCIAL_METRICS_PATH)
     company_revenue_collection_plan = load_audit_csv(COMPANY_REVENUE_COLLECTION_PLAN_PATH)
+    commercial_data_source_registry = load_audit_csv(COMMERCIAL_DATA_SOURCE_REGISTRY_PATH)
+    commercial_data_collection_backlog = load_audit_csv(COMMERCIAL_DATA_COLLECTION_BACKLOG_PATH)
+    commercial_geo_source_discovery = load_audit_csv(COMMERCIAL_GEO_SOURCE_DISCOVERY_PATH)
     verification_queue = build_verification_queue(company_master)
     staging_records = load_staging_records()
     company_background_evidence = load_company_background_evidence()
@@ -9133,6 +11031,16 @@ def build_snapshot(
     news_regulatory_event_candidates = load_news_regulatory_event_candidates()
     briefing_update_candidates = load_briefing_update_candidates()
     briefing_verified_update_events = load_briefing_verified_update_events()
+    commercial_intelligence = build_commercial_intelligence(
+        products,
+        companies,
+        metrics,
+        reports,
+        market_snapshots,
+        company_financial_metrics,
+        briefing_update_candidates,
+        briefing_verified_update_events,
+    )
     briefing_fulltext_rescue = load_briefing_fulltext_rescue()
     briefing_product_gap_candidates = load_briefing_product_gap_candidates()
     data_usability_summary = load_data_usability_summary()
@@ -9608,6 +11516,12 @@ def build_snapshot(
             "countries": len({p.get("Country") for p in products if p.get("Country")}),
             "regions": len({dashboard_region(p.get("Region"), p.get("Country")) for p in products if dashboard_region(p.get("Region"), p.get("Country"))}),
             "market_metrics": len(metrics),
+            "commercial_source_documents": commercial_intelligence["summary"].get("sourceDocuments", 0),
+            "commercial_claims": commercial_intelligence["summary"].get("claims", 0),
+            "commercial_conflict_groups": commercial_intelligence["summary"].get("conflictGroups", 0),
+            "commercial_trusted_signals": commercial_intelligence["summary"].get("briefingSignals", 0),
+            "commercial_data_source_registry": len(commercial_data_source_registry),
+            "commercial_data_collection_backlog": len(commercial_data_collection_backlog),
             "reports": len(reports),
             "public_companies": len(public_companies),
             "indication_signals": sum(global_indication_counter.values()),
@@ -9725,6 +11639,14 @@ def build_snapshot(
         ],
         "financial_kpi_refresh": financial_kpi_refresh,
         "market_metrics": market_preview,
+        "market_intelligence": build_v3_market_intelligence_payload(
+            commercial_intelligence,
+            products,
+            commercial_data_source_registry,
+            commercial_data_collection_backlog,
+            commercial_geo_source_discovery,
+            companies,
+        ),
         "verification_workbench": {
             "policy": "official-source precedence: regulator records for registration facts; company official pages/IFU for product facts; secondary media for cross-check only",
             "seed_status": "unverified_seed",
@@ -10042,6 +11964,7 @@ def build_snapshot(
             "Briefing daily news runs as discover -> fulltext rescue -> official verification -> master mapping -> promotion or gap queue; unverified rows remain in review.",
         ],
     }
+    snapshot["market_intelligence"].setdefault("summary", {})["asOf"] = snapshot["generated_at"]
     return snapshot
 
 
@@ -10677,6 +12600,11 @@ def write_snapshot(snapshot: dict[str, Any]) -> None:
     V3_OPERATIONS_DATA_PATH.write_text(f"window.V3_OPERATIONS_DATA = {operations_payload};\n", encoding="utf-8")
     search_payload = json.dumps(build_v3_search_data(snapshot), ensure_ascii=False, indent=2)
     V3_SEARCH_DATA_PATH.write_text(f"window.V3_SEARCH_DATA = {search_payload};\n", encoding="utf-8")
+    market_intelligence_payload = json.dumps(snapshot.get("market_intelligence", {}), ensure_ascii=False, indent=2)
+    V3_MARKET_INTELLIGENCE_DATA_PATH.write_text(
+        f"window.V3_MARKET_INTELLIGENCE_DATA = {market_intelligence_payload};\n",
+        encoding="utf-8",
+    )
     MANIFEST_PATH.write_text(
         json.dumps(
             {
@@ -10684,6 +12612,7 @@ def write_snapshot(snapshot: dict[str, Any]) -> None:
                 "db_path": str(DB_PATH),
                 "snapshot_path": str(SNAPSHOT_PATH),
                 "v3_search_path": str(V3_SEARCH_DATA_PATH),
+                "v3_market_intelligence_path": str(V3_MARKET_INTELLIGENCE_DATA_PATH),
                 "summary": snapshot["summary"],
                 "source_root": str(SOURCE_DIR),
             },

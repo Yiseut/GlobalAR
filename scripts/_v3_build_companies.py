@@ -147,6 +147,10 @@ def main() -> None:
     manu_pct = round(100 * business_role_mix[0][1] / total, 1) if business_role_mix else 0
     public_pct = round(100 * listed_n / total, 1)
     family_companies = sum(f["n_subsidiaries"] for f in corporate_families)
+    family_examples = " / ".join(
+        f"{f['parent']} {f['n_subsidiaries']}"
+        for f in sorted(corporate_families, key=lambda item: (-item["n_subsidiaries"], item["parent"]))[:4]
+    ) or "暂无多子公司集团"
 
     findings = [
         {
@@ -175,8 +179,8 @@ def main() -> None:
             "stamp": "Finding · 03",
             "lead": "实质性集团整合罕见。",
             "num_pair": {"num": len(corporate_families), "unit": "corporate families"},
-            "body": "只有 <em>{n}</em> 个 ultimate_parent 拥有 ≥2 家子公司（El.En. 4 / Galderma 2 / Cynosure 2 / Apyx 2），合计仅 <em>{c}</em> 家子公司。行业整合处于早期 — AbbVie/Allergan、J&J/Mentor 这类经典并购在底库里没有形成大规模 group 结构。下一轮 backfill 应优先补全 acquisition_status。".format(
-                n=len(corporate_families), c=family_companies,
+            "body": "当前有 <em>{n}</em> 个 ultimate_parent 拥有 ≥2 家子公司（{examples}），合计 <em>{c}</em> 家子公司。该视图依赖 parent_company / ultimate_parent 字段，新增集团关系应先进入手工关系补充层并保留来源。".format(
+                n=len(corporate_families), c=family_companies, examples=family_examples,
             ),
             "wash": "w-plum",
         },

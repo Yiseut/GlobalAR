@@ -1,5 +1,5 @@
 window.V3_OPERATIONS_DATA = {
-  "generated_at": "2026-06-16T13:11:38+08:00",
+  "generated_at": "2026-06-20T14:03:18+08:00",
   "source": {
     "database": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
     "guardrail": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\database_guardrail_validation_latest.json",
@@ -118,7 +118,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/BAYN.DE?range=5d&interval=1d",
           "notes": "Non-US listing: generated official exchange review target; listing identity still needs human review.; ref_hygiene_20260615: company_id cleared co_f7c24821f67c",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-listed-listed_e4561d4b9d18",
@@ -142,7 +142,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://live.euronext.com/en/search_instruments/FAGR",
           "notes": "Non-US listing: generated official exchange review target; listing identity still needs human review.; ref_hygiene_20260615: company_id cleared co_03ea2a65c5ba",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-listed-listed_42453680c2b4",
@@ -166,7 +166,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Novartis&owner=exclude&count=10",
           "notes": "SEC company-name search found a registrant, but the seed ticker is not in the SEC current ticker/exchange file; treat as stale/delisted/transaction candidate until reviewed.; ref_hygiene_20260615: company_id cleared co_5bcf2c648760",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-listed-listed_067d99e33ea7",
@@ -190,7 +190,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://data.sec.gov/submissions/CIK0001840199.json",
           "notes": "SEC current ticker/exchange file and submissions API verify the listed entity identity; product relationship still needs review.; ref_hygiene_20260615: company_id cleared co_14e328b65da3",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-listed-listed_beb8c268f2b1",
@@ -214,7 +214,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://www.asx.com.au/markets/company/OSX",
           "notes": "Non-US listing: generated official exchange review target; listing identity still needs human review.; ref_hygiene_20260615: company_id cleared co_d7eb81741934",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-listed-listed_dd1c51b066f4",
@@ -238,7 +238,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://data.sec.gov/submissions/CIK0001840199.json",
           "notes": "SEC current ticker/exchange file and submissions API verify the listed entity identity; product relationship still needs review.; ref_hygiene_20260615: company_id cleared co_3b84628cb6ea",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-financial-15",
@@ -262,7 +262,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://www.elengroup.com/en/investors/financial-results",
           "notes": "[NON-US MANUAL] Consolidated group: Quanta System + DEKA + Asclepion + Asclepion Laser. FY2024 revenue per investor relations. Gross margin is industry-typical for medical laser groups - needs verification from full annual report.; ref_hygiene_20260615: company_id cleared co_75f33dee2eaf",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-financial-14",
@@ -286,7 +286,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001114448.json",
           "notes": "SEC XBRL annual revenue/gross profit; market cap is the dashboard dynamic market snapshot, so P/S is a derived snapshot ratio.; ref_hygiene_20260615: company_id cleared co_5bcf2c648760",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-financial-11",
@@ -310,7 +310,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001840199.json",
           "notes": "SEC XBRL annual revenue/gross profit; market cap is the dashboard dynamic market snapshot, so P/S is a derived snapshot ratio.; ref_hygiene_20260615: company_id cleared co_14e328b65da3",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "entity-financial-12",
@@ -334,7 +334,7 @@ window.V3_OPERATIONS_DATA = {
           "owner_module": "entity_resolution",
           "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001840199.json",
           "notes": "SEC XBRL annual revenue/gross profit; market cap is the dashboard dynamic market snapshot, so P/S is a derived snapshot ratio.; ref_hygiene_20260615: company_id cleared co_3b84628cb6ea",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         }
       ]
     },
@@ -374,7 +374,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-308",
@@ -401,7 +401,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-311",
@@ -428,7 +428,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-313",
@@ -455,7 +455,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-314",
@@ -482,7 +482,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-315",
@@ -509,7 +509,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-324",
@@ -536,7 +536,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-325",
@@ -563,7 +563,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-131",
@@ -590,7 +590,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-132",
@@ -617,7 +617,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-133",
@@ -644,7 +644,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "registration-151",
@@ -671,7 +671,7 @@ window.V3_OPERATIONS_DATA = {
           "review_status": "manual_new_product_candidate",
           "confidence": "manual_verified_fda_new_product_candidate",
           "suggested_action": "Decide promote-to-product, merge-to-existing product, or exclude/out-of-scope.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         }
       ]
     },
@@ -703,7 +703,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report, investor deck, or explicit not-disclosed review.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-002",
@@ -722,7 +722,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report or investor-relations segment disclosure.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-003",
@@ -741,7 +741,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report or investor-relations segment disclosure.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-004",
@@ -760,7 +760,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-005",
@@ -779,7 +779,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report or investor-relations segment disclosure.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-006",
@@ -798,7 +798,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-007",
@@ -817,7 +817,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report, investor deck, or explicit not-disclosed review.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-008",
@@ -836,7 +836,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report or investor-relations segment disclosure.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-009",
@@ -855,7 +855,7 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report, investor deck, or explicit not-disclosed review.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
           "queue_id": "aesthetics-revenue-010",
@@ -874,13 +874,13 @@ window.V3_OPERATIONS_DATA = {
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report, investor deck, or explicit not-disclosed review.",
           "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-          "generated_at": "2026-06-16T13:09:05+08:00"
+          "generated_at": "2026-06-16T16:30:07+08:00"
         }
       ]
     }
   },
   "build_delta": {
-    "briefing_update_candidates": 422,
+    "briefing_update_candidates": 521,
     "briefing_verified_update_events": 40,
     "briefing_fulltext_rescue": 107,
     "briefing_product_gap_candidates": 0,

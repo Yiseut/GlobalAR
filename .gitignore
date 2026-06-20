@@ -6,8 +6,12 @@ __pycache__/
 .playwright-cli/
 .pytest_cache/
 .wrangler/
+.vendor/
 node_modules/
 video-demo/node_modules/
+video-demo/*.mp4
+video-demo/assets/
+tmp/
 
 # Runtime and generated bulk artifacts.
 output/
@@ -19,6 +23,10 @@ assets/official_media/
 data/*
 !data/audits/
 !data/audits/**
+!data/commercial_data_source_registry.csv
+!data/isaps_market_metrics.csv
+!data/asps_market_metrics.csv
+!data/manual_company_relationship_supplement.csv
 !data/manual_product_line_supplement.csv
 !data/company_logo_manifest.csv
 !data/company_logo_report.md
@@ -30,6 +38,7 @@ web/app-data.js
 web/assets/company_profiles/
 !web/assets/company_logos/
 !web/assets/company_logos/**
+web/v3/_*.txt
 
 # Local archive of old process snapshots (multi-GB; never push to remote).
 _archive/

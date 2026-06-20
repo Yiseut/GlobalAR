@@ -76,7 +76,7 @@
         </article>
         <article class="kpi-cell has-wash w-lavender">
           <div class="label"><span class="en">Corporate families</span><span class="zh">集团结构</span></div>
-          <span class="value" id="kpi-fam">3</span>
+          <span class="value" id="kpi-fam">4</span>
           <span class="delta">parents with ≥2 subsidiaries</span>
         </article>
       </div>
@@ -99,7 +99,7 @@
         <h2>集团结构</h2>
         <span class="cn">· ultimate_parent ≥ 2 subsidiaries</span><span class="en">Corporate families</span>
       </div>
-      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">行业并购整合处于早期。当前样本中，明确呈现多子公司关系的集团仍然有限，AbbVie / Allergan、J&amp;J / Mentor 等案例还在逐步纳入统一集团视图。</p>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">行业并购整合处于早期。当前样本中，明确呈现多子公司关系的集团仍然有限；Huons Global 已作为公司族显示 Humedix 与 Huons BioPharma，后续可继续补齐 Huons Meditech 等成员关系。</p>
       <div class="family-grid" id="family-grid"></div>
     </section>
 
@@ -182,10 +182,10 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260524"></script>
-<script src="./v3-companies.js?v=20260524"></script>
-<script src="./v3-product-tree.js?v=20260526"></script>
-<script src="./v3-company-detail.js?v=20260526"></script>
+<script src="../app-data.js?v=20260616"></script>
+<script src="./v3-companies.js?v=20260616"></script>
+<script src="./v3-product-tree.js?v=20260616"></script>
+<script src="./v3-company-detail.js?v=20260616"></script>
 <script src="./_nav.js" data-active="companies"></script>
 <style>
   .companies-table tr.co-row { cursor: pointer; transition: background-color .12s ease; }
@@ -303,7 +303,7 @@
         return `
           <tr class="co-row" data-company-id="${esc(c.company_id || "")}" tabindex="0" role="button" aria-label="${esc(c.name)} · 产品谱系">
             <td>${String(i + 1).padStart(2, "0")}</td>
-            <td><strong style="font-family:var(--f-body); font-weight:500; color:var(--ink);">${esc(c.name)}</strong>${c.city ? `<br><small style="color:var(--muted); font-size:10.5px; letter-spacing:0.04em;">${esc(c.city)}</small>` : ""}</td>
+            <td><strong style="font-family:var(--f-body); font-weight:500; color:var(--ink);">${esc(c.name)}</strong>${c.city ? `<br><small style="color:var(--muted); font-size:10.5px; letter-spacing:0.04em;">${esc(c.city)}</small>` : ""}${c.ultimate_parent && c.ultimate_parent !== c.name ? `<br><small style="color:var(--accent-2); font-size:10.5px; letter-spacing:0.04em;">集团 · ${esc(c.ultimate_parent)}</small>` : ""}</td>
             <td>${esc(c.country || "—")}<br><small style="color:var(--muted); font-size:10px; letter-spacing:0.06em;">${esc(c.region || "")}</small></td>
             <td><span class="pill-tag ${pill}">${esc(displayTrack(c.primary_track))}</span></td>
             <td><span class="role-badge ${roleCls}">${esc(c.business_role || "—")}</span></td>

@@ -25,6 +25,19 @@ http://127.0.0.1:8790/
 4. 自动采集只进入 `evidence_staging` 和 `registration_evidence`，状态保持 `needs_review`。
 5. 人工审核通过后，才应合并到 `company_master`、`product_master` 或正式注册事实字段。
 
+## 前端更新时间同步
+
+每次数据更新、手工补源、重新 build 或部署之后，都必须同步检查前端顶部的 `数据截至 · AS OF` 时间。不能只确认数据库或 CSV 已更新；如果网页仍显示旧时间，本次更新不能视为完成。
+
+- `scripts\build_data.py` 会写出 `web\v3\data-as-of.json`，这是 v3 前端顶部时间戳的来源。
+- build 后必须确认 `web\v3\data-as-of.json` 的 `as_of` 是本次最新 build 时间，并在浏览器里确认顶部 `数据截至 · AS OF` 显示同一时间或更新后的时间。
+- 如果线上页面仍显示旧时间，应重新 build、重新部署，并处理浏览器/CDN 缓存；不要把旧时间页面交付给用户。
+- 提交或发布前至少运行：
+
+```powershell
+Get-Content web\v3\data-as-of.json
+```
+
 当前默认补缺方向是产品核验，而不是继续大规模下载网页/产品图片：
 
 ```powershell
@@ -90,9 +103,10 @@ python scripts\build_data.py
 
 ```powershell
 python scripts\smoke_test.py
+Get-Content web\v3\data-as-of.json
 ```
 
-`smoke_test.py` 需要本地服务运行，以便同时验证 Dashboard API。
+`smoke_test.py` 需要本地服务运行，以便同时验证 Dashboard API。每次更新后还要打开网页确认顶部 `数据截至 · AS OF` 不再停留在旧日期。
 
 ## MDSAP 口径
 

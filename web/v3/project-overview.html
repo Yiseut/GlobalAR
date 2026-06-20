@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>项目总览 · 全球医美情报 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css?v=20260620-project-overview" />
+<style>
+  .project-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+    gap: 18px;
+    align-items: stretch;
+  }
+  .project-hero .page-hero {
+    margin: 0;
+  }
+  .project-hero .page-hero-slim {
+    display: block;
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .project-hero .page-hero .lede {
+    max-width: 62ch;
+  }
+  .project-status {
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 18px;
+    background: rgba(253,250,242,0.76);
+    box-shadow: var(--shadow-card);
+  }
+  .project-status h2,
+  .overview-panel h2 {
+    margin: 0;
+    font-family: var(--f-display-cn);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--ink);
+  }
+  .project-status p,
+  .overview-panel p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .overview-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .overview-kpi {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 14px;
+    background: rgba(255,252,245,0.72);
+    min-width: 0;
+  }
+  .overview-kpi strong {
+    display: block;
+    font-family: var(--f-display);
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .overview-kpi span {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .overview-panel {
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 18px;
+    background: rgba(253,250,242,0.72);
+    box-shadow: var(--shadow-card);
+    min-width: 0;
+  }
+  .pillar-grid,
+  .entry-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .pillar-card,
+  .entry-card,
+  .progress-row {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    padding: 12px;
+    background: rgba(255,252,245,0.70);
+    min-width: 0;
+  }
+  .pillar-card strong,
+  .entry-card strong,
+  .progress-row strong {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .pillar-card span,
+  .entry-card span,
+  .progress-row span {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+  .entry-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+  }
+  .entry-card a {
+    color: var(--accent-2);
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .progress-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .progress-row {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .phase {
+    color: var(--accent-2);
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .status-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .status-strip span {
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    padding: 6px 9px;
+    background: rgba(246,241,230,0.72);
+    color: var(--ink-2);
+    font-size: 11px;
+    line-height: 1;
+  }
+  @media (max-width: 980px) {
+    .project-hero,
+    .overview-grid,
+    .overview-kpi-grid {
+      grid-template-columns: 1fr;
+    }
+    .progress-row,
+    .entry-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="情报视角导航"></aside>
+  <main class="content">
+    <section class="project-hero">
+      <div class="page-hero page-hero-slim">
+        <h1>
+          全球医美情报项目总览
+          <span class="h1-en">Aestrat Global Aesthetics Intelligence</span>
+        </h1>
+        <p class="lede">这个项目把全球医美上游企业、产品、监管证据、商业来源和国家级行业数据组织成一个可追踪的研究仪表盘，用于判断赛道格局、国家机会、公司收入线索和渠道密度。</p>
+      </div>
+      <aside class="project-status">
+        <h2>当前定位</h2>
+        <p>核心不是静态目录，而是可持续扩展的数据骨架：治疗数量、公司收入、渠道密度和宏观需求分别建模，再在前台用同一套来源口径展示。</p>
+        <div class="status-strip" id="overviewStatusStrip"></div>
+      </aside>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>项目资产</h2>
+        <span class="cn">· 当前快照</span><span class="en">Current data assets</span>
+      </div>
+      <div class="overview-kpi-grid" id="overviewKpis"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>四根主干</h2>
+        <span class="cn">· 数据模型</span><span class="en">Operating model</span>
+      </div>
+      <div class="overview-grid">
+        <article class="overview-panel">
+          <h2>数据骨架</h2>
+          <p>每根主干都有自己的来源优先级和事实边界，避免把预测、热度或渠道 proxy 当成确定事实。</p>
+          <div class="pillar-grid">
+            <div class="pillar-card"><strong>治疗数量</strong><span>国家 × 年份 × 赛道/项目，主干来自 ISAPS 2020-2024，并补 ASPS、Aesthetic Society、BAAPS 等协会口径。</span></div>
+            <div class="pillar-card"><strong>公司收入</strong><span>公司 × 年份 × 地区/赛道/产品线收入，优先 SEC、DART、EDINET、IR 报告和财务报表。</span></div>
+            <div class="pillar-card"><strong>渠道密度</strong><span>国家/城市 × 诊所/provider/distributor/locator 覆盖，作为商业触达 proxy，不等同销量。</span></div>
+            <div class="pillar-card"><strong>宏观需求</strong><span>人口、收入、老龄化、医生密度、医疗旅游和社媒热度，只做解释变量或热度 proxy。</span></div>
+          </div>
+        </article>
+        <article class="overview-panel">
+          <h2>主干进度</h2>
+          <p>当前优先级是把 2020 至今的信息密度做厚，而不是强求更久远的 PDF 回填。</p>
+          <div class="progress-list">
+            <div class="progress-row"><span class="phase">Phase 1</span><div><strong>国家-年份-赛道治疗数量</strong><span>ISAPS 2020-2024 已成主干；ASPS 2024 procedure trend 已接入；UK/德国/西班牙/意大利继续做 QA 与抽表。</span></div></div>
+            <div class="progress-row"><span class="phase">Phase 2</span><div><strong>公司-年份-地区/赛道收入</strong><span>上市公司总收入、估值和美学收入占比已部分入库，下一步继续补 segment 和 region revenue。</span></div></div>
+            <div class="progress-row"><span class="phase">Phase 3</span><div><strong>渠道覆盖 proxy</strong><span>Top 15 企业国家均已有官方/协会来源入口，下一步抽 provider、医生 denominator 和 locator 覆盖。</span></div></div>
+            <div class="progress-row"><span class="phase">Phase 4</span><div><strong>市场报告与社媒热度</strong><span>保留 forecast、CAGR、搜索热度和新闻信号，但不覆盖主干事实。</span></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>前台入口</h2>
+        <span class="cn">· 使用地图</span><span class="en">Dashboard map</span>
+      </div>
+      <div class="overview-grid">
+        <article class="overview-panel">
+          <h2>核心页面</h2>
+          <div class="entry-grid">
+            <div class="entry-card"><div><strong>全球总览</strong><span>企业、国家、产品和赛道的第一屏入口。</span></div><a href="./index.html">打开</a></div>
+            <div class="entry-card"><div><strong>商业格局</strong><span>市场指标、公司财务、国家来源、冲突组和抽取队列。</span></div><a href="./market-intelligence.html">打开</a></div>
+            <div class="entry-card"><div><strong>公司列表</strong><span>329 家上游企业的国家、赛道、上市状态和产品组合。</span></div><a href="./companies.html">打开</a></div>
+            <div class="entry-card"><div><strong>资本地图</strong><span>上市主体、交易所、估值和财务快照。</span></div><a href="./capital-map.html">打开</a></div>
+          </div>
+        </article>
+        <article class="overview-panel">
+          <h2>研究视角</h2>
+          <div class="entry-grid">
+            <div class="entry-card"><div><strong>地域深掘</strong><span>国家/地区、韩国板块和地理分布。</span></div><a href="./geo-deep-dive.html">打开</a></div>
+            <div class="entry-card"><div><strong>赛道结构</strong><span>材料 taxonomy、L1/L2/L3 和跨赛道结构。</span></div><a href="./tracks.html">打开</a></div>
+            <div class="entry-card"><div><strong>技术树</strong><span>技术路径、产品规格证据和细分材料。</span></div><a href="./technology-tree.html">打开</a></div>
+            <div class="entry-card"><div><strong>运营视角</strong><span>数据质量、审查队列、可用性和下一步工作台。</span></div><a href="./operations.html">打开</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>最近进展</h2>
+        <span class="cn">· 2026-06-20</span><span class="en">Latest state</span>
+      </div>
+      <div class="overview-grid">
+        <article class="overview-panel">
+          <h2>已完成</h2>
+          <div class="pillar-grid" id="overviewRecent"></div>
+        </article>
+        <article class="overview-panel">
+          <h2>下一步</h2>
+          <div class="pillar-grid">
+            <div class="pillar-card"><strong>美国协会口径加厚</strong><span>抽 ASPS 2024 average fee / regional split，再回填 ASPS 2020、2022、2023 procedure trend。</span></div>
+            <div class="pillar-card"><strong>欧洲候选 QA</strong><span>对 DGÄPC、SECPRE、AICPE/SICPRE 做 count/share/table QA，能进主干的才抽数。</span></div>
+            <div class="pillar-card"><strong>渠道密度表</strong><span>把 Top 15 国家 provider locator、医生 denominator 和协会入口统一成国家/城市级 proxy 表。</span></div>
+            <div class="pillar-card"><strong>公司收入层</strong><span>继续补 SEC、DART、EDINET、IR 报告中的 aesthetics segment 和 region revenue。</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260620"></script>
+<script src="./v3-market-intelligence.js?v=20260620"></script>
+<script src="./_nav.js" data-active="project-overview"></script>
+<script>
+  (function () {
+    const app = window.GLOBAL_AESTHETICS_DATA || {};
+    const mi = window.V3_MARKET_INTELLIGENCE_DATA || {};
+    const summary = app.summary || {};
+    const miSummary = mi.summary || {};
+    const geo = mi.geoSourceSummary || {};
+    const topCountries = Array.isArray(mi.topCompanyCountries) ? mi.topCompanyCountries : [];
+    const marketMetrics = Array.isArray(mi.marketMetrics) ? mi.marketMetrics : [];
+    const fmt = value => {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return value == null || value === "" ? "—" : String(value);
+      return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
+    };
+    const byType = marketMetrics.reduce((map, row) => {
+      const key = row.type || row.metricType || "other";
+      map[key] = (map[key] || 0) + 1;
+      return map;
+    }, {});
+    const topCovered = topCountries.filter(row => Number(row.sourceCount) > 0).length;
+    const hardCountries = topCountries.filter(row => row.coverageTier === "treatment_volume").length;
+    const qaCountries = topCountries.filter(row => row.coverageTier === "metric_qa_candidate").length;
+    const kpis = [
+      ["产品", summary.products || summary.product_master || 943, "active product master"],
+      ["企业", summary.company_master || summary.companies || 329, "upstream companies"],
+      ["注册证据", summary.registration_evidence || 1599, "multi-region evidence"],
+      ["市场指标", miSummary.marketMetricClaims || marketMetrics.length, "commercial claims"],
+      ["治疗量指标", byType.procedure_volume || 0, "country-year procedure rows"],
+      ["商业来源", miSummary.sourceDocuments || 0, "reviewed source docs"],
+      ["国家来源", geo.sources || 0, `${fmt(geo.records || 0)} discovery rows`],
+      ["Top 15 覆盖", `${topCovered}/${topCountries.length || 15}`, `${hardCountries} hard · ${qaCountries} QA`],
+    ];
+    document.getElementById("overviewKpis").innerHTML = kpis.map(([label, value, note]) => `
+      <article class="overview-kpi"><strong>${fmt(value)}</strong><span>${label} · ${note}</span></article>
+    `).join("");
+    document.getElementById("overviewStatusStrip").innerHTML = [
+      `Data as of ${String(app.generated_at || "").replace("T", " ").slice(0, 16) || "latest"}`,
+      `${fmt(summary.countries || 34)} countries`,
+      `${fmt(geo.sources || 0)} geo sources`,
+      `${fmt(geo.downloadedArtifacts || 0)} downloaded files`,
+    ].map(item => `<span>${item}</span>`).join("");
+    document.getElementById("overviewRecent").innerHTML = [
+      ["ISAPS 主干", "2020-2024 已接入国家-年份-赛道时间轴，治疗数量和医生数量分开建模。"],
+      ["ASPS 2024", "美国 procedure trend 已抽取为独立协会口径，后续补费用和区域拆分。"],
+      ["Top 15 国家覆盖", "企业数量前 15 的国家/地区均已有官方或协会来源入口。"],
+      ["商业格局页", "已新增覆盖 KPI、Top 15 条形图、筛选器和优先行动队列。"],
+    ].map(([title, note]) => `<div class="pillar-card"><strong>${title}</strong><span>${note}</span></div>`).join("");
+  })();
+</script>
+</body>
+</html>

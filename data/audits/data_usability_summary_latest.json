@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-06-16T05:12:16.973813+00:00",
-  "audited_tables": 41,
-  "audited_rows": 186598,
-  "usable_or_reference_rows": 161979,
-  "planned_or_review_rows": 3,
+  "generated_at": "2026-06-19T19:53:12.289532+00:00",
+  "audited_tables": 45,
+  "audited_rows": 194674,
+  "usable_or_reference_rows": 167057,
+  "planned_or_review_rows": 3001,
   "excluded_or_noise_rows": 24616,
-  "covered_rows": 186598,
+  "covered_rows": 194674,
   "missing_owner_or_status_rows": 0,
   "every_row_has_status_and_owner": true,
   "by_coverage_class": {
-    "reference_or_registry": 124865,
+    "reference_or_registry": 129943,
     "excluded_or_noise": 24616,
     "usable_master": 37114,
-    "planned_or_review": 3
+    "planned_or_review": 3001
   },
   "top_responsible_modules": [
     [
@@ -32,16 +32,16 @@
       20138
     ],
     [
+      "reference_data_maintenance",
+      16403
+    ],
+    [
       "evidence_promotion_pipeline",
       15588
     ],
     [
       "product_fact_promotion_pipeline",
       15282
-    ],
-    [
-      "reference_data_maintenance",
-      11399
     ],
     [
       "spec_extractor_quality_filter",
@@ -56,18 +56,22 @@
       6264
     ],
     [
-      "product_hierarchy_mapping_backfill",
-      2220
+      "data_usability_audit",
+      2998
     ],
     [
-      "product_hierarchy_maintenance",
-      1974
+      "product_hierarchy_mapping_backfill",
+      2220
     ]
   ],
   "top_operational_status": [
     [
       "medium_source_crosscheck",
       16711
+    ],
+    [
+      "indexed_reference_data",
+      16403
     ],
     [
       "promoted_fact_trace",
@@ -88,10 +92,6 @@
     [
       "medium_review_sample_pool",
       11918
-    ],
-    [
-      "indexed_reference_data",
-      11399
     ],
     [
       "official_surface_indexed",

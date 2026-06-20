@@ -229,6 +229,11 @@
     const primaryTrack = meta.primary_track || "";
     const ownership = meta.ownership || "—";
     const stockCode = meta.stock_code || "";
+    const parent = meta.parent || meta.parent_company || "";
+    const ultimateParent = meta.ultimate_parent || "";
+    const groupLabel = ultimateParent && ultimateParent !== name
+      ? ultimateParent
+      : (parent && parent !== name ? parent : "");
     const products = meta.products || meta.product_count || tree.reduce((s, b) => s + b.sku_count, 0);
     const brands = meta.brands || meta.brand_count || tree.length;
     const accent = TRACK_COLORS[primaryTrack] || "var(--accent)";
@@ -242,6 +247,7 @@
         <div class="cell"><span class="k">Products</span><span class="v"><span class="num">${products}</span> SKUs</span></div>
         <div class="cell"><span class="k">Brands</span><span class="v"><span class="num">${brands}</span></span></div>
         <div class="cell"><span class="k">Ownership</span><span class="v">${escapeHtml(ownership)}${stockCode ? ` · <span style="font-family:var(--f-mono);font-size:11px;font-style:normal;">${escapeHtml(stockCode)}</span>` : ""}</span></div>
+        ${groupLabel ? `<div class="cell"><span class="k">Group / Parent</span><span class="v">${escapeHtml(groupLabel)}</span></div>` : ""}
       </div>
     `;
 
