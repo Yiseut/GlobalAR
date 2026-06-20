@@ -21,17 +21,18 @@
         商业格局
         <span class="h1-en">Market Intelligence</span>
       </h1>
-      <p class="lede" id="mi-lede">用市场容量、增长速度、需求体量和上市公司热度，判断不同地区与赛道的商业机会。</p>
+      <p class="lede" id="mi-lede">按全球、洲际、国家三级递进，把治疗量、销量、渠道密度、公司收入和需求信号放在同一套商业口径里阅读。</p>
       <div class="stat-row" id="mi-stat-row">
         <span>Countries <span class="num">—</span></span>
         <span>Market metrics <span class="num">—</span></span>
         <span>Opportunities <span class="num">—</span></span>
       </div>
       <div class="mi-segmented" aria-label="商业格局视图">
-        <button type="button" class="active" data-mode="all">全部</button>
-        <button type="button" data-mode="market">市场指标</button>
-        <button type="button" data-mode="geo">国家来源</button>
-        <button type="button" data-mode="financial">财务估值</button>
+        <button type="button" class="active" data-mode="all">全球总览</button>
+        <button type="button" data-mode="region">洲际结构</button>
+        <button type="button" data-mode="country">国家页面</button>
+        <button type="button" data-mode="market">数据立方</button>
+        <button type="button" data-mode="financial">公司收入</button>
         <button type="button" data-mode="signals">日报信号</button>
         <button type="button" data-mode="conflicts">矛盾点</button>
       </div>
@@ -64,9 +65,52 @@
       </div>
     </section>
 
+    <section class="block" data-mode-block="region">
+      <div class="section-head">
+        <h2>洲际商业结构</h2>
+        <span class="cn">· 全球 → 区域</span><span class="en">Region layer</span>
+      </div>
+      <div class="mi-analysis-grid mi-region-layout">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>区域治疗量与市场指标</h3>
+              <p>只看商业口径：市场规模、治疗数量、增长率、份额和销量；产品材料与注册信息留在产品赛道页。</p>
+            </div>
+          </div>
+          <div class="mi-region-grid" id="mi-region-commercial-grid"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>区域来源与供给上下文</h3>
+              <p>企业数量只作为供给背景，核心判断仍以治疗量、销量、渠道和收入为主。</p>
+            </div>
+          </div>
+          <div class="mi-region-grid" id="mi-region-source-grid"></div>
+        </article>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>洲际 → 国家递进</h3>
+            <p>从区域聚合下钻到国家页面，保留韩国、美国、意大利、法国、瑞士和以色列等重点国家画像。</p>
+          </div>
+        </div>
+        <div class="mi-table-wrap">
+          <table>
+            <thead>
+              <tr><th>区域</th><th class="num">企业</th><th class="num">产品</th><th>主要国家</th><th>商业数据状态</th></tr>
+            </thead>
+            <tbody id="mi-region-country-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <section class="block" data-mode-block="market">
       <div class="section-head">
-        <h2>市场数据立方</h2>
+        <h2>商业数据立方</h2>
         <span class="cn">· 地区 × 赛道 × KPI</span><span class="en">Market cube</span>
       </div>
       <div class="mi-analysis-grid mi-cube-layout">
@@ -91,10 +135,40 @@
       </div>
     </section>
 
-    <section class="block" data-mode-block="geo">
+    <section class="block" data-mode-block="country">
       <div class="section-head">
-        <h2>国家级来源发现</h2>
-        <span class="cn">· 主干候选与 proxy 分流</span><span class="en">Country source discovery</span>
+        <h2>国家页面</h2>
+        <span class="cn">· 区域 → 国家</span><span class="en">Country layer</span>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head mi-head-row">
+          <div>
+            <h3>重点国家画像</h3>
+            <p>国家画像归入商业格局；企业和产品数只是供给背景，下面接治疗量、渠道和来源状态。</p>
+          </div>
+          <div class="mi-cube-control" id="mi-country-selector"></div>
+        </div>
+        <div class="mi-country-grid" id="mi-country-profile-grid"></div>
+      </div>
+      <div class="mi-analysis-grid mi-country-layout">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>国家商业读数</h3>
+              <p>优先展示治疗量、市场规模、增长、份额和销量。</p>
+            </div>
+          </div>
+          <div class="mi-country-signal-list" id="mi-country-commercial-layers"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>国家数据状态</h3>
+              <p>区分硬事实主干、候选 QA、渠道 proxy 和需求 context。</p>
+            </div>
+          </div>
+          <div class="mi-country-signal-list" id="mi-country-source-state"></div>
+        </article>
       </div>
       <div class="mi-geo-dashboard-grid">
         <article class="mi-panel">
@@ -933,6 +1007,115 @@
     background: var(--plum-deep);
     border-color: var(--plum-deep);
   }
+  .mi-region-grid,
+  .mi-country-grid,
+  .mi-country-signal-list {
+    display: grid;
+    gap: 12px;
+  }
+  .mi-region-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .mi-region-card,
+  .mi-country-card,
+  .mi-country-layer-item {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: rgba(255,252,245,0.72);
+    padding: 13px;
+    min-width: 0;
+  }
+  .mi-region-card .topline,
+  .mi-country-card .topline,
+  .mi-country-layer-item .topline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .mi-region-card h3,
+  .mi-country-card h3,
+  .mi-country-layer-item h4 {
+    margin: 9px 0 8px;
+    color: var(--ink);
+    font-family: var(--f-display);
+    font-size: 24px;
+    line-height: 1.08;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+  }
+  .mi-country-layer-item h4 {
+    font-family: var(--f-display-cn);
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .mi-region-card .meta,
+  .mi-country-card .meta,
+  .mi-country-layer-item .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .mi-region-card p,
+  .mi-country-card p,
+  .mi-country-layer-item p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .mi-country-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .mi-country-card.is-selected {
+    border-color: rgba(142,58,58,0.42);
+    background: linear-gradient(135deg, rgba(253,250,242,0.96), rgba(239,205,203,0.28));
+  }
+  .mi-country-card .value-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .mi-country-card .value-row span {
+    border: 1px solid var(--hairline-2);
+    border-radius: 7px;
+    padding: 8px;
+    background: rgba(246,241,230,0.52);
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.25;
+  }
+  .mi-country-card .value-row strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--f-display);
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 400;
+  }
+  .mi-country-layer-item .meter {
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(80,60,70,0.10);
+    margin-top: 10px;
+  }
+  .mi-country-layer-item .meter span {
+    display: block;
+    width: var(--w);
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--accent-2), #5a6878);
+  }
   .mi-cube-meta {
     display: flex;
     flex-wrap: wrap;
@@ -1541,6 +1724,8 @@
     .mi-map-layout,
     .mi-analysis-grid,
     .mi-insight-grid,
+    .mi-region-grid,
+    .mi-country-grid,
     .mi-geo-dashboard-grid,
     .mi-finance-grid,
     .mi-signal-grid,
@@ -1582,12 +1767,13 @@
     const europeMetricQa = Array.isArray(data.europeMetricQa) ? data.europeMetricQa : [];
     const companyRevenueProgress = Array.isArray(data.companyRevenueProgress) ? data.companyRevenueProgress : [];
     const nextStepCompletion = Array.isArray(data.nextStepCompletion) ? data.nextStepCompletion : [];
+    const geoCompanies = Array.isArray(app.geo_companies) ? app.geo_companies : [];
     const queues = data.reviewQueues || {};
     const validation = data.validation || {};
     const analysis = data.analysis || {};
     const sourceById = new Map(docs.map(doc => [doc.sourceDocumentId, doc]));
     const registryById = new Map(sourceRegistry.map(row => [row.sourceId, row]));
-    const state = { metricType: "all", mode: "all", cubeScope: "all", cubeSegment: "all", geoTier: "all" };
+    const state = { metricType: "all", mode: "all", cubeScope: "all", cubeSegment: "all", geoTier: "all", country: "South Korea" };
     const kpiColumns = [
       { key: "market_size", label: "市场规模" },
       { key: "procedure_volume", label: "医美治疗数量" },
@@ -1841,6 +2027,33 @@
       "越南": "Vietnam",
       "伊朗": "Iran"
     };
+    const countryZh = {
+      "South Korea": "韩国",
+      "USA": "美国",
+      "Italy": "意大利",
+      "France": "法国",
+      "Switzerland": "瑞士",
+      "Israel": "以色列",
+      "Germany": "德国",
+      "Spain": "西班牙",
+      "Japan": "日本",
+      "Brazil": "巴西",
+      "Hong Kong": "香港",
+      "Taiwan": "台湾",
+      "Chinese Taipei": "台湾",
+      "UK": "英国",
+      "United Kingdom": "英国",
+      "Canada": "加拿大",
+      "Australia": "澳大利亚"
+    };
+    const countryNotes = {
+      "South Korea": "企业数量最高，供给侧深，但商业主干仍需按治疗量、出口收入和渠道覆盖继续拆。",
+      "USA": "监管和上市公司可见度高，适合把 ASPS 治疗量、平均费用和公司收入放在同一口径里看。",
+      "Italy": "欧洲供给重镇，EBD 与注射类并存；行业协会资料目前作为候选来源处理。",
+      "France": "注射类和成熟品牌较集中，当前更适合作为欧洲渠道和公司收入对照样本。",
+      "Switzerland": "产品密度高，Galderma 等全球化公司让收入层比单纯企业数更关键。",
+      "Israel": "EBD 高密度国家，以 InMode、Lumenis、Alma 等公司形成强设备供给背景。"
+    };
     const regionGeos = new Set(["Global", "Europe", "North America", "Asia-Pacific", "Latin America", "Middle East", "GCC"]);
     const normalizeGeo = value => {
       const text = String(value || "").trim();
@@ -1966,11 +2179,175 @@
         .sort((a, b) => b.sortScore - a.sortScore || String(a.geo).localeCompare(String(b.geo)));
     }
 
+    function canonicalCountry(value) {
+      const geo = normalizeGeo(value);
+      if (geo === "United States") return "USA";
+      if (geo === "United Kingdom") return "UK";
+      if (geo === "Chinese Taipei") return "Taiwan";
+      return geo;
+    }
+
+    function countryDisplay(value) {
+      const country = canonicalCountry(value);
+      const zh = countryZh[country] || countryZh[value];
+      return zh ? `${zh} ${country}` : country;
+    }
+
+    function companyCountry(company) {
+      return canonicalCountry(company.country);
+    }
+
+    function companiesForCountry(country) {
+      const target = canonicalCountry(country);
+      return geoCompanies.filter(company => companyCountry(company) === target);
+    }
+
+    function countBy(rows, keyFn) {
+      const map = new Map();
+      rows.forEach(row => {
+        const key = keyFn(row) || "未分类";
+        map.set(key, (map.get(key) || 0) + 1);
+      });
+      return map;
+    }
+
+    function sumRows(rows, key) {
+      return rows.reduce((sum, row) => sum + (Number(row[key]) || 0), 0);
+    }
+
+    function topEntry(map) {
+      return Array.from(map, ([name, value]) => ({ name, value }))
+        .sort((a, b) => b.value - a.value || String(a.name).localeCompare(String(b.name)))[0];
+    }
+
+    function countryStats(country) {
+      const canonical = canonicalCountry(country);
+      const companies = companiesForCountry(canonical);
+      const topCountry = topCompanyCountries.find(row => canonicalCountry(row.sourceCountry || row.country) === canonical) || {};
+      const products = sumRows(companies, "products");
+      const primary = topEntry(countBy(companies, row => row.primary_track || row.primaryTrack));
+      const publicCount = companies.filter(row => String(row.ownership || "").toLowerCase().includes("public")).length;
+      const fdaCompanies = companies.filter(row => Number(row.fda || 0) > 0 || String(row.regulatory_channels || "").includes("FDA")).length;
+      const region = companies[0]?.region || topCountry.region || "";
+      const count = Number(topCountry.companyCount || companies.length || 0);
+      const productCount = products || Number(topCountry.productCount || 0);
+      return {
+        country: canonical,
+        label: countryDisplay(canonical),
+        region,
+        companies,
+        companyCount: count,
+        products: productCount,
+        publicCount,
+        fdaCompanies,
+        primaryTrack: primary?.name || "—",
+        productsPerCompany: count ? productCount / count : 0,
+        topCompanies: companies.slice().sort((a, b) => (Number(b.products) || 0) - (Number(a.products) || 0)).slice(0, 4),
+        coverage: topCountry,
+      };
+    }
+
+    function metricRowsForGeo(geo, limit = 10) {
+      const target = normalizeGeo(geo);
+      return metrics
+        .filter(row => kpiKeys.has(row.type) && row.value != null && normalizeGeo(row.geo || row.entity) === target)
+        .slice()
+        .sort((a, b) => {
+          const yearDiff = extractYear(b) - extractYear(a);
+          if (yearDiff) return yearDiff;
+          return comparableValue(b) - comparableValue(a);
+        })
+        .slice(0, limit);
+    }
+
+    function sourceRowsForCountry(country) {
+      const canonical = canonicalCountry(country);
+      const topCountry = topCompanyCountries.find(row => canonicalCountry(row.sourceCountry || row.country) === canonical);
+      const channel = channelDensity.find(row => canonicalCountry(row.sourceCountry || row.country) === canonical);
+      const discovery = geoSourceDiscovery.filter(row => canonicalCountry(row.countryOrRegion) === canonical);
+      const europeQa = europeMetricQa.filter(row => canonicalCountry(row.country) === canonical);
+      const items = [];
+      if (topCountry) {
+        items.push({
+          label: "Top 15 覆盖",
+          status: coverageTierLabel(topCountry.coverageTier),
+          tone: coverageTierTone(topCountry.coverageTier),
+          body: `${fmt(topCountry.sourceCount || 0)} sources · ${fmt(topCountry.downloadedArtifacts || 0)} files`,
+          note: topCountry.nextAction || "来源发现后按数据角色分流。"
+        });
+      }
+      if (channel) {
+        items.push({
+          label: "渠道密度 proxy",
+          status: proxyStatusLabel(channel.proxyStatus),
+          tone: coverageTierTone(channel.coverageTier),
+          body: `${fmt(channel.providerLocatorSources || 0)} locator · ${fmt(channel.doctorDenominatorSources || 0)} denominator · ${fmt(channel.associationEntrySources || 0)} association`,
+          note: channel.nextAction || "补 provider locator 与医生分母。"
+        });
+      }
+      if (europeQa.length) {
+        europeQa.forEach(row => items.push({
+          label: row.sourceName || row.sourceId || "欧洲候选 QA",
+          status: mainlineDecisionLabel(row.mainlineDecision),
+          tone: row.promotionAllowed === "yes" ? "hard" : "qa",
+          body: `${fmt(row.downloadedFiles || 0)} files · ${fmt(row.pdfTablesDetected || 0)} tables`,
+          note: row.nextAction || "继续核验 count/share/table。"
+        }));
+      }
+      if (!items.length && discovery.length) {
+        const roles = countRows(discovery, row => row.dataRole).slice(0, 3);
+        items.push({
+          label: "来源发现",
+          status: `${fmt(new Set(discovery.map(row => row.sourceId).filter(Boolean)).size)} sources`,
+          tone: "proxy",
+          body: roles.map(row => dataRoleLabel(row.label)).join(" / "),
+          note: "已进入来源发现清单，待按主干、候选或 proxy 分流。"
+        });
+      }
+      return items;
+    }
+
+    function regionStats() {
+      const byRegion = new Map();
+      geoCompanies.forEach(company => {
+        const region = company.region || "Other";
+        const row = byRegion.get(region) || { region, companies: 0, products: 0, countries: new Set(), publicCount: 0, fdaCompanies: 0 };
+        row.companies += 1;
+        row.products += Number(company.products || 0);
+        row.countries.add(company.country || "Unspecified");
+        if (String(company.ownership || "").toLowerCase().includes("public")) row.publicCount += 1;
+        if (Number(company.fda || 0) > 0 || String(company.regulatory_channels || "").includes("FDA")) row.fdaCompanies += 1;
+        byRegion.set(region, row);
+      });
+      return Array.from(byRegion.values())
+        .map(row => ({ ...row, countryCount: row.countries.size }))
+        .sort((a, b) => b.companies - a.companies || String(a.region).localeCompare(String(b.region)));
+    }
+
+    function regionMetricSummary(region) {
+      const normalized = normalizeGeo(region);
+      const rows = buildMarketCubeRows().filter(row => row.scope === "region" && normalizeGeo(row.geo) === normalized);
+      const procedure = rows.find(row => row.cells.procedure_volume)?.cells.procedure_volume;
+      const market = rows.find(row => row.cells.market_size)?.cells.market_size;
+      const growth = rows.find(row => row.cells.growth_rate)?.cells.growth_rate;
+      return { rows, procedure, market, growth };
+    }
+
+    function regionSourceSummary(region) {
+      const rows = geoSourceDiscovery.filter(row => (row.regionGroup || "") === region || normalizeGeo(row.countryOrRegion) === normalizeGeo(region));
+      return {
+        records: rows.length,
+        sources: new Set(rows.map(row => row.sourceId).filter(Boolean)).size,
+        files: rows.filter(row => row.status === "downloaded").length,
+        roles: countRows(rows, row => row.dataRole).slice(0, 3),
+      };
+    }
+
     function renderHero() {
       const asOf = summary.asOf || app.generated_at || "";
       document.querySelectorAll("[data-bind-text='mi-asof']").forEach(el => { el.textContent = shortDate(asOf); });
       document.getElementById("mi-lede").textContent =
-        `${fmt(app.summary?.countries || 34)} 个国家 · ${fmt(summary.marketMetricClaims)} 个市场指标 · ${fmt(financial.length)} 个上市公司/估值快照 · ${fmt(geoSourceSummary.sources || 0)} 个地区级来源。`;
+        `${fmt(app.summary?.countries || 34)} 个国家按全球、洲际、国家三层组织；商业主读数来自 ${fmt(summary.marketMetricClaims)} 个市场指标、${fmt(financial.length)} 个财务/估值快照和 ${fmt(geoSourceSummary.sources || 0)} 个地区级来源。`;
       document.getElementById("mi-stat-row").innerHTML = `
         <span>Countries <span class="num" data-cu-started="1">${fmt(app.summary?.countries || 34)}</span></span>
         <span>Market metrics <span class="num" data-cu-started="1">${fmt(summary.marketMetricClaims)}</span></span>
@@ -1981,7 +2358,7 @@
         { wash: "w-rose-deep", en: "Source docs", zh: "来源文件", value: summary.sourceDocuments, delta: `${fmt((summary.sourceKinds || []).length)} source types` },
         { wash: "w-slate", en: "Commercial claims", zh: "商业声明", value: summary.claims, delta: `${fmt(summary.reviewedClaims)} reviewed / trusted` },
         { wash: "w-peach", en: "Market metrics", zh: "市场指标", value: summary.marketMetricClaims, delta: "size / treatments / CAGR / share" },
-        { wash: "w-sage", en: "Geo sources", zh: "国家来源", value: geoSourceSummary.sources || 0, delta: `${fmt(geoSourceSummary.downloadedArtifacts || 0)} downloaded artifacts` },
+        { wash: "w-sage", en: "Geo sources", zh: "地区来源", value: geoSourceSummary.sources || 0, delta: `${fmt(geoSourceSummary.downloadedArtifacts || 0)} downloaded artifacts` },
         { wash: "w-sage", en: "Daily signals", zh: "日报可信信号", value: summary.briefingSignals, delta: "commercial / channel / launch" },
         { wash: "w-plum", en: "Financial claims", zh: "财务估值", value: summary.financialClaims, delta: `${fmt(financial.length)} listed snapshots` },
         { wash: "w-sand", en: "Conflict groups", zh: "矛盾点", value: summary.conflictGroups, delta: "same scope comparison only" },
@@ -1995,6 +2372,157 @@
           <span class="delta">${esc(k.delta)}</span>
         </article>
       `).join("");
+    }
+
+    function renderRegionLayer() {
+      const regions = regionStats();
+      const regionGrid = document.getElementById("mi-region-commercial-grid");
+      if (regionGrid) {
+        regionGrid.innerHTML = regions.map(region => {
+          const metric = regionMetricSummary(region.region);
+          const leading = metric.procedure || metric.market || metric.growth;
+          const leadingValue = leading ? formatCubeValue(leading) : `${fmt(region.companies)} 家企业`;
+          const leadingLabel = leading ? typeLabel(leading.type) : "供给背景";
+          const detail = [
+            metric.procedure ? `治疗量 ${formatCubeValue(metric.procedure)}` : "",
+            metric.market ? `市场规模 ${formatCubeValue(metric.market)}` : "",
+            metric.growth ? `增长 ${formatCubeValue(metric.growth)}` : "",
+          ].filter(Boolean).join(" · ") || "暂无区域级商业数值，先用国家层和来源状态补齐。";
+          return `
+            <article class="mi-region-card">
+              <div class="topline"><span>${esc(region.region)}</span><span>${esc(leadingLabel)}</span></div>
+              <h3>${esc(leadingValue)}</h3>
+              <div class="meta">
+                <span>${fmt(region.companies)} companies</span>
+                <span>${fmt(region.products)} products</span>
+                <span>${fmt(region.countryCount)} countries</span>
+                <span>${fmt(region.publicCount)} public</span>
+              </div>
+              <p>${esc(detail)}</p>
+            </article>
+          `;
+        }).join("") || `<article class="mi-region-card"><h3>暂无洲际结构</h3><p>当前快照没有区域聚合数据。</p></article>`;
+      }
+
+      const sourceGrid = document.getElementById("mi-region-source-grid");
+      if (sourceGrid) {
+        sourceGrid.innerHTML = regions.map(region => {
+          const source = regionSourceSummary(region.region);
+          const roleText = source.roles.map(row => dataRoleLabel(row.label)).join(" / ") || "来源待补";
+          return `
+            <article class="mi-region-card">
+              <div class="topline"><span>${esc(region.region)}</span><span>Source coverage</span></div>
+              <h3>${fmt(source.sources)} sources</h3>
+              <div class="meta">
+                <span>${fmt(source.records)} discovery rows</span>
+                <span>${fmt(source.files)} files</span>
+                <span>${fmt(region.fdaCompanies)} FDA-visible co.</span>
+              </div>
+              <p>${esc(roleText)}</p>
+            </article>
+          `;
+        }).join("") || `<article class="mi-region-card"><h3>暂无来源状态</h3><p>当前快照没有区域来源发现。</p></article>`;
+      }
+
+      const regionRows = document.getElementById("mi-region-country-rows");
+      if (regionRows) {
+        regionRows.innerHTML = regions.map(region => {
+          const countryRows = Array.from(countBy(geoCompanies.filter(company => company.region === region.region), company => companyCountry(company)), ([country, count]) => ({ country, count }))
+            .sort((a, b) => b.count - a.count || String(a.country).localeCompare(String(b.country)))
+            .slice(0, 5);
+          const statusBits = countryRows.map(row => {
+            const top = topCompanyCountries.find(item => canonicalCountry(item.sourceCountry || item.country) === row.country);
+            return top ? `${row.country}: ${coverageTierLabel(top.coverageTier)}` : `${row.country}: 待补来源`;
+          });
+          return `
+            <tr>
+              <td><strong>${esc(region.region)}</strong><br><span>${fmt(region.countryCount)} countries</span></td>
+              <td class="num">${fmt(region.companies)}</td>
+              <td class="num">${fmt(region.products)}</td>
+              <td>${countryRows.map(row => `${esc(countryDisplay(row.country))} ${fmt(row.count)}`).join("<br>")}</td>
+              <td>${statusBits.map(esc).join("<br>") || "—"}</td>
+            </tr>
+          `;
+        }).join("") || `<tr><td colspan="5">暂无洲际国家递进数据</td></tr>`;
+      }
+    }
+
+    function renderCountryLayer() {
+      const focusCountries = ["South Korea", "USA", "Italy", "France", "Switzerland", "Israel"];
+      const selectorRows = (topCompanyCountries.length ? topCompanyCountries.slice(0, 15).map(row => canonicalCountry(row.sourceCountry || row.country)) : focusCountries)
+        .filter((country, index, rows) => country && rows.indexOf(country) === index);
+      if (!selectorRows.includes(state.country)) state.country = selectorRows[0] || "South Korea";
+
+      const selector = document.getElementById("mi-country-selector");
+      if (selector) {
+        selector.innerHTML = selectorRows.map(country => `
+          <button type="button" data-country="${esc(country)}" class="${country === state.country ? "active" : ""}">${esc(countryZh[country] || country)}</button>
+        `).join("");
+        selector.querySelectorAll("[data-country]").forEach(button => {
+          button.addEventListener("click", () => {
+            state.country = button.getAttribute("data-country") || state.country;
+            renderCountryLayer();
+          });
+        });
+      }
+
+      const profileGrid = document.getElementById("mi-country-profile-grid");
+      if (profileGrid) {
+        profileGrid.innerHTML = focusCountries.map(country => {
+          const stats = countryStats(country);
+          const topNames = stats.topCompanies.map(row => row.company || row.name).filter(Boolean).join(" / ");
+          return `
+            <article class="mi-country-card ${stats.country === state.country ? "is-selected" : ""}">
+              <div class="topline"><span>${esc(stats.label)}</span><span>${esc(stats.region || "—")}</span></div>
+              <h3>${esc(segmentDisplay(stats.primaryTrack))}</h3>
+              <div class="value-row">
+                <span><strong>${fmt(stats.companyCount)}</strong>企业</span>
+                <span><strong>${fmt(stats.products)}</strong>产品</span>
+                <span><strong>${fmt(stats.fdaCompanies)}</strong>FDA 可见</span>
+              </div>
+              <div class="meta">
+                <span>${fmt(stats.publicCount)} public</span>
+                <span>${fmt(stats.productsPerCompany)} products/company</span>
+              </div>
+              <p>${esc(countryNotes[stats.country] || `${topNames || "公司清单"} 作为供给背景；商业判断继续看治疗量、收入和渠道覆盖。`)}</p>
+              ${topNames ? `<p>${esc(topNames)}</p>` : ""}
+            </article>
+          `;
+        }).join("");
+      }
+
+      const commercial = document.getElementById("mi-country-commercial-layers");
+      if (commercial) {
+        const rows = metricRowsForGeo(state.country, 8);
+        const maxValue = Math.max(1, ...rows.map(row => comparableValue(row)));
+        commercial.innerHTML = rows.map(row => {
+          const width = Math.max(4, Math.min(100, (comparableValue(row) / maxValue) * 100));
+          return `
+            <article class="mi-country-layer-item">
+              <div class="topline"><span>${esc(typeLabel(row.type))}</span><span>${esc(row.period || row.year || "—")}</span></div>
+              <h4>${esc(formatCubeValue(row))}</h4>
+              <div class="meta">
+                <span>${esc(segmentDisplay(metricSegment(row)))}</span>
+                <span>${esc(row.category || row.metric || "商业指标")}</span>
+              </div>
+              <div class="meter"><span style="--w:${width.toFixed(1)}%;"></span></div>
+              <p>${sourceButton(row.sourceDocumentId, row.source || row.sourceRoot || "来源")}</p>
+            </article>
+          `;
+        }).join("") || `<article class="mi-country-layer-item"><div class="topline"><span>${esc(countryDisplay(state.country))}</span><span>Commercial data</span></div><h4>暂无国家级数值</h4><p>当前国家还没有治疗量、销量、市场规模或增长指标，先用来源状态决定下一步采集。</p></article>`;
+      }
+
+      const sourceState = document.getElementById("mi-country-source-state");
+      if (sourceState) {
+        sourceState.innerHTML = sourceRowsForCountry(state.country).map(row => `
+          <article class="mi-country-layer-item">
+            <div class="topline"><span>${esc(row.label)}</span><span class="mi-pill ${esc(row.tone || "")}">${esc(row.status)}</span></div>
+            <h4>${esc(row.body || "来源待确认")}</h4>
+            <p>${esc(row.note || "按主干、候选和 proxy 分流。")}</p>
+          </article>
+        `).join("") || `<article class="mi-country-layer-item"><div class="topline"><span>${esc(countryDisplay(state.country))}</span><span>Source state</span></div><h4>暂无来源状态</h4><p>该国家尚未进入 Top 15 来源覆盖表。</p></article>`;
+      }
+      bindSourceButtons();
     }
 
     function renderInsights() {
@@ -2623,7 +3151,7 @@
               <td>${esc(row.acceptanceCheck || "—")}</td>
             </tr>
           `;
-        }).join("") || `<tr><td colspan="6">暂无国家来源抽取队列</td></tr>`;
+        }).join("") || `<tr><td colspan="6">暂无国家数据抽取队列</td></tr>`;
     }
 
     function renderFinancial() {
@@ -2776,7 +3304,7 @@
           return;
         }
         const block = section.getAttribute("data-mode-block");
-        section.hidden = mode !== "all" && block !== mode && block !== "all";
+        section.hidden = block !== mode;
       });
     }
 
@@ -2788,6 +3316,8 @@
 
     renderHero();
     renderAnalysis();
+    renderRegionLayer();
+    renderCountryLayer();
     renderMarket();
     renderGeoSources();
     renderFinancial();
@@ -2795,7 +3325,9 @@
     renderConflicts();
     renderSources();
     renderQueues();
-    setMode("all");
+    const requestedMode = new URLSearchParams(window.location.search).get("mode") || "all";
+    const validModes = new Set(["all", "region", "country", "market", "financial", "signals", "conflicts"]);
+    setMode(validModes.has(requestedMode) ? requestedMode : "all");
     hideBackstageBlocks();
   })();
 </script>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>赛道结构 · v3</title>
+<title>产品赛道 · v3</title>
 <link rel="icon" href="data:," />
 <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -17,12 +17,12 @@
   <main class="content">
 
     <section class="page-hero">
-      <div class="eyebrow-chip"><span class="dot"></span>Intelligence · Track structure</div>
+      <div class="eyebrow-chip"><span class="dot"></span>Intelligence · Product tracks</div>
       <h1>
-        赛道结构
-        <span class="h1-en">Track Structure</span>
+        产品赛道
+        <span class="h1-en">Product Tracks</span>
       </h1>
-      <p class="lede" id="track-hero-lede">942 款产品在 9 个商业 L1 × 56 个 L2 × 267 个技术分类上的真实分布 — 一张矩阵看清医美产业的「真」segmentation。<br><small style="opacity:0.65;font-style:italic;">Services 类已排除（独立准入机制 + 商业模式不同）。</small></p>
+      <p class="lede" id="track-hero-lede">942 款产品在 9 个 L1 × 56 个 L2 × 267 个技术/材料分类上的真实分布；这里负责产品材料、技术路径和注册线索，商业销量与治疗量统一放到“商业格局”。<br><small style="opacity:0.65;font-style:italic;">Services 类已排除（独立准入机制 + 商业模式不同）。</small></p>
       <div class="stat-row" id="track-stat-row">
         <span><span class="num" data-count-up="9">9</span> 个一级商业赛道 · <span class="num" data-count-up="56">56</span> 个二级</span>
         <span><span class="num" data-count-up="267">267</span> 个技术分类 · 跨 <span class="num" data-count-up="329">329</span> 家企业</span>
@@ -185,7 +185,7 @@
     </section>
 
     <div class="footnote">
-      <span id="track-footnote">v3 · 赛道结构 Track Structure · 942 products · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span id="track-footnote">v3 · 产品赛道 Product Tracks · 942 products · updated <span data-bind-text="generated_at_short">—</span></span>
       <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
     </div>
 
@@ -326,7 +326,7 @@
       `;
     }
     const foot = document.getElementById("track-footnote");
-    if (foot) foot.innerHTML = `v3 · 赛道结构 Track Structure · ${fmt(s.total_products)} products · updated <span data-bind-text="generated_at_short">—</span>`;
+    if (foot) foot.innerHTML = `v3 · 产品赛道 Product Tracks · ${fmt(s.total_products)} products · updated <span data-bind-text="generated_at_short">—</span>`;
     // numeric KPIs use count-up animation
     countUp(document.getElementById("kpi-total"), s.total_products);
     countUp(document.getElementById("kpi-l1"), s.l1_count);
