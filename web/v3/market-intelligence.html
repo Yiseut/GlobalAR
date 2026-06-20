@@ -32,7 +32,7 @@
         <button type="button" data-mode="region">洲际结构</button>
         <button type="button" data-mode="country">国家页面</button>
         <button type="button" data-mode="market">数据立方</button>
-        <button type="button" data-mode="financial">公司收入</button>
+        <button type="button" data-mode="financial">商业运营</button>
         <button type="button" data-mode="signals">日报信号</button>
         <button type="button" data-mode="conflicts">矛盾点</button>
       </div>
@@ -309,8 +309,8 @@
 
     <section class="block" data-mode-block="financial">
       <div class="section-head">
-        <h2>估值 × 商业热度</h2>
-        <span class="cn">· 上市公司象限</span><span class="en">Valuation vs market heat</span>
+        <h2>公司收入与商业运营</h2>
+        <span class="cn">· 上市公司收入层</span><span class="en">Revenue layer</span>
       </div>
       <div class="mi-analysis-grid">
         <article class="mi-panel mi-scatter-panel">
@@ -332,17 +332,37 @@
           <div class="mi-quadrants" id="mi-valuation-quadrants"></div>
         </article>
       </div>
+      <div class="mi-revenue-ops-grid">
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>上市公司收入口径</h3>
+              <p>把总收入、估值和医美 segment / revenue share 分开读；未披露的部分标为缺口，不做推断。</p>
+            </div>
+          </div>
+          <div class="mi-revenue-kpi-grid" id="mi-revenue-coverage-grid"></div>
+        </article>
+        <article class="mi-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>收入占比优先核验</h3>
+              <p>只保留对商业判断有用的优先公司：有上市主体、但医美收入占比或 segment 口径尚未明确。</p>
+            </div>
+          </div>
+          <div class="mi-revenue-priority-list" id="mi-revenue-priority-list"></div>
+        </article>
+      </div>
       <div class="mi-panel mi-wide-panel">
         <div class="mi-panel-head">
           <div>
-            <h3>公司收入层进度</h3>
-            <p>总收入、估值和 aesthetics segment 缺口分开看，不用总收入推断医美收入占比。</p>
+            <h3>上市公司收入表</h3>
+            <p>总收入、估值和医美 segment 缺口分开看；只展示可用于商业判断的上市公司收入状态。</p>
           </div>
         </div>
         <div class="mi-table-wrap">
           <table>
             <thead>
-              <tr><th>公司</th><th>收入层状态</th><th>收入年份</th><th class="num">收入</th><th>Segment 缺口</th></tr>
+              <tr><th>公司</th><th>收入状态</th><th>收入年份</th><th class="num">总收入</th><th>医美收入占比口径</th></tr>
             </thead>
             <tbody id="mi-revenue-progress-rows"></tbody>
           </table>
@@ -1496,6 +1516,72 @@
     font-size: 12px;
     line-height: 1.45;
   }
+  .mi-revenue-ops-grid {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.28fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .mi-revenue-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .mi-revenue-kpi,
+  .mi-revenue-priority {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: rgba(255,252,245,0.68);
+    min-width: 0;
+  }
+  .mi-revenue-kpi {
+    padding: 12px;
+  }
+  .mi-revenue-kpi strong {
+    display: block;
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .mi-revenue-kpi span {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .mi-revenue-priority-list {
+    display: grid;
+    gap: 8px;
+  }
+  .mi-revenue-priority {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.9fr) minmax(160px, 1.1fr) auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 12px;
+  }
+  .mi-revenue-priority strong {
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.3;
+  }
+  .mi-revenue-priority span {
+    color: var(--muted);
+    font-size: 11.5px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .mi-revenue-priority .tag {
+    justify-self: end;
+    color: var(--accent-2);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+  }
   .mi-signal-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1652,6 +1738,7 @@
   }
   @media (max-width: 1100px) {
     .mi-finance-grid,
+    .mi-revenue-ops-grid,
     .mi-signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 860px) {
@@ -1728,12 +1815,16 @@
     .mi-country-grid,
     .mi-geo-dashboard-grid,
     .mi-finance-grid,
+    .mi-revenue-ops-grid,
     .mi-signal-grid,
     .mi-source-grid,
     .mi-geo-source-grid,
     .mi-geo-summary { grid-template-columns: 1fr; }
     .mi-geo-kpi-grid,
+    .mi-revenue-kpi-grid,
+    .mi-revenue-priority,
     .mi-coverage-row { grid-template-columns: 1fr; }
+    .mi-revenue-priority .tag { justify-self: start; }
     .mi-method-strip span { white-space: normal; }
     .mi-head-row { align-items: flex-start; flex-direction: column; }
     .mi-filter-row { justify-content: flex-start; }
@@ -3155,6 +3246,7 @@
     }
 
     function renderFinancial() {
+      renderRevenueCoverage();
       document.getElementById("mi-finance-grid").innerHTML = financial.slice(0, 24).map(row => {
         const cap = row.marketCapUsdM == null ? "—" : moneyUsdM(row.marketCapUsdM);
         const rev = row.revenueUsdM == null ? "Revenue —" : `Revenue ${moneyUsdM(row.revenueUsdM)}`;
@@ -3170,13 +3262,14 @@
       }).join("") || `<div class="mi-queue-item"><strong>暂无财务快照</strong><span>当前快照未包含上市公司市场数据。</span></div>`;
       const revenueEl = document.getElementById("mi-revenue-progress-rows");
       if (revenueEl) {
-        revenueEl.innerHTML = companyRevenueProgress.slice(0, 36).map(row => {
+        const rows = revenueProgressRows();
+        revenueEl.innerHTML = rows.slice(0, 36).map(row => {
           const revenue = row.revenueUsdM == null ? "—" : moneyUsdM(row.revenueUsdM);
           const needsSegment = row.aestheticsSegmentStatus === "needs_aesthetics_segment_or_not_disclosed_review";
           return `
             <tr>
               <td><strong>${esc(row.company || "Unnamed")}</strong><br><span>${esc(row.stockCode || row.listingCountry || "—")}</span></td>
-              <td><span class="mi-status ${statusTone(row.revenueStatus)}">${esc(revenueStatusLabel(row.revenueStatus))}</span><br><span>${esc(row.responsibleModule || "")}</span></td>
+              <td><span class="mi-status ${statusTone(row.revenueStatus)}">${esc(revenueStatusLabel(row.revenueStatus))}</span><br><span>${esc(sourceLaneLabel(row.responsibleModule))}</span></td>
               <td>${esc(row.revenueYear || "—")}<br><span>${esc(row.financialReviewStatus || "")}</span></td>
               <td class="num">${esc(revenue)}</td>
               <td><span class="mi-status ${needsSegment ? "needs" : ""}">${esc(segmentStatusLabel(row.aestheticsSegmentStatus))}</span><br><span>${esc(row.segmentQueuePriority || row.expectedSource || "")}</span></td>
@@ -3185,6 +3278,69 @@
         }).join("") || `<tr><td colspan="5">暂无收入层进度记录</td></tr>`;
       }
       bindSourceButtons();
+    }
+
+    function revenueProgressRows() {
+      return companyRevenueProgress.slice().sort((a, b) => {
+        const an = a.aestheticsSegmentStatus === "needs_aesthetics_segment_or_not_disclosed_review" ? 0 : 1;
+        const bn = b.aestheticsSegmentStatus === "needs_aesthetics_segment_or_not_disclosed_review" ? 0 : 1;
+        return an - bn
+          || revenuePriorityRank(a.segmentQueuePriority) - revenuePriorityRank(b.segmentQueuePriority)
+          || Number(b.revenueUsdM || 0) - Number(a.revenueUsdM || 0)
+          || String(a.company || "").localeCompare(String(b.company || ""));
+      });
+    }
+
+    function renderRevenueCoverage() {
+      const tracked = companyRevenueProgress.length;
+      const withRevenue = companyRevenueProgress.filter(row => row.revenueUsdM != null).length;
+      const needsSegment = companyRevenueProgress.filter(row => row.aestheticsSegmentStatus === "needs_aesthetics_segment_or_not_disclosed_review");
+      const p1Needs = needsSegment.filter(row => row.segmentQueuePriority === "P1").length;
+      const segmentResolved = Math.max(0, tracked - needsSegment.length);
+      const kpis = [
+        { value: tracked, label: "上市公司/上市关联收入记录" },
+        { value: withRevenue, label: "已有总收入数值，不等同于医美收入" },
+        { value: tracked ? pct(segmentResolved / tracked) : "—", label: "segment 口径已明确或暂无缺口" },
+        { value: p1Needs, label: "P1 医美收入占比待核验" },
+      ];
+      const kpiEl = document.getElementById("mi-revenue-coverage-grid");
+      if (kpiEl) {
+        kpiEl.innerHTML = kpis.map(item => `
+          <div class="mi-revenue-kpi">
+            <strong>${esc(fmt(item.value))}</strong>
+            <span>${esc(item.label)}</span>
+          </div>
+        `).join("");
+      }
+      const priorityEl = document.getElementById("mi-revenue-priority-list");
+      if (priorityEl) {
+        priorityEl.innerHTML = needsSegment
+          .slice()
+          .sort((a, b) => revenuePriorityRank(a.segmentQueuePriority) - revenuePriorityRank(b.segmentQueuePriority)
+            || Number(b.revenueUsdM || 0) - Number(a.revenueUsdM || 0)
+            || String(a.company || "").localeCompare(String(b.company || "")))
+          .slice(0, 8)
+          .map(row => `
+            <div class="mi-revenue-priority">
+              <strong>${esc(row.company || "Unnamed")}<br><span>${esc(row.stockCode || row.listingCountry || "—")}</span></strong>
+              <span>${esc(row.expectedSource || "Company annual report / IR segment disclosure")}</span>
+              <span class="tag">${esc(row.segmentQueuePriority || "review")}</span>
+            </div>
+          `).join("") || `<div class="mi-revenue-priority"><strong>暂无明确缺口</strong><span>当前收入层没有需要单列展示的医美 segment 口径缺口。</span><span class="tag">OK</span></div>`;
+      }
+    }
+
+    function revenuePriorityRank(value) {
+      return ({ P1: 1, P2: 2, P3: 3 })[value] || 9;
+    }
+
+    function sourceLaneLabel(value) {
+      return ({
+        already_promoted_company_financial_metrics: "已进入公司财务层",
+        official_ir_or_exchange_filing_collector: "IR / exchange filing",
+        non_us_ir_annual_report_collector: "non-US annual report",
+        sec_xbrl_collector: "SEC XBRL",
+      })[value] || value || "来源待确认";
     }
 
     function renderSignals() {

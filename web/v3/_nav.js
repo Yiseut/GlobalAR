@@ -51,7 +51,6 @@
         { id: "market-intelligence", href: "./market-intelligence.html", zh: "商业格局", countKey: "commercial_claims" },
         { id: "custom-analysis", href: "./custom-analysis.html", zh: "自定义分析", count: "3 pivot" },
         { id: "deep",       href: "./deep-dive.html",        zh: "深度图谱", count: "L1·L2·L3" },
-        { id: "operations", href: "./operations.html",       zh: "运营视角", count: "backlog" },
       ],
     },
     {
