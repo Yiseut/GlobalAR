@@ -159,6 +159,38 @@
       <div class="mi-panel mi-wide-panel">
         <div class="mi-panel-head">
           <div>
+            <h3>渠道密度 proxy</h3>
+            <p>把 provider locator、医生 denominator 和协会入口统一成国家级覆盖表。</p>
+          </div>
+        </div>
+        <div class="mi-table-wrap">
+          <table>
+            <thead>
+              <tr><th>国家</th><th>Proxy 状态</th><th class="num">企业数</th><th>来源结构</th><th>下一步</th></tr>
+            </thead>
+            <tbody id="mi-channel-density-rows"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>欧洲候选 QA</h3>
+            <p>DGÄPC、SECPRE、AICPE/SICPRE 先判定 count/share/table，再决定是否进主干。</p>
+          </div>
+        </div>
+        <div class="mi-table-wrap">
+          <table>
+            <thead>
+              <tr><th>来源</th><th>文件/表格</th><th>QA 结论</th><th>主干处理</th><th>下一步</th></tr>
+            </thead>
+            <tbody id="mi-europe-qa-rows"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head">
+          <div>
             <h3>抽取队列</h3>
             <p>每个国家/地区来源对应的下一步动作和验收边界。</p>
           </div>
@@ -225,6 +257,22 @@
           </div>
           <div class="mi-quadrants" id="mi-valuation-quadrants"></div>
         </article>
+      </div>
+      <div class="mi-panel mi-wide-panel">
+        <div class="mi-panel-head">
+          <div>
+            <h3>公司收入层进度</h3>
+            <p>总收入、估值和 aesthetics segment 缺口分开看，不用总收入推断医美收入占比。</p>
+          </div>
+        </div>
+        <div class="mi-table-wrap">
+          <table>
+            <thead>
+              <tr><th>公司</th><th>收入层状态</th><th>收入年份</th><th class="num">收入</th><th>Segment 缺口</th></tr>
+            </thead>
+            <tbody id="mi-revenue-progress-rows"></tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -1530,6 +1578,10 @@
     const geoSourceDiscovery = Array.isArray(data.geoSourceDiscovery) ? data.geoSourceDiscovery : [];
     const geoSourceSummary = data.geoSourceSummary || {};
     const topCompanyCountries = Array.isArray(data.topCompanyCountries) ? data.topCompanyCountries : [];
+    const channelDensity = Array.isArray(data.channelDensityProxy) ? data.channelDensityProxy : [];
+    const europeMetricQa = Array.isArray(data.europeMetricQa) ? data.europeMetricQa : [];
+    const companyRevenueProgress = Array.isArray(data.companyRevenueProgress) ? data.companyRevenueProgress : [];
+    const nextStepCompletion = Array.isArray(data.nextStepCompletion) ? data.nextStepCompletion : [];
     const queues = data.reviewQueues || {};
     const validation = data.validation || {};
     const analysis = data.analysis || {};
@@ -1600,6 +1652,12 @@
       if (Math.abs(n) >= 1000000) return `${fmt(n / 1000000)}M`;
       if (Math.abs(n) >= 1000) return `${fmt(n / 1000)}K`;
       return fmt(n);
+    };
+    const moneyUsdM = (value) => {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "—";
+      if (Math.abs(n) >= 1000) return `$${fmt(n / 1000)}B`;
+      return `$${fmt(n)}M`;
     };
     const pct = (value) => {
       const n = Number(value);
@@ -1679,6 +1737,30 @@
       source_discovered: "proxy",
       gap: "context"
     })[value] || "";
+    const proxyStatusLabel = value => ({
+      provider_locator_available: "已有 locator",
+      doctor_denominator_available: "已有医生分母",
+      association_entry_only: "协会入口",
+      source_discovered_needs_enrichment: "待 enrichment",
+      gap: "暂缺"
+    })[value] || value || "待确认";
+    const mainlineDecisionLabel = value => ({
+      hold_from_mainline: "暂不进主干",
+      hold_for_manual_text_qa: "手动 QA 后再定",
+      hold_until_primary_table_source: "等主表来源",
+      do_not_promote_as_new_source: "不作为新主干"
+    })[value] || value || "待确认";
+    const revenueStatusLabel = value => ({
+      total_revenue_promoted: "总收入已入库",
+      ready_to_collect: "待抓年报/IR",
+      promoted_to_companies: "已入公司财务层",
+      not_in_revenue_plan: "segment 队列补充",
+      needs_sec_cik: "待补 CIK"
+    })[value] || value || "待确认";
+    const segmentStatusLabel = value => ({
+      needs_aesthetics_segment_or_not_disclosed_review: "需 segment / not-disclosed 复核",
+      no_current_segment_gap: "暂无 segment 缺口"
+    })[value] || value || "待确认";
     const phaseLabel = value => ({
       1: "治疗数量",
       2: "公司收入",
@@ -2489,6 +2571,41 @@
         }).join("") || `<tr><td colspan="5">暂无 Top 15 覆盖数据</td></tr>`;
       }
 
+      const channelEl = document.getElementById("mi-channel-density-rows");
+      if (channelEl) {
+        channelEl.innerHTML = channelDensity.map(row => {
+          const tone = coverageTierTone(row.coverageTier);
+          const sourceBits = [
+            `${fmt(row.providerLocatorSources || 0)} locator`,
+            `${fmt(row.doctorDenominatorSources || 0)} denominator`,
+            `${fmt(row.associationEntrySources || 0)} association`,
+            `${fmt(row.downloadedArtifacts || 0)} files`,
+          ];
+          return `
+            <tr>
+              <td><strong>#${esc(row.rank)} ${esc(row.country)}</strong><br><span>${esc(row.sourceCountry || row.country)}</span></td>
+              <td><span class="mi-pill ${esc(tone)}">${esc(proxyStatusLabel(row.proxyStatus))}</span><br><span>${esc(coverageTierLabel(row.coverageTier))}</span></td>
+              <td class="num">${fmt(row.companyCount || 0)}</td>
+              <td><strong>${esc((row.sourceNames || []).slice(0, 2).join(" / ") || "暂无")}</strong><br><span>${esc(sourceBits.join(" · "))}</span></td>
+              <td>${esc(row.nextAction || "—")}</td>
+            </tr>
+          `;
+        }).join("") || `<tr><td colspan="5">暂无渠道密度 proxy 表</td></tr>`;
+      }
+
+      const europeEl = document.getElementById("mi-europe-qa-rows");
+      if (europeEl) {
+        europeEl.innerHTML = europeMetricQa.map(row => `
+          <tr>
+            <td><strong>${esc(row.country || "Europe")}</strong><br><span>${esc(row.sourceName || row.sourceId)}</span></td>
+            <td>${fmt(row.downloadedFiles || 0)} files · ${fmt(row.pdfTablesDetected || 0)} tables<br><span>${esc((row.yearsFound || []).slice(0, 6).join(", ") || "year n/a")}</span></td>
+            <td><strong>${esc(row.countStatus || "—")}</strong><br><span>${esc(row.tableStatus || "")}</span></td>
+            <td><span class="mi-status needs">${esc(mainlineDecisionLabel(row.mainlineDecision))}</span><br><span>${esc(row.promotionAllowed === "yes" ? "可入主干" : "不直接入主干")}</span></td>
+            <td>${esc(row.nextAction || "—")}</td>
+          </tr>
+        `).join("") || `<tr><td colspan="5">暂无欧洲 QA 记录</td></tr>`;
+      }
+
       document.getElementById("mi-geo-backlog-rows").innerHTML = sourceTasks
         .slice()
         .sort((a, b) => (a.phase - b.phase) || (a.priority - b.priority) || String(a.sourceId).localeCompare(String(b.sourceId)))
@@ -2511,8 +2628,8 @@
 
     function renderFinancial() {
       document.getElementById("mi-finance-grid").innerHTML = financial.slice(0, 24).map(row => {
-        const cap = row.marketCapUsdM == null ? "—" : `$${compact(row.marketCapUsdM)}M`;
-        const rev = row.revenueUsdM == null ? "Revenue —" : `Revenue $${compact(row.revenueUsdM)}M`;
+        const cap = row.marketCapUsdM == null ? "—" : moneyUsdM(row.marketCapUsdM);
+        const rev = row.revenueUsdM == null ? "Revenue —" : `Revenue ${moneyUsdM(row.revenueUsdM)}`;
         return `
           <article class="mi-finance-card">
             <div class="top"><span>${esc(row.stock || row.exchange || "Listed")}</span><span>${esc(row.period || "—")}</span></div>
@@ -2523,6 +2640,22 @@
           </article>
         `;
       }).join("") || `<div class="mi-queue-item"><strong>暂无财务快照</strong><span>当前快照未包含上市公司市场数据。</span></div>`;
+      const revenueEl = document.getElementById("mi-revenue-progress-rows");
+      if (revenueEl) {
+        revenueEl.innerHTML = companyRevenueProgress.slice(0, 36).map(row => {
+          const revenue = row.revenueUsdM == null ? "—" : moneyUsdM(row.revenueUsdM);
+          const needsSegment = row.aestheticsSegmentStatus === "needs_aesthetics_segment_or_not_disclosed_review";
+          return `
+            <tr>
+              <td><strong>${esc(row.company || "Unnamed")}</strong><br><span>${esc(row.stockCode || row.listingCountry || "—")}</span></td>
+              <td><span class="mi-status ${statusTone(row.revenueStatus)}">${esc(revenueStatusLabel(row.revenueStatus))}</span><br><span>${esc(row.responsibleModule || "")}</span></td>
+              <td>${esc(row.revenueYear || "—")}<br><span>${esc(row.financialReviewStatus || "")}</span></td>
+              <td class="num">${esc(revenue)}</td>
+              <td><span class="mi-status ${needsSegment ? "needs" : ""}">${esc(segmentStatusLabel(row.aestheticsSegmentStatus))}</span><br><span>${esc(row.segmentQueuePriority || row.expectedSource || "")}</span></td>
+            </tr>
+          `;
+        }).join("") || `<tr><td colspan="5">暂无收入层进度记录</td></tr>`;
+      }
       bindSourceButtons();
     }
 

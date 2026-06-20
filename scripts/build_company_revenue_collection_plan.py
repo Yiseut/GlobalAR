@@ -34,7 +34,7 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 def write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8-sig", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({field: row.get(field, "") for field in fieldnames})
@@ -146,7 +146,7 @@ def run() -> int:
     for module, count in by_module.most_common():
         lines.append(f"- {module}: {count}")
     lines.extend(["", "## File", "", f"- Plan CSV: `{OUTPUT_CSV}`"])
-    OUTPUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    OUTPUT_MD.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 
     print(
         json.dumps(

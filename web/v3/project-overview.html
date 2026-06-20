@@ -131,13 +131,8 @@
           <div class="pillar-grid" id="overviewRecent"></div>
         </article>
         <article class="overview-panel">
-          <h2>下一步</h2>
-          <div class="pillar-grid">
-            <div class="pillar-card"><strong>美国协会口径加厚</strong><span>抽 ASPS 2024 average fee / regional split，再回填 ASPS 2020、2022、2023 procedure trend。</span></div>
-            <div class="pillar-card"><strong>欧洲候选 QA</strong><span>对 DGÄPC、SECPRE、AICPE/SICPRE 做 count/share/table QA，能进主干的才抽数。</span></div>
-            <div class="pillar-card"><strong>渠道密度表</strong><span>把 Top 15 国家 provider locator、医生 denominator 和协会入口统一成国家/城市级 proxy 表。</span></div>
-            <div class="pillar-card"><strong>公司收入层</strong><span>继续补 SEC、DART、EDINET、IR 报告中的 aesthetics segment 和 region revenue。</span></div>
-          </div>
+          <h2>本轮落地</h2>
+          <div class="pillar-grid" id="overviewCompletion"></div>
         </article>
       </div>
     </section>
@@ -149,12 +144,21 @@
 <script src="./_nav.js" data-active="project-overview"></script>
 <script>
   (function () {
+    const market = window.V3_MARKET_INTELLIGENCE_DATA || {};
+    const completion = Array.isArray(market.nextStepCompletion) ? market.nextStepCompletion : [];
+    const esc = value => String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#039;" }[ch]));
     document.getElementById("overviewRecent").innerHTML = [
       ["ISAPS 主干", "2020-2024 已接入国家-年份-赛道时间轴，治疗数量和医生数量分开建模。"],
-      ["ASPS 2024", "美国 procedure trend 已抽取为独立协会口径，后续补费用和区域拆分。"],
-      ["Top 15 国家覆盖", "企业数量前 15 的国家/地区均已有官方或协会来源入口。"],
-      ["商业格局页", "已新增覆盖 KPI、Top 15 条形图、筛选器和优先行动队列。"],
-    ].map(([title, note]) => `<div class="pillar-card"><strong>${title}</strong><span>${note}</span></div>`).join("");
+      ["ASPS 深挖", "美国 ASPS 已扩成 2020、2022、2023、2024 时间轴，并接入 2024 费用和区域拆分。"],
+      ["Top 15 国家覆盖", "企业数量前 15 的国家/地区已拆成治疗量、QA、渠道密度和需求 context。"],
+      ["商业格局页", "已新增渠道密度、欧洲 QA 和公司收入层进度表。"],
+    ].map(([title, note]) => `<div class="pillar-card"><strong>${esc(title)}</strong><span>${esc(note)}</span></div>`).join("");
+    document.getElementById("overviewCompletion").innerHTML = completion.map(row => `
+      <div class="pillar-card">
+        <strong>${esc(row.frontstageLabel || row.workstream)}</strong>
+        <span>${esc(row.note || row.status)} · ${esc(row.rows || 0)} rows</span>
+      </div>
+    `).join("") || `<div class="pillar-card"><strong>数据层已更新</strong><span>已生成 ASPS、欧洲 QA、渠道密度和公司收入层 CSV。</span></div>`;
   })();
 </script>
 </body>

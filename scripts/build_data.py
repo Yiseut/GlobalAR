@@ -101,6 +101,11 @@ DATA_QUALITY_BACKLOG_SUMMARY_PATH = DATA_DIR / "audits" / "data_quality_backlog_
 ENTITY_RESOLUTION_REVIEW_QUEUE_PATH = DATA_DIR / "audits" / "entity_resolution_review_queue_latest.csv"
 REGISTRATION_REVIEW_QUEUE_PATH = DATA_DIR / "audits" / "registration_review_queue_latest.csv"
 AESTHETICS_REVENUE_QUEUE_PATH = DATA_DIR / "audits" / "aesthetics_revenue_pct_collection_queue_latest.csv"
+ASPS_EXTRACTION_STATUS_PATH = DATA_DIR / "audits" / "asps_official_stats_extraction_status_latest.csv"
+EUROPE_METRIC_QA_PATH = DATA_DIR / "audits" / "europe_metric_qa_latest.csv"
+COMMERCIAL_CHANNEL_DENSITY_PROXY_PATH = DATA_DIR / "commercial_channel_density_proxy.csv"
+COMPANY_REVENUE_LAYER_PROGRESS_PATH = DATA_DIR / "audits" / "company_revenue_layer_progress_latest.csv"
+COMMERCIAL_NEXT_STEP_COMPLETION_PATH = DATA_DIR / "audits" / "commercial_next_step_completion_latest.csv"
 COMMERCIAL_SOURCE_ROOTS = [
     {"label": "commercial_acquired_sources", "path": DATA_DIR / "commercial_sources"},
     {"label": "local_report_notes", "path": SOURCE_DIR / "行业报告"},
@@ -7991,6 +7996,10 @@ def build_v3_market_intelligence_payload(
     collection_backlog: list[dict[str, Any]] | None = None,
     geo_source_discovery: list[dict[str, Any]] | None = None,
     companies: list[dict[str, Any]] | None = None,
+    channel_density_proxy: list[dict[str, Any]] | None = None,
+    europe_metric_qa: list[dict[str, Any]] | None = None,
+    company_revenue_progress: list[dict[str, Any]] | None = None,
+    next_step_completion: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     def analysis_segment(value: Any) -> str:
         text = norm(value).lower()
@@ -8489,6 +8498,86 @@ def build_v3_market_intelligence_payload(
             "note": row.get("note"),
         }
 
+    def split_semicolon(value: Any) -> list[str]:
+        return [part for part in (norm(item) for item in norm(value).split(";")) if part]
+
+    def channel_density_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "rank": safe_int(row.get("rank")),
+            "country": row.get("country"),
+            "sourceCountry": row.get("source_country"),
+            "companyCount": safe_int(row.get("company_count")),
+            "coverageTier": row.get("coverage_tier"),
+            "proxyStatus": row.get("proxy_status"),
+            "sourceCount": safe_int(row.get("source_count")),
+            "discoveryRecordCount": safe_int(row.get("discovery_record_count")),
+            "downloadedArtifacts": safe_int(row.get("downloaded_artifacts")),
+            "providerLocatorSources": safe_int(row.get("provider_locator_sources")),
+            "doctorDenominatorSources": safe_int(row.get("doctor_denominator_sources")),
+            "associationEntrySources": safe_int(row.get("association_entry_sources")),
+            "distributorOrChannelSources": safe_int(row.get("distributor_or_channel_sources")),
+            "dataRoles": split_semicolon(row.get("data_roles")),
+            "sourceIds": split_semicolon(row.get("source_ids")),
+            "sourceNames": split_semicolon(row.get("source_names")),
+            "nextAction": row.get("next_action"),
+            "capturedAt": row.get("captured_at"),
+        }
+
+    def europe_qa_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "sourceId": row.get("source_id"),
+            "country": row.get("country"),
+            "sourceName": row.get("source_name"),
+            "sourceFamily": row.get("source_family"),
+            "authorityTier": row.get("authority_tier"),
+            "records": safe_int(row.get("records")),
+            "downloadedFiles": safe_int(row.get("downloaded_files")),
+            "artifactMix": row.get("artifact_mix"),
+            "yearsFound": split_semicolon(row.get("years_found")),
+            "pdfPagesInspected": safe_int(row.get("pdf_pages_inspected")),
+            "pdfTablesDetected": safe_int(row.get("pdf_tables_detected")),
+            "countStatus": row.get("count_status"),
+            "shareStatus": row.get("share_status"),
+            "tableStatus": row.get("table_status"),
+            "mainlineDecision": row.get("mainline_decision"),
+            "promotionAllowed": row.get("promotion_allowed"),
+            "sourceFiles": split_semicolon(row.get("source_files")),
+            "nextAction": row.get("next_action"),
+            "acceptanceCheck": row.get("acceptance_check"),
+            "capturedAt": row.get("captured_at"),
+        }
+
+    def revenue_progress_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "companyId": row.get("company_id"),
+            "company": row.get("company"),
+            "stockCode": row.get("stock_code"),
+            "listingCountry": row.get("listing_country"),
+            "responsibleModule": row.get("responsible_module"),
+            "revenueStatus": row.get("revenue_status"),
+            "aestheticsSegmentStatus": row.get("aesthetics_segment_status"),
+            "revenueYear": safe_int(row.get("revenue_year")) or row.get("revenue_year"),
+            "revenueUsdM": safe_float(row.get("revenue_usd_m")),
+            "grossMarginPct": safe_float(row.get("gross_margin_pct")),
+            "financialReviewStatus": row.get("financial_review_status"),
+            "segmentQueuePriority": row.get("segment_queue_priority"),
+            "expectedSource": row.get("expected_source"),
+            "sourceUrl": row.get("source_url"),
+            "nextAction": row.get("next_action"),
+            "capturedAt": row.get("captured_at"),
+        }
+
+    def completion_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "workstream": row.get("workstream"),
+            "status": row.get("status"),
+            "output": row.get("output"),
+            "rows": safe_int(row.get("rows")),
+            "frontstageLabel": row.get("frontstage_label"),
+            "note": row.get("note"),
+            "capturedAt": row.get("captured_at"),
+        }
+
     def canonical_company_country(value: Any) -> str:
         text = norm(value)
         aliases = {
@@ -8633,6 +8722,10 @@ def build_v3_market_intelligence_payload(
             "countriesList": sorted(geo_countries),
         },
         "topCompanyCountries": build_top_company_country_coverage(),
+        "channelDensityProxy": [channel_density_item(row) for row in (channel_density_proxy or [])],
+        "europeMetricQa": [europe_qa_item(row) for row in (europe_metric_qa or [])],
+        "companyRevenueProgress": [revenue_progress_item(row) for row in (company_revenue_progress or [])],
+        "nextStepCompletion": [completion_item(row) for row in (next_step_completion or [])],
         "reviewQueues": commercial.get("review_queues", {}),
         "validation": commercial.get("validation", {}),
     }
@@ -11013,6 +11106,11 @@ def build_snapshot(
     commercial_data_source_registry = load_audit_csv(COMMERCIAL_DATA_SOURCE_REGISTRY_PATH)
     commercial_data_collection_backlog = load_audit_csv(COMMERCIAL_DATA_COLLECTION_BACKLOG_PATH)
     commercial_geo_source_discovery = load_audit_csv(COMMERCIAL_GEO_SOURCE_DISCOVERY_PATH)
+    asps_extraction_status = load_audit_csv(ASPS_EXTRACTION_STATUS_PATH)
+    europe_metric_qa = load_audit_csv(EUROPE_METRIC_QA_PATH)
+    commercial_channel_density_proxy = load_generated_csv(COMMERCIAL_CHANNEL_DENSITY_PROXY_PATH)
+    company_revenue_layer_progress = load_audit_csv(COMPANY_REVENUE_LAYER_PROGRESS_PATH)
+    commercial_next_step_completion = load_audit_csv(COMMERCIAL_NEXT_STEP_COMPLETION_PATH)
     verification_queue = build_verification_queue(company_master)
     staging_records = load_staging_records()
     company_background_evidence = load_company_background_evidence()
@@ -11522,6 +11620,11 @@ def build_snapshot(
             "commercial_trusted_signals": commercial_intelligence["summary"].get("briefingSignals", 0),
             "commercial_data_source_registry": len(commercial_data_source_registry),
             "commercial_data_collection_backlog": len(commercial_data_collection_backlog),
+            "asps_extraction_status": len(asps_extraction_status),
+            "europe_metric_qa": len(europe_metric_qa),
+            "commercial_channel_density_proxy": len(commercial_channel_density_proxy),
+            "company_revenue_layer_progress": len(company_revenue_layer_progress),
+            "commercial_next_step_completion": len(commercial_next_step_completion),
             "reports": len(reports),
             "public_companies": len(public_companies),
             "indication_signals": sum(global_indication_counter.values()),
@@ -11646,6 +11749,10 @@ def build_snapshot(
             commercial_data_collection_backlog,
             commercial_geo_source_discovery,
             companies,
+            commercial_channel_density_proxy,
+            europe_metric_qa,
+            company_revenue_layer_progress,
+            commercial_next_step_completion,
         ),
         "verification_workbench": {
             "policy": "official-source precedence: regulator records for registration facts; company official pages/IFU for product facts; secondary media for cross-check only",
