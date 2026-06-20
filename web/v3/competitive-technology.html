@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>竞品与替代技术 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .ct-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 16px;
+  }
+  .ct-lens-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .ct-lens {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: rgba(255,252,245,0.72);
+    padding: 14px 16px;
+    min-width: 0;
+  }
+  .ct-lens strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .ct-lens span {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .ct-matrix {
+    display: grid;
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface-2);
+  }
+  .ct-cell {
+    min-height: 42px;
+    padding: 8px 7px;
+    border-right: 1px solid var(--hairline-2);
+    border-bottom: 1px solid var(--hairline-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--ink-2);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+  }
+  .ct-cell.head {
+    background: var(--surface);
+    color: var(--ink);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .ct-cell.row-head {
+    justify-content: flex-start;
+    text-align: left;
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 12.5px;
+    background: rgba(255,252,245,0.86);
+  }
+  .ct-cell.val {
+    background:
+      linear-gradient(135deg, rgba(184,89,87, calc(var(--v, 0) * 0.55)), rgba(107,90,117, calc(var(--v, 0) * 0.28))),
+      var(--surface-2);
+    color: var(--ink);
+  }
+  .ct-cell.zero {
+    color: var(--subtle);
+    opacity: 0.46;
+  }
+  @media (max-width: 1100px) {
+    .ct-grid,
+    .ct-lens-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="市场策略导航"></aside>
+
+  <main class="content">
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>Competitors · Technology alternatives</div>
+      <h1>
+        竞品与替代技术
+        <span class="h1-en">Competitors And Technology Alternatives</span>
+      </h1>
+      <p class="lede">把材料、能量源和技术族放回市场问题里阅读：同一适应症或治疗目标下，哪些材料、设备和联合方案在互相替代。</p>
+      <div class="stat-row" id="ct-stat-row">
+        <span>技术 / 材料 <span class="num">—</span></span>
+        <span>技术族 <span class="num">—</span></span>
+        <span>Top 技术 <span class="num">—</span></span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>策略问题视角</h2>
+        <span class="cn">· 不按后台维度拆页</span><span class="en">Market question lenses</span>
+      </div>
+      <div class="ct-lens-grid">
+        <article class="ct-lens"><strong>容量与轮廓</strong><span>HA、胶原、CaHA、PLLA/PCL 与埋线之间的定位和价格带替代。</span></article>
+        <article class="ct-lens"><strong>肤质改善</strong><span>Skin booster、中胚层、PN/PDRN、外泌体、微针和光电联合治疗。</span></article>
+        <article class="ct-lens"><strong>紧致与抗衰</strong><span>RF、HIFU、激光、肉毒和生物刺激剂之间的非手术抗衰组合。</span></article>
+        <article class="ct-lens"><strong>研发组合</strong><span>看技术成熟度、平台化程度和跨赛道扩张空间，推导产品线方向。</span></article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>材料 / 能量技术族</h2>
+        <span class="cn">· 材料与能量来源</span><span class="en">Material and energy families</span>
+      </div>
+      <div class="tech-family-grid" id="ct-family-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>替代技术矩阵</h2>
+        <span class="cn">· 技术 × 产品赛道</span><span class="en">Technology × product track</span>
+      </div>
+      <div class="ct-grid">
+        <article class="chart-card">
+          <div class="chart-title">每种技术服务于哪些产品赛道</div>
+          <div class="chart-sub">跨赛道技术更像平台能力，单赛道技术更像专精资产；这张图用于判断竞品替代边界。</div>
+          <div class="ct-matrix" id="ct-matrix"></div>
+        </article>
+        <article class="chart-card">
+          <div class="chart-title">Top 15 技术 / 材料</div>
+          <div class="chart-sub">产品数、公司数和主服务赛道共同决定一个技术的竞争拥挤度。</div>
+          <div class="tech-rank-list" id="ct-tech-rank"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>技术成熟度</h2>
+        <span class="cn">· 新兴 / 成熟 / 遗留 / 待验证</span><span class="en">Maturity</span>
+      </div>
+      <div class="maturity-grid" id="ct-maturity-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>竞品含义</h2>
+        <span class="cn">· 三组读法</span><span class="en">Interpretation</span>
+      </div>
+      <div class="editorial-row" id="ct-finding-cards"></div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 竞品与替代技术 · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260616"></script>
+<script src="./v3-technology.js?v=20260616"></script>
+<script src="./_nav.js" data-active="competitive-technology"></script>
+<script>
+  (function () {
+    const app = window.GLOBAL_AESTHETICS_DATA || {};
+    const data = window.V3_TECHNOLOGY_DATA || {};
+    const summary = data.summary || {};
+    const fmt = value => typeof value === "number" ? value.toLocaleString("en-US") : (value || "—");
+    const esc = value => String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" })[ch]);
+    const colors = {
+      "EBD":"#8E3A3A",
+      "Injectables":"#6B5A75",
+      "Skincare":"#D9AE91",
+      "Regenerative":"#A8B59A",
+      "Consumables":"#5A6878",
+      "Implants":"#CFB58E",
+      "Diagnostics":"#C76B68",
+      "Surgical":"#8C7B91",
+      "Pharma":"#EC9B73",
+    };
+    const displayL1 = value => value === "Skincare" ? "Skin Health" : value;
+
+    if (app.generated_at) {
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => {
+        el.textContent = app.generated_at.slice(0, 10).replace(/-/g, "·");
+      });
+    }
+
+    const stat = document.getElementById("ct-stat-row");
+    if (stat) {
+      stat.innerHTML = `
+        <span><span class="num" data-count-up="${summary.total_techs || 0}">${fmt(summary.total_techs)}</span> 种技术 / 材料</span>
+        <span><span class="num" data-count-up="${summary.total_families || 0}">${fmt(summary.total_families)}</span> 个技术族</span>
+        <span>${esc(summary.top_tech || "—")} <span class="num" data-count-up="${summary.top_tech_n || 0}">${fmt(summary.top_tech_n)}</span> 款产品</span>
+      `;
+    }
+
+    const familyEl = document.getElementById("ct-family-grid");
+    if (familyEl) {
+      familyEl.innerHTML = (data.family_rollup || []).map(family => {
+        const members = (family.members || []).slice(0, 5).map(member => `
+          <div class="fam-row"><span class="nm">${esc(member.name)}</span><span class="n">${fmt(member.n)}</span></div>
+        `).join("");
+        const chips = (family.top_l1 || []).slice(0, 3).map(row => `
+          <span class="l1-chip" style="--c:${colors[row.l1] || "#888"};"><span class="sw"></span>${esc(displayL1(row.l1))} · ${fmt(row.n)}</span>
+        `).join("");
+        return `
+          <article class="tech-family-card" style="--family-color:${esc(family.color || "#8E3A3A")};">
+            <div class="fam-head"><h4>${esc(family.family)}</h4><span class="ttl">${fmt(family.n_products)}</span></div>
+            <div class="fam-meta"><span>${fmt(family.n_techs)} techs · ${fmt(family.n_companies)} companies</span></div>
+            <div class="fam-members">${members}</div>
+            <div class="fam-l1-chips">${chips}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    const matrix = data.tech_x_l1 || { columns: [], rows: [] };
+    const matrixEl = document.getElementById("ct-matrix");
+    if (matrixEl) {
+      const cols = matrix.columns || [];
+      const rows = matrix.rows || [];
+      const max = Math.max(1, ...rows.flatMap(row => Object.values(row.values || {})));
+      matrixEl.style.gridTemplateColumns = `170px repeat(${cols.length}, minmax(54px, 1fr)) 64px`;
+      matrixEl.innerHTML = `
+        <div class="ct-cell head">技术</div>
+        ${cols.map(col => `<div class="ct-cell head">${esc(displayL1(col))}</div>`).join("")}
+        <div class="ct-cell head">Total</div>
+        ${rows.map(row => `
+          <div class="ct-cell row-head">${esc(row.tech)}</div>
+          ${cols.map(col => {
+            const value = Number((row.values || {})[col] || 0);
+            return `<div class="ct-cell ${value ? "val" : "zero"}" style="--v:${(value / max).toFixed(2)};">${value || "—"}</div>`;
+          }).join("")}
+          <div class="ct-cell val" style="--v:${(Number(row.total || 0) / max).toFixed(2)};">${fmt(row.total)}</div>
+        `).join("")}
+      `;
+    }
+
+    const rankEl = document.getElementById("ct-tech-rank");
+    if (rankEl) {
+      const techs = data.top_techs || [];
+      const max = Math.max(1, ...techs.map(row => row.n_products || 0));
+      rankEl.innerHTML = techs.map((row, index) => {
+        const topTrack = ((row.top_l1 || [])[0] || {}).l1 || "EBD";
+        const color = colors[topTrack] || "#8E3A3A";
+        const width = Math.max(3, ((row.n_products || 0) / max) * 100);
+        return `
+          <div class="ind-rank-row" style="--bar-color:${color};">
+            <span class="rank">${String(index + 1).padStart(2, "0")}</span>
+            <span class="name">${esc(row.tech)}</span>
+            <div class="bar-wrap"><div class="bar-fill" style="width:${width.toFixed(1)}%;"></div></div>
+            <span class="stats"><span class="n">${fmt(row.n_products)}</span><small>${fmt(row.n_companies)} co · ${esc(displayL1(topTrack))}</small></span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    const maturityEl = document.getElementById("ct-maturity-grid");
+    if (maturityEl) {
+      const buckets = [
+        { key: "emerging", label: "新兴", en: "Emerging", desc: "新近进入商业化或证据仍在积累", color: "#A8B59A" },
+        { key: "established", label: "成熟", en: "Established", desc: "已形成稳定产品和公司供给", color: "#6B5A75" },
+        { key: "legacy", label: "遗留", en: "Legacy", desc: "仍可见但增长动能偏弱", color: "#CFB58E" },
+        { key: "unverified", label: "待验证", en: "Unverified", desc: "需要继续补官方或临床证据", color: "#5A6878" },
+      ];
+      maturityEl.innerHTML = buckets.map(bucket => {
+        const items = (data.maturity || {})[bucket.key] || [];
+        return `
+          <article class="maturity-card" style="--mat-color:${bucket.color};">
+            <div class="mat-head"><span class="label">${bucket.label}</span><span class="en">${bucket.en}</span><span class="ttl">${fmt(items.length)}</span></div>
+            <div class="mat-desc">${bucket.desc}</div>
+            <div class="mat-chips">${items.map(item => `<span class="tech-chip">${esc(item)}</span>`).join("") || `<span class="tech-chip">—</span>`}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    const findingEl = document.getElementById("ct-finding-cards");
+    if (findingEl) {
+      findingEl.innerHTML = (data.findings || []).map(finding => `
+        <article class="editorial-block has-wash ${esc(finding.wash || "w-rose")} wash-bottom-left">
+          <span class="stamp">${esc(finding.stamp || "Finding")}</span>
+          <div class="lead">${finding.lead || ""}</div>
+          <div class="num-pair"><span class="num">${esc((finding.num_pair || {}).num || "—")}</span><span class="unit">${esc((finding.num_pair || {}).unit || "")}</span></div>
+          <div class="body">${finding.body || ""}</div>
+        </article>
+      `).join("");
+    }
+  })();
+</script>
+</body>
+</html>

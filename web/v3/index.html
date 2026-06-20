@@ -8,159 +8,200 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
 <link rel="stylesheet" href="./styles.css?v=20260613-stack-pct" />
 <style>
-  .overview-track-grid {
+  .overview-sunburst-card {
+    overflow: visible;
+  }
+  .overview-sunburst-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.96fr);
-    gap: 16px;
+    grid-template-columns: minmax(360px, 0.9fr) minmax(340px, 1.1fr);
+    gap: 24px;
+    align-items: center;
     margin-top: 16px;
   }
-  .overview-track-grid:first-of-type {
-    margin-top: 0;
-  }
-  .overview-track-kpis {
+  .overview-sunburst-stage {
+    position: relative;
+    min-height: 480px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    place-items: center;
   }
-  .overview-track-kpi {
+  .overview-sunburst-svg {
+    width: min(100%, 580px);
+    aspect-ratio: 1;
+    overflow: visible;
+  }
+  .overview-sunburst-arc {
+    cursor: pointer;
+    stroke: rgba(253,250,242,0.94);
+    stroke-width: 1.15;
+    transition: opacity 0.16s ease, filter 0.16s ease;
+  }
+  .overview-sunburst-arc:hover,
+  .overview-sunburst-arc.is-active {
+    filter: drop-shadow(0 8px 12px rgba(62,51,58,0.18));
+    opacity: 1;
+  }
+  .overview-sunburst-center .big {
+    fill: var(--ink);
+    font-family: var(--f-display);
+    font-size: 38px;
+    font-style: italic;
+  }
+  .overview-sunburst-center .small {
+    fill: var(--muted);
+    font-family: var(--f-mono);
+    font-size: 8.5px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+  }
+  .overview-sunburst-tooltip {
+    position: fixed;
+    z-index: 80;
+    max-width: 270px;
+    pointer-events: none;
     border: 1px solid var(--hairline-2);
     border-radius: 8px;
-    background: rgba(255,252,245,0.7);
-    padding: 12px;
+    background: rgba(255,252,245,0.97);
+    box-shadow: 0 16px 34px rgba(62,51,58,0.14);
+    padding: 10px 12px;
+    color: var(--ink-2);
+    font-family: var(--f-body);
+    font-size: 12px;
+    line-height: 1.45;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.12s ease, transform 0.12s ease;
+  }
+  .overview-sunburst-tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .overview-sunburst-tooltip strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-size: 14px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .overview-sunburst-tooltip em {
+    color: var(--accent);
+    font-family: var(--f-display);
+    font-style: italic;
+  }
+  .overview-sunburst-panel {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: rgba(255,252,245,0.68);
+    padding: 16px;
     min-width: 0;
   }
-  .overview-track-kpi .label {
+  .overview-sunburst-panel .focus-kicker {
+    color: var(--muted);
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .overview-sunburst-panel h3 {
+    margin: 8px 0 6px;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-size: 24px;
+    line-height: 1.22;
+  }
+  .overview-sunburst-panel .focus-path {
     color: var(--muted);
     font-family: var(--f-body);
-    font-size: 11px;
-    line-height: 1.25;
+    font-size: 12px;
+    line-height: 1.45;
   }
-  .overview-track-kpi .value {
+  .overview-sunburst-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .overview-sunburst-metrics .metric {
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 0;
+    background: rgba(255,255,255,0.28);
+  }
+  .overview-sunburst-metrics .metric strong {
     display: block;
     color: var(--ink);
     font-family: var(--f-display);
-    font-size: 28px;
-    line-height: 1.05;
-    margin-top: 8px;
-    overflow-wrap: normal;
-    word-break: normal;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
   }
-  .overview-track-kpi .delta {
+  .overview-sunburst-metrics .metric span {
     display: block;
+    margin-top: 7px;
     color: var(--muted);
     font-family: var(--f-body);
     font-size: 11px;
     line-height: 1.35;
-    margin-top: 6px;
   }
-  .overview-track-list {
+  .overview-sunburst-list {
     display: grid;
-    gap: 9px;
-    margin-top: 10px;
+    gap: 8px;
+    margin-top: 16px;
   }
-  .overview-track-row {
+  .overview-sunburst-row {
     display: grid;
-    grid-template-columns: 28px minmax(0, 1fr) 48px;
+    grid-template-columns: 14px minmax(0, 1fr) auto auto;
     gap: 10px;
     align-items: center;
+    border-bottom: 1px solid var(--hairline);
+    padding: 8px 0;
     color: var(--ink-2);
     font-family: var(--f-body);
     font-size: 12px;
   }
-  .overview-track-row .rank {
-    color: var(--muted);
-    font-family: var(--f-mono);
-    font-size: 10px;
+  .overview-sunburst-row:last-child {
+    border-bottom: none;
   }
-  .overview-track-row .name {
-    min-width: 0;
-    position: relative;
+  .overview-sunburst-row .sw {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    background: var(--row-color, var(--accent));
   }
-  .overview-track-row .bar {
-    display: block;
-    height: 4px;
-    margin-top: 5px;
-    border-radius: 999px;
-    background: var(--bar-color, var(--accent));
-    opacity: 0.55;
-  }
-  .overview-track-row .n {
-    color: var(--ink);
-    font-family: var(--f-mono);
-    text-align: right;
-  }
-  .overview-density-row {
-    display: grid;
-    grid-template-columns: 105px minmax(0, 1fr) 42px;
-    gap: 10px;
-    align-items: center;
-    color: var(--ink-2);
-    font-family: var(--f-body);
-    font-size: 12px;
-  }
-  .overview-density-row .density-track {
+  .overview-sunburst-row .name {
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .overview-density-row .density-bar {
-    height: 7px;
-    border-radius: 999px;
-    background: rgba(83,72,78,0.08);
-    overflow: hidden;
-  }
-  .overview-density-row .density-bar span {
-    display: block;
-    height: 100%;
-    border-radius: inherit;
-    background: var(--bar-color, var(--accent));
-    width: var(--bar-pct, 0%);
-  }
-  .overview-density-row .density-n {
+  .overview-sunburst-row .n,
+  .overview-sunburst-row .pct {
     color: var(--ink);
     font-family: var(--f-mono);
+    font-size: 11px;
     text-align: right;
   }
-  .overview-track-findings {
-    display: grid;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  .overview-track-finding {
-    border: 1px solid var(--hairline-2);
-    border-left: 4px solid var(--finding-color, var(--accent));
-    border-radius: 8px;
-    background: rgba(255,252,245,0.72);
-    padding: 11px 12px;
-  }
-  .overview-track-finding .stamp {
-    color: var(--muted);
-    display: block;
-    font-family: var(--f-mono);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-  }
-  .overview-track-finding strong {
-    color: var(--ink);
-    display: block;
-    font-family: var(--f-display-cn);
-    font-size: 14px;
-    line-height: 1.35;
-  }
-  .overview-track-finding p {
-    color: var(--muted);
-    font-family: var(--f-body);
-    font-size: 12px;
-    line-height: 1.5;
-    margin: 6px 0 0;
-  }
-  @media (max-width: 980px) {
-    .overview-track-grid,
-    .overview-track-kpis {
+  @media (max-width: 1080px) {
+    .overview-sunburst-layout {
       grid-template-columns: 1fr;
+    }
+    .overview-sunburst-stage {
+      min-height: 420px;
+    }
+  }
+  @media (max-width: 620px) {
+    .overview-sunburst-stage {
+      min-height: 330px;
+    }
+    .overview-sunburst-metrics {
+      grid-template-columns: 1fr;
+    }
+    .overview-sunburst-row {
+      grid-template-columns: 12px minmax(0, 1fr) auto;
+    }
+    .overview-sunburst-row .pct {
+      display: none;
     }
   }
 </style>
@@ -284,90 +325,20 @@
 
     <section class="block" id="track-structure">
       <div class="section-head">
-        <h2>赛道结构</h2>
-        <span class="cn">· 合并到总览</span><span class="en">Product structure snapshot</span>
+        <h2>赛道分布</h2>
+        <span class="cn">· L1 / L2 / L3</span><span class="en">Product line sunburst</span>
       </div>
-      <div class="overview-track-grid">
-        <article class="chart-card">
-          <div class="chart-title">产品赛道骨架</div>
-          <div class="chart-sub">决策层先看 L1 / L2 / 技术 / 密度读数；细分产品、公司和 L3 证据从下方 taxonomy 下钻。</div>
-          <div class="overview-track-kpis" id="overview-track-kpis"></div>
-        </article>
-        <article class="chart-card">
-          <div class="chart-title">热门技术 / 材料 Top 8</div>
-          <div class="chart-sub">按产品主表聚合，不分商业赛道；用于快速判断技术路线的集中度。</div>
-          <div class="overview-track-list" id="overview-tech-ranking"></div>
-        </article>
-      </div>
-      <div class="overview-track-grid">
-        <article class="chart-card">
-          <div class="chart-title">产品密度 · 平台化程度</div>
-          <div class="chart-sub">产品 / 公司越高，越像平台型产品组合；越低，越像单品或专精型赛道。</div>
-          <div class="overview-track-list" id="overview-density-bars"></div>
-        </article>
-        <article class="chart-card">
-          <div class="chart-title">结构解读</div>
-          <div class="chart-sub">作为总览层结论展示，详细 L2/L3 仍可在下方材料 taxonomy 中点击下钻。</div>
-          <div class="overview-track-findings" id="overview-track-findings"></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="block" id="material-taxonomy">
-      <div class="section-head">
-        <h2>材料 taxonomy 全景</h2>
-        <span class="cn">· L1 / L2 / L3 下钻</span><span class="en">Material taxonomy landscape</span>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title" id="ml-headline">— 个材料一级赛道 · — 个二级 · 共 — 款产品</div>
-        <div class="chart-sub">材料一级赛道按产品规模与二级结构呈现，既保留大类体量，也露出内部细分的集中与分散；这里保留可追溯明细层。</div>
-        <div class="ml-grid" id="ml-grid"></div>
-      </div>
-      <div class="chart-card ml-stack-card">
-        <div class="chart-title">材料 L1 × L2 堆积图</div>
-        <div class="chart-sub">横向长度保留一级赛道的绝对规模差异，色块展示二级赛道构成；大赛道的集中度与长尾结构一并可见。</div>
-        <div class="ml-stack" id="ml-stack-chart" aria-label="材料赛道 L1 与 L2 堆积图"></div>
-      </div>
-      <div class="chart-card ml-stack-card ml-percent-stack-card">
-        <div class="chart-title">材料 L1 × L2 百分比堆积图</div>
-        <div class="chart-sub">各一级赛道统一到 100%，小众市场的内部结构被放大呈现；标签保留真实产品基数，便于和绝对规模图互相校验。</div>
-        <div class="ml-stack-scale" aria-hidden="true">
-          <span></span>
-          <span class="scale-marks"><i>0%</i><i>25%</i><i>50%</i><i>75%</i><i>100%</i></span>
-          <span></span>
+      <article class="chart-card overview-sunburst-card">
+        <div class="chart-title">9 个一级赛道的产品线分布</div>
+        <div class="chart-sub">内圈展示原始 9 个一级赛道占比，外圈继续展开二级与三级；所有百分比均以全库产品线为基数，鼠标悬停可查看数量、总占比和父级占比。</div>
+        <div class="overview-sunburst-layout">
+          <div class="overview-sunburst-stage">
+            <svg class="overview-sunburst-svg" id="overview-track-sunburst" viewBox="-250 -250 500 500" role="img" aria-label="9 个一级赛道及二级三级产品线旭日图"></svg>
+            <div class="overview-sunburst-tooltip" id="overview-sunburst-tooltip" aria-hidden="true"></div>
+          </div>
+          <aside class="overview-sunburst-panel" id="overview-sunburst-panel" aria-live="polite"></aside>
         </div>
-        <div class="ml-stack ml-stack-percent" id="ml-percent-stack-chart" aria-label="材料赛道 L1 与 L2 百分比堆积图"></div>
-      </div>
-    </section>
-
-    <section class="block">
-      <div class="section-head">
-        <h2>编辑视角</h2>
-        <span class="cn">· 三组新发现</span><span class="en">Editorial · new lenses</span>
-      </div>
-      <div class="editorial-row">
-        <article class="editorial-block has-wash w-rose-deep wash-bottom-left">
-          <span class="stamp">Lens 01 · Regulatory pulse</span>
-          <div class="lead">监管证据池扩展到 <em>1,599</em> 条。</div>
-          <div class="num-pair"><span class="num">1,599</span><span class="unit">registration evidence rows</span></div>
-          <div class="body">当前 510(k) 为 <em>334</em> 条；仍有 <em>120</em> 条 review / new-candidate 类监管证据进入运营队列，NMPA / MFDS 由独立队列覆盖。</div>
-          <a class="cta" href="./regulatory-pulse.html">进入监管脉搏 ↗</a>
-        </article>
-        <article class="editorial-block has-wash w-apricot wash-bottom-left">
-          <span class="stamp">Lens 02 · Korea factor</span>
-          <div class="lead">韩国占全球上游企业约 <em>32</em>%。</div>
-          <div class="num-pair"><span class="num">105</span><span class="unit">companies · 269 products</span></div>
-          <div class="body">远超美国 <em>52</em> / 意大利 <em>30</em>；Company_Master 中 active public 为 <em>19</em> 家，listed batch 为 <em>22</em> 条。</div>
-          <a class="cta" href="./market-intelligence.html?mode=country">进入商业格局 · 国家层 ↗</a>
-        </article>
-        <article class="editorial-block has-wash w-plum wash-bottom-left">
-          <span class="stamp">Lens 03 · Capital band skew</span>
-          <div class="lead">Active public <em>43</em> 家，上市证据批次 <em>61</em> 条。</div>
-          <div class="num-pair"><span class="num">30</span><span class="unit">small cap · 3 mega cap</span></div>
-          <div class="body">大市值集中在 NASDAQ；KRX <em>22</em> 条上市批次构成韩股板块。公司口径与上市批次口径在资本页分开呈现。</div>
-          <a class="cta" href="./capital-map.html">进入资本地图 ↗</a>
-        </article>
-      </div>
+      </article>
     </section>
 
     <section class="block flat-map-section">
@@ -475,13 +446,12 @@
      even before globe libs load -->
 <script src="../app-data.js?v=20260616"></script>
 <script src="./v3-tracks.js?v=20260616"></script>
+<script src="./v3-deep-dive.js?v=20260616"></script>
 <script src="./v3-products.js?v=20260616"></script>
 <script src="./v3-companies.js?v=20260616"></script>
 <script src="./v3-product-tree.js?v=20260616"></script>
 <script src="./v3-company-detail.js?v=20260616"></script>
 <script src="./v3-chart-interact.js?v=20260616-tooltip"></script>
-<script src="./v3-material-landscape.js?v=20260616"></script>
-<script src="./v3-material-drawer.js?v=20260616"></script>
 <!-- Vendor three.js + globe.gl locally — unpkg.com is 40+s from CN networks.
      Falls back to unpkg / jsdelivr if the local file ever disappears. -->
 <script>
@@ -519,95 +489,248 @@
     }
   })();
 
-  (function renderTrackStructureSummary () {
-    const data = window.V3_TRACKS_DATA;
-    if (!data || !data.summary) return;
-    const kpis = document.getElementById("overview-track-kpis");
-    const techWrap = document.getElementById("overview-tech-ranking");
-    const densityWrap = document.getElementById("overview-density-bars");
-    const findingsWrap = document.getElementById("overview-track-findings");
-    if (!kpis || !techWrap || !densityWrap || !findingsWrap) return;
+  (function renderOverviewTrackSunburst () {
+    const source = window.V3_DEEP_DIVE_DATA && window.V3_DEEP_DIVE_DATA.commercial_tree;
+    const svg = document.getElementById("overview-track-sunburst");
+    const panel = document.getElementById("overview-sunburst-panel");
+    const tooltip = document.getElementById("overview-sunburst-tooltip");
+    if (!source || !svg || !panel || !tooltip) return;
 
+    const TRACK_ORDER = ["EBD", "Injectables", "Skincare", "Implants", "Regenerative", "Consumables", "Surgical", "Diagnostics", "Pharma"];
     const TRACK_COLORS = {
       "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
       "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
-      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
+      "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73",
     };
+    const TRACK_ZH = {
+      "EBD":"光电","Injectables":"注射","Skincare":"功效护肤","Regenerative":"再生",
+      "Consumables":"耗材","Implants":"植入物","Diagnostics":"诊断","Surgical":"外科","Pharma":"药物",
+    };
+    const RINGS = [
+      { inner: 52, outer: 104 },
+      { inner: 108, outer: 160 },
+      { inner: 164, outer: 226 },
+    ];
+
     const esc = (value) => String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;",
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;",
     })[ch]);
     const fmt = (value) => Number(value || 0).toLocaleString("en-US");
-    const displayTrack = (track) => track === "Skincare" ? "Cosmeceutical" : (track || "—");
-    const stripTags = (value) => String(value || "").replace(/<[^>]*>/g, "");
-    const summary = data.summary;
-    const globalSummary = (window.GLOBAL_AESTHETICS_DATA && window.GLOBAL_AESTHETICS_DATA.summary) || {};
-    const companies = globalSummary.companies || globalSummary.company_master || 0;
-    const ebdFinding = (data.findings || []).find(row => String(row.lead || "").includes("EBD")) || (data.findings || [])[0] || {};
-    const ebdTechCount = ebdFinding.num_pair && ebdFinding.num_pair.num;
+    const pct = (value, base) => `${((Number(value || 0) / Math.max(1, Number(base || 0))) * 100).toFixed(1)}%`;
+    const displayName = (name) => name === "Skincare" ? "Cosmeceutical" : name;
+    const displayTrack = (name) => TRACK_ZH[name] ? `${displayName(name)} · ${TRACK_ZH[name]}` : displayName(name);
 
-    const kpiRows = [
-      ["产品线", fmt(summary.total_products), `${fmt(summary.l1_count)} L1 · ${fmt(summary.l2_count)} L2`],
-      ["技术分类", fmt(summary.tech_count), "material / energy taxonomy"],
-      ["头部赛道", displayTrack(summary.top_l1), `${fmt(summary.top_l1_products)} products`],
-      ["头部技术", summary.top_tech || "—", `${fmt(summary.top_tech_products)} products`],
-      ["产品/公司", summary.avg_products_per_company, `${fmt(companies)} upstream companies`],
-      ["结构信号", "EBD 混战", `${ebdTechCount || "100+"} tech families`],
-    ];
-    kpis.innerHTML = kpiRows.map(([label, value, delta]) => `
-      <div class="overview-track-kpi">
-        <span class="label">${esc(label)}</span>
-        <span class="value">${esc(value)}</span>
-        <span class="delta">${esc(delta)}</span>
-      </div>
-    `).join("");
+    function cloneTree (node, depth = 0) {
+      const kids = Array.isArray(node.children) ? node.children.map(child => cloneTree(child, depth + 1)) : [];
+      const n = Number(node.n || kids.reduce((sum, child) => sum + Number(child.n || 0), 0));
+      const next = { name: node.name, n, synthetic: Boolean(node.synthetic) };
+      if (kids.length && depth < 3) {
+        const childSum = kids.reduce((sum, child) => sum + Number(child.n || 0), 0);
+        next.children = kids.slice();
+        if (depth >= 1 && depth < 3 && n > childSum) {
+          next.children.push({ name: "未列明细分", n: n - childSum, synthetic: true });
+        }
+      }
+      return next;
+    }
 
-    const techOwner = {};
-    (data.l1_breakdown || []).forEach(row => {
-      (row.tech_top || []).forEach(([name, n]) => {
-        if (!techOwner[name] || Number(techOwner[name].n || 0) < Number(n || 0)) {
-          techOwner[name] = { l1: row.l1, n };
+    const root = cloneTree(source, 0);
+    root.children = (root.children || []).slice().sort((a, b) => {
+      const ia = TRACK_ORDER.indexOf(a.name);
+      const ib = TRACK_ORDER.indexOf(b.name);
+      return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib) || Number(b.n || 0) - Number(a.n || 0);
+    });
+    root.n = root.children.reduce((sum, child) => sum + Number(child.n || 0), 0);
+
+    function hexToRgb (hex) {
+      const clean = String(hex || "").replace("#", "");
+      if (clean.length !== 6) return null;
+      const value = parseInt(clean, 16);
+      return { r: (value >> 16) & 255, g: (value >> 8) & 255, b: value & 255 };
+    }
+    function mixHex (hex, mix = "#fdfaf2", amount = 0.2) {
+      const a = hexToRgb(hex);
+      const b = hexToRgb(mix);
+      if (!a || !b) return hex;
+      const m = Math.max(0, Math.min(1, amount));
+      const channel = (x, y) => Math.round(x * (1 - m) + y * m).toString(16).padStart(2, "0");
+      return `#${channel(a.r, b.r)}${channel(a.g, b.g)}${channel(a.b, b.b)}`;
+    }
+    function polar (radius, angle) {
+      return [Math.cos(angle) * radius, Math.sin(angle) * radius];
+    }
+    function arcPath (start, end, inner, outer) {
+      const span = end - start;
+      const pad = span > 0.018 ? Math.min(0.006, span * 0.22) : 0;
+      const s = start + pad;
+      const e = end - pad;
+      const large = e - s > Math.PI ? 1 : 0;
+      const [x1, y1] = polar(outer, s);
+      const [x2, y2] = polar(outer, e);
+      const [x3, y3] = polar(inner, e);
+      const [x4, y4] = polar(inner, s);
+      return `M ${x1.toFixed(3)} ${y1.toFixed(3)} A ${outer} ${outer} 0 ${large} 1 ${x2.toFixed(3)} ${y2.toFixed(3)} L ${x3.toFixed(3)} ${y3.toFixed(3)} A ${inner} ${inner} 0 ${large} 0 ${x4.toFixed(3)} ${y4.toFixed(3)} Z`;
+    }
+
+    const nodes = [];
+    function layoutChildren (parent, start, end, depth, path, baseColor) {
+      if (!parent.children || depth > 3) return;
+      const total = parent.children.reduce((sum, child) => sum + Number(child.n || 0), 0) || 1;
+      let cursor = start;
+      parent.children.forEach((child, index) => {
+        const value = Number(child.n || 0);
+        const span = (end - start) * (value / total);
+        const ring = RINGS[depth - 1];
+        const trackColor = depth === 1 ? (TRACK_COLORS[child.name] || "#9A8D8D") : baseColor;
+        const fill = depth === 1
+          ? trackColor
+          : mixHex(trackColor, child.synthetic ? "#fdfaf2" : "#ffffff", Math.min(0.62, depth === 2 ? 0.14 + index * 0.018 : 0.34 + index * 0.024));
+        const item = {
+          ...child,
+          depth,
+          parent,
+          path: [...path, child.name],
+          start: cursor,
+          end: cursor + span,
+          color: fill,
+          baseColor: trackColor,
+          ring,
+          index: nodes.length,
+        };
+        nodes.push(item);
+        layoutChildren(item, item.start, item.end, depth + 1, item.path, trackColor);
+        cursor += span;
+      });
+    }
+    layoutChildren(root, -Math.PI / 2, Math.PI * 1.5, 1, [], "#8E3A3A");
+
+    svg.innerHTML = `
+      <circle r="48" fill="rgba(255,252,245,0.92)" stroke="rgba(87,75,82,0.14)" stroke-width="1"></circle>
+      ${nodes.map(node => `
+        <path class="overview-sunburst-arc"
+              d="${arcPath(node.start, node.end, node.ring.inner, node.ring.outer)}"
+              fill="${node.color}"
+              opacity="${node.depth === 3 && node.synthetic ? "0.58" : "0.92"}"
+              data-index="${node.index}"
+              data-depth="${node.depth}"
+              aria-label="${esc(node.path.join(" / "))} ${fmt(node.n)} products ${pct(node.n, root.n)}"></path>
+      `).join("")}
+      <g class="overview-sunburst-center" text-anchor="middle">
+        <text class="big" y="-4">${fmt(root.n)}</text>
+        <text class="small" y="22">PRODUCT LINES</text>
+      </g>
+    `;
+
+    function layerName (depth) {
+      return depth === 1 ? "一级赛道" : depth === 2 ? "二级赛道" : depth === 3 ? "三级细分" : "全库";
+    }
+    function parentPct (node) {
+      if (!node || !node.parent || !node.parent.n) return "100.0%";
+      return pct(node.n, node.parent.n);
+    }
+    function setActivePath (node) {
+      svg.querySelectorAll(".overview-sunburst-arc").forEach(path => path.classList.remove("is-active"));
+      if (!node) return;
+      svg.querySelectorAll(".overview-sunburst-arc").forEach(path => {
+        const candidate = nodes[Number(path.getAttribute("data-index"))];
+        if (candidate && (candidate === node || node.path.join("|").startsWith(candidate.path.join("|")))) {
+          path.classList.add("is-active");
         }
       });
+    }
+    function panelRows (node) {
+      const rows = (node && node.children && node.children.length) ? node.children : root.children;
+      return rows.slice().sort((a, b) => Number(b.n || 0) - Number(a.n || 0)).map(child => {
+        const color = node && node.depth ? mixHex(node.baseColor || node.color, "#fdfaf2", 0.26) : (TRACK_COLORS[child.name] || "#9A8D8D");
+        return `
+          <div class="overview-sunburst-row" style="--row-color:${color};">
+            <span class="sw"></span>
+            <span class="name">${esc(displayTrack(child.name))}</span>
+            <span class="n">${fmt(child.n)}</span>
+            <span class="pct">${pct(child.n, root.n)}</span>
+          </div>
+        `;
+      }).join("");
+    }
+    function renderPanel (node) {
+      const target = node || root;
+      const name = target === root ? "全部赛道" : displayTrack(target.name);
+      const path = target === root ? "全库产品线 / 原始 9 个一级赛道" : target.path.map(displayTrack).join(" / ");
+      const childrenLabel = target.children && target.children.length
+        ? (target === root ? "一级赛道分布" : "下一层细分")
+        : "同层对照";
+      panel.innerHTML = `
+        <div class="focus-kicker">${esc(layerName(target.depth || 0))}</div>
+        <h3>${esc(name)}</h3>
+        <div class="focus-path">${esc(path)}</div>
+        <div class="overview-sunburst-metrics">
+          <div class="metric"><strong>${fmt(target.n || root.n)}</strong><span>产品线数量</span></div>
+          <div class="metric"><strong>${pct(target.n || root.n, root.n)}</strong><span>占全库比例</span></div>
+          <div class="metric"><strong>${target === root ? "100.0%" : parentPct(target)}</strong><span>占父级比例</span></div>
+        </div>
+        <div class="overview-sunburst-list" aria-label="${esc(childrenLabel)}">
+          ${panelRows(target)}
+        </div>
+      `;
+    }
+    function showTooltip (event, node) {
+      tooltip.innerHTML = `
+        <strong>${esc(displayTrack(node.name))}</strong>
+        <div>${esc(node.path.map(displayTrack).join(" / "))}</div>
+        <div><em>${fmt(node.n)}</em> 款产品线 · ${pct(node.n, root.n)} of total</div>
+        <div>${parentPct(node)} of parent · ${esc(layerName(node.depth))}</div>
+        ${node.synthetic ? "<div>该二级下尚未单列的长尾细分</div>" : ""}
+      `;
+      moveTooltip(event);
+      tooltip.classList.add("show");
+      tooltip.setAttribute("aria-hidden", "false");
+    }
+    function moveTooltip (event) {
+      const margin = 16;
+      const boxWidth = 290;
+      const x = Math.min(window.innerWidth - boxWidth - margin, event.clientX + margin);
+      const y = Math.min(window.innerHeight - 130, event.clientY + margin);
+      tooltip.style.left = `${Math.max(margin, x)}px`;
+      tooltip.style.top = `${Math.max(margin, y)}px`;
+    }
+    function hideTooltip () {
+      tooltip.classList.remove("show");
+      tooltip.setAttribute("aria-hidden", "true");
+    }
+
+    let selected = null;
+    let hovered = null;
+    renderPanel(root);
+    svg.addEventListener("pointermove", event => {
+      const target = event.target && event.target.closest ? event.target.closest(".overview-sunburst-arc") : null;
+      if (!target || !svg.contains(target)) return;
+      const node = nodes[Number(target.getAttribute("data-index"))];
+      if (!node) return;
+      if (hovered !== node) {
+        hovered = node;
+        setActivePath(node);
+        renderPanel(node);
+      }
+      showTooltip(event, node);
     });
-    const topTechs = (data.tech_ranking || []).slice(0, 8);
-    const maxTech = Math.max(1, ...topTechs.map(row => Number(row.n || 0)));
-    techWrap.innerHTML = topTechs.map((row, index) => {
-      const owner = techOwner[row.name] || {};
-      const color = TRACK_COLORS[owner.l1] || "var(--accent)";
-      const pct = Math.max(2, Number(row.n || 0) / maxTech * 100);
-      return `
-        <div class="overview-track-row" style="--bar-color:${color};">
-          <span class="rank">${String(index + 1).padStart(2, "0")}</span>
-          <span class="name">${esc(row.name)}<span class="bar" style="width:${pct.toFixed(1)}%;"></span></span>
-          <span class="n">${fmt(row.n)}</span>
-        </div>
-      `;
-    }).join("");
-
-    const density = (data.density || []).slice().sort((a, b) => Number(b.ppc || 0) - Number(a.ppc || 0));
-    const maxDensity = Math.max(1, ...density.map(row => Number(row.ppc || 0)));
-    densityWrap.innerHTML = density.map(row => {
-      const color = TRACK_COLORS[row.l1] || "var(--accent)";
-      const pct = Math.max(2, Number(row.ppc || 0) / maxDensity * 100);
-      return `
-        <div class="overview-density-row">
-          <span class="density-track">${esc(displayTrack(row.l1))}</span>
-          <span class="density-bar"><span style="--bar-color:${color};--bar-pct:${pct.toFixed(1)}%;"></span></span>
-          <span class="density-n">${esc(row.ppc)}</span>
-        </div>
-      `;
-    }).join("");
-
-    findingsWrap.innerHTML = (data.findings || []).slice(0, 3).map((finding, index) => {
-      const color = ["#8E3A3A", "#D9AE91", "#6B5A75"][index] || "var(--accent)";
-      return `
-        <article class="overview-track-finding" style="--finding-color:${color};">
-          <span class="stamp">${esc(finding.stamp || `Finding ${index + 1}`)}</span>
-          <strong>${esc(stripTags(finding.lead))}</strong>
-          <p>${esc(stripTags(finding.body))}</p>
-        </article>
-      `;
-    }).join("");
+    document.addEventListener("pointermove", event => {
+      if (svg.contains(event.target)) return;
+      if (!hovered) return;
+      hovered = null;
+      hideTooltip();
+      setActivePath(selected);
+      renderPanel(selected || root);
+    });
+    svg.addEventListener("click", event => {
+      const target = event.target && event.target.closest ? event.target.closest(".overview-sunburst-arc") : null;
+      if (!target || !svg.contains(target)) return;
+      const node = nodes[Number(target.getAttribute("data-index"))];
+      if (node) {
+        selected = node;
+        setActivePath(node);
+        renderPanel(node);
+      }
+    });
   })();
 
   /* ============ Country distribution block — top 10 ranked horizontal bars ============ */
@@ -764,6 +887,48 @@
     function escapeHtmlCD (s) {
       return String(s || "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[ch]);
     }
+  })();
+</script>
+
+<script>
+  (function renderOverviewSingleDimensionBars () {
+    const gd = window.GLOBAL_AESTHETICS_DATA || {};
+    const REGION_ZH = {
+      "Europe": "欧洲", "Asia-Pacific": "亚太", "North America": "北美",
+      "Middle East": "中东", "Latin America": "拉美", "Africa": "非洲",
+      "Oceania": "大洋洲", "Global": "全球", "Other": "其他",
+    };
+    const esc = (value) => String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;",
+    })[ch]);
+    function renderBars (containerId, rows, opts) {
+      const el = document.getElementById(containerId);
+      if (!el || !rows || !rows.length) return;
+      const max = Math.max(1, ...rows.map(r => Number(r.value || 0)));
+      const items = rows.slice(0, opts.limit || rows.length);
+      el.innerHTML = items.map(r => {
+        const pct = (Number(r.value || 0) / max * 100).toFixed(1);
+        const zh = opts.zhMap ? opts.zhMap[r.name] : "";
+        return `
+          <div class="ov-bar-row">
+            <div class="ov-bar-label">
+              <span class="ov-bar-zh">${esc(zh || r.name)}</span>
+              ${zh ? `<span class="ov-bar-en">${esc(r.name)}</span>` : ""}
+            </div>
+            <div class="ov-bar-track">
+              <div class="ov-bar-fill" style="width:${pct}%; --accent:${opts.color};"></div>
+            </div>
+            <div class="ov-bar-n">${Number(r.value || 0).toLocaleString("en-US")}</div>
+          </div>
+        `;
+      }).join("");
+    }
+    renderBars("ov-region-bars", gd.region_distribution || [], {
+      limit: 10, color: "var(--t-regen, #A8B59A)", zhMap: REGION_ZH,
+    });
+    renderBars("ov-indication-bars", (gd.indication_distribution || []).slice(0, 12), {
+      limit: 12, color: "var(--t-injectables, #6B5A75)",
+    });
   })();
 </script>
 

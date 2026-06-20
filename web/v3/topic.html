@@ -342,6 +342,57 @@
     font-size: 12px;
   }
 
+  /* ============ Mega track second-level entry ============ */
+  .topic-mega-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .topic-mega-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+    align-items: center;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid var(--hairline-2);
+    border-left: 4px solid var(--topic-color, var(--accent));
+    border-radius: 8px;
+    background: rgba(255,252,245,0.72);
+    color: inherit;
+    text-decoration: none;
+    transition: transform .14s ease, border-color .14s ease, background .14s ease;
+  }
+  .topic-mega-card:hover {
+    transform: translateY(-1px);
+    border-color: rgba(80,60,70,0.22);
+    background: rgba(255,252,245,0.92);
+  }
+  .topic-mega-card strong {
+    display: block;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.25;
+  }
+  .topic-mega-card span {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-family: var(--f-sans);
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .topic-mega-card em {
+    color: var(--topic-color, var(--accent));
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
   /* ============ Country × L2 cross-matrix ============ */
   .cl-matrix {
     display: grid;
@@ -463,6 +514,7 @@
   @media (max-width: 900px) {
     .conc-grid { grid-template-columns: 1fr 1fr; }
     .entrants-wrap { grid-template-columns: 1fr; }
+    .topic-mega-grid { grid-template-columns: 1fr; }
   }
 </style>
 <script>
@@ -473,10 +525,11 @@
     const SLUG_TO_TOPIC = {
       "ebd":"topic-ebd","injectables":"topic-injectables",
       "regenerative":"topic-regenerative","regen":"topic-regenerative",
-      "skincare":"topic-skincare",
-      "consumables":"topic-consumables","implants":"topic-implants",
-      "diagnostics":"topic-diagnostics","surgical":"topic-surgical",
-      "pharma":"topic-pharma",
+      "other":"topic-other",
+      "skincare":"topic-other",
+      "consumables":"topic-other","implants":"topic-other",
+      "diagnostics":"topic-other","surgical":"topic-other",
+      "pharma":"topic-other",
     };
     const s = document.createElement("script");
     s.src = "./_nav.js";
@@ -502,12 +555,28 @@
       "skincare":     "Skincare",
       "regenerative": "Regenerative",
       "regen":        "Regenerative",
+      "other":        "Other",
       "consumables":  "Consumables",
       "implants":     "Implants",
       "diagnostics":  "Diagnostics",
       "surgical":     "Surgical",
       "pharma":       "Pharma",
     };
+    const PRIMARY_TOPIC_LINKS = [
+      { slug: "injectables", l1: "Injectables", label: "注射剂" },
+      { slug: "ebd", l1: "EBD", label: "EBD" },
+      { slug: "regenerative", l1: "Regenerative", label: "再生与生物材料" },
+      { slug: "other", l1: "Other", label: "其他产品线" },
+    ];
+    const OTHER_L1 = new Set(["Skincare", "Implants", "Consumables", "Diagnostics", "Surgical", "Pharma"]);
+    const OTHER_TOPIC_LINKS = [
+      { slug: "skincare", l1: "Skincare", label: "皮肤管理 / 功效护肤", en: "Skin Health" },
+      { slug: "implants", l1: "Implants", label: "植入物", en: "Implants" },
+      { slug: "consumables", l1: "Consumables", label: "耗材", en: "Consumables" },
+      { slug: "diagnostics", l1: "Diagnostics", label: "诊断", en: "Diagnostics" },
+      { slug: "surgical", l1: "Surgical", label: "外科", en: "Surgical" },
+      { slug: "pharma", l1: "Pharma", label: "药物", en: "Pharma" },
+    ];
     const L1_TAGLINE = {
       "EBD":          { en: "Energy-Based Devices", zh: "能量光电赛道", note: "10+ technology families competing — no single tech wins. Diode / HIFU / CO2 / RF / IPL." },
       "Injectables":  { en: "Injectables", zh: "注射赛道", note: "HA 占 55% — 注射赛道事实上的平台技术。Botulinum / PLLA / PCL / Polynucleotide 分剩下的 45%。" },
@@ -529,10 +598,10 @@
         <section class="page-hero">
           <div class="eyebrow-chip"><span class="dot"></span>Topic Detail · invalid segment</div>
           <h1>选择一个赛道</h1>
-          <p class="lede">URL 参数 <code style="font-family:var(--f-mono);">?segment=ebd|injectables|skincare|regenerative|consumables|implants|diagnostics|surgical|pharma</code></p>
+          <p class="lede">URL 参数 <code style="font-family:var(--f-mono);">?segment=injectables|ebd|regenerative|other</code>，其他子线从“其他产品线”下钻。</p>
           <div class="filter-row">
-            ${Object.entries(SLUG_TO_L1).filter(([s,l]) => l !== "Regenerative" || s === "regen").map(([slug, l1]) =>
-              `<a class="filter-pill" href="?segment=${slug}" style="--cd-color:${TRACK_COLORS[l1]};">${esc(l1)}</a>`
+            ${PRIMARY_TOPIC_LINKS.map(item =>
+              `<a class="filter-pill" href="?segment=${item.slug}" style="--cd-color:${topicLinkColor(item)};">${esc(item.label)}</a>`
             ).join("")}
           </div>
         </section>
@@ -548,6 +617,11 @@
       return;
     }
 
+    if (segment === "other") {
+      renderOtherProductsOverview(tracks, appData);
+      return;
+    }
+
     const breakdown = tracks.l1_breakdown.find(b => b.l1 === L1);
     if (!breakdown) {
       root.innerHTML = `<p style="padding:60px; color:var(--muted); font-style:italic;">${esc(L1 === "Skincare" ? "Cosmeceutical" : L1)} · 暂无聚合数据</p>`;
@@ -560,6 +634,7 @@
 
     // L1 × L2 segments (with brands for the "click for detail" UX)
     const l1l2Row = tracks.l1_x_l2.find(r => r.l1 === L1) || { segments: [] };
+    const megaTrackHtml = renderMegaTrackTabs(L1, l1l2Row.segments, baseColor, breakdown.tech_top);
 
     // Companies in this L1
     const l1Companies = companiesData.companies.filter(c => c.primary_track === L1);
@@ -597,14 +672,16 @@
           <span>${l1l2Row.segments.length} 个 L2 子赛道 · ${breakdown.tech_top.length} 个主要技术</span>
         </div>
         <div class="filter-row" style="margin-top:22px;">
-          ${Object.entries(SLUG_TO_L1)
-            .filter(([s, l], i, arr) => arr.findIndex(([ss, ll]) => ll === l) === i)
-            .map(([slug, l1]) => {
-              const active = l1 === L1 ? " active" : "";
-              return `<a class="filter-pill${active}" href="?segment=${slug}" style="${active ? `background:${TRACK_COLORS[l1]}; border-color:${TRACK_COLORS[l1]};` : ""}">${esc(l1)}</a>`;
+          ${PRIMARY_TOPIC_LINKS
+            .map(item => {
+              const active = item.slug === "other" ? (OTHER_L1.has(L1) ? " active" : "") : (item.l1 === L1 ? " active" : "");
+              const color = topicLinkColor(item);
+              return `<a class="filter-pill${active}" href="?segment=${item.slug}" style="${active ? `background:${color}; border-color:${color};` : ""}">${esc(item.label)}</a>`;
             }).join("")}
         </div>
       </section>
+
+      ${megaTrackHtml}
 
       <section class="block">
         <div class="section-head">
@@ -655,7 +732,7 @@
         </div>
       </section>
 
-      <section class="block">
+      <section class="block" id="l2-subtracks">
         <div class="section-head">
           <h2>L2 子赛道</h2>
           <span class="cn">· ${l1l2Row.segments.length} 个子分类</span><span class="en">L2 sub-tracks</span>
@@ -1331,6 +1408,138 @@
     function closeTopicDrill () {
       if (drillEl) drillEl.classList.remove("show");
       if (drillBg) drillBg.classList.remove("show");
+    }
+
+    function renderOtherProductsOverview(tracks, appData) {
+      const rows = OTHER_TOPIC_LINKS.map(item => {
+        const breakdown = (tracks.l1_breakdown || []).find(row => row.l1 === item.l1) || {};
+        return {
+          ...item,
+          products: Number(breakdown.products || 0),
+          companies: Number(breakdown.companies || 0),
+          topTech: ((breakdown.tech_top || [])[0] || [])[0] || "—",
+          note: (L1_TAGLINE[item.l1] || {}).note || "",
+        };
+      });
+      const totalProducts = rows.reduce((sum, row) => sum + row.products, 0);
+      const totalCompanies = rows.reduce((sum, row) => sum + row.companies, 0);
+      root.innerHTML = `
+        <section class="page-hero">
+          <div class="eyebrow-chip"><span class="dot"></span>Topic Detail · Other Lines</div>
+          <h1>
+            其他产品线
+            <span class="h1-en">Other Product Lines</span>
+          </h1>
+          <p class="lede">这里聚合不需要单独占据顶部一级入口的产品线，包括皮肤管理 / 功效护肤、植入物、耗材、诊断、外科和药物。每条子线仍保留独立详情页。</p>
+          <div class="stat-row">
+            <span><span class="num" data-count-up="${totalProducts}">${totalProducts}</span> 款产品 · <span class="num" data-count-up="${totalCompanies}">${totalCompanies}</span> 家公司</span>
+            <span>${rows.length} 条子产品线</span>
+            <span>从顶部 hover 树状菜单下钻</span>
+          </div>
+          <div class="filter-row" style="margin-top:22px;">
+            ${PRIMARY_TOPIC_LINKS.map(item => {
+              const active = item.slug === "other" ? " active" : "";
+              const color = topicLinkColor(item);
+              return `<a class="filter-pill${active}" href="?segment=${item.slug}" style="${active ? `background:${color}; border-color:${color};` : ""}">${esc(item.label)}</a>`;
+            }).join("")}
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="section-head">
+            <h2>其他产品线结构</h2>
+            <span class="cn">· 聚合入口</span><span class="en">Other line map</span>
+          </div>
+          <div class="topic-mega-grid">
+            ${rows.map(row => `
+              <a class="topic-mega-card" href="?segment=${row.slug}" style="--topic-color:${TRACK_COLORS[row.l1] || TRACK_COLORS.Consumables};">
+                <span>
+                  <strong>${esc(row.label)}</strong>
+                  <span>${esc(row.en)} · ${esc(row.topTech)} · ${row.companies} companies</span>
+                </span>
+                <em>${row.products || "—"}</em>
+              </a>
+            `).join("")}
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="section-head">
+            <h2>使用方式</h2>
+            <span class="cn">· 不把低频线铺满顶部</span><span class="en">Navigation logic</span>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">顶部只放策略级入口，低频产品线放在树状菜单下钻</div>
+            <div class="chart-sub">皮肤管理、植入物、耗材、诊断、外科和药物仍然保留独立数据页，但不再和注射剂、EBD 这类超级赛道争夺一级导航空间。</div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderMegaTrackTabs(l1, segments, color, techRows) {
+      const groups = {
+        "Injectables": [
+          { label: "HA 填充", en: "HA fillers", keys: ["dermal filler", "hyaluronic", "ha "], note: "容量、轮廓和基础填充主干" },
+          { label: "Skin Booster / 中胚层", en: "skin boosters", keys: ["skin booster", "mesotherapy"], note: "肤质改善和周期治疗" },
+          { label: "肉毒毒素", en: "botulinum toxins", keys: ["neurotoxin", "botulinum", "toxin"], note: "动态纹、肌肉和复合适应症" },
+          { label: "生物刺激剂", en: "biostimulators", keys: ["biostimulator", "plla", "pcl", "caha"], note: "胶原刺激和长效再生" },
+          { label: "胶原 / PN / PDRN", en: "collagen and nucleotides", keys: ["collagen", "pdrn", "pn", "polynucleotide"], note: "修复、再生和肤质替代路线" },
+          { label: "埋线提升", en: "threads", keys: ["thread"], note: "提升、支撑和材料迭代" },
+        ],
+        "EBD": [
+          { label: "激光 / IPL", en: "laser and light", keys: ["laser", "ipl", "picosecond", "co2"], note: "色素、嫩肤、脱毛和换肤" },
+          { label: "射频 / RF", en: "radiofrequency", keys: ["radiofrequency", "rf"], note: "紧致、微针和热刺激" },
+          { label: "HIFU / 超声", en: "hifu and ultrasound", keys: ["hifu", "ultrasound", "lipus"], note: "深层提拉和组织加热" },
+          { label: "微针 / RF 微针", en: "microneedling", keys: ["microneedling"], note: "瘢痕、毛孔和复合导入" },
+          { label: "身体塑形 / EMS", en: "body shaping", keys: ["ems", "body", "muscle", "cryo"], note: "塑形、减脂和肌肉刺激" },
+          { label: "联合能源 / 其他", en: "hybrid energy", keys: ["plasma", "led", "electroporation", "multi"], note: "多能量组合和设备平台化" },
+        ],
+      }[l1];
+      if (!groups) return "";
+      const rows = groups.map(group => {
+        const n = countMegaGroup(segments, group.keys) || countMegaGroupTech(techRows, group.keys);
+        return `
+          <a class="topic-mega-card" href="#l2-subtracks" style="--topic-color:${color};">
+            <span>
+              <strong>${esc(group.label)}</strong>
+              <span>${esc(group.en)} · ${esc(group.note)}</span>
+            </span>
+            <em>${n || "—"}</em>
+          </a>
+        `;
+      }).join("");
+      return `
+        <section class="block">
+          <div class="section-head">
+            <h2>${l1 === "Injectables" ? "注射剂二级结构" : "EBD 二级结构"}</h2>
+            <span class="cn">· 超级赛道入口</span><span class="en">Second-level track map</span>
+          </div>
+          <div class="topic-mega-grid">${rows}</div>
+        </section>
+      `;
+    }
+
+    function countMegaGroup(segments, keys) {
+      return (segments || []).reduce((sum, segment) => {
+        const hay = [segment.l2, segment.name, segment.label, segment.tech, segment.path]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        if (!keys.some(key => hay.includes(String(key).toLowerCase()))) return sum;
+        return sum + Number(segment.products || segment.n_products || segment.n || segment.count || 0);
+      }, 0);
+    }
+
+    function countMegaGroupTech(rows, keys) {
+      return (rows || []).reduce((sum, row) => {
+        const name = String((Array.isArray(row) ? row[0] : row.tech) || "").toLowerCase();
+        if (!keys.some(key => name.includes(String(key).toLowerCase()))) return sum;
+        return sum + Number((Array.isArray(row) ? row[1] : row.n) || 0);
+      }, 0);
+    }
+
+    function topicLinkColor(item) {
+      return item.slug === "other" ? TRACK_COLORS.Consumables : (TRACK_COLORS[item.l1] || TRACK_COLORS.Consumables);
     }
 
     // helpers

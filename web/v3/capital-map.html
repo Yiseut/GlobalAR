@@ -22,12 +22,23 @@
         资本地图
         <span class="h1-en">Capital Map &amp; Valuation Bands</span>
       </h1>
-      <p class="lede" id="capital-hero-lede">资本地图专注上市企业：61 条上市/关联证据批次 · Company_Master 329 家公司中 43 家 active public · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。</p>
+      <p class="lede" id="capital-hero-lede">资本地图专注上市企业：61 条上市/关联证据批次 · 329 家企业底库中 43 家为活跃上市主体 · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。</p>
       <div class="stat-row" id="capital-stat-row">
         <span>Active public <span class="num">43</span> / 329 = <span class="num">13</span>%</span>
         <span>上市证据批次 <span class="num">61</span> 条</span>
         <span>主交易所 KRX <span class="num">22</span> + NASDAQ <span class="num">15</span></span>
         <span>巨盘 <span class="num">3</span> · 大盘 <span class="num">3</span> · 中盘 <span class="num">12</span> · 小盘 <span class="num">30</span></span>
+      </div>
+    </section>
+
+    <section class="block lens-summary-block">
+      <div class="editorial-row editorial-row-single">
+        <article class="editorial-block lens-summary has-wash w-plum wash-bottom-left">
+          <span class="stamp">本页总起 · public company skew</span>
+          <div class="lead">活跃上市主体 <em>43</em> 家，上市证据批次 <em>61</em> 条。</div>
+          <div class="num-pair"><span class="num">30</span><span class="unit">small cap · 3 mega cap</span></div>
+          <div class="body">大市值集中在 NASDAQ；KRX <em>22</em> 条上市批次构成韩股板块。公司口径与上市批次口径在本页分开呈现。</div>
+        </article>
       </div>
     </section>
 
@@ -68,7 +79,7 @@
         <article class="kpi-cell has-wash w-slate">
           <div class="label"><span class="en">Subsidiaries</span><span class="zh">子公司 / 关联</span></div>
           <span class="value" id="capital-kpi-subsidiary">13</span>
-          <span class="delta" id="capital-kpi-subsidiary-delta">Company_Master subsidiary rows</span>
+          <span class="delta" id="capital-kpi-subsidiary-delta">公司族谱与关联主体样本</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
           <div class="label"><span class="en">Pending valuation</span><span class="zh">估值暂缺</span></div>
@@ -286,8 +297,8 @@
         <span class="cn">· parent / affiliate trace</span><span class="en">Corporate family tree</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">Company_Master + listed_company_batch 当前识别多组 corporate family；本页保留可追踪 parent / affiliate 样例。</div>
-        <div class="chart-sub">关系来源：`listed_company_batch` 资本结构字段 + 公开并购公告。本表只列出可在事实层引用的关系，"未核实"标签的不写入 registered_evidence。Lumenis → Boston Scientific 字段使用 U+2192 箭头字符，需要 UI 字体能渲染（部分终端会显示为方块）。</div>
+        <div class="chart-title">企业底库与上市证据当前识别多组公司族谱；本页保留可追踪母公司 / 关联公司样例。</div>
+        <div class="chart-sub">关系来源：上市企业关系表 + 公开并购公告。本表只列出可作为确定事实引用的关系；未核实关系只作候选线索，不进入正式事实口径。</div>
 
         <div class="group-tree" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; margin-top:12px;">
 
@@ -389,7 +400,7 @@
 
         </div>
       </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">"listed_relationship_seed" 来自 listed_company_batch 资本结构字段；"needs_verification" 来自公开并购公告，未在事实层使用。其余公司按"独立运营或未识别"处理 — 不强行写入未核实的 M&amp;A 传闻。</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px;font-family:var(--f-body);">关系样本来自上市企业关系表和公开并购公告；未核实关系只作为候选线索。其余公司按"独立运营或未识别"处理，不强行写入未核实的 M&amp;A 传闻。</p>
     </section>
 
     <section class="block">
@@ -756,7 +767,7 @@
       const el = document.getElementById(id);
       if (el) el.innerHTML = value;
     };
-    setHTML("capital-hero-lede", `资本地图专注上市企业：${fmt(listedBatch)} 条上市/关联证据批次 · Company_Master ${fmt(total)} 家公司中 ${fmt(publicCompanies)} 家 active public · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。`);
+    setHTML("capital-hero-lede", `资本地图专注上市企业：${fmt(listedBatch)} 条上市/关联证据批次 · ${fmt(total)} 家企业底库中 ${fmt(publicCompanies)} 家为活跃上市主体 · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。`);
     setHTML("capital-stat-row", `
       <span>Active public <span class="num">${fmt(publicCompanies)}</span> / ${fmt(total)} = <span class="num">${pct}</span>%</span>
       <span>上市证据批次 <span class="num">${fmt(listedBatch)}</span> 条</span>
@@ -766,7 +777,7 @@
     setText("capital-kpi-listing-rate", `${pct}%`);
     setText("capital-kpi-listing-delta", `${fmt(publicCompanies)} / ${fmt(total)} active public · ${fmt(listedBatch)} listed batch rows`);
     setText("capital-kpi-subsidiary", fmt(summary.subsidiary || 0));
-    setText("capital-kpi-subsidiary-delta", `${fmt(summary.corporate_families || 0)} corporate families in Company_Master`);
+    setText("capital-kpi-subsidiary-delta", `${fmt(summary.corporate_families || 0)} 组公司族谱 / 关联主体`);
     setText("capital-kpi-private", fmt(summary.private || 0));
     setText("capital-kpi-private-delta", `${Math.round(Number(summary.private || 0) / total * 100)}% 全行业以私营为主`);
   })();
@@ -815,7 +826,7 @@
           { year: "2013", title: "Valeant 收购 Obagi", body: "Valeant/Obagi 将收购价提高至 $24.00/share；Obagi 从独立上市资产进入 specialty pharma 并购链。", status: "官方公告", sourceName: "Bausch/Valeant archive", sourceUrl: "https://ir.bauschhealth.com/news-releases/archive/2013/03-04-2013" },
           { year: "2017", title: "Valeant 出售 Obagi", body: "Valeant 将 Obagi business 以 $190M cash 出售给 Haitong International Zhonghua Finance Acquisition Fund I, L.P. 及 Obagi Cosmeceuticals。", status: "官方公告", sourceName: "Bausch Health archive", sourceUrl: "https://ir.bauschhealth.com/news-releases/archive/2017/11-10-2017-120030149" },
           { year: "2022", title: "Waldencast 合并平台", body: "Obagi Skincare、Milk Makeup 与 Waldencast 完成 business combination，合并公司 Waldencast plc 开始在 Nasdaq 交易。", status: "官方公告", sourceName: "Waldencast newsroom", sourceUrl: "https://www.waldencast.com/newsroom/obagi-skincare-milk-makeup-and-waldencast-close-business-combination-combined-company-to-begin-trading-on-nasdaq/" },
-          { year: "当前", title: "当前归属", body: "本地 listed_company_batch 将 Obagi 标为 Waldencast plc / NASDAQ:WALD 的 subsidiary_or_affiliate；历史转手链将继续沉淀进结构化事实表。", status: "本地资本表", sourceName: "listed_company_batch", sourceUrl: "#" },
+          { year: "当前", title: "当前归属", body: "上市企业关系表将 Obagi 标为 Waldencast plc / NASDAQ:WALD 的子公司 / 关联公司；历史转手链将继续沉淀进结构化事实表。", status: "本地资本表", sourceName: "上市企业关系表", sourceUrl: "#" },
         ],
       },
       {
@@ -891,10 +902,10 @@
           { from: "classys", to: "independent", label: "KRX peer pool" },
         ],
         events: [
-          { year: "Group A", title: "Hugel -> Across", body: "listed_company_batch 已把 Hugel 和 Across 放在同一 KRX:145020 关系组，适合讲注射剂集团线。", status: "本地资本表", sourceName: "listed_company_batch", sourceUrl: "#" },
-          { year: "Group B", title: "Classys -> Ilooda", body: "listed_company_batch 已把 Classys 和 Ilooda 放在同一 KRX:214150 关系组，适合讲 EBD 平台扩张。", status: "本地资本表", sourceName: "listed_company_batch", sourceUrl: "#" },
+          { year: "Group A", title: "Hugel -> Across", body: "上市企业关系表已把 Hugel 和 Across 放在同一 KRX:145020 关系组，适合讲注射剂集团线。", status: "本地资本表", sourceName: "上市企业关系表", sourceUrl: "#" },
+          { year: "Group B", title: "Classys -> Ilooda", body: "上市企业关系表已把 Classys 和 Ilooda 放在同一 KRX:214150 关系组，适合讲 EBD 平台扩张。", status: "本地资本表", sourceName: "上市企业关系表", sourceUrl: "#" },
           { year: "Group C", title: "Huons Global -> Humedix / Huons Meditech", body: "manual_company_relationship_supplement 已确认 Humedix 是 Huons Group aesthetic subsidiary；Huons Meditech 也在 KRX 关联线中。", status: "本地+官方", sourceName: "Huons Global", sourceUrl: "https://huonsglobal.com/eng/home.php?field=&go=Bmenu_03&go_pds=pds_text_list&mode=&num=3275&pds_num=60&s_memo_2=&s_que=&start=10" },
-          { year: "Peer", title: "独立 KRX 小盘池", body: "Medytox、Caregen、PharmaResearch、Wontech、ViOL 等更像独立上市公司池；它们与集团线并列构成韩国资本叙事。", status: "本地资本表", sourceName: "company_capital_structure / listed_company_batch", sourceUrl: "#" },
+          { year: "Peer", title: "独立 KRX 小盘池", body: "Medytox、Caregen、PharmaResearch、Wontech、ViOL 等更像独立上市公司池；它们与集团线并列构成韩国资本叙事。", status: "本地资本表", sourceName: "企业资本结构 / 上市企业关系表", sourceUrl: "#" },
         ],
       },
     ];

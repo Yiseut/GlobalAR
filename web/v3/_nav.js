@@ -26,40 +26,85 @@
     return item.count || "";
   }
 
-  // —— Topbar 是「产业品类」入口（不重复左 rail 的「分析视角」）——
-  // 医美 9 大商业品类，中英对照
+  // —— Topbar 是「产品 / 材料」入口（不重复左 rail 的「市场策略」）——
+  // 大入口保持少而清晰；二级树在 hover 下拉里承载。
   const topNav = [
-    { id: "topic-injectables",  href: "./topic.html?segment=injectables",  zh: "注射剂",        en: "Injectables" },
-    { id: "topic-ebd",          href: "./topic.html?segment=ebd",          zh: "能量源设备",    en: "EBD" },
-    { id: "topic-regenerative", href: "./topic.html?segment=regenerative", zh: "再生",          en: "Regen" },
-    { id: "topic-implants",     href: "./topic.html?segment=implants",     zh: "植入物",        en: "Implants" },
-    { id: "topic-skincare",     href: "./topic.html?segment=skincare",     zh: "功能性护肤品",  en: "Cosmeceutical" },
-    { id: "topic-consumables",  href: "./topic.html?segment=consumables",  zh: "耗材",          en: "Consumables" },
-    { id: "topic-diagnostics",  href: "./topic.html?segment=diagnostics",  zh: "诊断",          en: "Diagnostics" },
-    { id: "topic-surgical",     href: "./topic.html?segment=surgical",     zh: "外科",          en: "Surgical" },
-    { id: "topic-pharma",       href: "./topic.html?segment=pharma",       zh: "药物",          en: "Pharma" },
+    {
+      id: "topic-injectables",
+      href: "./topic.html?segment=injectables",
+      zh: "注射剂",
+      en: "Injectables",
+      children: [
+        { href: "./topic.html?segment=injectables#l2-subtracks", zh: "HA 填充", en: "HA fillers" },
+        { href: "./topic.html?segment=injectables#l2-subtracks", zh: "Skin Booster / 中胚层", en: "skin boosters" },
+        { href: "./topic.html?segment=injectables#l2-subtracks", zh: "肉毒毒素", en: "toxins" },
+        { href: "./topic.html?segment=injectables#l2-subtracks", zh: "生物刺激剂", en: "biostimulators" },
+        { href: "./topic.html?segment=injectables#l2-subtracks", zh: "胶原 / PN / PDRN", en: "collagen / nucleotides" },
+      ],
+    },
+    {
+      id: "topic-ebd",
+      href: "./topic.html?segment=ebd",
+      zh: "EBD",
+      en: "Energy Devices",
+      children: [
+        { href: "./topic.html?segment=ebd#l2-subtracks", zh: "激光 / IPL", en: "laser and light" },
+        { href: "./topic.html?segment=ebd#l2-subtracks", zh: "射频 / RF", en: "radiofrequency" },
+        { href: "./topic.html?segment=ebd#l2-subtracks", zh: "HIFU / 超声", en: "ultrasound" },
+        { href: "./topic.html?segment=ebd#l2-subtracks", zh: "微针 / RF 微针", en: "microneedling" },
+        { href: "./topic.html?segment=ebd#l2-subtracks", zh: "身体塑形 / EMS", en: "body shaping" },
+        { href: "./topic.html?segment=ebd#l2-subtracks", zh: "联合能源 / 其他", en: "hybrid energy" },
+      ],
+    },
+    {
+      id: "topic-regenerative",
+      href: "./topic.html?segment=regenerative",
+      zh: "再生与生物材料",
+      en: "Regen Bio",
+      children: [
+        { href: "./topic.html?segment=regenerative#l2-subtracks", zh: "外泌体", en: "exosome" },
+        { href: "./topic.html?segment=regenerative#l2-subtracks", zh: "PRP / PRF", en: "autologous blood" },
+        { href: "./topic.html?segment=regenerative#l2-subtracks", zh: "干细胞", en: "stem cell" },
+        { href: "./topic.html?segment=regenerative#l2-subtracks", zh: "生长因子", en: "growth factors" },
+      ],
+    },
+    {
+      id: "topic-other",
+      href: "./topic.html?segment=other",
+      zh: "其他产品线",
+      en: "Other Lines",
+      title: "皮肤管理、功效护肤、植入物、耗材、诊断、外科、药物",
+      children: [
+        { href: "./topic.html?segment=skincare", zh: "皮肤管理 / 功效护肤", en: "skin health" },
+        { href: "./topic.html?segment=implants", zh: "植入物", en: "implants" },
+        { href: "./topic.html?segment=consumables", zh: "耗材", en: "consumables" },
+        { href: "./topic.html?segment=consumables#l2-subtracks", zh: "埋线提升", en: "threads" },
+        { href: "./topic.html?segment=diagnostics", zh: "诊断", en: "diagnostics" },
+        { href: "./topic.html?segment=surgical", zh: "外科", en: "surgical" },
+        { href: "./topic.html?segment=pharma", zh: "药物", en: "pharma" },
+      ],
+    },
   ];
 
   const railSections = [
     {
-      title: "情报视角",
+      title: "市场策略",
       items: [
-        { id: "project-overview", href: "./project-overview.html", zh: "项目总览", count: "roadmap" },
-        { id: "overview",   href: "./index.html",            zh: "总览",     count: null },
-        { id: "regulatory", href: "./regulatory-pulse.html", zh: "监管脉搏", countKey: "registration_evidence" },
+        { id: "overview",   href: "./index.html",            zh: "市场总览", count: null },
+        { id: "market-intelligence", href: "./market-intelligence.html", zh: "市场格局分析", countKey: "commercial_claims" },
+        { id: "regulatory", href: "./regulatory-pulse.html", zh: "监管与准入", countKey: "registration_evidence" },
         { id: "capital",    href: "./capital-map.html",      zh: "资本地图", count: "61" },
-        { id: "market-intelligence", href: "./market-intelligence.html", zh: "商业格局", countKey: "commercial_claims" },
         { id: "custom-analysis", href: "./custom-analysis.html", zh: "自定义分析", count: "3 pivot" },
-        { id: "deep",       href: "./deep-dive.html",        zh: "深度图谱", count: "L1·L2·L3" },
+        { id: "rd-portfolio", href: "./rd-portfolio.html", zh: "研发与组合", count: "strategy" },
       ],
     },
     {
-      title: "企业与产品",
+      title: "产品与竞品",
       items: [
-        { id: "companies",        href: "./companies.html",         zh: "公司列表",   countKey: "company_master" },
+        { id: "competitive-technology", href: "./competitive-technology.html", zh: "竞品与替代技术", count: "267" },
+        { id: "companies",        href: "./companies.html",         zh: "公司关系",   countKey: "company_master" },
         { id: "companies-matrix", href: "./companies-matrix.html",  zh: "企业矩阵",   count: "platform" },
-        { id: "indications",      href: "./indications.html",       zh: "适应症星图", countKey: "indication_signals" },
-        { id: "technology",       href: "./technology-tree.html",   zh: "技术树",     count: "267" },
+        { id: "indications",      href: "./indications.html",       zh: "适应症与需求", countKey: "indication_signals" },
         // —— 2026-06-02 evidence / evidence-queue-mdr 入口已下架：
         //     依据 audits/v4_acceptance_self_check_latest.md Overall passed:True
         //     + audits/staging_duplicate_close_20260602_latest.json + MDR/CE policy_closed
@@ -77,12 +122,24 @@
         <img src="./assets/aestrat_logo.png" alt="Aestrat" class="brand-logo" />
         <span class="brand-cn">全球医美情报</span>
       </a>
-      <nav aria-label="产业品类导航">
+      <nav aria-label="产品赛道导航">
         ${topNav.map(item => `
-          <a href="${item.href}" class="${item.id === active ? "active" : ""}"${item.title ? ` title="${item.title}"` : ""}>
-            <span class="nav-zh">${item.zh}</span>
-            <span class="nav-en">${item.en}</span>
-          </a>
+          <div class="nav-item ${item.children && item.children.length ? "has-tree" : ""}">
+            <a href="${item.href}" class="${item.id === active ? "active" : ""}"${item.title ? ` title="${item.title}"` : ""}>
+              <span class="nav-zh">${item.zh}</span>
+              <span class="nav-en">${item.en}</span>
+            </a>
+            ${item.children && item.children.length ? `
+              <div class="nav-tree" role="menu" aria-label="${item.zh} 二级菜单">
+                ${item.children.map(child => `
+                  <a class="nav-tree-link" href="${child.href}" role="menuitem">
+                    <span>${child.zh}</span>
+                    <small>${child.en}</small>
+                  </a>
+                `).join("")}
+              </div>
+            ` : ""}
+          </div>
         `).join("")}
       </nav>
       <button class="global-search-trigger" id="global-search-trigger" type="button" aria-label="全局搜索产品、公司与证据">

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>研发与组合 · v3</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .rd-path {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .rd-card,
+  .rd-priority {
+    border: 1px solid var(--hairline-2);
+    border-radius: 8px;
+    background: rgba(255,252,245,0.72);
+    padding: 15px 16px;
+    min-width: 0;
+  }
+  .rd-card .step {
+    color: var(--accent-2);
+    font-family: var(--f-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .rd-card strong,
+  .rd-priority strong {
+    display: block;
+    margin-top: 7px;
+    color: var(--ink);
+    font-family: var(--f-display-cn);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .rd-card span,
+  .rd-priority span {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-family: var(--f-body);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .rd-priority-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .rd-priority {
+    border-left: 4px solid var(--rd-color, var(--accent));
+  }
+  .rd-priority .metric {
+    color: var(--rd-color, var(--accent));
+    font-family: var(--f-serif-it);
+    font-style: italic;
+    font-size: 34px;
+    line-height: 1;
+  }
+  .rd-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .rd-table th,
+  .rd-table td {
+    border-bottom: 1px solid var(--hairline-2);
+    padding: 12px 10px;
+    vertical-align: top;
+    text-align: left;
+  }
+  .rd-table th {
+    color: var(--muted);
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .rd-table td {
+    color: var(--ink-2);
+    font-family: var(--f-body);
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .rd-table td strong {
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 13px;
+  }
+  .rd-table a {
+    color: var(--accent-2);
+    text-decoration: none;
+  }
+  @media (max-width: 1100px) {
+    .rd-path,
+    .rd-priority-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="topbar"></header>
+
+<div class="shell">
+  <aside id="rail" aria-label="市场策略导航"></aside>
+
+  <main class="content">
+    <section class="page-hero">
+      <div class="eyebrow-chip"><span class="dot"></span>R&D · Portfolio strategy</div>
+      <h1>
+        研发与组合
+        <span class="h1-en">R&D And Portfolio</span>
+      </h1>
+      <p class="lede">把市场格局、子赛道趋势、竞品替代技术和自身产品线放到同一条推导链里，服务研发方向、组合宽度和定价定位。</p>
+      <div class="stat-row" id="rd-stat-row">
+        <span>产品线 <span class="num">—</span></span>
+        <span>技术 / 材料 <span class="num">—</span></span>
+        <span>上市公司 <span class="num">—</span></span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>策略推导路径</h2>
+        <span class="cn">· 从市场到产品组合</span><span class="en">Strategy path</span>
+      </div>
+      <div class="rd-path">
+        <article class="rd-card"><span class="step">Step 01</span><strong>宏观需求</strong><span>先看国家、收入、治疗数量和渠道密度，判断市场容量与进入优先级。</span></article>
+        <article class="rd-card"><span class="step">Step 02</span><strong>子赛道机会</strong><span>按注射剂、EBD、再生与生物材料等赛道识别增长和拥挤度。</span></article>
+        <article class="rd-card"><span class="step">Step 03</span><strong>竞品与替代</strong><span>同一治疗目标下比较材料、设备、联合方案和代表品牌。</span></article>
+        <article class="rd-card"><span class="step">Step 04</span><strong>自身优势</strong><span>回到已有技术、制造、注册、渠道和价格带，找可防守的定位。</span></article>
+        <article class="rd-card"><span class="step">Step 05</span><strong>研发组合</strong><span>形成核心产品、搭配产品、延展适应症和下一代技术路线。</span></article>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>第一版研发方向池</h2>
+        <span class="cn">· 基于当前数据读数</span><span class="en">Portfolio candidates</span>
+      </div>
+      <div class="rd-priority-grid" id="rd-priority-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="section-head">
+        <h2>组合画布</h2>
+        <span class="cn">· 页面之间如何串联</span><span class="en">Portfolio canvas</span>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">从一张图找到下一步要看的图</div>
+        <div class="chart-sub">这张表把仪表盘页面按市场策略路径串起来，避免只按数据维度堆叠。</div>
+        <table class="rd-table">
+          <thead><tr><th>策略问题</th><th>进入页面</th><th>读法</th></tr></thead>
+          <tbody>
+            <tr><td><strong>哪个国家 / 区域值得优先看？</strong></td><td><a href="./market-intelligence.html">市场格局分析</a></td><td>治疗量、公司收入、渠道密度和需求信号先给国家优先级。</td></tr>
+            <tr><td><strong>产品属于哪个大赛道？</strong></td><td><a href="./topic.html?segment=injectables">注射剂</a> / <a href="./topic.html?segment=ebd">EBD</a></td><td>超级赛道先看二级结构，再下钻 L2、国家和企业。</td></tr>
+            <tr><td><strong>竞品不止同材料时怎么看？</strong></td><td><a href="./competitive-technology.html">竞品与替代技术</a></td><td>按治疗目标看材料、能量设备和联合方案之间的替代关系。</td></tr>
+            <tr><td><strong>资本和公司格局如何影响研发？</strong></td><td><a href="./capital-map.html">资本地图</a> / <a href="./companies.html">公司关系</a></td><td>上市企业看财务表现，非上市集团看母子关系、并购和资本流向。</td></tr>
+            <tr><td><strong>研发组合最后如何形成？</strong></td><td><a href="./rd-portfolio.html">研发与组合</a></td><td>把市场机会、技术替代和自身优势合并成产品线建议。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="footnote">
+      <span>v3 · 研发与组合 R&D And Portfolio · updated <span data-bind-text="generated_at_short">—</span></span>
+      <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
+    </div>
+  </main>
+</div>
+
+<script src="../app-data.js?v=20260616"></script>
+<script src="./v3-technology.js?v=20260616"></script>
+<script src="./_nav.js" data-active="rd-portfolio"></script>
+<script>
+  (function () {
+    const app = window.GLOBAL_AESTHETICS_DATA || {};
+    const tech = window.V3_TECHNOLOGY_DATA || {};
+    const s = app.summary || {};
+    const ts = tech.summary || {};
+    const fmt = value => typeof value === "number" ? value.toLocaleString("en-US") : (value || "—");
+    const esc = value => String(value == null ? "" : value).replace(/[&<>"']/g, ch => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" })[ch]);
+
+    if (app.generated_at) {
+      document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => {
+        el.textContent = app.generated_at.slice(0, 10).replace(/-/g, "·");
+      });
+    }
+    const stat = document.getElementById("rd-stat-row");
+    if (stat) {
+      stat.innerHTML = `
+        <span><span class="num" data-count-up="${s.products || 0}">${fmt(s.products)}</span> 款产品线</span>
+        <span><span class="num" data-count-up="${ts.total_techs || 0}">${fmt(ts.total_techs)}</span> 种技术 / 材料</span>
+        <span><span class="num" data-count-up="${s.listed_company_batch || 0}">${fmt(s.listed_company_batch)}</span> 条上市证据批次</span>
+      `;
+    }
+
+    const topTech = (tech.top_techs || [])[0] || {};
+    const bioFamily = (tech.family_rollup || []).find(row => /生物刺激|干细胞|再生/.test(row.family || "")) || {};
+    const energyFamily = (tech.family_rollup || []).find(row => /激光/.test(row.family || "")) || {};
+    const priorities = [
+      {
+        title: "HA 平台差异化",
+        metric: fmt(topTech.n_products || 0),
+        color: "#6B5A75",
+        note: `HA 是最大平台技术，重点不是重复做基础填充，而是适应症、流变学、交联、复配和渠道定位。`,
+      },
+      {
+        title: "生物刺激与再生材料",
+        metric: fmt(bioFamily.n_products || 0),
+        color: "#A8B59A",
+        note: "PLLA/PCL/胶原/PN/PDRN/外泌体适合承接长效、修复和肤质改善叙事，但证据与合规边界要单独管理。",
+      },
+      {
+        title: "EBD 联合治疗",
+        metric: fmt(energyFamily.n_products || 0),
+        color: "#8E3A3A",
+        note: "激光、RF、HIFU 和微针可以作为注射材料的替代或联合方案，用于定价、套餐和适应症拓宽。",
+      },
+      {
+        title: "术后修复与皮肤管理",
+        metric: fmt(s.brands || 0),
+        color: "#D9AE91",
+        note: "功效护肤和皮肤管理适合作为治疗周期中的搭配产品，强化复购、医生渠道和组合毛利。",
+      },
+    ];
+    document.getElementById("rd-priority-grid").innerHTML = priorities.map(item => `
+      <article class="rd-priority" style="--rd-color:${item.color};">
+        <span class="metric">${esc(item.metric)}</span>
+        <strong>${esc(item.title)}</strong>
+        <span>${esc(item.note)}</span>
+      </article>
+    `).join("");
+  })();
+</script>
+</body>
+</html>
