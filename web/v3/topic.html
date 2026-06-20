@@ -643,7 +643,7 @@
       "pharma":"topic-other",
     };
     const s = document.createElement("script");
-    s.src = "./_nav.js?v=20260620-subtrack-analysis";
+    s.src = "./_nav.js?v=20260620-analysis-order";
     s.dataset.active = SLUG_TO_TOPIC[seg] || "topic-ebd";
     document.currentScript.parentNode.insertBefore(s, document.currentScript);
   })();
@@ -793,8 +793,6 @@
             }).join("")}
         </div>
       </section>
-
-      ${renderSubtrackAnalysis(focusKey, L1, baseColor)}
 
       <section class="block" id="topic-analysis">
         <div class="section-head">
@@ -992,6 +990,8 @@
           <div id="cl-matrix-wrap"></div>
         </div>
       </section>
+
+      ${renderSubtrackAnalysis(focusKey, L1, baseColor)}
 
       ${megaTrackHtml}
 
