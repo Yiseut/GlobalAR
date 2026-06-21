@@ -77,6 +77,47 @@
       </div>
     </section>
 
+    <section class="block" data-mode-block="all">
+      <div class="section-head">
+        <h2>国家商业模式信号</h2>
+        <span class="cn">· 出口贸易 × 入境消费</span><span class="en">Country business model signal</span>
+      </div>
+      <div class="mi-business-model-layout">
+        <article class="mi-panel mi-bm-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>韩国：外国人消费结构</h3>
+              <p>用入境医疗旅游消费拆分，观察“做项目 + 买药房/功效护肤”的组合。</p>
+            </div>
+          </div>
+          <div class="mi-bm-pie-wrap">
+            <div class="mi-bm-pie" id="mi-bm-inbound-pie" aria-label="韩国外国人医疗旅游消费结构"></div>
+            <div class="mi-bm-legend" id="mi-bm-inbound-legend"></div>
+          </div>
+        </article>
+        <article class="mi-panel mi-bm-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>韩国：出口品类结构</h3>
+              <p>毒素、填充剂和 EBD 先按新闻披露口径做样本；后续用海关/官方统计核验。</p>
+            </div>
+          </div>
+          <div class="mi-bm-stack" id="mi-bm-export-stack"></div>
+          <div class="mi-bm-destination" id="mi-bm-destination-bars"></div>
+        </article>
+        <article class="mi-panel mi-bm-panel mi-bm-wide">
+          <div class="mi-panel-head">
+            <div>
+              <h3>同一商业模式下的增长信号</h3>
+              <p>只作为 2026 年 5 月截面信号，不把新闻数字直接并入治疗量或公司收入主干。</p>
+            </div>
+          </div>
+          <div class="mi-bm-growth-bars" id="mi-bm-growth-bars"></div>
+          <div class="mi-bm-footnote" id="mi-bm-footnote"></div>
+        </article>
+      </div>
+    </section>
+
     <section class="block" data-mode-block="region">
       <div class="section-head">
         <h2>洲际商业结构</h2>
@@ -556,6 +597,7 @@
 
 <script src="../app-data.js?v=20260619"></script>
 <script src="./v3-market-intelligence.js?v=20260619"></script>
+<script src="./v3-business-model-signals.js?v=20260621"></script>
 <script src="./_nav.js?v=20260620-analysis-order" data-active="market-intelligence"></script>
 <style>
   .mi-hero .lede { max-width: 760px; }
@@ -719,6 +761,147 @@
     gap: 12px;
     color: var(--ink-2);
     font-size: 12px;
+  }
+  .mi-business-model-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.95fr) minmax(360px, 1.05fr);
+    gap: 16px;
+  }
+  .mi-bm-panel {
+    min-width: 0;
+  }
+  .mi-bm-wide {
+    grid-column: 1 / -1;
+  }
+  .mi-bm-pie-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 16px;
+    min-height: 260px;
+  }
+  .mi-bm-pie {
+    width: min(240px, 100%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: conic-gradient(var(--s0) 0 var(--a0), var(--s1) var(--a0) var(--a1), var(--s2) var(--a1) 100%);
+    position: relative;
+    box-shadow: inset 0 0 0 1px var(--hairline-2), 0 18px 38px -28px rgba(58,51,64,0.55);
+  }
+  .mi-bm-pie::after {
+    content: "";
+    position: absolute;
+    inset: 28%;
+    border-radius: 50%;
+    background: var(--surface-2);
+    box-shadow: inset 0 0 0 1px var(--hairline-2);
+  }
+  .mi-bm-legend,
+  .mi-bm-destination,
+  .mi-bm-growth-bars {
+    display: grid;
+    gap: 10px;
+  }
+  .mi-bm-legend-row,
+  .mi-bm-destination-row,
+  .mi-bm-growth-row {
+    display: grid;
+    grid-template-columns: minmax(140px, 0.55fr) minmax(160px, 1fr) minmax(96px, 0.32fr);
+    gap: 10px;
+    align-items: center;
+    color: var(--ink);
+    font-size: 12px;
+  }
+  .mi-bm-legend-row .label,
+  .mi-bm-destination-row .label,
+  .mi-bm-growth-row .label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mi-bm-pie-wrap .mi-bm-legend-row {
+    grid-template-columns: minmax(120px, 1fr) max-content;
+    grid-template-areas:
+      "label value"
+      "track track";
+    gap: 6px 10px;
+  }
+  .mi-bm-pie-wrap .mi-bm-legend-row .label {
+    grid-area: label;
+  }
+  .mi-bm-pie-wrap .mi-bm-legend-row .mi-bm-track {
+    grid-area: track;
+  }
+  .mi-bm-pie-wrap .mi-bm-legend-row .mi-bm-value {
+    grid-area: value;
+    white-space: nowrap;
+  }
+  .mi-bm-swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 7px;
+    vertical-align: -1px;
+    background: var(--c);
+  }
+  .mi-bm-track {
+    height: 16px;
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    background: rgba(239,234,224,0.7);
+    overflow: hidden;
+  }
+  .mi-bm-fill {
+    display: block;
+    width: var(--w);
+    height: 100%;
+    border-radius: 999px;
+    background: var(--c, var(--accent));
+  }
+  .mi-bm-value {
+    color: var(--ink-2);
+    font-family: var(--f-mono);
+    font-size: 11px;
+    text-align: right;
+  }
+  .mi-bm-stack {
+    display: grid;
+    gap: 12px;
+  }
+  .mi-bm-stackbar {
+    display: flex;
+    height: 30px;
+    overflow: hidden;
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    background: rgba(239,234,224,0.7);
+  }
+  .mi-bm-stackbar span {
+    width: var(--w);
+    background: var(--c);
+  }
+  .mi-bm-stack-legend {
+    display: grid;
+    gap: 8px;
+  }
+  .mi-bm-stack-item {
+    display: grid;
+    grid-template-columns: minmax(130px, 1fr) 90px 82px;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    color: var(--ink-2);
+  }
+  .mi-bm-footnote {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+    border-top: 1px solid var(--hairline-2);
+    margin-top: 12px;
+    padding-top: 12px;
   }
   .mi-geo-layout {
     grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
@@ -1826,6 +2009,7 @@
     .mi-region-grid,
     .mi-country-grid,
     .mi-geo-dashboard-grid,
+    .mi-business-model-layout,
     .mi-finance-grid,
     .mi-revenue-ops-grid,
     .mi-signal-grid,
@@ -1838,6 +2022,13 @@
     .mi-coverage-row { grid-template-columns: 1fr; }
     .mi-revenue-priority .tag { justify-self: start; }
     .mi-method-strip span { white-space: normal; }
+    .mi-bm-pie-wrap,
+    .mi-bm-legend-row,
+    .mi-bm-destination-row,
+    .mi-bm-growth-row,
+    .mi-bm-stack-item { grid-template-columns: 1fr; }
+    .mi-bm-pie { width: min(220px, 72vw); }
+    .mi-bm-value { text-align: left; }
     .mi-head-row { align-items: flex-start; flex-direction: column; }
     .mi-filter-row { justify-content: flex-start; }
     .mi-bar-row { grid-template-columns: 1fr; gap: 6px; }
@@ -1855,6 +2046,7 @@
   (function () {
     const app = window.GLOBAL_AESTHETICS_DATA || {};
     const data = window.V3_MARKET_INTELLIGENCE_DATA || {};
+    const businessModelSignals = window.V3_BUSINESS_MODEL_SIGNALS || {};
     const summary = data.summary || {};
     const docs = Array.isArray(data.sourceDocuments) ? data.sourceDocuments : [];
     const metrics = Array.isArray(data.marketMetrics) ? data.marketMetrics : [];
@@ -2718,6 +2910,100 @@
       `).join("");
     }
 
+    function renderBusinessModelSignals() {
+      const country = (businessModelSignals.countries || [])[0];
+      const pie = document.getElementById("mi-bm-inbound-pie");
+      const legend = document.getElementById("mi-bm-inbound-legend");
+      const exportStack = document.getElementById("mi-bm-export-stack");
+      const destination = document.getElementById("mi-bm-destination-bars");
+      const growth = document.getElementById("mi-bm-growth-bars");
+      const footnote = document.getElementById("mi-bm-footnote");
+      if (!country || !pie || !legend || !exportStack || !destination || !growth || !footnote) return;
+
+      const inboundColors = ["#8e3a3a", "#d9ae91", "#5a6878"];
+      const exportColors = ["#6b5a75", "#8e3a3a", "#a8b59a"];
+      const inboundRows = Array.isArray(country.inboundSpendKrwBn) ? country.inboundSpendKrwBn : [];
+      const inboundTotal = inboundRows.reduce((sum, row) => sum + Number(row.value || 0), 0) || 1;
+      let cursor = 0;
+      const stops = inboundRows.map((row, index) => {
+        cursor += Number(row.value || 0) / inboundTotal * 100;
+        return { ...row, color: inboundColors[index % inboundColors.length], stop: cursor };
+      });
+      pie.style.cssText = `
+        --s0:${stops[0]?.color || inboundColors[0]};
+        --s1:${stops[1]?.color || inboundColors[1]};
+        --s2:${stops[2]?.color || inboundColors[2]};
+        --a0:${(stops[0]?.stop || 0).toFixed(1)}%;
+        --a1:${(stops[1]?.stop || 0).toFixed(1)}%;
+      `;
+      legend.innerHTML = stops.map(row => `
+        <div class="mi-bm-legend-row">
+          <span class="label"><i class="mi-bm-swatch" style="--c:${row.color};"></i>${esc(row.name)}</span>
+          <span class="mi-bm-track"><span class="mi-bm-fill" style="--c:${row.color};--w:${Math.max(3, row.share || (Number(row.value || 0) / inboundTotal * 100)).toFixed(1)}%;"></span></span>
+          <span class="mi-bm-value">${fmt(row.value)} 亿韩元 · ${fmt(row.share || Number(row.value || 0) / inboundTotal * 100)}%</span>
+        </div>
+      `).join("");
+
+      const exports = Array.isArray(country.exportCategoriesUsdM) ? country.exportCategoriesUsdM : [];
+      const exportTotal = exports.reduce((sum, row) => sum + Number(row.value || 0), 0) || 1;
+      exportStack.innerHTML = `
+        <div class="mi-bm-stackbar" title="按已披露三类出口口径归一化">
+          ${exports.map((row, index) => {
+            const share = Number(row.value || 0) / exportTotal * 100;
+            return `<span style="--w:${share.toFixed(1)}%;--c:${exportColors[index % exportColors.length]};"></span>`;
+          }).join("")}
+        </div>
+        <div class="mi-bm-stack-legend">
+          ${exports.map((row, index) => {
+            const share = Number(row.value || 0) / exportTotal * 100;
+            const color = exportColors[index % exportColors.length];
+            return `
+              <div class="mi-bm-stack-item">
+                <span><i class="mi-bm-swatch" style="--c:${color};"></i>${esc(row.name)}</span>
+                <span>${moneyUsdM(row.value)}</span>
+                <span>${fmt(share)}% · +${fmt(row.yoy)}%</span>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      `;
+
+      const destinations = Array.isArray(country.ebdDestinationsUsdM) ? country.ebdDestinationsUsdM : [];
+      const maxDest = Math.max(1, ...destinations.map(row => Number(row.value || 0)));
+      destination.innerHTML = destinations.map((row, index) => {
+        const color = index === 0 ? "#5a6878" : "#cfb58e";
+        return `
+          <div class="mi-bm-destination-row">
+            <span class="label"><i class="mi-bm-swatch" style="--c:${color};"></i>EBD → ${esc(row.name)}</span>
+            <span class="mi-bm-track"><span class="mi-bm-fill" style="--c:${color};--w:${Math.max(4, Number(row.value || 0) / maxDest * 100).toFixed(1)}%;"></span></span>
+            <span class="mi-bm-value">${moneyUsdM(row.value)} · +${fmt(row.yoy)}%</span>
+          </div>
+        `;
+      }).join("");
+
+      const growthRows = [
+        ...(country.inboundDemand || []).map(row => ({ ...row, axis: "入境消费", color: "#8e3a3a" })),
+        ...(country.exportTotal ? [{ ...country.exportTotal, axis: "出口贸易", color: "#5a6878" }] : []),
+        ...exports.map(row => ({ ...row, axis: "出口品类", color: "#6b5a75" }))
+      ].filter(row => Number.isFinite(Number(row.yoy)));
+      const maxGrowth = Math.max(1, ...growthRows.map(row => Number(row.yoy || 0)));
+      growth.innerHTML = growthRows.map(row => `
+        <div class="mi-bm-growth-row">
+          <span class="label"><i class="mi-bm-swatch" style="--c:${row.color};"></i>${esc(row.axis)} · ${esc(row.name)}</span>
+          <span class="mi-bm-track"><span class="mi-bm-fill" style="--c:${row.color};--w:${Math.max(4, Number(row.yoy || 0) / maxGrowth * 100).toFixed(1)}%;"></span></span>
+          <span class="mi-bm-value">同比 +${fmt(row.yoy)}%</span>
+        </div>
+      `).join("");
+
+      const source = (businessModelSignals.sources || []).find(row => row.sourceId === country.sourceId) || {};
+      footnote.innerHTML = `
+        <strong>${esc(country.countryZh || country.country)} · ${esc(country.modelLabel)}</strong>
+        <span> · ${esc(country.period)} · ${esc(country.verificationStatus || "待核验")}</span>
+        <br>${esc(country.interpretation || "")}
+        ${source.url ? `<br><a href="${esc(source.url)}" target="_blank" rel="noopener">来源：${esc(source.publisher || "source")}，新闻/券商转述口径，待官方统计核验 ↗</a>` : ""}
+      `;
+    }
+
     function filteredCubeRows(allRows = buildMarketCubeRows()) {
       return allRows.filter(row =>
         (state.cubeScope === "all" || row.scope === state.cubeScope) &&
@@ -2928,6 +3214,7 @@
     function renderAnalysis() {
       renderOpportunityMap();
       renderOpportunityHighlights();
+      renderBusinessModelSignals();
       renderMarketMatrix();
       renderCubeInsights();
       renderSignalTimeline();
