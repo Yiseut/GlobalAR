@@ -1,13 +1,16 @@
 {
-  "ran_at": "2026-06-20T14:01:20+08:00",
+  "ran_at": "2026-06-21T14:01:21+08:00",
   "history_path": "E:\\shared\\code\\briefing_v6\\data\\wechat_plan_b_history.jsonl",
-  "curated_urls_total": 122,
+  "curated_urls_total": 123,
   "blocked_urls": 0,
-  "candidate_rows_total": 521,
-  "rows_promoted_to_user_curated": 0,
-  "promoted_by_event": {},
+  "candidate_rows_total": 527,
+  "rows_promoted_to_user_curated": 2,
+  "promoted_by_event": {
+    "new_or_expanded_indication": 1,
+    "product_launch": 1
+  },
   "status_before": {
-    "candidate_unverified": 183,
+    "candidate_unverified": 189,
     "user_curated": 205,
     "promoted": 25,
     "rejected_product_mismatch": 11,
@@ -16,13 +19,32 @@
     "excluded_scope_unlinked": 17
   },
   "status_after": {
-    "candidate_unverified": 183,
-    "user_curated": 205,
+    "candidate_unverified": 187,
+    "user_curated": 207,
     "promoted": 25,
     "rejected_product_mismatch": 11,
     "orphan_product_id_unlinked": 43,
     "rejected_event_class": 37,
     "excluded_scope_unlinked": 17
   },
-  "examples": []
+  "examples": [
+    {
+      "article_date": "2026-06-01",
+      "company": "CFM proíbe o uso médico de PMMA como preenchedor em todo o país",
+      "brand": "",
+      "event_type": "new_or_expanded_indication",
+      "confidence_score": "44",
+      "article_title": "",
+      "url": "https://portal.cfm.org.br/noticias/cfm-proibe-o-uso-medico-da-substancia-no-pais"
+    },
+    {
+      "article_date": "2026-06-01",
+      "company": "CFM proíbe o uso médico de PMMA como preenchedor em todo o país",
+      "brand": "",
+      "event_type": "product_launch",
+      "confidence_score": "44",
+      "article_title": "",
+      "url": "https://portal.cfm.org.br/noticias/cfm-proibe-o-uso-medico-da-substancia-no-pais"
+    }
+  ]
 }
