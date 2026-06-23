@@ -84,6 +84,7 @@ MANUAL_REGISTRATION_NAME_EVIDENCE_PATH = DATA_DIR / "manual_registration_name_ev
 MANUAL_EVIDENCE_PROMOTION_LOG_PATH = DATA_DIR / "manual_evidence_promotion_log.csv"
 ISAPS_MARKET_METRICS_PATH = DATA_DIR / "isaps_market_metrics.csv"
 ASPS_MARKET_METRICS_PATH = DATA_DIR / "asps_market_metrics.csv"
+JSAPS_MARKET_METRICS_PATH = DATA_DIR / "jsaps_market_metrics.csv"
 MARKET_SNAPSHOT_LIVE_PATH = DATA_DIR / "market_snapshot_live.csv"
 COMPANY_FINANCIAL_METRICS_PATH = DATA_DIR / "company_financial_metrics.csv"
 COMPANY_REVENUE_COLLECTION_PLAN_PATH = DATA_DIR / "audits" / "company_revenue_collection_plan_latest.csv"
@@ -6902,7 +6903,7 @@ def load_market_metrics() -> list[dict[str, Any]]:
                         "confidence": norm(row.get("可信度")),
                     }
                 )
-    for association_metrics_path in [ISAPS_MARKET_METRICS_PATH, ASPS_MARKET_METRICS_PATH]:
+    for association_metrics_path in [ISAPS_MARKET_METRICS_PATH, ASPS_MARKET_METRICS_PATH, JSAPS_MARKET_METRICS_PATH]:
         if not association_metrics_path.exists():
             continue
         with association_metrics_path.open("r", encoding="utf-8-sig", newline="") as handle:
@@ -8797,7 +8798,10 @@ def create_database(
     registration_seed = build_registration_seed(products, company_id_map)
     market_snapshots = build_market_snapshots(company_master)
     company_financial_metrics = load_generated_csv(COMPANY_FINANCIAL_METRICS_PATH)
-    company_revenue_collection_plan = load_audit_csv(COMPANY_REVENUE_COLLECTION_PLAN_PATH)
+    company_revenue_collection_plan = dedupe_rows_by_key(
+        load_audit_csv(COMPANY_REVENUE_COLLECTION_PLAN_PATH),
+        "plan_id",
+    )
     commercial_data_source_registry = load_audit_csv(COMMERCIAL_DATA_SOURCE_REGISTRY_PATH)
     commercial_data_collection_backlog = load_audit_csv(COMMERCIAL_DATA_COLLECTION_BACKLOG_PATH)
     commercial_geo_source_discovery = load_audit_csv(COMMERCIAL_GEO_SOURCE_DISCOVERY_PATH)
@@ -11102,7 +11106,10 @@ def build_snapshot(
     active_product_ids = set(product_lookup)
     market_snapshots = build_market_snapshots(company_master)
     company_financial_metrics = load_generated_csv(COMPANY_FINANCIAL_METRICS_PATH)
-    company_revenue_collection_plan = load_audit_csv(COMPANY_REVENUE_COLLECTION_PLAN_PATH)
+    company_revenue_collection_plan = dedupe_rows_by_key(
+        load_audit_csv(COMPANY_REVENUE_COLLECTION_PLAN_PATH),
+        "plan_id",
+    )
     commercial_data_source_registry = load_audit_csv(COMMERCIAL_DATA_SOURCE_REGISTRY_PATH)
     commercial_data_collection_backlog = load_audit_csv(COMMERCIAL_DATA_COLLECTION_BACKLOG_PATH)
     commercial_geo_source_discovery = load_audit_csv(COMMERCIAL_GEO_SOURCE_DISCOVERY_PATH)
@@ -12283,6 +12290,19 @@ def parse_json_text(value: Any) -> Any:
         return None
 
 
+def dedupe_rows_by_key(rows: list[dict[str, Any]], key_field: str) -> list[dict[str, Any]]:
+    """Keep the last row for each stable identifier to match SQLite PK semantics."""
+    deduped: dict[str, dict[str, Any]] = {}
+    passthrough: list[dict[str, Any]] = []
+    for row in rows:
+        key = norm(row.get(key_field))
+        if not key:
+            passthrough.append(row)
+            continue
+        deduped[key] = row
+    return [*passthrough, *deduped.values()]
+
+
 def build_v3_search_data(snapshot: dict[str, Any]) -> dict[str, Any]:
     """Build a compact global-search index for the v3 static dashboard."""
     search = {
@@ -12682,6 +12702,28 @@ def build_v3_search_data(snapshot: dict[str, Any]) -> dict[str, Any]:
     return search
 
 
+def assert_database_ready(min_tables: int = 10) -> None:
+    """Fail fast if the rebuilt SQLite file did not persist its schema."""
+    if not DB_PATH.exists():
+        raise RuntimeError(f"Database was not created: {DB_PATH}")
+    conn = sqlite3.connect(DB_PATH)
+    try:
+        table_count = conn.execute(
+            """
+            SELECT COUNT(*)
+            FROM sqlite_master
+            WHERE type = 'table'
+              AND name NOT LIKE 'sqlite_%'
+            """
+        ).fetchone()[0]
+    finally:
+        conn.close()
+    if table_count < min_tables:
+        raise RuntimeError(
+            f"Database rebuild produced only {table_count} persisted tables at {DB_PATH}; expected at least {min_tables}."
+        )
+
+
 def write_snapshot(snapshot: dict[str, Any]) -> None:
     WEB_DIR.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(snapshot, ensure_ascii=False, indent=2)
@@ -12753,6 +12795,7 @@ def main() -> None:
         socials,
         quality,
     )
+    assert_database_ready()
     snapshot = build_snapshot(
         dashboard_products,
         dashboard_companies,

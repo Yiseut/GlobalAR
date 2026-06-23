@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>市场格局分析 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
 </head>
 <body>
 
@@ -21,7 +22,7 @@
         市场格局分析
         <span class="h1-en">Market Landscape Analysis</span>
       </h1>
-      <p class="lede" id="mi-lede">按全球、洲际、国家三级递进，把治疗量、销量、渠道密度、公司收入和需求信号放在同一套商业口径里阅读。</p>
+      <p class="lede" id="mi-lede">按全球、洲际、国家三级递进，把治疗量、销量、渠道密度和需求信号放在同一套商业口径里阅读。上市公司收入与估值在「资本地图」单独成页。</p>
       <div class="stat-row" id="mi-stat-row">
         <span>Countries <span class="num">—</span></span>
         <span>Market metrics <span class="num">—</span></span>
@@ -32,52 +33,54 @@
         <button type="button" data-mode="region">洲际结构</button>
         <button type="button" data-mode="country">国家页面</button>
         <button type="button" data-mode="market">数据立方</button>
-        <button type="button" data-mode="financial">商业运营</button>
-        <button type="button" data-mode="signals">日报信号</button>
-        <button type="button" data-mode="conflicts">矛盾点</button>
       </div>
     </section>
 
-    <section class="block lens-summary-block">
+    <section class="block lens-summary-block" data-mode-block="country">
       <div class="editorial-row editorial-row-single">
         <article class="editorial-block lens-summary has-wash w-apricot wash-bottom-left">
-          <span class="stamp">本页总起 · country concentration</span>
+          <span class="stamp">国家层结论 · country concentration</span>
           <div class="lead">韩国占全球上游企业约 <em>32</em>%。</div>
           <div class="num-pair"><span class="num">105</span><span class="unit">companies · 269 products</span></div>
-          <div class="body">远超美国 <em>52</em> / 意大利 <em>30</em>；企业底库中活跃上市主体为 <em>19</em> 家，上市证据为 <em>22</em> 条。国家层用来继续拆治疗量、渠道密度和上市公司收入线索。</div>
-          <a class="cta" href="./market-intelligence.html?mode=country">进入国家层 ↗</a>
+          <div class="body">远超美国 <em>52</em> / 意大利 <em>30</em>。国家层用来继续拆治疗量、渠道密度和需求信号；上市公司收入与估值见「资本地图」。</div>
+          <a class="cta" href="./companies.html">查看企业归属与集团关系 ↗</a>
         </article>
       </div>
     </section>
 
     <section class="block" data-mode-block="all">
       <div class="section-head">
-        <h2>全球机会地图</h2>
-        <span class="cn">· 地区 × 赛道</span><span class="en">Market opportunity map</span>
+        <h2>全球市场现状</h2>
+        <span class="cn">· 各国治疗量 × 赛道指标</span><span class="en">Global market at a glance</span>
       </div>
-      <div class="mi-map-layout">
-        <article class="mi-panel mi-map-panel">
-          <div class="mi-panel-head">
-            <div>
-              <h3>容量、增速、需求和商业热度</h3>
-              <p>点的位置代表地区，大小代表机会指数；颜色代表赛道。</p>
-            </div>
+      <article class="mi-panel mi-ovmap-panel">
+        <div class="mi-panel-head mi-head-row">
+          <div>
+            <h3>全球医美治疗量分布</h3>
+            <p>颜色越深、圆点越大 = 该国年治疗量越高；鼠标移到国家上看具体治疗量与赛道拆分。基于 ISAPS / ASPS 各国官方统计，共 <span id="mi-ovmap-n">38</span> 个国家。</p>
           </div>
-          <div class="mi-world-map" id="mi-world-map"></div>
-        </article>
-        <article class="mi-panel">
-          <div class="mi-panel-head">
-            <div>
-              <h3>重点结论</h3>
-              <p>用于直接回答“哪里值得看、为什么”。</p>
-            </div>
+          <div class="mi-filter-row" id="mi-ovmap-toggle" role="tablist" aria-label="治疗类型">
+            <button type="button" class="active" data-ov-metric="overall">全部治疗</button>
+            <button type="button" data-ov-metric="inj">注射</button>
+            <button type="button" data-ov-metric="surg">手术</button>
+            <button type="button" data-ov-metric="nonsurg">非手术</button>
           </div>
-          <div class="mi-highlight-list" id="mi-highlight-list"></div>
-        </article>
+        </div>
+        <div class="mi-ovmap" id="mi-ovmap" aria-label="全球治疗量地图"></div>
+        <div class="mi-ovmap-foot">
+          <div class="mi-ovmap-scale" id="mi-ovmap-scale"></div>
+          <div class="mi-ovmap-top" id="mi-ovmap-top"></div>
+        </div>
+      </article>
+
+      <div class="section-head section-head-sub">
+        <h2>赛道层市场指标</h2>
+        <span class="cn">· 整体 / 注射 / EBD / 手术</span><span class="en">By segment · size · growth · potential</span>
       </div>
+      <div class="mi-segment-grid" id="mi-segment-cards"></div>
     </section>
 
-    <section class="block" data-mode-block="all">
+    <section class="block" data-mode-block="country">
       <div class="section-head">
         <h2>国家商业模式信号</h2>
         <span class="cn">· 出口贸易 × 入境消费</span><span class="en">Country business model signal</span>
@@ -114,6 +117,45 @@
           </div>
           <div class="mi-bm-growth-bars" id="mi-bm-growth-bars"></div>
           <div class="mi-bm-footnote" id="mi-bm-footnote"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" data-mode-block="country">
+      <div class="section-head">
+        <h2>日本本地深挖</h2>
+        <span class="cn">· JSAPS 本地线 × ISAPS 可比线</span><span class="en">Japan local procedure layer</span>
+      </div>
+      <div class="mi-jsaps-layout">
+        <article class="mi-panel mi-jsaps-panel mi-jsaps-wide">
+          <div class="mi-panel-head">
+            <div>
+              <h3>同一国家，两条观察线</h3>
+              <p>ISAPS 用来做全球横向比较；JSAPS 用来拆日本本地更细的治疗结构。两条线并行展示，不互相覆盖。</p>
+            </div>
+          </div>
+          <div class="mi-jsaps-line" id="mi-jsaps-line"></div>
+        </article>
+        <article class="mi-panel mi-jsaps-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>JSAPS 年度结构</h3>
+              <p>按日本本地公开调查口径，把手术、注射、面部年轻化和其他非手术拆成年度占比。</p>
+            </div>
+          </div>
+          <div class="mi-jsaps-stack" id="mi-jsaps-stack"></div>
+        </article>
+        <article class="mi-panel mi-jsaps-panel">
+          <div class="mi-panel-head">
+            <div>
+              <h3>2024 关键细项</h3>
+              <p>优先显示能解释日本市场特征的本地细项：埋线、毒素、HA、脱毛、紧肤和再生治疗。</p>
+            </div>
+          </div>
+          <div class="mi-jsaps-bars" id="mi-jsaps-bars"></div>
+        </article>
+        <article class="mi-panel mi-jsaps-panel mi-jsaps-wide">
+          <div class="mi-jsaps-note" id="mi-jsaps-note"></div>
         </article>
       </div>
     </section>
@@ -217,7 +259,7 @@
           <div class="mi-panel-head">
             <div>
               <h3>国家数据状态</h3>
-              <p>区分硬事实主干、候选 QA、渠道 proxy 和需求 context。</p>
+              <p>区分已核实的主干数据、待核验候选、渠道参考指标和需求背景。</p>
             </div>
           </div>
           <div class="mi-country-signal-list" id="mi-country-source-state"></div>
@@ -250,7 +292,7 @@
           <div class="mi-panel-head">
             <div>
               <h3>地区来源板</h3>
-              <p>把企业 Top 15 国家和地区来源分成治疗量主干、渠道密度、需求热度和监管 context。</p>
+              <p>把企业 Top 15 国家和地区来源分成治疗量主干、渠道密度、需求热度和监管背景。</p>
             </div>
           </div>
           <div class="mi-geo-source-grid" id="mi-geo-source-grid"></div>
@@ -259,7 +301,7 @@
           <div class="mi-panel-head">
             <div>
               <h3>数据角色分布</h3>
-              <p>看哪些来源可以进入硬事实主干，哪些只能作为 proxy。</p>
+              <p>看哪些来源能进入已核实主干，哪些只能作为参考指标。</p>
             </div>
           </div>
           <div class="mi-geo-summary" id="mi-geo-summary"></div>
@@ -286,14 +328,14 @@
       <div class="mi-panel mi-wide-panel">
         <div class="mi-panel-head">
           <div>
-            <h3>渠道密度 proxy</h3>
-            <p>把 provider locator、医生 denominator 和协会入口统一成国家级覆盖表。</p>
+            <h3>渠道密度参考指标</h3>
+            <p>把机构定位库、医生基数和协会入口统一成国家级覆盖表。</p>
           </div>
         </div>
         <div class="mi-table-wrap">
           <table>
             <thead>
-              <tr><th>国家</th><th>Proxy 状态</th><th class="num">企业数</th><th>来源结构</th><th>下一步</th></tr>
+              <tr><th>国家</th><th>参考指标状态</th><th class="num">企业数</th><th>来源结构</th><th>下一步</th></tr>
             </thead>
             <tbody id="mi-channel-density-rows"></tbody>
           </table>
@@ -302,14 +344,14 @@
       <div class="mi-panel mi-wide-panel">
         <div class="mi-panel-head">
           <div>
-            <h3>欧洲候选 QA</h3>
+            <h3>欧洲待核验数据</h3>
             <p>DGÄPC、SECPRE、AICPE/SICPRE 先判定 count/share/table，再决定是否进主干。</p>
           </div>
         </div>
         <div class="mi-table-wrap">
           <table>
             <thead>
-              <tr><th>来源</th><th>文件/表格</th><th>QA 结论</th><th>主干处理</th><th>下一步</th></tr>
+              <tr><th>来源</th><th>文件/表格</th><th>核验结论</th><th>主干处理</th><th>下一步</th></tr>
             </thead>
             <tbody id="mi-europe-qa-rows"></tbody>
           </table>
@@ -360,69 +402,6 @@
       </div>
     </section>
 
-    <section class="block" data-mode-block="financial">
-      <div class="section-head">
-        <h2>公司收入与商业运营</h2>
-        <span class="cn">· 上市公司收入层</span><span class="en">Revenue layer</span>
-      </div>
-      <div class="mi-analysis-grid">
-        <article class="mi-panel mi-scatter-panel">
-          <div class="mi-panel-head">
-            <div>
-              <h3>谁是高估值高热度</h3>
-              <p>横轴为商业热度，纵轴为上市公司市值；点大小近似收入规模。</p>
-            </div>
-          </div>
-          <div class="mi-scatter" id="mi-valuation-scatter"></div>
-        </article>
-        <article class="mi-panel">
-          <div class="mi-panel-head">
-            <div>
-              <h3>象限摘要</h3>
-              <p>用于区分成熟龙头、安静大公司和新近商业热度公司。</p>
-            </div>
-          </div>
-          <div class="mi-quadrants" id="mi-valuation-quadrants"></div>
-        </article>
-      </div>
-      <div class="mi-revenue-ops-grid">
-        <article class="mi-panel">
-          <div class="mi-panel-head">
-            <div>
-              <h3>上市公司收入口径</h3>
-              <p>把总收入、估值和医美 segment / revenue share 分开读；未披露的部分标为缺口，不做推断。</p>
-            </div>
-          </div>
-          <div class="mi-revenue-kpi-grid" id="mi-revenue-coverage-grid"></div>
-        </article>
-        <article class="mi-panel">
-          <div class="mi-panel-head">
-            <div>
-              <h3>收入占比优先核验</h3>
-              <p>只保留对商业判断有用的优先公司：有上市主体、但医美收入占比或 segment 口径尚未明确。</p>
-            </div>
-          </div>
-          <div class="mi-revenue-priority-list" id="mi-revenue-priority-list"></div>
-        </article>
-      </div>
-      <div class="mi-panel mi-wide-panel">
-        <div class="mi-panel-head">
-          <div>
-            <h3>上市公司收入表</h3>
-            <p>总收入、估值和医美 segment 缺口分开看；只展示可用于商业判断的上市公司收入状态。</p>
-          </div>
-        </div>
-        <div class="mi-table-wrap">
-          <table>
-            <thead>
-              <tr><th>公司</th><th>收入状态</th><th>收入年份</th><th class="num">总收入</th><th>医美收入占比口径</th></tr>
-            </thead>
-            <tbody id="mi-revenue-progress-rows"></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
     <section class="block" data-mode-block="all" data-backstage="1" hidden>
       <div class="section-head">
         <h2>核心读数</h2>
@@ -441,7 +420,7 @@
           <div class="mi-panel-head">
             <div>
               <h3>指标类型</h3>
-              <p id="mi-metric-sub">按 claim 类型和来源口径汇总。</p>
+              <p id="mi-metric-sub">按数据类型和来源口径汇总。</p>
             </div>
           </div>
           <div class="mi-bar-list" id="mi-type-bars"></div>
@@ -460,7 +439,7 @@
         <div class="mi-panel-head mi-head-row">
           <div>
             <h3>指标明细</h3>
-            <p>数值型 claim 保留来源、年份、地区和单位。</p>
+            <p>数值型数据保留来源、年份、地区和单位。</p>
           </div>
           <div class="mi-filter-row" id="mi-metric-filters"></div>
         </div>
@@ -472,22 +451,6 @@
             <tbody id="mi-market-rows"></tbody>
           </table>
         </div>
-      </div>
-    </section>
-
-    <section class="block" data-mode-block="financial" data-backstage="1" hidden>
-      <div class="section-head">
-        <h2>上市公司财务与估值</h2>
-        <span class="cn">· 财务快照</span><span class="en">Financial snapshots</span>
-      </div>
-      <div class="mi-panel">
-        <div class="mi-panel-head">
-          <div>
-            <h3>估值与收入读数</h3>
-            <p>价格、估值和财务字段仅作为市场表现侧证。</p>
-          </div>
-        </div>
-        <div class="mi-finance-grid" id="mi-finance-grid"></div>
       </div>
     </section>
 
@@ -574,7 +537,7 @@
           <div class="mi-panel-head">
             <div>
               <h3>校验状态</h3>
-              <p>商业 claim 的来源、置信度、审核状态和数值字段校验。</p>
+              <p>商业数据的来源、置信度、审核状态和数值字段校验。</p>
             </div>
           </div>
           <div class="mi-validation-list" id="mi-validation-list"></div>
@@ -595,10 +558,11 @@
 </aside>
 <div class="mi-drawer-backdrop" id="mi-drawer-backdrop" hidden></div>
 
-<script src="../app-data.js?v=20260619"></script>
-<script src="./v3-market-intelligence.js?v=20260619"></script>
-<script src="./v3-business-model-signals.js?v=20260621"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="market-intelligence"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin defer></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-market-intelligence.js?v=454faa20"></script>
+<script src="./v3-business-model-signals.js?v=a98e122f"></script>
+<script src="./_nav.js?v=d784d46b" data-active="market-intelligence"></script>
 <style>
   .mi-hero .lede { max-width: 760px; }
   .mi-hero .stat-row {
@@ -902,6 +866,154 @@
     border-top: 1px solid var(--hairline-2);
     margin-top: 12px;
     padding-top: 12px;
+  }
+  .mi-jsaps-layout {
+    display: grid;
+    grid-template-columns: minmax(360px, 1fr) minmax(360px, 1fr);
+    gap: 16px;
+  }
+  .mi-jsaps-panel {
+    min-width: 0;
+  }
+  .mi-jsaps-wide {
+    grid-column: 1 / -1;
+  }
+  .mi-jsaps-line {
+    min-height: 300px;
+  }
+  .mi-jsaps-line svg {
+    display: block;
+    width: 100%;
+    min-height: 280px;
+    overflow: visible;
+  }
+  .mi-jsaps-axis {
+    stroke: rgba(58,51,64,0.16);
+    stroke-width: 1;
+  }
+  .mi-jsaps-gridline {
+    stroke: rgba(58,51,64,0.08);
+    stroke-width: 1;
+  }
+  .mi-jsaps-label {
+    fill: var(--muted);
+    font-size: 11px;
+    font-family: var(--f-sans);
+  }
+  .mi-jsaps-line-path {
+    fill: none;
+    stroke: var(--c);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .mi-jsaps-point {
+    fill: var(--c);
+    stroke: var(--surface-2);
+    stroke-width: 2;
+  }
+  .mi-jsaps-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 10px;
+    color: var(--ink-2);
+    font-size: 12px;
+  }
+  .mi-jsaps-legend span::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin-right: 7px;
+    background: var(--c);
+  }
+  .mi-jsaps-stack,
+  .mi-jsaps-bars {
+    display: grid;
+    gap: 12px;
+  }
+  .mi-jsaps-stack-row {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr) 74px;
+    gap: 10px;
+    align-items: center;
+    color: var(--ink-2);
+    font-size: 12px;
+  }
+  .mi-jsaps-stackbar {
+    display: flex;
+    height: 22px;
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(239,234,224,0.72);
+  }
+  .mi-jsaps-stackbar span {
+    width: var(--w);
+    min-width: 2px;
+    background: var(--c);
+  }
+  .mi-jsaps-stack-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .mi-jsaps-stack-legend span::before {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    margin-right: 6px;
+    background: var(--c);
+  }
+  .mi-jsaps-bar-row {
+    display: grid;
+    grid-template-columns: minmax(130px, 0.44fr) minmax(160px, 1fr) 118px;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+  }
+  .mi-jsaps-bar-row .label {
+    color: var(--ink);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mi-jsaps-bar-track {
+    height: 17px;
+    border: 1px solid var(--hairline-2);
+    border-radius: 999px;
+    background: rgba(239,234,224,0.72);
+    overflow: hidden;
+  }
+  .mi-jsaps-bar-track span {
+    display: block;
+    width: var(--w);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--c);
+  }
+  .mi-jsaps-bar-value {
+    color: var(--ink-2);
+    font-family: var(--f-mono);
+    font-size: 11px;
+    text-align: right;
+  }
+  .mi-jsaps-note {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .mi-jsaps-note a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(142,58,58,0.28);
   }
   .mi-geo-layout {
     grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.55fr);
@@ -2010,6 +2122,7 @@
     .mi-country-grid,
     .mi-geo-dashboard-grid,
     .mi-business-model-layout,
+    .mi-jsaps-layout,
     .mi-finance-grid,
     .mi-revenue-ops-grid,
     .mi-signal-grid,
@@ -2026,9 +2139,12 @@
     .mi-bm-legend-row,
     .mi-bm-destination-row,
     .mi-bm-growth-row,
-    .mi-bm-stack-item { grid-template-columns: 1fr; }
+    .mi-bm-stack-item,
+    .mi-jsaps-stack-row,
+    .mi-jsaps-bar-row { grid-template-columns: 1fr; }
     .mi-bm-pie { width: min(220px, 72vw); }
-    .mi-bm-value { text-align: left; }
+    .mi-bm-value,
+    .mi-jsaps-bar-value { text-align: left; }
     .mi-head-row { align-items: flex-start; flex-direction: column; }
     .mi-filter-row { justify-content: flex-start; }
     .mi-bar-row { grid-template-columns: 1fr; gap: 6px; }
@@ -2040,6 +2156,66 @@
     .mi-company-row .n,
     .mi-quadrant-row .n { text-align: left; }
     .mi-scatter { min-height: 300px; }
+  }
+
+  /* —— 全球总览：平面地图 + 赛道卡 —— */
+  .section-head-sub { margin-top: 26px; }
+  .mi-ovmap-panel { padding-bottom: 14px; }
+  .mi-ovmap {
+    height: 480px;
+    border: 1px solid var(--hairline-2);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #eef0ef;
+    margin-top: 6px;
+  }
+  .mi-ovmap .leaflet-container { background: #e9ecee; font-family: var(--f-sans); }
+  .mi-ovmap-fallback { display:flex; align-items:center; justify-content:center; height:100%; color:var(--muted); font-size:13px; }
+  .mi-ovmap-foot {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 12px; margin-top: 12px;
+  }
+  .mi-ovmap-scale { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 11px; }
+  .mi-ovmap-scale .lbl { color: var(--ink-2); font-size: 12px; }
+  .mi-ovmap-scale .ramp { display: inline-flex; border-radius: 3px; overflow: hidden; }
+  .mi-ovmap-scale .ramp i { width: 22px; height: 9px; display: inline-block; }
+  .mi-ovmap-top { display: flex; flex-wrap: wrap; gap: 7px; }
+  .mi-ovtop-pill {
+    display: inline-flex; align-items: baseline; gap: 5px;
+    border: 1px solid var(--hairline-2); border-radius: 999px;
+    padding: 4px 10px; font-size: 12px; color: var(--ink-2); background: rgba(255,252,245,0.7);
+  }
+  .mi-ovtop-pill b { color: var(--accent-2); font-size: 10px; }
+  .mi-ovtop-pill small { color: var(--muted); }
+  .mi-ov-leaflet-tip.leaflet-tooltip {
+    background: rgba(40,33,38,0.95); border: none; border-radius: 8px; box-shadow: 0 14px 30px -16px rgba(0,0,0,0.6);
+    padding: 0; color: #fbf6ec;
+  }
+  .mi-ov-leaflet-tip.leaflet-tooltip::before { border-top-color: rgba(40,33,38,0.95); }
+  .mi-ovtip { padding: 10px 12px; min-width: 150px; }
+  .mi-ovtip strong { display: block; font-size: 12px; letter-spacing: 0.02em; }
+  .mi-ovtip .big { font-family: var(--f-display); font-size: 22px; margin: 4px 0 2px; line-height: 1.05; }
+  .mi-ovtip .big span { font-family: var(--f-sans); font-size: 10px; color: #d8cdbf; letter-spacing: 0.02em; }
+  .mi-ovtip .brk { font-size: 11px; color: #cdbfd0; line-height: 1.5; }
+
+  .mi-segment-grid {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;
+  }
+  .mi-segment-card {
+    border: 1px solid var(--hairline-2); border-radius: 10px; padding: 16px 16px 14px;
+    background: rgba(255,252,245,0.72); position: relative; overflow: hidden;
+  }
+  .mi-segment-card .seg-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .mi-segment-card .seg-head .zh { font-family: var(--f-display); font-size: 19px; color: var(--ink); }
+  .mi-segment-card .seg-head .en { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .mi-segment-card .seg-note { margin-top: 4px; font-size: 11px; color: var(--muted); }
+  .mi-segment-card .seg-metrics { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+  .mi-segment-card .seg-metrics div { display: flex; flex-direction: column; gap: 2px; }
+  .mi-segment-card .seg-metrics dt { font-size: 10px; color: var(--muted); letter-spacing: 0.02em; }
+  .mi-segment-card .seg-metrics dd { margin: 0; font-family: var(--f-display); font-size: 20px; color: var(--ink); line-height: 1; }
+  @media (max-width: 980px) {
+    .mi-segment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mi-ovmap { height: 380px; }
   }
 </style>
 <script>
@@ -2185,28 +2361,28 @@
     const dataRoleLabel = (value) => ({
       treatment_volume_country_year: "治疗量主干",
       treatment_volume_country_year_candidate: "治疗量候选",
-      treatment_volume_secondary_isaps_commentary: "ISAPS 二级 commentary",
+      treatment_volume_secondary_isaps_commentary: "ISAPS 二级解读",
       procedure_mix_country_year: "项目结构候选",
       treatment_volume_candidate_and_surgeon_demography: "治疗量候选 / 医师结构",
-      physician_specialty_demand_proxy: "医师/专科需求 proxy",
-      company_physician_touchpoint_proxy: "公司-医生触达 proxy",
-      provider_channel_density_proxy: "渠道密度 proxy",
-      provider_denominator: "机构分母",
-      surgeon_density_proxy: "医师密度 proxy",
-      surgeon_density_context_proxy: "医师密度 context",
-      surgeon_denominator_proxy: "医师分母",
-      medical_tourism_specialty_proxy: "跨境需求 proxy",
+      physician_specialty_demand_proxy: "医师/专科需求 参考",
+      company_physician_touchpoint_proxy: "公司-医生触达 参考",
+      provider_channel_density_proxy: "渠道密度 参考",
+      provider_denominator: "机构基数",
+      surgeon_density_proxy: "医师密度 参考",
+      surgeon_density_context_proxy: "医师密度 背景",
+      surgeon_denominator_proxy: "医师基数",
+      medical_tourism_specialty_proxy: "跨境需求 参考",
       health_industry_portal: "健康产业入口",
-      regulatory_context_proxy: "监管 context",
-      association_survey_interest_proxy: "协会调查/热度 proxy",
-      association_context_proxy: "协会 context",
-      consumer_risk_heat_proxy: "投诉/热度 proxy"
+      regulatory_context_proxy: "监管 背景",
+      association_survey_interest_proxy: "协会调查/热度 参考",
+      association_context_proxy: "协会 背景",
+      consumer_risk_heat_proxy: "投诉/热度 参考"
     })[value] || value || "未分类";
     const coverageTierLabel = value => ({
       treatment_volume: "已有治疗量主干",
-      metric_qa_candidate: "治疗量候选待 QA",
-      channel_density_proxy: "渠道/医师 proxy",
-      context_or_demand_proxy: "context / 需求 proxy",
+      metric_qa_candidate: "治疗量候选待核验",
+      channel_density_proxy: "渠道/医师 参考",
+      context_or_demand_proxy: "背景 / 需求 参考",
       source_discovered: "已发现来源",
       gap: "暂缺来源"
     })[value] || "待确认";
@@ -2219,15 +2395,15 @@
       gap: "context"
     })[value] || "";
     const proxyStatusLabel = value => ({
-      provider_locator_available: "已有 locator",
-      doctor_denominator_available: "已有医生分母",
-      association_entry_only: "协会入口",
-      source_discovered_needs_enrichment: "待 enrichment",
+      provider_locator_available: "已有机构定位库",
+      doctor_denominator_available: "已有医生基数",
+      association_entry_only: "仅协会入口",
+      source_discovered_needs_enrichment: "待补全",
       gap: "暂缺"
     })[value] || value || "待确认";
     const mainlineDecisionLabel = value => ({
       hold_from_mainline: "暂不进主干",
-      hold_for_manual_text_qa: "手动 QA 后再定",
+      hold_for_manual_text_qa: "人工核验后再定",
       hold_until_primary_table_source: "等主表来源",
       do_not_promote_as_new_source: "不作为新主干"
     })[value] || value || "待确认";
@@ -2239,8 +2415,8 @@
       needs_sec_cik: "待补 CIK"
     })[value] || value || "待确认";
     const segmentStatusLabel = value => ({
-      needs_aesthetics_segment_or_not_disclosed_review: "需 segment / not-disclosed 复核",
-      no_current_segment_gap: "暂无 segment 缺口"
+      needs_aesthetics_segment_or_not_disclosed_review: "需核实医美收入口径",
+      no_current_segment_gap: "暂无收入口径缺口"
     })[value] || value || "待确认";
     const phaseLabel = value => ({
       1: "治疗数量",
@@ -2567,17 +2743,17 @@
           label: "Top 15 覆盖",
           status: coverageTierLabel(topCountry.coverageTier),
           tone: coverageTierTone(topCountry.coverageTier),
-          body: `${fmt(topCountry.sourceCount || 0)} sources · ${fmt(topCountry.downloadedArtifacts || 0)} files`,
+          body: `${fmt(topCountry.sourceCount || 0)} 个来源 · ${fmt(topCountry.downloadedArtifacts || 0)} 个文件`,
           note: topCountry.nextAction || "来源发现后按数据角色分流。"
         });
       }
       if (channel) {
         items.push({
-          label: "渠道密度 proxy",
+          label: "渠道密度参考指标",
           status: proxyStatusLabel(channel.proxyStatus),
           tone: coverageTierTone(channel.coverageTier),
-          body: `${fmt(channel.providerLocatorSources || 0)} locator · ${fmt(channel.doctorDenominatorSources || 0)} denominator · ${fmt(channel.associationEntrySources || 0)} association`,
-          note: channel.nextAction || "补 provider locator 与医生分母。"
+          body: `${fmt(channel.providerLocatorSources || 0)} 机构定位库 · ${fmt(channel.doctorDenominatorSources || 0)} 医生基数 · ${fmt(channel.associationEntrySources || 0)} 协会入口`,
+          note: channel.nextAction || "补充机构定位库与医生基数。"
         });
       }
       if (europeQa.length) {
@@ -2585,7 +2761,7 @@
           label: row.sourceName || row.sourceId || "欧洲候选 QA",
           status: mainlineDecisionLabel(row.mainlineDecision),
           tone: row.promotionAllowed === "yes" ? "hard" : "qa",
-          body: `${fmt(row.downloadedFiles || 0)} files · ${fmt(row.pdfTablesDetected || 0)} tables`,
+          body: `${fmt(row.downloadedFiles || 0)} 个文件 · ${fmt(row.pdfTablesDetected || 0)} 个表格`,
           note: row.nextAction || "继续核验 count/share/table。"
         }));
       }
@@ -2593,7 +2769,7 @@
         const roles = countRows(discovery, row => row.dataRole).slice(0, 3);
         items.push({
           label: "来源发现",
-          status: `${fmt(new Set(discovery.map(row => row.sourceId).filter(Boolean)).size)} sources`,
+          status: `${fmt(new Set(discovery.map(row => row.sourceId).filter(Boolean)).size)} 个来源`,
           tone: "proxy",
           body: roles.map(row => dataRoleLabel(row.label)).join(" / "),
           note: "已进入来源发现清单，待按主干、候选或 proxy 分流。"
@@ -2642,11 +2818,10 @@
       const asOf = summary.asOf || app.generated_at || "";
       document.querySelectorAll("[data-bind-text='mi-asof']").forEach(el => { el.textContent = shortDate(asOf); });
       document.getElementById("mi-lede").textContent =
-        `${fmt(app.summary?.countries || 34)} 个国家按全球、洲际、国家三层组织；商业主读数来自 ${fmt(summary.marketMetricClaims)} 个市场指标、${fmt(financial.length)} 个财务/估值快照和 ${fmt(geoSourceSummary.sources || 0)} 个地区级来源。`;
+        `${fmt(app.summary?.countries || 34)} 个国家按全球、洲际、国家三层组织；商业主读数来自 ${fmt(summary.marketMetricClaims)} 个市场指标与 ${fmt(geoSourceSummary.sources || 0)} 个地区级来源。上市公司收入与估值见「资本地图」。`;
       document.getElementById("mi-stat-row").innerHTML = `
         <span>Countries <span class="num" data-cu-started="1">${fmt(app.summary?.countries || 34)}</span></span>
         <span>Market metrics <span class="num" data-cu-started="1">${fmt(summary.marketMetricClaims)}</span></span>
-        <span>Financial snapshots <span class="num" data-cu-started="1">${fmt(financial.length)}</span></span>
         <span>Geo sources <span class="num" data-cu-started="1">${fmt(geoSourceSummary.sources || 0)}</span></span>
       `;
       const kpis = [
@@ -2655,7 +2830,7 @@
         { wash: "w-peach", en: "Market metrics", zh: "市场指标", value: summary.marketMetricClaims, delta: "size / treatments / CAGR / share" },
         { wash: "w-sage", en: "Geo sources", zh: "地区来源", value: geoSourceSummary.sources || 0, delta: `${fmt(geoSourceSummary.downloadedArtifacts || 0)} downloaded artifacts` },
         { wash: "w-sage", en: "Daily signals", zh: "日报可信信号", value: summary.briefingSignals, delta: "commercial / channel / launch" },
-        { wash: "w-plum", en: "Financial claims", zh: "财务估值", value: summary.financialClaims, delta: `${fmt(financial.length)} listed snapshots` },
+        { wash: "w-plum", en: "Financial claims", zh: "财务估值", value: summary.financialClaims, delta: `${fmt(financial.length)} 条上市快照` },
         { wash: "w-sand", en: "Conflict groups", zh: "矛盾点", value: summary.conflictGroups, delta: "same scope comparison only" },
         { wash: "w-rose", en: "Needs review", zh: "需确认", value: summary.needsReviewClaims, delta: `${fmt((queues.needsVerification || []).length)} queue rows shown` },
         { wash: "w-lavender", en: "Validation", zh: "校验状态", value: validation.status === "passed" ? "OK" : "Check", delta: `${fmt((validation.issues || []).reduce((sum, row) => sum + Number(row.count || 0), 0))} flagged fields` },
@@ -2688,10 +2863,10 @@
               <div class="topline"><span>${esc(region.region)}</span><span>${esc(leadingLabel)}</span></div>
               <h3>${esc(leadingValue)}</h3>
               <div class="meta">
-                <span>${fmt(region.companies)} companies</span>
-                <span>${fmt(region.products)} products</span>
+                <span>${fmt(region.companies)} 家公司</span>
+                <span>${fmt(region.products)} 款产品</span>
                 <span>${fmt(region.countryCount)} countries</span>
-                <span>${fmt(region.publicCount)} public</span>
+                <span>${fmt(region.publicCount)} 家上市</span>
               </div>
               <p>${esc(detail)}</p>
             </article>
@@ -2707,10 +2882,10 @@
           return `
             <article class="mi-region-card">
               <div class="topline"><span>${esc(region.region)}</span><span>Source coverage</span></div>
-              <h3>${fmt(source.sources)} sources</h3>
+              <h3>${fmt(source.sources)} 个来源</h3>
               <div class="meta">
                 <span>${fmt(source.records)} discovery rows</span>
-                <span>${fmt(source.files)} files</span>
+                <span>${fmt(source.files)} 个文件</span>
                 <span>${fmt(region.fdaCompanies)} FDA-visible co.</span>
               </div>
               <p>${esc(roleText)}</p>
@@ -2776,8 +2951,8 @@
                 <span><strong>${fmt(stats.fdaCompanies)}</strong>FDA 可见</span>
               </div>
               <div class="meta">
-                <span>${fmt(stats.publicCount)} public</span>
-                <span>${fmt(stats.productsPerCompany)} products/company</span>
+                <span>${fmt(stats.publicCount)} 家上市</span>
+                <span>${fmt(stats.productsPerCompany)} 款/家</span>
               </div>
               <p>${esc(countryNotes[stats.country] || `${topNames || "公司清单"} 作为供给背景；商业判断继续看治疗量、收入和渠道覆盖。`)}</p>
               ${topNames ? `<p>${esc(topNames)}</p>` : ""}
@@ -2854,60 +3029,180 @@
       return { x: Math.max(10, Math.min(90, x)), y: Math.max(9, Math.min(91, y)) };
     }
 
-    function renderOpportunityMap() {
-      const points = Array.isArray(analysis.opportunityMap) ? analysis.opportunityMap : [];
-      const hasMarketMetric = point =>
-        point.marketSizeUsdM != null ||
-        point.growthRatePct != null ||
-        point.procedureVolume != null ||
-        point.marketSharePct != null;
-      const top = points
-        .filter(hasMarketMetric)
-        .filter(point => ["Europe", "USA", "Brazil", "North America", "Asia Pacific", "Australia", "South Korea"].includes(point.geo) || point.potentialIndex >= 25)
-        .slice(0, 42);
-      const max = Math.max(1, ...top.map(point => Number(point.potentialIndex || 0)));
-      const labels = new Set(["Europe|Injectables", "USA|EBD", "Brazil|Procedure demand"]);
-      const legendSegments = Array.from(new Set(top.map(point => point.segment))).slice(0, 7);
-      document.getElementById("mi-world-map").innerHTML = `
-        ${top.map(point => {
-          const { x, y } = mapXY(point.lat, point.lon);
-          const size = 10 + (Number(point.potentialIndex || 0) / max) * 26;
-          const color = segmentColors[point.segment] || "#998f9b";
-          const title = `${point.geo} · ${segmentDisplay(point.segment)} · opportunity index ${fmt(point.potentialIndex)}`;
-          const key = `${point.geo}|${point.segment}`;
-          return `
-            <button type="button" class="mi-map-point" style="--x:${x.toFixed(1)}%;--y:${y.toFixed(1)}%;--s:${size.toFixed(1)}px;--c:${color};" title="${esc(title)}"></button>
-            ${labels.has(key) ? `<span class="mi-map-label" style="--x:${x.toFixed(1)}%;--y:${y.toFixed(1)}%;">${esc(point.geo)}<br>${esc(segmentDisplay(point.segment))}</span>` : ""}
-          `;
-        }).join("")}
-        <div class="mi-map-legend">
-          ${legendSegments.map(segment => `<span><i style="--c:${segmentColors[segment] || "#998f9b"}"></i>${esc(segmentDisplay(segment))}</span>`).join("")}
-        </div>
-      `;
+    // —— 全球总览：各国治疗量平面地图（Leaflet）+ 赛道层市场指标卡 ——
+    // 国家质心（lon/lat），仅覆盖有 ISAPS/ASPS 治疗量的国家。
+    const MI_CENTROIDS = {
+      "United States": [39.8, -98.6], "Brazil": [-10.3, -53.2], "Japan": [36.2, 138.3],
+      "Mexico": [23.6, -102.5], "Italy": [41.9, 12.6], "Germany": [51.2, 10.4],
+      "India": [22.0, 79.0], "Argentina": [-38.4, -63.6], "Turkiye": [39.0, 35.2],
+      "France": [46.6, 2.2], "Colombia": [4.6, -74.3], "Chinese Taipei": [23.7, 121.0],
+      "Russia": [61.5, 105.3], "Spain": [40.0, -3.7], "Greece": [39.0, 22.0],
+      "UAE": [24.0, 54.0], "Iran": [32.4, 53.7], "Peru": [-9.2, -75.0],
+      "Venezuela": [6.4, -66.6], "Romania": [45.9, 24.9], "Vietnam": [14.1, 108.3],
+      "UK": [54.0, -2.4], "Belgium": [50.6, 4.7], "Thailand": [15.1, 101.0],
+      "Australia": [-25.3, 133.8], "Saudi Arabia": [23.9, 45.1], "Syria": [35.0, 38.0],
+      "Tunisia": [34.0, 9.6], "Morocco": [31.8, -7.1], "South Africa": [-30.6, 22.9],
+      "Czechia": [49.8, 15.5], "Chile": [-35.7, -71.5], "Norway": [60.5, 8.5],
+      "Malaysia": [4.2, 101.9], "Philippines": [12.9, 121.8], "Singapore": [1.35, 103.8],
+      "Bangladesh": [23.7, 90.4], "Panama": [8.5, -80.1]
+    };
+    const OV_GEO_ZH = {
+      "United States": "美国", "Brazil": "巴西", "Japan": "日本", "Mexico": "墨西哥",
+      "Italy": "意大利", "Germany": "德国", "India": "印度", "Argentina": "阿根廷",
+      "Turkiye": "土耳其", "France": "法国", "Colombia": "哥伦比亚", "Chinese Taipei": "中国台湾",
+      "Russia": "俄罗斯", "Spain": "西班牙", "Greece": "希腊", "UAE": "阿联酋",
+      "Iran": "伊朗", "Peru": "秘鲁", "Venezuela": "委内瑞拉", "Romania": "罗马尼亚",
+      "Vietnam": "越南", "UK": "英国", "Belgium": "比利时", "Thailand": "泰国",
+      "Australia": "澳大利亚", "Saudi Arabia": "沙特", "Syria": "叙利亚", "Tunisia": "突尼斯",
+      "Morocco": "摩洛哥", "South Africa": "南非", "Czechia": "捷克", "Chile": "智利",
+      "Norway": "挪威", "Malaysia": "马来西亚", "Philippines": "菲律宾", "Singapore": "新加坡",
+      "Bangladesh": "孟加拉", "Panama": "巴拿马"
+    };
+    const OV_METRIC_RE = {
+      overall: /All procedures \/ Country total procedures$/,
+      inj: /Injectables \/ Country total injectables$/,
+      surg: /Surgical procedures \/ Country surgical procedures$/,
+      nonsurg: /Non-surgical procedures \/ Country non-surgical procedures$/,
+      facial: /Facial rejuvenation \/ Country total facial rejuvenation$/,
+    };
+    const OV_METRIC_LABEL = { overall: "全部治疗", inj: "注射", surg: "手术", nonsurg: "非手术", facial: "面部年轻化" };
+
+    function buildOverviewCountries() {
+      const out = {};
+      metrics.filter(r => r.type === "procedure_volume").forEach(r => {
+        for (const [k, re] of Object.entries(OV_METRIC_RE)) {
+          if (re.test(r.category || "")) {
+            const geo = r.geo;
+            if (!MI_CENTROIDS[geo]) continue;
+            const v = Number(r.value) || 0;
+            out[geo] = out[geo] || { geo };
+            // keep the largest (latest/most-complete) value per metric
+            if (out[geo][k] == null || v > out[geo][k]) { out[geo][k] = v; out[geo][k + "_yr"] = r.period; }
+          }
+        }
+      });
+      return out;
+    }
+    const overviewCountries = buildOverviewCountries();
+
+    function ovColor(t) {
+      // t in [0,1]: 浅杏 → 深酒红
+      const a = [236, 222, 205], b = [123, 42, 54];
+      const c = a.map((v, i) => Math.round(v + (b[i] - v) * Math.max(0, Math.min(1, t))));
+      return `rgb(${c[0]},${c[1]},${c[2]})`;
     }
 
-    function renderOpportunityHighlights() {
-      const rows = Array.isArray(analysis.opportunityHighlights) ? analysis.opportunityHighlights : [];
-      const subhead = row => ({
-        "USA · EBD": "North America share proxy; used as capacity lens.",
-        "Brazil · Aesthetic demand": "High treatment volume; CAGR should not be inferred directly."
-      })[row.market] || row.subhead || "";
-      const headline = row => ({
-        "Brazil · Aesthetic demand": `${fmt(String(row.headline || "").replace(/[^\d.]/g, ""))} treatments`
-      })[row.market] || row.headline || "";
-      const takeaway = row => ({
-        "Europe · Injectables": "欧洲注射剂的可见增长速度接近北美同口径，适合进一步比较价格带、治疗场景和渠道成熟度。",
-        "USA · EBD": "美国 EBD 容量读数需要按北美份额做代理；适合继续用市场容量和上市公司热度交叉判断。",
-        "Brazil · Aesthetic demand": "巴西医美治疗数量高，适合放在需求潜力视角，而不是直接套 CAGR。"
-      })[row.market] || row.takeaway || "";
-      document.getElementById("mi-highlight-list").innerHTML = rows.map(row => `
-        <article class="mi-highlight-card">
-          <span class="market">${esc(row.market)}</span>
-          <h3>${esc(headline(row))}</h3>
-          <p>${esc(subhead(row))}</p>
-          <p style="margin-top:8px;">${esc(takeaway(row))}</p>
-        </article>
-      `).join("");
+    let ovMap = null, ovLayer = null, ovMetric = "overall";
+
+    function renderOverviewMap(attempt) {
+      attempt = attempt || 0;
+      const stage = document.getElementById("mi-ovmap");
+      if (!stage) return;
+      if (!window.L) {
+        if (attempt > 120) { stage.innerHTML = `<div class="mi-ovmap-fallback">地图组件加载失败，请检查网络。</div>`; return; }
+        setTimeout(() => renderOverviewMap(attempt + 1), 100);
+        return;
+      }
+      if (!ovMap) {
+        ovMap = L.map(stage, {
+          center: [26, 8], zoom: 1.6, minZoom: 1.3, maxZoom: 7, zoomSnap: 0.25, zoomDelta: 0.5,
+          worldCopyJump: false, maxBounds: [[-78, -180], [85, 200]], maxBoundsViscosity: 0.7,
+          zoomControl: false, attributionControl: true, scrollWheelZoom: false,
+        });
+        L.control.zoom({ position: "bottomright" }).addTo(ovMap);
+        L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+          subdomains: "abcd", maxZoom: 19, attribution: "&copy; OpenStreetMap &copy; CARTO",
+        }).addTo(ovMap);
+        ovLayer = L.layerGroup().addTo(ovMap);
+        setTimeout(() => ovMap.invalidateSize(), 80);
+      }
+      drawOverviewMarkers();
+    }
+
+    function drawOverviewMarkers() {
+      if (!ovMap || !ovLayer) return;
+      ovLayer.clearLayers();
+      const rows = Object.values(overviewCountries)
+        .filter(c => c[ovMetric] != null && c[ovMetric] > 0)
+        .sort((a, b) => b[ovMetric] - a[ovMetric]);
+      const max = Math.max(1, ...rows.map(c => c[ovMetric]));
+      rows.forEach(c => {
+        const v = c[ovMetric];
+        const t = Math.sqrt(v) / Math.sqrt(max);
+        const r = 4 + t * 22;
+        const [lat, lon] = MI_CENTROIDS[c.geo];
+        const zh = OV_GEO_ZH[c.geo] || c.geo;
+        const parts = [
+          c.inj != null ? `注射 ${compact(c.inj)}` : "",
+          c.surg != null ? `手术 ${compact(c.surg)}` : "",
+          c.nonsurg != null ? `非手术 ${compact(c.nonsurg)}` : "",
+          c.facial != null ? `面部 ${compact(c.facial)}` : "",
+        ].filter(Boolean).join(" · ");
+        const tip = `
+          <div class="mi-ovtip">
+            <strong>${esc(zh)} · ${esc(c.geo)}</strong>
+            <div class="big">${compact(v)} <span>${esc(OV_METRIC_LABEL[ovMetric])}治疗 · ${esc(c[ovMetric + "_yr"] || "")}</span></div>
+            ${parts ? `<div class="brk">${esc(parts)}</div>` : ""}
+          </div>`;
+        const marker = L.circleMarker([lat, lon], {
+          radius: r, weight: 1.2, color: "#fbf6ec", fillColor: ovColor(t),
+          fillOpacity: 0.86, opacity: 0.95, className: "mi-ov-dot",
+        });
+        marker.bindTooltip(tip, { className: "mi-ov-leaflet-tip", direction: "top", sticky: true, opacity: 1, offset: [0, -3] });
+        marker.on("mouseover", () => marker.setStyle({ weight: 2.4, fillOpacity: 0.97 }));
+        marker.on("mouseout", () => marker.setStyle({ weight: 1.2, fillOpacity: 0.86 }));
+        marker.addTo(ovLayer);
+      });
+      // 颜色刻度 + Top5 列表
+      const scale = document.getElementById("mi-ovmap-scale");
+      if (scale) scale.innerHTML = `
+        <span class="lbl">${esc(OV_METRIC_LABEL[ovMetric])}治疗量</span>
+        <span class="ramp"><i style="background:${ovColor(0.15)}"></i><i style="background:${ovColor(0.45)}"></i><i style="background:${ovColor(0.75)}"></i><i style="background:${ovColor(1)}"></i></span>
+        <span class="ends">少 → 多 · 共 ${rows.length} 国</span>`;
+      const topEl = document.getElementById("mi-ovmap-top");
+      if (topEl) topEl.innerHTML = rows.slice(0, 5).map((c, i) =>
+        `<span class="mi-ovtop-pill"><b>${i + 1}</b>${esc(OV_GEO_ZH[c.geo] || c.geo)}<small>${compact(c[ovMetric])}</small></span>`).join("");
+    }
+
+    function renderSegmentCards() {
+      const om = Array.isArray(analysis.opportunityMap) ? analysis.opportunityMap : [];
+      const pick = (seg) => {
+        const all = om.filter(r => r.segment === seg);
+        const g = all.find(r => r.geo === "Global") || all.find(r => r.marketSizeUsdM != null) || all[0] || {};
+        const size = Math.max(0, ...all.map(r => Number(r.marketSizeUsdM || 0)));
+        const cagrs = all.map(r => r.growthRatePct).filter(v => v != null);
+        const avgCagr = cagrs.length ? cagrs.reduce((a, b) => a + b, 0) / cagrs.length : null;
+        return {
+          cagr: g.growthRatePct != null ? g.growthRatePct : avgCagr,
+          size: g.marketSizeUsdM != null ? g.marketSizeUsdM : (size || null),
+          potential: g.potentialIndex, share: g.marketSharePct, geos: new Set(all.map(r => r.geo)).size,
+        };
+      };
+      const cards = [
+        { seg: "Overall market", zh: "整体市场", en: "Overall", wash: "w-slate", note: "全口径医美市场" },
+        { seg: "Injectables", zh: "注射赛道", en: "Injectables", wash: "w-plum", note: "填充 / 毒素 / 生物刺激" },
+        { seg: "EBD", zh: "EBD 赛道", en: "Energy devices", wash: "w-rose", note: "激光 / 射频 / 超声" },
+        { seg: "Surgical", zh: "手术赛道", en: "Surgical", wash: "w-sage", note: "外科整形" },
+      ];
+      const el = document.getElementById("mi-segment-cards");
+      if (!el) return;
+      el.innerHTML = cards.map(c => {
+        const d = pick(c.seg);
+        const metricsRow = [
+          { k: "CAGR · 年增长", v: d.cagr != null ? `${Number(d.cagr).toFixed(1)}%` : "—" },
+          { k: "市场规模", v: d.size ? moneyUsdM(d.size) : "—" },
+          { k: "潜力指数", v: d.potential != null ? fmt(Math.round(d.potential)) : "—" },
+          { k: "全球份额", v: d.share != null ? `${fmt(d.share)}%` : "—" },
+        ];
+        return `
+          <article class="mi-segment-card has-wash ${c.wash}">
+            <div class="seg-head"><span class="zh">${esc(c.zh)}</span><span class="en">${esc(c.en)}</span></div>
+            <div class="seg-note">${esc(c.note)}</div>
+            <div class="seg-metrics">
+              ${metricsRow.map(m => `<div><dt>${esc(m.k)}</dt><dd>${esc(m.v)}</dd></div>`).join("")}
+            </div>
+          </article>`;
+      }).join("");
     }
 
     function renderBusinessModelSignals() {
@@ -3002,6 +3297,173 @@
         <br>${esc(country.interpretation || "")}
         ${source.url ? `<br><a href="${esc(source.url)}" target="_blank" rel="noopener">来源：${esc(source.publisher || "source")}，新闻/券商转述口径，待官方统计核验 ↗</a>` : ""}
       `;
+    }
+
+    function metricParts(row) {
+      return String(row?.category || "").split(" / ").map(part => part.trim());
+    }
+
+    function metricBySource(source, year, l1, l2) {
+      return metrics.find(row => {
+        if (String(row.source || "").toUpperCase() !== source) return false;
+        if (String(row.geo || row.entity || "") !== "Japan") return false;
+        if (Number(row.period || 0) !== Number(year)) return false;
+        const parts = metricParts(row);
+        return parts[0] === l1 && parts[1] === l2;
+      });
+    }
+
+    function metricSeries(source, l1, l2) {
+      const rows = metrics
+        .filter(row => {
+          if (String(row.source || "").toUpperCase() !== source) return false;
+          if (String(row.geo || row.entity || "") !== "Japan") return false;
+          const parts = metricParts(row);
+          return parts[0] === l1 && parts[1] === l2 && row.value != null;
+        })
+        .map(row => ({ year: Number(row.period || 0), value: Number(row.value || 0), row }))
+        .filter(row => row.year && Number.isFinite(row.value))
+        .sort((a, b) => a.year - b.year);
+      const byYear = new Map();
+      rows.forEach(row => byYear.set(row.year, row));
+      return Array.from(byYear.values());
+    }
+
+    function renderJapanLine(seriesList) {
+      const el = document.getElementById("mi-jsaps-line");
+      if (!el) return;
+      const points = seriesList.flatMap(series => series.rows.map(row => row.value));
+      if (!points.length) {
+        el.innerHTML = `<div class="mi-queue-item"><strong>暂无 JSAPS 数据</strong><span>请先运行数据构建。</span></div>`;
+        return;
+      }
+      const years = Array.from(new Set(seriesList.flatMap(series => series.rows.map(row => row.year)))).sort((a, b) => a - b);
+      const minYear = Math.min(...years);
+      const maxYear = Math.max(...years);
+      const maxValue = Math.max(1, ...points);
+      const w = 760, h = 280, left = 56, right = 24, top = 20, bottom = 42;
+      const innerW = w - left - right;
+      const innerH = h - top - bottom;
+      const x = year => left + (maxYear === minYear ? 0.5 : (year - minYear) / (maxYear - minYear)) * innerW;
+      const y = value => top + innerH - (value / maxValue) * innerH;
+      const grid = [0, 0.25, 0.5, 0.75, 1].map(t => {
+        const gy = top + innerH - t * innerH;
+        const label = compact(maxValue * t);
+        return `<line class="mi-jsaps-gridline" x1="${left}" y1="${gy}" x2="${w - right}" y2="${gy}"></line><text class="mi-jsaps-label" x="8" y="${gy + 4}">${esc(label)}</text>`;
+      }).join("");
+      const yearLabels = years.map(year =>
+        `<text class="mi-jsaps-label" x="${x(year)}" y="${h - 12}" text-anchor="middle">${esc(year)}</text>`
+      ).join("");
+      const lineHtml = seriesList.map(series => {
+        let previousYear = null;
+        const path = series.rows.map((row, index) => {
+          const command = index === 0 || (previousYear != null && row.year - previousYear > 1) ? "M" : "L";
+          previousYear = row.year;
+          return `${command}${x(row.year).toFixed(1)},${y(row.value).toFixed(1)}`;
+        }).join(" ");
+        const dots = series.rows.map(row => `
+          <circle class="mi-jsaps-point" style="--c:${series.color};" cx="${x(row.year).toFixed(1)}" cy="${y(row.value).toFixed(1)}" r="4.5">
+            <title>${esc(series.label)} · ${esc(row.year)} · ${esc(formatCubeValue(row.row))}</title>
+          </circle>
+        `).join("");
+        return `<path class="mi-jsaps-line-path" style="--c:${series.color};" d="${path}"></path>${dots}`;
+      }).join("");
+      el.innerHTML = `
+        <svg viewBox="0 0 ${w} ${h}" role="img" aria-label="JSAPS and ISAPS Japan procedure trend">
+          ${grid}
+          <line class="mi-jsaps-axis" x1="${left}" y1="${top + innerH}" x2="${w - right}" y2="${top + innerH}"></line>
+          <line class="mi-jsaps-axis" x1="${left}" y1="${top}" x2="${left}" y2="${top + innerH}"></line>
+          ${yearLabels}
+          ${lineHtml}
+        </svg>
+        <div class="mi-jsaps-legend">
+          ${seriesList.map(series => `<span style="--c:${series.color};">${esc(series.label)}</span>`).join("")}
+        </div>
+      `;
+    }
+
+    function renderJapanStack(years) {
+      const el = document.getElementById("mi-jsaps-stack");
+      if (!el) return;
+      const segments = [
+        { l1: "Surgical procedures", l2: "Local survey total surgical procedures", label: "手术", color: "#8c7b91" },
+        { l1: "Injectables", l2: "Local survey total injectables", label: "注射", color: "#8e3a3a" },
+        { l1: "Facial rejuvenation", l2: "Local survey total facial rejuvenation", label: "面部年轻化", color: "#d9ae91" },
+        { l1: "Other non-surgical", l2: "Local survey total other non-surgical", label: "其他非手术", color: "#5a6878" },
+      ];
+      const rows = years.map(year => {
+        const total = metricBySource("JSAPS", year, "All procedures", "Local survey total procedures");
+        return {
+          year,
+          total: Number(total?.value || 0),
+          values: segments.map(seg => ({ ...seg, value: Number(metricBySource("JSAPS", year, seg.l1, seg.l2)?.value || 0) })),
+        };
+      }).filter(row => row.total > 0);
+      el.innerHTML = rows.map(row => `
+        <div class="mi-jsaps-stack-row">
+          <span>${esc(row.year)}</span>
+          <span class="mi-jsaps-stackbar" title="${esc(row.year)} · ${esc(compact(row.total))} 次">
+            ${row.values.map(seg => `<span style="--w:${Math.max(1, seg.value / row.total * 100).toFixed(1)}%;--c:${seg.color};" title="${esc(seg.label)} ${esc(fmt(seg.value / row.total * 100))}%"></span>`).join("")}
+          </span>
+          <span>${esc(compact(row.total))}</span>
+        </div>
+      `).join("") + `
+        <div class="mi-jsaps-stack-legend">
+          ${segments.map(seg => `<span style="--c:${seg.color};">${esc(seg.label)}</span>`).join("")}
+        </div>
+      `;
+    }
+
+    function renderJapanKeyBars() {
+      const el = document.getElementById("mi-jsaps-bars");
+      if (!el) return;
+      const items = [
+        ["Surgical procedures", "Thread Lift", "埋线提升", "#8c7b91"],
+        ["Injectables", "Botulinum Toxin", "肉毒毒素", "#8e3a3a"],
+        ["Injectables", "Hyaluronic Acid", "HA 填充", "#c76b68"],
+        ["Other non-surgical", "Hair Removal", "脱毛", "#5a6878"],
+        ["Facial rejuvenation", "Nonsurgical Skin Tightening", "非手术紧肤", "#d9ae91"],
+        ["Regenerative", "Non-PRP regenerative injection", "非 PRP 再生注射", "#6b5a75"],
+      ].map(([l1, l2, label, color]) => {
+        const row2024 = metricBySource("JSAPS", 2024, l1, l2);
+        const row2023 = metricBySource("JSAPS", 2023, l1, l2);
+        const value = Number(row2024?.value || 0);
+        const prev = Number(row2023?.value || 0);
+        const yoy = prev ? (value - prev) / prev * 100 : null;
+        return { label, value, yoy, color, row: row2024 };
+      }).filter(row => row.value > 0).sort((a, b) => b.value - a.value);
+      const max = Math.max(1, ...items.map(row => row.value));
+      el.innerHTML = items.map(row => {
+        const sign = row.yoy == null ? "—" : `${row.yoy >= 0 ? "+" : ""}${fmt(row.yoy)}%`;
+        return `
+          <div class="mi-jsaps-bar-row">
+            <span class="label" title="${esc(row.label)}">${esc(row.label)}</span>
+            <span class="mi-jsaps-bar-track"><span style="--w:${Math.max(4, row.value / max * 100).toFixed(1)}%;--c:${row.color};"></span></span>
+            <span class="mi-jsaps-bar-value">${esc(compact(row.value))} · ${esc(sign)}</span>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderJapanLocalDeepDive() {
+      const jsapsOverall = metricSeries("JSAPS", "All procedures", "Local survey total procedures");
+      const isapsOverall = metricSeries("ISAPS", "All procedures", "Country total procedures");
+      renderJapanLine([
+        { label: "JSAPS 日本本地调查", color: "#8e3a3a", rows: jsapsOverall },
+        { label: "ISAPS 日本可比口径", color: "#5a6878", rows: isapsOverall },
+      ]);
+      renderJapanStack(jsapsOverall.map(row => row.year));
+      renderJapanKeyBars();
+      const note = document.getElementById("mi-jsaps-note");
+      if (note) {
+        const jsapsSource = registryById.get("jsaps_national_aesthetic_procedure_survey") || {};
+        const latest = jsapsOverall[jsapsOverall.length - 1];
+        note.innerHTML = `
+          <strong>口径说明：</strong>JSAPS 是日本本地“施术数”调查，按治疗种目和男女别统计；同一病例做多种治疗或一年内多次治疗会分别计数。ISAPS 更适合国家之间横向比较，JSAPS 更适合日本本地赛道拆解。
+          ${latest ? `<br><strong>当前已接入：</strong>${esc(jsapsOverall.map(row => row.year).join(" / "))} 年；2024 年 JSAPS 本地公开总量为 ${esc(compact(latest.value))} 次。` : ""}
+          ${jsapsSource.sourceUrl ? `<br><a href="${esc(jsapsSource.sourceUrl)}" target="_blank" rel="noopener">来源：JSAPS 全国美容医疗实态调查公开页 ↗</a>` : ""}
+        `;
+      }
     }
 
     function filteredCubeRows(allRows = buildMarketCubeRows()) {
@@ -3212,14 +3674,13 @@
     }
 
     function renderAnalysis() {
-      renderOpportunityMap();
-      renderOpportunityHighlights();
+      renderOverviewMap();
+      renderSegmentCards();
       renderBusinessModelSignals();
       renderMarketMatrix();
       renderCubeInsights();
       renderSignalTimeline();
       renderCompanyRank();
-      renderValuation();
     }
 
     function hideBackstageBlocks() {
@@ -3384,7 +3845,7 @@
         `Top 15: 公司总部国家`,
         `${fmt(topSourceIds.size)} source ids`,
         `${fmt(geoSourceSummary.records || geoSourceDiscovery.length)} discovery rows`,
-        `${fmt(geoSourceSummary.downloadedArtifacts || 0)} files downloaded`,
+        `已下载 ${fmt(geoSourceSummary.downloadedArtifacts || 0)} 个文件`,
       ].map(label => `<span>${esc(label)}</span>`).join("");
       document.getElementById("mi-geo-tier-filter").innerHTML = tierOptions.map(option => `
         <button type="button" data-geo-tier="${esc(option.key)}" class="${selectedTier === option.key ? "active" : ""}">${esc(option.label)}</button>
@@ -3402,7 +3863,7 @@
           <div class="mi-coverage-row">
             <div class="country-label">
               <strong>#${esc(row.rank)} ${esc(row.country)}</strong>
-              <span>${fmt(row.companyCount || 0)} companies · ${fmt(row.sourceCount || 0)} sources</span>
+              <span>${fmt(row.companyCount || 0)} 家公司 · ${fmt(row.sourceCount || 0)} 个来源</span>
             </div>
             <span class="mi-coverage-track"><span class="${esc(tone)}" style="--w:${width}%;"></span></span>
             <span class="mi-pill ${esc(tone)}">${esc(coverageTierLabel(row.coverageTier))}</span>
@@ -3459,9 +3920,9 @@
             </div>
             <h3>${esc(sourceNames.slice(0, 2).join(" / ") || "来源待确认")}</h3>
             <div class="meta-row">
-              <span class="mi-pill">${fmt(sourceIds.length)} sources</span>
-              <span class="mi-pill">${fmt(row.downloaded)} files</span>
-              <span class="mi-pill">${fmt(row.records)} records</span>
+              <span class="mi-pill">${fmt(sourceIds.length)} 个来源</span>
+              <span class="mi-pill">${fmt(row.downloaded)} 个文件</span>
+              <span class="mi-pill">${fmt(row.records)} 条</span>
             </div>
             <div class="meta-row" style="margin-top:8px;">
               ${roleNames.map(rolePill).join("")}
@@ -3481,7 +3942,7 @@
             <tr>
               <td><strong>#${esc(row.rank)} ${esc(row.country)}</strong><br><span>${esc(row.sourceCountry || row.country)}</span></td>
               <td class="num">${fmt(row.companyCount || 0)}</td>
-              <td><span class="mi-pill ${esc(tone)}">${esc(coverageTierLabel(row.coverageTier))}</span><br><span>${fmt(row.sourceCount || 0)} sources · ${fmt(row.downloadedArtifacts || 0)} files</span></td>
+              <td><span class="mi-pill ${esc(tone)}">${esc(coverageTierLabel(row.coverageTier))}</span><br><span>${fmt(row.sourceCount || 0)} 个来源 · ${fmt(row.downloadedArtifacts || 0)} 个文件</span></td>
               <td><strong>${esc(sourceNames || "暂无")}</strong><br><span>${roleLabels || "—"}</span></td>
               <td>${esc(row.nextAction || "先补官方/协会来源入口，再判定是否可抽数。")}</td>
             </tr>
@@ -3494,10 +3955,10 @@
         channelEl.innerHTML = channelDensity.map(row => {
           const tone = coverageTierTone(row.coverageTier);
           const sourceBits = [
-            `${fmt(row.providerLocatorSources || 0)} locator`,
-            `${fmt(row.doctorDenominatorSources || 0)} denominator`,
-            `${fmt(row.associationEntrySources || 0)} association`,
-            `${fmt(row.downloadedArtifacts || 0)} files`,
+            `${fmt(row.providerLocatorSources || 0)} 机构定位库`,
+            `${fmt(row.doctorDenominatorSources || 0)} 医生基数`,
+            `${fmt(row.associationEntrySources || 0)} 协会入口`,
+            `${fmt(row.downloadedArtifacts || 0)} 文件`,
           ];
           return `
             <tr>
@@ -3508,7 +3969,7 @@
               <td>${esc(row.nextAction || "—")}</td>
             </tr>
           `;
-        }).join("") || `<tr><td colspan="5">暂无渠道密度 proxy 表</td></tr>`;
+        }).join("") || `<tr><td colspan="5">暂无渠道密度参考表</td></tr>`;
       }
 
       const europeEl = document.getElementById("mi-europe-qa-rows");
@@ -3516,12 +3977,12 @@
         europeEl.innerHTML = europeMetricQa.map(row => `
           <tr>
             <td><strong>${esc(row.country || "Europe")}</strong><br><span>${esc(row.sourceName || row.sourceId)}</span></td>
-            <td>${fmt(row.downloadedFiles || 0)} files · ${fmt(row.pdfTablesDetected || 0)} tables<br><span>${esc((row.yearsFound || []).slice(0, 6).join(", ") || "year n/a")}</span></td>
+            <td>${fmt(row.downloadedFiles || 0)} 个文件 · ${fmt(row.pdfTablesDetected || 0)} 个表格<br><span>${esc((row.yearsFound || []).slice(0, 6).join(", ") || "年份缺失")}</span></td>
             <td><strong>${esc(row.countStatus || "—")}</strong><br><span>${esc(row.tableStatus || "")}</span></td>
             <td><span class="mi-status needs">${esc(mainlineDecisionLabel(row.mainlineDecision))}</span><br><span>${esc(row.promotionAllowed === "yes" ? "可入主干" : "不直接入主干")}</span></td>
             <td>${esc(row.nextAction || "—")}</td>
           </tr>
-        `).join("") || `<tr><td colspan="5">暂无欧洲 QA 记录</td></tr>`;
+        `).join("") || `<tr><td colspan="5">暂无欧洲待核验记录</td></tr>`;
       }
 
       document.getElementById("mi-geo-backlog-rows").innerHTML = sourceTasks
@@ -3666,7 +4127,7 @@
             <td><strong>${esc(typeLabel(row.claimType))}</strong><br><span>${esc(row.metricName || "")}</span></td>
             <td>${esc([row.category, row.geo, row.year].filter(Boolean).join(" · ") || "—")}</td>
             <td class="num">${esc(pct(row.spreadPct))}</td>
-            <td>${esc(range)}<br><span>${fmt(row.sourceCount)} sources</span></td>
+            <td>${esc(range)}<br><span>${fmt(row.sourceCount)} 个来源</span></td>
             <td><span class="mi-status needs">${esc(row.reviewStatus || "needs review")}</span></td>
           </tr>
         `;
@@ -3766,6 +4227,13 @@
     document.querySelectorAll("[data-mode]").forEach(button => {
       button.addEventListener("click", () => setMode(button.getAttribute("data-mode") || "all"));
     });
+    document.querySelectorAll("#mi-ovmap-toggle [data-ov-metric]").forEach(button => {
+      button.addEventListener("click", () => {
+        ovMetric = button.getAttribute("data-ov-metric") || "overall";
+        document.querySelectorAll("#mi-ovmap-toggle [data-ov-metric]").forEach(b => b.classList.toggle("active", b === button));
+        drawOverviewMarkers();
+      });
+    });
     document.getElementById("mi-drawer-close").addEventListener("click", closeSource);
     document.getElementById("mi-drawer-backdrop").addEventListener("click", closeSource);
 
@@ -3773,15 +4241,15 @@
     renderAnalysis();
     renderRegionLayer();
     renderCountryLayer();
+    renderJapanLocalDeepDive();
     renderMarket();
     renderGeoSources();
-    renderFinancial();
     renderSignals();
     renderConflicts();
     renderSources();
     renderQueues();
     const requestedMode = new URLSearchParams(window.location.search).get("mode") || "all";
-    const validModes = new Set(["all", "region", "country", "market", "financial", "signals", "conflicts"]);
+    const validModes = new Set(["all", "region", "country", "market"]);
     setMode(validModes.has(requestedMode) ? requestedMode : "all");
     hideBackstageBlocks();
   })();

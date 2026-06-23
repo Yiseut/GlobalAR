@@ -27,6 +27,7 @@ data/*
 !data/commercial_channel_density_proxy.csv
 !data/isaps_market_metrics.csv
 !data/asps_market_metrics.csv
+!data/jsaps_market_metrics.csv
 !data/manual_company_relationship_supplement.csv
 !data/manual_product_line_supplement.csv
 !data/company_logo_manifest.csv
