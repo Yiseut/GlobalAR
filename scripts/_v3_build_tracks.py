@@ -41,8 +41,13 @@ L1_ALIASES = {  # normalize raw db values to canonical L1 labels
 }
 
 
+_L1_ZH = {
+    "EBD": "能量设备", "Injectables": "注射", "Skincare": "功效护肤", "Regenerative": "再生",
+    "Implants": "植入物", "Consumables": "耗材", "Diagnostics": "诊断", "Surgical": "外科",
+    "Pharma": "药物", "Services": "服务",
+}
 def display_l1(l1: str) -> str:
-    return "Cosmeceutical" if l1 == "Skincare" else l1
+    return _L1_ZH.get(l1, l1)
 
 def norm_l1(raw: str) -> str:
     if not raw:
@@ -322,8 +327,8 @@ def main() -> None:
         {
             "stamp": "Finding · 01",
             "lead": "光电 (EBD) 不是单一技术，是 <em>{0}</em> 条技术路线的混战。".format(ebd_tech_spread),
-            "num_pair": {"num": ebd_tech_spread, "unit": "tech families in EBD"},
-            "body": "EBD <em>{ebd_n}</em> 款产品分散在 <em>{n}</em> 条技术路线（Diode / HIFU / RF / CO2 / IPL / Nd:YAG ...）— 没有任何单一技术占主导。这意味着「EBD」更像一个赛道集合而不是一个赛道，下钻必须按 technology_path 切分。".format(
+            "num_pair": {"num": ebd_tech_spread, "unit": "条技术路线"},
+            "body": "能量设备 <em>{ebd_n}</em> 款产品分散在 <em>{n}</em> 条技术路线（二极管激光 / 超声刀 / 射频 / CO₂ / 强脉冲光 / 钕激光 …）— 没有任何单一技术占主导。这意味着「能量设备」更像一个赛道集合，而不是单一赛道，下钻必须按技术路线切分。".format(
                 ebd_n=ebd_entry["total"] if ebd_entry else 0,
                 n=ebd_tech_spread,
             ),
@@ -332,8 +337,8 @@ def main() -> None:
         {
             "stamp": "Finding · 02",
             "lead": "注射赛道高度技术集中。",
-            "num_pair": {"num": "{0}%".format(inj_top_tech_share), "unit": "Injectables · top tech share"},
-            "body": "注射类 <em>{n}</em> 款产品里，光是头部一项技术 ({tech}) 就占 <em>{share}</em>%。剩下分给 PLLA / PCL / CaHA / Botulinum / PRP 等。注射赛道有清晰的「技术霸主」，跟 EBD 完全相反。".format(
+            "num_pair": {"num": "{0}%".format(inj_top_tech_share), "unit": "注射 · 头部技术占比"},
+            "body": "注射类 <em>{n}</em> 款产品里，光是头部一项技术 ({tech}) 就占 <em>{share}</em>%。剩下分给 PLLA / PCL / CaHA / 肉毒 / PRP 等。注射赛道有清晰的「技术霸主」，跟能量设备完全相反。".format(
                 n=inj_entry["total"] if inj_entry else 0,
                 tech=inj_entry["techs"][0]["tech"] if inj_entry and inj_entry["techs"] else "—",
                 share=inj_top_tech_share,
@@ -345,7 +350,7 @@ def main() -> None:
             "lead": "{0} 的「产品/公司密度」最高。".format(display_l1(most_dense["l1"]) if most_dense else "—"),
             "num_pair": {
                 "num": "{0:.1f}".format(most_dense["ppc"]) if most_dense else "—",
-                "unit": "products per company",
+                "unit": "款 / 家",
             },
             "body": "在 <em>{l1}</em> 赛道，平均每家公司做 <em>{ppc}</em> 款产品 — 远高于全行业平均 <em>{avg:.1f}</em>。这暗示该赛道里有「平台型公司」(单家做多款)而非「单品型公司」。".format(
                 l1=display_l1(most_dense["l1"]) if most_dense else "—",

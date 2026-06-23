@@ -230,8 +230,8 @@ def main() -> None:
         {
             "stamp": "Finding · 01",
             "lead": "<em>{0}</em> 一项技术占全行业 <em>{1}%</em>。".format(top1[0], top1_share),
-            "num_pair": {"num": "{0}%".format(top1_share), "unit": "{0} share".format(top1[0])},
-            "body": "<em>{t}</em> 在 <em>{n}</em> 款产品里被采用 — 远超第二名 <em>{t2}</em>（<em>{n2}</em> 款）。这意味着「<em>{t}</em>」不只是一种材料，而是注射赛道事实上的「平台技术」。其他技术都在抢「不靠 HA 的市场」。".format(
+            "num_pair": {"num": "{0}%".format(top1_share), "unit": "全行业占比"},
+            "body": "<em>{t}</em> 在 <em>{n}</em> 款产品里被采用 — 远超第二名 <em>{t2}</em>（<em>{n2}</em> 款）。这意味着它不只是一种材料，而是注射赛道事实上的「通用基础技术」，几乎所有人都在用；其他技术都在抢「不靠它的那部分市场」。".format(
                 t=top1[0], n=top1[1],
                 t2=tech_counts[1][0] if len(tech_counts) > 1 else "—",
                 n2=tech_counts[1][1] if len(tech_counts) > 1 else 0,
@@ -240,9 +240,9 @@ def main() -> None:
         },
         {
             "stamp": "Finding · 02",
-            "lead": "<em>{0}</em> 种技术跨多个商业赛道。".format(len(cross_app_techs)),
-            "num_pair": {"num": len(cross_app_techs), "unit": "cross-application techs"},
-            "body": "Top 15 技术里 <em>{n}</em> 种被 ≥3 个商业 L1 采用（如 Microneedling 既在 EBD 又在 Cosmeceutical 也在 Regenerative）。这些是「平台型技术」 — 一种技术撑多个商业赛道，是上游公司的护城河资产。".format(n=len(cross_app_techs)),
+            "lead": "<em>{0}</em> 种技术跨多个赛道通用。".format(len(cross_app_techs)),
+            "num_pair": {"num": len(cross_app_techs), "unit": "种跨界通用技术"},
+            "body": "Top 15 技术里 <em>{n}</em> 种被 3 个以上不同赛道采用（如微针 Microneedling 同时用于能量设备、功效护肤和再生）。这种「一种技术撑多个赛道」的通用能力，是上游公司最硬的竞争壁垒。".format(n=len(cross_app_techs)),
             "wash": "w-apricot",
         },
         {
@@ -250,14 +250,20 @@ def main() -> None:
             "lead": "<em>{0}</em> 是产品数最多的技术族。".format(largest_family["family"] if largest_family else "—"),
             "num_pair": {
                 "num": largest_family["n_products"] if largest_family else 0,
-                "unit": "products in family",
+                "unit": "款产品",
             },
-            "body": "<em>{f}</em> 涵盖 <em>{n}</em> 款产品 / <em>{c}</em> 家公司 / <em>{t}</em> 种子技术。族内主要服务 <em>{l1}</em> 赛道。把同族技术放在一起看，比单看 \"HA 184\" 这种点数据更能识别「公司能在哪个技术族里平行扩张」。".format(
+            "body": "<em>{f}</em> 涵盖 <em>{n}</em> 款产品、<em>{c}</em> 家公司、<em>{t}</em> 种同系列技术，主要用在 <em>{l1}</em>。把同系列技术放在一起看，比单看某一种材料更能看出一家公司能在哪个方向上横向扩张。".format(
                 f=largest_family["family"] if largest_family else "—",
                 n=largest_family["n_products"] if largest_family else 0,
                 c=largest_family["n_companies"] if largest_family else 0,
                 t=largest_family["n_techs"] if largest_family else 0,
-                l1=", ".join(l["l1"] for l in largest_family["top_l1"][:2]) if largest_family else "—",
+                l1=", ".join(
+                    {"Injectables": "注射", "EBD": "能量设备", "Cosmeceutical": "功效护肤",
+                     "Regenerative": "再生", "Skincare": "功效护肤", "Implants": "植入物",
+                     "Consumables": "耗材", "Surgical": "外科", "Diagnostics": "诊断",
+                     "Pharma": "药物"}.get(l["l1"], l["l1"])
+                    for l in largest_family["top_l1"][:2]
+                ) if largest_family else "—",
             ),
             "wash": "w-plum",
         },

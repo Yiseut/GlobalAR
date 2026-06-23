@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>深度图谱 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 <style>
   /* ===== sunburst ===== */
   .sb-layout { display: grid; grid-template-columns: minmax(320px, 1fr) 360px; gap: 28px; align-items: start; }
@@ -118,18 +118,18 @@
   <main class="content">
 
     <section class="page-hero">
-      <div class="eyebrow-chip"><span class="dot"></span>Deep Map · L1 › L2 › L3</div>
+      <div class="eyebrow-chip"><span class="dot"></span>深度图谱 · 三级下钻</div>
       <h1>
         深度图谱
         <span class="h1-en">Deep Drilldown · 三级分类</span>
       </h1>
-      <p class="lede">单维排行和 L1×L2 矩阵之外，这一页把<strong>二级以下</strong>的真实结构摊开看 —
-        942 款产品在 <strong>材料分类 16→47→87</strong> 三级、和 <strong>商业 9→56→技术</strong> 路线上的逐层分布。
-        旭日图呈现 L1 / L2 / L3 层级，叶子节点关联背后的企业，并与公司列表和子赛道页相互贯通。</p>
+      <p class="lede">想看清最细一层到底有什么？这一页把<strong>二级以下</strong>的真实结构摊开看 —
+        942 款产品按 <strong>材料 16→47→87</strong> 三层、和 <strong>商业 9→56→技术</strong> 路线逐层展开。
+        旭日图呈现赛道 / 细分 / 技术三层，点到最末端可看背后企业，并与公司列表和子赛道页相互贯通。</p>
       <div class="stat-row">
         <span><span class="num" data-count-up="942">942</span> 款产品 · <span class="num" data-count-up="329">329</span> 家企业</span>
         <span>材料 <span class="num" data-count-up="16">16</span> · <span class="num" data-count-up="47">47</span> · <span class="num" data-count-up="87">87</span> 三级</span>
-        <span>商业 <span class="num" data-count-up="9">9</span> L1 · <span class="num" data-count-up="56">56</span> L2</span>
+        <span>商业 <span class="num" data-count-up="9">9</span> 赛道 · <span class="num" data-count-up="56">56</span> 细分</span>
       </div>
     </section>
 
@@ -137,7 +137,7 @@
     <section class="block">
       <div class="section-head">
         <h2>材料三级分类 · 旭日图</h2>
-        <span class="cn">· L1 → L2 → L3 · 16 / 47 / 87</span><span class="en">Material 3-level · sunburst map</span>
+        <span class="cn">· 赛道 → 细分 → 技术 · 16 / 47 / 87</span><span class="en">Material 3-level · sunburst map</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">从大类到细分材料 — 内环是 16 个材料大类，往外是 L2、L3</div>
@@ -156,15 +156,15 @@
     <section class="block">
       <div class="section-head">
         <h2>商业路线逐列图</h2>
-        <span class="cn">· L1 → L2 → 技术/材料源</span><span class="en">Commercial path · column map</span>
+        <span class="cn">· 赛道 → 细分 → 技术/材料</span><span class="en">Commercial path · column map</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">从商业赛道到子赛道再到底层技术 — 一列点一层</div>
-        <div class="chart-sub">商业路线以 L1、L2、技术 / 材料源逐列呈现，从大类到末级节点保留对应企业明细。</div>
+        <div class="chart-sub">商业路线按赛道、细分、技术 / 材料逐列呈现，从大类到末级节点保留对应企业明细。</div>
         <div class="mc-wrap" id="mc-wrap">
-          <div class="mc-col"><div class="mc-col-head">L1 · 商业赛道</div><div id="mc-l1"></div></div>
-          <div class="mc-col"><div class="mc-col-head">L2 · 子赛道</div><div id="mc-l2"><div class="mc-empty">← 先选一个 L1</div></div></div>
-          <div class="mc-col"><div class="mc-col-head">L3 · 技术 / 材料源</div><div id="mc-l3"><div class="mc-empty">← 再选一个 L2</div></div></div>
+          <div class="mc-col"><div class="mc-col-head">商业赛道</div><div id="mc-l1"></div></div>
+          <div class="mc-col"><div class="mc-col-head">子赛道</div><div id="mc-l2"><div class="mc-empty">← 先选一个赛道</div></div></div>
+          <div class="mc-col"><div class="mc-col-head">技术 / 材料</div><div id="mc-l3"><div class="mc-empty">← 再选一个细分</div></div></div>
         </div>
       </div>
     </section>
@@ -197,13 +197,13 @@
 </aside>
 <div class="sb-tip" id="sb-tip"></div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./v3-deep-dive.js?v=20260616"></script>
-<script src="./v3-deep-interact.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="deep"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./v3-deep-dive.js?v=9f3d7a5c"></script>
+<script src="./v3-deep-interact.js?v=ff04a730"></script>
+<script src="./_nav.js?v=d784d46b" data-active="deep"></script>
 <script>
 (function () {
   const DEEP = window.V3_DEEP_DIVE_DATA;
@@ -434,7 +434,8 @@
   // ===================== MILLER COLUMNS (commercial) =====================
   const COM = DEEP.commercial_tree;
   const TRACK_COLORS = { EBD: "#8E3A3A", Injectables: "#6B5A75", Skincare: "#D9AE91", Regenerative: "#A8B59A", Consumables: "#5A6878", Implants: "#CFB58E", Diagnostics: "#C76B68", Surgical: "#8C7B91", Pharma: "#EC9B73", "Thread Lift": "#C8B8D0" };
-  const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
+  const L1_ZH = { Injectables: "注射", EBD: "能量设备", Skincare: "功效护肤", Regenerative: "再生", Implants: "植入物", Consumables: "耗材", Diagnostics: "诊断", Surgical: "外科", Pharma: "药物", Services: "服务", "Thread Lift": "埋线提升" };
+  const displayL1 = (l1) => L1_ZH[l1] || l1;
   let selL1 = null, selL2 = null;
   function renderMiller() {
     const c1 = document.getElementById("mc-l1");
@@ -446,7 +447,7 @@
     }));
     const c2 = document.getElementById("mc-l2");
     const l1node = COM.children.find(n => n.name === selL1);
-    if (!l1node) { c2.innerHTML = `<div class="mc-empty">← 先选一个 L1</div>`; }
+    if (!l1node) { c2.innerHTML = `<div class="mc-empty">← 先选一个赛道</div>`; }
     else {
       const base = TRACK_COLORS[selL1] || "#8C7B91";
       c2.innerHTML = l1node.children.map((n, i) => millerItem(n, shade2(base, i), n.children && n.children.length, selL2 === n.name)).join("");
@@ -458,7 +459,7 @@
     }
     const c3 = document.getElementById("mc-l3");
     const l2node = l1node && l1node.children.find(n => n.name === selL2);
-    if (!l2node) { c3.innerHTML = `<div class="mc-empty">← 再选一个 L2</div>`; }
+    if (!l2node) { c3.innerHTML = `<div class="mc-empty">← 再选一个细分</div>`; }
     else {
       const base = TRACK_COLORS[selL1] || "#8C7B91";
       c3.innerHTML = l2node.children.map((n, i) => millerItem(n, shade2(base, i + 3), false, false)).join("");
@@ -480,7 +481,7 @@
     openDrawer({
       stamp: "商业 · 明细", title: displayParts[displayParts.length - 1], sub: displayParts.join(" › "),
       filter, segment: window.V3Link.segmentForTrack(l1), track: l1,
-      chips: [{ k: "L1", v: displayL1(l1) }, { k: "L2", v: l2 }, { k: "技术", v: t }].filter(c => c.v),
+      chips: [{ k: "赛道", v: displayL1(l1) }, { k: "细分", v: l2 }, { k: "技术", v: t }].filter(c => c.v),
     });
   }
 
@@ -531,9 +532,9 @@
 
   // ===================== FINDINGS =====================
   const findings = [
-    { wash: "w-rose-deep", stamp: "Finding · 01", lead: "能量设备是最碎的大类。", num: "389", unit: "products · 8 个 L2", body: "材料 L1「能量设备」下有激光/射频/超声/光IPL 等 8 个 L2、30+ 个 L3 细分 — 没有单一霸主。细分到 L3 才能看清「色素激光 vs 脱毛激光 vs 点阵」这种真正的竞争边界。" },
-    { wash: "w-plum", stamp: "Finding · 02", lead: "注射类高度集中在 HA。", num: "181", unit: "HA / 286 注射", body: "注射类 286 款里 181 款是透明质酸 HA（约 63%），其余被胶原刺激剂、美塑、肉毒分摊。这解释了为什么注射赛道的护城河更多在「材料工艺 + 监管」而非品类宽度。" },
-    { wash: "w-apricot", stamp: "Finding · 03", lead: "二级以下才看得见差异。", num: "87", unit: "L3 leaf categories", body: "只看 L1（16 类）会把「单极射频」和「微聚焦超声」混为一谈。进入 87 个 L3 叶子，才能把监管路径、临床证据、竞争格局逐一对上 — 这正是这一页存在的意义。" },
+    { wash: "w-rose-deep", stamp: "Finding · 01", lead: "能量设备是最碎的大类。", num: "389", unit: "款产品 · 8 个细分", body: "材料赛道「能量设备」下有激光/射频/超声/光IPL 等 8 个细分、30+ 个三级技术 — 没有单一霸主。细分到第三层才能看清「色素激光 vs 脱毛激光 vs 点阵」这种真正的竞争边界。" },
+    { wash: "w-plum", stamp: "Finding · 02", lead: "注射类高度集中在玻尿酸。", num: "181", unit: "玻尿酸 / 286 注射", body: "注射类 286 款里 181 款是透明质酸（玻尿酸，约 63%），其余被胶原刺激剂、美塑、肉毒分摊。这解释了为什么注射赛道的护城河更多在「材料工艺 + 监管」而非品类宽度。" },
+    { wash: "w-apricot", stamp: "Finding · 03", lead: "二级以下才看得见差异。", num: "87", unit: "个三级细分", body: "只看赛道大类（16 类）会把「单极射频」和「微聚焦超声」混为一谈。下钻到 87 个三级细分，才能把监管路径、临床证据、竞争格局逐一对上 — 这正是这一页存在的意义。" },
   ];
   document.getElementById("finding-cards").innerHTML = findings.map(f => `
     <article class="editorial-block has-wash ${f.wash} wash-bottom-left">

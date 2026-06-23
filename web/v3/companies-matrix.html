@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>企业矩阵 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 <style>
   /* Page-local layout for company-matrix toolbar + KPI overlay */
   .cm-toolbar {
@@ -239,7 +239,7 @@
         企业矩阵
         <span class="h1-en">Company Matrix</span>
       </h1>
-      <p class="lede">每家公司在 <em>material_taxonomy_l2_cn</em> 14 个主要材料赛道上的产品布局。<strong>覆盖赛道数越多 = 平台型；单赛道但产品多 = 王者型</strong>。默认只显示覆盖 ≥3 个材料赛道的公司（≈ 62 家），其余 3 百家长尾可通过左侧滑杆放开。</p>
+      <p class="lede">哪家公司布局最全、哪家在单一赛道做到最深？这张矩阵把每家公司在 14 个主要材料赛道上的产品布局摊开看。<strong>覆盖赛道越多 = 平台型；单一赛道但产品多 = 专精王者</strong>。默认只显示覆盖 3 个赛道以上的公司（约 62 家），其余长尾可用左侧滑杆放开。</p>
       <div class="stat-row">
         <span><span class="num" id="cm-stat-companies">—</span> 家公司入矩阵 · 全库 <span class="num" id="cm-stat-total">—</span> 家</span>
         <span>14 个主流材料赛道 · 覆盖 <span class="num" id="cm-stat-coverage">—</span>% 产品</span>
@@ -264,12 +264,11 @@
           </label>
           <label>排序
             <select id="cm-sort">
-              <option value="tracks">赛道数 DESC</option>
-              <option value="products">产品数 DESC</option>
-              <option value="listed">上市优先</option>
-              <option value="country-group">国家分组</option>
-              <option value="name">公司名 ASC</option>
-              <option value="country">国家 ASC</option>
+              <option value="tracks">覆盖赛道：多 → 少</option>
+              <option value="products">产品数：多 → 少</option>
+              <option value="country-group">按国家分组</option>
+              <option value="name">公司名：A → Z</option>
+              <option value="country">国家名：A → Z</option>
             </select>
           </label>
           <label>最少产品
@@ -302,13 +301,13 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./v3-company-matrix.js?v=20260616"></script>
-<script src="./v3-cell-drawer.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="companies-matrix"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./v3-company-matrix.js?v=cb64d657"></script>
+<script src="./v3-cell-drawer.js?v=28dbfb60"></script>
+<script src="./_nav.js?v=d784d46b" data-active="companies-matrix"></script>
 <script>
 (function () {
   const d = window.GLOBAL_AESTHETICS_DATA;
@@ -326,10 +325,10 @@
     "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
   };
   const L1_ZH = {
-    "EBD":"能量源设备 EBD","Injectables":"注射类 Injectables","Skincare":"功能性护肤品",
-    "Regenerative":"再生 Regenerative","Consumables":"耗材 Consumables","Implants":"植入物 Implants",
-    "Diagnostics":"诊断 Diagnostics","Surgical":"外科 Surgical","Pharma":"药品 Pharma","Services":"服务 Services",
-    "":"其他 Other","其他":"其他 Other",
+    "EBD":"能量源设备","Injectables":"注射类","Skincare":"功效护肤",
+    "Regenerative":"再生","Consumables":"耗材","Implants":"植入物",
+    "Diagnostics":"诊断","Surgical":"外科","Pharma":"药品","Services":"服务",
+    "":"其他","其他":"其他",
   };
   const displayL1 = l1 => L1_ZH[l1] || l1;
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, ch => ({
@@ -383,15 +382,6 @@
     else if (sort === "name")     filtered.sort((a, b) => a.name.localeCompare(b.name));
     else if (sort === "country" || sort === "country-group")
       filtered.sort((a, b) => (a.country || "zzz").localeCompare(b.country || "zzz") || b.track_count_in_matrix - a.track_count_in_matrix || a.name.localeCompare(b.name));
-    else if (sort === "listed") {
-      // Public first, then Private, then everything else; within each group
-      // by track count desc then product count desc.
-      const tier = o => (o === "Public" ? 0 : o === "Private" ? 1 : 2);
-      filtered.sort((a, b) => tier(a.ownership) - tier(b.ownership)
-        || b.track_count_in_matrix - a.track_count_in_matrix
-        || b.total_products - a.total_products
-        || a.name.localeCompare(b.name));
-    }
 
     document.getElementById("cm-stat-companies").textContent = filtered.length;
     statLine.innerHTML = `<strong>${filtered.length}</strong> 家入矩阵 / 全 ${sum.companies_total} · ${data.columns.length} 个材料赛道`;
@@ -600,21 +590,21 @@
       stamp: "Finding · 01",
       wash: "w-rose-deep",
       lead: `<em>${esc(top.name)}</em> 在 14 个主流材料赛道里覆盖最广 — <em>${top.track_count_in_matrix}</em> 个赛道。`,
-      num: top.track_count_in_matrix, unit: "in-matrix tracks",
+      num: top.track_count_in_matrix, unit: "个材料赛道",
       body: `${esc(top.name)} 在矩阵中 ${top.track_count_in_matrix} / 14 个主流材料赛道有产品（合计 ${top.total_products} 款，全库覆盖 ${top.track_count_l2_all} 个含长尾）。这是真正的<strong>平台型</strong>布局——对手要全面竞争而非单点突破。`,
     },
     {
       stamp: "Finding · 02",
       wash: "w-plum",
-      lead: `仅 <em>${five.length}</em> 家公司在矩阵中覆盖 ≥5 个材料赛道。`,
-      num: five.length, unit: "≥5 in-matrix tracks",
-      body: `5 个主流赛道是「平台型」门槛。只有 ${five.length} 家做到：${five.map(c => `<em>${esc(c.name)}</em>(${c.track_count_in_matrix})`).join(" · ")}。其余几百家本质上还是 1-2 赛道的专精型，**矩阵稀疏度本身就是竞争结构的事实**。`,
+      lead: `只有 <em>${five.length}</em> 家公司覆盖 5 个以上材料赛道。`,
+      num: five.length, unit: "家覆盖 5+ 赛道",
+      body: `覆盖 5 个主流赛道是「平台型」的门槛，只有 ${five.length} 家做到：${five.map(c => `<em>${esc(c.name)}</em>(${c.track_count_in_matrix})`).join(" · ")}。其余几百家还停在 1–2 个赛道的专精型——这种不均衡本身就是当前的竞争格局。`,
     },
     {
       stamp: "Finding · 03",
       wash: "w-apricot",
-      lead: `<em>${fourPlusBig.length}</em> 家公司是「≥4 赛道 + ≥15 产品」组合 — 资源最厚。`,
-      num: fourPlusBig.length, unit: "platform-heavy",
+      lead: `<em>${fourPlusBig.length}</em> 家公司做到「4+ 赛道 × 15+ 产品」 — 资源最厚。`,
+      num: fourPlusBig.length, unit: "家平台型重仓",
       body: `${fourPlusBig.length} 家公司同时覆盖 ≥4 个主流材料赛道且总产品 ≥15：${fourPlusBig.map(c => `<em>${esc(c.name)}</em>(${c.track_count_in_matrix}赛/${c.total_products}款)`).join(" · ")}。它们在多个赛道里都有产品厚度，是行业里的重量级平台型企业。`,
     },
   ].map(f => `

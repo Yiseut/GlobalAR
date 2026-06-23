@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>资本地图 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 </head>
 <body>
 
@@ -22,9 +22,9 @@
         资本地图
         <span class="h1-en">Capital Map &amp; Valuation Bands</span>
       </h1>
-      <p class="lede" id="capital-hero-lede">资本地图专注上市企业：61 条上市/关联证据批次 · 329 家企业底库中 43 家为活跃上市主体 · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。</p>
+      <p class="lede" id="capital-hero-lede">谁有钱、钱往哪流？资本地图只看上市企业：329 家底库中 43 家活跃上市（61 条上市批次），拆解估值带、交易所与财务表现（股价 / 市值 / P/E / P/B / EPS / 净利润增长）。非上市集团与资本流向见 <a href="./companies.html">公司列表</a>。</p>
       <div class="stat-row" id="capital-stat-row">
-        <span>Active public <span class="num">43</span> / 329 = <span class="num">13</span>%</span>
+        <span>活跃上市 <span class="num">43</span> / 329 = <span class="num">13</span>%</span>
         <span>上市证据批次 <span class="num">61</span> 条</span>
         <span>主交易所 KRX <span class="num">22</span> + NASDAQ <span class="num">15</span></span>
         <span>巨盘 <span class="num">3</span> · 大盘 <span class="num">3</span> · 中盘 <span class="num">12</span> · 小盘 <span class="num">30</span></span>
@@ -37,7 +37,7 @@
           <span class="stamp">本页总起 · public company skew</span>
           <div class="lead">活跃上市主体 <em>43</em> 家，上市证据批次 <em>61</em> 条。</div>
           <div class="num-pair"><span class="num">30</span><span class="unit">small cap · 3 mega cap</span></div>
-          <div class="body">大市值集中在 NASDAQ；KRX <em>22</em> 条上市批次构成韩股板块。公司口径与上市批次口径在本页分开呈现。</div>
+          <div class="body">大市值集中在 NASDAQ；KRX <em>22</em> 条几乎全是小盘韩股——上市侧明显两极：少数巨头 + 一批韩国小盘，中段几乎空缺。</div>
         </article>
       </div>
     </section>
@@ -77,14 +77,14 @@
           <span class="delta">InMode · Apyx · STAA 等</span>
         </article>
         <article class="kpi-cell has-wash w-slate">
-          <div class="label"><span class="en">Subsidiaries</span><span class="zh">子公司 / 关联</span></div>
-          <span class="value" id="capital-kpi-subsidiary">13</span>
-          <span class="delta" id="capital-kpi-subsidiary-delta">公司族谱与关联主体样本</span>
+          <div class="label"><span class="en">Financials pulled</span><span class="zh">财报覆盖</span></div>
+          <span class="value">16</span>
+          <span class="delta">SEC / IR 已采财务的上市主体 → 见下方财报快照</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
-          <div class="label"><span class="en">Pending valuation</span><span class="zh">估值暂缺</span></div>
+          <div class="label"><span class="en">Valuation gap</span><span class="zh">估值暂缺</span></div>
           <span class="value">13</span>
-          <span class="delta">本批次未抓到市值快照</span>
+          <span class="delta">13 家上市主体暂无市值快照（覆盖缺口）</span>
         </article>
         <article class="kpi-cell has-wash w-lavender">
           <div class="label"><span class="en">Private companies</span><span class="zh">私营企业</span></div>
@@ -104,35 +104,35 @@
         <div class="chart-sub">头部由 3 家巨盘 + 3 家大盘构成 — 集中在传统药械综合体；中段断层。13 家"pending" 是数据采集本轮未覆盖的，下一批补全。</div>
 
         <div class="bar-row val-band-row" data-band="small cap" data-n="30">
-          <div class="label">小盘 Small Cap<small>&lt; $2B</small></div>
+          <div class="label">小盘<small>&lt; $2B</small></div>
           <div class="bar-track">
             <div class="bar-seg" style="background:#C76B68; flex:30"></div>
           </div>
           <div class="bar-total">30</div>
         </div>
         <div class="bar-row val-band-row" data-band="mid cap" data-n="12">
-          <div class="label">中盘 Mid Cap<small>$2B – $10B</small></div>
+          <div class="label">中盘<small>$2B – $10B</small></div>
           <div class="bar-track">
             <div class="bar-seg" style="background:#8E3A3A; flex:12"></div>
           </div>
           <div class="bar-total">12</div>
         </div>
         <div class="bar-row val-band-row" data-band="large cap" data-n="3">
-          <div class="label">大盘 Large Cap<small>$10B – $200B</small></div>
+          <div class="label">大盘<small>$10B – $200B</small></div>
           <div class="bar-track">
             <div class="bar-seg" style="background:#4A3D52; flex:3"></div>
           </div>
           <div class="bar-total">3</div>
         </div>
         <div class="bar-row val-band-row" data-band="mega cap" data-n="3">
-          <div class="label">巨盘 Mega Cap<small>&gt; $200B</small></div>
+          <div class="label">巨盘<small>&gt; $200B</small></div>
           <div class="bar-track">
             <div class="bar-seg" style="background:#3C0A09; flex:3"></div>
           </div>
           <div class="bar-total">3</div>
         </div>
         <div class="bar-row val-band-row" data-band="pending" data-n="13">
-          <div class="label">暂缺 Pending<small>暂无行情快照</small></div>
+          <div class="label">暂缺<small>暂无行情快照</small></div>
           <div class="bar-track">
             <div class="bar-seg" style="background:#A99FB3; flex:13"></div>
           </div>
@@ -202,18 +202,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>01</td><td>AbbVie (Allergan Aesthetics)</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>NYSE</td><td>ABBV</td><td><span class="pill-tag pill-default">Mega Cap</span></td><td class="num">1</td></tr>
-            <tr><td>02</td><td>Johnson &amp; Johnson</td><td><span class="pill-tag pill-implants">Implants</span></td><td>NYSE</td><td>JNJ</td><td><span class="pill-tag pill-default">Mega Cap</span></td><td class="num">1</td></tr>
-            <tr><td>03</td><td>Galderma</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>SIX</td><td>GALD</td><td><span class="pill-tag pill-default">Large Cap</span></td><td class="num">1</td></tr>
-            <tr><td>04</td><td>Bausch Health</td><td><span class="pill-tag pill-skincare">Cosmeceutical</span></td><td>NYSE</td><td>BHC</td><td><span class="pill-tag pill-default">Large Cap</span></td><td class="num">1</td></tr>
-            <tr><td>05</td><td>InMode</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>INMD</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
-            <tr><td>06</td><td>Hugel</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>145020</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
-            <tr><td>07</td><td>Medytox</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>086900</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
-            <tr><td>08</td><td>Classys</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>KRX</td><td>214150</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">1</td></tr>
-            <tr><td>09</td><td>Daewoong Pharm.</td><td><span class="pill-tag pill-injectables">Injectables</span></td><td>KRX</td><td>069620</td><td><span class="pill-tag pill-default">Mid Cap</span></td><td class="num">2</td></tr>
-            <tr><td>10</td><td>Cutera</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>CUTR</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
-            <tr><td>11</td><td>Apyx Medical</td><td><span class="pill-tag pill-ebd">EBD</span></td><td>NASDAQ</td><td>APYX</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
-            <tr><td>12</td><td>STAAR Surgical</td><td><span class="pill-tag pill-implants">Implants</span></td><td>NASDAQ</td><td>STAA</td><td><span class="pill-tag pill-default">Small Cap</span></td><td class="num">—</td></tr>
+            <tr><td>01</td><td>AbbVie (Allergan Aesthetics)</td><td><span class="pill-tag pill-injectables">注射</span></td><td>NYSE</td><td>ABBV</td><td><span class="pill-tag pill-default">巨盘</span></td><td class="num">1</td></tr>
+            <tr><td>02</td><td>Johnson &amp; Johnson</td><td><span class="pill-tag pill-implants">植入物</span></td><td>NYSE</td><td>JNJ</td><td><span class="pill-tag pill-default">巨盘</span></td><td class="num">1</td></tr>
+            <tr><td>03</td><td>Galderma</td><td><span class="pill-tag pill-injectables">注射</span></td><td>SIX</td><td>GALD</td><td><span class="pill-tag pill-default">大盘</span></td><td class="num">1</td></tr>
+            <tr><td>04</td><td>Bausch Health</td><td><span class="pill-tag pill-skincare">功效护肤</span></td><td>NYSE</td><td>BHC</td><td><span class="pill-tag pill-default">大盘</span></td><td class="num">1</td></tr>
+            <tr><td>05</td><td>InMode</td><td><span class="pill-tag pill-ebd">光电</span></td><td>NASDAQ</td><td>INMD</td><td><span class="pill-tag pill-default">中盘</span></td><td class="num">1</td></tr>
+            <tr><td>06</td><td>Hugel</td><td><span class="pill-tag pill-injectables">注射</span></td><td>KRX</td><td>145020</td><td><span class="pill-tag pill-default">中盘</span></td><td class="num">1</td></tr>
+            <tr><td>07</td><td>Medytox</td><td><span class="pill-tag pill-injectables">注射</span></td><td>KRX</td><td>086900</td><td><span class="pill-tag pill-default">中盘</span></td><td class="num">1</td></tr>
+            <tr><td>08</td><td>Classys</td><td><span class="pill-tag pill-ebd">光电</span></td><td>KRX</td><td>214150</td><td><span class="pill-tag pill-default">中盘</span></td><td class="num">1</td></tr>
+            <tr><td>09</td><td>Daewoong Pharm.</td><td><span class="pill-tag pill-injectables">注射</span></td><td>KRX</td><td>069620</td><td><span class="pill-tag pill-default">中盘</span></td><td class="num">2</td></tr>
+            <tr><td>10</td><td>Cutera</td><td><span class="pill-tag pill-ebd">光电</span></td><td>NASDAQ</td><td>CUTR</td><td><span class="pill-tag pill-default">小盘</span></td><td class="num">—</td></tr>
+            <tr><td>11</td><td>Apyx Medical</td><td><span class="pill-tag pill-ebd">光电</span></td><td>NASDAQ</td><td>APYX</td><td><span class="pill-tag pill-default">小盘</span></td><td class="num">—</td></tr>
+            <tr><td>12</td><td>STAAR Surgical</td><td><span class="pill-tag pill-implants">植入物</span></td><td>NASDAQ</td><td>STAA</td><td><span class="pill-tag pill-default">小盘</span></td><td class="num">—</td></tr>
           </tbody>
         </table>
       </div>
@@ -240,12 +240,12 @@
             <thead>
               <tr>
                 <th style="width:40px;">#</th>
-                <th>公司 / Company</th>
-                <th>Ticker</th>
-                <th>FY</th>
-                <th class="num">Revenue $M</th>
-                <th class="num">Gross Margin</th>
-                <th class="num">P/S Ratio</th>
+                <th>公司</th>
+                <th>股票代码</th>
+                <th>财年</th>
+                <th class="num">营收 $M</th>
+                <th class="num">毛利率</th>
+                <th class="num">P/S 倍数</th>
                 <th>数据说明</th>
               </tr>
             </thead>
@@ -310,7 +310,7 @@
 
           <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
             <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">AbbVie <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">USA · NYSE ABBV</small></div>
-            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Allergan Aesthetics (Injectables 头部)</div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Allergan Aesthetics (注射头部)</div>
             <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
           </div>
 
@@ -364,7 +364,7 @@
 
           <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
             <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Waldencast plc <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">USA · NASDAQ WALD</small></div>
-            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Obagi (Cosmeceutical)</div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Obagi (功效护肤)</div>
             <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
           </div>
 
@@ -376,7 +376,7 @@
 
           <div class="group-card" style="border:1px solid var(--hairline); border-radius:8px; padding:14px; background:#fbf7ef;">
             <div style="font-family:var(--f-display); font-size:15px; color:var(--ink); margin-bottom:6px;">Hugel <small style="font-family:var(--f-body); font-weight:300; color:var(--muted); font-size:11.5px;">South Korea · KRX 145020</small></div>
-            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Across (Injectables 子品牌)</div>
+            <div style="font-family:var(--f-body); font-size:12.5px; color:var(--muted); line-height:1.5;">↳ Across (注射子品牌)</div>
             <div style="font-family:var(--f-body); font-size:11px; color:var(--muted); margin-top:6px; font-style:italic;">listed_relationship_seed · 已核实</div>
           </div>
 
@@ -438,12 +438,12 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./v3-chart-interact.js?v=20260616-tooltip"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="capital"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./v3-chart-interact.js?v=4aeb8e38"></script>
+<script src="./_nav.js?v=d784d46b" data-active="capital"></script>
 <style>
   .table-card tr.co-row { cursor: pointer; transition: background-color .12s ease; }
   .table-card tr.co-row:hover { background-color: rgba(184,89,87,0.06); }
@@ -767,17 +767,15 @@
       const el = document.getElementById(id);
       if (el) el.innerHTML = value;
     };
-    setHTML("capital-hero-lede", `资本地图专注上市企业：${fmt(listedBatch)} 条上市/关联证据批次 · ${fmt(total)} 家企业底库中 ${fmt(publicCompanies)} 家为活跃上市主体 · 估值带、交易所、收入和金融 KPI（股价 / 总市值 / P/E / P/B / EPS / 净利润增长）。非上市集团、子公司和资本流向关系在 <a href="./companies.html">公司列表</a> 阅读。`);
+    setHTML("capital-hero-lede", `谁有钱、钱往哪流？资本地图只看上市企业：${fmt(total)} 家底库中 ${fmt(publicCompanies)} 家活跃上市（${fmt(listedBatch)} 条上市批次），拆解估值带、交易所与财务表现（股价 / 市值 / P/E / P/B / EPS / 净利润增长）。非上市集团与资本流向见 <a href="./companies.html">公司列表</a>。`);
     setHTML("capital-stat-row", `
-      <span>Active public <span class="num">${fmt(publicCompanies)}</span> / ${fmt(total)} = <span class="num">${pct}</span>%</span>
+      <span>活跃上市 <span class="num">${fmt(publicCompanies)}</span> / ${fmt(total)} = <span class="num">${pct}</span>%</span>
       <span>上市证据批次 <span class="num">${fmt(listedBatch)}</span> 条</span>
       <span>主交易所 KRX <span class="num">22</span> + NASDAQ <span class="num">15</span></span>
       <span>巨盘 <span class="num">3</span> · 大盘 <span class="num">3</span> · 中盘 <span class="num">12</span> · 小盘 <span class="num">30</span></span>
     `);
     setText("capital-kpi-listing-rate", `${pct}%`);
-    setText("capital-kpi-listing-delta", `${fmt(publicCompanies)} / ${fmt(total)} active public · ${fmt(listedBatch)} listed batch rows`);
-    setText("capital-kpi-subsidiary", fmt(summary.subsidiary || 0));
-    setText("capital-kpi-subsidiary-delta", `${fmt(summary.corporate_families || 0)} 组公司族谱 / 关联主体`);
+    setText("capital-kpi-listing-delta", `${fmt(publicCompanies)} / ${fmt(total)} 家活跃上市 · ${fmt(listedBatch)} 条上市批次`);
     setText("capital-kpi-private", fmt(summary.private || 0));
     setText("capital-kpi-private-delta", `${Math.round(Number(summary.private || 0) / total * 100)}% 全行业以私营为主`);
   })();

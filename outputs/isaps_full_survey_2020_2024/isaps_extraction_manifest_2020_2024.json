@@ -1,0 +1,88 @@
+{
+  "status": "ok",
+  "captured_at": "2026-06-22T20:21:13+08:00",
+  "output_dir": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\outputs\\isaps_full_survey_2020_2024",
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "report_stats": [
+    {
+      "year": 2020,
+      "source_file": "E:\\shared\\行业报告\\2020isaps-global-survey.pdf",
+      "pages": 60,
+      "raw_page_rows": 60,
+      "raw_table_cell_rows": 7594,
+      "normalized_rows": 2566
+    },
+    {
+      "year": 2021,
+      "source_file": "E:\\shared\\行业报告\\2021isaps-global-survey.pdf",
+      "pages": 57,
+      "raw_page_rows": 57,
+      "raw_table_cell_rows": 7666,
+      "normalized_rows": 2742
+    },
+    {
+      "year": 2022,
+      "source_file": "E:\\shared\\行业报告\\2022isaps-global-survey.pdf",
+      "pages": 56,
+      "raw_page_rows": 56,
+      "raw_table_cell_rows": 7664,
+      "normalized_rows": 2761
+    },
+    {
+      "year": 2023,
+      "source_file": "E:\\shared\\行业报告\\2023isaps-global-survey.pdf",
+      "pages": 71,
+      "raw_page_rows": 71,
+      "raw_table_cell_rows": 10063,
+      "normalized_rows": 3673
+    },
+    {
+      "year": 2024,
+      "source_file": "E:\\shared\\行业报告\\2024 isaps-global-survey.pdf",
+      "pages": 86,
+      "raw_page_rows": 86,
+      "raw_table_cell_rows": 13200,
+      "normalized_rows": 4873
+    }
+  ],
+  "counts": {
+    "raw_pages_jsonl": 330,
+    "raw_pages_csv": 330,
+    "raw_table_cells": 46187,
+    "normalized_long": 16620,
+    "comparability": 7203
+  },
+  "metric_family_counts": {
+    "procedure_volume": 5459,
+    "procedure_percent_change": 438,
+    "procedure_rank": 990,
+    "procedure_location_rank": 500,
+    "procedure_category_rank": 300,
+    "procedure_total_rank": 150,
+    "estimated_plastic_surgeons_rank": 150,
+    "procedure_group_rank": 300,
+    "surgeon_adoption_rate": 5054,
+    "gender_distribution": 342,
+    "age_distribution": 130,
+    "facility_distribution": 404,
+    "medical_tourism": 202,
+    "covid_impact": 532,
+    "additional_statistics": 859,
+    "resident_statistics": 485,
+    "medical_tourism_origin_rank": 249,
+    "estimated_plastic_surgeons": 66,
+    "other_procedure_statistics": 10
+  },
+  "comparability_counts": {
+    "stage_2yr": 887,
+    "stage_single_year": 4078,
+    "trend_5yr": 1196,
+    "trend_partial": 1042
+  }
+}

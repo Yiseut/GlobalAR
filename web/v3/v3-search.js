@@ -1,5 +1,5 @@
 window.V3_SEARCH_DATA = {
-  "generated_at": "2026-06-21T14:07:45+08:00",
+  "generated_at": "2026-06-23T21:03:47+08:00",
   "counts": {
     "products": 943,
     "families": 927,
@@ -14965,7 +14965,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Genefill | Soft Body Filler | Soft Body Filler | BioScience | BioScience | [\"BioScience\"] | BioScience | BioScience | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Injectables, Dermal Filler, Hyaluronic Acid, HA | REC_0295 | BioScience | Germany | Europe | Dümmer, Germany | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | Genefill | Product | Soft Body Filler | True | prod_623cfce985b8 | 软性身体玻尿酸。这是 BioScience 推出的更“高端、柔和”的副牌。如果 HYAcorp 是为了“撑起形状”（Volume），Genefill 则是为了“改善肤质和微调轮廓”（Contour & Glow）。它强调能更好地与组织融合，减少结节风险，常用于手部年轻化和身体细微处的凹陷填充。 | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha | ha | Soft Body Filler | BioScience | Genefill Contour"
+      "search_text": "product | Genefill | Soft Body Filler | Soft Body Filler | BioScience | BioScience | [\"BioScience\"] | BioScience | BioScience | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Injectables, Dermal Filler, Hyaluronic Acid, HA | REC_0295 | BioScience | Germany | Europe | Dümmer, Germany | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | Genefill | Product | Soft Body Filler | True | prod_623cfce985b8 | 软性身体玻尿酸。这是 BioScience 推出的更“高端、柔和”的副牌。如果 HYAcorp 是为了“撑起形状”（Volume），Genefill 则是为了“改善肤质和微调轮廓”（Contour & Glow）。它强调能更好地与组织融合，减少结节风险，常用于手部年轻化和身体细微处的凹陷填充。 | 交联玻尿酸 | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha | ha | Soft Body Filler | BioScience | Genefill Contour"
     },
     {
       "type": "product",
@@ -15029,7 +15029,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | HYAcorp | Body HA Filler | Body HA Filler | BioScience | BioScience | [\"BioScience\"] | BioScience | BioScience | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Patented | REC_0322 | BioScience | Germany | Europe | Dümmer, Germany | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | HYAcorp | Product | Body HA Filler | Patented | True | prod_f9522eefaf9f | 全球第一身体玻尿酸品牌。这是目前市场上唯一获得 CE 认证用于身体轮廓塑形（如丰臀、小腿塑形）的大分子玻尿酸。采用专利的 ATT (Advanced Thixotropic Technology) 技术，使得玻尿酸具有独特的触变性：推注时变稀（容易打），进入体内后迅速变硬（强支撑）。最著名的型号是 HYAcorp MLF 2（用于丰臀/丰胸）。 | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha | ha | Body HA Filler | BioScience | HYAcorp MLF2"
+      "search_text": "product | HYAcorp | Body HA Filler | Body HA Filler | BioScience | BioScience | [\"BioScience\"] | BioScience | BioScience | Injectables | Dermal Filler | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | 交联HA（填充剂形态） | Hyaluronic Acid | Hyaluronic Acid | Patented | REC_0322 | BioScience | Germany | Europe | Dümmer, Germany | Private | Manufacturer | Active | Injectables | Dermal Filler | Hyaluronic Acid | HYAcorp | Product | Body HA Filler | Patented | True | prod_f9522eefaf9f | 全球第一身体玻尿酸品牌。这是目前市场上唯一获得 CE 认证用于身体轮廓塑形（如丰臀、小腿塑形）的大分子玻尿酸。采用专利的 ATT (Advanced Thixotropic Technology) 技术，使得玻尿酸具有独特的触变性：推注时变稀（容易打），进入体内后迅速变硬（强支撑）。最著名的型号是 HYAcorp MLF 2（用于丰臀/丰胸）。 | 大分子玻尿酸 | 注射类 | 透明质酸 HA | 交联HA（填充剂形态） | 注射类 > 透明质酸 HA > 交联HA（填充剂形态） | rule:ha_filler | high | auto_applied | HA with filler or default HA commercial context | active | ha | ha | Body HA Filler | BioScience | HYAcorp MLF2"
     },
     {
       "type": "product",
@@ -26358,7 +26358,7 @@ window.V3_SEARCH_DATA = {
         "label": "监管/官方证据",
         "note": "已连接注册长表或官方证据；仍需逐条看证书号、适用市场和有效期。",
         "registration_count": 4,
-        "official_registration_count": 2,
+        "official_registration_count": 3,
         "spec_count": 21,
         "manual_fact_count": 15,
         "jurisdictions": [
@@ -26367,22 +26367,6 @@ window.V3_SEARCH_DATA = {
           "US"
         ],
         "samples": [
-          {
-            "jurisdiction": "EU",
-            "regulator": "European Commission / Notified Body",
-            "status": "EMA/EU authorization confirmed by user for Nuceiva; exact number pending",
-            "registration_no": "",
-            "approval_date": "",
-            "expiry_date": "",
-            "registered_name": "",
-            "legal_manufacturer": "Daewoong",
-            "local_holder": "",
-            "source_type": "seed_workbook",
-            "evidence_title": "Nabota (Jeuveau / Nuceiva) European Commission / Notified Body seed",
-            "source_url": "",
-            "review_status": "needs_review",
-            "confidence": "seed_unverified"
-          },
           {
             "jurisdiction": "KR",
             "regulator": "MFDS",
@@ -26430,10 +26414,26 @@ window.V3_SEARCH_DATA = {
             "source_url": "https://www.evolus.com/",
             "review_status": "user_confirmed",
             "confidence": "user_confirmed_official_claim"
+          },
+          {
+            "jurisdiction": "EU",
+            "regulator": "European Commission / Notified Body",
+            "status": "EMA centralised marketing authorisation confirmed",
+            "registration_no": "EU/1/19/1364/001",
+            "approval_date": "2019-09-27",
+            "expiry_date": "",
+            "registered_name": "Nuceiva 100 units powder for solution for injection",
+            "legal_manufacturer": "Evolus Pharma Limited",
+            "local_holder": "",
+            "source_type": "official_regulator",
+            "evidence_title": "EMA EPAR Nuceiva product information",
+            "source_url": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuceiva",
+            "review_status": "auto_cross_checked",
+            "confidence": "official_regulator_record"
           }
         ]
       },
-      "search_text": "product | Nabota (Jeuveau / Nuceiva) | Botulinum Toxin | Nabota (prabotulinumtoxinA) | Jeuveau; Nuceiva | Daewoong | Daewoong | [\"Daewoong\"] | Daewoong | Daewoong | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | PrabotulinumtoxinA | Botulinum Toxin Type A | PrabotulinumtoxinA | injectables, neurotoxin, prabotulinumtoxina, nabota, jeuveau, nuceiva | REC_0473 | Daewoong | South Korea | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | Injectables | Neurotoxin | PrabotulinumtoxinA | Nabota (Jeuveau / Nuceiva) | Product | Botulinum Toxin | FDA approved for Jeuveau | EMA/EU authorization confirmed by user for Nuceiva; exact number pending | KFDA/MFDS approval confirmed by user; number pending | injectables, neurotoxin, prabotulinumtoxina, nabota, jeuveau, nuceiva | True | prod_9060828d2c15 | Botulinum Toxin Type A | [PrabotulinumtoxinA 绿毒] Nabota/Jeuveau/Nuceiva 的原研和注册厂商为 Daewoong；医美用于中重度眉间纹，韩国治疗端覆盖脑卒中后上肢痉挛和眼睑痉挛。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Daewoong | Nabota (Jeuveau / Nuceiva) European Commission / Notified Body seed | Daewoong | Nabota (Jeuveau / Nuceiva) MFDS seed | Nabota (prabotulinumtoxinA) | Daewoong | Daewoong Nabota user-confirmed owner and indications | Jeuveau / Nabota (prabotulinumtoxinA) | Daewoong / Evolus | Jeuveau user-confirmed FDA approval"
+      "search_text": "product | Nabota (Jeuveau / Nuceiva) | Botulinum Toxin | Nabota (prabotulinumtoxinA) | Jeuveau; Nuceiva | Daewoong | Daewoong | [\"Daewoong\"] | Daewoong | Daewoong | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | PrabotulinumtoxinA | Botulinum Toxin Type A | PrabotulinumtoxinA | injectables, neurotoxin, prabotulinumtoxina, nabota, jeuveau, nuceiva | REC_0473 | Daewoong | South Korea | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | Injectables | Neurotoxin | PrabotulinumtoxinA | Nabota (Jeuveau / Nuceiva) | Product | Botulinum Toxin | FDA approved for Jeuveau | EMA/EU authorization confirmed by user for Nuceiva; exact number pending | KFDA/MFDS approval confirmed by user; number pending | injectables, neurotoxin, prabotulinumtoxina, nabota, jeuveau, nuceiva | True | prod_9060828d2c15 | Botulinum Toxin Type A | [PrabotulinumtoxinA 绿毒] Nabota/Jeuveau/Nuceiva 的原研和注册厂商为 Daewoong；医美用于中重度眉间纹，韩国治疗端覆盖脑卒中后上肢痉挛和眼睑痉挛。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Daewoong | Nabota (Jeuveau / Nuceiva) MFDS seed | Nabota (prabotulinumtoxinA) | Daewoong | Daewoong Nabota user-confirmed owner and indications | Jeuveau / Nabota (prabotulinumtoxinA) | Daewoong / Evolus | Jeuveau user-confirmed FDA approval | Nuceiva 100 units powder for solution for injection | EU/1/19/1364/001 | Evolus Pharma Limited | EMA EPAR Nuceiva product information"
     },
     {
       "type": "product",
@@ -32559,7 +32559,7 @@ window.V3_SEARCH_DATA = {
         "label": "监管/官方证据",
         "note": "已连接注册长表或官方证据；仍需逐条看证书号、适用市场和有效期。",
         "registration_count": 2,
-        "official_registration_count": 1,
+        "official_registration_count": 2,
         "spec_count": 43,
         "manual_fact_count": 23,
         "jurisdictions": [
@@ -32567,22 +32567,6 @@ window.V3_SEARCH_DATA = {
           "US"
         ],
         "samples": [
-          {
-            "jurisdiction": "EU",
-            "regulator": "European Commission / Notified Body",
-            "status": "EMA/EU authorization confirmed by user for Nuceiva; exact number pending",
-            "registration_no": "",
-            "approval_date": "",
-            "expiry_date": "",
-            "registered_name": "",
-            "legal_manufacturer": "Evolus",
-            "local_holder": "",
-            "source_type": "seed_workbook",
-            "evidence_title": "Jeuveau/Nuceiva European Commission / Notified Body seed",
-            "source_url": "",
-            "review_status": "needs_review",
-            "confidence": "seed_unverified"
-          },
           {
             "jurisdiction": "US",
             "regulator": "FDA",
@@ -32598,10 +32582,26 @@ window.V3_SEARCH_DATA = {
             "source_url": "https://www.evolus.com/",
             "review_status": "user_confirmed",
             "confidence": "user_confirmed_official_claim"
+          },
+          {
+            "jurisdiction": "EU",
+            "regulator": "European Commission / Notified Body",
+            "status": "EMA centralised marketing authorisation confirmed",
+            "registration_no": "EU/1/19/1364/001",
+            "approval_date": "2019-09-27",
+            "expiry_date": "",
+            "registered_name": "Nuceiva 100 units powder for solution for injection",
+            "legal_manufacturer": "Evolus Pharma Limited",
+            "local_holder": "",
+            "source_type": "official_regulator",
+            "evidence_title": "EMA EPAR Nuceiva product information",
+            "source_url": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuceiva",
+            "review_status": "auto_cross_checked",
+            "confidence": "official_regulator_record"
           }
         ]
       },
-      "search_text": "product | Jeuveau/Nuceiva | Jeuveau (PrabotulinumtoxinA-xvfs) | Jeuveau (prabotulinumtoxinA-xvfs) | Evolus | Evolus | [\"Evolus\"] | Evolus | Evolus | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | PrabotulinumtoxinA | 900kDa purified botulinum toxin | PrabotulinumtoxinA | injectables, neurotoxin, prabotulinumtoxina, jeuveau, nuceiva, daewoong | REC_0364 | Evolus | USA | North America | Newport Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:EOLS | Injectables | Neurotoxin | PrabotulinumtoxinA | Jeuveau/Nuceiva | Product | Jeuveau (PrabotulinumtoxinA-xvfs) | FDA approved for Jeuveau | EMA/EU authorization confirmed by user for Nuceiva; exact number pending | injectables, neurotoxin, prabotulinumtoxina, jeuveau, nuceiva, daewoong | True | prod_55e238c32bec | 900kDa purified botulinum toxin | [PrabotulinumtoxinA 商业化渠道] Evolus 负责 Jeuveau/Nuceiva 等市场渠道，产品原研/制造归属 Daewoong。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Evolus | Jeuveau/Nuceiva European Commission / Notified Body seed | Jeuveau (prabotulinumtoxinA-xvfs) | Daewoong / Evolus | Evolus Jeuveau user-confirmed channel"
+      "search_text": "product | Jeuveau/Nuceiva | Jeuveau (PrabotulinumtoxinA-xvfs) | Jeuveau (prabotulinumtoxinA-xvfs) | Evolus | Evolus | [\"Evolus\"] | Evolus | Evolus | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | PrabotulinumtoxinA | 900kDa purified botulinum toxin | PrabotulinumtoxinA | injectables, neurotoxin, prabotulinumtoxina, jeuveau, nuceiva, daewoong | REC_0364 | Evolus | USA | North America | Newport Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:EOLS | Injectables | Neurotoxin | PrabotulinumtoxinA | Jeuveau/Nuceiva | Product | Jeuveau (PrabotulinumtoxinA-xvfs) | FDA approved for Jeuveau | EMA/EU authorization confirmed by user for Nuceiva; exact number pending | injectables, neurotoxin, prabotulinumtoxina, jeuveau, nuceiva, daewoong | True | prod_55e238c32bec | 900kDa purified botulinum toxin | [PrabotulinumtoxinA 商业化渠道] Evolus 负责 Jeuveau/Nuceiva 等市场渠道，产品原研/制造归属 Daewoong。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Jeuveau (prabotulinumtoxinA-xvfs) | Daewoong / Evolus | Evolus Jeuveau user-confirmed channel | Nuceiva 100 units powder for solution for injection | EU/1/19/1364/001 | Evolus Pharma Limited | EMA EPAR Nuceiva product information"
     },
     {
       "type": "product",
@@ -35504,7 +35504,7 @@ window.V3_SEARCH_DATA = {
       "marketing_holder": "Galderma",
       "distributor": "",
       "relationship_type": "",
-      "local_holder": "",
+      "local_holder": "Galderma",
       "oem_for": "",
       "claim_text": "[即用型液态 A 型肉毒] Alluzience 由 Ipsen 制造、Galderma 经销，无需复溶，用于中重度眉间纹。",
       "verified_differentiator": "即用型液态 A 型肉毒",
@@ -35516,29 +35516,13 @@ window.V3_SEARCH_DATA = {
         "label": "监管/官方证据",
         "note": "已连接注册长表或官方证据；仍需逐条看证书号、适用市场和有效期。",
         "registration_count": 2,
-        "official_registration_count": 1,
+        "official_registration_count": 2,
         "spec_count": 2,
         "manual_fact_count": 6,
         "jurisdictions": [
           "EU"
         ],
         "samples": [
-          {
-            "jurisdiction": "EU",
-            "regulator": "European Commission / Notified Body",
-            "status": "Europe authorization confirmed by user; exact number pending",
-            "registration_no": "",
-            "approval_date": "",
-            "expiry_date": "",
-            "registered_name": "",
-            "legal_manufacturer": "Galderma",
-            "local_holder": "",
-            "source_type": "seed_workbook",
-            "evidence_title": "Alluzience European Commission / Notified Body seed",
-            "source_url": "",
-            "review_status": "needs_review",
-            "confidence": "seed_unverified"
-          },
           {
             "jurisdiction": "EU",
             "regulator": "EMA / European authorities",
@@ -35554,10 +35538,26 @@ window.V3_SEARCH_DATA = {
             "source_url": "https://www.galderma.com/galderma-aesthetics",
             "review_status": "user_confirmed",
             "confidence": "user_confirmed_official_claim"
+          },
+          {
+            "jurisdiction": "EU",
+            "regulator": "European Commission / Notified Body",
+            "status": "Decentralised procedure positively finalised; national UK licence also confirmed in SmPC",
+            "registration_no": "SE/H/2019/01/DC; PL 03070/0009",
+            "approval_date": "2021-06-10",
+            "expiry_date": "",
+            "registered_name": "Alluzience 200 Speywood units/ml solution for injection",
+            "legal_manufacturer": "Ipsen Biopharm Limited",
+            "local_holder": "Galderma",
+            "source_type": "official_regulator_pdf",
+            "evidence_title": "Swedish MPA Public Assessment Report - Alluzience",
+            "source_url": "https://docetp.mpa.se/LMF/Alluzience%20solution%20for%20injection%20ENG%20PAR_09001bee81e74f7d.pdf",
+            "review_status": "auto_cross_checked",
+            "confidence": "official_regulator_record"
           }
         ]
       },
-      "search_text": "product | Alluzience | Ready-to-Use Liquid BoNT-A | Alluzience | Galderma | Galderma | [\"Galderma\"] | Galderma | Galderma | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | AbobotulinumtoxinA Ready-to-Use Liquid | Ready-to-use liquid BoNT-A | AbobotulinumtoxinA Ready-to-Use Liquid | injectables, neurotoxin, liquid-bont-a, alluzience | REC_0805 | Galderma | Switzerland | Europe | Zug, Switzerland | Public | Manufacturer | Active | NASDAQ:GALD | Injectables | Neurotoxin | AbobotulinumtoxinA Ready-to-Use Liquid | Alluzience | Product | Ready-to-Use Liquid BoNT-A | Europe authorization confirmed by user; exact number pending | injectables, neurotoxin, liquid-bont-a, alluzience | True | prod_2dc6158c17cc | Ready-to-use liquid BoNT-A | [即用型液态 A 型肉毒] Alluzience 由 Ipsen 制造、Galderma 经销，无需复溶，用于中重度眉间纹。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Galderma | Alluzience European Commission / Notified Body seed | Alluzience | Ipsen / Galderma | Alluzience user-confirmed authorization"
+      "search_text": "product | Alluzience | Ready-to-Use Liquid BoNT-A | Alluzience | Galderma | Galderma | [\"Galderma\"] | Galderma | Galderma | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | AbobotulinumtoxinA Ready-to-Use Liquid | Ready-to-use liquid BoNT-A | AbobotulinumtoxinA Ready-to-Use Liquid | injectables, neurotoxin, liquid-bont-a, alluzience | REC_0805 | Galderma | Switzerland | Europe | Zug, Switzerland | Public | Manufacturer | Active | NASDAQ:GALD | Injectables | Neurotoxin | AbobotulinumtoxinA Ready-to-Use Liquid | Alluzience | Product | Ready-to-Use Liquid BoNT-A | Europe authorization confirmed by user; exact number pending | injectables, neurotoxin, liquid-bont-a, alluzience | True | prod_2dc6158c17cc | Ready-to-use liquid BoNT-A | [即用型液态 A 型肉毒] Alluzience 由 Ipsen 制造、Galderma 经销，无需复溶，用于中重度眉间纹。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Alluzience | Ipsen / Galderma | Alluzience user-confirmed authorization | Alluzience 200 Speywood units/ml solution for injection | SE/H/2019/01/DC; PL 03070/0009 | Ipsen Biopharm Limited | Swedish MPA Public Assessment Report - Alluzience"
     },
     {
       "type": "product",
@@ -35699,7 +35699,7 @@ window.V3_SEARCH_DATA = {
       "marketing_holder": "Galderma",
       "distributor": "",
       "relationship_type": "",
-      "local_holder": "",
+      "local_holder": "Galderma",
       "oem_for": "",
       "claim_text": "[RelabotulinumtoxinA 新一代液态肉毒] Relfydess/QM1114 为 Galderma 自研即用型液态肉毒，用于改善眉间纹和鱼尾纹。",
       "verified_differentiator": "RelabotulinumtoxinA 新一代液态肉毒",
@@ -35711,7 +35711,7 @@ window.V3_SEARCH_DATA = {
         "label": "监管/官方证据",
         "note": "已连接注册长表或官方证据；仍需逐条看证书号、适用市场和有效期。",
         "registration_count": 2,
-        "official_registration_count": 1,
+        "official_registration_count": 2,
         "spec_count": 36,
         "manual_fact_count": 22,
         "jurisdictions": [
@@ -35719,22 +35719,6 @@ window.V3_SEARCH_DATA = {
           "EU"
         ],
         "samples": [
-          {
-            "jurisdiction": "EU",
-            "regulator": "European Commission / Notified Body",
-            "status": "Australia and other approvals confirmed by user; exact pathway pending",
-            "registration_no": "",
-            "approval_date": "",
-            "expiry_date": "",
-            "registered_name": "",
-            "legal_manufacturer": "Galderma",
-            "local_holder": "",
-            "source_type": "seed_workbook",
-            "evidence_title": "Relfydess European Commission / Notified Body seed",
-            "source_url": "",
-            "review_status": "needs_review",
-            "confidence": "seed_unverified"
-          },
           {
             "jurisdiction": "AU",
             "regulator": "TGA",
@@ -35750,10 +35734,26 @@ window.V3_SEARCH_DATA = {
             "source_url": "https://www.galderma.com/galderma-aesthetics",
             "review_status": "user_confirmed",
             "confidence": "user_confirmed_official_claim"
+          },
+          {
+            "jurisdiction": "EU",
+            "regulator": "European Commission / Notified Body",
+            "status": "Decentralised procedure positively finalised; national UK licence also confirmed in SmPC",
+            "registration_no": "SE/H/2438/01/DC; PL 03070/0010",
+            "approval_date": "2024-07-28",
+            "expiry_date": "",
+            "registered_name": "Relfydess 100 units/mL solution for injection",
+            "legal_manufacturer": "Ipsen Biopharm Limited",
+            "local_holder": "Galderma",
+            "source_type": "official_regulator_pdf",
+            "evidence_title": "Swedish MPA Public Assessment Report - Relfydess",
+            "source_url": "https://docetp.mpa.se/LMF/Relfydess%20solution%20for%20injection%20ENG%20PAR_09001bee840f18fc.pdf",
+            "review_status": "auto_cross_checked",
+            "confidence": "official_regulator_record"
           }
         ]
       },
-      "search_text": "product | Relfydess | RelabotulinumtoxinA | Relfydess (relabotulinumtoxinA) | Galderma | Galderma | [\"Galderma\"] | Galderma | Galderma | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | RelabotulinumtoxinA | Ready-to-use liquid BoNT-A / QM1114 | RelabotulinumtoxinA | injectables, neurotoxin, liquid-bont-a, relfydess, relabotulinumtoxina | REC_0806 | Galderma | Switzerland | Europe | Zug, Switzerland | Public | Manufacturer | Active | NASDAQ:GALD | Injectables | Neurotoxin | RelabotulinumtoxinA | Relfydess | Product | RelabotulinumtoxinA | Australia and other approvals confirmed by user; exact pathway pending | injectables, neurotoxin, liquid-bont-a, relfydess, relabotulinumtoxina | True | prod_9e543e0b57e7 | Ready-to-use liquid BoNT-A / QM1114 | [RelabotulinumtoxinA 新一代液态肉毒] Relfydess/QM1114 为 Galderma 自研即用型液态肉毒，用于改善眉间纹和鱼尾纹。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Galderma | Relfydess European Commission / Notified Body seed | Relfydess (relabotulinumtoxinA) | Galderma | Relfydess user-confirmed authorization"
+      "search_text": "product | Relfydess | RelabotulinumtoxinA | Relfydess (relabotulinumtoxinA) | Galderma | Galderma | [\"Galderma\"] | Galderma | Galderma | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | RelabotulinumtoxinA | Ready-to-use liquid BoNT-A / QM1114 | RelabotulinumtoxinA | injectables, neurotoxin, liquid-bont-a, relfydess, relabotulinumtoxina | REC_0806 | Galderma | Switzerland | Europe | Zug, Switzerland | Public | Manufacturer | Active | NASDAQ:GALD | Injectables | Neurotoxin | RelabotulinumtoxinA | Relfydess | Product | RelabotulinumtoxinA | Australia and other approvals confirmed by user; exact pathway pending | injectables, neurotoxin, liquid-bont-a, relfydess, relabotulinumtoxina | True | prod_9e543e0b57e7 | Ready-to-use liquid BoNT-A / QM1114 | [RelabotulinumtoxinA 新一代液态肉毒] Relfydess/QM1114 为 Galderma 自研即用型液态肉毒，用于改善眉间纹和鱼尾纹。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Relfydess (relabotulinumtoxinA) | Galderma | Relfydess user-confirmed authorization | Relfydess 100 units/mL solution for injection | SE/H/2438/01/DC; PL 03070/0010 | Ipsen Biopharm Limited | Swedish MPA Public Assessment Report - Relfydess"
     },
     {
       "type": "product",
@@ -43358,7 +43358,7 @@ window.V3_SEARCH_DATA = {
       "marketing_holder": "Ipsen Pharma",
       "distributor": "",
       "relationship_type": "",
-      "local_holder": "",
+      "local_holder": "Galderma",
       "oem_for": "",
       "claim_text": "[即用型液态 A 型肉毒] Alluzience 为 Ipsen/Galderma 液态肉毒产品，用于中重度眉间纹。",
       "verified_differentiator": "即用型液态 A 型肉毒",
@@ -43370,29 +43370,13 @@ window.V3_SEARCH_DATA = {
         "label": "监管/官方证据",
         "note": "已连接注册长表或官方证据；仍需逐条看证书号、适用市场和有效期。",
         "registration_count": 2,
-        "official_registration_count": 1,
+        "official_registration_count": 2,
         "spec_count": 0,
         "manual_fact_count": 3,
         "jurisdictions": [
           "EU"
         ],
         "samples": [
-          {
-            "jurisdiction": "EU",
-            "regulator": "European Commission / Notified Body",
-            "status": "Europe authorization confirmed by user; exact number pending",
-            "registration_no": "",
-            "approval_date": "",
-            "expiry_date": "",
-            "registered_name": "",
-            "legal_manufacturer": "Ipsen Pharma",
-            "local_holder": "",
-            "source_type": "seed_workbook",
-            "evidence_title": "Alluzience European Commission / Notified Body seed",
-            "source_url": "",
-            "review_status": "needs_review",
-            "confidence": "seed_unverified"
-          },
           {
             "jurisdiction": "EU",
             "regulator": "EMA / European authorities",
@@ -43408,10 +43392,26 @@ window.V3_SEARCH_DATA = {
             "source_url": "https://www.ipsen.com/medicines/",
             "review_status": "user_confirmed",
             "confidence": "user_confirmed_official_claim"
+          },
+          {
+            "jurisdiction": "EU",
+            "regulator": "European Commission / Notified Body",
+            "status": "Decentralised procedure positively finalised; national UK licence also confirmed in SmPC",
+            "registration_no": "SE/H/2019/01/DC; PL 03070/0009",
+            "approval_date": "2021-06-10",
+            "expiry_date": "",
+            "registered_name": "Alluzience 200 Speywood units/ml solution for injection",
+            "legal_manufacturer": "Ipsen Biopharm Limited",
+            "local_holder": "Galderma",
+            "source_type": "official_regulator_pdf",
+            "evidence_title": "Swedish MPA Public Assessment Report - Alluzience",
+            "source_url": "https://docetp.mpa.se/LMF/Alluzience%20solution%20for%20injection%20ENG%20PAR_09001bee81e74f7d.pdf",
+            "review_status": "auto_cross_checked",
+            "confidence": "official_regulator_record"
           }
         ]
       },
-      "search_text": "product | Alluzience | Alluzience | Alluzience | Ipsen Pharma | Ipsen Pharma | [\"Ipsen Pharma\"] | Ipsen Pharma | Ipsen Pharma | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | AbobotulinumtoxinA Ready-to-Use Liquid | Liquid Ready-to-Use | AbobotulinumtoxinA Ready-to-Use Liquid | injectables, neurotoxin, liquid-bont-a, alluzience, ipsen | REC_0962 | Ipsen Pharma | France | Europe | Paris, France | Public | OBM | Active | EPA:IPN | Injectables | Neurotoxin | AbobotulinumtoxinA Ready-to-Use Liquid | Alluzience | Product | Alluzience | Europe authorization confirmed by user; exact number pending | injectables, neurotoxin, liquid-bont-a, alluzience, ipsen | True | prod_f8f092fe3eff | Liquid Ready-to-Use | [即用型液态 A 型肉毒] Alluzience 为 Ipsen/Galderma 液态肉毒产品，用于中重度眉间纹。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Ipsen Pharma | Alluzience European Commission / Notified Body seed | Alluzience | Ipsen Pharma | Ipsen Alluzience user-confirmed authorization"
+      "search_text": "product | Alluzience | Alluzience | Alluzience | Ipsen Pharma | Ipsen Pharma | [\"Ipsen Pharma\"] | Ipsen Pharma | Ipsen Pharma | Injectables | Neurotoxin | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | A型肉毒毒素 | AbobotulinumtoxinA Ready-to-Use Liquid | Liquid Ready-to-Use | AbobotulinumtoxinA Ready-to-Use Liquid | injectables, neurotoxin, liquid-bont-a, alluzience, ipsen | REC_0962 | Ipsen Pharma | France | Europe | Paris, France | Public | OBM | Active | EPA:IPN | Injectables | Neurotoxin | AbobotulinumtoxinA Ready-to-Use Liquid | Alluzience | Product | Alluzience | Europe authorization confirmed by user; exact number pending | injectables, neurotoxin, liquid-bont-a, alluzience, ipsen | True | prod_f8f092fe3eff | Liquid Ready-to-Use | [即用型液态 A 型肉毒] Alluzience 为 Ipsen/Galderma 液态肉毒产品，用于中重度眉间纹。 | 肉毒毒素 | A型肉毒毒素 | 医美及治疗适应症 | 肉毒毒素 > A型肉毒毒素 > 医美及治疗适应症 | user_feedback_20260601 | high | user_confirmed | 用户确认分类/归属后写回；用于清理美素、肉毒、韩国 MFDS 队列中的错配。 | active | A型肉毒毒素 | user_feedback_20260601_category_mfds_toxin_gap: user-confirmed classification/ownership/regulatory facts applied. | official_company_fact_override | botulinum | botulinum | Alluzience | Ipsen Pharma | Ipsen Alluzience user-confirmed authorization | Alluzience 200 Speywood units/ml solution for injection | SE/H/2019/01/DC; PL 03070/0009 | Ipsen Biopharm Limited | Swedish MPA Public Assessment Report - Alluzience"
     },
     {
       "type": "product",
@@ -105041,7 +105041,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BioScience | BioScience | Germany | Europe | Private | Manufacturer | Injectables | BioScience | Germany | Germany | 1 | Europe | Dümmer, Germany | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | BioScience"
+      "search_text": "company | BioScience | BioScience | Germany | Europe | Private | Manufacturer | Injectables | BioScience | Germany | Germany | 1 | Europe | Dümmer, Germany | Private | Manufacturer | Active | 3 | 3 | Injectables | 0 | 0 | 身体玻尿酸全球首创者 | BioScience"
     },
     {
       "type": "company",

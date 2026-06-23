@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>研发与组合 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 <style>
   .rd-path {
     display: grid;
@@ -61,6 +61,24 @@
     font-size: 34px;
     line-height: 1;
   }
+  .rd-priority .rd-unit {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-family: var(--f-sans);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+  .rd-priority .rd-validate {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--rd-color, var(--accent-2));
+    font-family: var(--f-sans);
+    font-size: 12px;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+  }
   .rd-table {
     width: 100%;
     border-collapse: collapse;
@@ -107,16 +125,16 @@
 <header id="topbar"></header>
 
 <div class="shell">
-  <aside id="rail" aria-label="市场策略导航"></aside>
+  <aside id="rail" aria-label="情报视角导航"></aside>
 
   <main class="content">
     <section class="page-hero">
-      <div class="eyebrow-chip"><span class="dot"></span>R&D · Portfolio strategy</div>
+      <div class="eyebrow-chip"><span class="dot"></span>策略框架 · 工具区 · 非数据分析页</div>
       <h1>
         研发与组合
         <span class="h1-en">R&D And Portfolio</span>
       </h1>
-      <p class="lede">把市场格局、子赛道趋势、竞品替代技术和自身产品线放到同一条推导链里，服务研发方向、组合宽度和定价定位。</p>
+      <p class="lede">这是一张<strong>策略综合页</strong>：它不新增数据，而是把市场格局、子赛道趋势、竞品替代和自身产品线串成一条「从市场到产品组合」的决策路径，并给出方向假设——具体数字都到对应分析页验证。</p>
       <div class="stat-row" id="rd-stat-row">
         <span>产品线 <span class="num">—</span></span>
         <span>技术 / 材料 <span class="num">—</span></span>
@@ -140,9 +158,10 @@
 
     <section class="block">
       <div class="section-head">
-        <h2>第一版研发方向池</h2>
-        <span class="cn">· 基于当前数据读数</span><span class="en">Portfolio candidates</span>
+        <h2>研发方向假设</h2>
+        <span class="cn">· 编辑判断 · 待数据验证</span><span class="en">Portfolio hypotheses</span>
       </div>
+      <p class="lede" style="margin-bottom:18px;font-size:13px;">下面四个方向是<strong>编辑层的假设</strong>，不是模型推荐。每张卡的数字只是该方向当前的供给规模锚点；判断是否值得投入，请点「去验证」进对应分析页看需求、竞争密度和替代关系。</p>
       <div class="rd-priority-grid" id="rd-priority-grid"></div>
     </section>
 
@@ -174,9 +193,9 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-technology.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="rd-portfolio"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-technology.js?v=b73e58f2"></script>
+<script src="./_nav.js?v=d784d46b" data-active="rd-portfolio"></script>
 <script>
   (function () {
     const app = window.GLOBAL_AESTHETICS_DATA || {};
@@ -201,39 +220,47 @@
     }
 
     const topTech = (tech.top_techs || [])[0] || {};
-    const bioFamily = (tech.family_rollup || []).find(row => /生物刺激|干细胞|再生/.test(row.family || "")) || {};
-    const energyFamily = (tech.family_rollup || []).find(row => /激光/.test(row.family || "")) || {};
+    const bioFamily = (tech.family_rollup || []).find(row => /生物刺激|干细胞|再生|PLLA|PCL|胶原|外泌体/i.test(row.family || "")) || {};
+    const energyFamily = (tech.family_rollup || []).find(row => /激光|laser|能量|EBD/i.test(row.family || "")) || {};
+    const skinFamily = (tech.family_rollup || []).find(row => /护肤|功效|皮肤管理|cosmeceutical/i.test(row.family || "")) || {};
+    const num = v => (v == null ? null : v);
     const priorities = [
       {
         title: "HA 平台差异化",
-        metric: fmt(topTech.n_products || 0),
+        metric: num(topTech.n_products), unit: "款 HA 产品线",
+        href: "./topic.html?segment=injectables&focus=ha-fillers#topic-analysis",
         color: "#6B5A75",
         note: `HA 是最大平台技术，重点不是重复做基础填充，而是适应症、流变学、交联、复配和渠道定位。`,
       },
       {
         title: "生物刺激与再生材料",
-        metric: fmt(bioFamily.n_products || 0),
+        metric: num(bioFamily.n_products), unit: "款再生 / 生物刺激产品",
+        href: "./topic.html?segment=regenerative",
         color: "#A8B59A",
         note: "PLLA/PCL/胶原/PN/PDRN/外泌体适合承接长效、修复和肤质改善叙事，但证据与合规边界要单独管理。",
       },
       {
         title: "EBD 联合治疗",
-        metric: fmt(energyFamily.n_products || 0),
+        metric: num(energyFamily.n_products), unit: "款能量设备",
+        href: "./topic.html?segment=ebd",
         color: "#8E3A3A",
         note: "激光、RF、HIFU 和微针可以作为注射材料的替代或联合方案，用于定价、套餐和适应症拓宽。",
       },
       {
         title: "术后修复与皮肤管理",
-        metric: fmt(s.brands || 0),
+        metric: num(skinFamily.n_products), unit: "款功效护肤产品",
+        href: "./topic.html?segment=skincare",
         color: "#D9AE91",
         note: "功效护肤和皮肤管理适合作为治疗周期中的搭配产品，强化复购、医生渠道和组合毛利。",
       },
     ];
     document.getElementById("rd-priority-grid").innerHTML = priorities.map(item => `
       <article class="rd-priority" style="--rd-color:${item.color};">
-        <span class="metric">${esc(item.metric)}</span>
+        <span class="metric">${item.metric == null ? "—" : fmt(item.metric)}</span>
+        <span class="rd-unit">${esc(item.unit)}（当前供给规模）</span>
         <strong>${esc(item.title)}</strong>
         <span>${esc(item.note)}</span>
+        <a class="rd-validate" href="${esc(item.href)}">去验证 · 看需求与竞争 ↗</a>
       </article>
     `).join("");
   })();

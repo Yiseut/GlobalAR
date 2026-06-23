@@ -6,7 +6,7 @@
 <title>全球医美情报 · 总览 · v3</title>
 <link rel="icon" href="data:," />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 <style>
   .overview-sunburst-card {
     overflow: visible;
@@ -220,6 +220,7 @@
         全球医美产业图谱
         <span class="h1-en">Global Medical Aesthetics Landscape</span>
       </h1>
+      <p class="lede">这个行业有多大、长什么样、上游集中在哪里？先用地球和分布看清全球版图，再从这里下钻到赛道、国家与企业。</p>
       <div class="globe-stat-strip" id="globeStatStrip">
         <div class="strip-scope">
           <span class="dot"></span>
@@ -229,7 +230,7 @@
         <div class="strip-cells">
           <div class="cell"><span class="k" id="strip-k-1">Companies · 企业</span><span class="v" id="strip-v-1" data-bind="companies">329</span><span class="lab" id="strip-l-1">Active · 活跃</span></div>
           <div class="cell"><span class="k" id="strip-k-2">Countries · 国家</span><span class="v" id="strip-v-2" data-bind="countries">34</span><span class="lab" id="strip-l-2">Total · 总计</span></div>
-          <div class="cell"><span class="k" id="strip-k-3">Products · 产品</span><span class="v" id="strip-v-3" data-bind="products">942</span><span class="lab" id="strip-l-3">L1 × 9</span></div>
+          <div class="cell"><span class="k" id="strip-k-3">Products · 产品</span><span class="v" id="strip-v-3" data-bind="products">942</span><span class="lab" id="strip-l-3">9 大赛道</span></div>
           <div class="cell"><span class="k" id="strip-k-4">Cities · 城市</span><span class="v" id="strip-v-4">—</span><span class="lab" id="strip-l-4">Mapped · 已映射</span></div>
         </div>
       </div>
@@ -243,16 +244,16 @@
 
       <div class="globe-controls">
         <div class="filter-row">
-          <button class="filter-pill active" data-track="all"><i class="dot"></i>全部 All <small id="ct-all">329</small></button>
-          <button class="filter-pill" data-track="EBD" style="--track-color:#8E3A3A"><i class="dot"></i>光电 EBD <small id="ct-EBD">—</small></button>
-          <button class="filter-pill" data-track="Injectables" style="--track-color:#6B5A75"><i class="dot"></i>注射 Injectables <small id="ct-Injectables">—</small></button>
-          <button class="filter-pill" data-track="Skincare" style="--track-color:#D9AE91"><i class="dot"></i>功能性护肤品 Cosmeceutical <small id="ct-Skincare">—</small></button>
-          <button class="filter-pill" data-track="Regenerative" style="--track-color:#A8B59A"><i class="dot"></i>再生 Regenerative <small id="ct-Regenerative">—</small></button>
-          <button class="filter-pill" data-track="Implants" style="--track-color:#CFB58E"><i class="dot"></i>植入物 Implants <small id="ct-Implants">—</small></button>
-          <button class="filter-pill" data-track="Consumables" style="--track-color:#5A6878"><i class="dot"></i>耗材 Consumables <small id="ct-Consumables">—</small></button>
-          <button class="filter-pill" data-track="Diagnostics" style="--track-color:#C76B68"><i class="dot"></i>诊断 Diagnostics <small id="ct-Diagnostics">—</small></button>
-          <button class="filter-pill" data-track="Surgical" style="--track-color:#8C7B91"><i class="dot"></i>外科 Surgical <small id="ct-Surgical">—</small></button>
-          <button class="filter-pill" data-track="Pharma" style="--track-color:#EC9B73"><i class="dot"></i>药物 Pharma <small id="ct-Pharma">—</small></button>
+          <button class="filter-pill active" data-track="all"><i class="dot"></i>全部 <small id="ct-all">329</small></button>
+          <button class="filter-pill" data-track="EBD" style="--track-color:#8E3A3A"><i class="dot"></i>光电 <small id="ct-EBD">—</small></button>
+          <button class="filter-pill" data-track="Injectables" style="--track-color:#6B5A75"><i class="dot"></i>注射 <small id="ct-Injectables">—</small></button>
+          <button class="filter-pill" data-track="Skincare" style="--track-color:#D9AE91"><i class="dot"></i>功效护肤 <small id="ct-Skincare">—</small></button>
+          <button class="filter-pill" data-track="Regenerative" style="--track-color:#A8B59A"><i class="dot"></i>再生 <small id="ct-Regenerative">—</small></button>
+          <button class="filter-pill" data-track="Implants" style="--track-color:#CFB58E"><i class="dot"></i>植入物 <small id="ct-Implants">—</small></button>
+          <button class="filter-pill" data-track="Consumables" style="--track-color:#5A6878"><i class="dot"></i>耗材 <small id="ct-Consumables">—</small></button>
+          <button class="filter-pill" data-track="Diagnostics" style="--track-color:#C76B68"><i class="dot"></i>诊断 <small id="ct-Diagnostics">—</small></button>
+          <button class="filter-pill" data-track="Surgical" style="--track-color:#8C7B91"><i class="dot"></i>外科 <small id="ct-Surgical">—</small></button>
+          <button class="filter-pill" data-track="Pharma" style="--track-color:#EC9B73"><i class="dot"></i>药物 <small id="ct-Pharma">—</small></button>
         </div>
       </div>
 
@@ -274,51 +275,51 @@
     <section class="block">
       <div class="section-head">
         <h2>核心指标</h2>
-        <span class="cn">· 规范化数据</span><span class="en">Core metrics</span>
+        <span class="cn">· 一眼看清这套情报的底盘</span><span class="en">What the dataset covers</span>
       </div>
       <div class="kpi-grid">
         <article class="kpi-cell lede has-wash w-rose-deep">
           <div class="label">
             <span class="en">Product lines</span>
-            <span class="zh">产品线 · 全球覆盖</span>
+            <span class="zh">产品线 · 分析基本盘</span>
           </div>
           <span class="value" data-bind="products">942</span>
-          <span class="delta">34 countries · 9 L1 categories</span>
+          <span class="delta">覆盖 34 国 · 9 大赛道，全站下钻的起点</span>
         </article>
         <article class="kpi-cell has-wash w-slate">
           <div class="label"><span class="en">Upstream co.</span><span class="zh">上游企业</span></div>
           <span class="value" data-bind="companies">329</span>
-          <span class="delta">manufacturers · brand owners</span>
+          <span class="delta">制造商为主 · 仅少数自有品牌</span>
         </article>
         <article class="kpi-cell has-wash w-peach">
           <div class="label"><span class="en">Listed entities</span><span class="zh">上市主体</span></div>
           <span class="value" data-bind="listed_company_batch">61</span>
-          <span class="delta">15 exchanges · KRX leads</span>
+          <span class="delta">上市稀缺 · KRX 最多 → 详见资本地图</span>
         </article>
         <article class="kpi-cell has-wash w-sand">
           <div class="label"><span class="en">Brands</span><span class="zh">品牌</span></div>
           <span class="value" data-bind="brands">921</span>
-          <span class="delta">855 product · 66 corporate</span>
+          <span class="delta">855 产品品牌 + 66 企业品牌</span>
         </article>
         <article class="kpi-cell has-wash w-plum">
           <div class="label"><span class="en">Indication signals</span><span class="zh">适应症信号</span></div>
           <span class="value" data-bind="indication_signals">1,230</span>
-          <span class="delta">cross-ref product master</span>
+          <span class="delta">把产品对应到临床需求场景</span>
         </article>
         <article class="kpi-cell has-wash w-rose">
           <div class="label"><span class="en">Reg. evidence</span><span class="zh">监管注册证据</span></div>
           <span class="value" data-bind="registration_evidence">1,599</span>
-          <span class="delta">multi-region registration evidence</span>
+          <span class="delta">多地注册背书 · FDA / CE 为主</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
-          <div class="label"><span class="en">Product specs</span><span class="zh">产品规格证据</span></div>
+          <div class="label"><span class="en">Evidence depth</span><span class="zh">证据深度</span></div>
           <span class="value" data-bind="product_specification_evidence">53,676</span>
-          <span class="delta">329 companies covered</span>
+          <span class="delta">结构化产品规格证据，非估算</span>
         </article>
         <article class="kpi-cell has-wash w-lavender">
-          <div class="label"><span class="en">Official sources</span><span class="zh">官方源</span></div>
+          <div class="label"><span class="en">Traceable sources</span><span class="zh">可追溯官方源</span></div>
           <span class="value" data-bind="official_website_master">19,824</span>
-          <span class="delta">deduped to 365 domains</span>
+          <span class="delta">全部去重到 365 个官方域名</span>
         </article>
       </div>
     </section>
@@ -326,7 +327,7 @@
     <section class="block" id="track-structure">
       <div class="section-head">
         <h2>赛道分布</h2>
-        <span class="cn">· L1 / L2 / L3</span><span class="en">Product line sunburst</span>
+        <span class="cn">· 赛道 / 细分 / 技术 三层</span><span class="en">Product line sunburst</span>
       </div>
       <article class="chart-card overview-sunburst-card">
         <div class="chart-title">9 个一级赛道的产品线分布</div>
@@ -444,14 +445,14 @@
 
 <!-- Local data + interaction scripts first so country bars / donut wire up
      even before globe libs load -->
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-tracks.js?v=20260616"></script>
-<script src="./v3-deep-dive.js?v=20260616"></script>
-<script src="./v3-products.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./v3-chart-interact.js?v=20260616-tooltip"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-tracks.js?v=d1c71c5f"></script>
+<script src="./v3-deep-dive.js?v=9f3d7a5c"></script>
+<script src="./v3-products.js?v=446a0ebf"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./v3-chart-interact.js?v=4aeb8e38"></script>
 <!-- Vendor three.js + globe.gl locally — unpkg.com is 40+s from CN networks.
      Falls back to unpkg / jsdelivr if the local file ever disappears. -->
 <script>
@@ -471,7 +472,7 @@
           () => addScript("//cdn.jsdelivr.net/npm/globe.gl@2.34.4/dist/globe.gl.min.js"))));
   })();
 </script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="overview"></script>
+<script src="./_nav.js?v=d784d46b" data-active="overview"></script>
 <script>
   (function () {
     const data = window.GLOBAL_AESTHETICS_DATA;
@@ -517,8 +518,8 @@
     })[ch]);
     const fmt = (value) => Number(value || 0).toLocaleString("en-US");
     const pct = (value, base) => `${((Number(value || 0) / Math.max(1, Number(base || 0))) * 100).toFixed(1)}%`;
-    const displayName = (name) => name === "Skincare" ? "Cosmeceutical" : name;
-    const displayTrack = (name) => TRACK_ZH[name] ? `${displayName(name)} · ${TRACK_ZH[name]}` : displayName(name);
+    const displayName = (name) => TRACK_ZH[name] || name;
+    const displayTrack = (name) => TRACK_ZH[name] || name;
 
     function cloneTree (node, depth = 0) {
       const kids = Array.isArray(node.children) ? node.children.map(child => cloneTree(child, depth + 1)) : [];
@@ -613,7 +614,7 @@
               opacity="${node.depth === 3 && node.synthetic ? "0.58" : "0.92"}"
               data-index="${node.index}"
               data-depth="${node.depth}"
-              aria-label="${esc(node.path.join(" / "))} ${fmt(node.n)} products ${pct(node.n, root.n)}"></path>
+              aria-label="${esc(node.path.join(" / "))} ${fmt(node.n)} 款产品 ${pct(node.n, root.n)}"></path>
       `).join("")}
       <g class="overview-sunburst-center" text-anchor="middle">
         <text class="big" y="-4">${fmt(root.n)}</text>
@@ -781,7 +782,7 @@
           </div>
           <div class="stats">
             <span class="n">${c.companies}</span>
-            <span class="sub">${c.products} products</span>
+            <span class="sub">${c.products} 款产品</span>
           </div>
         </div>
       `;
@@ -840,7 +841,7 @@
         window.V3DrillPanel.open({
           stamp: "L1 track · detail",
           title: displayTrack(track),
-          sub: `${TRACK_LABEL_ZH[track] || ""} · ${cosInTrack.length} companies in ${countryCt} countries`,
+          sub: `${TRACK_LABEL_ZH[track] || ""} · ${cosInTrack.length} 家公司，分布 ${countryCt} 国`,
           summary: [
             { k: "Companies", v: cosInTrack.length },
             { k: "Products",  v: totalProducts },
@@ -857,8 +858,8 @@
       }
       const TRACK_PRODUCTS = {"EBD":467,"Injectables":328,"Skincare":49,"Implants":28,"Regenerative":25,"Consumables":23,"Surgical":10,"Diagnostics":9,"Pharma":3};
       const TRACK_TOTAL_PRODUCTS = Object.values(TRACK_PRODUCTS).reduce((sum, value) => sum + value, 0);
-      const TRACK_LABEL_EN = { "Skincare": "Cosmeceutical" };
-      const displayTrack = (track) => TRACK_LABEL_EN[track] || track;
+      const TRACK_ZH_LOCAL = { "EBD":"光电","Injectables":"注射","Skincare":"功效护肤","Regenerative":"再生","Consumables":"耗材","Implants":"植入物","Diagnostics":"诊断","Surgical":"外科","Pharma":"药物" };
+      const displayTrack = (track) => TRACK_ZH_LOCAL[track] || track;
       document.querySelectorAll(".donut-slice").forEach(slice => {
         const track = slice.getAttribute("data-track");
         slice.style.cursor = "pointer";
@@ -1042,8 +1043,8 @@
         const color = TRACK_COLORS[c.dom_commercial_l1] || "var(--accent-2)";
         const rowWidth = isPercent ? 100 : Math.max(0.5, nProducts / maxProducts * 100);
         const rowMeta = isPercent
-          ? `${fmtNum(c.l2_count)} 个 L2 · 基数 ${fmtNum(nProducts)} 款`
-          : `${fmtNum(c.l2_count)} 个 L2 · ${((nProducts / totalProducts) * 100).toFixed(1)}%`;
+          ? `${fmtNum(c.l2_count)} 个细分 · 基数 ${fmtNum(nProducts)} 款`
+          : `${fmtNum(c.l2_count)} 个细分 · ${((nProducts / totalProducts) * 100).toFixed(1)}%`;
         const rowTotal = isPercent ? "100%" : fmtNum(nProducts);
         const l2Segments = (c.l2_list || []).map((l2, index) => {
           const n = Number(l2.n_products || 0);
@@ -1309,7 +1310,7 @@
     const GLOBAL_STATS = [
       { k: "Companies · 企业", v: allCompanies.length, lab: "Active · 活跃" },
       { k: "Countries · 国家", v: new Set(allCompanies.map(c => c.country)).size, lab: "Total · 总计" },
-      { k: "Products · 产品",  v: (data.summary && data.summary.products) || 942, lab: "L1 × 9" },
+      { k: "Products · 产品",  v: (data.summary && data.summary.products) || 942, lab: "9 大赛道" },
       { k: "Cities · 城市",    v: allCities.length, lab: "Mapped · 已映射" },
     ];
     function setStripCell (i, k, v, lab) {
@@ -1450,7 +1451,7 @@
       // breaks the "all labels piled at bottom" cluster the user noted.
       const placeAbove = d.lat > 20;
       if (placeAbove) el.classList.add("label-above");
-      el.title = `${d.city || ""} · ${d.country || ""} · ${d.n_companies} companies`;
+      el.title = `${d.city || ""} · ${d.country || ""} · ${d.n_companies} 家公司`;
       el.innerHTML = `
         <span class="halo halo-1"></span>
         <span class="halo halo-2"></span>
@@ -1911,7 +1912,7 @@
         `).join("");
       card.innerHTML = `
         <button class="card-close" type="button" aria-label="关闭">×</button>
-        <span class="card-rating">City · ${city.companies.length} companies</span>
+        <span class="card-rating">城市 · ${city.companies.length} 家公司</span>
         <div class="card-title">${escapeHtml(city.city || "—")}</div>
         <div class="card-sub">${escapeHtml(city.country || "")} · ${escapeHtml(city.region || "")}</div>
         <div class="city-selector-head">Select a company to view its products</div>
@@ -2165,7 +2166,7 @@
           const r = Math.max(3, Math.min(14, Math.sqrt(city.companies.length) * 2.5 + 2));
           const topCompanyId = city.companies.slice().sort((a, b) => (b.products || 0) - (a.products || 0))[0].company_id || "";
           dotsMarkup += `<circle class="city-marker-halo" style="color:${color}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(r + 4).toFixed(1)}"></circle>`;
-          dotsMarkup += `<circle class="city-marker" data-city-key="${escapeHtml(city.city || "")}|${city.lat.toFixed(2)}|${city.lon.toFixed(2)}" data-top-company-id="${escapeHtml(topCompanyId)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${color}"><title>${escapeHtml(city.city || "")} · ${city.companies.length} companies · detail</title></circle>`;
+          dotsMarkup += `<circle class="city-marker" data-city-key="${escapeHtml(city.city || "")}|${city.lat.toFixed(2)}|${city.lon.toFixed(2)}" data-top-company-id="${escapeHtml(topCompanyId)}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${color}"><title>${escapeHtml(city.city || "")} · ${city.companies.length} 家公司 · 详情</title></circle>`;
         });
 
       return `
@@ -2176,7 +2177,7 @@
           </svg>
           <div class="country-minimap-meta">
             <span>Map · flat projection</span>
-            <span>${cityMap.size} cities</span>
+            <span>${cityMap.size} 个城市</span>
           </div>
         </div>
       `;
@@ -2332,7 +2333,7 @@
 
 <!-- Leaflet + 平面 Map（v3 新增 · 学 codex 星图） -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin defer></script>
-<script src="./v3-flat-map.js?v=20260616-tooltip" defer></script>
+<script src="./v3-flat-map.js?v=8bed0b4e" defer></script>
 
 </body>
 </html>

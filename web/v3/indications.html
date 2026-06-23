@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>适应症星图 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 </head>
 <body>
 
@@ -22,9 +22,9 @@
         适应症星图
         <span class="h1-en">Indication Universe</span>
       </h1>
-      <p class="lede">715 条官方适应症证据 × 32 个适应症桶 × 539 款产品 × 216 家公司 — 看清医美「在治疗什么」。<br><small style="opacity:0.65;font-style:italic;">官方适应症证据覆盖 57.2% 产品；正文不完整的记录已从临床排行中剥离。</small></p>
+      <p class="lede">医美到底在「治疗什么」？715 条官方适应症证据，覆盖 32 类适应症、539 款产品、216 家公司。<br><small style="opacity:0.65;font-style:italic;">目前覆盖约 57% 的产品；信息不完整的记录暂未计入临床排行。</small></p>
       <div class="stat-row">
-        <span><span class="num" data-count-up="715">715</span> 条官方证据 · <span class="num" data-count-up="32">32</span> 个适应症桶</span>
+        <span><span class="num" data-count-up="715">715</span> 条官方证据 · <span class="num" data-count-up="32">32</span> 类适应症</span>
         <span>覆盖 <span class="num" data-count-up="539">539</span> 款产品 · <span class="num" data-count-up="216">216</span> 家公司</span>
         <span>头部适应症约 <span class="num" data-count-up="205">205</span> 条证据</span>
       </div>
@@ -45,7 +45,7 @@
           <span class="delta">FDA / CE-MDR / Manufacturer IFU</span>
         </article>
         <article class="kpi-cell has-wash w-peach">
-          <div class="label"><span class="en">Indication buckets</span><span class="zh">适应症桶数</span></div>
+          <div class="label"><span class="en">Indication groups</span><span class="zh">适应症类别</span></div>
           <span class="value" id="kpi-buckets">32</span>
           <span class="delta">祛皱 / 痤疮疤痕 / 唇部 / 私密 ...</span>
         </article>
@@ -57,7 +57,7 @@
         <article class="kpi-cell has-wash w-sage">
           <div class="label"><span class="en">Companies</span><span class="zh">覆盖公司</span></div>
           <span class="value" id="kpi-companies">216</span>
-          <span class="delta">heavily injectables-skewed</span>
+          <span class="delta">绝大多数是注射类产品的公司</span>
         </article>
         <article class="kpi-cell value-text has-wash w-rose">
           <div class="label"><span class="en">Top indication</span><span class="zh">头部适应症</span></div>
@@ -67,12 +67,12 @@
         <article class="kpi-cell has-wash w-slate">
           <div class="label"><span class="en">Multi-tech indications</span><span class="zh">多技术竞争</span></div>
           <span class="value" id="kpi-multi">—</span>
-          <span class="delta">≥3 technologies competing</span>
+          <span class="delta">有 3 种以上技术都能治的适应症</span>
         </article>
         <article class="kpi-cell has-wash w-plum">
           <div class="label"><span class="en">Avg tech / ind</span><span class="zh">平均技术数</span></div>
           <span class="value" id="kpi-avg-tech">—</span>
-          <span class="delta">competition density</span>
+          <span class="delta">每个适应症平均可选技术数</span>
         </article>
         <article class="kpi-cell value-text has-wash w-lavender">
           <div class="label"><span class="en">Top brand</span><span class="zh">头部品牌</span></div>
@@ -88,7 +88,7 @@
         <span class="cn">· 按官方证据数</span><span class="en">Indication ranking</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">32 个适应症桶 — 官方证据密度</div>
+        <div class="chart-title">32 类适应症 — 官方证据密度</div>
         <div class="chart-sub">官方证据条数展示临床需求的可见度，并并列产品、公司与技术覆盖。</div>
         <div class="ind-search-box">
           <input id="indication-search" class="ind-search-input" type="search" autocomplete="off" placeholder="搜索适应症：颞部、temple、下颏、鼻部、脱发、乳房..." />
@@ -114,11 +114,11 @@
     <section class="block">
       <div class="section-head">
         <h2>适应症 × 商业赛道</h2>
-        <span class="cn">· 反推 L1 归属</span><span class="en">Indication × commercial L1</span>
+        <span class="cn">· 各类适应症主要落在哪个赛道</span><span class="en">Indication × track</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">适应症 × 商业赛道</div>
-        <div class="chart-sub">注射赛道几乎承包所有适应症（Injectables 在每一行都占大头）；EBD 在颈纹 / 皮肤纹理上有少量交叉；其他赛道因数据 sparse 暂时缺失。这是底库当前可见的状况，不是行业真实图景。</div>
+        <div class="chart-sub">注射赛道几乎承包了所有适应症（每一行都占大头）；EBD 在颈纹 / 皮肤纹理上有少量交叉；其他赛道目前数据还不够、暂未显示。这是当前已收录数据呈现的样子，不代表行业全貌。</div>
         <div class="ind-l1-matrix" id="ind-l1-matrix"></div>
       </div>
     </section>
@@ -151,15 +151,15 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-indications.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./v3-chart-interact.js?v=20260616-tooltip"></script>
-<script src="./v3-indication-detail.js?v=20260616"></script>
-<script src="./v3-indication-drawer.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="indications"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-indications.js?v=9c3660de"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./v3-chart-interact.js?v=4aeb8e38"></script>
+<script src="./v3-indication-detail.js?v=00a9c165"></script>
+<script src="./v3-indication-drawer.js?v=db88b337"></script>
+<script src="./_nav.js?v=d784d46b" data-active="indications"></script>
 <script>
   (function () {
     const d = window.GLOBAL_AESTHETICS_DATA;
@@ -178,7 +178,8 @@
       "Regenerative":"#A8B59A","Consumables":"#5A6878","Implants":"#CFB58E",
       "Diagnostics":"#C76B68","Surgical":"#8C7B91","Pharma":"#EC9B73","Services":"#C8B8D0",
     };
-    const displayL1 = (l1) => l1 === "Skincare" ? "Cosmeceutical" : l1;
+    const L1_ZH = { "EBD":"光电","Injectables":"注射","Skincare":"功效护肤","Regenerative":"再生","Implants":"植入物","Consumables":"耗材","Diagnostics":"诊断","Surgical":"外科","Pharma":"药物","Services":"服务" };
+    const displayL1 = (l1) => L1_ZH[l1] || l1;
 
     // ---- KPI ----
     const s = data.summary;
@@ -188,7 +189,7 @@
     setText("kpi-products-pct", `${s.coverage_pct}% of ${s.dashboard_product_total || 942}`);
     countUp(document.getElementById("kpi-companies"), s.total_companies);
     setText("kpi-top-ind", String(s.top_indication || "—"));
-    setText("kpi-top-ind-n", `${s.top_indication_n} records`);
+    setText("kpi-top-ind-n", `${s.top_indication_n} 条`);
     countUp(document.getElementById("kpi-multi"), s.multi_tech_count);
     const avgTech = data.indications.length
       ? (data.indications.reduce((a, b) => a + b.n_techs, 0) / data.indications.length).toFixed(1)
@@ -201,7 +202,7 @@
     const topBrand = Object.entries(allBrands).sort((a,b) => b[1]-a[1])[0];
     if (topBrand) {
       setText("kpi-top-brand", String(topBrand[0] || "—"));
-      setText("kpi-top-brand-n", `${topBrand[1]} records across indications`);
+      setText("kpi-top-brand-n", `${topBrand[1]} 条（跨适应症）`);
     }
 
     // ---- Indication ranking list ----
@@ -315,7 +316,7 @@
         document.querySelectorAll(`${sel} .ind-cell.ind-val:not(.zero)`).forEach(cell => {
           const v = cell.textContent.trim();
           window.V3Tooltip.attach(cell, () => ({
-            title: `${v} records`,
+            title: `${v} 条`,
             lines: [`官方适应症证据 · 该 (适应症, 维度) 单元`],
           }));
         });
@@ -366,7 +367,7 @@
             </span>
           </div>
         `;
-      }).join("") || `<div class="ind-empty">没有匹配的适应症桶</div>`;
+      }).join("") || `<div class="ind-empty">没有匹配的适应症类别</div>`;
       if (searchCount) {
         searchCount.textContent = q ? `${matched.length} / ${data.indications.length}` : `${data.indications.length} buckets`;
       }
@@ -389,7 +390,7 @@
             title: ind.indication,
             lines: [
               `<em>${ind.n_records}</em> records · <em>${ind.n_products}</em> products`,
-              `${ind.n_companies} companies · ${ind.n_techs} techs`,
+              `${ind.n_companies} 家公司 · ${ind.n_techs} 种技术`,
               ind.top_l1[0] ? `Top L1 ${displayL1(ind.top_l1[0].l1)} (${ind.top_l1[0].n})` : "",
             ].filter(Boolean),
             hint: "适应症详情",

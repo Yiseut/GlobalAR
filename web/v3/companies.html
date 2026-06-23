@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>公司列表 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 </head>
 <body>
 
@@ -54,7 +54,7 @@
     <section class="block" id="relationship-flow">
       <div class="section-head">
         <h2>资本流向故事线</h2>
-        <span class="cn">· parent → company</span><span class="en">Relationship flows</span>
+        <span class="cn">· 谁控制谁（母公司 → 子公司）</span><span class="en">Relationship flows</span>
       </div>
       <div class="relation-overview">
         <article class="relation-stat">
@@ -76,7 +76,7 @@
       </div>
       <div class="chart-card">
         <div class="chart-title">母公司 → 子公司 / 资产：先看“谁控制了谁”</div>
-        <div class="chart-sub">这组关系不要求主体上市；只要能从 company_master 的 parent / ultimate_parent 识别出资本或集团归属，就进入公司关系图谱。上市财务表现仍放在资本地图阅读。</div>
+        <div class="chart-sub">这里不要求企业上市——只要能识别出它的母公司或最终控股方，就纳入关系图谱，看清资本与集团归属。上市财务表现仍放在资本地图阅读。</div>
         <div class="relation-flow-list" id="relation-flow-list"></div>
       </div>
     </section>
@@ -93,42 +93,42 @@
             <span class="zh">上游企业总数</span>
           </div>
           <span class="value" id="kpi-total">329</span>
-          <span class="delta">manufacturers + brand owners + biotech</span>
+          <span class="delta">生产商 + 品牌方 + 研发企业 合计</span>
         </article>
         <article class="kpi-cell has-wash w-peach">
           <div class="label"><span class="en">Manufacturer</span><span class="zh">制造型</span></div>
           <span class="value" id="kpi-manu">290</span>
-          <span class="delta">88% of universe</span>
+          <span class="delta">占全部企业 88% · 自己生产</span>
         </article>
         <article class="kpi-cell has-wash w-sand">
           <div class="label"><span class="en">Brand owner</span><span class="zh">品牌型</span></div>
           <span class="value" id="kpi-brand">25</span>
-          <span class="delta">8% — light asset model</span>
+          <span class="delta">8% · 轻资产，代理 / 控股品牌</span>
         </article>
         <article class="kpi-cell has-wash w-sage">
           <div class="label"><span class="en">R&amp;D / OEM</span><span class="zh">研发代工</span></div>
           <span class="value" id="kpi-rd">2</span>
-          <span class="delta">1% — focused R&amp;D/OEM rows</span>
+          <span class="delta">1% · 专注研发或为他人代工</span>
         </article>
         <article class="kpi-cell has-wash w-rose">
           <div class="label"><span class="en">Public listed</span><span class="zh">公开上市</span></div>
           <span class="value" id="kpi-public">43</span>
-          <span class="delta">on 15 exchanges</span>
+          <span class="delta">分布在 15 个交易所</span>
         </article>
         <article class="kpi-cell has-wash w-slate">
           <div class="label"><span class="en">Private</span><span class="zh">私营</span></div>
           <span class="value" id="kpi-private">272</span>
-          <span class="delta">83% of universe</span>
+          <span class="delta">占全部企业 83%</span>
         </article>
         <article class="kpi-cell has-wash w-plum">
           <div class="label"><span class="en">Subsidiary</span><span class="zh">子公司</span></div>
           <span class="value" id="kpi-sub">13</span>
-          <span class="delta">embedded in group</span>
+          <span class="delta">归属于某个集团</span>
         </article>
         <article class="kpi-cell has-wash w-lavender">
           <div class="label"><span class="en">Corporate families</span><span class="zh">集团结构</span></div>
           <span class="value" id="kpi-fam">4</span>
-          <span class="delta">parents with ≥2 subsidiaries</span>
+          <span class="delta">拥有 2 家以上子公司的母公司</span>
         </article>
       </div>
     </section>
@@ -136,11 +136,11 @@
     <section class="block">
       <div class="section-head">
         <h2>价值链定位</h2>
-        <span class="cn">· business_role</span><span class="en">Value chain positioning</span>
+        <span class="cn">· 企业在产业链中扮演的角色</span><span class="en">Value chain positioning</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">企业类型构成 — 这是个「制造驱动」的行业</div>
-        <div class="chart-sub">Manufacturer 占绝对主导（约 88%）— 多数公司自己生产；Brand Owner（约 8%）通常是代理 / 控股品牌组合，自己不持有产线；R&D / OEM 是上游为他人代工或技术研发的角色。Service 类已被排除（独立准入机制）。</div>
+        <div class="chart-sub">制造型企业占绝对主导（约 88%）——多数公司自己生产；品牌型（约 8%）通常代理或控股品牌组合、自己不持有产线；研发/代工型则是为他人做技术或生产。纯服务类企业不在本表（走另一套准入逻辑）。</div>
         <div id="role-bars"></div>
       </div>
     </section>
@@ -148,22 +148,10 @@
     <section class="block">
       <div class="section-head">
         <h2>多子公司集团</h2>
-        <span class="cn">· ultimate_parent ≥ 2 subsidiaries</span><span class="en">Corporate families</span>
+        <span class="cn">· 拥有 2 家以上子公司的母公司</span><span class="en">Corporate families</span>
       </div>
       <p class="lede" style="margin-bottom:18px;font-size:13.5px;">这里展示已经形成“集团组合”的企业族。它和资本地图不同：不只看上市身份，也看非上市子公司、被收购资产和跨国集团归属。</p>
       <div class="family-grid" id="family-grid"></div>
-    </section>
-
-    <section class="block">
-      <div class="section-head">
-        <h2>国家 × 上市状态</h2>
-        <span class="cn">· Top 12 countries</span><span class="en">Country × listing status</span>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title">主要国家的公司构成 + FDA 准入数</div>
-        <div class="chart-sub">单元格深色 = 该国在该列的相对集中度。韩国 105 家企业里 19 家在 Company_Master 标记为 public，FDA 命中 16 家 — 印证「数量冠军 ≠ 技术冠军」结论。</div>
-        <div class="co-matrix" id="co-matrix"></div>
-      </div>
     </section>
 
     <section class="block">
@@ -179,7 +167,7 @@
         <h2>公司全表</h2>
         <span class="cn">· 329 家 · 可搜索筛选排序</span><span class="en">Company directory</span>
       </div>
-      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">前面的分析维度看完后，这张表是详尽的查阅入口 — 搜索 / 赛道筛选 / ownership 筛选 / 列头排序都在浏览器即时完成。</p>
+      <p class="lede" style="margin-bottom:18px;font-size:13.5px;">前面的分析看完后，这张表是详尽的查阅入口——按公司名搜索、按赛道 / 所有制筛选、点列头排序，都在浏览器即时完成。</p>
       <div class="chart-card">
         <div class="companies-toolbar">
           <div class="search-wrap">
@@ -187,18 +175,18 @@
             <input type="search" id="search-input" class="search-input" placeholder="搜索公司名 / 城市 / 股票代码…" />
           </div>
           <div class="filter-row" id="filter-track">
-            <button class="filter-pill active" data-filter="track" data-val="all">全部 All</button>
-            <button class="filter-pill" data-filter="track" data-val="EBD">光电 EBD</button>
-            <button class="filter-pill" data-filter="track" data-val="Injectables">注射 Inj.</button>
-            <button class="filter-pill" data-filter="track" data-val="Skincare">功能性护肤品 Cosmeceutical</button>
-            <button class="filter-pill" data-filter="track" data-val="Regenerative">再生 Regen</button>
-            <button class="filter-pill" data-filter="track" data-val="Implants">植入物 Impl.</button>
+            <button class="filter-pill active" data-filter="track" data-val="all">全部</button>
+            <button class="filter-pill" data-filter="track" data-val="EBD">光电</button>
+            <button class="filter-pill" data-filter="track" data-val="Injectables">注射</button>
+            <button class="filter-pill" data-filter="track" data-val="Skincare">功效护肤</button>
+            <button class="filter-pill" data-filter="track" data-val="Regenerative">再生</button>
+            <button class="filter-pill" data-filter="track" data-val="Implants">植入物</button>
           </div>
           <div class="filter-row" id="filter-ownership">
-            <button class="filter-pill active" data-filter="ownership" data-val="all">全部 All</button>
-            <button class="filter-pill" data-filter="ownership" data-val="Public">上市 Public</button>
-            <button class="filter-pill" data-filter="ownership" data-val="Private">私营 Private</button>
-            <button class="filter-pill" data-filter="ownership" data-val="Subsidiary">子公司 Subsidiary</button>
+            <button class="filter-pill active" data-filter="ownership" data-val="all">全部</button>
+            <button class="filter-pill" data-filter="ownership" data-val="Public">上市</button>
+            <button class="filter-pill" data-filter="ownership" data-val="Private">私营</button>
+            <button class="filter-pill" data-filter="ownership" data-val="Subsidiary">子公司</button>
           </div>
           <button type="button" class="reset-btn" id="reset-btn">Reset</button>
           <span class="result-count" id="result-count"><span class="num">329</span> 家匹配</span>
@@ -208,15 +196,15 @@
             <thead>
               <tr>
                 <th style="width:40px;">#</th>
-                <th class="sortable" data-sort="name">公司 · Company</th>
-                <th class="sortable" data-sort="country">HQ</th>
+                <th class="sortable" data-sort="name">公司</th>
+                <th class="sortable" data-sort="country">总部</th>
                 <th class="sortable" data-sort="primary_track">主赛道</th>
-                <th>Role</th>
-                <th class="num sortable sort-desc" data-sort="products">Products</th>
-                <th class="num sortable" data-sort="brands">Brands</th>
+                <th>角色</th>
+                <th class="num sortable sort-desc" data-sort="products">产品数</th>
+                <th class="num sortable" data-sort="brands">品牌数</th>
                 <th class="num sortable" data-sort="fda">FDA</th>
-                <th>Ownership</th>
-                <th>Stock</th>
+                <th>所有制</th>
+                <th>股票</th>
               </tr>
             </thead>
             <tbody id="co-tbody"></tbody>
@@ -233,11 +221,11 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="companies"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./_nav.js?v=d784d46b" data-active="companies"></script>
 <style>
   .companies-table tr.co-row { cursor: pointer; transition: background-color .12s ease; }
   .companies-table tr.co-row:hover { background-color: rgba(184,89,87,0.06); }
@@ -267,7 +255,8 @@
       "Regenerative":"pill-regen","Consumables":"pill-consumables","Implants":"pill-implants",
       "Diagnostics":"pill-diagnostics","Surgical":"pill-surgical","Pharma":"pill-pharma","Services":"pill-services",
     };
-    const displayTrack = (track) => track === "Skincare" ? "Cosmeceutical" : (track || "—");
+    const TRACK_ZH = { "EBD":"光电","Injectables":"注射","Skincare":"功效护肤","Regenerative":"再生","Implants":"植入物","Consumables":"耗材","Diagnostics":"诊断","Surgical":"外科","Pharma":"药物","Services":"服务" };
+    const displayTrack = (track) => TRACK_ZH[track] || (track || "—");
     const ROLE_BADGE_CLASS = {
       "Manufacturer":"manufacturer","Brand Owner":"brand-owner",
       "R&D/OEM":"rd-oem","Biotech":"biotech","Service":"service","Supplier":"supplier",
@@ -339,7 +328,7 @@
         const parentMeta = r.parentRecord
           ? [r.parentRecord.country, r.parentRecord.primary_track].filter(Boolean).join(" · ")
           : "控股方 / 母公司";
-        const childMeta = [c.country, c.primary_track, `${c.products || 0} products`].filter(Boolean).join(" · ");
+        const childMeta = [c.country, c.primary_track, `${c.products || 0} 款产品`].filter(Boolean).join(" · ");
         const stock = c.stock_code || (r.parentRecord && r.parentRecord.stock_code) || "private / unlisted";
         return `
           <div class="relation-flow-row" data-company-id="${esc(c.company_id || "")}" tabindex="0" role="button" aria-label="${esc(r.parent)} controls ${esc(c.name)}">
@@ -563,7 +552,7 @@
         return `
           <article class="family-card">
             <div class="family-head"><h4>${esc(f.parent)}</h4><span class="ttl">${f.total_products}</span></div>
-            <div class="family-sub">${f.n_subsidiaries} subsidiaries · ${f.total_products} products · ${f.total_brands} brands</div>
+            <div class="family-sub">${f.n_subsidiaries} 家子公司 · ${f.total_products} 款产品 · ${f.total_brands} 个品牌</div>
             <div class="sub-list">${rows}</div>
           </article>
         `;
@@ -579,32 +568,6 @@
       });
     } else {
       famWrap.innerHTML = `<div style="grid-column:1/-1; padding:24px; color:var(--muted); font-style:italic; text-align:center; font-family:var(--f-body);">当前样本尚未形成清晰的多子公司集团视图，后续将把 AbbVie / Allergan、J&J / Mentor 等典型关系纳入统一呈现。</div>`;
-    }
-
-    // ---- Country × ownership matrix ----
-    const coWrap = document.getElementById("co-matrix");
-    if (coWrap && data.country_x_ownership.length) {
-      const headers = ["国家 · Country", "Total", "Public", "Private", "Subsidiary", "FDA·hit"];
-      const maxCell = Math.max(...data.country_x_ownership.flatMap(r =>
-        [r.total, r.public, r.private, r.subsidiary, r.fda]
-      ));
-      const headHtml = headers.map(h => `<div class="co-cell co-head">${esc(h)}</div>`).join("");
-      const rowsHtml = data.country_x_ownership.map(r => {
-        const cellVal = (v) => {
-          if (!v) return `<div class="co-cell co-val zero">—</div>`;
-          const intensity = v / maxCell;
-          return `<div class="co-cell co-val" style="--intensity:${intensity.toFixed(2)}">${v}</div>`;
-        };
-        return `
-          <div class="co-cell co-row-label">${esc(r.country)}<small>${esc(r.region || "")}</small></div>
-          ${cellVal(r.total)}
-          ${cellVal(r.public)}
-          ${cellVal(r.private)}
-          ${cellVal(r.subsidiary)}
-          ${cellVal(r.fda)}
-        `;
-      }).join("");
-      coWrap.innerHTML = headHtml + rowsHtml;
     }
 
     // ---- Findings ----

@@ -87,6 +87,10 @@ try {
         Run-Step "Step 4/5  v3 build ($i/$total) $s" "scripts\_v3_build_$s.py"
     }
 
+    # 4b. Stamp content-hash cache versions onto local JS/CSS refs so rebuilt
+    #     assets actually reach returning visitors (no stale ?v= cache).
+    Run-Step "Step 4b  asset version stamp" "scripts\_v3_stamp_asset_versions.py"
+
     # 5. Stamp data-as-of.json so topbar reflects this refresh
     $manifestPath = Join-Path $ProjectDir "data\import_manifest.json"
     $asOfPath = Join-Path $ProjectDir "web\v3\data-as-of.json"

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>交叉分析 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 <style>
   /* ============ Page-local styles ============ */
 
@@ -382,31 +382,31 @@
         交叉分析
         <span class="h1-en">Cross Analysis · multi-dimensional</span>
       </h1>
-      <p class="lede">单维排行已经覆盖。这一页是<strong>四组立体透视</strong> — 把地理、赛道、资本、监管、时间、适应症交织起来看，外加一个<strong>可自由切换维度的 4D 透视矩阵</strong>，并保留企业明细和公司 / 子赛道关联。</p>
+      <p class="lede">单维排行之外，这一页把多个维度<strong>交叉起来看</strong>——地理、赛道、资本、监管、时间、适应症彼此交织，外加一个<strong>可自由换维度的透视矩阵</strong>，并保留企业明细与公司 / 子赛道关联。</p>
       <div class="stat-row">
-        <span><span class="num" id="kpi-cells">—</span> 个非空交叉单元 · 3 组 lens</span>
-        <span>Lens 1 · <span class="num" id="kpi-l1">—</span> cells · 4D (FDA)</span>
-        <span>Lens 2 · <span class="num" id="kpi-l2">—</span> regs · 10 年</span>
-        <span>Lens 3 · <span class="num" id="kpi-l3">—</span> indication evidences</span>
+        <span><span class="num" id="kpi-cells">—</span> 个有数据的交叉点 · 3 组视角</span>
+        <span>视角一 · <span class="num" id="kpi-l1">—</span> 个交叉点 · 含 FDA</span>
+        <span>视角二 · <span class="num" id="kpi-l2">—</span> 条监管证据 · 近 10 年</span>
+        <span>视角三 · <span class="num" id="kpi-l3">—</span> 条适应症证据</span>
       </div>
     </section>
 
     <!-- =================== LENS 1 =================== -->
     <section class="block">
-      <span class="lens-stamp">Lens 01 · 4D heatmap</span>
+      <span class="lens-stamp">视角一 · 四维热力图</span>
       <div class="section-head">
         <h2>国家 × 赛道 × 资本结构 × FDA 命中</h2>
-        <span class="cn">· 12 国 × 9 L1 × 3 ownership × FDA dot</span><span class="en">Country × Track × Ownership × FDA</span>
+        <span class="cn">· 12 国 × 9 赛道 × 3 种所有制 × FDA 标记</span><span class="en">Country × Track × Ownership × FDA</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">国家 × 赛道企业密度 · FDA 命中标记</div>
         <div class="chart-sub">所有制维度分为全部、上市、私营三种视角；暖色深浅呈现企业集中度，红点标记有 FDA 准入的组合。</div>
 
         <div class="ownership-toggle" id="ownership-toggle">
-          <button class="filter-pill active" data-slice="all">全部 All</button>
-          <button class="filter-pill" data-slice="public">上市 Public</button>
-          <button class="filter-pill" data-slice="private">私营 Private</button>
-          <button class="filter-pill" data-slice="subsidiary">子公司 Subsidiary</button>
+          <button class="filter-pill active" data-slice="all">全部</button>
+          <button class="filter-pill" data-slice="public">上市</button>
+          <button class="filter-pill" data-slice="private">私营</button>
+          <button class="filter-pill" data-slice="subsidiary">子公司</button>
         </div>
 
         <div id="lens1-grid"></div>
@@ -414,14 +414,14 @@
         <div class="reg-legend">
           <span class="item"><span class="sw" style="background:var(--accent);"></span>有 FDA 命中</span>
           <span class="item"><span class="sw" style="background:var(--accent-2);"></span>多家有 FDA 命中</span>
-          <span class="item" style="margin-left:auto;color:var(--muted);font-style:italic;">单元格饱和度 ∝ 企业密度</span>
+          <span class="item" style="margin-left:auto;color:var(--muted);font-style:italic;">颜色越深 = 企业越多</span>
         </div>
       </div>
     </section>
 
     <!-- =================== LENS 2 =================== -->
     <section class="block">
-      <span class="lens-stamp">Lens 02 · 3D rhythm</span>
+      <span class="lens-stamp">视角二 · 监管节奏</span>
       <div class="section-head">
         <h2>公司 × 监管通道 × 年份</h2>
         <span class="cn">· Top 20 公司 · 2017–2026</span><span class="en">Company × Pathway × Year</span>
@@ -444,10 +444,10 @@
 
     <!-- =================== LENS 3 =================== -->
     <section class="block">
-      <span class="lens-stamp">Lens 03 · sparse but pointed</span>
+      <span class="lens-stamp">视角三 · 稀疏但关键</span>
       <div class="section-head">
-        <h2>适应症桶 × 监管机构 × 区域</h2>
-        <span class="cn">· 12 个适应症桶 × 5 监管 × 5 区域</span><span class="en">Indication × Regulator × Region</span>
+        <h2>适应症类别 × 监管机构 × 区域</h2>
+        <span class="cn">· 12 类适应症 × 5 监管 × 5 区域</span><span class="en">Indication × Regulator × Region</span>
       </div>
       <div class="chart-card">
         <div class="chart-title">官方适应症证据的监管与区域分布</div>
@@ -458,20 +458,20 @@
 
     <!-- =================== LENS 4 · PIVOT =================== -->
     <section class="block">
-      <span class="lens-stamp">Lens 04 · pivot</span>
+      <span class="lens-stamp">视角四 · 自选透视</span>
       <div class="section-head">
-        <h2>可切换 4D 透视矩阵</h2>
-        <span class="cn">· 行 × 列 × 堆叠色 × 钻取企业</span><span class="en">Switchable 4D pivot</span>
+        <h2>可自由切换的透视矩阵</h2>
+        <span class="cn">· 行 × 列 × 颜色分层 × 点击查看企业</span><span class="en">Switchable pivot</span>
       </div>
       <div class="chart-card">
-        <div class="chart-title">自选任意三个维度交叉 — 行、列、单元内堆叠色；点单元钻取背后企业并一键跳转</div>
-        <div class="chart-sub">预设组合与自定义维度并列，单元深浅表示数量，细条呈现第三维构成；监管 / 适应症是多值维度，一个产品可命中多个维度。</div>
+        <div class="chart-title">自选任意三个维度交叉 — 行、列、格内颜色分层；点格子查看背后企业并一键跳转</div>
+        <div class="chart-sub">预设组合与自定义维度并列，格子越深数量越多，细条呈现第三个维度的构成；监管 / 适应症可一对多，一个产品可能同时落在多项。</div>
         <div class="pv-presets" id="pv-presets"></div>
         <div class="pv-controls">
-          <div class="pv-field"><label>行 Row</label><select id="pv-row"></select></div>
-          <div class="pv-field"><label>列 Column</label><select id="pv-col"></select></div>
-          <div class="pv-field"><label>颜色/堆叠 Stack</label><select id="pv-stack"></select></div>
-          <div class="pv-field"><label>度量 Measure</label>
+          <div class="pv-field"><label>行（按什么分行）</label><select id="pv-row"></select></div>
+          <div class="pv-field"><label>列（按什么分列）</label><select id="pv-col"></select></div>
+          <div class="pv-field"><label>颜色分层</label><select id="pv-stack"></select></div>
+          <div class="pv-field"><label>数值</label>
             <div class="ownership-toggle" id="pv-measure" style="margin:0;">
               <button class="filter-pill active" data-measure="products">产品数</button>
               <button class="filter-pill" data-measure="companies">公司数</button>
@@ -493,20 +493,20 @@
         <article class="editorial-block has-wash w-rose-deep wash-bottom-left">
           <span class="stamp">Finding · 01</span>
           <div class="lead">韩国注射 + EBD = "私营双峰"。</div>
-          <div class="num-pair"><span class="num">68</span><span class="unit">private companies · KR</span></div>
+          <div class="num-pair"><span class="num">68</span><span class="unit">家私营 · 韩国</span></div>
           <div class="body">韩国注射 36 私营 + EBD 32 私营 = 68 家私营双峰，单上市企业 KFDA 主导；同期 FDA 命中分布稀疏 — 印证"出海靠 KFDA → 东南亚"路径。</div>
         </article>
         <article class="editorial-block has-wash w-apricot wash-bottom-left">
           <span class="stamp">Finding · 02</span>
           <div class="lead">2022 是 FDA 节奏分水岭。</div>
-          <div class="num-pair"><span class="num">2.4×</span><span class="unit">post-2022 / pre-2021</span></div>
+          <div class="num-pair"><span class="num">2.4×</span><span class="unit">2022后 / 2021前</span></div>
           <div class="body">Lens 2 看出 InMode、Apyx、BTL 在 2022 后单年 FDA 件数翻倍。同期 CE/EU 段持续稀薄 — MDR 转标延迟仍在压制欧盟节奏。</div>
         </article>
         <article class="editorial-block has-wash w-plum wash-bottom-left">
           <span class="stamp">Finding · 03</span>
           <div class="lead">适应症 × 区域错位明显。</div>
-          <div class="num-pair"><span class="num">3</span><span class="unit">EU-only buckets</span></div>
-          <div class="body">"线雕"、"PLLA 注射"、"植入物" 桶在 CE/EU 占据明显比例但 FDA 几乎空白 — 这是欧洲先于美国进入临床的领域，也是 USA 准入策略的潜在突破口。</div>
+          <div class="num-pair"><span class="num">3</span><span class="unit">类仅在欧盟</span></div>
+          <div class="body">「线雕」「PLLA 注射」「植入物」三类在欧盟 CE 占明显比例，但美国 FDA 几乎空白——这是欧洲先于美国进入临床的领域，也是进入美国市场的潜在突破口。</div>
         </article>
       </div>
     </section>
@@ -531,14 +531,14 @@
   <div class="body" id="drill-body"></div>
 </aside>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-cross-analysis.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./v3-deep-dive.js?v=20260616"></script>
-<script src="./v3-deep-interact.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="cross"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-cross-analysis.js?v=b42da314"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./v3-deep-dive.js?v=9f3d7a5c"></script>
+<script src="./v3-deep-interact.js?v=ff04a730"></script>
+<script src="./_nav.js?v=d784d46b" data-active="cross"></script>
 <script>
 (function () {
   const data = window.V3_CROSS_ANALYSIS_DATA;
@@ -555,11 +555,11 @@
   const REG_COLORS = {
     "FDA":"#8E3A3A","CE/EU":"#6B5A75","NMPA":"#D9AE91","KFDA":"#5A6878","Other":"#CFB58E",
   };
-  const TRACK_LABEL_EN = {
-    "EBD":"光电","Injectables":"注射","Skincare":"功能性护肤品","Regenerative":"再生","Implants":"植入物",
+  const TRACK_LABEL_ZH = {
+    "EBD":"能量设备","Injectables":"注射","Skincare":"功效护肤","Regenerative":"再生","Implants":"植入物",
     "Consumables":"耗材","Diagnostics":"诊断","Surgical":"外科","Pharma":"药物","Services":"服务",
   };
-  const displayTrack = (track) => track === "Skincare" ? "Cosmeceutical" : track;
+  const displayTrack = (track) => TRACK_LABEL_ZH[track] || track;
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, ch =>
@@ -599,16 +599,16 @@
     wrap.className = "xa-grid";
 
     // header row
-    let html = `<div class="xa-head" style="background:var(--ink); color:#fff;">Country</div>`;
+    let html = `<div class="xa-head" style="background:var(--ink); color:#fff;">国家</div>`;
     lens1.tracks.forEach(t => {
       const color = TRACK_COLORS[t] || "#888";
-      html += `<div class="xa-head" data-track="${esc(t)}" style="--th-color:${color};"><div>${esc(displayTrack(t))}</div><div class="en">${esc(TRACK_LABEL_EN[t] || "")}</div></div>`;
+      html += `<div class="xa-head" data-track="${esc(t)}" style="--th-color:${color};"><div>${esc(displayTrack(t))}</div><div class="en">${esc(t)}</div></div>`;
     });
 
     lens1.rows.forEach(row => {
       html += `<div class="xa-row-label">
         <span class="nm">${esc(row.country)}</span>
-        <span class="meta">${esc(row.region || "")} · ${row.total_companies} cos</span>
+        <span class="meta">${esc(row.region || "")} · ${row.total_companies} 家</span>
       </div>`;
       row.cells.forEach(cell => {
         const v = cellValue(cell);
@@ -858,7 +858,7 @@
     const colSel = document.getElementById("pv-col");
     const stackSel = document.getElementById("pv-stack");
     [rowSel, colSel, stackSel].forEach(sel => {
-      sel.innerHTML = DIMS.map(d => `<option value="${d.key}">${esc(d.cn)} · ${esc(d.en)}</option>`).join("");
+      sel.innerHTML = DIMS.map(d => `<option value="${d.key}">${esc(d.cn)}</option>`).join("");
     });
     function setSelects (r, c, s) { rowSel.value = r; colSel.value = c; stackSel.value = s; }
     setSelects("l1", "rg", "ow");

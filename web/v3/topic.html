@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>子赛道详情 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 </head>
 <body>
 
@@ -19,15 +19,15 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-tracks.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-topic-deep.js?v=20260616"></script>
-<script src="./v3-product-tree.js?v=20260616"></script>
-<script src="./v3-deep-dive.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./v3-l2-detail.js?v=20260616"></script>
-<script src="./v3-l2-drawer.js?v=20260616"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-tracks.js?v=d1c71c5f"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-topic-deep.js?v=a28c17b7"></script>
+<script src="./v3-product-tree.js?v=a705b27d"></script>
+<script src="./v3-deep-dive.js?v=9f3d7a5c"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./v3-l2-detail.js?v=4a28b802"></script>
+<script src="./v3-l2-drawer.js?v=3f97f0ab"></script>
 <style>
   #topco-tbody tr.co-row { cursor: pointer; transition: background-color .12s ease; }
   #topco-tbody tr.co-row:hover { background-color: rgba(184,89,87,0.06); }
@@ -643,7 +643,7 @@
       "pharma":"topic-other",
     };
     const s = document.createElement("script");
-    s.src = "./_nav.js?v=20260620-analysis-order";
+    s.src = "./_nav.js?v=20260622-rail-groups";
     s.dataset.active = SLUG_TO_TOPIC[seg] || "topic-ebd";
     document.currentScript.parentNode.insertBefore(s, document.currentScript);
   })();
@@ -689,8 +689,8 @@
       { slug: "pharma", l1: "Pharma", label: "药物", en: "Pharma" },
     ];
     const L1_TAGLINE = {
-      "EBD":          { en: "Energy-Based Devices", zh: "能量光电赛道", note: "10+ technology families competing — no single tech wins. Diode / HIFU / CO2 / RF / IPL." },
-      "Injectables":  { en: "Injectables", zh: "注射赛道", note: "HA 占 55% — 注射赛道事实上的平台技术。Botulinum / PLLA / PCL / Polynucleotide 分剩下的 45%。" },
+      "EBD":          { en: "Energy-Based Devices", zh: "能量光电赛道", note: "10+ 种技术并存、没有单一霸主：二极管激光 / 超声刀(HIFU) / CO₂ / 射频 / 强脉冲光。" },
+      "Injectables":  { en: "Injectables", zh: "注射赛道", note: "玻尿酸(HA) 占 55%，是注射赛道的通用基础材料；肉毒 / PLLA / PCL / 多聚核苷酸 分剩下的 45%。" },
       "Skincare":     { en: "Cosmeceutical", zh: "功能性护肤品", note: "院线功效护肤 / 专业焕肤 / 术后修复 / 疤痕管理 / 医生渠道护肤。只保留医美机构、医生渠道或治疗周期相关产品，排除大众超市/药店消费线。" },
       "Regenerative": { en: "Regenerative", zh: "再生赛道", note: "外泌体 / 干细胞 / PRP — 监管路径分散、技术新兴，待观察期。" },
       "Consumables":  { en: "Consumables", zh: "耗材赛道", note: "针 / 探头 / 麻 / 凝胶 — 用量大但单价低，B2B 模式。" },
@@ -737,13 +737,14 @@
 
     const breakdown = tracks.l1_breakdown.find(b => b.l1 === L1);
     if (!breakdown) {
-      root.innerHTML = `<p style="padding:60px; color:var(--muted); font-style:italic;">${esc(L1 === "Skincare" ? "Cosmeceutical" : L1)} · 暂无聚合数据</p>`;
+      root.innerHTML = `<p style="padding:60px; color:var(--muted); font-style:italic;">${esc({ EBD: "能量设备", Injectables: "注射", Skincare: "功效护肤", Regenerative: "再生", Implants: "植入物", Consumables: "耗材", Diagnostics: "诊断", Surgical: "外科", Pharma: "药物" }[L1] || L1)} · 暂无聚合数据</p>`;
       return;
     }
 
     const baseColor = TRACK_COLORS[L1] || "#888";
     const tagline = L1_TAGLINE[L1] || { en: L1, zh: L1, note: "" };
-    const displayL1 = tagline.en || L1;
+    const L1_ZH = { EBD: "能量设备", Injectables: "注射", Skincare: "功效护肤", Regenerative: "再生", Implants: "植入物", Consumables: "耗材", Diagnostics: "诊断", Surgical: "外科", Pharma: "药物", Services: "服务" };
+    const displayL1 = L1_ZH[L1] || tagline.zh || L1;
 
     // L1 × L2 segments (with brands for the "click for detail" UX)
     const l1l2Row = tracks.l1_x_l2.find(r => r.l1 === L1) || { segments: [] };
@@ -781,8 +782,8 @@
         <p class="lede">${esc(tagline.note)}</p>
         <div class="stat-row">
           <span><span class="num" data-count-up="${breakdown.products}">${breakdown.products}</span> 款产品 · <span class="num" data-count-up="${breakdown.companies}">${breakdown.companies}</span> 家公司</span>
-          <span><span class="num" data-count-up="${breakdown.brands}">${breakdown.brands}</span> 个品牌 · ppc <span class="num">${breakdown.products_per_company}</span></span>
-          <span>${l1l2Row.segments.length} 个 L2 子赛道 · ${breakdown.tech_top.length} 个主要技术</span>
+          <span><span class="num" data-count-up="${breakdown.brands}">${breakdown.brands}</span> 个品牌 · 单家平均 <span class="num">${breakdown.products_per_company}</span> 款</span>
+          <span>${l1l2Row.segments.length} 个细分领域 · ${breakdown.tech_top.length} 个主要技术</span>
         </div>
         <div class="filter-row" style="margin-top:22px;">
           ${PRIMARY_TOPIC_LINKS
@@ -803,42 +804,42 @@
           <article class="kpi-cell lede has-wash w-rose-deep">
             <div class="label"><span class="en">Products</span><span class="zh">产品线</span></div>
             <span class="value">${breakdown.products}</span>
-            <span class="delta">across ${l1l2Row.segments.length} L2 sub-tracks</span>
+            <span class="delta">覆盖 ${l1l2Row.segments.length} 个细分领域</span>
           </article>
           <article class="kpi-cell has-wash w-slate">
             <div class="label"><span class="en">Companies</span><span class="zh">上游企业</span></div>
             <span class="value">${breakdown.companies}</span>
-            <span class="delta">manufacturers + brand owners</span>
+            <span class="delta">生产商 + 品牌方</span>
           </article>
           <article class="kpi-cell has-wash w-peach">
             <div class="label"><span class="en">Brands</span><span class="zh">品牌</span></div>
             <span class="value">${breakdown.brands}</span>
-            <span class="delta">product + corporate</span>
+            <span class="delta">产品品牌 + 企业品牌</span>
           </article>
           <article class="kpi-cell has-wash w-sand">
             <div class="label"><span class="en">Products / company</span><span class="zh">单家产品数</span></div>
             <span class="value">${breakdown.products_per_company}</span>
-            <span class="delta">platform-density signal</span>
+            <span class="delta">平台化程度（越高越像平台型）</span>
           </article>
           <article class="kpi-cell value-text has-wash w-plum">
-            <div class="label"><span class="en">Top L2</span><span class="zh">头部 L2</span></div>
+            <div class="label"><span class="en">Top L2</span><span class="zh">头部细分</span></div>
             <span class="value">${esc(breakdown.l2_top[0] ? breakdown.l2_top[0][0] : "—")}</span>
-            <span class="delta">${breakdown.l2_top[0] ? breakdown.l2_top[0][1] : 0} products</span>
+            <span class="delta">${breakdown.l2_top[0] ? breakdown.l2_top[0][1] : 0} 款产品</span>
           </article>
           <article class="kpi-cell value-text has-wash w-rose">
             <div class="label"><span class="en">Top tech</span><span class="zh">头部技术</span></div>
             <span class="value">${esc(breakdown.tech_top[0] ? breakdown.tech_top[0][0] : "—")}</span>
-            <span class="delta">${breakdown.tech_top[0] ? breakdown.tech_top[0][1] : 0} products</span>
+            <span class="delta">${breakdown.tech_top[0] ? breakdown.tech_top[0][1] : 0} 款产品</span>
           </article>
           <article class="kpi-cell value-text has-wash w-sage">
             <div class="label"><span class="en">Top region</span><span class="zh">主导区域</span></div>
             <span class="value">${esc((breakdown.region_mix[0] || [])[0] || "—")}</span>
-            <span class="delta">${(breakdown.region_mix[0] || [])[1] || 0} products</span>
+            <span class="delta">${(breakdown.region_mix[0] || [])[1] || 0} 款产品</span>
           </article>
           <article class="kpi-cell has-wash w-lavender">
             <div class="label"><span class="en">FDA evidence</span><span class="zh">监管证据</span></div>
             <span class="value">${regForL1 ? (regForL1.buckets.find(b => b.name === "FDA") || {}).n || 0 : 0}</span>
-            <span class="delta">FDA records (510k + label + IFU)</span>
+            <span class="delta">FDA 证据（510k + 标签 + 说明书）</span>
           </article>
         </div>
       </section>
@@ -861,10 +862,10 @@
       <section class="block">
         <div class="section-head">
           <h2>价值链位置</h2>
-          <span class="cn">· business_role within ${esc(displayL1)}</span><span class="en">Value chain position</span>
+          <span class="cn">· ${esc(displayL1)} 内的企业角色</span><span class="en">Value chain position</span>
         </div>
         <div class="chart-card">
-          <div class="chart-title">${esc(displayL1)} 内企业的角色分布 — 制造 / 品牌 / R&D-OEM / 生物科技</div>
+          <div class="chart-title">${esc(displayL1)} 内企业的角色分布 — 制造 / 品牌 / 研发代工 / 生物科技</div>
           <div class="chart-sub">头部角色按产品数对齐，展示本赛道更偏制造驱动还是品牌驱动。</div>
           <div class="vc-bars" id="vc-bars"></div>
         </div>
@@ -894,11 +895,11 @@
       <section class="block">
         <div class="section-head">
           <h2>官方适应症 × 监管机构</h2>
-          <span class="cn">· ${esc(displayL1)} 内 official_indication × regulator</span><span class="en">Official indication × Regulator</span>
+          <span class="cn">· ${esc(displayL1)} 内 官方适应症 × 监管机构</span><span class="en">Official indication × Regulator</span>
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 内官方获批适应症在四大监管通道的分布</div>
-          <div class="chart-sub">单元格呈现该 (适应症桶, 监管) 组合内的产品级证据，色深代表集中度。<small style="color:var(--muted);font-style:italic;">L1 覆盖率仍低，部分赛道为空属正常。</small></div>
+          <div class="chart-sub">每格代表该「适应症 × 监管机构」组合的产品证据数，颜色越深越集中。<small style="color:var(--muted);font-style:italic;">本赛道覆盖率仍低，部分格子为空属正常。</small></div>
           <div id="ind-heatmap"></div>
         </div>
       </section>
@@ -915,7 +916,7 @@
           <div class="entrants-wrap">
             <div class="entrants-col">
               <h4>新进入 New entrants</h4>
-              <div class="head-sub">first ${esc(displayL1)} approval ≥ 2024-05</div>
+              <div class="head-sub">首次进入 ${esc(displayL1)} ≥ 2024-05</div>
               <div id="new-entrants-list"></div>
             </div>
             <div class="entrants-col">
@@ -930,7 +931,7 @@
       <section class="block">
         <div class="section-head">
           <h2>头部公司</h2>
-          <span class="cn">· Top 12 by products</span><span class="en">Top companies</span>
+          <span class="cn">· 按产品数 Top 12</span><span class="en">Top companies</span>
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 赛道做产品最多的 12 家公司</div>
@@ -940,12 +941,12 @@
               <thead>
                 <tr>
                   <th style="width:40px;">#</th>
-                  <th>公司 · Company</th>
-                  <th>HQ</th>
-                  <th>Role</th>
-                  <th class="num">Products</th>
-                  <th class="num">Brands</th>
-                  <th>Ownership</th>
+                  <th>公司</th>
+                  <th>总部</th>
+                  <th>角色</th>
+                  <th class="num">产品数</th>
+                  <th class="num">品牌数</th>
+                  <th>所有制</th>
                 </tr>
               </thead>
               <tbody id="topco-tbody"></tbody>
@@ -957,7 +958,7 @@
       <section class="block">
         <div class="section-head">
           <h2>技术构成</h2>
-          <span class="cn">· top 8 within ${esc(displayL1)}</span><span class="en">Tech composition</span>
+          <span class="cn">· ${esc(displayL1)} 内前 8 技术</span><span class="en">Tech composition</span>
         </div>
         <div class="chart-card">
           <div class="chart-title">${esc(displayL1)} 用了哪些技术</div>
@@ -1005,7 +1006,7 @@
       </section>
 
       <div class="footnote">
-        <span>v3 · topic detail · ${esc(displayL1)} · ${breakdown.products} products</span>
+        <span>v3 · 子赛道详情 · ${esc(displayL1)} · ${breakdown.products} 款产品</span>
         <span class="right"><img src="./assets/aestrat_logo.png" alt="Aestrat" /></span>
       </div>
     `;
@@ -1117,7 +1118,7 @@
           </div>
           <div class="stats">
             <span class="n">${c.companies}</span>
-            <span class="sub">${c.products} products</span>
+            <span class="sub">${c.products} 款产品</span>
           </div>
         </div>
       `;
@@ -1173,7 +1174,7 @@
       // Top 10 list
       const top10wrap = document.getElementById("conc-top10");
       const max = c.top10[0] ? c.top10[0].share_pct : 1;
-      top10wrap.innerHTML = `<div style="font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin:10px 0 4px;">Top 10 头部公司份额 · portfolio signal</div>`
+      top10wrap.innerHTML = `<div style="font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin:10px 0 4px;">Top 10 头部公司份额 · 组合集中度</div>`
         + c.top10.map((co, i) => {
           const pct = (co.share_pct / max) * 100;
           return `
@@ -1339,7 +1340,7 @@
       ih.rows.forEach(r => Object.values(r.values).forEach(v => { if (v > max) max = v; }));
 
       let html = `<div class="ir-mini-row head">
-        <span class="bk-label">Indication bucket</span>
+        <span class="bk-label">适应症类别</span>
         ${ih.regulators.map(r => `<span style="text-align:center;">${esc(r)}</span>`).join("")}
       </div>`;
       ih.rows.forEach(row => {
@@ -1853,7 +1854,7 @@
               <a class="topic-mega-card" href="?segment=${row.slug}" style="--topic-color:${TRACK_COLORS[row.l1] || TRACK_COLORS.Consumables};">
                 <span>
                   <strong>${esc(row.label)}</strong>
-                  <span>${esc(row.en)} · ${esc(row.topTech)} · ${row.companies} companies</span>
+                  <span>${esc(row.en)} · ${esc(row.topTech)} · ${row.companies} 家公司</span>
                 </span>
                 <em>${row.products || "—"}</em>
               </a>

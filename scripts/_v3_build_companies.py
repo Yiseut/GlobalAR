@@ -156,8 +156,8 @@ def main() -> None:
         {
             "stamp": "Finding · 01",
             "lead": "<em>{0}%</em> 的上游是制造型，不是品牌型。".format(int(manu_pct)),
-            "num_pair": {"num": "{0}%".format(int(manu_pct)), "unit": "Manufacturer"},
-            "body": "全球医美上游 <em>{m}</em> 家公司里 <em>{n}</em> 家是 Manufacturer (生产型) — 远超 Brand Owner <em>{b}</em>、R&D-OEM <em>{r}</em>、Biotech <em>{bi}</em>。这是个「生产驱动」的行业，新进入者主要靠 OEM 代工切入，而不是从品牌切入。".format(
+            "num_pair": {"num": "{0}%".format(int(manu_pct)), "unit": "制造型企业"},
+            "body": "全球医美上游 <em>{m}</em> 家公司里 <em>{n}</em> 家自己生产 — 远超品牌型 <em>{b}</em>、研发代工 <em>{r}</em>、生物科技 <em>{bi}</em>。这是个「生产驱动」的行业：新进入者主要靠代工切入，而不是从品牌切入。".format(
                 m=total,
                 n=business_role_mix[0][1] if business_role_mix else 0,
                 b=next((n for r, n in business_role_mix if r == "Brand Owner"), 0),
@@ -169,7 +169,7 @@ def main() -> None:
         {
             "stamp": "Finding · 02",
             "lead": "上市率仅 <em>{0}%</em> — 行业整合空间巨大。".format(public_pct),
-            "num_pair": {"num": "{0}%".format(public_pct), "unit": "public listed"},
+            "num_pair": {"num": "{0}%".format(public_pct), "unit": "已上市"},
             "body": "<em>{pub}</em> / <em>{tot}</em> 家公司公开上市。其余 <em>{pri}</em> 私营 + <em>{sub}</em> 子公司构成「暗股池」。低上市率意味着估值不透明、并购窗口长 — 但也意味着资本敏感度低，行业波动小。".format(
                 pub=listed_n, tot=total, pri=private_n, sub=subsidiary_n,
             ),
@@ -178,8 +178,8 @@ def main() -> None:
         {
             "stamp": "Finding · 03",
             "lead": "实质性集团整合罕见。",
-            "num_pair": {"num": len(corporate_families), "unit": "corporate families"},
-            "body": "当前有 <em>{n}</em> 个 ultimate_parent 拥有 ≥2 家子公司（{examples}），合计 <em>{c}</em> 家子公司。该视图依赖 parent_company / ultimate_parent 字段，新增集团关系应先进入手工关系补充层并保留来源。".format(
+            "num_pair": {"num": len(corporate_families), "unit": "个集团"},
+            "body": "当前只有 <em>{n}</em> 个集团拥有 2 家以上子公司（{examples}），合计 <em>{c}</em> 家子公司。集团整合在这个行业还很罕见——大多数企业仍是独立经营。".format(
                 n=len(corporate_families), c=family_companies, examples=family_examples,
             ),
             "wash": "w-plum",

@@ -1,0 +1,486 @@
+{
+  "generated_at": "2026-06-22T11:27:14+08:00",
+  "reviewed_by": "codex_registration_seed_enrichment_20260622",
+  "source_csv_backup": "data\\manual_official_indication_evidence.backup_before_seed_enrichment_20260622.csv",
+  "resolved_count": 5,
+  "remaining_count": 57,
+  "resolved_rows": [
+    {
+      "seed_record_id": "REC_0473",
+      "company": "Daewoong",
+      "brand": "Nabota (Jeuveau / Nuceiva)",
+      "jurisdiction": "EU",
+      "registration_no": "EU/1/19/1364/001",
+      "source_url": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuceiva"
+    },
+    {
+      "seed_record_id": "REC_0364",
+      "company": "Evolus",
+      "brand": "Jeuveau/Nuceiva",
+      "jurisdiction": "EU",
+      "registration_no": "EU/1/19/1364/001",
+      "source_url": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuceiva"
+    },
+    {
+      "seed_record_id": "REC_0806",
+      "company": "Galderma",
+      "brand": "Relfydess",
+      "jurisdiction": "EU",
+      "registration_no": "SE/H/2438/01/DC; PL 03070/0010",
+      "source_url": "https://docetp.mpa.se/LMF/Relfydess%20solution%20for%20injection%20ENG%20PAR_09001bee840f18fc.pdf"
+    },
+    {
+      "seed_record_id": "REC_0805",
+      "company": "Galderma",
+      "brand": "Alluzience",
+      "jurisdiction": "EU",
+      "registration_no": "SE/H/2019/01/DC; PL 03070/0009",
+      "source_url": "https://docetp.mpa.se/LMF/Alluzience%20solution%20for%20injection%20ENG%20PAR_09001bee81e74f7d.pdf"
+    },
+    {
+      "seed_record_id": "REC_0962",
+      "company": "Ipsen Pharma",
+      "brand": "Alluzience",
+      "jurisdiction": "EU",
+      "registration_no": "SE/H/2019/01/DC; PL 03070/0009",
+      "source_url": "https://docetp.mpa.se/LMF/Alluzience%20solution%20for%20injection%20ENG%20PAR_09001bee81e74f7d.pdf"
+    }
+  ],
+  "remaining_rows": [
+    {
+      "seed_record_id": "REC_0103",
+      "company": "A.A.M.S.",
+      "brand": "Carboxy-Pen",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0126",
+      "company": "A.A.M.S.",
+      "brand": "Concerto",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0720",
+      "company": "A.A.M.S.",
+      "brand": "Ultim",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0537",
+      "company": "Across",
+      "brand": "Persnica",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0094",
+      "company": "Allergan",
+      "brand": "BOTOX Cosmetic",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0094",
+      "company": "Allergan",
+      "brand": "BOTOX Cosmetic",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0387",
+      "company": "Allergan",
+      "brand": "Kybella / Belkyra",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0387",
+      "company": "Allergan",
+      "brand": "Kybella / Belkyra",
+      "jurisdiction": "CN",
+      "reason": "No public NMPA registration number or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0037",
+      "company": "Aptos",
+      "brand": "Aptos Excellence",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0044",
+      "company": "Aquavit Pharmaceuticals",
+      "brand": "Aquagold Fine Touch",
+      "jurisdiction": "US",
+      "reason": "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0044",
+      "company": "Aquavit Pharmaceuticals",
+      "brand": "Aquagold Fine Touch",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0453",
+      "company": "Aquavit Pharmaceuticals",
+      "brand": "Microchannel Technology",
+      "jurisdiction": "US",
+      "reason": "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0453",
+      "company": "Aquavit Pharmaceuticals",
+      "brand": "Microchannel Technology",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0334",
+      "company": "Beauty Health",
+      "brand": "HydraFacial Syndeo / Elite",
+      "jurisdiction": "US",
+      "reason": "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0334",
+      "company": "Beauty Health",
+      "brand": "HydraFacial Syndeo / Elite",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0334",
+      "company": "Beauty Health",
+      "brand": "HydraFacial Syndeo / Elite",
+      "jurisdiction": "CN",
+      "reason": "No public NMPA registration number or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0319",
+      "company": "BR Pharm",
+      "brand": "HP Cell Vitaran",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0932",
+      "company": "Caregen",
+      "brand": "Aquashine",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0932",
+      "company": "Caregen",
+      "brand": "Aquashine",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0196",
+      "company": "Chaeum Pharma",
+      "brand": "DLS (Face/Body)",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0731",
+      "company": "Chaeum Pharma",
+      "brand": "V7 (V-Seven)",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0823",
+      "company": "Cynosure",
+      "brand": "Potenza",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0202",
+      "company": "Daejoo",
+      "brand": "Dr. DMA / PDRN Injection",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0473",
+      "company": "Daewoong",
+      "brand": "Nabota (Jeuveau / Nuceiva)",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0532",
+      "company": "Dermakor",
+      "brand": "PDO / PCL Threads",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0260",
+      "company": "Dermoaroma",
+      "brand": "ExoComplex",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0636",
+      "company": "DFK Biolab",
+      "brand": "S-DNA",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0964",
+      "company": "Dongkook Pharma",
+      "brand": "Elravie",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0211",
+      "company": "Galderma",
+      "brand": "Dysport / Azzalure",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0211",
+      "company": "Galderma",
+      "brand": "Dysport / Azzalure",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0291",
+      "company": "GANA",
+      "brand": "GANA",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0293",
+      "company": "GANA",
+      "brand": "GANA",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0294",
+      "company": "GCS",
+      "brand": "GCS",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0775",
+      "company": "Grand Aespio",
+      "brand": "X-Lift",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0353",
+      "company": "Healux",
+      "brand": "i-THREAD",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0395",
+      "company": "Hugel",
+      "brand": "Letybo / Botulax",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0395",
+      "company": "Hugel",
+      "brand": "Letybo / Botulax",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0548",
+      "company": "ITC",
+      "brand": "PLACL",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0389",
+      "company": "Jaysean / J Syeon",
+      "brand": "La Pomme",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0619",
+      "company": "JDBIO",
+      "brand": "Richesse",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0143",
+      "company": "Koru Pharma",
+      "brand": "Crystal / Avalon",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0883",
+      "company": "Medytox",
+      "brand": "New Biju",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0772",
+      "company": "Merz",
+      "brand": "Xeomin / Bocouture",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0592",
+      "company": "N-Finders",
+      "brand": "RE: Thread",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0487",
+      "company": "Reanzen",
+      "brand": "Nesfill",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0005",
+      "company": "Tentech",
+      "brand": "10Thera",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0006",
+      "company": "Tentech",
+      "brand": "10Therma",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0692",
+      "company": "Tesslift",
+      "brand": "Tesslift",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0721",
+      "company": "Ultra V",
+      "brand": "Ultra V",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1050",
+      "company": "WEDERM",
+      "brand": "POWER COL-TRA",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1051",
+      "company": "Meamo Labs",
+      "brand": "BEAUX",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1052",
+      "company": "Meamo Labs",
+      "brand": "BEAUY",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1053",
+      "company": "USCAREPHARM",
+      "brand": "ERBELLA",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1054",
+      "company": "Aezian",
+      "brand": "aesPlla",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1055",
+      "company": "FacePharm Korea",
+      "brand": "Etrebelle",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1055",
+      "company": "FacePharm Korea",
+      "brand": "Etrebelle",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "TOPLINE_MEDYTOX_NEWLUX_20260530",
+      "company": "Medytox",
+      "brand": "NEWLUX",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    }
+  ],
+  "unresolved_reason_counts": {
+    "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass.": 17,
+    "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass.": 35,
+    "No public NMPA registration number or jurisdiction-matched official wording confirmed in this pass.": 2,
+    "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass.": 3
+  },
+  "sources_used": [
+    {
+      "label": "EMA Nuceiva EPAR",
+      "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/nuceiva"
+    },
+    {
+      "label": "Swedish MPA Alluzience PAR",
+      "url": "https://docetp.mpa.se/LMF/Alluzience%20solution%20for%20injection%20ENG%20PAR_09001bee81e74f7d.pdf"
+    },
+    {
+      "label": "eMC Alluzience SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/13798/smpc"
+    },
+    {
+      "label": "Swedish MPA Relfydess PAR",
+      "url": "https://docetp.mpa.se/LMF/Relfydess%20solution%20for%20injection%20ENG%20PAR_09001bee840f18fc.pdf"
+    },
+    {
+      "label": "eMC Relfydess SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/100710/smpc"
+    }
+  ],
+  "durable_input_updated": "data\\manual_official_indication_evidence.csv",
+  "rebuilt_outputs": [
+    "data\\global_aesthetics.db",
+    "web\\app-data.js",
+    "web\\v3\\v3-search.js",
+    "web\\v3\\v3-operations.js"
+  ],
+  "smoke_test": "passed_no_mismatches_api_offline"
+}

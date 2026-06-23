@@ -191,9 +191,9 @@ def main() -> None:
             ),
             "num_pair": {
                 "num": most_served["n_records"] if most_served else 0,
-                "unit": "official evidence",
+                "unit": "条官方证据",
             },
-            "body": "「<em>{ind}</em>」由 <em>{p}</em> 款产品 × <em>{c}</em> 家公司 × <em>{t}</em> 种技术覆盖。头部品牌 {brands}。这是医美最被「数据化承诺」的一个适应症。".format(
+            "body": "「<em>{ind}</em>」有 <em>{p}</em> 款产品、<em>{c}</em> 家公司、<em>{t}</em> 种技术在做，头部品牌 {brands}。这是医美里官方证据最充分、市场共识最强的适应症。".format(
                 ind=most_served["indication"] if most_served else "—",
                 p=most_served["n_products"] if most_served else 0,
                 c=most_served["n_companies"] if most_served else 0,
@@ -207,9 +207,9 @@ def main() -> None:
             "lead": "<em>{0}</em> 个适应症是「多技术竞争」格局。".format(len(multi_tech_inds)),
             "num_pair": {
                 "num": len(multi_tech_inds),
-                "unit": "multi-tech indications",
+                "unit": "个多技术适应症",
             },
-            "body": "<em>{n}</em> 个适应症同时被 ≥3 种技术服务（HA / PLLA / PCL / Botox / CaHA / Polynucleotide 等）— 患者有真选择，品牌有真竞争。这些是最 commodity 的赛道，价格战已经发生。".format(
+            "body": "<em>{n}</em> 个适应症同时有 3 种以上技术能做（HA / PLLA / PCL / 肉毒 / CaHA / 核苷酸 等）— 患者有真选择，品牌也面临真竞争。这些是最同质化的赛道，价格战已经打响。".format(
                 n=len(multi_tech_inds),
             ),
             "wash": "w-apricot",
@@ -219,9 +219,9 @@ def main() -> None:
             "lead": "数据稀疏 — 只覆盖 <em>{0}</em> 款产品 / <em>{1}</em> 家公司。".format(total_products, total_companies),
             "num_pair": {
                 "num": "{0}%".format(round(100 * total_products / dashboard_product_total, 1)),
-                "unit": "product coverage",
+                "unit": "产品覆盖率",
             },
-            "body": "<em>{p}</em> / {total} 款产品有官方适应症证据 ({pct}% 覆盖率)。其中 <em>{unresolved}</em> 条已识别为待补具体正文，不再混入临床适应症排行。下一轮 official_indication_evidence 数据采集应优先补回 EBD 大厂的 510(k) clearance 适应症描述。".format(
+            "body": "<em>{p}</em> / {total} 款产品有官方适应症证据（{pct}%）。其中 <em>{unresolved}</em> 条信息还不完整，已暂时排除在排行外。覆盖率偏低主要是能量设备(EBD)大厂的官方适应症说明还没补齐——这是当前最大的数据缺口。".format(
                 p=total_products,
                 total=dashboard_product_total,
                 pct=round(100 * total_products / dashboard_product_total, 1),

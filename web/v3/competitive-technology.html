@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>竞品与替代技术 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 <style>
   .ct-grid {
     display: grid;
@@ -117,7 +117,7 @@
     <section class="block">
       <div class="section-head">
         <h2>策略问题视角</h2>
-        <span class="cn">· 不按后台维度拆页</span><span class="en">Market question lenses</span>
+        <span class="cn">· 按治疗目标看替代关系</span><span class="en">Market question lenses</span>
       </div>
       <div class="ct-lens-grid">
         <article class="ct-lens"><strong>容量与轮廓</strong><span>HA、胶原、CaHA、PLLA/PCL 与埋线之间的定位和价格带替代。</span></article>
@@ -177,9 +177,9 @@
   </main>
 </div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-technology.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="competitive-technology"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-technology.js?v=b73e58f2"></script>
+<script src="./_nav.js?v=d784d46b" data-active="competitive-technology"></script>
 <script>
   (function () {
     const app = window.GLOBAL_AESTHETICS_DATA || {};
@@ -198,7 +198,8 @@
       "Surgical":"#8C7B91",
       "Pharma":"#EC9B73",
     };
-    const displayL1 = value => value === "Skincare" ? "Skin Health" : value;
+    const L1_ZH = { Injectables: "注射", EBD: "能量设备", Skincare: "功效护肤", Regenerative: "再生", Implants: "植入物", Consumables: "耗材", Diagnostics: "诊断", Surgical: "外科", Pharma: "药物", Services: "服务" };
+    const displayL1 = value => L1_ZH[value] || value;
 
     if (app.generated_at) {
       document.querySelectorAll("[data-bind-text='generated_at_short']").forEach(el => {
@@ -227,7 +228,7 @@
         return `
           <article class="tech-family-card" style="--family-color:${esc(family.color || "#8E3A3A")};">
             <div class="fam-head"><h4>${esc(family.family)}</h4><span class="ttl">${fmt(family.n_products)}</span></div>
-            <div class="fam-meta"><span>${fmt(family.n_techs)} techs · ${fmt(family.n_companies)} companies</span></div>
+            <div class="fam-meta"><span>${fmt(family.n_techs)} 种技术 · ${fmt(family.n_companies)} 家公司</span></div>
             <div class="fam-members">${members}</div>
             <div class="fam-l1-chips">${chips}</div>
           </article>
@@ -245,7 +246,7 @@
       matrixEl.innerHTML = `
         <div class="ct-cell head">技术</div>
         ${cols.map(col => `<div class="ct-cell head">${esc(displayL1(col))}</div>`).join("")}
-        <div class="ct-cell head">Total</div>
+        <div class="ct-cell head">合计</div>
         ${rows.map(row => `
           <div class="ct-cell row-head">${esc(row.tech)}</div>
           ${cols.map(col => {

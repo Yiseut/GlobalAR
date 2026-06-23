@@ -22,28 +22,28 @@
   };
 
   const TRACK_LABEL_ZH = {
-    EBD: "光电 EBD",
-    Injectables: "注射 Injectables",
-    Skincare: "功能性护肤品 Cosmeceutical",
-    Regenerative: "再生 Regenerative",
-    Implants: "植入物 Implants",
-    Consumables: "耗材 Consumables",
-    Diagnostics: "诊断 Diagnostics",
-    Surgical: "外科 Surgical",
-    Pharma: "药物 Pharma",
-    Services: "服务 Services",
+    EBD: "光电",
+    Injectables: "注射",
+    Skincare: "功效护肤",
+    Regenerative: "再生",
+    Implants: "植入物",
+    Consumables: "耗材",
+    Diagnostics: "诊断",
+    Surgical: "外科",
+    Pharma: "药物",
+    Services: "服务",
   };
 
   const REGION_LABEL_ZH = {
-    "North America": "北美 North America",
-    "Europe": "欧洲 Europe",
-    "Asia Pacific": "亚太 Asia Pacific",
-    "Asia-Pacific": "亚太 Asia-Pacific",
-    "Latin America": "拉美 Latin America",
-    "Middle East": "中东 Middle East",
-    "Africa": "非洲 Africa",
-    "Oceania": "大洋洲 Oceania",
-    "MENA": "中东北非 MENA",
+    "North America": "北美",
+    "Europe": "欧洲",
+    "Asia Pacific": "亚太",
+    "Asia-Pacific": "亚太",
+    "Latin America": "拉美",
+    "Middle East": "中东",
+    "Africa": "非洲",
+    "Oceania": "大洋洲",
+    "MENA": "中东北非",
   };
 
   let map = null;
@@ -148,28 +148,28 @@
     const companies = data.geo_companies || [];
     setSelectOptions(
       $("flatTrackFilter"),
-      "全部赛道 · All tracks",
+      "全部赛道",
       countValues(companies, "primary_track"),
       filters.track,
       k => TRACK_LABEL_ZH[k] || k,
     );
     setSelectOptions(
       $("flatRegionFilter"),
-      "全部区域 · All regions",
+      "全部区域",
       countValues(companies, "region"),
       filters.region,
       k => REGION_LABEL_ZH[k] || k,
     );
     setSelectOptions(
       $("flatListingFilter"),
-      "全部企业 · All companies",
+      "全部企业",
       [["listed", companies.filter(c => c.ownership === "Public").length]],
       filters.listing,
-      () => "已上市 · Listed",
+      () => "已上市",
     );
     setSelectOptions(
       $("flatEvidenceFilter"),
-      "全部证据 · All evidence",
+      "全部证据",
       [
         ["FDA", companies.filter(c => String(c.regulatory_channels || "").toUpperCase().includes("FDA")).length],
         ["CE", companies.filter(c => String(c.regulatory_channels || "").toUpperCase().includes("CE")).length],

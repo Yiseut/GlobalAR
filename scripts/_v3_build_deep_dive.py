@@ -205,11 +205,11 @@ def main() -> None:
 
     # ---------- dimension registry for the pivot UI ----------
     dims = [
-        {"key": "l1",  "cn": "商业赛道 L1", "en": "Track L1",     "type": "single"},
-        {"key": "l2",  "cn": "子赛道 L2",   "en": "Sub-track L2", "type": "single"},
-        {"key": "m1",  "cn": "材料 L1",     "en": "Material L1",  "type": "single"},
-        {"key": "m2",  "cn": "材料 L2",     "en": "Material L2",  "type": "single"},
-        {"key": "m3",  "cn": "材料 L3",     "en": "Material L3",  "type": "single"},
+        {"key": "l1",  "cn": "商业赛道",     "en": "Track L1",     "type": "single"},
+        {"key": "l2",  "cn": "子赛道",       "en": "Sub-track L2", "type": "single"},
+        {"key": "m1",  "cn": "材料赛道",     "en": "Material L1",  "type": "single"},
+        {"key": "m2",  "cn": "材料细分",     "en": "Material L2",  "type": "single"},
+        {"key": "m3",  "cn": "材料技术",     "en": "Material L3",  "type": "single"},
         {"key": "t",   "cn": "技术/材料源", "en": "Technology",   "type": "single"},
         {"key": "rg",  "cn": "地区",        "en": "Region",       "type": "single"},
         {"key": "cy",  "cn": "国家",        "en": "Country",      "type": "single"},
@@ -217,16 +217,16 @@ def main() -> None:
         {"key": "ro",  "cn": "价值链角色",  "en": "Role",         "type": "single"},
         {"key": "cap", "cn": "资本档",      "en": "Capital",      "type": "single"},
         {"key": "reg", "cn": "监管通道",    "en": "Regulator",    "type": "multi"},
-        {"key": "ind", "cn": "适应症桶",    "en": "Indication",   "type": "multi"},
+        {"key": "ind", "cn": "适应症类别",  "en": "Indication",   "type": "multi"},
     ]
 
     presets = [
         {"id": "A", "name": "赛道 × 子赛道 × 地区 × 所有制",
          "row": "l1", "rowSub": "l2", "col": "rg", "stack": "ow",
          "hint": "每个赛道在各地区的公私结构 — 行可下钻到子赛道"},
-        {"id": "B", "name": "材料 L1 × L2 × L3 × 监管",
+        {"id": "B", "name": "材料赛道 × 细分 × 技术 × 监管",
          "row": "m1", "rowSub": "m2", "col": "reg", "stack": "m3",
-         "hint": "三级材料分类的监管覆盖 — 行下钻到 L2，单元堆叠 L3"},
+         "hint": "三层材料分类的监管覆盖 — 行下钻到细分，格内按技术分层"},
         {"id": "C", "name": "资本档 × 赛道 × 地区",
          "row": "cap", "rowSub": "", "col": "l1", "stack": "rg",
          "hint": "上市资本档在各赛道、各地区的分布"},

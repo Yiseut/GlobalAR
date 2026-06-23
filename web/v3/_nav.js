@@ -86,25 +86,40 @@
     },
   ];
 
+  // —— 左侧 rail 按「用户问句」分组（2026-06-22 重组）——
+  //   市场与环境：行业多大 / 谁在赢 / 需求在哪
+  //   竞争与企业：会被谁替代 / 谁控制谁 / 谁布局最广
+  //   资本与监管：钱往哪流 / 进入门槛
+  //   分析工具：透视引擎与研发组合（下沉为工具区，非洞察主线）
   const railSections = [
     {
-      title: "市场策略",
+      title: "市场与环境",
       items: [
         { id: "overview",   href: "./index.html",            zh: "市场总览", count: null },
         { id: "market-intelligence", href: "./market-intelligence.html", zh: "市场格局分析", countKey: "commercial_claims" },
-        { id: "regulatory", href: "./regulatory-pulse.html", zh: "监管与准入", countKey: "registration_evidence" },
-        { id: "capital",    href: "./capital-map.html",      zh: "资本地图", count: "61" },
-        { id: "custom-analysis", href: "./custom-analysis.html", zh: "自定义分析", count: "3 pivot" },
-        { id: "rd-portfolio", href: "./rd-portfolio.html", zh: "研发与组合", count: "strategy" },
+        { id: "indications",      href: "./indications.html",       zh: "适应症与需求", countKey: "indication_signals" },
       ],
     },
     {
-      title: "产品与竞品",
+      title: "竞争与企业",
       items: [
         { id: "competitive-technology", href: "./competitive-technology.html", zh: "竞品与替代技术", count: "267" },
         { id: "companies",        href: "./companies.html",         zh: "公司关系",   countKey: "company_master" },
         { id: "companies-matrix", href: "./companies-matrix.html",  zh: "企业矩阵",   count: "platform" },
-        { id: "indications",      href: "./indications.html",       zh: "适应症与需求", countKey: "indication_signals" },
+      ],
+    },
+    {
+      title: "资本与监管",
+      items: [
+        { id: "capital",    href: "./capital-map.html",      zh: "资本地图", count: "61" },
+        { id: "regulatory", href: "./regulatory-pulse.html", zh: "监管与准入", countKey: "registration_evidence" },
+      ],
+    },
+    {
+      title: "分析工具",
+      items: [
+        { id: "custom-analysis", href: "./custom-analysis.html", zh: "自定义分析", count: "3 pivot" },
+        { id: "rd-portfolio", href: "./rd-portfolio.html", zh: "研发与组合", count: "strategy" },
         // —— 2026-06-02 evidence / evidence-queue-mdr 入口已下架：
         //     依据 audits/v4_acceptance_self_check_latest.md Overall passed:True
         //     + audits/staging_duplicate_close_20260602_latest.json + MDR/CE policy_closed

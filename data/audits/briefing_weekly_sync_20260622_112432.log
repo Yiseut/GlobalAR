@@ -1,0 +1,17 @@
+
+== Sync briefing daily reports ==
+
+== Rescue full text and verify official sources ==
+
+== Rebuild dashboard data ==
+Traceback (most recent call last):
+  File "E:\shared\Documents\data\global_aesthetics_dashboard\scripts\build_data.py", line 30, in <module>
+    import openpyxl
+ModuleNotFoundError: No module named 'openpyxl'
+Rebuild dashboard data failed with exit code 1
+At E:\shared\Documents\data\global_aesthetics_dashboard\scripts\run_briefing_news_weekly_update.ps1:24 char:5
++     throw "$Name failed with exit code $LASTEXITCODE"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Rebuild dashboa...ith exit code 1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Rebuild dashboard data failed with exit code 1
+ 

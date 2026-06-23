@@ -1,0 +1,9 @@
+
+== Sync briefing daily reports ==
+Sync briefing daily reports failed with exit code -1
+At E:\shared\Documents\data\global_aesthetics_dashboard\scripts\run_briefing_news_weekly_update.ps1:24 char:5
++     throw "$Name failed with exit code $LASTEXITCODE"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Sync briefing d...th exit code -1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Sync briefing daily reports failed with exit code -1
+ 

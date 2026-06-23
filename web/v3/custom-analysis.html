@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>自定义分析 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=20260620-cn-nav" />
+<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
 <style>
   .ca-hero-grid {
     display: grid;
@@ -380,12 +380,12 @@
             自定义分析
             <span class="h1-en">Custom Analysis · three live pivot templates</span>
           </h1>
-          <p class="lede">三张默认透视表保留为范本；行、列、堆叠和度量都可以更换，用同一套变量库重新组合公司、监管、赛道、适应症和地区数据。</p>
+          <p class="lede">给你自己动手的交叉分析工具：三张预设透视表打底，行、列、分组和统计方式都能随意更换，把公司、监管、赛道、适应症和地区数据重新组合来对比。</p>
           <div class="stat-row">
-            <span><span class="num">3</span> 个默认范本</span>
-            <span><span class="num" id="ca-field-count">—</span> 个可选变量</span>
-            <span>CSV / SVG 截图</span>
-            <span>本地保存默认</span>
+            <span><span class="num">3</span> 张预设模板</span>
+            <span><span class="num" id="ca-field-count">—</span> 个可选字段</span>
+            <span>可导出 CSV / 截图</span>
+            <span>可保存配置</span>
           </div>
         </div>
         <aside class="ca-field-library" aria-label="变量库摘要">
@@ -413,11 +413,11 @@
 
 <div class="ca-toast" id="ca-toast" role="status" aria-live="polite"></div>
 
-<script src="../app-data.js?v=20260616"></script>
-<script src="./v3-companies.js?v=20260616"></script>
-<script src="./v3-cross-analysis.js?v=20260616"></script>
-<script src="./v3-company-detail.js?v=20260616"></script>
-<script src="./_nav.js?v=20260620-analysis-order" data-active="custom-analysis"></script>
+<script src="../app-data.js?v=9cb69735"></script>
+<script src="./v3-companies.js?v=8be8ae77"></script>
+<script src="./v3-cross-analysis.js?v=b42da314"></script>
+<script src="./v3-company-detail.js?v=971aba04"></script>
+<script src="./_nav.js?v=d784d46b" data-active="custom-analysis"></script>
 
 <script>
 (function () {
@@ -447,8 +447,8 @@
       dataset: "company",
       title: "国家 × 赛道 × 所有制",
       kicker: "Template 01 · company density",
-      subtitle: "默认复刻“国家-赛道-资本结构”视角，基于上游企业主数据；可切换到地区、上市状态、交易所、产品数分层和母公司。",
-      source: "企业主数据 · 329 upstream companies",
+      subtitle: "默认复刻“国家-赛道-资本结构”视角，基于上游企业库；可切换到地区、上市状态、交易所、产品数分层和母公司。",
+      source: "企业库 · 329 家上游企业",
       defaults: { row: "country", col: "track", stack: "ownership", measure: "companies", rowLimit: 12, colLimit: 10 },
       measures: [
         { key: "companies", label: "公司数" },
@@ -475,7 +475,7 @@
       title: "公司 × 年份 × 监管通道",
       kicker: "Template 02 · regulatory rhythm",
       subtitle: "默认复刻“公司-监管通道-年份”视角，把年度证据按 FDA、CE/EU、NMPA、KFDA 和 Other 拆开。",
-      source: "监管证据时间轴 · V3 cross-analysis lens",
+      source: "监管证据时间轴",
       defaults: { row: "company", col: "year", stack: "regulator", measure: "evidence", rowLimit: 20, colLimit: 12 },
       measures: [
         { key: "evidence", label: "证据数" },
@@ -495,8 +495,8 @@
       dataset: "indication",
       title: "适应症 × 监管 × 区域",
       kicker: "Template 03 · indication evidence",
-      subtitle: "默认复刻“适应症桶-监管机构-区域”视角，把产品证据样本拆成可更换的公司、品牌、国家和产品维度。",
-      source: "适应症证据 · V3 cross-analysis lens",
+      subtitle: "默认复刻“适应症类别-监管机构-区域”视角，把产品证据样本拆成可更换的公司、品牌、国家和产品维度。",
+      source: "适应症证据",
       defaults: { row: "bucket", col: "regulator", stack: "region", measure: "evidence", rowLimit: 12, colLimit: 8 },
       measures: [
         { key: "evidence", label: "证据数" },
@@ -504,7 +504,7 @@
         { key: "products", label: "产品数" },
       ],
       fields: [
-        { key: "bucket", label: "适应症桶" },
+        { key: "bucket", label: "适应症类别" },
         { key: "regulator", label: "监管机构" },
         { key: "region", label: "区域" },
         { key: "company", label: "公司" },
@@ -925,7 +925,7 @@
         <div class="ca-detail-row">
           <strong>${esc(record.company)}</strong>
           <span>${esc([record.country, record.track, record.ownership].filter(Boolean).join(" · "))}</span>
-          <span class="tag">${formatNumber(record.products)} products</span>
+          <span class="tag">${formatNumber(record.products)} 款产品</span>
         </div>
       `;
     }
