@@ -5833,17 +5833,34 @@ main.content {
   grid-template-columns: 180px 1fr 110px;
 }
 .country-distribution .bar-row .label {
-  display: flex;
+  display: block;
+}
+.country-distribution .bar-row .label > div {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: 8px;
   align-items: center;
-  gap: 12px;
+  min-width: 0;
 }
 .country-distribution .bar-row .label .nm {
+  display: contents;
   font-family: var(--f-body);
   font-size: 13.5px;
   color: var(--ink);
 }
+.country-distribution .bar-row .label .geo-flag {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+.country-distribution .bar-row .label .geo-text {
+  grid-column: 2;
+  grid-row: 1;
+}
 .country-distribution .bar-row .label small {
   display: block;
+  grid-column: 2;
+  grid-row: 2;
   margin-top: 2px;
   font-family: var(--f-sans);
   font-size: 10px;
