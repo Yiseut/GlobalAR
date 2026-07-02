@@ -5837,12 +5837,6 @@ main.content {
   align-items: center;
   gap: 12px;
 }
-.country-distribution .bar-row .label .sw {
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-  box-shadow: 0 0 6px currentColor;
-}
 .country-distribution .bar-row .label .nm {
   font-family: var(--f-body);
   font-size: 13.5px;
