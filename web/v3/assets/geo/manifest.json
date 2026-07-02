@@ -1,0 +1,1074 @@
+{
+  "generatedFrom": "E:\\shared\\设计\\素材\\地图",
+  "flags": [
+    {
+      "country": "Albania",
+      "originalLabel": "Albania",
+      "slug": "albania",
+      "file": "assets/geo/flags/albania.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Algeria",
+      "originalLabel": "Algeria",
+      "slug": "algeria",
+      "file": "assets/geo/flags/algeria.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Angola",
+      "originalLabel": "Angola",
+      "slug": "angola",
+      "file": "assets/geo/flags/angola.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Argentina",
+      "originalLabel": "Argentina",
+      "slug": "argentina",
+      "file": "assets/geo/flags/argentina.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Armenia",
+      "originalLabel": "Armenia",
+      "slug": "armenia",
+      "file": "assets/geo/flags/armenia.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Australia",
+      "originalLabel": "Australia",
+      "slug": "australia",
+      "file": "assets/geo/flags/australia.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Austria",
+      "originalLabel": "Austria",
+      "slug": "austria",
+      "file": "assets/geo/flags/austria.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Azerbaijan",
+      "originalLabel": "Azerbaijan",
+      "slug": "azerbaijan",
+      "file": "assets/geo/flags/azerbaijan.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Bahrain",
+      "originalLabel": "Bahrain",
+      "slug": "bahrain",
+      "file": "assets/geo/flags/bahrain.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Bangladesh",
+      "originalLabel": "Bangladesh",
+      "slug": "bangladesh",
+      "file": "assets/geo/flags/bangladesh.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Belgium",
+      "originalLabel": "Belgium",
+      "slug": "belgium",
+      "file": "assets/geo/flags/belgium.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Bolivia",
+      "originalLabel": "Bolivia",
+      "slug": "bolivia",
+      "file": "assets/geo/flags/bolivia.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Brazil",
+      "originalLabel": "Brazil",
+      "slug": "brazil",
+      "file": "assets/geo/flags/brazil.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Bulgaria",
+      "originalLabel": "Bulgary",
+      "slug": "bulgaria",
+      "file": "assets/geo/flags/bulgaria.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Burkina Faso",
+      "originalLabel": "Burkina Faso",
+      "slug": "burkina-faso",
+      "file": "assets/geo/flags/burkina-faso.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Cambodia",
+      "originalLabel": "Cambodia",
+      "slug": "cambodia",
+      "file": "assets/geo/flags/cambodia.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Cameroon",
+      "originalLabel": "Cameroon",
+      "slug": "cameroon",
+      "file": "assets/geo/flags/cameroon.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Canada",
+      "originalLabel": "Canada",
+      "slug": "canada",
+      "file": "assets/geo/flags/canada.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Chad",
+      "originalLabel": "Chad",
+      "slug": "chad",
+      "file": "assets/geo/flags/chad.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Chile",
+      "originalLabel": "Chile",
+      "slug": "chile",
+      "file": "assets/geo/flags/chile.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "China",
+      "originalLabel": "China",
+      "slug": "china",
+      "file": "assets/geo/flags/china.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Colombia",
+      "originalLabel": "Colombia",
+      "slug": "colombia",
+      "file": "assets/geo/flags/colombia.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Costa Rica",
+      "originalLabel": "Costa Rica",
+      "slug": "costa-rica",
+      "file": "assets/geo/flags/costa-rica.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Cote d'Ivoire",
+      "originalLabel": "Ivory Coast",
+      "slug": "cote-d-ivoire",
+      "file": "assets/geo/flags/cote-d-ivoire.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Croatia",
+      "originalLabel": "Croatia",
+      "slug": "croatia",
+      "file": "assets/geo/flags/croatia.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Cuba",
+      "originalLabel": "Cuba",
+      "slug": "cuba",
+      "file": "assets/geo/flags/cuba.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Cyprus",
+      "originalLabel": "Cyprus",
+      "slug": "cyprus",
+      "file": "assets/geo/flags/cyprus.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Czech Republic",
+      "originalLabel": "Czech",
+      "slug": "czech-republic",
+      "file": "assets/geo/flags/czech-republic.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Democratic Republic of the Congo",
+      "originalLabel": "Dem. Rep. Congo",
+      "slug": "democratic-republic-of-the-congo",
+      "file": "assets/geo/flags/democratic-republic-of-the-congo.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Denmark",
+      "originalLabel": "Denmark",
+      "slug": "denmark",
+      "file": "assets/geo/flags/denmark.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Dominican Republic",
+      "originalLabel": "Dominican Republic",
+      "slug": "dominican-republic",
+      "file": "assets/geo/flags/dominican-republic.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Ecuador",
+      "originalLabel": "Ecuador",
+      "slug": "ecuador",
+      "file": "assets/geo/flags/ecuador.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Egypt",
+      "originalLabel": "Egypt",
+      "slug": "egypt",
+      "file": "assets/geo/flags/egypt.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "El Salvador",
+      "originalLabel": "El Salvador",
+      "slug": "el-salvador",
+      "file": "assets/geo/flags/el-salvador.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Estonia",
+      "originalLabel": "Estonia",
+      "slug": "estonia",
+      "file": "assets/geo/flags/estonia.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Ethiopia",
+      "originalLabel": "Ethiopia",
+      "slug": "ethiopia",
+      "file": "assets/geo/flags/ethiopia.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Finland",
+      "originalLabel": "Finland",
+      "slug": "finland",
+      "file": "assets/geo/flags/finland.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "France",
+      "originalLabel": "France",
+      "slug": "france",
+      "file": "assets/geo/flags/france.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Georgia",
+      "originalLabel": "Georgia",
+      "slug": "georgia",
+      "file": "assets/geo/flags/georgia.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Germany",
+      "originalLabel": "Germany",
+      "slug": "germany",
+      "file": "assets/geo/flags/germany.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Ghana",
+      "originalLabel": "Ghana",
+      "slug": "ghana",
+      "file": "assets/geo/flags/ghana.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Greece",
+      "originalLabel": "Greece",
+      "slug": "greece",
+      "file": "assets/geo/flags/greece.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Guatemala",
+      "originalLabel": "Guatemala",
+      "slug": "guatemala",
+      "file": "assets/geo/flags/guatemala.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Guyana",
+      "originalLabel": "Guyana",
+      "slug": "guyana",
+      "file": "assets/geo/flags/guyana.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Haiti",
+      "originalLabel": "Haiti",
+      "slug": "haiti",
+      "file": "assets/geo/flags/haiti.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Honduras",
+      "originalLabel": "Honduras",
+      "slug": "honduras",
+      "file": "assets/geo/flags/honduras.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Hungary",
+      "originalLabel": "Hungary",
+      "slug": "hungary",
+      "file": "assets/geo/flags/hungary.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "Iceland",
+      "originalLabel": "Iceland",
+      "slug": "iceland",
+      "file": "assets/geo/flags/iceland.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "India",
+      "originalLabel": "India",
+      "slug": "india",
+      "file": "assets/geo/flags/india.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Indonesia",
+      "originalLabel": "Indonesia",
+      "slug": "indonesia",
+      "file": "assets/geo/flags/indonesia.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Iran",
+      "originalLabel": "Iran",
+      "slug": "iran",
+      "file": "assets/geo/flags/iran.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Iraq",
+      "originalLabel": "Iraq",
+      "slug": "iraq",
+      "file": "assets/geo/flags/iraq.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Ireland",
+      "originalLabel": "Ireland",
+      "slug": "ireland",
+      "file": "assets/geo/flags/ireland.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Israel",
+      "originalLabel": "Israel",
+      "slug": "israel",
+      "file": "assets/geo/flags/israel.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Italy",
+      "originalLabel": "Italy",
+      "slug": "italy",
+      "file": "assets/geo/flags/italy.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Jamaica",
+      "originalLabel": "Jamaica",
+      "slug": "jamaica",
+      "file": "assets/geo/flags/jamaica.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Japan",
+      "originalLabel": "Japan",
+      "slug": "japan",
+      "file": "assets/geo/flags/japan.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Jordan",
+      "originalLabel": "Jordan",
+      "slug": "jordan",
+      "file": "assets/geo/flags/jordan.png",
+      "source": "Flags.pptx",
+      "slide": 6
+    },
+    {
+      "country": "Kazakhstan",
+      "originalLabel": "Kazakhstan",
+      "slug": "kazakhstan",
+      "file": "assets/geo/flags/kazakhstan.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Kenya",
+      "originalLabel": "Kenya",
+      "slug": "kenya",
+      "file": "assets/geo/flags/kenya.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Kyrgyzstan",
+      "originalLabel": "Kyrgyzstan",
+      "slug": "kyrgyzstan",
+      "file": "assets/geo/flags/kyrgyzstan.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Laos",
+      "originalLabel": "Laos",
+      "slug": "laos",
+      "file": "assets/geo/flags/laos.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Latvia",
+      "originalLabel": "Latvia",
+      "slug": "latvia",
+      "file": "assets/geo/flags/latvia.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Lithuania",
+      "originalLabel": "Lithuania",
+      "slug": "lithuania",
+      "file": "assets/geo/flags/lithuania.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Madagascar",
+      "originalLabel": "Madagascar",
+      "slug": "madagascar",
+      "file": "assets/geo/flags/madagascar.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Malaysia",
+      "originalLabel": "Malaysia",
+      "slug": "malaysia",
+      "file": "assets/geo/flags/malaysia.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Mali",
+      "originalLabel": "Mali",
+      "slug": "mali",
+      "file": "assets/geo/flags/mali.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Mexico",
+      "originalLabel": "Mexico",
+      "slug": "mexico",
+      "file": "assets/geo/flags/mexico.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Moldova",
+      "originalLabel": "Moldova",
+      "slug": "moldova",
+      "file": "assets/geo/flags/moldova.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Montenegro",
+      "originalLabel": "Montenegro",
+      "slug": "montenegro",
+      "file": "assets/geo/flags/montenegro.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Morocco",
+      "originalLabel": "Morocco",
+      "slug": "morocco",
+      "file": "assets/geo/flags/morocco.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Mozambique",
+      "originalLabel": "Mozambique",
+      "slug": "mozambique",
+      "file": "assets/geo/flags/mozambique.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Myanmar",
+      "originalLabel": "Myanmar",
+      "slug": "myanmar",
+      "file": "assets/geo/flags/myanmar.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Nepal",
+      "originalLabel": "Nepal",
+      "slug": "nepal",
+      "file": "assets/geo/flags/nepal.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Netherlands",
+      "originalLabel": "Netherlands",
+      "slug": "netherlands",
+      "file": "assets/geo/flags/netherlands.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "New Zealand",
+      "originalLabel": "New Zeland",
+      "slug": "new-zealand",
+      "file": "assets/geo/flags/new-zealand.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Nicaragua",
+      "originalLabel": "Nicaragua",
+      "slug": "nicaragua",
+      "file": "assets/geo/flags/nicaragua.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Niger",
+      "originalLabel": "Niger",
+      "slug": "niger",
+      "file": "assets/geo/flags/niger.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Nigeria",
+      "originalLabel": "Nigeria",
+      "slug": "nigeria",
+      "file": "assets/geo/flags/nigeria.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "North Korea",
+      "originalLabel": "North Korea",
+      "slug": "north-korea",
+      "file": "assets/geo/flags/north-korea.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Norway",
+      "originalLabel": "Norway",
+      "slug": "norway",
+      "file": "assets/geo/flags/norway.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Oman",
+      "originalLabel": "Oman",
+      "slug": "oman",
+      "file": "assets/geo/flags/oman.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Pakistan",
+      "originalLabel": "Pakistan",
+      "slug": "pakistan",
+      "file": "assets/geo/flags/pakistan.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Panama",
+      "originalLabel": "Panama",
+      "slug": "panama",
+      "file": "assets/geo/flags/panama.png",
+      "source": "Flags.pptx",
+      "slide": 10
+    },
+    {
+      "country": "Papua New Guinea",
+      "originalLabel": "Papua New Guinea",
+      "slug": "papua-new-guinea",
+      "file": "assets/geo/flags/papua-new-guinea.png",
+      "source": "Flags.pptx",
+      "slide": 14
+    },
+    {
+      "country": "Paraguay",
+      "originalLabel": "Paraguay",
+      "slug": "paraguay",
+      "file": "assets/geo/flags/paraguay.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Peru",
+      "originalLabel": "Peru",
+      "slug": "peru",
+      "file": "assets/geo/flags/peru.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Philippines",
+      "originalLabel": "Philippines",
+      "slug": "philippines",
+      "file": "assets/geo/flags/philippines.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Poland",
+      "originalLabel": "Poland",
+      "slug": "poland",
+      "file": "assets/geo/flags/poland.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Portugal",
+      "originalLabel": "Portugal",
+      "slug": "portugal",
+      "file": "assets/geo/flags/portugal.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Qatar",
+      "originalLabel": "Qatar",
+      "slug": "qatar",
+      "file": "assets/geo/flags/qatar.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Romania",
+      "originalLabel": "Romania",
+      "slug": "romania",
+      "file": "assets/geo/flags/romania.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Russia",
+      "originalLabel": "Russia",
+      "slug": "russia",
+      "file": "assets/geo/flags/russia.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Saudi Arabia",
+      "originalLabel": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "file": "assets/geo/flags/saudi-arabia.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Senegal",
+      "originalLabel": "Senegal",
+      "slug": "senegal",
+      "file": "assets/geo/flags/senegal.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Serbia",
+      "originalLabel": "Serbia",
+      "slug": "serbia",
+      "file": "assets/geo/flags/serbia.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Singapore",
+      "originalLabel": "Singapore",
+      "slug": "singapore",
+      "file": "assets/geo/flags/singapore.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Slovakia",
+      "originalLabel": "Slovakia",
+      "slug": "slovakia",
+      "file": "assets/geo/flags/slovakia.png",
+      "source": "Flags.pptx",
+      "slide": 3
+    },
+    {
+      "country": "Slovenia",
+      "originalLabel": "Slovenia",
+      "slug": "slovenia",
+      "file": "assets/geo/flags/slovenia.png",
+      "source": "Flags.pptx",
+      "slide": 4
+    },
+    {
+      "country": "South Africa",
+      "originalLabel": "South Africa",
+      "slug": "south-africa",
+      "file": "assets/geo/flags/south-africa.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "South Korea",
+      "originalLabel": "South Korea",
+      "slug": "south-korea",
+      "file": "assets/geo/flags/south-korea.png",
+      "source": "Flags.pptx",
+      "slide": 7
+    },
+    {
+      "country": "Spain",
+      "originalLabel": "Spain",
+      "slug": "spain",
+      "file": "assets/geo/flags/spain.png",
+      "source": "Flags.pptx",
+      "slide": 4
+    },
+    {
+      "country": "Sri Lanka",
+      "originalLabel": "Sri Lanka",
+      "slug": "sri-lanka",
+      "file": "assets/geo/flags/sri-lanka.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Sudan",
+      "originalLabel": "Sudan",
+      "slug": "sudan",
+      "file": "assets/geo/flags/sudan.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Suriname",
+      "originalLabel": "Suriname",
+      "slug": "suriname",
+      "file": "assets/geo/flags/suriname.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Sweden",
+      "originalLabel": "Sweden",
+      "slug": "sweden",
+      "file": "assets/geo/flags/sweden.png",
+      "source": "Flags.pptx",
+      "slide": 4
+    },
+    {
+      "country": "Switzerland",
+      "originalLabel": "Switzerland",
+      "slug": "switzerland",
+      "file": "assets/geo/flags/switzerland.png",
+      "source": "Flags.pptx",
+      "slide": 4
+    },
+    {
+      "country": "Syria",
+      "originalLabel": "Syria",
+      "slug": "syria",
+      "file": "assets/geo/flags/syria.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Tajikistan",
+      "originalLabel": "Tajikistan",
+      "slug": "tajikistan",
+      "file": "assets/geo/flags/tajikistan.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Tanzania",
+      "originalLabel": "Tanzania",
+      "slug": "tanzania",
+      "file": "assets/geo/flags/tanzania.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Thailand",
+      "originalLabel": "Thailand",
+      "slug": "thailand",
+      "file": "assets/geo/flags/thailand.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Turkey",
+      "originalLabel": "Turkey",
+      "slug": "turkey",
+      "file": "assets/geo/flags/turkey.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Turkmenistan",
+      "originalLabel": "Turkmenistan",
+      "slug": "turkmenistan",
+      "file": "assets/geo/flags/turkmenistan.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Uganda",
+      "originalLabel": "Uganda",
+      "slug": "uganda",
+      "file": "assets/geo/flags/uganda.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    },
+    {
+      "country": "Ukraine",
+      "originalLabel": "Ukraine",
+      "slug": "ukraine",
+      "file": "assets/geo/flags/ukraine.png",
+      "source": "Flags.pptx",
+      "slide": 4
+    },
+    {
+      "country": "United Kingdom",
+      "originalLabel": "England",
+      "slug": "united-kingdom",
+      "file": "assets/geo/flags/united-kingdom.png",
+      "source": "Flags.pptx",
+      "slide": 2
+    },
+    {
+      "country": "United States",
+      "originalLabel": "USA",
+      "slug": "united-states",
+      "file": "assets/geo/flags/united-states.png",
+      "source": "Flags.pptx",
+      "slide": 10,
+      "note": "Fallback for a non-standard text container in the source deck."
+    },
+    {
+      "country": "Uruguay",
+      "originalLabel": "Uruguay",
+      "slug": "uruguay",
+      "file": "assets/geo/flags/uruguay.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Uzbekistan",
+      "originalLabel": "Uzbekistan",
+      "slug": "uzbekistan",
+      "file": "assets/geo/flags/uzbekistan.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Venezuela",
+      "originalLabel": "Venezuela",
+      "slug": "venezuela",
+      "file": "assets/geo/flags/venezuela.png",
+      "source": "Flags.pptx",
+      "slide": 12
+    },
+    {
+      "country": "Vietnam",
+      "originalLabel": "Vietnam",
+      "slug": "vietnam",
+      "file": "assets/geo/flags/vietnam.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Yemen",
+      "originalLabel": "Yemen",
+      "slug": "yemen",
+      "file": "assets/geo/flags/yemen.png",
+      "source": "Flags.pptx",
+      "slide": 8
+    },
+    {
+      "country": "Zambia",
+      "originalLabel": "Zambia",
+      "slug": "zambia",
+      "file": "assets/geo/flags/zambia.png",
+      "source": "Flags.pptx",
+      "slide": 15
+    }
+  ],
+  "maps": [
+    {
+      "key": "world",
+      "label": "World map",
+      "file": "assets/geo/maps/world.svg",
+      "source": "World_maps.pptx",
+      "slide": 1,
+      "paths": 253
+    },
+    {
+      "key": "asia",
+      "label": "Asia",
+      "file": "assets/geo/maps/asia.svg",
+      "source": "Asia.pptx",
+      "slide": 1,
+      "paths": 50
+    },
+    {
+      "key": "europe",
+      "label": "Europe",
+      "file": "assets/geo/maps/europe.svg",
+      "source": "Europe.pptx",
+      "slide": 1,
+      "paths": 262
+    },
+    {
+      "key": "africa",
+      "label": "Africa",
+      "file": "assets/geo/maps/africa.svg",
+      "source": "Africa.pptx",
+      "slide": 1,
+      "paths": 52
+    },
+    {
+      "key": "north-america",
+      "label": "North America",
+      "file": "assets/geo/maps/north-america.svg",
+      "source": "North America.pptx",
+      "slide": 1,
+      "paths": 62
+    },
+    {
+      "key": "south-america",
+      "label": "South America",
+      "file": "assets/geo/maps/south-america.svg",
+      "source": "South_America.pptx",
+      "slide": 1,
+      "paths": 15
+    },
+    {
+      "key": "oceania",
+      "label": "Oceania",
+      "file": "assets/geo/maps/oceania.svg",
+      "source": "Oceania.pptx",
+      "slide": 1,
+      "paths": 8
+    },
+    {
+      "key": "continents",
+      "label": "Continents",
+      "file": "assets/geo/maps/continents.svg",
+      "source": "Continents.pptx",
+      "slide": 1,
+      "paths": 262
+    }
+  ],
+  "aliases": {
+    "US": "United States",
+    "USA": "United States",
+    "United States of America": "United States",
+    "UK": "United Kingdom",
+    "Britain": "United Kingdom",
+    "Great Britain": "United Kingdom",
+    "Korea": "South Korea",
+    "Republic of Korea": "South Korea",
+    "Korea, Republic of": "South Korea",
+    "Chinese Taipei": "Taiwan",
+    "Czechia": "Czech Republic",
+    "Turkiye": "Turkey",
+    "UAE": "United Arab Emirates",
+    "Cote d’Ivoire": "Cote d'Ivoire",
+    "Côte d'Ivoire": "Cote d'Ivoire",
+    "Democratic Republic Congo": "Democratic Republic of the Congo"
+  }
+}

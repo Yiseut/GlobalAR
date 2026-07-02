@@ -6710,3 +6710,103 @@ main.content {
 .leaflet-interactive.flat-city-dot:hover {
   filter: drop-shadow(0 2px 6px rgba(60, 50, 65, 0.30));
 }
+
+.geo-flag {
+  display: inline-block;
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid rgba(62, 51, 58, 0.16);
+  box-shadow: 0 3px 8px rgba(62, 51, 58, 0.08);
+  background: rgba(255, 252, 245, 0.9);
+  flex: 0 0 auto;
+}
+
+.geo-flag.is-small {
+  width: 20px;
+  height: 13px;
+}
+
+.geo-country-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.geo-country-name .geo-text {
+  min-width: 0;
+}
+
+.geo-map-thumb {
+  width: 100%;
+  min-height: 180px;
+  background: rgba(255, 252, 245, 0.56);
+  border: 1px solid rgba(62, 51, 58, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.geo-map-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 0.72;
+  mix-blend-mode: multiply;
+}
+
+.mi-country-map-strip {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.28fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  margin: 8px 0 18px;
+  padding: 12px 14px;
+  border: 1px solid rgba(80, 60, 70, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 252, 245, 0.48);
+}
+
+.mi-country-map-strip .geo-map-thumb {
+  min-height: 128px;
+}
+
+.mi-country-map-copy {
+  min-width: 0;
+}
+
+.mi-country-map-copy .stamp {
+  display: block;
+  color: var(--subtle);
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.mi-country-map-copy h4 {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-family: var(--f-display-cn);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.mi-country-map-copy p {
+  margin: 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .mi-country-map-strip {
+    grid-template-columns: 1fr;
+  }
+}

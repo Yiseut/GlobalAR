@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>市场格局分析 · v3</title>
 <link rel="icon" href="data:," />
-<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
+<link rel="stylesheet" href="./styles.css?v=32cd615d" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
 </head>
 <body>
@@ -243,6 +243,7 @@
           </div>
           <div class="mi-cube-control" id="mi-country-selector"></div>
         </div>
+        <div class="mi-country-map-strip" id="mi-country-map-strip"></div>
         <div class="mi-country-grid" id="mi-country-profile-grid"></div>
       </div>
       <div class="mi-analysis-grid mi-country-layout">
@@ -562,6 +563,7 @@
 <script src="../app-data.js?v=9cb69735"></script>
 <script src="./v3-market-intelligence.js?v=454faa20"></script>
 <script src="./v3-business-model-signals.js?v=a98e122f"></script>
+<script src="./v3-geo-assets.js?v=ea2a74f8"></script>
 <script src="./_nav.js?v=d784d46b" data-active="market-intelligence"></script>
 <style>
   .mi-hero .lede { max-width: 760px; }
@@ -2664,6 +2666,27 @@
       return zh ? `${zh} ${country}` : country;
     }
 
+    function countryFlag(country, className = "geo-flag is-small") {
+      return window.V3_GEO_ASSETS?.flagHTML?.(country, className) || "";
+    }
+
+    function countryNameWithFlag(country, label) {
+      const flag = countryFlag(country);
+      return `<span class="geo-country-name">${flag}<span class="geo-text">${esc(label || countryDisplay(country))}</span></span>`;
+    }
+
+    function regionMapKey(country, region) {
+      const c = canonicalCountry(country);
+      const r = String(region || "").toLowerCase();
+      if (["USA", "United States", "Canada", "Mexico"].includes(c) || r.includes("north america")) return "north-america";
+      if (["Brazil", "Argentina", "Chile", "Colombia", "Peru"].includes(c) || r.includes("latin") || r.includes("south america")) return "south-america";
+      if (["Italy", "France", "Switzerland", "Spain", "Germany", "UK", "United Kingdom", "Poland", "Czech Republic"].includes(c) || r.includes("europe")) return "europe";
+      if (["Australia", "New Zealand"].includes(c) || r.includes("oceania")) return "oceania";
+      if (["South Africa", "Egypt", "Morocco"].includes(c) || r.includes("africa")) return "africa";
+      if (["South Korea", "Japan", "China", "Israel", "United Arab Emirates", "Saudi Arabia", "Singapore", "Thailand", "India"].includes(c) || r.includes("asia") || r.includes("middle east")) return "asia";
+      return "world";
+    }
+
     function companyCountry(company) {
       return canonicalCountry(company.country);
     }
@@ -2922,11 +2945,12 @@
       const selectorRows = (topCompanyCountries.length ? topCompanyCountries.slice(0, 15).map(row => canonicalCountry(row.sourceCountry || row.country)) : focusCountries)
         .filter((country, index, rows) => country && rows.indexOf(country) === index);
       if (!selectorRows.includes(state.country)) state.country = selectorRows[0] || "South Korea";
+      const selectedStats = countryStats(state.country);
 
       const selector = document.getElementById("mi-country-selector");
       if (selector) {
         selector.innerHTML = selectorRows.map(country => `
-          <button type="button" data-country="${esc(country)}" class="${country === state.country ? "active" : ""}">${esc(countryZh[country] || country)}</button>
+          <button type="button" data-country="${esc(country)}" class="${country === state.country ? "active" : ""}">${countryNameWithFlag(country, countryZh[country] || country)}</button>
         `).join("");
         selector.querySelectorAll("[data-country]").forEach(button => {
           button.addEventListener("click", () => {
@@ -2936,6 +2960,20 @@
         });
       }
 
+      const mapStrip = document.getElementById("mi-country-map-strip");
+      if (mapStrip) {
+        const key = regionMapKey(selectedStats.country, selectedStats.region);
+        const url = window.V3_GEO_ASSETS?.mapUrl?.(key);
+        mapStrip.innerHTML = url ? `
+          <div class="geo-map-thumb"><img src="${esc(url)}" alt="${esc(selectedStats.region || selectedStats.country)} map" loading="lazy" decoding="async"></div>
+          <div class="mi-country-map-copy">
+            <span class="stamp">Regional context</span>
+            <h4>${countryNameWithFlag(selectedStats.country, selectedStats.label)}</h4>
+            <p>${esc(selectedStats.region || "Global")} 底图只作为国家画像的空间参照；商业判断仍以后面的治疗量、渠道密度、公司收入和来源状态为主。</p>
+          </div>
+        ` : "";
+      }
+
       const profileGrid = document.getElementById("mi-country-profile-grid");
       if (profileGrid) {
         profileGrid.innerHTML = focusCountries.map(country => {
@@ -2943,7 +2981,7 @@
           const topNames = stats.topCompanies.map(row => row.company || row.name).filter(Boolean).join(" / ");
           return `
             <article class="mi-country-card ${stats.country === state.country ? "is-selected" : ""}">
-              <div class="topline"><span>${esc(stats.label)}</span><span>${esc(stats.region || "—")}</span></div>
+              <div class="topline"><span>${countryNameWithFlag(stats.country, stats.label)}</span><span>${esc(stats.region || "—")}</span></div>
               <h3>${esc(segmentDisplay(stats.primaryTrack))}</h3>
               <div class="value-row">
                 <span><strong>${fmt(stats.companyCount)}</strong>企业</span>
@@ -3862,7 +3900,7 @@
         return `
           <div class="mi-coverage-row">
             <div class="country-label">
-              <strong>#${esc(row.rank)} ${esc(row.country)}</strong>
+              <strong>#${esc(row.rank)} ${countryNameWithFlag(row.sourceCountry || row.country, row.country)}</strong>
               <span>${fmt(row.companyCount || 0)} 家公司 · ${fmt(row.sourceCount || 0)} 个来源</span>
             </div>
             <span class="mi-coverage-track"><span class="${esc(tone)}" style="--w:${width}%;"></span></span>
@@ -3915,7 +3953,7 @@
         return `
           <article class="mi-geo-card">
             <div class="topline">
-              <span class="country">${esc(row.country)}</span>
+              <span class="country">${countryNameWithFlag(row.country, row.country)}</span>
               <span class="mi-pill ${hardCount ? "hard" : (qaCount ? "qa" : "proxy")}">${esc(positioning)}</span>
             </div>
             <h3>${esc(sourceNames.slice(0, 2).join(" / ") || "来源待确认")}</h3>
@@ -3940,7 +3978,7 @@
           const tone = coverageTierTone(row.coverageTier);
           return `
             <tr>
-              <td><strong>#${esc(row.rank)} ${esc(row.country)}</strong><br><span>${esc(row.sourceCountry || row.country)}</span></td>
+              <td><strong>#${esc(row.rank)} ${countryNameWithFlag(row.sourceCountry || row.country, row.country)}</strong><br><span>${esc(row.sourceCountry || row.country)}</span></td>
               <td class="num">${fmt(row.companyCount || 0)}</td>
               <td><span class="mi-pill ${esc(tone)}">${esc(coverageTierLabel(row.coverageTier))}</span><br><span>${fmt(row.sourceCount || 0)} 个来源 · ${fmt(row.downloadedArtifacts || 0)} 个文件</span></td>
               <td><strong>${esc(sourceNames || "暂无")}</strong><br><span>${roleLabels || "—"}</span></td>
@@ -3962,7 +4000,7 @@
           ];
           return `
             <tr>
-              <td><strong>#${esc(row.rank)} ${esc(row.country)}</strong><br><span>${esc(row.sourceCountry || row.country)}</span></td>
+              <td><strong>#${esc(row.rank)} ${countryNameWithFlag(row.sourceCountry || row.country, row.country)}</strong><br><span>${esc(row.sourceCountry || row.country)}</span></td>
               <td><span class="mi-pill ${esc(tone)}">${esc(proxyStatusLabel(row.proxyStatus))}</span><br><span>${esc(coverageTierLabel(row.coverageTier))}</span></td>
               <td class="num">${fmt(row.companyCount || 0)}</td>
               <td><strong>${esc((row.sourceNames || []).slice(0, 2).join(" / ") || "暂无")}</strong><br><span>${esc(sourceBits.join(" · "))}</span></td>

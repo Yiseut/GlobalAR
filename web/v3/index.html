@@ -6,7 +6,7 @@
 <title>全球医美情报 · 总览 · v3</title>
 <link rel="icon" href="data:," />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
-<link rel="stylesheet" href="./styles.css?v=f6487dd7" />
+<link rel="stylesheet" href="./styles.css?v=32cd615d" />
 <style>
   .overview-sunburst-card {
     overflow: visible;
@@ -453,6 +453,7 @@
 <script src="./v3-product-tree.js?v=a705b27d"></script>
 <script src="./v3-company-detail.js?v=971aba04"></script>
 <script src="./v3-chart-interact.js?v=4aeb8e38"></script>
+<script src="./v3-geo-assets.js?v=ea2a74f8"></script>
 <!-- Vendor three.js + globe.gl locally — unpkg.com is 40+s from CN networks.
      Falls back to unpkg / jsdelivr if the local file ever disappears. -->
 <script>
@@ -739,6 +740,7 @@
     const data = window.GLOBAL_AESTHETICS_DATA;
     const wrap = document.getElementById("country-bars");
     if (!data || !data.geo_companies || !wrap) return;
+    const geoAssets = window.V3_GEO_ASSETS;
 
     const TRACK_COLORS = {
       "EBD":"#8E3A3A","Injectables":"#6B5A75","Skincare":"#D9AE91",
@@ -768,12 +770,13 @@
     wrap.innerHTML = top10.map((c, i) => {
       const color = TRACK_COLORS[c.dominantTrack] || "#888";
       const pct = (c.products / maxProducts) * 100;
+      const flag = geoAssets?.flagHTML?.(c.country, "geo-flag is-small") || "";
       return `
         <div class="bar-row" data-country="${escapeHtmlCD(c.country)}" data-v3-interactive="1">
           <div class="label">
             <span class="sw" style="background:${color}; color:${color};"></span>
             <div>
-              <span class="nm">${escapeHtmlCD(c.country)}</span>
+              <span class="nm geo-country-name">${flag}<span class="geo-text">${escapeHtmlCD(c.country)}</span></span>
               <small>${escapeHtmlCD(c.region)} · 主赛道 ${escapeHtmlCD(c.dominantTrack)}</small>
             </div>
           </div>
