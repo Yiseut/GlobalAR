@@ -1,5 +1,5 @@
 window.V3_OPERATIONS_DATA = {
-  "generated_at": "2026-06-23T21:03:47+08:00",
+  "generated_at": "2026-07-06T14:04:14+08:00",
   "source": {
     "database": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
     "guardrail": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\database_guardrail_validation_latest.json",
@@ -9,9 +9,9 @@ window.V3_OPERATIONS_DATA = {
     "overall_assessment": "Ready to share",
     "failure_count": 0,
     "warning_count": 6,
-    "review_backlog_total": 146,
-    "entity_resolution_backlog": 10,
-    "registration_review_backlog": 115,
+    "review_backlog_total": 139,
+    "entity_resolution_backlog": 9,
+    "registration_review_backlog": 109,
     "aesthetics_revenue_pct_backlog": 21,
     "affiliate_trace_rows": 6
   },
@@ -88,9 +88,9 @@ window.V3_OPERATIONS_DATA = {
   },
   "queues": {
     "entity_resolution": {
-      "rows": 10,
+      "rows": 9,
       "listed_blank_company_id": 6,
-      "financial_blank_company_id": 4,
+      "financial_blank_company_id": 3,
       "by_source_table": {
         "listed_company_batch": 6,
         "company_financial_metrics": 4
@@ -339,7 +339,7 @@ window.V3_OPERATIONS_DATA = {
       ]
     },
     "registration_review": {
-      "rows": 115,
+      "rows": 109,
       "by_review_status": {
         "manual_new_product_candidate": 58,
         "needs_review": 62
@@ -880,9 +880,9 @@ window.V3_OPERATIONS_DATA = {
     }
   },
   "build_delta": {
-    "briefing_update_candidates": 551,
+    "briefing_update_candidates": 856,
     "briefing_verified_update_events": 41,
-    "briefing_fulltext_rescue": 121,
+    "briefing_fulltext_rescue": 158,
     "briefing_product_gap_candidates": 0,
     "raw_products": 1038,
     "active_products": 943,
