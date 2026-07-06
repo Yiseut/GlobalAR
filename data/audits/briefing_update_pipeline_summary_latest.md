@@ -1,14 +1,14 @@
 # Briefing Update Pipeline Summary
 
-Generated: 2026-06-22T11:30:38+08:00
+Generated: 2026-07-06T09:33:46+08:00
 
 ## Results
 
-- Full-text fetch attempted: 0; rescued: 3; still needing rescue: 10.
+- Full-text fetch attempted: 21; rescued: 3; still needing rescue: 18.
 - Promoted briefing candidates: 41.
 - Verified but waiting for master mapping: 0.
 - Rejected after official-source review: 49.
-- Still unverified after this pass: 194.
+- Still unverified after this pass: 379.
 - Verified update event rows: 56.
 - Product/company gap rows: 0.
 

@@ -1,14 +1,14 @@
 {
-  "ran_at": "2026-06-23T14:01:23+08:00",
+  "ran_at": "2026-07-06T14:01:52+08:00",
   "history_path": "E:\\shared\\code\\briefing_v6\\data\\wechat_plan_b_history.jsonl",
-  "curated_urls_total": 124,
+  "curated_urls_total": 150,
   "blocked_urls": 0,
-  "candidate_rows_total": 551,
+  "candidate_rows_total": 856,
   "rows_promoted_to_user_curated": 0,
   "promoted_by_event": {},
   "status_before": {
-    "candidate_unverified": 207,
-    "user_curated": 209,
+    "candidate_unverified": 379,
+    "user_curated": 342,
     "promoted": 41,
     "rejected_product_mismatch": 12,
     "orphan_product_id_unlinked": 28,
@@ -16,8 +16,8 @@
     "excluded_scope_unlinked": 17
   },
   "status_after": {
-    "candidate_unverified": 207,
-    "user_curated": 209,
+    "candidate_unverified": 379,
+    "user_curated": 342,
     "promoted": 41,
     "rejected_product_mismatch": 12,
     "orphan_product_id_unlinked": 28,
