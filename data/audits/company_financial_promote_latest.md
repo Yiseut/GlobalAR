@@ -1,19 +1,26 @@
 # Company financial promotion
 
-- Generated: 2026-06-15T08:18:03+08:00
+- Generated: 2026-06-29T13:08:14+08:00
 - Source workbook: `E:\shared\Documents\data\全球医美企业库_标准化版v4.xlsx`
-- Backup: `E:\shared\Documents\data\全球医美企业库_标准化版v4_backup_before_company_financials_20260615_081803.xlsx`
-- Updated companies: 21
-- Matched companies with no blank target fields: 40
+- Backup: `E:\shared\Documents\data\全球医美企业库_标准化版v4_backup_before_company_financials_20260629_130814.xlsx`
+- Updated companies: 59
+- Matched companies with no blank target fields: 2
 
 ## Field Fill Counts
 
+- Market_Captured_At: 57
+- Market_Refreshed_At: 55
+- Market_Day_Change_Pct: 50
+- Market_Source_URL: 49
+- Market_Price: 47
 - Market_Cap_Date: 16
 - Financial_Refreshed_At: 16
-- Market_Captured_At: 7
-- Market_Refreshed_At: 7
-- Market_Price: 1
-- Market_Day_Change_Pct: 1
+- Market_Cap_USD_M: 11
+- PE_Ratio: 8
+- PB_Ratio: 8
+- PS_Ratio: 7
+- Market_Currency: 1
+- Financial_Source_URL: 1
 
 ## Coverage After Promotion
 
