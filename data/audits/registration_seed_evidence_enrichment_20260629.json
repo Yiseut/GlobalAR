@@ -1,18 +1,49 @@
 {
-  "generated_at": "2026-07-06T10:34:27+08:00",
-  "reviewed_by": "codex_registration_seed_enrichment_20260706",
-  "source_csv_backup": "data\\manual_official_indication_evidence.backup_before_seed_enrichment_20260706_103427.csv",
-  "resolved_count": 1,
-  "remaining_count": 51,
+  "generated_at": "2026-06-29T13:20:23+08:00",
+  "reviewed_by": "codex_registration_seed_enrichment_20260629",
+  "source_csv_backup": "data\\manual_official_indication_evidence.backup_before_seed_enrichment_20260629_131752.csv",
+  "resolved_count": 5,
+  "remaining_count": 52,
   "resolved_rows": [
     {
-      "seed_record_id": "REC_0334",
-      "company": "Beauty Health",
-      "brand": "HydraFacial Syndeo / Elite",
-      "jurisdiction": "US",
-      "registration_no": "3016453096",
-      "source_url": "https://api.fda.gov/device/registrationlisting.json?search=proprietary_name:%22HYDRAFACIAL%22&limit=10",
-      "description": "Brush, Dermabrasion, Powered; product code GFE; 21 CFR 878.4820; Class I."
+      "seed_record_id": "REC_0094",
+      "company": "Allergan",
+      "brand": "BOTOX Cosmetic",
+      "jurisdiction": "EU",
+      "registration_no": "FR/H/0230/001; PA1824/020/001",
+      "source_url": "https://www.medicines.ie/medicines/vistabel-4-allergan-units-0-1-ml-powder-for-solution-for-injection-34207/license-info"
+    },
+    {
+      "seed_record_id": "REC_0387",
+      "company": "Allergan",
+      "brand": "Kybella / Belkyra",
+      "jurisdiction": "EU",
+      "registration_no": "SE/H/1547/001",
+      "source_url": "https://docetp.mpa.se/LMF/Belkyra%20solution%20for%20injection%20ENG%20sPAR_09001bee807a0b0b.pdf"
+    },
+    {
+      "seed_record_id": "REC_0211",
+      "company": "Galderma",
+      "brand": "Dysport / Azzalure",
+      "jurisdiction": "EU",
+      "registration_no": "FR/H/0341/001; PL 06958/0031",
+      "source_url": "https://www.medicines.org.uk/emc/product/6584/smpc"
+    },
+    {
+      "seed_record_id": "REC_0395",
+      "company": "Hugel",
+      "brand": "Letybo / Botulax",
+      "jurisdiction": "EU",
+      "registration_no": "PL 29863/0002",
+      "source_url": "https://www.medicines.org.uk/emc/product/13707/smpc"
+    },
+    {
+      "seed_record_id": "REC_0772",
+      "company": "Merz",
+      "brand": "Xeomin / Bocouture",
+      "jurisdiction": "EU",
+      "registration_no": "PL 29978/0002; PL 29978/0005",
+      "source_url": "https://www.medicines.org.uk/emc/product/600/smpc"
     }
   ],
   "remaining_rows": [
@@ -45,6 +76,13 @@
       "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
     },
     {
+      "seed_record_id": "REC_1054",
+      "company": "Aezian",
+      "brand": "aesPlla",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
       "seed_record_id": "REC_0094",
       "company": "Allergan",
       "brand": "BOTOX Cosmetic",
@@ -69,13 +107,20 @@
       "seed_record_id": "REC_0044",
       "company": "Aquavit Pharmaceuticals",
       "brand": "Aquagold Fine Touch",
-      "jurisdiction": "US",
-      "reason": "FDA warning-letter evidence discusses AQUAGOLD fine touch listing/product code GAA, but no exact FDA establishment registration/listing number or 510(k) number was confirmed."
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
     },
     {
       "seed_record_id": "REC_0044",
       "company": "Aquavit Pharmaceuticals",
       "brand": "Aquagold Fine Touch",
+      "jurisdiction": "US",
+      "reason": "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0453",
+      "company": "Aquavit Pharmaceuticals",
+      "brand": "Microchannel Technology",
       "jurisdiction": "EU",
       "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
     },
@@ -84,21 +129,14 @@
       "company": "Aquavit Pharmaceuticals",
       "brand": "Microchannel Technology",
       "jurisdiction": "US",
-      "reason": "FDA warning-letter evidence says the A.S.A.P. Micro Infusion System was not listed; no exact FDA listing or clearance number was confirmed for the seed row."
+      "reason": "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass."
     },
     {
-      "seed_record_id": "REC_0453",
-      "company": "Aquavit Pharmaceuticals",
-      "brand": "Microchannel Technology",
-      "jurisdiction": "EU",
-      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "REC_0334",
-      "company": "Beauty Health",
-      "brand": "HydraFacial Syndeo / Elite",
-      "jurisdiction": "EU",
-      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+      "seed_record_id": "REC_0319",
+      "company": "BR Pharm",
+      "brand": "HP Cell Vitaran",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
     {
       "seed_record_id": "REC_0334",
@@ -108,11 +146,18 @@
       "reason": "No public NMPA registration number or jurisdiction-matched official wording confirmed in this pass."
     },
     {
-      "seed_record_id": "REC_0319",
-      "company": "BR Pharm",
-      "brand": "HP Cell Vitaran",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+      "seed_record_id": "REC_0334",
+      "company": "Beauty Health",
+      "brand": "HydraFacial Syndeo / Elite",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0334",
+      "company": "Beauty Health",
+      "brand": "HydraFacial Syndeo / Elite",
+      "jurisdiction": "US",
+      "reason": "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass."
     },
     {
       "seed_record_id": "REC_0932",
@@ -150,6 +195,13 @@
       "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
     },
     {
+      "seed_record_id": "REC_0636",
+      "company": "DFK Biolab",
+      "brand": "S-DNA",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
       "seed_record_id": "REC_0202",
       "company": "Daejoo",
       "brand": "Dr. DMA / PDRN Injection",
@@ -178,13 +230,6 @@
       "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
     },
     {
-      "seed_record_id": "REC_0636",
-      "company": "DFK Biolab",
-      "brand": "S-DNA",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
       "seed_record_id": "REC_0964",
       "company": "Dongkook Pharma",
       "brand": "Elravie",
@@ -192,9 +237,16 @@
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
     {
-      "seed_record_id": "REC_0211",
-      "company": "Galderma",
-      "brand": "Dysport / Azzalure",
+      "seed_record_id": "REC_1055",
+      "company": "FacePharm Korea",
+      "brand": "Etrebelle",
+      "jurisdiction": "EU",
+      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1055",
+      "company": "FacePharm Korea",
+      "brand": "Etrebelle",
       "jurisdiction": "KR",
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
@@ -216,6 +268,13 @@
       "seed_record_id": "REC_0294",
       "company": "GCS",
       "brand": "GCS",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_0211",
+      "company": "Galderma",
+      "brand": "Dysport / Azzalure",
       "jurisdiction": "KR",
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
@@ -248,13 +307,6 @@
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
     {
-      "seed_record_id": "REC_0389",
-      "company": "Jaysean / J Syeon",
-      "brand": "La Pomme",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
       "seed_record_id": "REC_0619",
       "company": "JDBIO",
       "brand": "Richesse",
@@ -262,9 +314,37 @@
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
     {
+      "seed_record_id": "REC_0389",
+      "company": "Jaysean / J Syeon",
+      "brand": "La Pomme",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
       "seed_record_id": "REC_0143",
       "company": "Koru Pharma",
       "brand": "Crystal / Avalon",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1051",
+      "company": "Meamo Labs",
+      "brand": "BEAUX",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "REC_1052",
+      "company": "Meamo Labs",
+      "brand": "BEAUY",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
+      "seed_record_id": "TOPLINE_MEDYTOX_NEWLUX_20260530",
+      "company": "Medytox",
+      "brand": "NEWLUX",
       "jurisdiction": "KR",
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
@@ -311,6 +391,13 @@
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
     },
     {
+      "seed_record_id": "REC_1053",
+      "company": "USCAREPHARM",
+      "brand": "ERBELLA",
+      "jurisdiction": "KR",
+      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
+    },
+    {
       "seed_record_id": "REC_0721",
       "company": "Ultra V",
       "brand": "Ultra V",
@@ -323,87 +410,50 @@
       "brand": "POWER COL-TRA",
       "jurisdiction": "KR",
       "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "REC_1051",
-      "company": "Meamo Labs",
-      "brand": "BEAUX",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "REC_1052",
-      "company": "Meamo Labs",
-      "brand": "BEAUY",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "REC_1053",
-      "company": "USCAREPHARM",
-      "brand": "ERBELLA",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "REC_1054",
-      "company": "Aezian",
-      "brand": "aesPlla",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "REC_1055",
-      "company": "FacePharm Korea",
-      "brand": "Etrebelle",
-      "jurisdiction": "EU",
-      "reason": "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "REC_1055",
-      "company": "FacePharm Korea",
-      "brand": "Etrebelle",
-      "jurisdiction": "KR",
-      "reason": "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass."
-    },
-    {
-      "seed_record_id": "TOPLINE_MEDYTOX_NEWLUX_20260530",
-      "company": "Medytox",
-      "brand": "NEWLUX",
-      "jurisdiction": "KR",
-      "reason": "Medytox official product page confirms NEWLUX indication and points to MFDS, but no public MFDS permit number was confirmed."
     }
   ],
   "unresolved_reason_counts": {
     "No public CE certificate, EU/NCA authorisation number, or jurisdiction-matched official wording confirmed in this pass.": 12,
-    "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass.": 34,
+    "No public MFDS permit number and exact jurisdiction-matched official wording confirmed in this pass.": 35,
     "No public NMPA registration number or jurisdiction-matched official wording confirmed in this pass.": 2,
-    "FDA warning-letter evidence discusses AQUAGOLD fine touch listing/product code GAA, but no exact FDA establishment registration/listing number or 510(k) number was confirmed.": 1,
-    "FDA warning-letter evidence says the A.S.A.P. Micro Infusion System was not listed; no exact FDA listing or clearance number was confirmed for the seed row.": 1,
-    "Medytox official product page confirms NEWLUX indication and points to MFDS, but no public MFDS permit number was confirmed.": 1
+    "No public FDA clearance/listing number or jurisdiction-matched official wording confirmed in this pass.": 3
   },
   "sources_used": [
     {
-      "label": "openFDA device registrationlisting API - HydraFacial search",
-      "url": "https://api.fda.gov/device/registrationlisting.json?search=proprietary_name:%22HYDRAFACIAL%22&limit=10"
+      "label": "Swedish MPA Belkyra Summary PAR",
+      "url": "https://docetp.mpa.se/LMF/Belkyra%20solution%20for%20injection%20ENG%20sPAR_09001bee807a0b0b.pdf"
     },
     {
-      "label": "FDA warning letter - Aquavit Pharmaceuticals, Inc. 607150",
-      "url": "https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/aquavit-pharmaceuticals-inc-607150-06172021"
+      "label": "EMA deoxycholic acid nationally authorised products list",
+      "url": "https://www.ema.europa.eu/en/documents/psusa/deoxycholic-acid-list-nationally-authorised-medicinal-products-psusa00010525202104_en.pdf"
     },
     {
-      "label": "Medytox official NEWLUX product page",
-      "url": "https://medytox.com/page/newlux?site_id=en"
+      "label": "EMA botulinum toxin A nationally authorised products list",
+      "url": "https://www.ema.europa.eu/en/documents/psusa/botulinum-toxin-except-centrally-authorised-products-list-nationally-authorised-products-psusa-00000426-202412_en.pdf"
+    },
+    {
+      "label": "HPRA medicines.ie VISTABEL licence info",
+      "url": "https://www.medicines.ie/medicines/vistabel-4-allergan-units-0-1-ml-powder-for-solution-for-injection-34207/license-info"
+    },
+    {
+      "label": "eMC Azzalure SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/6584/smpc"
+    },
+    {
+      "label": "eMC Bocouture SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/600/smpc"
+    },
+    {
+      "label": "eMC Letybo SmPC",
+      "url": "https://www.medicines.org.uk/emc/product/13707/smpc"
     }
   ],
   "durable_input_updated": "data\\manual_official_indication_evidence.csv",
   "rebuilt_outputs": [
-    "data/global_aesthetics.db",
-    "web/app-data.js",
-    "web/v3/v3-search.js",
-    "web/v3/v3-operations.js",
-    "web/v3/v3-market-intelligence.js"
+    "data\\global_aesthetics.db",
+    "web\\app-data.js",
+    "web\\v3\\v3-search.js",
+    "web\\v3\\v3-operations.js"
   ],
-  "smoke_test": "passed_no_mismatches_api_offline",
-  "hard_errors": []
+  "smoke_test": "passed_no_mismatches_api_offline"
 }
