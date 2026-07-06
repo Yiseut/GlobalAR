@@ -1,5 +1,5 @@
 window.V3_SEARCH_DATA = {
-  "generated_at": "2026-07-06T14:04:14+08:00",
+  "generated_at": "2026-07-07T00:55:01+08:00",
   "counts": {
     "products": 943,
     "families": 927,
@@ -101369,7 +101369,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Galderma | Galderma | Switzerland | Europe | Public | Manufacturer | SIX:GALD | Injectables | Galderma | Switzerland | Switzerland | 1 | Europe | Zug, Switzerland | Public | Manufacturer | Active | SIX:GALD | 4359 | 2024 | 74 | 48412.45 | 2026-06-29T13:08:12+08:00 | 11.1 | 17 | 16 | Injectables | 0 | 0 | 178.25 | CHF | -1.38 | https://finance.yahoo.com/quote/GALD.SW | 2026-06-29T13:05:16+08:00 | https://www.galderma.com/investors | manual_pending_verification | 2026-06-29T13:05:16+08:00 | FY2024 | 2025-02-26 | Manual IR annual report | 2026-06-29T13:08:12+08:00 | Galderma"
+      "search_text": "company | Galderma | Galderma | Switzerland | Europe | Public | Manufacturer | SIX:GALD | Injectables | Galderma | Switzerland | Switzerland | 1 | Europe | Zug, Switzerland | Public | Manufacturer | Active | SIX:GALD | 4359 | 2024 | 74 | 48412.45 | 2026-07-06T08:19:12+08:00 | 11.1 | 17 | 16 | Injectables | 0 | 0 | 179.5500030517578 | CHF | -0.83 | https://finance.yahoo.com/quote/GALD.SW | 2026-07-06T08:16:53+08:00 | https://www.galderma.com/investors | manual_pending_verification | 2026-07-06T08:16:53+08:00 | FY2024 | 2025-02-26 | Manual IR annual report | 2026-07-06T08:19:12+08:00 | Galderma"
     },
     {
       "type": "company",
@@ -101398,7 +101398,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | InMode | InMode | Israel | Middle East | Public | Manufacturer | NASDAQ:INMD | EBD | InMode | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | NASDAQ:INMD | 370.5 | 2025 | 78.54 | 840.94 | 2026-06-29T13:07:41+08:00 | 2.27 | 100 | 17 | 15 | EBD | 0 | 0 | 14.630000114440918 | USD | 0.48 | https://finance.yahoo.com/quote/INMD | 2026-06-29T13:05:13+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001742692.json | official_sec_xbrl_auto | 8.96 | 1.23 | 1.43 | 1.43 | -48.24 | 2026-06-29T13:05:13+08:00 | FY2025 | 2026-02-10 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | InMode"
+      "search_text": "company | InMode | InMode | Israel | Middle East | Public | Manufacturer | NASDAQ:INMD | EBD | InMode | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | NASDAQ:INMD | 370.5 | 2025 | 78.54 | 850.72 | 2026-07-06T08:18:46+08:00 | 2.3 | 100 | 17 | 15 | EBD | 0 | 0 | 14.800000190734863 | USD | 0.82 | https://finance.yahoo.com/quote/INMD | 2026-07-06T08:16:51+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001742692.json | official_sec_xbrl_auto | 9.07 | 1.25 | 1.43 | 1.43 | -48.24 | 2026-07-06T08:16:51+08:00 | FY2025 | 2026-02-10 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | InMode"
     },
     {
       "type": "company",
@@ -101488,7 +101488,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Alma Lasers | Alma Lasers | Sisram Medical | Israel | Middle East | Public | Manufacturer | Sisram Medical | HKEX:1696 | EBD | Alma Lasers | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | Sisram Medical | HKEX:1696 | 365.35 | 2025 | 58.89 | 173.44 | 2026-05-26T16:08:21+08:00 | 0.47 | 100 | 14 | 13 | EBD | 0 | 0 | 全球领先的医美激光与能量设备制造商 | 2.359999895095825 | HKD | 5.36 | https://finance.yahoo.com/quote/1696.HK | 2026-06-29T13:05:18+08:00 | https://www.sisrammed.com/en/investor-relations | pending_collection | 2026-06-29T13:05:18+08:00 | IFRS_consolidated | Sisram Medical"
+      "search_text": "company | Alma Lasers | Alma Lasers | Sisram Medical | Israel | Middle East | Public | Manufacturer | Sisram Medical | HKEX:1696 | EBD | Alma Lasers | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | Sisram Medical | HKEX:1696 | 365.35 | 2025 | 58.89 | 173.44 | 2026-05-26T16:08:21+08:00 | 0.47 | 100 | 14 | 13 | EBD | 0 | 0 | 全球领先的医美激光与能量设备制造商 | 2.380000114440918 | HKD | 5.31 | https://finance.yahoo.com/quote/1696.HK | 2026-07-06T08:16:55+08:00 | https://www.sisrammed.com/en/investor-relations | pending_collection | 2026-07-06T08:16:55+08:00 | IFRS_consolidated | Sisram Medical"
     },
     {
       "type": "company",
@@ -101518,7 +101518,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Allergan | Allergan | AbbVie | USA | North America | Subsidiary | Manufacturer | AbbVie | NASDAQ:ABBV | Injectables | Allergan | USA | USA | 1 | North America | Irvine, CA, USA | Subsidiary | Manufacturer | Active | AbbVie | NASDAQ:ABBV | 61160 | 2025 | 19.73 | 447616.97 | 2026-06-29T13:07:41+08:00 | 7.32 | 19 | 19 | Injectables | 4 | 1 | 医美全品类巨头，艾伯维旗下 | 253.35000610351562 | USD | 3.98 | https://finance.yahoo.com/quote/ABBV | 2026-06-29T13:05:12+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001551152.json | official_sec_xbrl_auto | 105.92 | -136.89 | 2.36 | 2.36 | -1.22 | 2026-06-29T13:05:12+08:00 | FY2025 | 2026-02-20 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | AbbVie"
+      "search_text": "company | Allergan | Allergan | AbbVie | USA | North America | Subsidiary | Manufacturer | AbbVie | NASDAQ:ABBV | Injectables | Allergan | USA | USA | 1 | North America | Irvine, CA, USA | Subsidiary | Manufacturer | Active | AbbVie | NASDAQ:ABBV | 61160 | 2025 | 19.73 | 461256.61 | 2026-07-06T08:18:46+08:00 | 7.54 | 19 | 19 | Injectables | 4 | 1 | 医美全品类巨头，艾伯维旗下 | 261.07000732421875 | USD | 4.01 | https://finance.yahoo.com/quote/ABBV | 2026-07-06T08:16:50+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001551152.json | official_sec_xbrl_auto | 109.15 | -141.06 | 2.36 | 2.36 | -1.22 | 2026-07-06T08:16:50+08:00 | FY2025 | 2026-02-20 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | AbbVie"
     },
     {
       "type": "company",
@@ -101635,7 +101635,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | El.En. | El.En. | Italy | Europe | Public | Manufacturer | ELN.MI | EBD | El.En. | Italy | Germany, Italy | 2 | Europe | Jena, Germany | Public | Manufacturer | Active | ELN.MI | 685.68 | 2025 | 42.94 | 1293.02 | 2026-05-26T23:35:05+08:00 | 1.89 | 11 | 3 | EBD | 0 | 0 | 17.25 | EUR | 2.74 | https://finance.yahoo.com/quote/ELN.MI | 2026-06-29T13:05:41+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:05:41+08:00 | El.En."
+      "search_text": "company | El.En. | El.En. | Italy | Europe | Public | Manufacturer | ELN.MI | EBD | El.En. | Italy | Germany, Italy | 2 | Europe | Jena, Germany | Public | Manufacturer | Active | ELN.MI | 685.68 | 2025 | 42.94 | 1293.02 | 2026-05-26T23:35:05+08:00 | 1.89 | 11 | 3 | EBD | 0 | 0 | 17.479999542236328 | EUR | 0.06 | https://finance.yahoo.com/quote/ELN.MI | 2026-07-06T08:17:10+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:10+08:00 | El.En."
     },
     {
       "type": "company",
@@ -101693,7 +101693,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Wontech | Wontech | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216280 | EBD | Wontech | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Public | Manufacturer | Active | KRX:216280 | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:31+08:00 | 100 | 11 | 8 | EBD | 0 | 0 | 2026-06-29T13:05:38+08:00 | https://finance.yahoo.com/quote/216280.KS/financials/ | valuation_fetch_failed | 2026-06-29T13:05:38+08:00 | Wontech"
+      "search_text": "company | Wontech | Wontech | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216280 | EBD | Wontech | South Korea | South Korea | 1 | Asia-Pacific | Daejeon, South Korea | Public | Manufacturer | Active | KRX:216280 | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:31+08:00 | 100 | 11 | 8 | EBD | 0 | 0 | 2026-07-06T08:17:08+08:00 | https://finance.yahoo.com/quote/216280.KS/financials/ | valuation_fetch_failed | 2026-07-06T08:17:08+08:00 | Wontech"
     },
     {
       "type": "company",
@@ -101723,7 +101723,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Sinclair Pharma | Sinclair Pharma | Huadong Medicine | Israel | Middle East | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Sinclair Pharma | Israel | Bulgaria, Israel, Netherlands, Switzerland, USA | 5 | Other | Sofia, Bulgaria | Subsidiary | Manufacturer | Active | Huadong Medicine | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 13 | 8 | EBD | 0 | 0 | 28.510000228881836 | CNY | 7.87 | https://finance.yahoo.com/quote/000963.SZ | 2026-06-29T13:05:20+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:05:20+08:00 | Huadong Medicine"
+      "search_text": "company | Sinclair Pharma | Sinclair Pharma | Huadong Medicine | Israel | Middle East | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Sinclair Pharma | Israel | Bulgaria, Israel, Netherlands, Switzerland, USA | 5 | Other | Sofia, Bulgaria | Subsidiary | Manufacturer | Active | Huadong Medicine | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 13 | 8 | EBD | 0 | 0 | 30.049999237060547 | CNY | 1.9 | https://finance.yahoo.com/quote/000963.SZ | 2026-07-06T08:16:57+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:16:57+08:00 | Huadong Medicine"
     },
     {
       "type": "company",
@@ -101752,7 +101752,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Classys | Classys | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214150 | EBD | Classys | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:214150 | 235.77 | 2025 | 77.52 | 2232.75 | 2026-05-26T14:30:12+08:00 | 9.47 | 100 | 10 | 10 | EBD | 0 | 0 | 48600.0 | KRW | 6.23 | https://finance.yahoo.com/quote/214150.KQ | 2026-06-29T13:05:51+08:00 | https://www.classys.com/eng/ir/financial.php | pending_collection | 2026-06-29T13:05:51+08:00 | K_IFRS_consolidated | Classys"
+      "search_text": "company | Classys | Classys | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214150 | EBD | Classys | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:214150 | 178.18 | 2024 | 78.67 | 2232.75 | 2026-07-07T00:51:19+08:00 | 9.47 | 100 | 10 | 10 | EBD | 0 | 0 | 46450.0 | KRW | -3.03 | https://finance.yahoo.com/quote/214150.KQ | 2026-07-06T08:17:18+08:00 | https://classys.com/wp-content/uploads/sites/2/2025/04/Annual-Report_CLASSYS_2024_Eng_vS_250430.pdf | manual_verified | 2026-07-06T08:17:18+08:00 | FY2024 | 2025-04-30 | Manual IR annual report | 2026-07-07T00:51:19+08:00 | Classys"
     },
     {
       "type": "company",
@@ -101841,7 +101841,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hugel | Hugel | South Korea | Asia-Pacific | Public | Manufacturer | KRX:145020 | Injectables | Hugel | South Korea | South Korea | 1 | Asia-Pacific | Chuncheon, South Korea | Public | Manufacturer | Active | KRX:145020 | 297.58 | 2025 | 78.45 | 2012.13 | 2026-05-26T14:30:03+08:00 | 6.76 | 100 | 9 | 9 | Injectables | 0 | 0 | 270000.0 | KRW | 6.72 | https://finance.yahoo.com/quote/145020.KQ | 2026-06-29T13:06:00+08:00 | https://www.hugel.co.kr/eng/ir/main.do | pending_collection | 2026-06-29T13:06:00+08:00 | K_IFRS_consolidated | Hugel"
+      "search_text": "company | Hugel | Hugel | South Korea | Asia-Pacific | Public | Manufacturer | KRX:145020 | Injectables | Hugel | South Korea | South Korea | 1 | Asia-Pacific | Chuncheon, South Korea | Public | Manufacturer | Active | KRX:145020 | 273.61 | 2024 | 76.98 | 2012.13 | 2026-07-07T00:51:19+08:00 | 6.76 | 100 | 9 | 9 | Injectables | 0 | 0 | 255000.0 | KRW | -5.56 | https://finance.yahoo.com/quote/145020.KQ | 2026-07-06T08:17:25+08:00 | https://cdn.prod.website-files.com/65d4bcfd06a8be5d2448b946/68648526442d861d6b8a69da_HUGEL_AR_2024_EN.pdf | manual_verified | 2026-07-06T08:17:25+08:00 | FY2024 | Manual IR annual report | 2026-07-07T00:51:19+08:00 | Hugel"
     },
     {
       "type": "company",
@@ -101870,7 +101870,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Medytox | Medytox | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086900 | Injectables | Medytox | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:086900 | 173.1 | 2025 | 57.94 | 450.54 | 2026-05-26T14:30:14+08:00 | 2.6 | 100 | 9 | 9 | Injectables | 0 | 0 | 82600.0 | KRW | 11.02 | https://finance.yahoo.com/quote/086900.KQ | 2026-06-29T13:05:58+08:00 | https://www.medytox.com/en/ir/ir_financial.html | pending_collection | 2026-06-29T13:05:58+08:00 | K_IFRS_consolidated | Medytox"
+      "search_text": "company | Medytox | Medytox | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086900 | Injectables | Medytox | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:086900 | 173.1 | 2025 | 57.94 | 450.54 | 2026-05-26T14:30:14+08:00 | 2.6 | 100 | 9 | 9 | Injectables | 0 | 0 | 79100.0 | KRW | -0.38 | https://finance.yahoo.com/quote/086900.KQ | 2026-07-06T08:17:24+08:00 | https://www.medytox.com/page/ir3_en?site_id=en | pending_collection | 2026-07-06T08:17:24+08:00 | K_IFRS_consolidated | Medytox"
     },
     {
       "type": "company",
@@ -101928,7 +101928,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cutera | Cutera | USA | North America | Public | Manufacturer | NASDAQ:CUTR | EBD | Cutera | USA | USA | 1 | North America | Brisbane, CA, USA | Public | Manufacturer | Active | NASDAQ:CUTR | 49.94 | 2020 | 83.08 | unavailable_verified | 2026-06-29T13:07:41+08:00 | 100 | 10 | 8 | EBD | 0 | 0 | 2026-06-29T13:05:49+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001162461.json | official_sec_xbrl_auto | -8.19 | -8.19 | -97.76 | 2026-06-29T13:05:49+08:00 | FY2020 | 2021-03-23 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Cutera"
+      "search_text": "company | Cutera | Cutera | USA | North America | Public | Manufacturer | NASDAQ:CUTR | EBD | Cutera | USA | USA | 1 | North America | Brisbane, CA, USA | Public | Manufacturer | Active | NASDAQ:CUTR | 49.94 | 2020 | 83.08 | unavailable_verified | 2026-07-06T08:18:46+08:00 | 100 | 10 | 8 | EBD | 0 | 0 | 2026-07-06T08:17:16+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001162461.json | official_sec_xbrl_auto | -8.19 | -8.19 | -97.76 | 2026-07-06T08:17:16+08:00 | FY2020 | 2021-03-23 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Cutera"
     },
     {
       "type": "company",
@@ -101986,7 +101986,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Caregen | Caregen | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214370 | Injectables | Caregen | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Public | Manufacturer | Active | KRX:214370 | 50.97 | 2025 | 71.75 | 3183.1 | 2026-05-26T14:30:07+08:00 | 62.45 | 100 | 9 | 9 | Injectables | 0 | 0 | 70800.0 | KRW | 10.8 | https://finance.yahoo.com/quote/214370.KQ | 2026-06-29T13:06:02+08:00 | https://www.caregen.com/en/investors | pending_collection | 2026-06-29T13:06:02+08:00 | K_IFRS_consolidated | Caregen"
+      "search_text": "company | Caregen | Caregen | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214370 | Injectables | Caregen | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Public | Manufacturer | Active | KRX:214370 | 50.97 | 2025 | 71.75 | 3183.1 | 2026-05-26T14:30:07+08:00 | 62.45 | 100 | 9 | 9 | Injectables | 0 | 0 | 68500.0 | KRW | -6.16 | https://finance.yahoo.com/quote/214370.KQ | 2026-07-06T08:17:26+08:00 | https://www.caregen.com/en/investors | pending_collection | 2026-07-06T08:17:26+08:00 | K_IFRS_consolidated | Caregen"
     },
     {
       "type": "company",
@@ -102015,7 +102015,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Venus Concept | Venus Concept | Canada | North America | Public | Manufacturer | NASDAQ:VERO | EBD | Venus Concept | Canada | Canada | 1 | North America | Toronto, Canada | Public | Manufacturer | Active | NASDAQ:VERO | 64.83 | 2024 | 68.34 | 0.58 | 2026-06-29T13:07:41+08:00 | 0.01 | 100 | 9 | 9 | EBD | 0 | 0 | 0.311 | USD | https://query1.finance.yahoo.com/v8/finance/chart/VERO?range=5d&interval=1d | 2026-06-29T13:05:56+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001409269.json | official_sec_xbrl_auto | -0.01 | 0.24 | -71.21 | -71.21 | -26.16 | 2026-06-29T13:05:56+08:00 | FY2024 | 2025-03-31 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Venus Concept"
+      "search_text": "company | Venus Concept | Venus Concept | Canada | North America | Public | Manufacturer | NASDAQ:VERO | EBD | Venus Concept | Canada | Canada | 1 | North America | Toronto, Canada | Public | Manufacturer | Active | NASDAQ:VERO | 64.83 | 2024 | 68.34 | 0.58 | 2026-07-06T08:18:46+08:00 | 0.01 | 100 | 9 | 9 | EBD | 0 | 0 | 0.311 | USD | https://query1.finance.yahoo.com/v8/finance/chart/VERO?range=5d&interval=1d | 2026-07-06T08:17:22+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001409269.json | official_sec_xbrl_auto | -0.01 | 0.24 | -71.21 | -71.21 | -26.16 | 2026-07-06T08:17:22+08:00 | FY2024 | 2025-03-31 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Venus Concept"
     },
     {
       "type": "company",
@@ -102044,7 +102044,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Hironic | Hironic | South Korea | Asia-Pacific | Public | Manufacturer | KRX:149980 | EBD | Hironic | South Korea | South Korea | 1 | Asia-Pacific | Yongin, South Korea | Public | Manufacturer | Active | KRX:149980 | 22.46 | 2025 | 58.93 | 61.34 | 2026-05-26T14:30:30+08:00 | 2.73 | 100 | 8 | 8 | EBD | 0 | 0 | 4955.0 | KRW | 6.33 | https://finance.yahoo.com/quote/149980.KQ | 2026-06-29T13:06:04+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/149980.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:04+08:00 | Hironic"
+      "search_text": "company | Hironic | Hironic | South Korea | Asia-Pacific | Public | Manufacturer | KRX:149980 | EBD | Hironic | South Korea | South Korea | 1 | Asia-Pacific | Yongin, South Korea | Public | Manufacturer | Active | KRX:149980 | 22.46 | 2025 | 58.93 | 61.34 | 2026-05-26T14:30:30+08:00 | 2.73 | 100 | 8 | 8 | EBD | 0 | 0 | 4830.0 | KRW | 0.62 | https://finance.yahoo.com/quote/149980.KQ | 2026-07-06T08:17:28+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/149980.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:28+08:00 | Hironic"
     },
     {
       "type": "company",
@@ -102103,7 +102103,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Quanta System | Quanta System | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Quanta System | Italy | Italy | 1 | Europe | Milan, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 7 | 5 | EBD | 0 | 0 | 17.25 | EUR | 2.74 | https://finance.yahoo.com/quote/ELN.MI | 2026-06-29T13:06:05+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:05+08:00 | El.En."
+      "search_text": "company | Quanta System | Quanta System | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Quanta System | Italy | Italy | 1 | Europe | Milan, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 7 | 5 | EBD | 0 | 0 | 17.479999542236328 | EUR | 0.06 | https://finance.yahoo.com/quote/ELN.MI | 2026-07-06T08:17:29+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:29+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102132,7 +102132,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Beauty Health | Beauty Health | USA | North America | Public | Manufacturer | NASDAQ:SKIN | EBD | Beauty Health | USA | USA | 1 | North America | Long Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:SKIN | 300.79 | 2025 | 65.28 | 85.54 | 2026-06-29T13:07:41+08:00 | 0.28 | 100 | 7 | 5 | EBD | 0 | 0 | 0.6600000262260437 | USD | 3.59 | https://finance.yahoo.com/quote/SKIN | 2026-06-29T13:06:09+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001818093.json | official_sec_xbrl_auto | -8.99 | 1.4 | -0.16 | -0.16 | 67.29 | 2026-06-29T13:06:09+08:00 | FY2025 | 2026-03-12 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Beauty Health"
+      "search_text": "company | Beauty Health | Beauty Health | USA | North America | Public | Manufacturer | NASDAQ:SKIN | EBD | Beauty Health | USA | USA | 1 | North America | Long Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:SKIN | 300.79 | 2025 | 65.28 | 94.09 | 2026-07-06T08:18:46+08:00 | 0.31 | 100 | 7 | 5 | EBD | 0 | 0 | 0.7260000109672546 | USD | 1.14 | https://finance.yahoo.com/quote/SKIN | 2026-07-06T08:17:32+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001818093.json | official_sec_xbrl_auto | -9.88 | 1.54 | -0.16 | -0.16 | 67.29 | 2026-07-06T08:17:32+08:00 | FY2025 | 2026-03-12 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Beauty Health"
     },
     {
       "type": "company",
@@ -102161,7 +102161,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BioPlus | BioPlus | South Korea | Asia-Pacific | Public | Manufacturer | KRX:099430 | Injectables | BioPlus | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:099430 | 63.63 | 2025 | 66.68 | 232.17 | 2026-05-26T14:30:18+08:00 | 3.65 | 100 | 5 | 5 | Injectables | 0 | 0 | 韩国长效玻尿酸与PDRN皮肤再生专家 | 4250.0 | KRW | 9.4 | https://finance.yahoo.com/quote/099430.KQ | 2026-06-29T13:06:19+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/099430.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:19+08:00 | BioPlus"
+      "search_text": "company | BioPlus | BioPlus | South Korea | Asia-Pacific | Public | Manufacturer | KRX:099430 | Injectables | BioPlus | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:099430 | 63.63 | 2025 | 66.68 | 232.17 | 2026-05-26T14:30:18+08:00 | 3.65 | 100 | 5 | 5 | Injectables | 0 | 0 | 韩国长效玻尿酸与PDRN皮肤再生专家 | 4125.0 | KRW | 1.23 | https://finance.yahoo.com/quote/099430.KQ | 2026-07-06T08:17:40+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/099430.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:40+08:00 | BioPlus"
     },
     {
       "type": "company",
@@ -102191,7 +102191,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Solta Medical | Solta Medical | Bausch Health | USA | North America | Subsidiary | Manufacturer | Bausch Health | NASDAQ:BHC | EBD | Solta Medical | USA | USA | 1 | North America | Bothell, WA, USA | Subsidiary | Manufacturer | Active | Bausch Health | NASDAQ:BHC | 10266 | 2025 | 1777.74 | 2026-06-29T13:07:41+08:00 | 0.17 | 6 | 6 | EBD | 0 | 0 | 4.760000228881836 | USD | -7.39 | https://finance.yahoo.com/quote/BHC | 2026-06-29T13:06:12+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000885590.json | official_sec_xbrl_auto | 11.32 | -3.21 | 0.42 | 0.42 | 441.3 | 2026-06-29T13:06:12+08:00 | FY2025 | 2026-02-19 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Bausch Health"
+      "search_text": "company | Solta Medical | Solta Medical | Bausch Health | USA | North America | Subsidiary | Manufacturer | Bausch Health | NASDAQ:BHC | EBD | Solta Medical | USA | USA | 1 | North America | Bothell, WA, USA | Subsidiary | Manufacturer | Active | Bausch Health | NASDAQ:BHC | 10266 | 2025 | 1830.03 | 2026-07-06T08:18:46+08:00 | 0.18 | 6 | 6 | EBD | 0 | 0 | 4.900000095367432 | USD | 2.3 | https://finance.yahoo.com/quote/BHC | 2026-07-06T08:17:34+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000885590.json | official_sec_xbrl_auto | 11.66 | -3.3 | 0.42 | 0.42 | 441.3 | 2026-07-06T08:17:34+08:00 | FY2025 | 2026-02-19 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Bausch Health"
     },
     {
       "type": "company",
@@ -102220,7 +102220,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | EndyMed Medical | EndyMed Medical | Israel | Middle East | Public | Manufacturer | ENDY.TA | EBD | EndyMed Medical | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | ENDY.TA | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:50+08:00 | 100 | 6 | 5 | EBD | 0 | 0 | 2026-06-29T13:06:17+08:00 | https://finance.yahoo.com/quote/ENDY.TA/financials/ | valuation_fetch_failed | 2026-06-29T13:06:17+08:00 | EndyMed Medical"
+      "search_text": "company | EndyMed Medical | EndyMed Medical | Israel | Middle East | Public | Manufacturer | ENDY.TA | EBD | EndyMed Medical | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | ENDY.TA | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:50+08:00 | 100 | 6 | 5 | EBD | 0 | 0 | 2026-07-06T08:17:38+08:00 | https://finance.yahoo.com/quote/ENDY.TA/financials/ | valuation_fetch_failed | 2026-07-06T08:17:38+08:00 | EndyMed Medical"
     },
     {
       "type": "company",
@@ -102279,7 +102279,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Revance Therapeutics | Revance Therapeutics | Crown Laboratories | USA | North America | Acquired | Manufacturer | Crown Laboratories | Former NASDAQ:RVNC | Injectables | Revance Therapeutics | USA | USA | 1 | North America | Nashville, TN, USA | Acquired | Manufacturer | Acquired | Crown Laboratories | Former NASDAQ:RVNC | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:53+08:00 | 4 | 3 | Injectables | 0 | 0 | 2026-06-29T13:07:26+08:00 | https://finance.yahoo.com/quote/RVNC/financials/ | valuation_fetch_failed | 2026-06-29T13:07:26+08:00 | Crown Laboratories"
+      "search_text": "company | Revance Therapeutics | Revance Therapeutics | Crown Laboratories | USA | North America | Acquired | Manufacturer | Crown Laboratories | Former NASDAQ:RVNC | Injectables | Revance Therapeutics | USA | USA | 1 | North America | Nashville, TN, USA | Acquired | Manufacturer | Acquired | Crown Laboratories | Former NASDAQ:RVNC | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:52:53+08:00 | 4 | 3 | Injectables | 0 | 0 | 2026-07-06T08:18:34+08:00 | https://finance.yahoo.com/quote/RVNC/financials/ | valuation_fetch_failed | 2026-07-06T08:18:34+08:00 | Crown Laboratories"
     },
     {
       "type": "company",
@@ -102425,7 +102425,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | DEKA | DEKA | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | DEKA | Italy | Italy | 1 | Europe | Florence, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 10 | 10 | EBD | 0 | 0 | 17.25 | EUR | 2.74 | https://finance.yahoo.com/quote/ELN.MI | 2026-06-29T13:05:43+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:05:43+08:00 | El.En."
+      "search_text": "company | DEKA | DEKA | El.En. | Italy | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | DEKA | Italy | Italy | 1 | Europe | Florence, Italy | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 10 | 10 | EBD | 0 | 0 | 17.479999542236328 | EUR | 0.06 | https://finance.yahoo.com/quote/ELN.MI | 2026-07-06T08:17:11+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:11+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102454,7 +102454,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Apyx Medical | Apyx Medical | USA | North America | Public | Manufacturer | NASDAQ:APYX | EBD | Apyx Medical | USA | USA | 1 | North America | Clearwater, FL, USA | Public | Manufacturer | Active | NASDAQ:APYX | 52.84 | 2025 | 62.53 | 188.43 | 2026-06-29T13:07:41+08:00 | 3.57 | 100 | 5 | 5 | EBD | 1 | 0 | 氦等离子体紧肤技术先驱 | 4.5 | USD | 2.04 | https://finance.yahoo.com/quote/APYX | 2026-06-29T13:06:20+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000719135.json | official_sec_xbrl_auto | -16.81 | 12.96 | -0.54 | -0.54 | 52.22 | 2026-06-29T13:06:20+08:00 | FY2025 | 2026-03-10 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Apyx Medical"
+      "search_text": "company | Apyx Medical | Apyx Medical | USA | North America | Public | Manufacturer | NASDAQ:APYX | EBD | Apyx Medical | USA | USA | 1 | North America | Clearwater, FL, USA | Public | Manufacturer | Active | NASDAQ:APYX | 52.84 | 2025 | 62.53 | 181.07 | 2026-07-06T08:18:46+08:00 | 3.43 | 100 | 5 | 5 | EBD | 1 | 0 | 氦等离子体紧肤技术先驱 | 4.300000190734863 | USD | -7.73 | https://finance.yahoo.com/quote/APYX | 2026-07-06T08:17:41+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000719135.json | official_sec_xbrl_auto | -16.15 | 12.45 | -0.54 | -0.54 | 52.22 | 2026-07-06T08:17:41+08:00 | FY2025 | 2026-03-10 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Apyx Medical"
     },
     {
       "type": "company",
@@ -102542,7 +102542,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Asclepion | Asclepion | El.En. | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 5 | 5 | EBD | 1 | 1 | 德国耶拿医美激光与能量设备制造商 | 17.25 | EUR | 2.74 | https://finance.yahoo.com/quote/ELN.MI | 2026-06-29T13:06:22+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:22+08:00 | El.En."
+      "search_text": "company | Asclepion | Asclepion | El.En. | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 1293.02 | 2026-05-26T23:35:05+08:00 | 5 | 5 | EBD | 1 | 1 | 德国耶拿医美激光与能量设备制造商 | 17.479999542236328 | EUR | 0.06 | https://finance.yahoo.com/quote/ELN.MI | 2026-07-06T08:17:42+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:42+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102601,7 +102601,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Dongkook Pharma | Dongkook Pharma | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086450 | Injectables | Dongkook Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:086450 | 648.82 | 2025 | 54.12 | 644.02 | 2026-05-26T14:30:22+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 18620.0 | KRW | 9.34 | https://finance.yahoo.com/quote/086450.KQ | 2026-06-29T13:06:38+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:38+08:00 | Dongkook Pharma"
+      "search_text": "company | Dongkook Pharma | Dongkook Pharma | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086450 | Injectables | Dongkook Pharma | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:086450 | 648.82 | 2025 | 54.12 | 644.02 | 2026-05-26T14:30:22+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 20100.0 | KRW | -1.71 | https://finance.yahoo.com/quote/086450.KQ | 2026-07-06T08:17:56+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:56+08:00 | Dongkook Pharma"
     },
     {
       "type": "company",
@@ -102630,7 +102630,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Daewoong | Daewoong | South Korea | Asia-Pacific | Public | Manufacturer | KRX:069620 | Injectables | Daewoong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | 1099.62 | 2025 | 52.36 | 1084.93 | 2024-07-20T04:00:00+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 118200.0 | KRW | 5.91 | https://finance.yahoo.com/quote/069620.KQ | 2026-06-29T13:06:37+08:00 | https://www.daewoong.co.kr/eng/ir/disclosure.php | pending_collection | 2026-06-29T13:06:37+08:00 | K_IFRS_consolidated | Daewoong"
+      "search_text": "company | Daewoong | Daewoong | South Korea | Asia-Pacific | Public | Manufacturer | KRX:069620 | Injectables | Daewoong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | 1099.62 | 2025 | 52.36 | 1084.93 | 2024-07-20T04:00:00+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 118200.0 | KRW | -5.06 | https://finance.yahoo.com/quote/069620.KQ | 2026-07-06T08:17:54+08:00 | https://www.daewoong.co.kr/eng/ir/disclosure.php | pending_collection | 2026-07-06T08:17:54+08:00 | K_IFRS_consolidated | Daewoong"
     },
     {
       "type": "company",
@@ -102659,7 +102659,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Asclepion Laser | Asclepion Laser | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion Laser | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 735 | 2024 | 37 | 1293.02 | 2026-06-29T13:08:12+08:00 | 1.76 | 5 | 5 | EBD | 0 | 0 | 17.25 | EUR | 2.74 | https://finance.yahoo.com/quote/ELN.MI | 2026-06-29T13:06:23+08:00 | https://www.elengroup.com/en/investors/financial-results | manual_pending_verification | 2026-06-29T13:06:23+08:00 | FY2024 | 2025-03-15 | Manual IR annual report | 2026-06-29T13:08:12+08:00 | El.En."
+      "search_text": "company | Asclepion Laser | Asclepion Laser | Germany | Europe | Subsidiary | Manufacturer | El.En. | ELN.MI | EBD | Asclepion Laser | Germany | Germany | 1 | Europe | Jena, Germany | Subsidiary | Manufacturer | Active | El.En. | ELN.MI | 735 | 2024 | 37 | 1293.02 | 2026-07-06T08:19:12+08:00 | 1.76 | 5 | 5 | EBD | 0 | 0 | 17.479999542236328 | EUR | 0.06 | https://finance.yahoo.com/quote/ELN.MI | 2026-07-06T08:17:43+08:00 | https://www.elengroup.com/en/investors/financial-results | manual_pending_verification | 2026-07-06T08:17:43+08:00 | FY2024 | 2025-03-15 | Manual IR annual report | 2026-07-06T08:19:12+08:00 | El.En."
     },
     {
       "type": "company",
@@ -102688,7 +102688,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Across | Across | South Korea | Asia-Pacific | Subsidiary | Manufacturer | Hugel | KRX:145020 | Injectables | Across | South Korea | South Korea | 1 | Asia-Pacific | Gangwon-do, South Korea | Subsidiary | Manufacturer | Active | Hugel | KRX:145020 | 2012.13 | 2026-05-26T14:30:03+08:00 | 5 | 5 | Injectables | 0 | 0 | 270500.0 | KRW | 6.92 | https://finance.yahoo.com/quote/145020.KQ | 2026-06-29T13:06:25+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:25+08:00 | Hugel"
+      "search_text": "company | Across | Across | South Korea | Asia-Pacific | Subsidiary | Manufacturer | Hugel | KRX:145020 | Injectables | Across | South Korea | South Korea | 1 | Asia-Pacific | Gangwon-do, South Korea | Subsidiary | Manufacturer | Active | Hugel | KRX:145020 | 2012.13 | 2026-05-26T14:30:03+08:00 | 5 | 5 | Injectables | 0 | 0 | 255000.0 | KRW | -5.56 | https://finance.yahoo.com/quote/145020.KQ | 2026-07-06T08:17:45+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/145020.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:45+08:00 | Hugel"
     },
     {
       "type": "company",
@@ -102775,7 +102775,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cha Meditech | Cha Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:085660 | Injectables | Cha Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:085660 | 762.56 | 2026-05-26T14:30:24+08:00 | 4 | 4 | Injectables | 0 | 0 | 11450.0 | KRW | 9.78 | https://finance.yahoo.com/quote/085660.KQ | 2026-06-29T13:06:33+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/085660.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:33+08:00 | Cha Meditech"
+      "search_text": "company | Cha Meditech | Cha Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:085660 | Injectables | Cha Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:085660 | 762.56 | 2026-05-26T14:30:24+08:00 | 4 | 4 | Injectables | 0 | 0 | 10460.0 | KRW | -1.78 | https://finance.yahoo.com/quote/085660.KQ | 2026-07-06T08:17:51+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/085660.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:51+08:00 | Cha Meditech"
     },
     {
       "type": "company",
@@ -102892,7 +102892,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | PharmaResearch / PR Bio | PharmaResearch | PR Bio | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214450 | Injectables | PharmaResearch / PR Bio | South Korea | South Korea | 1 | Asia-Pacific | Gangneung, South Korea | Public | Manufacturer | Active | KRX:214450 | 375.4 | 2025 | 76.68 | 2186.08 | 2026-05-26T14:30:24+08:00 | 5.82 | 100 | 4 | 1 | Injectables | 0 | 0 | 348500.0 | KRW | 6.09 | https://finance.yahoo.com/quote/214450.KQ | 2026-06-29T13:07:20+08:00 | https://www.pharmaresearchbio.com/en/investors | pending_collection | 2026-06-29T13:07:20+08:00 | K_IFRS_consolidated | PharmaResearch / PR Bio"
+      "search_text": "company | PharmaResearch / PR Bio | PharmaResearch | PR Bio | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214450 | Injectables | PharmaResearch / PR Bio | South Korea | South Korea | 1 | Asia-Pacific | Gangneung, South Korea | Public | Manufacturer | Active | KRX:214450 | 375.4 | 2025 | 76.68 | 2186.08 | 2026-05-26T14:30:24+08:00 | 5.82 | 100 | 4 | 1 | Injectables | 0 | 0 | 341000.0 | KRW | -5.41 | https://finance.yahoo.com/quote/214450.KQ | 2026-07-06T08:18:30+08:00 | https://www.pharmaresearchbio.com/en/investors | pending_collection | 2026-07-06T08:18:30+08:00 | K_IFRS_consolidated | PharmaResearch / PR Bio"
     },
     {
       "type": "company",
@@ -103095,7 +103095,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Cocoon Medical | Cocoon Medical | Spain | Europe | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Cocoon Medical | Spain | Spain | 1 | Europe | Barcelona, Spain | Subsidiary | Manufacturer | Active | Huadong Medicine | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 3 | 3 | EBD | 0 | 0 | 28.510000228881836 | CNY | 7.87 | https://finance.yahoo.com/quote/000963.SZ | 2026-06-29T13:06:34+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:34+08:00 | Huadong Medicine"
+      "search_text": "company | Cocoon Medical | Cocoon Medical | Spain | Europe | Subsidiary | Manufacturer | Huadong Medicine | 000963.SZ | EBD | Cocoon Medical | Spain | Spain | 1 | Europe | Barcelona, Spain | Subsidiary | Manufacturer | Active | Huadong Medicine | 000963.SZ | 8592.67 | 2026-05-26T15:04:27+08:00 | 3 | 3 | EBD | 0 | 0 | 30.049999237060547 | CNY | 1.9 | https://finance.yahoo.com/quote/000963.SZ | 2026-07-06T08:17:52+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000963.SZ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:52+08:00 | Huadong Medicine"
     },
     {
       "type": "company",
@@ -103182,7 +103182,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Jetema | Jetema | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216080 | Injectables | Jetema | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:216080 | 53.83 | 2025 | 47.9 | 142.73 | 2026-05-26T14:30:30+08:00 | 2.65 | 100 | 3 | 3 | Injectables | 0 | 0 | 4850.0 | KRW | 18.29 | https://finance.yahoo.com/quote/216080.KQ | 2026-06-29T13:06:55+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/216080.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:55+08:00 | Jetema"
+      "search_text": "company | Jetema | Jetema | South Korea | Asia-Pacific | Public | Manufacturer | KRX:216080 | Injectables | Jetema | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:216080 | 53.83 | 2025 | 47.9 | 142.73 | 2026-05-26T14:30:30+08:00 | 2.65 | 100 | 3 | 3 | Injectables | 0 | 0 | 5570.0 | KRW | -0.71 | https://finance.yahoo.com/quote/216080.KQ | 2026-07-06T08:18:09+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/216080.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:09+08:00 | Jetema"
     },
     {
       "type": "company",
@@ -103443,7 +103443,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | HansBiomed. | HansBiomed. | South Korea | Asia-Pacific | Public | Manufacturer | KRX:042520 | Implants | HansBiomed. | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:042520 | 62.85 | 2025 | 57.38 | 219.49 | 2026-05-26T14:30:11+08:00 | 3.49 | 100 | 4 | 4 | Implants | 0 | 0 | 24650.0 | KRW | -0.2 | https://finance.yahoo.com/quote/042520.KQ | 2026-06-29T13:06:47+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/042520.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:47+08:00 | HansBiomed."
+      "search_text": "company | HansBiomed. | HansBiomed. | South Korea | Asia-Pacific | Public | Manufacturer | KRX:042520 | Implants | HansBiomed. | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:042520 | 62.85 | 2025 | 57.38 | 219.49 | 2026-05-26T14:30:11+08:00 | 3.49 | 100 | 4 | 4 | Implants | 0 | 0 | 23050.0 | KRW | -0.22 | https://finance.yahoo.com/quote/042520.KQ | 2026-07-06T08:18:03+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/042520.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:03+08:00 | HansBiomed."
     },
     {
       "type": "company",
@@ -103907,7 +103907,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BNC Korea | BNC Korea | South Korea | Asia-Pacific | Public | Manufacturer | KRX:256840 | Injectables | BNC Korea | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:256840 | 67.13 | 2025 | 41.06 | 161.78 | 2026-05-26T14:30:21+08:00 | 2.41 | 7 | 5 | Injectables | 0 | 4 | 韩系新秀 | 2720.0 | KRW | 13.48 | https://finance.yahoo.com/quote/256840.KQ | 2026-06-29T13:06:07+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:07+08:00 | BNC Korea"
+      "search_text": "company | BNC Korea | BNC Korea | South Korea | Asia-Pacific | Public | Manufacturer | KRX:256840 | Injectables | BNC Korea | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:256840 | 67.13 | 2025 | 41.06 | 161.78 | 2026-05-26T14:30:21+08:00 | 2.41 | 7 | 5 | Injectables | 0 | 4 | 韩系新秀 | 2615.0 | KRW | 0.77 | https://finance.yahoo.com/quote/256840.KQ | 2026-07-06T08:17:31+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:31+08:00 | BNC Korea"
     },
     {
       "type": "company",
@@ -104023,7 +104023,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BenQ | BenQ | Taiwan | Asia-Pacific | Public | Manufacturer | 8215.TW | Skincare | BenQ | Taiwan | Taiwan | 1 | Asia-Pacific | Taoyuan, Taiwan | Public | Manufacturer | Active | 8215.TW | 567.5 | 2025 | 14.45 | 274.05 | 2026-05-26T13:30:36+08:00 | 0.48 | 3 | 3 | Skincare | 0 | 0 | 29.0 | TWD | 3.2 | https://finance.yahoo.com/quote/8215.TW | 2026-06-29T13:06:29+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:29+08:00 | BenQ"
+      "search_text": "company | BenQ | BenQ | Taiwan | Asia-Pacific | Public | Manufacturer | 8215.TW | Skincare | BenQ | Taiwan | Taiwan | 1 | Asia-Pacific | Taoyuan, Taiwan | Public | Manufacturer | Active | 8215.TW | 567.5 | 2025 | 14.45 | 274.05 | 2026-05-26T13:30:36+08:00 | 0.48 | 3 | 3 | Skincare | 0 | 0 | 29.5 | TWD | -1.99 | https://finance.yahoo.com/quote/8215.TW | 2026-07-06T08:17:48+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:48+08:00 | BenQ"
     },
     {
       "type": "company",
@@ -104517,7 +104517,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Huons Meditech | Huons Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:243070 | Consumables | Huons Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:243070 | 281.47 | 2026-05-26T14:30:30+08:00 | 3 | 2 | Consumables | 0 | 0 | 25800.0 | KRW | 3.82 | https://finance.yahoo.com/quote/243070.KQ | 2026-06-29T13:06:51+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/243070.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:51+08:00 | Huons Meditech"
+      "search_text": "company | Huons Meditech | Huons Meditech | South Korea | Asia-Pacific | Subsidiary | Manufacturer | KRX:243070 | Consumables | Huons Meditech | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Subsidiary | Manufacturer | Active | KRX:243070 | 281.47 | 2026-05-26T14:30:30+08:00 | 3 | 2 | Consumables | 0 | 0 | 27300.0 | KRW | 1.3 | https://finance.yahoo.com/quote/243070.KQ | 2026-07-06T08:18:06+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/243070.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:06+08:00 | Huons Meditech"
     },
     {
       "type": "company",
@@ -104634,7 +104634,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Evolus | Evolus | USA | North America | Public | Manufacturer | NASDAQ:EOLS | Injectables | Evolus | USA | USA | 1 | North America | Newport Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:EOLS | 297.18 | 2025 | 66.33 | 469.54 | 2026-06-29T13:07:41+08:00 | 1.58 | 100 | 2 | 2 | Injectables | 0 | 0 | 7.130000114440918 | USD | -0.28 | https://finance.yahoo.com/quote/EOLS | 2026-06-29T13:06:42+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001570562.json | official_sec_xbrl_auto | -9.09 | -20.32 | -0.8 | -0.8 | -2.42 | 2026-06-29T13:06:42+08:00 | FY2025 | 2026-03-03 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Evolus"
+      "search_text": "company | Evolus | Evolus | USA | North America | Public | Manufacturer | NASDAQ:EOLS | Injectables | Evolus | USA | USA | 1 | North America | Newport Beach, CA, USA | Public | Manufacturer | Active | NASDAQ:EOLS | 297.18 | 2025 | 66.33 | 454.4 | 2026-07-06T08:18:46+08:00 | 1.53 | 100 | 2 | 2 | Injectables | 0 | 0 | 6.900000095367432 | USD | 0.51 | https://finance.yahoo.com/quote/EOLS | 2026-07-06T08:17:59+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001570562.json | official_sec_xbrl_auto | -8.8 | -19.67 | -0.8 | -0.8 | -2.42 | 2026-07-06T08:17:59+08:00 | FY2025 | 2026-03-03 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Evolus"
     },
     {
       "type": "company",
@@ -104809,7 +104809,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Establishment Labs | Establishment Labs | Costa Rica | Latin America | Public | Manufacturer | NASDAQ:ESTA | Implants | Establishment Labs | Costa Rica | Costa Rica | 1 | Latin America | Alajuela, Costa Rica | Public | Manufacturer | Active | NASDAQ:ESTA | 211.08 | 2025 | 69.32 | 2601.06 | 2026-06-29T13:07:41+08:00 | 12.32 | 100 | 3 | 2 | Implants | 0 | 0 | 88.37999725341797 | USD | -0.77 | https://finance.yahoo.com/quote/ESTA | 2026-06-29T13:06:40+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001688757.json | official_sec_xbrl_auto | -50.94 | 110.46 | -1.72 | -1.72 | 39.64 | 2026-06-29T13:06:40+08:00 | FY2025 | 2026-02-27 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Establishment Labs"
+      "search_text": "company | Establishment Labs | Establishment Labs | Costa Rica | Latin America | Public | Manufacturer | NASDAQ:ESTA | Implants | Establishment Labs | Costa Rica | Costa Rica | 1 | Latin America | Alajuela, Costa Rica | Public | Manufacturer | Active | NASDAQ:ESTA | 211.08 | 2025 | 69.32 | 2626.66 | 2026-07-06T08:18:46+08:00 | 12.44 | 100 | 3 | 2 | Implants | 0 | 0 | 89.25 | USD | -0.83 | https://finance.yahoo.com/quote/ESTA | 2026-07-06T08:17:57+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001688757.json | official_sec_xbrl_auto | -51.44 | 111.55 | -1.72 | -1.72 | 39.64 | 2026-07-06T08:17:57+08:00 | FY2025 | 2026-02-27 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Establishment Labs"
     },
     {
       "type": "company",
@@ -104896,7 +104896,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ipsen Pharma | Ipsen Pharma | France | Europe | Public | Manufacturer | IPN.PA | Injectables | Ipsen Pharma | France | France | 1 | Europe | Paris, France | Public | Manufacturer | Active | IPN.PA | 4559.84 | 2025 | 80.89 | 15852.17 | 2026-05-26T23:39:42+08:00 | 3.48 | 1 | 1 | Injectables | 0 | 0 | 162.39999389648438 | EUR | -0.06 | https://finance.yahoo.com/quote/IPN.PA | 2026-06-29T13:06:53+08:00 | https://www.ipsen.com/investor-relations/ | pending_collection | 2026-06-29T13:06:53+08:00 | IFRS_consolidated | Ipsen Pharma"
+      "search_text": "company | Ipsen Pharma | Ipsen Pharma | France | Europe | Public | Manufacturer | IPN.PA | Injectables | Ipsen Pharma | France | France | 1 | Europe | Paris, France | Public | Manufacturer | Active | IPN.PA | 4559.84 | 2025 | 80.89 | 15852.17 | 2026-05-26T23:39:42+08:00 | 3.48 | 1 | 1 | Injectables | 0 | 0 | 170.6999969482422 | EUR | -0.06 | https://finance.yahoo.com/quote/IPN.PA | 2026-07-06T08:18:07+08:00 | https://www.ipsen.com/investor-relations/ | pending_collection | 2026-07-06T08:18:07+08:00 | IFRS_consolidated | Ipsen Pharma"
     },
     {
       "type": "company",
@@ -105128,7 +105128,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Sofwave Medical | Sofwave Medical | Israel | Middle East | Public | Manufacturer | SOFW.TA | EBD | Sofwave Medical | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | SOFW.TA | 87.64 | 2025 | 75.27 | 527.24 | 2026-05-26T22:24:01+08:00 | 6.02 | 100 | 3 | 2 | EBD | 0 | 0 | 4042.0 | ILA | 0.52 | https://finance.yahoo.com/quote/SOFW.TA | 2026-06-29T13:07:32+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/SOFW.TA?range=5d&interval=1d | valuation_missing_price_only | 2026-06-29T13:07:32+08:00 | Sofwave Medical"
+      "search_text": "company | Sofwave Medical | Sofwave Medical | Israel | Middle East | Public | Manufacturer | SOFW.TA | EBD | Sofwave Medical | Israel | Israel | 1 | Middle East | Yokneam, Israel | Public | Manufacturer | Active | SOFW.TA | 87.64 | 2025 | 75.27 | 527.24 | 2026-05-26T22:24:01+08:00 | 6.02 | 100 | 3 | 2 | EBD | 0 | 0 | 4280.0 | ILA | 0.73 | https://finance.yahoo.com/quote/SOFW.TA | 2026-07-06T08:18:39+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/SOFW.TA?range=5d&interval=1d | valuation_missing_price_only | 2026-07-06T08:18:39+08:00 | Sofwave Medical"
     },
     {
       "type": "company",
@@ -105942,7 +105942,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Kaneka Corporation | Kaneka Corporation | Japan | Asia-Pacific | Public | Manufacturer | 4118.T | Injectables | Kaneka Corporation | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Public | Manufacturer | Active | 4118.T | 5085.36 | 2025 | 27.95 | 1964.25 | 2026-05-26T14:30:00+08:00 | 0.39 | 2 | 1 | Injectables | 0 | 0 | 5743.0 | JPY | -0.42 | https://finance.yahoo.com/quote/4118.T | 2026-06-29T13:07:03+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:07:03+08:00 | Kaneka Corporation"
+      "search_text": "company | Kaneka Corporation | Kaneka Corporation | Japan | Asia-Pacific | Public | Manufacturer | 4118.T | Injectables | Kaneka Corporation | Japan | Japan | 1 | Asia-Pacific | Tokyo, Japan | Public | Manufacturer | Active | 4118.T | 5085.36 | 2025 | 27.95 | 1964.25 | 2026-05-26T14:30:00+08:00 | 0.39 | 2 | 1 | Injectables | 0 | 0 | 5777.0 | JPY | 1.01 | https://finance.yahoo.com/quote/4118.T | 2026-07-06T08:18:16+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:16+08:00 | Kaneka Corporation"
     },
     {
       "type": "company",
@@ -105971,7 +105971,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | L'Oréal | L'Oréal | France | Europe | Public | Manufacturer | OR.PA | EBD | L'Oréal | France | France | 1 | Europe | Clichy, France | Public | Manufacturer | Active | OR.PA | 51122.35 | 2025 | 74.32 | 222238.52 | 2026-05-26T23:37:20+08:00 | 4.35 | 1 | 1 | EBD | 0 | 0 | 388.0 | EUR | -0.26 | https://finance.yahoo.com/quote/OR.PA | 2026-06-29T13:07:05+08:00 | https://www.loreal-finance.com/en/annual-report-2024 | pending_collection | 2026-06-29T13:07:05+08:00 | IFRS_consolidated | L'Oréal"
+      "search_text": "company | L'Oréal | L'Oréal | France | Europe | Public | Manufacturer | OR.PA | EBD | L'Oréal | France | France | 1 | Europe | Clichy, France | Public | Manufacturer | Active | OR.PA | 51122.35 | 2025 | 74.32 | 222238.52 | 2026-05-26T23:37:20+08:00 | 4.35 | 1 | 1 | EBD | 0 | 0 | 382.45001220703125 | EUR | -1.39 | https://finance.yahoo.com/quote/OR.PA | 2026-07-06T08:18:17+08:00 | https://www.loreal-finance.com/en/annual-report-2024 | pending_collection | 2026-07-06T08:18:17+08:00 | IFRS_consolidated | L'Oréal"
     },
     {
       "type": "company",
@@ -106116,7 +106116,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Johnson & Johnson | Johnson & Johnson | USA | North America | Public | Manufacturer | NASDAQ:JNJ | Implants | Johnson & Johnson | USA | USA | 1 | North America | New Brunswick, NJ, USA | Public | Manufacturer | Active | NASDAQ:JNJ | 94193 | 2025 | 67.88 | 613021.88 | 2026-06-29T13:07:41+08:00 | 6.51 | 12 | 2 | Implants | 7 | 1 | 全球医疗健康龙头；旗下 Mentor 是全球乳房假体与乳房重建核心品牌，覆盖硅凝胶、盐水、可调式盐水、组织扩张器和配套试模系统。 | 254.66000366210938 | USD | 3.55 | https://finance.yahoo.com/quote/JNJ | 2026-06-29T13:05:23+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000200406.json | official_sec_xbrl_auto | 22.87 | 7.52 | 11.03 | 11.03 | 90.56 | 2026-06-29T13:05:23+08:00 | FY2025 | 2026-02-11 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Johnson & Johnson"
+      "search_text": "company | Johnson & Johnson | Johnson & Johnson | USA | North America | Public | Manufacturer | NASDAQ:JNJ | Implants | Johnson & Johnson | USA | USA | 1 | North America | New Brunswick, NJ, USA | Public | Manufacturer | Active | NASDAQ:JNJ | 94193 | 2025 | 67.88 | 633194.37 | 2026-07-06T08:18:46+08:00 | 6.72 | 12 | 2 | Implants | 7 | 1 | 全球医疗健康龙头；旗下 Mentor 是全球乳房假体与乳房重建核心品牌，覆盖硅凝胶、盐水、可调式盐水、组织扩张器和配套试模系统。 | 263.0400085449219 | USD | 3.6 | https://finance.yahoo.com/quote/JNJ | 2026-07-06T08:16:59+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0000200406.json | official_sec_xbrl_auto | 23.62 | 7.77 | 11.03 | 11.03 | 90.56 | 2026-07-06T08:16:59+08:00 | FY2025 | 2026-02-11 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Johnson & Johnson"
     },
     {
       "type": "company",
@@ -106291,7 +106291,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | BioElectronics | BioElectronics | USA | North America | Public | Manufacturer | OTC:BIEL | EBD | BioElectronics | USA | USA | 1 | North America | Frederick, MD, USA | Public | Manufacturer | Active | OTC:BIEL | unavailable_verified | unavailable_verified | 9.88 | 2026-05-27T00:22:58+08:00 | 1 | 1 | EBD | 0 | 0 | 脉冲短波疗法电子创可贴 | 0.0002500000118743628 | USD | -16.67 | https://finance.yahoo.com/quote/BIEL | 2026-06-29T13:06:31+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:06:31+08:00 | BioElectronics"
+      "search_text": "company | BioElectronics | BioElectronics | USA | North America | Public | Manufacturer | OTC:BIEL | EBD | BioElectronics | USA | USA | 1 | North America | Frederick, MD, USA | Public | Manufacturer | Active | OTC:BIEL | unavailable_verified | unavailable_verified | 9.88 | 2026-05-27T00:22:58+08:00 | 1 | 1 | EBD | 0 | 0 | 脉冲短波疗法电子创可贴 | 0.0003000000142492354 | USD | -6.98 | https://finance.yahoo.com/quote/BIEL | 2026-07-06T08:17:50+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:17:50+08:00 | BioElectronics"
     },
     {
       "type": "company",
@@ -106552,7 +106552,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | ViOL | ViOL | South Korea | Asia-Pacific | Public | Manufacturer | KRX:335890 | EBD | ViOL | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:335890 | 40.74 | 2024 | 82.55 | 505.25 | 2024-07-20T04:00:00+08:00 | 12.4 | 100 | 1 | 1 | EBD | 0 | 0 | 10340.0 | KRW | https://finance.yahoo.com/quote/335890.KS | 2026-06-29T13:07:41+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/335890.KS?range=5d&interval=1d | valuation_missing_price_only | 2026-06-29T13:07:41+08:00 | ViOL"
+      "search_text": "company | ViOL | ViOL | South Korea | Asia-Pacific | Public | Manufacturer | KRX:335890 | EBD | ViOL | South Korea | South Korea | 1 | Asia-Pacific | Seongnam, South Korea | Public | Manufacturer | Active | KRX:335890 | 40.74 | 2024 | 82.55 | 505.25 | 2024-07-20T04:00:00+08:00 | 12.4 | 100 | 1 | 1 | EBD | 0 | 0 | 10340.0 | KRW | https://finance.yahoo.com/quote/335890.KS | 2026-07-06T08:18:46+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/335890.KS?range=5d&interval=1d | valuation_missing_price_only | 2026-07-06T08:18:46+08:00 | ViOL"
     },
     {
       "type": "company",
@@ -107162,7 +107162,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Julphar | Julphar | UAE | Middle East | Public | Manufacturer | JULPHAR | Pharma | Julphar | UAE | UAE | 1 | Other | Ras Al Khaimah, UAE | Public | Manufacturer | Active | JULPHAR | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:53:27+08:00 | 1 | 1 | Pharma | 0 | 0 | 2026-06-29T13:07:01+08:00 | https://finance.yahoo.com/quote/JULPHAR/financials/ | valuation_fetch_failed | 2026-06-29T13:07:01+08:00 | Julphar"
+      "search_text": "company | Julphar | Julphar | UAE | Middle East | Public | Manufacturer | JULPHAR | Pharma | Julphar | UAE | UAE | 1 | Other | Ras Al Khaimah, UAE | Public | Manufacturer | Active | JULPHAR | unavailable_verified | unavailable_verified | unavailable_verified | 2026-05-27T00:53:27+08:00 | 1 | 1 | Pharma | 0 | 0 | 2026-07-06T08:18:14+08:00 | https://finance.yahoo.com/quote/JULPHAR/financials/ | valuation_fetch_failed | 2026-07-06T08:18:14+08:00 | Julphar"
     },
     {
       "type": "company",
@@ -107366,7 +107366,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | LG Chem | LG Chem | South Korea | Asia-Pacific | Public | Manufacturer | KRX:051910 | Injectables | LG Chem | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:051910 | 32152.52 | 2025 | 17 | 17218.33 | 2024-07-20T04:00:00+08:00 | 0.54 | 1 | 1 | Injectables | 0 | 0 | 333500.0 | KRW | 16.81 | https://finance.yahoo.com/quote/051910.KQ | 2026-06-29T13:07:07+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-06-29T13:07:07+08:00 | LG Chem"
+      "search_text": "company | LG Chem | LG Chem | South Korea | Asia-Pacific | Public | Manufacturer | KRX:051910 | Injectables | LG Chem | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:051910 | 32152.52 | 2025 | 17 | 17218.33 | 2024-07-20T04:00:00+08:00 | 0.54 | 1 | 1 | Injectables | 0 | 0 | 333500.0 | KRW | 18.47 | https://finance.yahoo.com/quote/051910.KQ | 2026-07-06T08:18:19+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-07-06T08:18:19+08:00 | LG Chem"
     },
     {
       "type": "company",
@@ -107540,7 +107540,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Lumibird | Lumibird | France | Europe | Public | Manufacturer | LBIRD.PA | EBD | Lumibird | France | France | 1 | Europe | Cournon, France | Public | Manufacturer | Active | LBIRD.PA | 265.21 | 2025 | 63.99 | 590.33 | 2026-05-26T23:35:00+08:00 | 2.23 | 1 | 1 | EBD | 0 | 0 | 24.75 | EUR | 3.99 | https://finance.yahoo.com/quote/LBIRD.PA | 2026-06-29T13:07:09+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:07:09+08:00 | Lumibird"
+      "search_text": "company | Lumibird | Lumibird | France | Europe | Public | Manufacturer | LBIRD.PA | EBD | Lumibird | France | France | 1 | Europe | Cournon, France | Public | Manufacturer | Active | LBIRD.PA | 265.21 | 2025 | 63.99 | 590.33 | 2026-05-26T23:35:00+08:00 | 2.23 | 1 | 1 | EBD | 0 | 0 | 25.700000762939453 | EUR | 0.39 | https://finance.yahoo.com/quote/LBIRD.PA | 2026-07-06T08:18:21+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:21+08:00 | Lumibird"
     },
     {
       "type": "company",
@@ -107628,7 +107628,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Maxigen Biotech / MBI | Maxigen Biotech | MBI | Taiwan | Asia-Pacific | Public | Manufacturer | 1783.TWO | Injectables | Maxigen Biotech / MBI | Taiwan | Taiwan | 1 | Asia-Pacific | Taipei, Taiwan | Public | Manufacturer | Active | 1783.TWO | 25.81 | 2025 | 69.46 | 109.49 | 2026-05-26T13:30:33+08:00 | 4.24 | 1 | 1 | Injectables | 0 | 0 | 38.849998474121094 | TWD | 1.97 | https://finance.yahoo.com/quote/1783.TW | 2026-06-29T13:07:17+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:07:17+08:00 | Maxigen Biotech / MBI"
+      "search_text": "company | Maxigen Biotech / MBI | Maxigen Biotech | MBI | Taiwan | Asia-Pacific | Public | Manufacturer | 1783.TWO | Injectables | Maxigen Biotech / MBI | Taiwan | Taiwan | 1 | Asia-Pacific | Taipei, Taiwan | Public | Manufacturer | Active | 1783.TWO | 25.81 | 2025 | 69.46 | 109.49 | 2026-05-26T13:30:33+08:00 | 4.24 | 1 | 1 | Injectables | 0 | 0 | 39.900001525878906 | TWD | 2.05 | https://finance.yahoo.com/quote/1783.TW | 2026-07-06T08:18:27+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:27+08:00 | Maxigen Biotech / MBI"
     },
     {
       "type": "company",
@@ -107831,7 +107831,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Meta Biomed | Meta Biomed | South Korea | Asia-Pacific | Public | Manufacturer | KRX:059210 | Injectables | Meta Biomed | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:059210 | 72.07 | 2025 | 52.06 | 72.05 | 2026-05-26T14:30:30+08:00 | 1 | 1 | 1 | Injectables | 0 | 0 | 3915.0 | KRW | 4.96 | https://finance.yahoo.com/quote/059210.KQ | 2026-06-29T13:07:19+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:07:19+08:00 | Meta Biomed"
+      "search_text": "company | Meta Biomed | Meta Biomed | South Korea | Asia-Pacific | Public | Manufacturer | KRX:059210 | Injectables | Meta Biomed | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:059210 | 72.07 | 2025 | 52.06 | 72.05 | 2026-05-26T14:30:30+08:00 | 1 | 1 | 1 | Injectables | 0 | 0 | 3715.0 | KRW | 0.54 | https://finance.yahoo.com/quote/059210.KQ | 2026-07-06T08:18:29+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:29+08:00 | Meta Biomed"
     },
     {
       "type": "company",
@@ -108353,7 +108353,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | GTG Wellness | GTG Wellness | South Korea | Asia-Pacific | Public | Manufacturer | KRX:219750 | EBD | GTG Wellness | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:219750 | 22.42 | 2025 | 21.13 | 83.66 | 2026-05-26T14:30:30+08:00 | 1.28 | 100 | 1 | 1 | EBD | 0 | 0 | 1975.0 | KRW | -1.99 | https://finance.yahoo.com/quote/219750.KQ | 2026-06-29T13:06:44+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/219750.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-06-29T13:06:44+08:00 | GTG Wellness"
+      "search_text": "company | GTG Wellness | GTG Wellness | South Korea | Asia-Pacific | Public | Manufacturer | KRX:219750 | EBD | GTG Wellness | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:219750 | 22.42 | 2025 | 21.13 | 18.31 | 2026-05-26T14:30:30+08:00 | 1.28 | 100 | 1 | 1 | EBD | 0 | 0 | 2145.0 | KRW | -3.07 | https://finance.yahoo.com/quote/219750.KQ | 2026-07-06T08:18:00+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/219750.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-07-06T08:18:00+08:00 | GTG Wellness"
     },
     {
       "type": "company",
@@ -108498,7 +108498,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Halozyme Therapeutics | Halozyme Therapeutics | USA | North America | Public | Manufacturer | NASDAQ:HALO | Injectables | Halozyme Therapeutics | USA | USA | 1 | North America | San Diego, CA, USA | Public | Manufacturer | Active | NASDAQ:HALO | 1396.61 | 2025 | 0.44 | 8891.23 | 2026-06-29T13:07:41+08:00 | 6.37 | 1 | 1 | Injectables | 0 | 0 | 74.95999908447266 | USD | 3.2 | https://finance.yahoo.com/quote/HALO | 2026-06-29T13:06:46+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json | official_sec_xbrl_auto | 28.06 | 182.15 | 2.56 | 2.56 | -28.64 | 2026-06-29T13:06:46+08:00 | FY2025 | 2026-02-17 | SEC annual XBRL companyfacts | 2026-06-29T13:07:41+08:00 | Halozyme Therapeutics"
+      "search_text": "company | Halozyme Therapeutics | Halozyme Therapeutics | USA | North America | Public | Manufacturer | NASDAQ:HALO | Injectables | Halozyme Therapeutics | USA | USA | 1 | North America | San Diego, CA, USA | Public | Manufacturer | Active | NASDAQ:HALO | 1396.61 | 2025 | 0.44 | 9423.8 | 2026-07-06T08:18:46+08:00 | 6.75 | 1 | 1 | Injectables | 0 | 0 | 79.44999694824219 | USD | 1.74 | https://finance.yahoo.com/quote/HALO | 2026-07-06T08:18:02+08:00 | https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json | official_sec_xbrl_auto | 29.74 | 193.06 | 2.56 | 2.56 | -28.64 | 2026-07-06T08:18:02+08:00 | FY2025 | 2026-02-17 | SEC annual XBRL companyfacts | 2026-07-06T08:18:46+08:00 | Halozyme Therapeutics"
     },
     {
       "type": "company",
@@ -109980,7 +109980,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Samyang Holdings | Samyang Holdings | South Korea | Asia-Pacific | Public | Manufacturer | KRX:000070 | Injectables | Samyang Holdings | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:000070 | 2343.8 | 2025 | 17.35 | 312.47 | 2024-07-20T04:00:00+08:00 | 0.13 | 1 | 1 | Injectables | 0 | 0 | 69500.0 | KRW | 31.38 | https://finance.yahoo.com/quote/000070.KQ | 2026-06-29T13:07:29+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-06-29T13:07:29+08:00 | Samyang Holdings"
+      "search_text": "company | Samyang Holdings | Samyang Holdings | South Korea | Asia-Pacific | Public | Manufacturer | KRX:000070 | Injectables | Samyang Holdings | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:000070 | 2343.8 | 2025 | 17.35 | 312.47 | 2024-07-20T04:00:00+08:00 | 0.13 | 1 | 1 | Injectables | 0 | 0 | 69500.0 | KRW | 22.36 | https://finance.yahoo.com/quote/000070.KQ | 2026-07-06T08:18:36+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d | valuation_missing_price_only | 2026-07-06T08:18:36+08:00 | Samyang Holdings"
     },
     {
       "type": "company",
@@ -110009,7 +110009,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | SciVision Biotech | SciVision Biotech | Taiwan | Asia-Pacific | Public | Manufacturer | 1786.TW | Injectables | SciVision Biotech | Taiwan | Taiwan | 1 | Asia-Pacific | Kaohsiung, Taiwan | Public | Manufacturer | Active | 1786.TW | 28.19 | 2025 | 72 | 129.08 | 2026-05-26T13:30:40+08:00 | 4.58 | 1 | 1 | Injectables | 0 | 0 | 54.0 | TWD | 1.12 | https://finance.yahoo.com/quote/1786.TW | 2026-06-29T13:07:31+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-06-29T13:07:31+08:00 | SciVision Biotech"
+      "search_text": "company | SciVision Biotech | SciVision Biotech | Taiwan | Asia-Pacific | Public | Manufacturer | 1786.TW | Injectables | SciVision Biotech | Taiwan | Taiwan | 1 | Asia-Pacific | Kaohsiung, Taiwan | Public | Manufacturer | Active | 1786.TW | 28.19 | 2025 | 72 | 129.08 | 2026-05-26T13:30:40+08:00 | 4.58 | 1 | 1 | Injectables | 0 | 0 | 54.29999923706055 | TWD | 0.93 | https://finance.yahoo.com/quote/1786.TW | 2026-07-06T08:18:38+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d | price_refreshed_valuation_carried_forward | 2026-07-06T08:18:38+08:00 | SciVision Biotech"
     },
     {
       "type": "company",
@@ -110067,7 +110067,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Aspen Pharmacare | Aspen Pharmacare | South Africa | Africa | Public | Manufacturer | APN.JSE | Pharma | Aspen Pharmacare | South Africa | South Africa | 1 | Africa | Durban, South Africa | Public | Manufacturer | Active | APN.JSE | 2636.47 | 2025 | 44.11 | 3681.25 | 2026-05-26T23:00:53+08:00 | 1.4 | 1 | 1 | Pharma | 0 | 0 | 15485.0 | ZAC | 0.62 | https://finance.yahoo.com/quote/APN.JO | 2026-06-29T13:06:27+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d | valuation_missing_price_only | 2026-06-29T13:06:27+08:00 | Aspen Pharmacare"
+      "search_text": "company | Aspen Pharmacare | Aspen Pharmacare | South Africa | Africa | Public | Manufacturer | APN.JSE | Pharma | Aspen Pharmacare | South Africa | South Africa | 1 | Africa | Durban, South Africa | Public | Manufacturer | Active | APN.JSE | 2636.47 | 2025 | 44.11 | 3681.25 | 2026-05-26T23:00:53+08:00 | 1.4 | 1 | 1 | Pharma | 0 | 0 | 15774.0 | ZAC | 0.24 | https://finance.yahoo.com/quote/APN.JO | 2026-07-06T08:17:46+08:00 | https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d | valuation_missing_price_only | 2026-07-06T08:17:46+08:00 | Aspen Pharmacare"
     },
     {
       "type": "company",
@@ -110853,7 +110853,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Humedix | Humedix | South Korea | Asia-Pacific | Public | Manufacturer | Huons Global | KOSDAQ:200670 | Injectables | Humedix | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Public | Manufacturer | Active | Huons Global | KOSDAQ:200670 | 73 | 2026 | 12.7 | 198.09 | 2026-06-01T01:43:21+08:00 | 2.85 | 2 | 2 | Injectables | 0 | 1 | 韩国 Humedix 玻尿酸填充剂进口注册主体；NMPA-IMP-02/03 用户确认新增。 | 27550.0 | KRW | 8.68 | https://finance.yahoo.com/quote/200670.KQ | 2026-06-29T13:06:49+08:00 | https://finance.yahoo.com/quote/200670.KQ | pending_live_fetch | 2026-06-29T13:06:49+08:00 | Huons Global | aesthetic_subsidiary_of_huons_group | Huons Global official news | https://huonsglobal.com/eng/home.php?field=&go=Bmenu_03&go_pds=pds_text_list&mode=&num=3275&pds_num=60&s_memo_2=&s_que=&start=10 | Keep Humedix as a public listed operating company while grouping it under Huons Global / Huons Group for corporate-family analysis."
+      "search_text": "company | Humedix | Humedix | South Korea | Asia-Pacific | Public | Manufacturer | Huons Global | KOSDAQ:200670 | Injectables | Humedix | South Korea | South Korea | 1 | Asia-Pacific | South Korea | Public | Manufacturer | Active | Huons Global | KOSDAQ:200670 | 73 | 2026 | 12.7 | 196.29 | 2026-06-01T01:43:21+08:00 | 2.85 | 2 | 2 | Injectables | 0 | 1 | 韩国 Humedix 玻尿酸填充剂进口注册主体；NMPA-IMP-02/03 用户确认新增。 | 27100.0 | KRW | 0.56 | https://finance.yahoo.com/quote/200670.KQ | 2026-07-06T08:18:05+08:00 | https://finance.yahoo.com/quote/200670.KQ | pending_live_fetch | 2026-07-06T08:18:05+08:00 | Huons Global | aesthetic_subsidiary_of_huons_group | Huons Global official news | https://huonsglobal.com/eng/home.php?field=&go=Bmenu_03&go_pds=pds_text_list&mode=&num=3275&pds_num=60&s_memo_2=&s_que=&start=10 | Keep Humedix as a public listed operating company while grouping it under Huons Global / Huons Group for corporate-family analysis."
     },
     {
       "type": "company",

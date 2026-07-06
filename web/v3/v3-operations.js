@@ -1,5 +1,5 @@
 window.V3_OPERATIONS_DATA = {
-  "generated_at": "2026-07-06T14:04:14+08:00",
+  "generated_at": "2026-07-07T00:55:01+08:00",
   "source": {
     "database": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
     "guardrail": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\database_guardrail_validation_latest.json",
