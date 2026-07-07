@@ -103,6 +103,17 @@ TAIWAN_CITY_APPROVED_INSTITUTION_COUNTS = [
     ("Kinmen County", "KIN", "Kinmen County", 0),
 ]
 
+JAPAN_SOURCE_ID = "japan_mhlw_aesthetic_medicine_status"
+JAPAN_SOURCE_ORG = "MHLW"
+JAPAN_REPORT_TITLE = "Current Status of Aesthetic Medicine"
+JAPAN_SOURCE_URL = "https://www.mhlw.go.jp/content/10803000/001363278.pdf"
+JAPAN_SURVEY_FRAME_COUNTS = [
+    ("2019", 3093, 423),
+    ("2020", 2835, 580),
+    ("2021", 2872, 306),
+    ("2022", 5270, 517),
+]
+
 
 def build_brazil_sbcp_rows() -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
@@ -277,8 +288,48 @@ def build_taiwan_mohw_rows() -> list[dict[str, str]]:
     return rows
 
 
+def build_japan_mhlw_rows() -> list[dict[str, str]]:
+    rows: list[dict[str, str]] = []
+    note = (
+        "MHLW material page 5 reproduces the JSAPS national aesthetic medicine survey overview. "
+        "Counts are survey target and responding medical institutions; use as Japan local survey-frame/channel-coverage proxy, "
+        "not treatment volume or full provider census."
+    )
+    for year, target_count, response_count in JAPAN_SURVEY_FRAME_COUNTS:
+        for metric, value in [
+            ("aesthetic_survey_target_institution_count", target_count),
+            ("aesthetic_survey_response_institution_count", response_count),
+        ]:
+            rows.append(
+                {
+                    "source_id": JAPAN_SOURCE_ID,
+                    "country": "Japan",
+                    "admin_level": "country",
+                    "admin_name": "Japan",
+                    "admin_code": "",
+                    "city": "",
+                    "metric": metric,
+                    "value": str(value),
+                    "unit": "institutions",
+                    "year": year,
+                    "source_org": JAPAN_SOURCE_ORG,
+                    "report_title": JAPAN_REPORT_TITLE,
+                    "source_url": JAPAN_SOURCE_URL,
+                    "source_page": "5",
+                    "note": note,
+                    "confidence": "official_government_meeting_material_survey_frame_manual_qa",
+                }
+            )
+    return rows
+
+
 def build_rows() -> list[dict[str, str]]:
-    return [*build_brazil_sbcp_rows(), *build_hong_kong_dh_rows(), *build_taiwan_mohw_rows()]
+    return [
+        *build_brazil_sbcp_rows(),
+        *build_hong_kong_dh_rows(),
+        *build_taiwan_mohw_rows(),
+        *build_japan_mhlw_rows(),
+    ]
 
 
 def main() -> int:

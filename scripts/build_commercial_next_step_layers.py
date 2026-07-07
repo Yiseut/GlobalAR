@@ -385,6 +385,11 @@ def build_completion_rows(
         for row in channel_detail_rows
         if norm(row.get("source_id")) == "taiwan_mohw_aesthetic_medicine_institutions"
     ]
+    japan_survey_frame_rows = [
+        row
+        for row in channel_detail_rows
+        if norm(row.get("source_id")) == "japan_mhlw_aesthetic_medicine_status"
+    ]
     segment_gaps = sum(1 for row in revenue_rows if row.get("aesthetics_segment_status") == "needs_aesthetics_segment_or_not_disclosed_review")
     europe_promoted = [row for row in europe_rows if norm(row.get("promotion_allowed")).startswith("yes")]
     europe_status = "completed_partial_promotion" if europe_promoted else "completed_hold_unpromoted"
@@ -458,6 +463,15 @@ def build_completion_rows(
             "rows": len(taiwan_aesthetic_institution_rows),
             "frontstage_label": "Taiwan approved aesthetic institution denominator",
             "note": "Taiwan MOHW PDF page 1 is loaded as country/city-county approved aesthetic-medicine institution counts, updated to 2025-06-30.",
+            "captured_at": captured_at,
+        },
+        {
+            "workstream": "Japan MHLW survey-frame detail",
+            "status": "completed_survey_frame_proxy",
+            "output": str(CHANNEL_DENSITY_DETAIL_PATH),
+            "rows": len(japan_survey_frame_rows),
+            "frontstage_label": "Japan aesthetic survey coverage frame",
+            "note": "MHLW material page 5 is loaded as 2019-2022 JSAPS survey target/responding institution counts; physician specialty counts remain pending.",
             "captured_at": captured_at,
         },
         {
