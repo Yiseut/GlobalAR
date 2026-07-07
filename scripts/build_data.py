@@ -109,6 +109,7 @@ EUROPE_METRIC_QA_PATH = DATA_DIR / "audits" / "europe_metric_qa_latest.csv"
 COMMERCIAL_CHANNEL_DENSITY_PROXY_PATH = DATA_DIR / "commercial_channel_density_proxy.csv"
 COMPANY_REVENUE_LAYER_PROGRESS_PATH = DATA_DIR / "audits" / "company_revenue_layer_progress_latest.csv"
 COMMERCIAL_NEXT_STEP_COMPLETION_PATH = DATA_DIR / "audits" / "commercial_next_step_completion_latest.csv"
+COMMERCIAL_CHANNEL_DENSITY_DETAIL_PATH = DATA_DIR / "commercial_channel_density_detail.csv"
 COMMERCIAL_SOURCE_ROOTS = [
     {"label": "commercial_acquired_sources", "path": DATA_DIR / "commercial_sources"},
     {"label": "local_report_notes", "path": SOURCE_DIR / "行业报告"},
@@ -8006,6 +8007,7 @@ def build_v3_market_intelligence_payload(
     geo_source_discovery: list[dict[str, Any]] | None = None,
     companies: list[dict[str, Any]] | None = None,
     channel_density_proxy: list[dict[str, Any]] | None = None,
+    channel_density_detail: list[dict[str, Any]] | None = None,
     europe_metric_qa: list[dict[str, Any]] | None = None,
     company_revenue_progress: list[dict[str, Any]] | None = None,
     next_step_completion: list[dict[str, Any]] | None = None,
@@ -8532,6 +8534,26 @@ def build_v3_market_intelligence_payload(
             "capturedAt": row.get("captured_at"),
         }
 
+    def channel_density_detail_item(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "sourceId": row.get("source_id"),
+            "country": row.get("country"),
+            "adminLevel": row.get("admin_level"),
+            "adminName": row.get("admin_name"),
+            "adminCode": row.get("admin_code"),
+            "city": row.get("city"),
+            "metric": row.get("metric"),
+            "value": safe_float(row.get("value")),
+            "unit": row.get("unit"),
+            "year": safe_int(row.get("year")) or row.get("year"),
+            "sourceOrg": row.get("source_org"),
+            "reportTitle": row.get("report_title"),
+            "sourceUrl": row.get("source_url"),
+            "sourcePage": row.get("source_page"),
+            "note": row.get("note"),
+            "confidence": row.get("confidence"),
+        }
+
     def europe_qa_item(row: dict[str, Any]) -> dict[str, Any]:
         return {
             "sourceId": row.get("source_id"),
@@ -8732,6 +8754,7 @@ def build_v3_market_intelligence_payload(
         },
         "topCompanyCountries": build_top_company_country_coverage(),
         "channelDensityProxy": [channel_density_item(row) for row in (channel_density_proxy or [])],
+        "channelDensityDetail": [channel_density_detail_item(row) for row in (channel_density_detail or [])],
         "europeMetricQa": [europe_qa_item(row) for row in (europe_metric_qa or [])],
         "companyRevenueProgress": [revenue_progress_item(row) for row in (company_revenue_progress or [])],
         "nextStepCompletion": [completion_item(row) for row in (next_step_completion or [])],
@@ -11124,6 +11147,7 @@ def build_snapshot(
     asps_extraction_status = load_audit_csv(ASPS_EXTRACTION_STATUS_PATH)
     europe_metric_qa = load_audit_csv(EUROPE_METRIC_QA_PATH)
     commercial_channel_density_proxy = load_generated_csv(COMMERCIAL_CHANNEL_DENSITY_PROXY_PATH)
+    commercial_channel_density_detail = load_audit_csv(COMMERCIAL_CHANNEL_DENSITY_DETAIL_PATH)
     company_revenue_layer_progress = load_audit_csv(COMPANY_REVENUE_LAYER_PROGRESS_PATH)
     commercial_next_step_completion = load_audit_csv(COMMERCIAL_NEXT_STEP_COMPLETION_PATH)
     verification_queue = build_verification_queue(company_master)
@@ -11638,6 +11662,7 @@ def build_snapshot(
             "asps_extraction_status": len(asps_extraction_status),
             "europe_metric_qa": len(europe_metric_qa),
             "commercial_channel_density_proxy": len(commercial_channel_density_proxy),
+            "commercial_channel_density_detail": len(commercial_channel_density_detail),
             "company_revenue_layer_progress": len(company_revenue_layer_progress),
             "commercial_next_step_completion": len(commercial_next_step_completion),
             "reports": len(reports),
@@ -11765,6 +11790,7 @@ def build_snapshot(
             commercial_geo_source_discovery,
             companies,
             commercial_channel_density_proxy,
+            commercial_channel_density_detail,
             europe_metric_qa,
             company_revenue_layer_progress,
             commercial_next_step_completion,

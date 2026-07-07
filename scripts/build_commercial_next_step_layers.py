@@ -31,6 +31,7 @@ EUROPE_ASSOCIATION_MARKET_METRICS_PATH = DATA_DIR / "europe_association_market_m
 
 EUROPE_QA_PATH = AUDIT_DIR / "europe_metric_qa_latest.csv"
 CHANNEL_DENSITY_PATH = DATA_DIR / "commercial_channel_density_proxy.csv"
+CHANNEL_DENSITY_DETAIL_PATH = DATA_DIR / "commercial_channel_density_detail.csv"
 REVENUE_PROGRESS_PATH = AUDIT_DIR / "company_revenue_layer_progress_latest.csv"
 COMPLETION_PATH = AUDIT_DIR / "commercial_next_step_completion_latest.csv"
 
@@ -367,6 +368,13 @@ def build_completion_rows(
     baaps_surgical_years = sorted(
         {norm(row.get("year")) for row in baaps_rows if norm(row.get("category_l1")) == "Surgical procedures"}
     )
+    channel_detail_rows = read_csv(CHANNEL_DENSITY_DETAIL_PATH)
+    brazil_state_denominator_rows = [
+        row
+        for row in channel_detail_rows
+        if norm(row.get("source_id")) == "brazil_sbcp_pesquisas_censo"
+        and norm(row.get("metric")) == "plastic_surgeon_count"
+    ]
     segment_gaps = sum(1 for row in revenue_rows if row.get("aesthetics_segment_status") == "needs_aesthetics_segment_or_not_disclosed_review")
     europe_promoted = [row for row in europe_rows if norm(row.get("promotion_allowed")).startswith("yes")]
     europe_status = "completed_partial_promotion" if europe_promoted else "completed_hold_unpromoted"
@@ -413,6 +421,15 @@ def build_completion_rows(
             "rows": len(channel_rows),
             "frontstage_label": "Top 15 country channel-density proxy",
             "note": "Top 15 country provider locator, doctor denominator and association entries are normalized to one proxy table.",
+            "captured_at": captured_at,
+        },
+        {
+            "workstream": "Brazil SBCP surgeon-density detail",
+            "status": "completed_state_denominator",
+            "output": str(CHANNEL_DENSITY_DETAIL_PATH),
+            "rows": len(brazil_state_denominator_rows),
+            "frontstage_label": "Brazil state plastic-surgeon denominator",
+            "note": "SBCP Censo 2025 page 4 is loaded as state-level plastic surgeon counts for channel-density analysis, not treatment volume.",
             "captured_at": captured_at,
         },
         {

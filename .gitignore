@@ -25,6 +25,7 @@ data/*
 !data/audits/**
 !data/commercial_data_source_registry.csv
 !data/commercial_channel_density_proxy.csv
+!data/commercial_channel_density_detail.csv
 !data/isaps_market_metrics.csv
 !data/asps_market_metrics.csv
 !data/jsaps_market_metrics.csv

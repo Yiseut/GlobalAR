@@ -140,7 +140,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "value": 7
       }
     ],
-    "asOf": "2026-07-07T13:30:20+08:00"
+    "asOf": "2026-07-07T13:43:16+08:00"
   },
   "analysis": {
     "insightCards": [
@@ -1443,24 +1443,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 61.9
       },
       {
-        "geo": "USA",
-        "segment": "Procedure demand",
-        "lat": 39.5,
-        "lon": -98.4,
-        "region": "North America",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 28243407.0,
-        "procedureYear": 2024,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 45.0
-      },
-      {
         "geo": "Global",
         "segment": "Procedure demand",
         "lat": 10.0,
@@ -1473,6 +1455,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "growthRatePct": null,
         "growthYear": null,
         "procedureVolume": 37951364.0,
+        "procedureYear": 2024,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 45.0
+      },
+      {
+        "geo": "USA",
+        "segment": "Procedure demand",
+        "lat": 39.5,
+        "lon": -98.4,
+        "region": "North America",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 28243407.0,
         "procedureYear": 2024,
         "marketSharePct": null,
         "basis": "",
@@ -1677,24 +1677,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 13.6
       },
       {
-        "geo": "Australia",
-        "segment": "Procedure demand",
-        "lat": -25.3,
-        "lon": 133.8,
-        "region": "Asia-Pacific",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 177502.0,
-        "procedureYear": 2024,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 11.5
-      },
-      {
         "geo": "India",
         "segment": "Injectables",
         "lat": 21.0,
@@ -1707,6 +1689,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "growthRatePct": null,
         "growthYear": null,
         "procedureVolume": 179480.0,
+        "procedureYear": 2024,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 11.5
+      },
+      {
+        "geo": "Australia",
+        "segment": "Procedure demand",
+        "lat": -25.3,
+        "lon": 133.8,
+        "region": "Asia-Pacific",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 177502.0,
         "procedureYear": 2024,
         "marketSharePct": null,
         "basis": "",
@@ -1839,24 +1839,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.3
       },
       {
-        "geo": "UK",
-        "segment": "Procedure demand",
-        "lat": 54.1,
-        "lon": -2.3,
-        "region": "Europe",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 26840.0,
-        "procedureYear": 2025,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.2
-      },
-      {
         "geo": "Singapore",
         "segment": "Procedure demand",
         "lat": 1.35,
@@ -1870,6 +1852,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "growthYear": null,
         "procedureVolume": 25739.0,
         "procedureYear": 2024,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.2
+      },
+      {
+        "geo": "UK",
+        "segment": "Procedure demand",
+        "lat": 54.1,
+        "lon": -2.3,
+        "region": "Europe",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 26840.0,
+        "procedureYear": 2025,
         "marketSharePct": null,
         "basis": "",
         "potentialIndex": 10.2
@@ -1929,46 +1929,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.1
       },
       {
-        "geo": "Sweden",
-        "segment": "Regenerative",
-        "lat": 60.1,
-        "lon": 18.6,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Germany",
-        "segment": "Threads",
-        "lat": 51.2,
-        "lon": 10.4,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Poland",
+        "geo": "Ireland",
         "segment": "EBD",
-        "lat": 52.0,
-        "lon": 19.1,
+        "lat": 53.4,
+        "lon": -8.2,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -1983,47 +1947,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "UK",
-        "segment": "Other product lines",
-        "lat": 54.1,
-        "lon": -2.3,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Monaco",
+        "geo": "Japan",
         "segment": "EBD",
-        "lat": 43.7,
-        "lon": 7.4,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "South Africa",
-        "segment": "Other product lines",
-        "lat": -30.6,
-        "lon": 22.9,
-        "region": "Africa",
+        "lat": 36.2,
+        "lon": 138.3,
+        "region": "Asia-Pacific",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2041,240 +1969,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "segment": "Regenerative",
         "lat": 46.8,
         "lon": 8.2,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Netherlands",
-        "segment": "Regenerative",
-        "lat": 52.1,
-        "lon": 5.3,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Europe",
-        "segment": "Threads",
-        "lat": 50.5,
-        "lon": 12.5,
-        "region": "Other",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Israel",
-        "segment": "Regenerative",
-        "lat": 31.5,
-        "lon": 34.8,
-        "region": "Middle East",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Hungary",
-        "segment": "Injectables",
-        "lat": 47.1,
-        "lon": 19.5,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Japan",
-        "segment": "Other product lines",
-        "lat": 36.2,
-        "lon": 138.3,
-        "region": "Asia-Pacific",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Japan",
-        "segment": "EBD",
-        "lat": 36.2,
-        "lon": 138.3,
-        "region": "Asia-Pacific",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Spain",
-        "segment": "Regenerative",
-        "lat": 40.4,
-        "lon": -3.7,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Slovakia",
-        "segment": "Other product lines",
-        "lat": 48.7,
-        "lon": 19.7,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "UAE",
-        "segment": "Regenerative",
-        "lat": 24.4,
-        "lon": 54.3,
-        "region": "Middle East",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Brazil",
-        "segment": "EBD",
-        "lat": -14.2,
-        "lon": -51.9,
-        "region": "Latin America",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "UK",
-        "segment": "Regenerative",
-        "lat": 54.1,
-        "lon": -2.3,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Czech Republic",
-        "segment": "Other product lines",
-        "lat": 49.8,
-        "lon": 15.5,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Sweden",
-        "segment": "Other product lines",
-        "lat": 60.1,
-        "lon": 18.6,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2307,11 +2001,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Taiwan",
-        "segment": "Other product lines",
-        "lat": 23.7,
-        "lon": 121.0,
-        "region": "Asia-Pacific",
+        "geo": "UK",
+        "segment": "Regenerative",
+        "lat": 54.1,
+        "lon": -2.3,
+        "region": "Europe",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2325,11 +2019,47 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Taiwan",
+        "geo": "Israel",
+        "segment": "Regenerative",
+        "lat": 31.5,
+        "lon": 34.8,
+        "region": "Middle East",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Europe",
+        "segment": "Threads",
+        "lat": 50.5,
+        "lon": 12.5,
+        "region": "Other",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Brazil",
         "segment": "EBD",
-        "lat": 23.7,
-        "lon": 121.0,
-        "region": "Asia-Pacific",
+        "lat": -14.2,
+        "lon": -51.9,
+        "region": "Latin America",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2343,10 +2073,64 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Switzerland",
+        "geo": "Monaco",
+        "segment": "EBD",
+        "lat": 43.7,
+        "lon": 7.4,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Sweden",
+        "segment": "Regenerative",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Czech Republic",
         "segment": "Other product lines",
-        "lat": 46.8,
-        "lon": 8.2,
+        "lat": 49.8,
+        "lon": 15.5,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Spain",
+        "segment": "Regenerative",
+        "lat": 40.4,
+        "lon": -3.7,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2379,10 +2163,226 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Ireland",
+        "geo": "Switzerland",
+        "segment": "Other product lines",
+        "lat": 46.8,
+        "lon": 8.2,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Taiwan",
+        "segment": "Other product lines",
+        "lat": 23.7,
+        "lon": 121.0,
+        "region": "Asia-Pacific",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Hungary",
+        "segment": "Injectables",
+        "lat": 47.1,
+        "lon": 19.5,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Netherlands",
+        "segment": "Regenerative",
+        "lat": 52.1,
+        "lon": 5.3,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Germany",
+        "segment": "Threads",
+        "lat": 51.2,
+        "lon": 10.4,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Slovakia",
+        "segment": "Other product lines",
+        "lat": 48.7,
+        "lon": 19.7,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Japan",
+        "segment": "Other product lines",
+        "lat": 36.2,
+        "lon": 138.3,
+        "region": "Asia-Pacific",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Taiwan",
         "segment": "EBD",
-        "lat": 53.4,
-        "lon": -8.2,
+        "lat": 23.7,
+        "lon": 121.0,
+        "region": "Asia-Pacific",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "UK",
+        "segment": "Other product lines",
+        "lat": 54.1,
+        "lon": -2.3,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "UAE",
+        "segment": "Regenerative",
+        "lat": 24.4,
+        "lon": 54.3,
+        "region": "Middle East",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Sweden",
+        "segment": "Other product lines",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "South Africa",
+        "segment": "Other product lines",
+        "lat": -30.6,
+        "lon": 22.9,
+        "region": "Africa",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Poland",
+        "segment": "EBD",
+        "lat": 52.0,
+        "lon": 19.1,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2469,10 +2469,64 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.6
       },
       {
-        "geo": "Italy",
-        "segment": "Regenerative",
-        "lat": 42.5,
-        "lon": 12.5,
+        "geo": "Sweden",
+        "segment": "EBD",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Sweden",
+        "segment": "Injectables",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Netherlands",
+        "segment": "Other product lines",
+        "lat": 52.1,
+        "lon": 5.3,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Finland",
+        "segment": "EBD",
+        "lat": 64.0,
+        "lon": 26.0,
         "region": "Europe",
         "productLines": 2,
         "companies": 2,
@@ -2505,13 +2559,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Finland",
-        "segment": "EBD",
-        "lat": 64.0,
-        "lon": 26.0,
-        "region": "Europe",
+        "geo": "Turkey",
+        "segment": "Injectables",
+        "lat": 39.0,
+        "lon": 35.2,
+        "region": "Middle East",
         "productLines": 2,
-        "companies": 2,
+        "companies": 1,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2523,13 +2577,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Malaysia",
+        "geo": "France",
         "segment": "Regenerative",
-        "lat": 4.2,
-        "lon": 102.0,
-        "region": "Asia-Pacific",
+        "lat": 46.2,
+        "lon": 2.2,
+        "region": "Europe",
         "productLines": 2,
-        "companies": 1,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2577,82 +2631,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Sweden",
-        "segment": "EBD",
-        "lat": 60.1,
-        "lon": 18.6,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Turkey",
-        "segment": "Injectables",
-        "lat": 39.0,
-        "lon": 35.2,
-        "region": "Middle East",
-        "productLines": 2,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Netherlands",
-        "segment": "Other product lines",
-        "lat": 52.1,
-        "lon": 5.3,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "France",
+        "geo": "Italy",
         "segment": "Regenerative",
-        "lat": 46.2,
-        "lon": 2.2,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Sweden",
-        "segment": "Injectables",
-        "lat": 60.1,
-        "lon": 18.6,
+        "lat": 42.5,
+        "lon": 12.5,
         "region": "Europe",
         "productLines": 2,
         "companies": 2,
@@ -2685,6 +2667,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
+        "geo": "Malaysia",
+        "segment": "Regenerative",
+        "lat": 4.2,
+        "lon": 102.0,
+        "region": "Asia-Pacific",
+        "productLines": 2,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
         "geo": "France",
         "segment": "Injectables",
         "lat": 46.2,
@@ -2703,11 +2703,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.9
       },
       {
-        "geo": "Taiwan",
-        "segment": "Injectables",
-        "lat": 23.7,
-        "lon": 121.0,
-        "region": "Asia-Pacific",
+        "geo": "Germany",
+        "segment": "Other product lines",
+        "lat": 51.2,
+        "lon": 10.4,
+        "region": "Europe",
         "productLines": 3,
         "companies": 3,
         "marketSizeUsdM": null,
@@ -2739,10 +2739,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Germany",
+        "geo": "Poland",
         "segment": "Regenerative",
-        "lat": 51.2,
-        "lon": 10.4,
+        "lat": 52.0,
+        "lon": 19.1,
         "region": "Europe",
         "productLines": 3,
         "companies": 2,
@@ -2775,10 +2775,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Poland",
+        "geo": "Germany",
         "segment": "Regenerative",
-        "lat": 52.0,
-        "lon": 19.1,
+        "lat": 51.2,
+        "lon": 10.4,
         "region": "Europe",
         "productLines": 3,
         "companies": 2,
@@ -2811,11 +2811,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Germany",
-        "segment": "Other product lines",
-        "lat": 51.2,
-        "lon": 10.4,
-        "region": "Europe",
+        "geo": "Taiwan",
+        "segment": "Injectables",
+        "lat": 23.7,
+        "lon": 121.0,
+        "region": "Asia-Pacific",
         "productLines": 3,
         "companies": 3,
         "marketSizeUsdM": null,
@@ -2937,13 +2937,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.7
       },
       {
-        "geo": "Latin America",
-        "segment": "EBD",
-        "lat": -14.0,
-        "lon": -60.0,
-        "region": "Other",
+        "geo": "Italy",
+        "segment": "Other product lines",
+        "lat": 42.5,
+        "lon": 12.5,
+        "region": "Europe",
         "productLines": 7,
-        "companies": 2,
+        "companies": 6,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2955,13 +2955,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.4
       },
       {
-        "geo": "Italy",
-        "segment": "Other product lines",
-        "lat": 42.5,
-        "lon": 12.5,
-        "region": "Europe",
+        "geo": "Latin America",
+        "segment": "EBD",
+        "lat": -14.0,
+        "lon": -60.0,
+        "region": "Other",
         "productLines": 7,
-        "companies": 6,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2991,6 +2991,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.4
       },
       {
+        "geo": "South Korea",
+        "segment": "Threads",
+        "lat": 36.4,
+        "lon": 127.8,
+        "region": "Asia-Pacific",
+        "productLines": 8,
+        "companies": 8,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 1.2
+      },
+      {
         "geo": "UK",
         "segment": "EBD",
         "lat": 54.1,
@@ -3016,24 +3034,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "region": "Europe",
         "productLines": 8,
         "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 1.2
-      },
-      {
-        "geo": "South Korea",
-        "segment": "Threads",
-        "lat": 36.4,
-        "lon": 127.8,
-        "region": "Asia-Pacific",
-        "productLines": 8,
-        "companies": 8,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3081,13 +3081,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.9
       },
       {
-        "geo": "USA",
-        "segment": "Regenerative",
-        "lat": 39.5,
-        "lon": -98.4,
-        "region": "North America",
+        "geo": "Slovenia",
+        "segment": "EBD",
+        "lat": 46.1,
+        "lon": 14.8,
+        "region": "Europe",
         "productLines": 11,
-        "companies": 7,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3099,13 +3099,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.9
       },
       {
-        "geo": "Slovenia",
-        "segment": "EBD",
-        "lat": 46.1,
-        "lon": 14.8,
-        "region": "Europe",
+        "geo": "USA",
+        "segment": "Regenerative",
+        "lat": 39.5,
+        "lon": -98.4,
+        "region": "North America",
         "productLines": 11,
-        "companies": 2,
+        "companies": 7,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3154,12 +3154,12 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "France",
-        "segment": "Other product lines",
+        "segment": "EBD",
         "lat": 46.2,
         "lon": 2.2,
         "region": "Europe",
         "productLines": 14,
-        "companies": 9,
+        "companies": 10,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3172,12 +3172,12 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "France",
-        "segment": "EBD",
+        "segment": "Other product lines",
         "lat": 46.2,
         "lon": 2.2,
         "region": "Europe",
         "productLines": 14,
-        "companies": 10,
+        "companies": 9,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3243,13 +3243,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.4
       },
       {
-        "geo": "Europe",
+        "geo": "USA",
         "segment": "Other product lines",
-        "lat": 50.5,
-        "lon": 12.5,
-        "region": "Other",
+        "lat": 39.5,
+        "lon": -98.4,
+        "region": "North America",
         "productLines": 39,
-        "companies": 26,
+        "companies": 18,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3279,11 +3279,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.3
       },
       {
-        "geo": "USA",
+        "geo": "North America",
         "segment": "Other product lines",
-        "lat": 39.5,
-        "lon": -98.4,
-        "region": "North America",
+        "lat": 45.0,
+        "lon": -102.0,
+        "region": "Other",
         "productLines": 39,
         "companies": 18,
         "marketSizeUsdM": null,
@@ -3297,13 +3297,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.3
       },
       {
-        "geo": "North America",
+        "geo": "Europe",
         "segment": "Other product lines",
-        "lat": 45.0,
-        "lon": -102.0,
+        "lat": 50.5,
+        "lon": 12.5,
         "region": "Other",
         "productLines": 39,
-        "companies": 18,
+        "companies": 26,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -63129,17 +63129,17 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.cirurgiaplastica.org.br/pesquisas/",
       "accessModel": "public_html_flipbook_pdf",
       "authorityTier": "official_association",
-      "kpiFamilies": "treatment_volume_candidate;surgeon_demography;procedure_mix",
+      "kpiFamilies": "surgeon_demography;channel_density_denominator;association_research",
       "geoGrain": "Brazil",
       "timeGrain": "report_year_or_publication_year",
-      "segmentGrain": "procedure;surgeon_demography;association_research",
+      "segmentGrain": "state;municipality;surgeon_demography",
       "fieldsAvailable": "SBCP pesquisas page;2025 demography/censo flipbook;historical censo and ISAPS links",
-      "extractionMethod": "flipbook_or_pdf_extraction_with_metric_qa",
-      "targetDataset": "commercial_procedure_metrics",
+      "extractionMethod": "flipbook_image_manual_qa",
+      "targetDataset": "commercial_channel_coverage",
       "refreshCadence": "annual_or_irregular",
-      "implementationStatus": "source_page_discovered_metric_qa_needed",
+      "implementationStatus": "metrics_promoted_channel_denominator",
       "priority": 6,
-      "notes": "Brazil association research source. The 2025 flipbook needs structure QA before deciding whether it contributes treatment-volume rows or only surgeon/demography context."
+      "notes": "SBCP Censo 2025 is a plastic surgeon demography report. Page 4 state-level surgeon counts are loaded to commercial_channel_density_detail; keep out of procedure_volume mainline."
     },
     {
       "sourceId": "spain_secpre_aesthetic_surgery_report",
@@ -64153,17 +64153,17 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "priority": 9,
       "workstream": "treatment_timeline",
       "sourceId": "brazil_sbcp_pesquisas_censo",
-      "targetDataset": "commercial_procedure_metrics",
-      "targetTable": "market_metrics",
+      "targetDataset": "commercial_channel_coverage",
+      "targetTable": "commercial_channel_density_detail",
       "scope": "Brazil",
-      "years": "2025;historical",
-      "segments": "procedure;surgeon_demography",
-      "metrics": "treatment_volume_candidate;procedure_mix;surgeon_demography",
-      "method": "flipbook_or_pdf_extraction_with_metric_qa",
-      "status": "source_page_discovered_metric_qa_needed",
+      "years": "2025",
+      "segments": "state",
+      "metrics": "surgeon_demography;channel_density_denominator",
+      "method": "flipbook_image_manual_qa",
+      "status": "completed_channel_denominator",
       "blockingDependency": "none",
-      "nextAction": "Inspect SBCP 2025 demography/censo flipbook and historical censo links; classify count-like treatment tables versus surgeon/demography context.",
-      "acceptanceCheck": "Only official count-like Brazil metrics enter market_metrics; demographic or survey-only values remain proxy/context."
+      "nextAction": "Use data/commercial_channel_density_detail.csv: SBCP Censo 2025 page 4 is promoted as Brazil state plastic-surgeon denominator, not treatment volume.",
+      "acceptanceCheck": "Only official count-like Brazil procedure metrics enter market_metrics; SBCP Censo 2025 surgeon demography remains channel-density context."
     },
     {
       "taskId": "cdp1_spain_secpre_2022_metric_qa",
@@ -76173,7 +76173,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Korea MOHW Foreign Patient Statistics"
       ],
       "nextAction": "Use physician/surgeon denominator as national density proxy, then add locator coverage.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 2,
@@ -76204,7 +76204,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "CMS Open Payments"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 3,
@@ -76233,7 +76233,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SICPRE ISAPS Report Commentary"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 4,
@@ -76262,7 +76262,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SOFCEP Plastic and Aesthetic Surgery in France"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 5,
@@ -76288,7 +76288,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "DGÄPC Statistics"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 6,
@@ -76317,7 +76317,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Israel Society of Plastic and Aesthetic Surgery News and Locator"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 7,
@@ -76343,7 +76343,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SECPRE Aesthetic Surgery Reality in Spain Report"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 8,
@@ -76372,7 +76372,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Swiss Society for Plastic Reconstructive and Aesthetic Surgery"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 9,
@@ -76398,7 +76398,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "BAAPS Annual Audit Results"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 10,
@@ -76427,7 +76427,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "MHLW Medical Information Net Provider Search"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 11,
@@ -76456,7 +76456,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Czech NRPZS Healthcare Provider Registry"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 12,
@@ -76488,7 +76488,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Canadian Society of Plastic Surgeons"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 13,
@@ -76517,7 +76517,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Polish Society of Plastic Reconstructive and Aesthetic Surgery Locator"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 14,
@@ -76549,7 +76549,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Swedish Association of Plastic Surgeons"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "rank": 15,
@@ -76578,7 +76578,495 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Taiwan MOHW Medical Institution Open Data"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
+    }
+  ],
+  "channelDensityDetail": [
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Roraima",
+      "adminCode": "RR",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 6.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Amazonas",
+      "adminCode": "AM",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 31.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Acre",
+      "adminCode": "AC",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 4.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Rondonia",
+      "adminCode": "RO",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 27.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Mato Grosso",
+      "adminCode": "MT",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 69.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Para",
+      "adminCode": "PA",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 70.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Amapa",
+      "adminCode": "AP",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 6.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Maranhao",
+      "adminCode": "MA",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 33.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Tocantins",
+      "adminCode": "TO",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 22.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Goias",
+      "adminCode": "GO",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 254.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Distrito Federal",
+      "adminCode": "DF",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 196.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Mato Grosso do Sul",
+      "adminCode": "MS",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 83.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Rio Grande do Sul",
+      "adminCode": "RS",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 457.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Santa Catarina",
+      "adminCode": "SC",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 244.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Parana",
+      "adminCode": "PR",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 388.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Sao Paulo",
+      "adminCode": "SP",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 2184.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Rio de Janeiro",
+      "adminCode": "RJ",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 922.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Espirito Santo",
+      "adminCode": "ES",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 129.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Minas Gerais",
+      "adminCode": "MG",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 762.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Bahia",
+      "adminCode": "BA",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 197.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Sergipe",
+      "adminCode": "SE",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 36.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Alagoas",
+      "adminCode": "AL",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 37.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Pernambuco",
+      "adminCode": "PE",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 161.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Paraiba",
+      "adminCode": "PB",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 56.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Rio Grande do Norte",
+      "adminCode": "RN",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 50.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Ceara",
+      "adminCode": "CE",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 141.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
+    },
+    {
+      "sourceId": "brazil_sbcp_pesquisas_censo",
+      "country": "Brazil",
+      "adminLevel": "state",
+      "adminName": "Piaui",
+      "adminCode": "PI",
+      "city": "",
+      "metric": "plastic_surgeon_count",
+      "value": 39.0,
+      "unit": "surgeons",
+      "year": 2025,
+      "sourceOrg": "SBCP",
+      "reportTitle": "Plastiko's 2025 Demografia da Cirurgia Plastica Brasileira",
+      "sourceUrl": "https://online.fliphtml5.com/urtuw/REVISTA_CENSO_2025_V06/",
+      "sourcePage": "4",
+      "note": "SBCP Censo 2025 page 4 state-level map, number of plastic surgeons. Use as Brazil channel-density denominator, not treatment volume.",
+      "confidence": "official_association_flipbook_manual_qa_state_denominator"
     }
   ],
   "europeMetricQa": [
@@ -76619,7 +77107,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Keep DGÄPC out of procedure_volume mainline; optionally extract top treatment preference shares as source-labeled demand proxy.",
       "acceptanceCheck": "Only count-like metrics enter market_metrics as treatment volume; DGÄPC survey percentages remain source-labeled preference/demand proxy if extracted later.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "sourceId": "spain_secpre_aesthetic_surgery_report",
@@ -76643,7 +77131,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Keep SECPRE as Spain surgical-only association lane; do not merge silently with ISAPS total procedures.",
       "acceptanceCheck": "Spain rows enter market_metrics only when the table is a count-like official association metric with SECPRE source label.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "sourceId": "italy_aicpe_observatory_statistics",
@@ -76669,7 +77157,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceFiles": [],
       "nextAction": "Keep AICPE as Italy association context; do not load duplicate 2020 rows. Reopen 2019 only if official ISAPS 2019 backfill becomes a priority.",
       "acceptanceCheck": "No AICPE commentary value overwrites primary ISAPS data; 2020 stays as cross-check and 2019 is not promoted unless official ISAPS 2019 backfill is reopened.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "sourceId": "italy_sicpre_isaps_statistics",
@@ -76697,7 +77185,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Use SICPRE only as cross-check/context; do not overwrite primary ISAPS Italy rows.",
       "acceptanceCheck": "No SICPRE commentary value overwrites primary ISAPS data; source lane remains explicit.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     }
   ],
   "companyRevenueProgress": [
@@ -76717,7 +77205,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_b8193aa0cc96",
@@ -76735,7 +77223,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_2e4d3c90fc97",
@@ -76753,7 +77241,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_8264aaca4586",
@@ -76771,7 +77259,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_3e66a07fd5fd",
@@ -76789,7 +77277,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20260318002184&method=search",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_5b54a3e28f4c",
@@ -76807,7 +77295,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_9ebcc3762c46",
@@ -76825,7 +77313,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_2d09d05893cd",
@@ -76843,7 +77331,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.galderma.com/investors",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_100e7fd504d3",
@@ -76861,7 +77349,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_5d4b35b57193",
@@ -76879,7 +77367,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/200670.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_76db60d04479",
@@ -76897,7 +77385,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.ipsen.com/wp-content/uploads/2026/02/Ipsen-PR_FY-2025-Results-Announcement_12022026.pdf",
       "nextAction": "Promote official Dysport Aesthetics sales of EUR 436.4m, 11.87% of FY2025 total sales, into a segment-specific aesthetics revenue lane; keep total-revenue row separate.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_a133809740b7",
@@ -76915,7 +77403,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000200406.json",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_0795c0f3f22e",
@@ -76933,7 +77421,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://finance.yahoo.com/quote/JULPHAR/financials/",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_314282d4909e",
@@ -76951,7 +77439,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_e88e88c84032",
@@ -76969,7 +77457,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.loreal.com/en/press-release/finance/2025-annual-results/",
       "nextAction": "Use FY2025 group sales as total-revenue context, then review Dermatological Beauty and Professional Products disclosures for an aesthetics-relevant segment bridge; do not infer a medical-aesthetics share from group beauty sales alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_d6440f82a9a2",
@@ -76987,7 +77475,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_c621592aac90",
@@ -77005,7 +77493,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_f1444f50d0fc",
@@ -77023,7 +77511,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_11eac4967d16",
@@ -77041,7 +77529,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_facd9a6ad8cf",
@@ -77059,7 +77547,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_93f3d88be68a",
@@ -77077,7 +77565,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_9a82bf01c9b2",
@@ -77095,7 +77583,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_cf401ffd51b6",
@@ -77113,7 +77601,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001551152.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_83052922054b",
@@ -77131,7 +77619,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://sisram-medical.com/wp-content/uploads/2026/04/ENG-Sisram-2025-Annual-Report.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_ea11172b59bc",
@@ -77149,7 +77637,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000719135.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_bbabeba3ee10",
@@ -77167,7 +77655,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_f8a69fb5e02a",
@@ -77185,7 +77673,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "",
@@ -77203,7 +77691,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_2dac0f5dd9af",
@@ -77221,7 +77709,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001818093.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_6dbf5a3b4e4d",
@@ -77239,7 +77727,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_8bad4b58ff47",
@@ -77257,7 +77745,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317001260&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_6925fca65df2",
@@ -77275,7 +77763,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_a48a6103f37e",
@@ -77293,7 +77781,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://classys.com/wp-content/uploads/sites/2/2025/04/Annual-Report_CLASSYS_2024_Eng_vS_250430.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_128cffac9aff",
@@ -77311,7 +77799,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_78d004d00c9c",
@@ -77329,7 +77817,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001162461.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_0bb8193c1281",
@@ -77347,7 +77835,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_c87804d7fff0",
@@ -77365,7 +77853,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_679ba894b79b",
@@ -77383,7 +77871,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001688757.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_dcd822423379",
@@ -77401,7 +77889,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570562.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "",
@@ -77419,7 +77907,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_e655b002cb74",
@@ -77437,7 +77925,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_df6b67e82dc5",
@@ -77455,7 +77943,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_bac5ab36d84d",
@@ -77473,7 +77961,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_4ae5806d21fa",
@@ -77491,7 +77979,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://cdn.prod.website-files.com/65d4bcfd06a8be5d2448b946/68648526442d861d6b8a69da_HUGEL_AR_2024_EN.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_8f51008b9523",
@@ -77509,7 +77997,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_326764b924a4",
@@ -77527,7 +78015,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_7a6f66b2861e",
@@ -77545,7 +78033,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001742692.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_1418ea0f3165",
@@ -77563,7 +78051,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_35faa8063d5e",
@@ -77581,7 +78069,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250320002216&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "",
@@ -77599,7 +78087,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "",
@@ -77617,7 +78105,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "",
@@ -77635,7 +78123,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_61e6816901f7",
@@ -77653,7 +78141,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317000988&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_899ad9993fec",
@@ -77671,7 +78159,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_155831ecf12c",
@@ -77689,7 +78177,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_6c5df66586f1",
@@ -77707,7 +78195,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_5a732eebc6b5",
@@ -77725,7 +78213,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_c8389fa251ed",
@@ -77743,7 +78231,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000885590.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_ef311b352c67",
@@ -77761,7 +78249,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001409269.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_ea65636d4d75",
@@ -77779,7 +78267,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "",
@@ -77797,7 +78285,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "companyId": "co_592c40ca0c6d",
@@ -77815,7 +78303,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     }
   ],
   "nextStepCompletion": [
@@ -77826,7 +78314,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 618,
       "frontstageLabel": "ASPS 2020/2022/2023/2024 + 2024 fee/regional",
       "note": "Extracted ASPS years 2020, 2022, 2023, 2024 into the market_metrics lane.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "workstream": "BAAPS UK annual audit",
@@ -77835,7 +78323,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 92,
       "frontstageLabel": "BAAPS UK 2020-2025 audit lane",
       "note": "Extracted BAAPS years 2020, 2021, 2022, 2023, 2024, 2025 into market_metrics; surgical current-year rows cover 2020, 2021, 2023, 2024, 2025 and 2022 remains non-surgical-only.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "workstream": "Europe candidate QA",
@@ -77844,7 +78332,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 4,
       "frontstageLabel": "DGAEPC / SECPRE / AICPE / SICPRE QA",
       "note": "1 Europe candidate source(s) have source-labeled count rows promoted; remaining candidates stay QA-held.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "workstream": "Channel density proxy",
@@ -77853,7 +78341,16 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 15,
       "frontstageLabel": "Top 15 country channel-density proxy",
       "note": "Top 15 country provider locator, doctor denominator and association entries are normalized to one proxy table.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
+    },
+    {
+      "workstream": "Brazil SBCP surgeon-density detail",
+      "status": "completed_state_denominator",
+      "output": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\commercial_channel_density_detail.csv",
+      "rows": 27,
+      "frontstageLabel": "Brazil state plastic-surgeon denominator",
+      "note": "SBCP Censo 2025 page 4 is loaded as state-level plastic surgeon counts for channel-density analysis, not treatment volume.",
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     },
     {
       "workstream": "Company revenue layer",
@@ -77862,7 +78359,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 62,
       "frontstageLabel": "Company-year revenue and segment gap layer",
       "note": "Total revenue plan and aesthetics-segment gap queue are unified; 21 companies still need segment/not-disclosed review.",
-      "capturedAt": "2026-07-07T13:28:19+08:00"
+      "capturedAt": "2026-07-07T13:39:34+08:00"
     }
   ],
   "reviewQueues": {

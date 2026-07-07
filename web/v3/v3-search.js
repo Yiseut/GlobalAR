@@ -1,5 +1,5 @@
 window.V3_SEARCH_DATA = {
-  "generated_at": "2026-07-07T13:30:20+08:00",
+  "generated_at": "2026-07-07T13:43:16+08:00",
   "counts": {
     "products": 943,
     "families": 927,
