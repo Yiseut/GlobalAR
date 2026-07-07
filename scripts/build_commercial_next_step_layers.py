@@ -375,6 +375,11 @@ def build_completion_rows(
         if norm(row.get("source_id")) == "brazil_sbcp_pesquisas_censo"
         and norm(row.get("metric")) == "plastic_surgeon_count"
     ]
+    hong_kong_facility_rows = [
+        row
+        for row in channel_detail_rows
+        if norm(row.get("source_id")) == "hong_kong_dh_day_procedure_centres"
+    ]
     segment_gaps = sum(1 for row in revenue_rows if row.get("aesthetics_segment_status") == "needs_aesthetics_segment_or_not_disclosed_review")
     europe_promoted = [row for row in europe_rows if norm(row.get("promotion_allowed")).startswith("yes")]
     europe_status = "completed_partial_promotion" if europe_promoted else "completed_hold_unpromoted"
@@ -430,6 +435,15 @@ def build_completion_rows(
             "rows": len(brazil_state_denominator_rows),
             "frontstage_label": "Brazil state plastic-surgeon denominator",
             "note": "SBCP Censo 2025 page 4 is loaded as state-level plastic surgeon counts for channel-density analysis, not treatment volume.",
+            "captured_at": captured_at,
+        },
+        {
+            "workstream": "Hong Kong DH facility-density detail",
+            "status": "completed_csv_denominator",
+            "output": str(CHANNEL_DENSITY_DETAIL_PATH),
+            "rows": len(hong_kong_facility_rows),
+            "frontstage_label": "Hong Kong licensed facility denominator",
+            "note": "Hong Kong DH Cap. 633 CSV is aggregated into country/district day-procedure-centre and private-hospital counts; contact fields are excluded.",
             "captured_at": captured_at,
         },
         {
