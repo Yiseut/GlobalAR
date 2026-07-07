@@ -160,11 +160,11 @@ def build_europe_qa(captured_at: str) -> list[dict[str, Any]]:
                 decision = "hold_for_manual_text_qa"
                 next_action = "Manually mark SECPRE tables/text blocks as count, share or context before promotion."
         elif source_id == "italy_aicpe_observatory_statistics":
-            count_status = "candidate totals on association web source"
-            share_status = "unknown until source archive is captured"
-            table_status = "source page discovered; no local primary PDF/table yet"
-            decision = "hold_until_primary_table_source"
-            next_action = "Capture AICPE statistics archive pages or PDFs before extracting Italy rows."
+            count_status = "2020 total cross-checks ISAPS Italy; no independent count table found"
+            share_status = "association commentary only"
+            table_status = "legacy AICPE page is unavailable; readable copies cite ISAPS 2020 as the source"
+            decision = "crosscheck_only_do_not_promote_duplicate_isaps"
+            next_action = "Keep AICPE as Italy association context; do not load duplicate 2020 rows. Reopen 2019 only if official ISAPS 2019 backfill becomes a priority."
         else:
             count_status = "secondary ISAPS commentary"
             share_status = "not an independent denominator"

@@ -33,7 +33,7 @@
 - 可优先进入第一阶段候选：英国 BAAPS 2020-2025 annual audit PDF；德国 DGÄPC 2020-2025 statistics PDF，但德国需先判定每张表是 procedure count 还是 survey share。
 - 巴西 SBCP `Pesquisas` 页公开 2025 demography/censo flipbook 及历史 Censo/ISAPS 链接，先做 metric QA；如果表内是治疗量 count，可进第一阶段，否则作为外科医生/行业结构 context。
 - 西班牙 SECPRE 2022 报告的 2021 外科手术数量表已完成手工 QA，并以 SECPRE surgical-only source lane 接入 `data/europe_association_market_metrics.csv`；患者结构/性别年龄等仍保留为未推广背景。
-- 意大利 AICPE observatory 页给出 2020/2019 procedure totals，SICPRE 有 2023 ISAPS national commentary；先做 source-label 和方法 QA，避免覆盖 ISAPS 主干。
+- 意大利 AICPE observatory 老入口目前不可用，可读转载明确引用 ISAPS 2020；其中 2020 total 与主表 Italy 2020 ISAPS 行一致，先保留为协会解读/交叉核验，不重复写入治疗量主干；2019 只在重启官方 ISAPS 2019 backfill 时再考虑。
 - 更适合作为渠道密度 proxy：台湾 MOHW 美容医学核准机构、台湾医疗机构/人员 open data、香港 DATA.GOV.HK day procedure centre CSV、巴西 CFM 医疗人口统计、SBCP surgeon locator。
 - 日本 MHLW 美容医疗资料和医疗信息网适合做医师/机构密度 proxy；法国 CNOM atlas 和 SOFCEP 页面适合做医生/外科医生 denominator 与协会 context。
 - 瑞士 FMH 医师统计和 Swiss Plastic Surgery 适合做外科医生 denominator 与协会 context；捷克 NRPZS 和 Czech Society of Plastic Surgery 适合做 provider/channel proxy。
@@ -57,7 +57,7 @@
 - DGÄPC Statistics：德国 2020-2025 统计 PDF，先做 count/share QA，再决定哪些表能进治疗量主干。
 - SBCP Pesquisas/Censo：巴西协会研究页和 2025 demography/censo flipbook，先做 count/share/demography QA。
 - SECPRE 2022：西班牙医美外科报告，Table 1 已作为 2021 surgical-only procedure volume 接入；其他患者结构与调查项暂不进治疗量主干。
-- AICPE / SICPRE：意大利协会 observatory 和 ISAPS commentary，先 source-label QA，再判断可用治疗量字段。
+- AICPE / SICPRE：意大利协会 commentary 目前作为 ISAPS 交叉核验和国家协会语境，不作为新的治疗量口径覆盖主干。
 
 建模原则：
 
@@ -144,7 +144,7 @@
 
 1. 接 ASPS 2024 和 2020-2023 历史年份，单独作为美国 ASPS 口径。
 2. 接 The Aesthetic Society 2020 至今统计，单独作为美国私营/审美外科口径。
-3. 接 BAAPS 2020-2025 UK audit；SECPRE Spain 2021 surgical-only 已接入，DGÄPC、SBCP、AICPE 继续做 metric QA，再抽可用德国/巴西/意大利 count-like 指标。
+3. 接 BAAPS 2020-2025 UK audit；SECPRE Spain 2021 surgical-only 已接入，AICPE Italy 已定性为 ISAPS 交叉核验不重复入库；DGÄPC、SBCP 继续做 metric QA，再抽可用德国/巴西 count-like 指标。
 4. 补 SEC/IR 的 aesthetic segment、region revenue、product-line revenue，避免用公司总收入替代医美收入。
 5. 设计 provider locator / enrichment 的渠道覆盖表，先做品牌-城市-机构密度 proxy，并把台湾、香港、巴西、日本、法国、瑞士、捷克、加拿大、波兰、瑞典官方机构/医师入口作为第一批国家级渠道 proxy。
 6. 韩国 MOHW/KHISS 和以色列协会/IMAJ 先作为 medical tourism、specialty demand 或 heat/context proxy，不与 ISAPS 治疗量合并。
