@@ -1,5 +1,5 @@
 window.V3_SEARCH_DATA = {
-  "generated_at": "2026-07-07T12:01:04+08:00",
+  "generated_at": "2026-07-07T12:37:19+08:00",
   "counts": {
     "products": 943,
     "families": 927,
@@ -101488,7 +101488,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Alma Lasers | Alma Lasers | Sisram Medical | Israel | Middle East | Public | Manufacturer | Sisram Medical | HKEX:1696 | EBD | Alma Lasers | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | Sisram Medical | HKEX:1696 | 365.35 | 2025 | 58.89 | 173.44 | 2026-05-26T16:08:21+08:00 | 0.47 | 100 | 14 | 13 | EBD | 0 | 0 | 全球领先的医美激光与能量设备制造商 | 2.380000114440918 | HKD | 5.31 | https://finance.yahoo.com/quote/1696.HK | 2026-07-06T08:16:55+08:00 | https://www.sisrammed.com/en/investor-relations | pending_collection | 2026-07-06T08:16:55+08:00 | IFRS_consolidated | Sisram Medical"
+      "search_text": "company | Alma Lasers | Alma Lasers | Sisram Medical | Israel | Middle East | Public | Manufacturer | Sisram Medical | HKEX:1696 | EBD | Alma Lasers | Israel | Israel | 1 | Middle East | Caesarea, Israel | Public | Manufacturer | Active | Sisram Medical | HKEX:1696 | 365.3 | 2025 | 58.9 | 173.44 | 2026-07-07T12:33:57+08:00 | 0.47 | 100 | 14 | 13 | EBD | 0 | 0 | 全球领先的医美激光与能量设备制造商 | 2.380000114440918 | HKD | 5.31 | https://finance.yahoo.com/quote/1696.HK | 2026-07-06T08:16:55+08:00 | https://sisram-medical.com/wp-content/uploads/2026/04/ENG-Sisram-2025-Annual-Report.pdf | manual_verified | 2026-07-06T08:16:55+08:00 | FY2025 | 2026-04-23 | Manual IR annual report | 2026-07-07T12:33:57+08:00 | Sisram Medical"
     },
     {
       "type": "company",
@@ -102630,7 +102630,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Daewoong | Daewoong | South Korea | Asia-Pacific | Public | Manufacturer | KRX:069620 | Injectables | Daewoong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | 1099.62 | 2025 | 52.36 | 1084.93 | 2024-07-20T04:00:00+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 118200.0 | KRW | -5.06 | https://finance.yahoo.com/quote/069620.KQ | 2026-07-06T08:17:54+08:00 | https://www.daewoong.co.kr/eng/ir/disclosure.php | pending_collection | 2026-07-06T08:17:54+08:00 | K_IFRS_consolidated | Daewoong"
+      "search_text": "company | Daewoong | Daewoong | South Korea | Asia-Pacific | Public | Manufacturer | KRX:069620 | Injectables | Daewoong | South Korea | South Korea | 1 | Asia-Pacific | Seoul, South Korea | Public | Manufacturer | Active | KRX:069620 | 1105.17 | 2025 | 52.36 | 1084.93 | 2026-07-07T12:33:57+08:00 | 0.99 | 4 | 4 | Injectables | 0 | 0 | 118200.0 | KRW | -5.06 | https://finance.yahoo.com/quote/069620.KQ | 2026-07-06T08:17:54+08:00 | https://kind.krx.co.kr/common/disclsviewer.do?acptno=20260318002184&method=search | manual_verified | 2026-07-06T08:17:54+08:00 | FY2025 | 2026-03-18 | Manual IR annual report | 2026-07-07T12:33:57+08:00 | Daewoong"
     },
     {
       "type": "company",
