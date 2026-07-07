@@ -30,7 +30,8 @@
 
 第二轮和企业 Top 15 补查用 Scrapling 做了地区级来源发现，覆盖韩国、台湾、香港、巴西、英国、德国、日本、法国、西班牙、意大利、以色列、美国、瑞士、捷克、加拿大、波兰和瑞典。已保存 36 个官方/协会入口、472 条发现记录，下载 49 个来源文件，落到 `data/audits/commercial_geo_market_source_discovery_latest.csv`。企业数量排名前 15 的国家/地区已经全部有至少一个行业数据入口，其中 USA/UK 是可直接进入治疗量主干的硬统计口径，德国/西班牙/意大利是治疗量候选待 QA，其余多为渠道密度、医生 denominator、协会 context 或需求 proxy。初步分流如下：
 
-- 可优先进入第一阶段候选：英国 BAAPS 2020-2025 annual audit PDF；德国 DGÄPC 2020-2025 statistics PDF，但德国需先判定每张表是 procedure count 还是 survey share。
+- 英国 BAAPS 2020-2025 annual audit 已作为 source-labeled UK lane 接入 `data/baaps_market_metrics.csv`：外科 current-year 覆盖 2020、2021、2023、2024、2025，非手术覆盖 2022-2025；2022 外科暂不从百分比倒推。
+- 可优先进入第一阶段候选：德国 DGÄPC 2020-2025 statistics PDF，但德国需先判定每张表是 procedure count 还是 survey share。
 - 巴西 SBCP `Pesquisas` 页公开 2025 demography/censo flipbook 及历史 Censo/ISAPS 链接，先做 metric QA；如果表内是治疗量 count，可进第一阶段，否则作为外科医生/行业结构 context。
 - 西班牙 SECPRE 2022 报告的 2021 外科手术数量表已完成手工 QA，并以 SECPRE surgical-only source lane 接入 `data/europe_association_market_metrics.csv`；患者结构/性别年龄等仍保留为未推广背景。
 - 意大利 AICPE observatory 老入口目前不可用，可读转载明确引用 ISAPS 2020；其中 2020 total 与主表 Italy 2020 ISAPS 行一致，先保留为协会解读/交叉核验，不重复写入治疗量主干；2019 只在重启官方 ISAPS 2019 backfill 时再考虑。
@@ -53,7 +54,7 @@
 - ISAPS Global Survey：全球和国家层面的手术、非手术、注射类、面部年轻化等治疗数量。
 - ASPS Plastic Surgery Statistics：美国手术/微创/项目/区域/费用深挖。
 - The Aesthetic Society Procedural Statistics：美国私营审美外科和 billing/价值口径补充。
-- BAAPS Annual Audit：英国 2020-2025 美容外科 audit 口径，单独做 UK source lane。
+- BAAPS Annual Audit：英国 2020-2025 美容外科 audit 口径，已单独做 UK source lane；当前 92 行进入治疗量时间轴。
 - DGÄPC Statistics：德国 2020-2025 统计 PDF，先做 count/share QA，再决定哪些表能进治疗量主干。
 - SBCP Pesquisas/Censo：巴西协会研究页和 2025 demography/censo flipbook，先做 count/share/demography QA。
 - SECPRE 2022：西班牙医美外科报告，Table 1 已作为 2021 surgical-only procedure volume 接入；其他患者结构与调查项暂不进治疗量主干。
@@ -129,6 +130,7 @@
 - `data/audits/commercial_data_collection_backlog_latest.csv`：采集 backlog。
 - `data/isaps_market_metrics.csv`：ISAPS 2020-2024 国家-年份-赛道治疗数量主干。
 - `data/asps_market_metrics.csv`：ASPS 2024 美国 procedure trend 主干，当前 55 行。
+- `data/baaps_market_metrics.csv`：BAAPS UK annual audit source-labeled 治疗量，当前 92 行。
 - `data/europe_association_market_metrics.csv`：欧洲协会 source-labeled 指标，当前包含 SECPRE Spain 2021 surgical-only procedure volume。
 - `data/audits/commercial_phase1_official_source_inventory_latest.csv`：Scrapling 采集到的 ASPS / Aesthetic Society 官方统计来源清单。
 - `data/audits/commercial_geo_market_source_discovery_latest.csv`：Scrapling 采集到的地区级官方/协会来源发现清单。
@@ -144,7 +146,7 @@
 
 1. 接 ASPS 2024 和 2020-2023 历史年份，单独作为美国 ASPS 口径。
 2. 接 The Aesthetic Society 2020 至今统计，单独作为美国私营/审美外科口径。
-3. 接 BAAPS 2020-2025 UK audit；SECPRE Spain 2021 surgical-only 已接入，AICPE Italy 已定性为 ISAPS 交叉核验不重复入库；DGÄPC、SBCP 继续做 metric QA，再抽可用德国/巴西 count-like 指标。
+3. BAAPS 2020-2025 UK audit 与 SECPRE Spain 2021 surgical-only 已接入，AICPE Italy 已定性为 ISAPS 交叉核验不重复入库；DGÄPC、SBCP 继续做 metric QA，再抽可用德国/巴西 count-like 指标。
 4. 补 SEC/IR 的 aesthetic segment、region revenue、product-line revenue，避免用公司总收入替代医美收入。
 5. 设计 provider locator / enrichment 的渠道覆盖表，先做品牌-城市-机构密度 proxy，并把台湾、香港、巴西、日本、法国、瑞士、捷克、加拿大、波兰、瑞典官方机构/医师入口作为第一批国家级渠道 proxy。
 6. 韩国 MOHW/KHISS 和以色列协会/IMAJ 先作为 medical tourism、specialty demand 或 heat/context proxy，不与 ISAPS 治疗量合并。

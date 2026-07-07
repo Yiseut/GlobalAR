@@ -28,6 +28,7 @@ data/*
 !data/isaps_market_metrics.csv
 !data/asps_market_metrics.csv
 !data/jsaps_market_metrics.csv
+!data/baaps_market_metrics.csv
 !data/europe_association_market_metrics.csv
 !data/manual_company_relationship_supplement.csv
 !data/manual_product_line_supplement.csv

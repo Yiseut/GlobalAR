@@ -1,12 +1,12 @@
 window.V3_MARKET_INTELLIGENCE_DATA = {
   "summary": {
     "sourceDocuments": 550,
-    "claims": 3480,
-    "marketMetricClaims": 2613,
+    "claims": 3572,
+    "marketMetricClaims": 2705,
     "financialClaims": 163,
     "briefingSignals": 704,
     "conflictGroups": 7,
-    "reviewedClaims": 3387,
+    "reviewedClaims": 3479,
     "needsReviewClaims": 93,
     "sourceRoots": [
       {
@@ -79,7 +79,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
     "claimTypes": [
       {
         "name": "procedure_volume",
-        "value": 2374
+        "value": 2466
       },
       {
         "name": "briefing_signal",
@@ -140,7 +140,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "value": 7
       }
     ],
-    "asOf": "2026-07-07T13:15:41+08:00"
+    "asOf": "2026-07-07T13:24:52+08:00"
   },
   "analysis": {
     "insightCards": [
@@ -148,8 +148,8 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "label": "市场指标结构",
         "headline": "91% 是程序量/需求侧指标",
         "takeaway": "当前商业指标更适合判断需求热区和地区程序量，不宜直接等同为销售额分布。",
-        "metric": 2374,
-        "denominator": 2613,
+        "metric": 2466,
+        "denominator": 2705,
         "tone": "demand"
       },
       {
@@ -180,7 +180,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
     "marketTypeMix": [
       {
         "name": "procedure_volume",
-        "value": 2374
+        "value": 2466
       },
       {
         "name": "source_stated_metric",
@@ -206,9 +206,9 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
     "marketMatrix": [
       {
         "segment": "Procedure demand",
-        "score": 1474,
-        "total": 1474,
-        "procedureVolume": 1474,
+        "score": 1566,
+        "total": 1566,
+        "procedureVolume": 1566,
         "marketSize": 0,
         "growthRate": 0,
         "marketShare": 0,
@@ -1443,24 +1443,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 61.9
       },
       {
-        "geo": "Global",
-        "segment": "Procedure demand",
-        "lat": 10.0,
-        "lon": 0.0,
-        "region": "Other",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 37951364.0,
-        "procedureYear": 2024,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 45.0
-      },
-      {
         "geo": "USA",
         "segment": "Procedure demand",
         "lat": 39.5,
@@ -1473,6 +1455,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "growthRatePct": null,
         "growthYear": null,
         "procedureVolume": 28243407.0,
+        "procedureYear": 2024,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 45.0
+      },
+      {
+        "geo": "Global",
+        "segment": "Procedure demand",
+        "lat": 10.0,
+        "lon": 0.0,
+        "region": "Other",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 37951364.0,
         "procedureYear": 2024,
         "marketSharePct": null,
         "basis": "",
@@ -1677,24 +1677,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 13.6
       },
       {
-        "geo": "Australia",
-        "segment": "Procedure demand",
-        "lat": -25.3,
-        "lon": 133.8,
-        "region": "Asia-Pacific",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 177502.0,
-        "procedureYear": 2024,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 11.5
-      },
-      {
         "geo": "India",
         "segment": "Injectables",
         "lat": 21.0,
@@ -1707,6 +1689,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "growthRatePct": null,
         "growthYear": null,
         "procedureVolume": 179480.0,
+        "procedureYear": 2024,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 11.5
+      },
+      {
+        "geo": "Australia",
+        "segment": "Procedure demand",
+        "lat": -25.3,
+        "lon": 133.8,
+        "region": "Asia-Pacific",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 177502.0,
         "procedureYear": 2024,
         "marketSharePct": null,
         "basis": "",
@@ -1729,24 +1729,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "marketSharePct": null,
         "basis": "",
         "potentialIndex": 11.3
-      },
-      {
-        "geo": "UK",
-        "segment": "Procedure demand",
-        "lat": 54.1,
-        "lon": -2.3,
-        "region": "Europe",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 141134.0,
-        "procedureYear": 2024,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 11.2
       },
       {
         "geo": "Argentina",
@@ -1857,6 +1839,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.3
       },
       {
+        "geo": "UK",
+        "segment": "Procedure demand",
+        "lat": 54.1,
+        "lon": -2.3,
+        "region": "Europe",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 26840.0,
+        "procedureYear": 2025,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.2
+      },
+      {
         "geo": "Singapore",
         "segment": "Procedure demand",
         "lat": 1.35,
@@ -1893,24 +1893,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.1
       },
       {
-        "geo": "Singapore",
-        "segment": "Injectables",
-        "lat": 1.35,
-        "lon": 103.8,
-        "region": "Asia-Pacific",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 8232.0,
-        "procedureYear": 2024,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.1
-      },
-      {
         "geo": "Malaysia",
         "segment": "Injectables",
         "lat": 4.2,
@@ -1929,64 +1911,28 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.1
       },
       {
-        "geo": "Switzerland",
-        "segment": "Regenerative",
-        "lat": 46.8,
-        "lon": 8.2,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Netherlands",
-        "segment": "Regenerative",
-        "lat": 52.1,
-        "lon": 5.3,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Slovakia",
-        "segment": "Other product lines",
-        "lat": 48.7,
-        "lon": 19.7,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Luxembourg",
+        "geo": "Singapore",
         "segment": "Injectables",
-        "lat": 49.8,
-        "lon": 6.1,
+        "lat": 1.35,
+        "lon": 103.8,
+        "region": "Asia-Pacific",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 8232.0,
+        "procedureYear": 2024,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.1
+      },
+      {
+        "geo": "Spain",
+        "segment": "Regenerative",
+        "lat": 40.4,
+        "lon": -3.7,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2001,10 +1947,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Sweden",
-        "segment": "Other product lines",
-        "lat": 60.1,
-        "lon": 18.6,
+        "geo": "Monaco",
+        "segment": "EBD",
+        "lat": 43.7,
+        "lon": 7.4,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2020,99 +1966,9 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "UK",
-        "segment": "Regenerative",
+        "segment": "Other product lines",
         "lat": 54.1,
         "lon": -2.3,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Switzerland",
-        "segment": "Other product lines",
-        "lat": 46.8,
-        "lon": 8.2,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Poland",
-        "segment": "EBD",
-        "lat": 52.0,
-        "lon": 19.1,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Ireland",
-        "segment": "EBD",
-        "lat": 53.4,
-        "lon": -8.2,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Israel",
-        "segment": "Other product lines",
-        "lat": 31.5,
-        "lon": 34.8,
-        "region": "Middle East",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Germany",
-        "segment": "Threads",
-        "lat": 51.2,
-        "lon": 10.4,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2145,28 +2001,28 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "UK",
-        "segment": "Other product lines",
-        "lat": 54.1,
-        "lon": -2.3,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Sweden",
+        "geo": "Israel",
         "segment": "Regenerative",
-        "lat": 60.1,
-        "lon": 18.6,
+        "lat": 31.5,
+        "lon": 34.8,
+        "region": "Middle East",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Poland",
+        "segment": "EBD",
+        "lat": 52.0,
+        "lon": 19.1,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2181,10 +2037,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Spain",
-        "segment": "Regenerative",
-        "lat": 40.4,
-        "lon": -3.7,
+        "geo": "Luxembourg",
+        "segment": "Injectables",
+        "lat": 49.8,
+        "lon": 6.1,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2199,29 +2055,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Japan",
-        "segment": "EBD",
-        "lat": 36.2,
-        "lon": 138.3,
-        "region": "Asia-Pacific",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Taiwan",
-        "segment": "EBD",
-        "lat": 23.7,
-        "lon": 121.0,
-        "region": "Asia-Pacific",
+        "geo": "Germany",
+        "segment": "Threads",
+        "lat": 51.2,
+        "lon": 10.4,
+        "region": "Europe",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2253,11 +2091,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Brazil",
-        "segment": "EBD",
-        "lat": -14.2,
-        "lon": -51.9,
-        "region": "Latin America",
+        "geo": "Israel",
+        "segment": "Other product lines",
+        "lat": 31.5,
+        "lon": 34.8,
+        "region": "Middle East",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2271,11 +2109,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Europe",
-        "segment": "Threads",
-        "lat": 50.5,
-        "lon": 12.5,
-        "region": "Other",
+        "geo": "Japan",
+        "segment": "EBD",
+        "lat": 36.2,
+        "lon": 138.3,
+        "region": "Asia-Pacific",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2289,10 +2127,46 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Monaco",
-        "segment": "EBD",
-        "lat": 43.7,
-        "lon": 7.4,
+        "geo": "Czech Republic",
+        "segment": "Other product lines",
+        "lat": 49.8,
+        "lon": 15.5,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Taiwan",
+        "segment": "Other product lines",
+        "lat": 23.7,
+        "lon": 121.0,
+        "region": "Asia-Pacific",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Netherlands",
+        "segment": "Regenerative",
+        "lat": 52.1,
+        "lon": 5.3,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2343,8 +2217,116 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Taiwan",
+        "geo": "Brazil",
+        "segment": "EBD",
+        "lat": -14.2,
+        "lon": -51.9,
+        "region": "Latin America",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Slovakia",
         "segment": "Other product lines",
+        "lat": 48.7,
+        "lon": 19.7,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Switzerland",
+        "segment": "Regenerative",
+        "lat": 46.8,
+        "lon": 8.2,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Ireland",
+        "segment": "EBD",
+        "lat": 53.4,
+        "lon": -8.2,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Sweden",
+        "segment": "Regenerative",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Switzerland",
+        "segment": "Other product lines",
+        "lat": 46.8,
+        "lon": 8.2,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Taiwan",
+        "segment": "EBD",
         "lat": 23.7,
         "lon": 121.0,
         "region": "Asia-Pacific",
@@ -2361,11 +2343,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Israel",
+        "geo": "UK",
         "segment": "Regenerative",
-        "lat": 31.5,
-        "lon": 34.8,
-        "region": "Middle East",
+        "lat": 54.1,
+        "lon": -2.3,
+        "region": "Europe",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2379,11 +2361,29 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Czech Republic",
+        "geo": "Sweden",
         "segment": "Other product lines",
-        "lat": 49.8,
-        "lon": 15.5,
+        "lat": 60.1,
+        "lon": 18.6,
         "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Europe",
+        "segment": "Threads",
+        "lat": 50.5,
+        "lon": 12.5,
+        "region": "Other",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2469,6 +2469,42 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.6
       },
       {
+        "geo": "France",
+        "segment": "Regenerative",
+        "lat": 46.2,
+        "lon": 2.2,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Sweden",
+        "segment": "Injectables",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
         "geo": "Slovakia",
         "segment": "EBD",
         "lat": 48.7,
@@ -2505,46 +2541,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Sweden",
-        "segment": "EBD",
-        "lat": 60.1,
-        "lon": 18.6,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
         "geo": "Italy",
         "segment": "Regenerative",
         "lat": 42.5,
         "lon": 12.5,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Finland",
-        "segment": "EBD",
-        "lat": 64.0,
-        "lon": 26.0,
         "region": "Europe",
         "productLines": 2,
         "companies": 2,
@@ -2577,6 +2577,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
+        "geo": "Finland",
+        "segment": "EBD",
+        "lat": 64.0,
+        "lon": 26.0,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
         "geo": "Turkey",
         "segment": "Injectables",
         "lat": 39.0,
@@ -2595,11 +2613,29 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Sweden",
-        "segment": "Injectables",
-        "lat": 60.1,
-        "lon": 18.6,
+        "geo": "Denmark",
+        "segment": "EBD",
+        "lat": 56.2,
+        "lon": 10.0,
         "region": "Europe",
+        "productLines": 2,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Canada",
+        "segment": "Injectables",
+        "lat": 56.1,
+        "lon": -106.3,
+        "region": "North America",
         "productLines": 2,
         "companies": 2,
         "marketSizeUsdM": null,
@@ -2631,49 +2667,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Canada",
-        "segment": "Injectables",
-        "lat": 56.1,
-        "lon": -106.3,
-        "region": "North America",
-        "productLines": 2,
-        "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Denmark",
+        "geo": "Sweden",
         "segment": "EBD",
-        "lat": 56.2,
-        "lon": 10.0,
+        "lat": 60.1,
+        "lon": 18.6,
         "region": "Europe",
         "productLines": 2,
         "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "France",
-        "segment": "Regenerative",
-        "lat": 46.2,
-        "lon": 2.2,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2703,13 +2703,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.9
       },
       {
-        "geo": "Poland",
-        "segment": "Regenerative",
-        "lat": 52.0,
-        "lon": 19.1,
+        "geo": "Bulgaria",
+        "segment": "EBD",
+        "lat": 42.7,
+        "lon": 25.5,
         "region": "Europe",
         "productLines": 3,
-        "companies": 2,
+        "companies": 1,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2721,13 +2721,31 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Latin America",
+        "geo": "Costa Rica",
         "segment": "Other product lines",
-        "lat": -14.0,
-        "lon": -60.0,
-        "region": "Other",
+        "lat": 9.7,
+        "lon": -84.2,
+        "region": "Latin America",
         "productLines": 3,
         "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 3.3
+      },
+      {
+        "geo": "Germany",
+        "segment": "Regenerative",
+        "lat": 51.2,
+        "lon": 10.4,
+        "region": "Europe",
+        "productLines": 3,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2757,31 +2775,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Germany",
+        "geo": "Poland",
         "segment": "Regenerative",
-        "lat": 51.2,
-        "lon": 10.4,
+        "lat": 52.0,
+        "lon": 19.1,
         "region": "Europe",
         "productLines": 3,
         "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 3.3
-      },
-      {
-        "geo": "Bulgaria",
-        "segment": "EBD",
-        "lat": 42.7,
-        "lon": 25.5,
-        "region": "Europe",
-        "productLines": 3,
-        "companies": 1,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2811,11 +2811,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Costa Rica",
+        "geo": "Latin America",
         "segment": "Other product lines",
-        "lat": 9.7,
-        "lon": -84.2,
-        "region": "Latin America",
+        "lat": -14.0,
+        "lon": -60.0,
+        "region": "Other",
         "productLines": 3,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2955,24 +2955,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.4
       },
       {
-        "geo": "Switzerland",
-        "segment": "EBD",
-        "lat": 46.8,
-        "lon": 8.2,
-        "region": "Europe",
-        "productLines": 7,
-        "companies": 5,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 1.4
-      },
-      {
         "geo": "Italy",
         "segment": "Other product lines",
         "lat": 42.5,
@@ -2991,13 +2973,31 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.4
       },
       {
-        "geo": "Spain",
-        "segment": "Other product lines",
-        "lat": 40.4,
-        "lon": -3.7,
+        "geo": "Switzerland",
+        "segment": "EBD",
+        "lat": 46.8,
+        "lon": 8.2,
         "region": "Europe",
+        "productLines": 7,
+        "companies": 5,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 1.4
+      },
+      {
+        "geo": "South Korea",
+        "segment": "Threads",
+        "lat": 36.4,
+        "lon": 127.8,
+        "region": "Asia-Pacific",
         "productLines": 8,
-        "companies": 2,
+        "companies": 8,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3009,13 +3009,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.2
       },
       {
-        "geo": "South Korea",
-        "segment": "Threads",
-        "lat": 36.4,
-        "lon": 127.8,
-        "region": "Asia-Pacific",
+        "geo": "Spain",
+        "segment": "Other product lines",
+        "lat": 40.4,
+        "lon": -3.7,
+        "region": "Europe",
         "productLines": 8,
-        "companies": 8,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3063,13 +3063,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.1
       },
       {
-        "geo": "Slovenia",
-        "segment": "EBD",
-        "lat": 46.1,
-        "lon": 14.8,
-        "region": "Europe",
+        "geo": "USA",
+        "segment": "Regenerative",
+        "lat": 39.5,
+        "lon": -98.4,
+        "region": "North America",
         "productLines": 11,
-        "companies": 2,
+        "companies": 7,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3099,13 +3099,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.9
       },
       {
-        "geo": "USA",
-        "segment": "Regenerative",
-        "lat": 39.5,
-        "lon": -98.4,
-        "region": "North America",
+        "geo": "Slovenia",
+        "segment": "EBD",
+        "lat": 46.1,
+        "lon": 14.8,
+        "region": "Europe",
         "productLines": 11,
-        "companies": 7,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3154,12 +3154,12 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "France",
-        "segment": "EBD",
+        "segment": "Other product lines",
         "lat": 46.2,
         "lon": 2.2,
         "region": "Europe",
         "productLines": 14,
-        "companies": 10,
+        "companies": 9,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3172,12 +3172,12 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "France",
-        "segment": "Other product lines",
+        "segment": "EBD",
         "lat": 46.2,
         "lon": 2.2,
         "region": "Europe",
         "productLines": 14,
-        "companies": 9,
+        "companies": 10,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3243,42 +3243,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.4
       },
       {
-        "geo": "USA",
-        "segment": "Other product lines",
-        "lat": 39.5,
-        "lon": -98.4,
-        "region": "North America",
-        "productLines": 39,
-        "companies": 18,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 0.3
-      },
-      {
-        "geo": "North America",
-        "segment": "Other product lines",
-        "lat": 45.0,
-        "lon": -102.0,
-        "region": "Other",
-        "productLines": 39,
-        "companies": 18,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 0.3
-      },
-      {
         "geo": "Switzerland",
         "segment": "Injectables",
         "lat": 46.8,
@@ -3297,6 +3261,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.3
       },
       {
+        "geo": "USA",
+        "segment": "Other product lines",
+        "lat": 39.5,
+        "lon": -98.4,
+        "region": "North America",
+        "productLines": 39,
+        "companies": 18,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 0.3
+      },
+      {
         "geo": "Europe",
         "segment": "Other product lines",
         "lat": 50.5,
@@ -3304,6 +3286,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "region": "Other",
         "productLines": 39,
         "companies": 26,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 0.3
+      },
+      {
+        "geo": "North America",
+        "segment": "Other product lines",
+        "lat": 45.0,
+        "lon": -102.0,
+        "region": "Other",
+        "productLines": 39,
+        "companies": 18,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -4700,6 +4700,240 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.precedenceresearch.com/cheek-augmentation-market"
     },
     {
+      "claimId": "cc_925edcbd6b10",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 26840.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year total surgical procedures from table. Source-labeled UK association lane; do not merge silently with ISAPS totals.",
+      "category": "Surgical procedures / Total surgical procedures",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_b4e33d38523c",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 7834.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Total Non-Surgical Procedures",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_b27265d8e3f4",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 5606.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Botox Injections",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_5bc4927fd9a6",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 4761.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Augmentation",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_7a0c79729993",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 4673.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Reduction",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_e2db0a51e577",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 3381.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Blepharoplasty",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_94feffe38503",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 2845.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Abdominoplasty",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_bf936380046f",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 2463.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Liposuction",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_4d0051238419",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 2228.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Filler Injections",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_ff77cd4e16db",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 2097.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Face/Neck Lift",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_2ea84ec368d0",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 1595.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Rhinoplasty",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_e0948340f90a",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 1338.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Fat Transfer",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_736fa6b7dcea",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 850.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Implant Removal",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
       "claimId": "cc_da2600c6ed7e",
       "type": "market_size",
       "metric": "市场规模",
@@ -4772,6 +5006,114 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.precedenceresearch.com/cheek-augmentation-market"
     },
     {
+      "claimId": "cc_4ce7e06199bd",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 675.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Labiaplasty",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_2255791d60ab",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 616.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Otoplasty",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_e8987a961f46",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 612.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brow Lift",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_3ce1f607020c",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 433.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brachioplasty",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_55a5a3cee23e",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 299.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Thigh Lift",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
+      "claimId": "cc_c1565c70254b",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 147.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Lower Body Lift",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
+    },
+    {
       "claimId": "cc_f77a787c0a70",
       "type": "source_stated_metric",
       "metric": "消费者偏好",
@@ -4824,6 +5166,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "注射类 / 填充剂 / HA填充剂",
       "sourceDocumentId": "csd_2e660fb297b4",
       "sourceUrl": "https://www.globenewswire.com/news-release/2026/01/14/3218759/0/en/Dermal-Fillers-and-Botulinum-Toxin-Market-to-Hit-USD-10-16-Billion-by-2033-Driven-by-Surge-in-Minimally-Invasive-Aesthetic-Procedures-SNS-Insider.html"
+    },
+    {
+      "claimId": "cc_6d06ae32f77f",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2025",
+      "value": 55.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Superficial Gluteal Lipofilling",
+      "sourceDocumentId": "csd_add00b52637e",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2025_audit_results_for_2026_release_final.pdf"
     },
     {
       "claimId": "cc_e68f08601aa5",
@@ -11198,6 +11558,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.plasticsurgery.org/documents/news/statistics/2024/cosmetic-procedures-regions-2024.pdf"
     },
     {
+      "claimId": "cc_29f5c5a406e1",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 27462.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year total surgical procedures from table. Source-labeled UK association lane; do not merge silently with ISAPS totals.",
+      "category": "Surgical procedures / Total surgical procedures",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_911a97d73096",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -13376,6 +13754,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.plasticsurgery.org/documents/news/statistics/2024/cosmetic-procedures-regions-2024.pdf"
     },
     {
+      "claimId": "cc_53dc9ce8e577",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 9807.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Total Non-Surgical Procedures",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_05cd04f33dd8",
       "type": "procedure_volume",
       "metric": "average_fee_range_midpoint",
@@ -14168,6 +14564,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.plasticsurgery.org/documents/news/statistics/2024/cosmetic-procedures-regions-2024.pdf"
     },
     {
+      "claimId": "cc_7c706ce17f45",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 6784.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Botox Injections",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_8b81e09ab059",
       "type": "procedure_volume",
       "metric": "regional_procedure_volume",
@@ -14798,6 +15212,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
     },
     {
+      "claimId": "cc_5bfebd8ec85d",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 5202.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Augmentation",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_43dd39aeba67",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -15192,6 +15624,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Injectables / Botulinum Toxin",
       "sourceDocumentId": "csd_a13160f9cff5",
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
+    },
+    {
+      "claimId": "cc_fda69625a92a",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 4707.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Reduction",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_70283552adab",
@@ -15896,6 +16346,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
     },
     {
+      "claimId": "cc_0971a61f08eb",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 3138.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Blepharoplasty",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_fd064f2d017b",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -15932,6 +16400,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.plasticsurgery.org/documents/news/statistics/2024/cosmetic-procedures-regions-2024.pdf"
     },
     {
+      "claimId": "cc_a19f3fd64754",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 3023.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Filler Injections",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_c58c5f359692",
       "type": "procedure_volume",
       "metric": "regional_procedure_volume",
@@ -15966,6 +16452,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Injectables / Poly-L-Lactic Acid",
       "sourceDocumentId": "csd_a13160f9cff5",
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
+    },
+    {
+      "claimId": "cc_def7b65da8ac",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 2997.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Abdominoplasty",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_c0ba078475e1",
@@ -16182,6 +16686,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Cosmetic regional distribution / Body / Thigh lift",
       "sourceDocumentId": "csd_06762cb3c496",
       "sourceUrl": "https://www.plasticsurgery.org/documents/news/statistics/2024/cosmetic-procedures-regions-2024.pdf"
+    },
+    {
+      "claimId": "cc_fc73a2228948",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 2623.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Liposuction",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_beb5c4e06e59",
@@ -16670,6 +17192,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.plasticsurgery.org/documents/news/statistics/2024/cosmetic-procedures-regions-2024.pdf"
     },
     {
+      "claimId": "cc_beaa4f53ebc8",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 1938.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Rhinoplasty",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_9096fde08410",
       "type": "procedure_volume",
       "metric": "regional_procedure_volume",
@@ -16740,6 +17280,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Cosmetic regional distribution / Face / Liposuction (submental/chin)",
       "sourceDocumentId": "csd_06762cb3c496",
       "sourceUrl": "https://www.plasticsurgery.org/documents/news/statistics/2024/cosmetic-procedures-regions-2024.pdf"
+    },
+    {
+      "claimId": "cc_e6b67eb5bf0f",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 1882.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Face/Neck Lift",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_0f1e027dd5a4",
@@ -17172,6 +17730,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_a13160f9cff5",
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
+    },
+    {
+      "claimId": "cc_3e54854b5ebb",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 1400.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Fat Transfer",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_a09e367899f6",
@@ -17912,6 +18488,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.jsaps.com/explore/8th.html"
     },
     {
+      "claimId": "cc_27e3680c25e2",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 805.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Implant Removal",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_57e0b0dfa854",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -18182,6 +18776,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
     },
     {
+      "claimId": "cc_23746da74235",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 663.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Otoplasty",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_e54abfdd658f",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -18198,6 +18810,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_a13160f9cff5",
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
+    },
+    {
+      "claimId": "cc_ace5a738d3d5",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 635.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Labiaplasty",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_7e3eac06b3be",
@@ -18686,6 +19316,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
     },
     {
+      "claimId": "cc_1eb37e012f70",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 481.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brow Lift",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_54e17012e311",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -18828,6 +19476,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_a13160f9cff5",
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
+    },
+    {
+      "claimId": "cc_c83ba6f26e7b",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 439.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brachioplasty",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_49ab6205dd48",
@@ -19280,6 +19946,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
     },
     {
+      "claimId": "cc_5271c3d22bfb",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 283.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Thigh Lift",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_e1b4e045cb8b",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -19496,6 +20180,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.jsaps.com/explore/8th.html"
     },
     {
+      "claimId": "cc_7d190cdc73e6",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 181.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Lower Body Lift",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
+    },
+    {
       "claimId": "cc_18c99c4bf937",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -19692,6 +20394,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Other non-surgical / Non-Surgical Fat Reduction",
       "sourceDocumentId": "csd_a13160f9cff5",
       "sourceUrl": "https://www.isaps.org/media/30xldsyf/isaps-global-survey-2024.pdf"
+    },
+    {
+      "claimId": "cc_5e7ed7d4cb94",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2024",
+      "value": 88.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count from table. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Superficial Gluteal Lipofilling",
+      "sourceDocumentId": "csd_95cb24b9867f",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2024_audit_results_for_2025_release_final.pdf"
     },
     {
       "claimId": "cc_e36f4408478c",
@@ -28406,6 +29126,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_c308942699a3",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 25972.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year total surgical procedures. Source-labeled UK association lane; do not merge silently with ISAPS totals.",
+      "category": "Surgical procedures / Total surgical procedures",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_0335a5aa36fa",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -29612,6 +30350,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_d97707a64025",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 8837.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Total Non-Surgical Procedures",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_d04bed99a93e",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -29882,6 +30638,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_5d339e761f5e",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 6449.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Botox Injections",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_b7f44611b075",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -30134,6 +30908,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_8d3f2bd46314",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 4924.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Augmentation",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_6f22865350b9",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -30222,6 +31014,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Other non-surgical / Country total other non-surgical",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_ac27e796bcd4",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 4641.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Reduction",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_8f7142e1762a",
@@ -30800,6 +31610,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.globenewswire.com/news-release/2026/01/16/3220440/0/en/Aesthetic-Medicine-Market-Forecast-2025-2033-A-233-67-Billion-Revenue-Opportunity-with-Key-Insights-by-Region-Astute-Analytica.html"
     },
     {
+      "claimId": "cc_c83ebbd887a1",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 2830.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Abdominoplasty",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_9adac840b304",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -30816,6 +31644,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Other non-surgical / Cellulite Treatment",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_34dc56764565",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 2769.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Blepharoplasty",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_6e7797cb4325",
@@ -30890,6 +31736,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_47fdcb6189eb",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 2424.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Liposuction",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_b380c96a13f1",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -30906,6 +31770,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_51831bc99325",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 2388.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Filler Injections",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_871a6a8293d1",
@@ -31178,6 +32060,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_01044db931fa",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 1950.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Rhinoplasty",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_95ef59edad58",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -31230,6 +32130,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Facial rejuvenation / Full Field Ablative",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_ee4a64a8c21f",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 1742.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Face/Neck Lift",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_5c5c0c92403d",
@@ -31356,6 +32274,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Other non-surgical / Non-Surgical Fat Reduction",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_510472161242",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 1330.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Fat Transfer",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_62ba03304c91",
@@ -31682,6 +32618,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_5bb81886267d",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 846.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Implant Removal",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_974cad4e195e",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -31790,6 +32744,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_6ad3f6093954",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 680.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Labiaplasty",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_8f52388c02ea",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -31824,6 +32796,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Injectables / Calcium Hydroxylapatite",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_c5b12dff1a21",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 648.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Otoplasty",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_df04c50607a2",
@@ -32150,6 +33140,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_44cac897edad",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 402.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brow Lift",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_f0dcb240e94a",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -32166,6 +33174,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Facial rejuvenation / Full Field Ablative",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_4ef35034d519",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 389.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brachioplasty",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_f20c6076bf0f",
@@ -32366,6 +33392,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
     },
     {
+      "claimId": "cc_81280e624196",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 229.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Thigh Lift",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_81ca9016311d",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -32436,6 +33480,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Facial rejuvenation / Full Field Ablative",
       "sourceDocumentId": "csd_cab1f956db3e",
       "sourceUrl": "https://www.isaps.org/media/rxnfqibn/isaps-global-survey_2023.pdf"
+    },
+    {
+      "claimId": "cc_d9cbe05bc447",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2023",
+      "value": 167.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Lower Body Lift",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_b773076f8408",
@@ -37352,6 +38414,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/a0qfm4h3/isaps-global-survey_2022.pdf"
     },
     {
+      "claimId": "cc_977a98902ec6",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2022",
+      "value": 9904.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Total Non-Surgical Procedures",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
+    },
+    {
       "claimId": "cc_808c169453c5",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -37656,6 +38736,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Facial rejuvenation / Non-Surgical Skin Tightening",
       "sourceDocumentId": "csd_067896134dbd",
       "sourceUrl": "https://www.isaps.org/media/a0qfm4h3/isaps-global-survey_2022.pdf"
+    },
+    {
+      "claimId": "cc_b4744d5cc935",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2022",
+      "value": 6639.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Botox Injections",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_6e73bf7b6373",
@@ -38124,6 +39222,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Injectables / Calcium Hydroxylapatite",
       "sourceDocumentId": "csd_067896134dbd",
       "sourceUrl": "https://www.isaps.org/media/a0qfm4h3/isaps-global-survey_2022.pdf"
+    },
+    {
+      "claimId": "cc_a00da81103b8",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2022",
+      "value": 3265.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_table_qa_non_surgical",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit non-surgical procedure count. Source-labeled UK association lane.",
+      "category": "Non-surgical procedures / Filler Injections",
+      "sourceDocumentId": "csd_310778c6722c",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/final_2023_audit_results_for_2024_release.pdf"
     },
     {
       "claimId": "cc_b2488febb483",
@@ -42230,6 +43346,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_a9b1664b160b",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 15405.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year total surgical procedures. Source-labeled UK association lane; do not merge silently with ISAPS totals.",
+      "category": "Surgical procedures / Total surgical procedures",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_260811a1ae10",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -43148,6 +44282,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_8d846bfd2a0b",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 4023.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Augmentation",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_9fb328ff58be",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -43418,6 +44570,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_3de50209ba60",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 2528.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Reduction",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_94861024d3b2",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -43544,6 +44714,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_8e0301966b57",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 1597.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Blepharoplasty",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_2c21c28a9bf0",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -43598,6 +44786,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_b30d2466a3b2",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 1488.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Abdominoplasty",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_1ccb442ec394",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -43616,6 +44822,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://portalsecpre.org/images/noticias/Informe%20SECPRE_IMOP%202022%20prensa.pdf"
     },
     {
+      "claimId": "cc_36e31c951aba",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 1330.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Rhinoplasty",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_cb6b7bb6c0e8",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -43632,6 +44856,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_b4ccb6b78a93",
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
+    },
+    {
+      "claimId": "cc_7b90966697a1",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 1275.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Liposuction",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
     },
     {
       "claimId": "cc_1fabc89c7153",
@@ -43814,6 +45056,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_6d47c7bb3ce2",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 901.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Face/Neck Lift",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_6785c9e6cfb0",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -43958,6 +45218,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_22533caaa960",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 675.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Fat Transfer",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_30ba2898535d",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -44012,6 +45290,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_561815a97fa1",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 592.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Implant Removal",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_33b5cd143ba2",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -44046,6 +45342,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_b4ccb6b78a93",
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
+    },
+    {
+      "claimId": "cc_c960419fcf1c",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 469.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Otoplasty",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
     },
     {
       "claimId": "cc_00bc8a4da72a",
@@ -44228,6 +45542,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
     },
     {
+      "claimId": "cc_036d1d4da602",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 184.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brachioplasty",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
       "claimId": "cc_5d4f086eaa0c",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -44244,6 +45576,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Injectables / Calcium Hydroxylapatite",
       "sourceDocumentId": "csd_b4ccb6b78a93",
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
+    },
+    {
+      "claimId": "cc_bc3bed55f726",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 152.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brow Lift",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
     },
     {
       "claimId": "cc_881b1ca4f602",
@@ -44280,6 +45630,42 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Facial rejuvenation / Full Field Ablative",
       "sourceDocumentId": "csd_b4ccb6b78a93",
       "sourceUrl": "https://www.isaps.org/media/vdpdanke/isaps-global-survey_2021.pdf"
+    },
+    {
+      "claimId": "cc_63eb0669a5c5",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 109.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Thigh Lift",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
+    },
+    {
+      "claimId": "cc_1884b87fc32b",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2021",
+      "value": 82.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Lower Body Lift",
+      "sourceDocumentId": "csd_9e09995651d6",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2021_audit_results_for_2022_release_final.pdf"
     },
     {
       "claimId": "cc_725e8e458f48",
@@ -48278,6 +49664,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
     },
     {
+      "claimId": "cc_8548726711cd",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 21174.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year total surgical procedures. Source-labeled UK association lane; do not merge silently with ISAPS totals.",
+      "category": "Surgical procedures / Total surgical procedures",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_d6ef7dc9ad1a",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -49538,6 +50942,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
     },
     {
+      "claimId": "cc_e4ae931bf285",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 4702.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Augmentation",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_85c45e224b71",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -49680,6 +51102,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Injectables / Poly-L-Lactic Acid",
       "sourceDocumentId": "csd_6c412fe32715",
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
+    },
+    {
+      "claimId": "cc_fbd6f6af9149",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 3290.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Reduction",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
     },
     {
       "claimId": "cc_01da4f55c00e",
@@ -49898,6 +51338,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
     },
     {
+      "claimId": "cc_ee63f6f48db2",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 2481.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Blepharoplasty",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_49330886c0e6",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -49952,6 +51410,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.jsaps.com/explore/4th.html"
     },
     {
+      "claimId": "cc_1048367bfd81",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 2112.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Abdominoplasty",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_4217afbb08a8",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -50004,6 +51480,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_6c412fe32715",
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
+    },
+    {
+      "claimId": "cc_42f645a59395",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 1994.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Rhinoplasty",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
     },
     {
       "claimId": "cc_dc5eb0969928",
@@ -50078,6 +51572,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
     },
     {
+      "claimId": "cc_59b964599a08",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 1596.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Liposuction",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_87e3320aaa98",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -50094,6 +51606,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Workforce / Estimated plastic surgeons",
       "sourceDocumentId": "csd_6c412fe32715",
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
+    },
+    {
+      "claimId": "cc_edc3433d3d54",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 1529.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Face/Neck Lift",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
     },
     {
       "claimId": "cc_1ba66b17fbe6",
@@ -50276,6 +51806,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.jsaps.com/explore/4th.html"
     },
     {
+      "claimId": "cc_1673f7a8d918",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 1029.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Fat Transfer",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_b465bf694410",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -50348,6 +51896,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
     },
     {
+      "claimId": "cc_a04169b3517d",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 794.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Otoplasty",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_548d7f1ada0a",
       "type": "procedure_volume",
       "metric": "procedure_volume",
@@ -50364,6 +51930,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Other non-surgical / Country total other non-surgical",
       "sourceDocumentId": "csd_6c412fe32715",
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
+    },
+    {
+      "claimId": "cc_9fda57f18afb",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 783.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Breast Implant Removal",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
     },
     {
       "claimId": "cc_7ebc6d20e3f2",
@@ -50708,6 +52292,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
     },
     {
+      "claimId": "cc_422d9018af51",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 337.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brow Lift",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_c8e84d10e87a",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -50780,6 +52382,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
     },
     {
+      "claimId": "cc_30e1a886020d",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 278.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Brachioplasty",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
       "claimId": "cc_9ad1aafc9178",
       "type": "source_stated_metric",
       "metric": "estimated_plastic_surgeons",
@@ -50814,6 +52434,42 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "category": "Other non-surgical / Non-Surgical Fat Reduction",
       "sourceDocumentId": "csd_6c412fe32715",
       "sourceUrl": "https://www.isaps.org/media/dzjfg50s/isaps-global-survey_2020.pdf"
+    },
+    {
+      "claimId": "cc_cb98e1a2030f",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 167.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Thigh Lift",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
+    },
+    {
+      "claimId": "cc_dae55af42c9e",
+      "type": "procedure_volume",
+      "metric": "procedure_volume",
+      "entity": "United Kingdom",
+      "geo": "United Kingdom",
+      "period": "2020",
+      "value": 132.0,
+      "unit": "procedures",
+      "source": "BAAPS",
+      "confidence": "official_association_report_text_qa_surgical_only",
+      "reviewStatus": "indexed_primary_source",
+      "mappingStatus": "market_level",
+      "excerpt": "BAAPS annual audit current-year surgical procedure count. Source-labeled UK association lane.",
+      "category": "Surgical procedures / Lower Body Lift",
+      "sourceDocumentId": "csd_52b6b2e16353",
+      "sourceUrl": "https://baaps.org.uk/_userfiles/pages/files/2020_audit_results_for_2021.pdf"
     },
     {
       "claimId": "cc_cce0aeddc6be",
@@ -61438,12 +63094,12 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "timeGrain": "year",
       "segmentGrain": "procedure",
       "fieldsAvailable": "cosmetic surgery audit results by procedure;annual PDFs for 2020-2025 discovered",
-      "extractionMethod": "pdf_table_extraction_with_source_label",
+      "extractionMethod": "pdf_table_and_text_extraction_with_source_label",
       "targetDataset": "commercial_procedure_metrics",
       "refreshCadence": "annual",
-      "implementationStatus": "source_pdfs_acquired",
+      "implementationStatus": "metrics_promoted_source_labeled",
       "priority": 4,
-      "notes": "High-value UK country-level companion to ISAPS. Keep BAAPS audit coverage and methodology source-labeled; do not merge silently with ISAPS UK totals."
+      "notes": "High-value UK country-level companion to ISAPS. BAAPS total procedure rows are loaded source-labeled for 2020, 2021, 2023, 2024, 2025 surgical and 2022-2025 non-surgical; do not merge silently with ISAPS UK totals."
     },
     {
       "sourceId": "germany_dgaepc_statistics",
@@ -62467,10 +64123,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "years": "2020-2025",
       "segments": "procedure",
       "metrics": "procedure_volume",
-      "method": "pdf_table_extraction_with_source_label",
-      "status": "source_pdfs_acquired",
+      "method": "pdf_table_and_text_extraction_with_source_label",
+      "status": "completed_promoted_source_labeled",
       "blockingDependency": "none",
-      "nextAction": "Extract BAAPS annual audit PDFs captured by collect_geo_market_source_discovery.py; verify audit coverage before loading.",
+      "nextAction": "Use data/baaps_market_metrics.csv: BAAPS UK audit rows are promoted as a source-labeled lane; 2022 is currently non-surgical-only because no direct 2022 surgical PDF was captured.",
       "acceptanceCheck": "UK rows are source-labeled BAAPS and do not overwrite ISAPS United Kingdom totals."
     },
     {
@@ -74329,7 +75985,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "BAAPS Annual Audit Results"
       ],
       "backlogCount": 1,
-      "nextAction": "Extract BAAPS annual audit PDFs captured by collect_geo_market_source_discovery.py; verify audit coverage before loading.",
+      "nextAction": "Use data/baaps_market_metrics.csv: BAAPS UK audit rows are promoted as a source-labeled lane; 2022 is currently non-surgical-only because no direct 2022 surgical PDF was captured.",
       "acceptanceCheck": "UK rows are source-labeled BAAPS and do not overwrite ISAPS United Kingdom totals."
     },
     {
@@ -74517,7 +76173,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Korea MOHW Foreign Patient Statistics"
       ],
       "nextAction": "Use physician/surgeon denominator as national density proxy, then add locator coverage.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 2,
@@ -74548,7 +76204,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "CMS Open Payments"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 3,
@@ -74577,7 +76233,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SICPRE ISAPS Report Commentary"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 4,
@@ -74606,7 +76262,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SOFCEP Plastic and Aesthetic Surgery in France"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 5,
@@ -74632,7 +76288,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "DGÄPC Statistics"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 6,
@@ -74661,7 +76317,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Israel Society of Plastic and Aesthetic Surgery News and Locator"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 7,
@@ -74687,7 +76343,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SECPRE Aesthetic Surgery Reality in Spain Report"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 8,
@@ -74716,7 +76372,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Swiss Society for Plastic Reconstructive and Aesthetic Surgery"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 9,
@@ -74742,7 +76398,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "BAAPS Annual Audit Results"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 10,
@@ -74771,7 +76427,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "MHLW Medical Information Net Provider Search"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 11,
@@ -74800,7 +76456,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Czech NRPZS Healthcare Provider Registry"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 12,
@@ -74832,7 +76488,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Canadian Society of Plastic Surgeons"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 13,
@@ -74861,7 +76517,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Polish Society of Plastic Reconstructive and Aesthetic Surgery Locator"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 14,
@@ -74893,7 +76549,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Swedish Association of Plastic Surgeons"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "rank": 15,
@@ -74922,7 +76578,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Taiwan MOHW Medical Institution Open Data"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     }
   ],
   "europeMetricQa": [
@@ -74963,7 +76619,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Extract only explicitly count-like DGAEPC tables; keep survey rankings/shares as source-labeled proxy.",
       "acceptanceCheck": "Only count-like metrics enter market_metrics as treatment volume; survey shares remain source-labeled proxy metrics.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "sourceId": "spain_secpre_aesthetic_surgery_report",
@@ -74987,7 +76643,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Keep SECPRE as Spain surgical-only association lane; do not merge silently with ISAPS total procedures.",
       "acceptanceCheck": "Spain rows enter market_metrics only when the table is a count-like official association metric with SECPRE source label.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "sourceId": "italy_aicpe_observatory_statistics",
@@ -75013,7 +76669,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceFiles": [],
       "nextAction": "Keep AICPE as Italy association context; do not load duplicate 2020 rows. Reopen 2019 only if official ISAPS 2019 backfill becomes a priority.",
       "acceptanceCheck": "No AICPE commentary value overwrites primary ISAPS data; 2020 stays as cross-check and 2019 is not promoted unless official ISAPS 2019 backfill is reopened.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "sourceId": "italy_sicpre_isaps_statistics",
@@ -75041,7 +76697,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Use SICPRE only as cross-check/context; do not overwrite primary ISAPS Italy rows.",
       "acceptanceCheck": "No SICPRE commentary value overwrites primary ISAPS data; source lane remains explicit.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     }
   ],
   "companyRevenueProgress": [
@@ -75061,7 +76717,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_b8193aa0cc96",
@@ -75079,7 +76735,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_2e4d3c90fc97",
@@ -75097,7 +76753,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_8264aaca4586",
@@ -75115,7 +76771,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_3e66a07fd5fd",
@@ -75133,7 +76789,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20260318002184&method=search",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_5b54a3e28f4c",
@@ -75151,7 +76807,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_9ebcc3762c46",
@@ -75169,7 +76825,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_2d09d05893cd",
@@ -75187,7 +76843,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.galderma.com/investors",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_100e7fd504d3",
@@ -75205,7 +76861,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_5d4b35b57193",
@@ -75223,7 +76879,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/200670.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_76db60d04479",
@@ -75241,7 +76897,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.ipsen.com/wp-content/uploads/2026/02/Ipsen-PR_FY-2025-Results-Announcement_12022026.pdf",
       "nextAction": "Promote official Dysport Aesthetics sales of EUR 436.4m, 11.87% of FY2025 total sales, into a segment-specific aesthetics revenue lane; keep total-revenue row separate.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_a133809740b7",
@@ -75259,7 +76915,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000200406.json",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_0795c0f3f22e",
@@ -75277,7 +76933,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://finance.yahoo.com/quote/JULPHAR/financials/",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_314282d4909e",
@@ -75295,7 +76951,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_e88e88c84032",
@@ -75313,7 +76969,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.loreal.com/en/press-release/finance/2025-annual-results/",
       "nextAction": "Use FY2025 group sales as total-revenue context, then review Dermatological Beauty and Professional Products disclosures for an aesthetics-relevant segment bridge; do not infer a medical-aesthetics share from group beauty sales alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_d6440f82a9a2",
@@ -75331,7 +76987,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_c621592aac90",
@@ -75349,7 +77005,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_f1444f50d0fc",
@@ -75367,7 +77023,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_11eac4967d16",
@@ -75385,7 +77041,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_facd9a6ad8cf",
@@ -75403,7 +77059,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_93f3d88be68a",
@@ -75421,7 +77077,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_9a82bf01c9b2",
@@ -75439,7 +77095,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_cf401ffd51b6",
@@ -75457,7 +77113,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001551152.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_83052922054b",
@@ -75475,7 +77131,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://sisram-medical.com/wp-content/uploads/2026/04/ENG-Sisram-2025-Annual-Report.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_ea11172b59bc",
@@ -75493,7 +77149,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000719135.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_bbabeba3ee10",
@@ -75511,7 +77167,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_f8a69fb5e02a",
@@ -75529,7 +77185,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "",
@@ -75547,7 +77203,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_2dac0f5dd9af",
@@ -75565,7 +77221,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001818093.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_6dbf5a3b4e4d",
@@ -75583,7 +77239,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_8bad4b58ff47",
@@ -75601,7 +77257,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317001260&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_6925fca65df2",
@@ -75619,7 +77275,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_a48a6103f37e",
@@ -75637,7 +77293,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://classys.com/wp-content/uploads/sites/2/2025/04/Annual-Report_CLASSYS_2024_Eng_vS_250430.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_128cffac9aff",
@@ -75655,7 +77311,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_78d004d00c9c",
@@ -75673,7 +77329,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001162461.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_0bb8193c1281",
@@ -75691,7 +77347,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_c87804d7fff0",
@@ -75709,7 +77365,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_679ba894b79b",
@@ -75727,7 +77383,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001688757.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_dcd822423379",
@@ -75745,7 +77401,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570562.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "",
@@ -75763,7 +77419,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_e655b002cb74",
@@ -75781,7 +77437,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_df6b67e82dc5",
@@ -75799,7 +77455,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_bac5ab36d84d",
@@ -75817,7 +77473,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_4ae5806d21fa",
@@ -75835,7 +77491,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://cdn.prod.website-files.com/65d4bcfd06a8be5d2448b946/68648526442d861d6b8a69da_HUGEL_AR_2024_EN.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_8f51008b9523",
@@ -75853,7 +77509,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_326764b924a4",
@@ -75871,7 +77527,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_7a6f66b2861e",
@@ -75889,7 +77545,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001742692.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_1418ea0f3165",
@@ -75907,7 +77563,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_35faa8063d5e",
@@ -75925,7 +77581,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250320002216&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "",
@@ -75943,7 +77599,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "",
@@ -75961,7 +77617,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "",
@@ -75979,7 +77635,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_61e6816901f7",
@@ -75997,7 +77653,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317000988&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_899ad9993fec",
@@ -76015,7 +77671,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_155831ecf12c",
@@ -76033,7 +77689,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_6c5df66586f1",
@@ -76051,7 +77707,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_5a732eebc6b5",
@@ -76069,7 +77725,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_c8389fa251ed",
@@ -76087,7 +77743,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000885590.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_ef311b352c67",
@@ -76105,7 +77761,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001409269.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_ea65636d4d75",
@@ -76123,7 +77779,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "",
@@ -76141,7 +77797,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "companyId": "co_592c40ca0c6d",
@@ -76159,7 +77815,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     }
   ],
   "nextStepCompletion": [
@@ -76170,7 +77826,16 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 618,
       "frontstageLabel": "ASPS 2020/2022/2023/2024 + 2024 fee/regional",
       "note": "Extracted ASPS years 2020, 2022, 2023, 2024 into the market_metrics lane.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
+    },
+    {
+      "workstream": "BAAPS UK annual audit",
+      "status": "completed_source_labeled",
+      "output": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\baaps_market_metrics.csv",
+      "rows": 92,
+      "frontstageLabel": "BAAPS UK 2020-2025 audit lane",
+      "note": "Extracted BAAPS years 2020, 2021, 2022, 2023, 2024, 2025 into market_metrics; surgical current-year rows cover 2020, 2021, 2023, 2024, 2025 and 2022 remains non-surgical-only.",
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "workstream": "Europe candidate QA",
@@ -76179,7 +77844,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 4,
       "frontstageLabel": "DGAEPC / SECPRE / AICPE / SICPRE QA",
       "note": "1 Europe candidate source(s) have source-labeled count rows promoted; remaining candidates stay QA-held.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "workstream": "Channel density proxy",
@@ -76188,7 +77853,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 15,
       "frontstageLabel": "Top 15 country channel-density proxy",
       "note": "Top 15 country provider locator, doctor denominator and association entries are normalized to one proxy table.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     },
     {
       "workstream": "Company revenue layer",
@@ -76197,7 +77862,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 62,
       "frontstageLabel": "Company-year revenue and segment gap layer",
       "note": "Total revenue plan and aesthetics-segment gap queue are unified; 21 companies still need segment/not-disclosed review.",
-      "capturedAt": "2026-07-07T13:13:39+08:00"
+      "capturedAt": "2026-07-07T13:22:53+08:00"
     }
   ],
   "reviewQueues": {
@@ -78987,7 +80652,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
     "claim_type_counts": [
       {
         "name": "procedure_volume",
-        "value": 2374
+        "value": 2466
       },
       {
         "name": "briefing_signal",

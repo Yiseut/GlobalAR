@@ -85,6 +85,7 @@ MANUAL_EVIDENCE_PROMOTION_LOG_PATH = DATA_DIR / "manual_evidence_promotion_log.c
 ISAPS_MARKET_METRICS_PATH = DATA_DIR / "isaps_market_metrics.csv"
 ASPS_MARKET_METRICS_PATH = DATA_DIR / "asps_market_metrics.csv"
 JSAPS_MARKET_METRICS_PATH = DATA_DIR / "jsaps_market_metrics.csv"
+BAAPS_MARKET_METRICS_PATH = DATA_DIR / "baaps_market_metrics.csv"
 EUROPE_ASSOCIATION_MARKET_METRICS_PATH = DATA_DIR / "europe_association_market_metrics.csv"
 MARKET_SNAPSHOT_LIVE_PATH = DATA_DIR / "market_snapshot_live.csv"
 COMPANY_FINANCIAL_METRICS_PATH = DATA_DIR / "company_financial_metrics.csv"
@@ -6908,6 +6909,7 @@ def load_market_metrics() -> list[dict[str, Any]]:
         ISAPS_MARKET_METRICS_PATH,
         ASPS_MARKET_METRICS_PATH,
         JSAPS_MARKET_METRICS_PATH,
+        BAAPS_MARKET_METRICS_PATH,
         EUROPE_ASSOCIATION_MARKET_METRICS_PATH,
     ]:
         if not association_metrics_path.exists():

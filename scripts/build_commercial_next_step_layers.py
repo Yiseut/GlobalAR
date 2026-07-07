@@ -23,6 +23,7 @@ GEO_DISCOVERY_PATH = AUDIT_DIR / "commercial_geo_market_source_discovery_latest.
 SOURCE_REGISTRY_PATH = DATA_DIR / "commercial_data_source_registry.csv"
 BACKLOG_PATH = AUDIT_DIR / "commercial_data_collection_backlog_latest.csv"
 ASPS_STATUS_PATH = AUDIT_DIR / "asps_official_stats_extraction_status_latest.csv"
+BAAPS_MARKET_METRICS_PATH = DATA_DIR / "baaps_market_metrics.csv"
 COMPANY_FINANCIAL_PATH = DATA_DIR / "company_financial_metrics.csv"
 COMPANY_REVENUE_PLAN_PATH = AUDIT_DIR / "company_revenue_collection_plan_latest.csv"
 AESTHETICS_REVENUE_QUEUE_PATH = AUDIT_DIR / "aesthetics_revenue_pct_collection_queue_latest.csv"
@@ -361,6 +362,11 @@ def build_completion_rows(
     asps_rows = read_csv(ASPS_STATUS_PATH)
     asps_row_count = sum(safe_int(row.get("rows_extracted")) for row in asps_rows)
     asps_years = sorted({part for row in asps_rows for part in norm(row.get("years_extracted")).split(";") if part})
+    baaps_rows = read_csv(BAAPS_MARKET_METRICS_PATH)
+    baaps_years = sorted({norm(row.get("year")) for row in baaps_rows if norm(row.get("year"))})
+    baaps_surgical_years = sorted(
+        {norm(row.get("year")) for row in baaps_rows if norm(row.get("category_l1")) == "Surgical procedures"}
+    )
     segment_gaps = sum(1 for row in revenue_rows if row.get("aesthetics_segment_status") == "needs_aesthetics_segment_or_not_disclosed_review")
     europe_promoted = [row for row in europe_rows if norm(row.get("promotion_allowed")).startswith("yes")]
     europe_status = "completed_partial_promotion" if europe_promoted else "completed_hold_unpromoted"
@@ -377,6 +383,18 @@ def build_completion_rows(
             "rows": asps_row_count,
             "frontstage_label": "ASPS 2020/2022/2023/2024 + 2024 fee/regional",
             "note": f"Extracted ASPS years {', '.join(asps_years)} into the market_metrics lane.",
+            "captured_at": captured_at,
+        },
+        {
+            "workstream": "BAAPS UK annual audit",
+            "status": "completed_source_labeled",
+            "output": str(BAAPS_MARKET_METRICS_PATH),
+            "rows": len(baaps_rows),
+            "frontstage_label": "BAAPS UK 2020-2025 audit lane",
+            "note": (
+                f"Extracted BAAPS years {', '.join(baaps_years)} into market_metrics; "
+                f"surgical current-year rows cover {', '.join(baaps_surgical_years)} and 2022 remains non-surgical-only."
+            ),
             "captured_at": captured_at,
         },
         {
