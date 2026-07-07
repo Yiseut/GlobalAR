@@ -1,5 +1,5 @@
 window.V3_SEARCH_DATA = {
-  "generated_at": "2026-07-07T12:37:19+08:00",
+  "generated_at": "2026-07-07T12:48:57+08:00",
   "counts": {
     "products": 943,
     "families": 927,
@@ -104896,7 +104896,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Ipsen Pharma | Ipsen Pharma | France | Europe | Public | Manufacturer | IPN.PA | Injectables | Ipsen Pharma | France | France | 1 | Europe | Paris, France | Public | Manufacturer | Active | IPN.PA | 4559.84 | 2025 | 80.89 | 15852.17 | 2026-05-26T23:39:42+08:00 | 3.48 | 1 | 1 | Injectables | 0 | 0 | 170.6999969482422 | EUR | -0.06 | https://finance.yahoo.com/quote/IPN.PA | 2026-07-06T08:18:07+08:00 | https://www.ipsen.com/investor-relations/ | pending_collection | 2026-07-06T08:18:07+08:00 | IFRS_consolidated | Ipsen Pharma"
+      "search_text": "company | Ipsen Pharma | Ipsen Pharma | France | Europe | Public | Manufacturer | IPN.PA | Injectables | Ipsen Pharma | France | France | 1 | Europe | Paris, France | Public | Manufacturer | Active | IPN.PA | 4156.05 | 2025 | 86.5 | 15852.17 | 2026-07-07T12:44:58+08:00 | 3.48 | 1 | 1 | Injectables | 0 | 0 | 170.6999969482422 | EUR | -0.06 | https://finance.yahoo.com/quote/IPN.PA | 2026-07-06T08:18:07+08:00 | https://www.ipsen.com/wp-content/uploads/2026/02/Ipsen-PR_FY-2025-Results-Announcement_12022026.pdf | manual_verified | 2026-07-06T08:18:07+08:00 | FY2025 | 2026-02-12 | Manual IR annual report | 2026-07-07T12:44:58+08:00 | Ipsen Pharma"
     },
     {
       "type": "company",
@@ -105971,7 +105971,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | L'Oréal | L'Oréal | France | Europe | Public | Manufacturer | OR.PA | EBD | L'Oréal | France | France | 1 | Europe | Clichy, France | Public | Manufacturer | Active | OR.PA | 51122.35 | 2025 | 74.32 | 222238.52 | 2026-05-26T23:37:20+08:00 | 4.35 | 1 | 1 | EBD | 0 | 0 | 382.45001220703125 | EUR | -1.39 | https://finance.yahoo.com/quote/OR.PA | 2026-07-06T08:18:17+08:00 | https://www.loreal-finance.com/en/annual-report-2024 | pending_collection | 2026-07-06T08:18:17+08:00 | IFRS_consolidated | L'Oréal"
+      "search_text": "company | L'Oréal | L'Oréal | France | Europe | Public | Manufacturer | OR.PA | EBD | L'Oréal | France | France | 1 | Europe | Clichy, France | Public | Manufacturer | Active | OR.PA | 49806.14 | 2025 | 74.3 | 222238.52 | 2026-07-07T12:44:58+08:00 | 4.35 | 1 | 1 | EBD | 0 | 0 | 382.45001220703125 | EUR | -1.39 | https://finance.yahoo.com/quote/OR.PA | 2026-07-06T08:18:17+08:00 | https://www.loreal.com/en/press-release/finance/2025-annual-results/ | manual_verified | 2026-07-06T08:18:17+08:00 | FY2025 | 2026-02-12 | Manual IR annual report | 2026-07-07T12:44:58+08:00 | L'Oréal"
     },
     {
       "type": "company",

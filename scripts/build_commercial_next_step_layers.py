@@ -275,8 +275,16 @@ def build_revenue_progress(captured_at: str) -> list[dict[str, Any]]:
     financial_rows = read_csv(COMPANY_FINANCIAL_PATH)
     plan_rows = read_csv(COMPANY_REVENUE_PLAN_PATH)
     queue_rows = read_csv(AESTHETICS_REVENUE_QUEUE_PATH)
-    financial_by_company = {norm(row.get("company_id")): row for row in financial_rows}
-    queue_by_company = {norm(row.get("company_id")): row for row in queue_rows}
+    financial_by_company = {
+        company_id: row
+        for row in financial_rows
+        if (company_id := norm(row.get("company_id")))
+    }
+    queue_by_company = {
+        company_id: row
+        for row in queue_rows
+        if (company_id := norm(row.get("company_id")))
+    }
 
     output: list[dict[str, Any]] = []
     for plan in plan_rows:

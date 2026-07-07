@@ -1,4 +1,2 @@
 company_id,company,stock_code,ticker_symbol,exchange,fiscal_year,revenue_local,revenue_currency,revenue_usd_m,gross_profit_local,gross_margin_pct,market_cap_usd_m,ps_ratio,revenue_basis,revenue_filed,source_url,review_status,note
-co_l_oreal,L'Oréal,OR.PA,OR,Paris,,,EUR,,,,222238.52,,IFRS_consolidated,,https://www.loreal-finance.com/en/annual-report-2024,pending_collection,Need: Active Cosmetics + Professional segments only - the rest is luxury/consumer.
-co_ipsen,Ipsen Pharma,IPN.PA,IPN,Paris,,,EUR,,,,15852.17,,IFRS_consolidated,,https://www.ipsen.com/investor-relations/,pending_collection,Dysport (toxin) only - need to break out medical aesthetics segment.
 co_bayer,Bayer,BAYN.DE,BAYN,XETRA,,,EUR,,,,43387.24,,IFRS_consolidated,,https://www.bayer.com/en/investors,pending_collection,Limited medical aesthetics exposure - mostly consumer health / pharma.

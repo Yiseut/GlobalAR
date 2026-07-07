@@ -60,11 +60,16 @@ def module_for(listed: dict[str, str], financial: dict[str, str] | None) -> str:
 def run() -> int:
     generated_at = datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     listed_rows = read_csv(LISTED_COMPANY_BATCH_PATH)
-    financial_by_id = {norm(row.get("company_id")): row for row in read_csv(COMPANY_FINANCIAL_METRICS_PATH)}
+    financial_by_id = {
+        company_id: row
+        for row in read_csv(COMPANY_FINANCIAL_METRICS_PATH)
+        if (company_id := norm(row.get("company_id")))
+    }
     revenue_plans = {
-        norm(row.get("company_id")): row
+        company_id: row
         for row in read_csv(COMPANY_OFFICIAL_SOURCE_PLAN_PATH)
-        if norm(row.get("query_type")) == "investor_relations_or_annual_report"
+        if (company_id := norm(row.get("company_id")))
+        and norm(row.get("query_type")) == "investor_relations_or_annual_report"
     }
 
     rows: list[dict[str, Any]] = []

@@ -1,5 +1,5 @@
 window.V3_OPERATIONS_DATA = {
-  "generated_at": "2026-07-07T12:37:19+08:00",
+  "generated_at": "2026-07-07T12:48:57+08:00",
   "source": {
     "database": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
     "guardrail": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\database_guardrail_validation_latest.json",
@@ -770,15 +770,15 @@ window.V3_OPERATIONS_DATA = {
           "stock_code": "IPN.PA",
           "ownership": "Public",
           "status": "Active",
-          "revenue_usd_m": "4559.84",
+          "revenue_usd_m": "4156.05",
           "revenue_year": "2025",
-          "gross_margin_pct": "80.89",
+          "gross_margin_pct": "86.5",
           "market_cap_usd_m": "15852.17",
-          "financial_review_status": "pending_collection",
-          "financial_source_url": "https://www.ipsen.com/investor-relations/",
+          "financial_review_status": "manual_verified_segment_value_found",
+          "financial_source_url": "https://www.ipsen.com/wp-content/uploads/2026/02/Ipsen-PR_FY-2025-Results-Announcement_12022026.pdf",
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report or investor-relations segment disclosure.",
-          "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
+          "suggested_action": "Promote official Dysport Aesthetics sales of EUR 436.4m, 11.87% of FY2025 total sales, into a segment-specific aesthetics revenue lane; keep total-revenue row separate.",
           "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
@@ -827,15 +827,15 @@ window.V3_OPERATIONS_DATA = {
           "stock_code": "OR.PA",
           "ownership": "Public",
           "status": "Active",
-          "revenue_usd_m": "51122.35",
+          "revenue_usd_m": "49806.14",
           "revenue_year": "2025",
-          "gross_margin_pct": "74.32",
+          "gross_margin_pct": "74.3",
           "market_cap_usd_m": "222238.52",
-          "financial_review_status": "pending_collection",
-          "financial_source_url": "https://www.loreal-finance.com/en/annual-report-2024",
+          "financial_review_status": "manual_verified_total_revenue_segment_pending",
+          "financial_source_url": "https://www.loreal.com/en/press-release/finance/2025-annual-results/",
           "issue_type": "missing_aesthetics_revenue_pct",
           "expected_source": "Company annual report or investor-relations segment disclosure.",
-          "suggested_action": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
+          "suggested_action": "Use FY2025 group sales as total-revenue context, then review Dermatological Beauty and Professional Products disclosures for an aesthetics-relevant segment bridge; do not infer a medical-aesthetics share from group beauty sales alone.",
           "generated_at": "2026-06-16T16:30:07+08:00"
         },
         {
