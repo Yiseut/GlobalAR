@@ -140,7 +140,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "value": 7
       }
     ],
-    "asOf": "2026-07-07T13:54:16+08:00"
+    "asOf": "2026-07-07T13:59:17+08:00"
   },
   "analysis": {
     "insightCards": [
@@ -1839,24 +1839,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.3
       },
       {
-        "geo": "Singapore",
-        "segment": "Procedure demand",
-        "lat": 1.35,
-        "lon": 103.8,
-        "region": "Asia-Pacific",
-        "productLines": 0,
-        "companies": 0,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": 25739.0,
-        "procedureYear": 2024,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.2
-      },
-      {
         "geo": "UK",
         "segment": "Procedure demand",
         "lat": 54.1,
@@ -1876,7 +1858,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "Singapore",
-        "segment": "Injectables",
+        "segment": "Procedure demand",
         "lat": 1.35,
         "lon": 103.8,
         "region": "Asia-Pacific",
@@ -1886,11 +1868,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "marketSizeYear": null,
         "growthRatePct": null,
         "growthYear": null,
-        "procedureVolume": 8232.0,
+        "procedureVolume": 25739.0,
         "procedureYear": 2024,
         "marketSharePct": null,
         "basis": "",
-        "potentialIndex": 10.1
+        "potentialIndex": 10.2
       },
       {
         "geo": "USA",
@@ -1905,6 +1887,24 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "growthRatePct": null,
         "growthYear": null,
         "procedureVolume": 15500.0,
+        "procedureYear": 2024,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.1
+      },
+      {
+        "geo": "Singapore",
+        "segment": "Injectables",
+        "lat": 1.35,
+        "lon": 103.8,
+        "region": "Asia-Pacific",
+        "productLines": 0,
+        "companies": 0,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": 8232.0,
         "procedureYear": 2024,
         "marketSharePct": null,
         "basis": "",
@@ -1929,11 +1929,29 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.1
       },
       {
-        "geo": "Hungary",
-        "segment": "Injectables",
-        "lat": 47.1,
-        "lon": 19.5,
-        "region": "Europe",
+        "geo": "Japan",
+        "segment": "Other product lines",
+        "lat": 36.2,
+        "lon": 138.3,
+        "region": "Asia-Pacific",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "UAE",
+        "segment": "Regenerative",
+        "lat": 24.4,
+        "lon": 54.3,
+        "region": "Middle East",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -1951,168 +1969,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "segment": "Threads",
         "lat": 51.2,
         "lon": 10.4,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Sweden",
-        "segment": "Regenerative",
-        "lat": 60.1,
-        "lon": 18.6,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "UK",
-        "segment": "Other product lines",
-        "lat": 54.1,
-        "lon": -2.3,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Brazil",
-        "segment": "EBD",
-        "lat": -14.2,
-        "lon": -51.9,
-        "region": "Latin America",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "South Africa",
-        "segment": "Other product lines",
-        "lat": -30.6,
-        "lon": 22.9,
-        "region": "Africa",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Switzerland",
-        "segment": "Other product lines",
-        "lat": 46.8,
-        "lon": 8.2,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Europe",
-        "segment": "Threads",
-        "lat": 50.5,
-        "lon": 12.5,
-        "region": "Other",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Czech Republic",
-        "segment": "Other product lines",
-        "lat": 49.8,
-        "lon": 15.5,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Ireland",
-        "segment": "EBD",
-        "lat": 53.4,
-        "lon": -8.2,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Spain",
-        "segment": "Regenerative",
-        "lat": 40.4,
-        "lon": -3.7,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2145,46 +2001,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "UAE",
-        "segment": "Regenerative",
-        "lat": 24.4,
-        "lon": 54.3,
-        "region": "Middle East",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Israel",
-        "segment": "Regenerative",
-        "lat": 31.5,
-        "lon": 34.8,
-        "region": "Middle East",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Sweden",
+        "geo": "Switzerland",
         "segment": "Other product lines",
-        "lat": 60.1,
-        "lon": 18.6,
+        "lat": 46.8,
+        "lon": 8.2,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2199,11 +2019,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Poland",
+        "geo": "Taiwan",
         "segment": "EBD",
-        "lat": 52.0,
-        "lon": 19.1,
-        "region": "Europe",
+        "lat": 23.7,
+        "lon": 121.0,
+        "region": "Asia-Pacific",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2217,11 +2037,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Japan",
-        "segment": "Other product lines",
-        "lat": 36.2,
-        "lon": 138.3,
-        "region": "Asia-Pacific",
+        "geo": "Brazil",
+        "segment": "EBD",
+        "lat": -14.2,
+        "lon": -51.9,
+        "region": "Latin America",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2253,10 +2073,154 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Luxembourg",
-        "segment": "Injectables",
+        "geo": "Sweden",
+        "segment": "Other product lines",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Israel",
+        "segment": "Other product lines",
+        "lat": 31.5,
+        "lon": 34.8,
+        "region": "Middle East",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Monaco",
+        "segment": "EBD",
+        "lat": 43.7,
+        "lon": 7.4,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Spain",
+        "segment": "Regenerative",
+        "lat": 40.4,
+        "lon": -3.7,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Switzerland",
+        "segment": "Regenerative",
+        "lat": 46.8,
+        "lon": 8.2,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "UK",
+        "segment": "Other product lines",
+        "lat": 54.1,
+        "lon": -2.3,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Czech Republic",
+        "segment": "Other product lines",
         "lat": 49.8,
-        "lon": 6.1,
+        "lon": 15.5,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "South Africa",
+        "segment": "Other product lines",
+        "lat": -30.6,
+        "lon": 22.9,
+        "region": "Africa",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Sweden",
+        "segment": "Regenerative",
+        "lat": 60.1,
+        "lon": 18.6,
         "region": "Europe",
         "productLines": 1,
         "companies": 1,
@@ -2289,11 +2253,47 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Japan",
+        "geo": "Hungary",
+        "segment": "Injectables",
+        "lat": 47.1,
+        "lon": 19.5,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Poland",
         "segment": "EBD",
-        "lat": 36.2,
-        "lon": 138.3,
-        "region": "Asia-Pacific",
+        "lat": 52.0,
+        "lon": 19.1,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Ireland",
+        "segment": "EBD",
+        "lat": 53.4,
+        "lon": -8.2,
+        "region": "Europe",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2325,10 +2325,46 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 10.0
       },
       {
-        "geo": "Taiwan",
+        "geo": "Europe",
+        "segment": "Threads",
+        "lat": 50.5,
+        "lon": 12.5,
+        "region": "Other",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Luxembourg",
+        "segment": "Injectables",
+        "lat": 49.8,
+        "lon": 6.1,
+        "region": "Europe",
+        "productLines": 1,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 10.0
+      },
+      {
+        "geo": "Japan",
         "segment": "EBD",
-        "lat": 23.7,
-        "lon": 121.0,
+        "lat": 36.2,
+        "lon": 138.3,
         "region": "Asia-Pacific",
         "productLines": 1,
         "companies": 1,
@@ -2344,46 +2380,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "Israel",
-        "segment": "Other product lines",
+        "segment": "Regenerative",
         "lat": 31.5,
         "lon": 34.8,
         "region": "Middle East",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Switzerland",
-        "segment": "Regenerative",
-        "lat": 46.8,
-        "lon": 8.2,
-        "region": "Europe",
-        "productLines": 1,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 10.0
-      },
-      {
-        "geo": "Monaco",
-        "segment": "EBD",
-        "lat": 43.7,
-        "lon": 7.4,
-        "region": "Europe",
         "productLines": 1,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2469,82 +2469,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.6
       },
       {
-        "geo": "Turkey",
-        "segment": "EBD",
-        "lat": 39.0,
-        "lon": 35.2,
-        "region": "Middle East",
-        "productLines": 2,
-        "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
         "geo": "France",
         "segment": "Regenerative",
         "lat": 46.2,
         "lon": 2.2,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Denmark",
-        "segment": "EBD",
-        "lat": 56.2,
-        "lon": 10.0,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Malaysia",
-        "segment": "Regenerative",
-        "lat": 4.2,
-        "lon": 102.0,
-        "region": "Asia-Pacific",
-        "productLines": 2,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Italy",
-        "segment": "Regenerative",
-        "lat": 42.5,
-        "lon": 12.5,
         "region": "Europe",
         "productLines": 2,
         "companies": 2,
@@ -2577,13 +2505,85 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Netherlands",
-        "segment": "Other product lines",
-        "lat": 52.1,
-        "lon": 5.3,
+        "geo": "Turkey",
+        "segment": "EBD",
+        "lat": 39.0,
+        "lon": 35.2,
+        "region": "Middle East",
+        "productLines": 2,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Denmark",
+        "segment": "EBD",
+        "lat": 56.2,
+        "lon": 10.0,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Italy",
+        "segment": "Regenerative",
+        "lat": 42.5,
+        "lon": 12.5,
         "region": "Europe",
         "productLines": 2,
         "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Sweden",
+        "segment": "EBD",
+        "lat": 60.1,
+        "lon": 18.6,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Turkey",
+        "segment": "Injectables",
+        "lat": 39.0,
+        "lon": 35.2,
+        "region": "Middle East",
+        "productLines": 2,
+        "companies": 1,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2613,10 +2613,46 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Sweden",
+        "geo": "Malaysia",
+        "segment": "Regenerative",
+        "lat": 4.2,
+        "lon": 102.0,
+        "region": "Asia-Pacific",
+        "productLines": 2,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Netherlands",
+        "segment": "Other product lines",
+        "lat": 52.1,
+        "lon": 5.3,
+        "region": "Europe",
+        "productLines": 2,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 5.0
+      },
+      {
+        "geo": "Slovakia",
         "segment": "EBD",
-        "lat": 60.1,
-        "lon": 18.6,
+        "lat": 48.7,
+        "lon": 19.7,
         "region": "Europe",
         "productLines": 2,
         "companies": 1,
@@ -2649,42 +2685,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 5.0
       },
       {
-        "geo": "Turkey",
-        "segment": "Injectables",
-        "lat": 39.0,
-        "lon": 35.2,
-        "region": "Middle East",
-        "productLines": 2,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
-        "geo": "Slovakia",
-        "segment": "EBD",
-        "lat": 48.7,
-        "lon": 19.7,
-        "region": "Europe",
-        "productLines": 2,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 5.0
-      },
-      {
         "geo": "France",
         "segment": "Injectables",
         "lat": 46.2,
@@ -2703,29 +2703,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.9
       },
       {
-        "geo": "Costa Rica",
+        "geo": "Latin America",
         "segment": "Other product lines",
-        "lat": 9.7,
-        "lon": -84.2,
-        "region": "Latin America",
-        "productLines": 3,
-        "companies": 1,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 3.3
-      },
-      {
-        "geo": "Bulgaria",
-        "segment": "EBD",
-        "lat": 42.7,
-        "lon": 25.5,
-        "region": "Europe",
+        "lat": -14.0,
+        "lon": -60.0,
+        "region": "Other",
         "productLines": 3,
         "companies": 1,
         "marketSizeUsdM": null,
@@ -2740,30 +2722,12 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       },
       {
         "geo": "Germany",
-        "segment": "Other product lines",
+        "segment": "Regenerative",
         "lat": 51.2,
         "lon": 10.4,
         "region": "Europe",
         "productLines": 3,
-        "companies": 3,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 3.3
-      },
-      {
-        "geo": "Latin America",
-        "segment": "Other product lines",
-        "lat": -14.0,
-        "lon": -60.0,
-        "region": "Other",
-        "productLines": 3,
-        "companies": 1,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2793,10 +2757,10 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Germany",
+        "geo": "Poland",
         "segment": "Regenerative",
-        "lat": 51.2,
-        "lon": 10.4,
+        "lat": 52.0,
+        "lon": 19.1,
         "region": "Europe",
         "productLines": 3,
         "companies": 2,
@@ -2811,13 +2775,49 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 3.3
       },
       {
-        "geo": "Poland",
-        "segment": "Regenerative",
-        "lat": 52.0,
-        "lon": 19.1,
+        "geo": "Bulgaria",
+        "segment": "EBD",
+        "lat": 42.7,
+        "lon": 25.5,
         "region": "Europe",
         "productLines": 3,
-        "companies": 2,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 3.3
+      },
+      {
+        "geo": "Costa Rica",
+        "segment": "Other product lines",
+        "lat": 9.7,
+        "lon": -84.2,
+        "region": "Latin America",
+        "productLines": 3,
+        "companies": 1,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 3.3
+      },
+      {
+        "geo": "Germany",
+        "segment": "Other product lines",
+        "lat": 51.2,
+        "lon": 10.4,
+        "region": "Europe",
+        "productLines": 3,
+        "companies": 3,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2883,13 +2883,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 2.5
       },
       {
-        "geo": "Poland",
+        "geo": "Israel",
         "segment": "Injectables",
-        "lat": 52.0,
-        "lon": 19.1,
-        "region": "Europe",
+        "lat": 31.5,
+        "lon": 34.8,
+        "region": "Middle East",
         "productLines": 5,
-        "companies": 3,
+        "companies": 4,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2901,13 +2901,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 2.0
       },
       {
-        "geo": "Israel",
+        "geo": "Poland",
         "segment": "Injectables",
-        "lat": 31.5,
-        "lon": 34.8,
-        "region": "Middle East",
+        "lat": 52.0,
+        "lon": 19.1,
+        "region": "Europe",
         "productLines": 5,
-        "companies": 4,
+        "companies": 3,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -2935,24 +2935,6 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "marketSharePct": null,
         "basis": "",
         "potentialIndex": 1.7
-      },
-      {
-        "geo": "Latin America",
-        "segment": "EBD",
-        "lat": -14.0,
-        "lon": -60.0,
-        "region": "Other",
-        "productLines": 7,
-        "companies": 2,
-        "marketSizeUsdM": null,
-        "marketSizeYear": null,
-        "growthRatePct": null,
-        "growthYear": null,
-        "procedureVolume": null,
-        "procedureYear": null,
-        "marketSharePct": null,
-        "basis": "",
-        "potentialIndex": 1.4
       },
       {
         "geo": "Switzerland",
@@ -2991,13 +2973,31 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.4
       },
       {
-        "geo": "South Korea",
-        "segment": "Threads",
-        "lat": 36.4,
-        "lon": 127.8,
-        "region": "Asia-Pacific",
+        "geo": "Latin America",
+        "segment": "EBD",
+        "lat": -14.0,
+        "lon": -60.0,
+        "region": "Other",
+        "productLines": 7,
+        "companies": 2,
+        "marketSizeUsdM": null,
+        "marketSizeYear": null,
+        "growthRatePct": null,
+        "growthYear": null,
+        "procedureVolume": null,
+        "procedureYear": null,
+        "marketSharePct": null,
+        "basis": "",
+        "potentialIndex": 1.4
+      },
+      {
+        "geo": "Spain",
+        "segment": "Other product lines",
+        "lat": 40.4,
+        "lon": -3.7,
+        "region": "Europe",
         "productLines": 8,
-        "companies": 8,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3027,13 +3027,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.2
       },
       {
-        "geo": "Spain",
-        "segment": "Other product lines",
-        "lat": 40.4,
-        "lon": -3.7,
-        "region": "Europe",
+        "geo": "South Korea",
+        "segment": "Threads",
+        "lat": 36.4,
+        "lon": 127.8,
+        "region": "Asia-Pacific",
         "productLines": 8,
-        "companies": 2,
+        "companies": 8,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3063,13 +3063,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 1.1
       },
       {
-        "geo": "Slovenia",
-        "segment": "EBD",
-        "lat": 46.1,
-        "lon": 14.8,
-        "region": "Europe",
+        "geo": "USA",
+        "segment": "Regenerative",
+        "lat": 39.5,
+        "lon": -98.4,
+        "region": "North America",
         "productLines": 11,
-        "companies": 2,
+        "companies": 7,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3081,13 +3081,13 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.9
       },
       {
-        "geo": "USA",
-        "segment": "Regenerative",
-        "lat": 39.5,
-        "lon": -98.4,
-        "region": "North America",
+        "geo": "Slovenia",
+        "segment": "EBD",
+        "lat": 46.1,
+        "lon": 14.8,
+        "region": "Europe",
         "productLines": 11,
-        "companies": 7,
+        "companies": 2,
         "marketSizeUsdM": null,
         "marketSizeYear": null,
         "growthRatePct": null,
@@ -3261,11 +3261,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.3
       },
       {
-        "geo": "USA",
+        "geo": "North America",
         "segment": "Other product lines",
-        "lat": 39.5,
-        "lon": -98.4,
-        "region": "North America",
+        "lat": 45.0,
+        "lon": -102.0,
+        "region": "Other",
         "productLines": 39,
         "companies": 18,
         "marketSizeUsdM": null,
@@ -3297,11 +3297,11 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "potentialIndex": 0.3
       },
       {
-        "geo": "North America",
+        "geo": "USA",
         "segment": "Other product lines",
-        "lat": 45.0,
-        "lon": -102.0,
-        "region": "Other",
+        "lat": 39.5,
+        "lon": -98.4,
+        "region": "North America",
         "productLines": 39,
         "companies": 18,
         "marketSizeUsdM": null,
@@ -63350,16 +63350,16 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "accessModel": "public_html_pdf",
       "authorityTier": "official_government",
       "kpiFamilies": "provider_density;approved_institution_count;city_coverage",
-      "geoGrain": "Taiwan;city",
+      "geoGrain": "Taiwan;city_county",
       "timeGrain": "snapshot_date",
       "segmentGrain": "approved aesthetic surgery/procedure institution",
       "fieldsAvailable": "approved institutions for specific aesthetic medicine surgery/procedures;quality certification links",
-      "extractionMethod": "pdf_table_extraction_or_locator_query",
+      "extractionMethod": "pdf_summary_table_manual_qa",
       "targetDataset": "commercial_channel_coverage",
       "refreshCadence": "semiannual_snapshot",
-      "implementationStatus": "source_pdf_acquired",
+      "implementationStatus": "metrics_promoted_channel_denominator",
       "priority": 4,
-      "notes": "Official provider/channel proxy. Use for density and coverage, not procedure volume."
+      "notes": "MOHW PDF page 1 city/county counts updated to 2025-06-30 are loaded to commercial_channel_density_detail. Official provider/channel proxy; not procedure volume."
     },
     {
       "sourceId": "taiwan_mohw_medical_facility_open_data",
@@ -64388,16 +64388,16 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "workstream": "channel_density",
       "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
       "targetDataset": "commercial_channel_coverage",
-      "targetTable": "new_table",
+      "targetTable": "commercial_channel_density_detail",
       "scope": "Taiwan",
-      "years": "latest_snapshot",
-      "segments": "city;approved_institution",
-      "metrics": "approved_institution_count",
-      "method": "pdf_table_extraction",
-      "status": "source_pdf_acquired",
+      "years": "2025",
+      "segments": "country;city_county;approved_institution",
+      "metrics": "approved_aesthetic_medicine_institution_count",
+      "method": "pdf_summary_table_manual_qa",
+      "status": "completed_channel_denominator",
       "blockingDependency": "none",
-      "nextAction": "Extract MOHW approved aesthetic medicine institution PDF and join to city/provider denominator where possible.",
-      "acceptanceCheck": "Taiwan channel proxy is city-level where source permits and is not mixed with procedure counts."
+      "nextAction": "Use data/commercial_channel_density_detail.csv: MOHW page 1 summary table is loaded as country/city-county approved aesthetic medicine institution counts, updated to 2025-06-30.",
+      "acceptanceCheck": "Taiwan channel proxy is city/county-level and is not mixed with procedure counts."
     },
     {
       "taskId": "cdp3_brazil_surgeon_density_denominator",
@@ -76141,8 +76141,8 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Taiwan MOHW Medical Institution Open Data"
       ],
       "backlogCount": 1,
-      "nextAction": "Extract MOHW approved aesthetic medicine institution PDF and join to city/provider denominator where possible.",
-      "acceptanceCheck": "Taiwan channel proxy is city-level where source permits and is not mixed with procedure counts."
+      "nextAction": "Use data/commercial_channel_density_detail.csv: MOHW page 1 summary table is loaded as country/city-county approved aesthetic medicine institution counts, updated to 2025-06-30.",
+      "acceptanceCheck": "Taiwan channel proxy is city/county-level and is not mixed with procedure counts."
     }
   ],
   "channelDensityProxy": [
@@ -76173,7 +76173,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Korea MOHW Foreign Patient Statistics"
       ],
       "nextAction": "Use physician/surgeon denominator as national density proxy, then add locator coverage.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 2,
@@ -76204,7 +76204,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "CMS Open Payments"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 3,
@@ -76233,7 +76233,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SICPRE ISAPS Report Commentary"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 4,
@@ -76262,7 +76262,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SOFCEP Plastic and Aesthetic Surgery in France"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 5,
@@ -76288,7 +76288,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "DGÄPC Statistics"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 6,
@@ -76317,7 +76317,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Israel Society of Plastic and Aesthetic Surgery News and Locator"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 7,
@@ -76343,7 +76343,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "SECPRE Aesthetic Surgery Reality in Spain Report"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 8,
@@ -76372,7 +76372,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Swiss Society for Plastic Reconstructive and Aesthetic Surgery"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 9,
@@ -76398,7 +76398,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "BAAPS Annual Audit Results"
       ],
       "nextAction": "Keep as association/source entry until provider or denominator data is captured.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 10,
@@ -76427,7 +76427,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "MHLW Medical Information Net Provider Search"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 11,
@@ -76456,7 +76456,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Czech NRPZS Healthcare Provider Registry"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 12,
@@ -76488,7 +76488,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Canadian Society of Plastic Surgeons"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 13,
@@ -76517,7 +76517,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Polish Society of Plastic Reconstructive and Aesthetic Surgery Locator"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 14,
@@ -76549,7 +76549,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Swedish Association of Plastic Surgeons"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "rank": 15,
@@ -76578,7 +76578,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
         "Taiwan MOHW Medical Institution Open Data"
       ],
       "nextAction": "Run provider-locator/enrichment scrape to city/provider grain.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     }
   ],
   "channelDensityDetail": [
@@ -77499,6 +77499,420 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourcePage": "",
       "note": "DATA.GOV.HK / Hong Kong DH Cap. 633 CSV snapshot filename DPC_Cap.633_20251217_eng.csv. District aggregate counts private hospitals. Use as channel-density proxy, not treatment volume.",
       "confidence": "official_government_open_data_csv_aggregate_no_contacts"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "country",
+      "adminName": "Taiwan",
+      "adminCode": "",
+      "city": "",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 435.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Taipei City",
+      "adminCode": "TPE",
+      "city": "Taipei City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 151.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "New Taipei City",
+      "adminCode": "NWT",
+      "city": "New Taipei City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 18.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Taoyuan City",
+      "adminCode": "TAO",
+      "city": "Taoyuan City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 27.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Hsinchu City",
+      "adminCode": "HSZ",
+      "city": "Hsinchu City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 7.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Hsinchu County",
+      "adminCode": "HSQ",
+      "city": "Hsinchu County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 12.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Miaoli County",
+      "adminCode": "MIA",
+      "city": "Miaoli County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 2.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Taichung City",
+      "adminCode": "TXG",
+      "city": "Taichung City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 89.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Changhua County",
+      "adminCode": "CHA",
+      "city": "Changhua County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 7.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Yunlin County",
+      "adminCode": "YUN",
+      "city": "Yunlin County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 2.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Chiayi County",
+      "adminCode": "CYQ",
+      "city": "Chiayi County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 2.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Chiayi City",
+      "adminCode": "CYI",
+      "city": "Chiayi City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 7.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Tainan City",
+      "adminCode": "TNN",
+      "city": "Tainan City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 30.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Kaohsiung City",
+      "adminCode": "KHH",
+      "city": "Kaohsiung City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 62.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Hualien County",
+      "adminCode": "HUA",
+      "city": "Hualien County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 3.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Yilan County",
+      "adminCode": "ILA",
+      "city": "Yilan County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 4.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Keelung City",
+      "adminCode": "KEE",
+      "city": "Keelung City",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 3.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Pingtung County",
+      "adminCode": "PIF",
+      "city": "Pingtung County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 4.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Taitung County",
+      "adminCode": "TTT",
+      "city": "Taitung County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 3.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Nantou County",
+      "adminCode": "NAN",
+      "city": "Nantou County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 2.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Penghu County",
+      "adminCode": "PEN",
+      "city": "Penghu County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 0.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Lienchiang County",
+      "adminCode": "LIE",
+      "city": "Lienchiang County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 0.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
+    },
+    {
+      "sourceId": "taiwan_mohw_aesthetic_medicine_institutions",
+      "country": "Taiwan",
+      "adminLevel": "city_county",
+      "adminName": "Kinmen County",
+      "adminCode": "KIN",
+      "city": "Kinmen County",
+      "metric": "approved_aesthetic_medicine_institution_count",
+      "value": 0.0,
+      "unit": "institutions",
+      "year": 2025,
+      "sourceOrg": "Taiwan MOHW",
+      "reportTitle": "Approved Medical Institutions for Specific Aesthetic Medicine Surgery",
+      "sourceUrl": "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html",
+      "sourcePage": "1",
+      "note": "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). Counts approved medical institutions for specific aesthetic medicine surgery. Use as Taiwan city/county channel-density denominator, not treatment volume.",
+      "confidence": "official_government_pdf_summary_manual_qa_city_denominator"
     }
   ],
   "europeMetricQa": [
@@ -77539,7 +77953,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Keep DGÄPC out of procedure_volume mainline; optionally extract top treatment preference shares as source-labeled demand proxy.",
       "acceptanceCheck": "Only count-like metrics enter market_metrics as treatment volume; DGÄPC survey percentages remain source-labeled preference/demand proxy if extracted later.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "sourceId": "spain_secpre_aesthetic_surgery_report",
@@ -77563,7 +77977,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Keep SECPRE as Spain surgical-only association lane; do not merge silently with ISAPS total procedures.",
       "acceptanceCheck": "Spain rows enter market_metrics only when the table is a count-like official association metric with SECPRE source label.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "sourceId": "italy_aicpe_observatory_statistics",
@@ -77589,7 +78003,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "sourceFiles": [],
       "nextAction": "Keep AICPE as Italy association context; do not load duplicate 2020 rows. Reopen 2019 only if official ISAPS 2019 backfill becomes a priority.",
       "acceptanceCheck": "No AICPE commentary value overwrites primary ISAPS data; 2020 stays as cross-check and 2019 is not promoted unless official ISAPS 2019 backfill is reopened.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "sourceId": "italy_sicpre_isaps_statistics",
@@ -77617,7 +78031,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       ],
       "nextAction": "Use SICPRE only as cross-check/context; do not overwrite primary ISAPS Italy rows.",
       "acceptanceCheck": "No SICPRE commentary value overwrites primary ISAPS data; source lane remains explicit.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     }
   ],
   "companyRevenueProgress": [
@@ -77637,7 +78051,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/APN.JO?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_b8193aa0cc96",
@@ -77655,7 +78069,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/8215.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_2e4d3c90fc97",
@@ -77673,7 +78087,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/BIEL?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_8264aaca4586",
@@ -77691,7 +78105,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/256840.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_3e66a07fd5fd",
@@ -77709,7 +78123,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20260318002184&method=search",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_5b54a3e28f4c",
@@ -77727,7 +78141,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/086450.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_9ebcc3762c46",
@@ -77745,7 +78159,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ELN.MI?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_2d09d05893cd",
@@ -77763,7 +78177,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.galderma.com/investors",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_100e7fd504d3",
@@ -77781,7 +78195,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001159036.json",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_5d4b35b57193",
@@ -77799,7 +78213,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/200670.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_76db60d04479",
@@ -77817,7 +78231,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.ipsen.com/wp-content/uploads/2026/02/Ipsen-PR_FY-2025-Results-Announcement_12022026.pdf",
       "nextAction": "Promote official Dysport Aesthetics sales of EUR 436.4m, 11.87% of FY2025 total sales, into a segment-specific aesthetics revenue lane; keep total-revenue row separate.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_a133809740b7",
@@ -77835,7 +78249,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Annual filing segment footnotes and MD&A; SEC XBRL total revenue is not enough.",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000200406.json",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_0795c0f3f22e",
@@ -77853,7 +78267,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://finance.yahoo.com/quote/JULPHAR/financials/",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_314282d4909e",
@@ -77871,7 +78285,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/4118.T?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_e88e88c84032",
@@ -77889,7 +78303,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://www.loreal.com/en/press-release/finance/2025-annual-results/",
       "nextAction": "Use FY2025 group sales as total-revenue context, then review Dermatological Beauty and Professional Products disclosures for an aesthetics-relevant segment bridge; do not infer a medical-aesthetics share from group beauty sales alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_d6440f82a9a2",
@@ -77907,7 +78321,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/051910.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_c621592aac90",
@@ -77925,7 +78339,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report or investor-relations segment disclosure.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/LBIRD.PA?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_f1444f50d0fc",
@@ -77943,7 +78357,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/1783.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_11eac4967d16",
@@ -77961,7 +78375,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/059210.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_facd9a6ad8cf",
@@ -77979,7 +78393,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000070.KQ?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_93f3d88be68a",
@@ -77997,7 +78411,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Company annual report, investor deck, or explicit not-disclosed review.",
       "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/1786.TW?range=5d&interval=1d",
       "nextAction": "Collect aesthetics-specific revenue share from segment disclosure, or mark not_disclosed/unavailable_verified; do not infer from total revenue alone.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_9a82bf01c9b2",
@@ -78015,7 +78429,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_cf401ffd51b6",
@@ -78033,7 +78447,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001551152.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_83052922054b",
@@ -78051,7 +78465,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://sisram-medical.com/wp-content/uploads/2026/04/ENG-Sisram-2025-Annual-Report.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_ea11172b59bc",
@@ -78069,7 +78483,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000719135.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_bbabeba3ee10",
@@ -78087,7 +78501,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_f8a69fb5e02a",
@@ -78105,7 +78519,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "",
@@ -78123,7 +78537,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_2dac0f5dd9af",
@@ -78141,7 +78555,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001818093.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_6dbf5a3b4e4d",
@@ -78159,7 +78573,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_8bad4b58ff47",
@@ -78177,7 +78591,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317001260&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_6925fca65df2",
@@ -78195,7 +78609,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_a48a6103f37e",
@@ -78213,7 +78627,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://classys.com/wp-content/uploads/sites/2/2025/04/Annual-Report_CLASSYS_2024_Eng_vS_250430.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_128cffac9aff",
@@ -78231,7 +78645,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_78d004d00c9c",
@@ -78249,7 +78663,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001162461.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_0bb8193c1281",
@@ -78267,7 +78681,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_c87804d7fff0",
@@ -78285,7 +78699,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_679ba894b79b",
@@ -78303,7 +78717,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001688757.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_dcd822423379",
@@ -78321,7 +78735,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570562.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "",
@@ -78339,7 +78753,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_e655b002cb74",
@@ -78357,7 +78771,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_df6b67e82dc5",
@@ -78375,7 +78789,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_bac5ab36d84d",
@@ -78393,7 +78807,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_4ae5806d21fa",
@@ -78411,7 +78825,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://cdn.prod.website-files.com/65d4bcfd06a8be5d2448b946/68648526442d861d6b8a69da_HUGEL_AR_2024_EN.pdf",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_8f51008b9523",
@@ -78429,7 +78843,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_326764b924a4",
@@ -78447,7 +78861,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_7a6f66b2861e",
@@ -78465,7 +78879,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001742692.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_1418ea0f3165",
@@ -78483,7 +78897,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_35faa8063d5e",
@@ -78501,7 +78915,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250320002216&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "",
@@ -78519,7 +78933,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "",
@@ -78537,7 +78951,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "",
@@ -78555,7 +78969,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_61e6816901f7",
@@ -78573,7 +78987,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317000988&method=search",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_899ad9993fec",
@@ -78591,7 +79005,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_155831ecf12c",
@@ -78609,7 +79023,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_6c5df66586f1",
@@ -78627,7 +79041,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_5a732eebc6b5",
@@ -78645,7 +79059,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_c8389fa251ed",
@@ -78663,7 +79077,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000885590.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_ef311b352c67",
@@ -78681,7 +79095,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001409269.json",
       "nextAction": "Keep refreshed during financial promote runs.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_ea65636d4d75",
@@ -78699,7 +79113,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "",
@@ -78717,7 +79131,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "companyId": "co_592c40ca0c6d",
@@ -78735,7 +79149,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "expectedSource": "Investor relations / annual report / exchange or securities filing",
       "sourceUrl": "",
       "nextAction": "Fetch latest annual report or securities filing, extract revenue/gross profit, cite source URL, then merge into company_financial_metrics.csv.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     }
   ],
   "nextStepCompletion": [
@@ -78746,7 +79160,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 618,
       "frontstageLabel": "ASPS 2020/2022/2023/2024 + 2024 fee/regional",
       "note": "Extracted ASPS years 2020, 2022, 2023, 2024 into the market_metrics lane.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "workstream": "BAAPS UK annual audit",
@@ -78755,7 +79169,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 92,
       "frontstageLabel": "BAAPS UK 2020-2025 audit lane",
       "note": "Extracted BAAPS years 2020, 2021, 2022, 2023, 2024, 2025 into market_metrics; surgical current-year rows cover 2020, 2021, 2023, 2024, 2025 and 2022 remains non-surgical-only.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "workstream": "Europe candidate QA",
@@ -78764,7 +79178,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 4,
       "frontstageLabel": "DGAEPC / SECPRE / AICPE / SICPRE QA",
       "note": "1 Europe candidate source(s) have source-labeled count rows promoted; remaining candidates stay QA-held.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "workstream": "Channel density proxy",
@@ -78773,7 +79187,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 15,
       "frontstageLabel": "Top 15 country channel-density proxy",
       "note": "Top 15 country provider locator, doctor denominator and association entries are normalized to one proxy table.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "workstream": "Brazil SBCP surgeon-density detail",
@@ -78782,7 +79196,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 27,
       "frontstageLabel": "Brazil state plastic-surgeon denominator",
       "note": "SBCP Censo 2025 page 4 is loaded as state-level plastic surgeon counts for channel-density analysis, not treatment volume.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "workstream": "Hong Kong DH facility-density detail",
@@ -78791,7 +79205,16 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 24,
       "frontstageLabel": "Hong Kong licensed facility denominator",
       "note": "Hong Kong DH Cap. 633 CSV is aggregated into country/district day-procedure-centre and private-hospital counts; contact fields are excluded.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
+    },
+    {
+      "workstream": "Taiwan MOHW aesthetic-institution detail",
+      "status": "completed_pdf_denominator",
+      "output": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\commercial_channel_density_detail.csv",
+      "rows": 23,
+      "frontstageLabel": "Taiwan approved aesthetic institution denominator",
+      "note": "Taiwan MOHW PDF page 1 is loaded as country/city-county approved aesthetic-medicine institution counts, updated to 2025-06-30.",
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     },
     {
       "workstream": "Company revenue layer",
@@ -78800,7 +79223,7 @@ window.V3_MARKET_INTELLIGENCE_DATA = {
       "rows": 62,
       "frontstageLabel": "Company-year revenue and segment gap layer",
       "note": "Total revenue plan and aesthetics-segment gap queue are unified; 21 companies still need segment/not-disclosed review.",
-      "capturedAt": "2026-07-07T13:49:44+08:00"
+      "capturedAt": "2026-07-07T13:57:16+08:00"
     }
   ],
   "reviewQueues": {

@@ -34,9 +34,10 @@
 - 德国 DGÄPC 2020-2025 statistics PDF 已完成 metric QA：方法为 DGÄPC 成员机构患者标准化问卷，治疗项目是偏好/需求百分比而非全国 procedure count，因此不进入治疗量主干，可保留为德国需求 proxy。
 - 巴西 SBCP `Pesquisas` 页公开 2025 demography/censo flipbook 及历史 Censo/ISAPS 链接；2025 Censo 已完成结构 QA，主题是整形外科医生数量与城市/州地缘经济画像，page 4 的 27 个州级医生数已接入渠道密度明细，不作为治疗量。
 - 香港 DATA.GOV.HK / DH Cap. 633 CSV 已按国家/地区聚合成 licensed day procedure centre 与 private hospital denominator，进入 `data/commercial_channel_density_detail.csv`，联系方式字段不进入前台。
+- 台湾 MOHW 核准施行特定美容医学手术医疗机构 PDF 已按国家/县市接入渠道密度明细：2025-06-30 快照共 435 家核准机构，另保留 3 个明确为 0 的离岛县市。
 - 西班牙 SECPRE 2022 报告的 2021 外科手术数量表已完成手工 QA，并以 SECPRE surgical-only source lane 接入 `data/europe_association_market_metrics.csv`；患者结构/性别年龄等仍保留为未推广背景。
 - 意大利 AICPE observatory 老入口目前不可用，可读转载明确引用 ISAPS 2020；其中 2020 total 与主表 Italy 2020 ISAPS 行一致，先保留为协会解读/交叉核验，不重复写入治疗量主干；2019 只在重启官方 ISAPS 2019 backfill 时再考虑。
-- 更适合作为渠道密度 proxy：台湾 MOHW 美容医学核准机构、台湾医疗机构/人员 open data、巴西 CFM 医疗人口统计、SBCP surgeon locator；香港 DATA.GOV.HK day procedure centre CSV 已先落地为机构 denominator。
+- 更适合作为渠道密度 proxy：台湾医疗机构/人员 open data、巴西 CFM 医疗人口统计、SBCP surgeon locator；香港 DATA.GOV.HK day procedure centre CSV 与台湾 MOHW 美容医学核准机构 PDF 已先落地为机构 denominator。
 - 日本 MHLW 美容医疗资料和医疗信息网适合做医师/机构密度 proxy；法国 CNOM atlas 和 SOFCEP 页面适合做医生/外科医生 denominator 与协会 context。
 - 瑞士 FMH 医师统计和 Swiss Plastic Surgery 适合做外科医生 denominator 与协会 context；捷克 NRPZS 和 Czech Society of Plastic Surgery 适合做 provider/channel proxy。
 - 加拿大 CIHI physician specialty、CSPS 和 CSAPS surgeon locator 适合做 physician denominator、协会 context 与 surgeon-density proxy；波兰 NIL/PTChPRiE、瑞典 Socialstyrelsen/SPKF/SFEP 适合做国家医师/外科医生 denominator 与协会/locator proxy。
@@ -93,7 +94,7 @@
 - 品牌 provider locator：国家/城市/品牌覆盖。
 - Enrichment providers：Clay、ZoomInfo、Apollo、HG Insights 等，用于诊所、连锁、分销商、公司 firmographics。
 - CMS Open Payments：美国公司-医生触达和 KOL/payment proxy。
-- 国家/地区官方机构目录：台湾 MOHW 美容医学核准机构、巴西 CFM/SBCP 医师与协会会员入口；香港 licensed day procedure centres 已完成第一版聚合。
+- 国家/地区官方机构目录：巴西 CFM/SBCP 医师与协会会员入口；香港 licensed day procedure centres 与台湾 MOHW 美容医学核准机构已完成第一版聚合。
 - 日本 MHLW：美容医疗相关医师资料和全国医疗信息网。
 - 法国 CNOM / SOFCEP：医生人口统计和 qualified surgeon context。
 - 瑞士 FMH、捷克 NRPZS、加拿大 CIHI/CSAPS、波兰 NIL/PTChPRiE、瑞典 Socialstyrelsen/SPKF/SFEP：优先补 Top 15 企业国家的 physician/provider/channel density proxy。
@@ -133,14 +134,14 @@
 - `data/asps_market_metrics.csv`：ASPS 2024 美国 procedure trend 主干，当前 55 行。
 - `data/baaps_market_metrics.csv`：BAAPS UK annual audit source-labeled 治疗量，当前 92 行。
 - `data/europe_association_market_metrics.csv`：欧洲协会 source-labeled 指标，当前包含 SECPRE Spain 2021 surgical-only procedure volume。
-- `data/commercial_channel_density_detail.csv`：渠道/医生 denominator 明细，当前包含 SBCP Brazil 2025 州级整形外科医生数 27 行，以及香港 DH Cap. 633 国家/地区 licensed day procedure centre 与 private hospital denominator。
+- `data/commercial_channel_density_detail.csv`：渠道/医生 denominator 明细，当前包含 SBCP Brazil 2025 州级整形外科医生数 27 行、香港 DH Cap. 633 国家/地区 licensed day procedure centre 与 private hospital denominator、台湾 MOHW 国家/县市核准美容医学机构 denominator。
 - `data/audits/commercial_phase1_official_source_inventory_latest.csv`：Scrapling 采集到的 ASPS / Aesthetic Society 官方统计来源清单。
 - `data/audits/commercial_geo_market_source_discovery_latest.csv`：Scrapling 采集到的地区级官方/协会来源发现清单。
 - `scripts/sync_isaps_market_metrics.py`：ISAPS PDF 抽取与合并脚本。
 - `scripts/collect_phase1_official_stats_sources.py`：Scrapling 官方统计入口采集与 PDF 下载脚本。
 - `scripts/collect_geo_market_source_discovery.py`：Scrapling 地区级来源发现与官方文件下载脚本。
 - `scripts/extract_asps_market_metrics.py`：ASPS procedure trend PDF 抽取脚本。
-- `scripts/extract_channel_density_detail.py`：统一生成渠道/医生 denominator 明细，当前覆盖 Brazil SBCP 与 Hong Kong DH。
+- `scripts/extract_channel_density_detail.py`：统一生成渠道/医生 denominator 明细，当前覆盖 Brazil SBCP、Hong Kong DH 与 Taiwan MOHW。
 - `scripts/validate_commercial_data_expansion.py`：检查 registry、backlog 与当前商业快照缺口。
 
 ## 下一步
@@ -151,7 +152,7 @@
 2. 接 The Aesthetic Society 2020 至今统计，单独作为美国私营/审美外科口径。
 3. BAAPS 2020-2025 UK audit 与 SECPRE Spain 2021 surgical-only 已接入；AICPE Italy 与 DGÄPC Germany 已完成 QA，分别作为 ISAPS 交叉核验和需求 proxy，不重复入治疗量主干；SBCP Brazil 2025 已作为州级医生 denominator 接入渠道密度明细。
 4. 补 SEC/IR 的 aesthetic segment、region revenue、product-line revenue，避免用公司总收入替代医美收入。
-5. 设计 provider locator / enrichment 的渠道覆盖表，先做品牌-城市-机构密度 proxy；香港 DH 已接入，下一批优先把台湾、巴西、日本、法国、瑞士、捷克、加拿大、波兰、瑞典官方机构/医师入口继续接成国家级渠道 proxy。
+5. 设计 provider locator / enrichment 的渠道覆盖表，先做品牌-城市-机构密度 proxy；香港 DH 与台湾 MOHW 已接入，下一批优先把台湾医疗机构/人员 ODS、巴西、日本、法国、瑞士、捷克、加拿大、波兰、瑞典官方机构/医师入口继续接成国家级渠道 proxy。
 6. 韩国 MOHW/KHISS 和以色列协会/IMAJ 先作为 medical tourism、specialty demand 或 heat/context proxy，不与 ISAPS 治疗量合并。
 
 ASPS 2024 已完成 procedure trend 抽取；下一步先抽 ASPS 2024 average fee / regional split，再回填 ASPS 2020、2022、2023 procedure trend。若 2021 仍无独立官方 ASPS 统计 PDF，应在 backlog 中保留 `verified_unavailable_or_no_dedicated_report` 口径，而不是强求补齐。

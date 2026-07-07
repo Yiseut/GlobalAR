@@ -73,6 +73,36 @@ HK_SOURCE_URL = "https://www.dh.gov.hk/datagovhk/orphf/DPC_Cap.633_20251217_eng.
 HK_SNAPSHOT_YEAR = "2025"
 HK_DISTRICT_RE = re.compile(r"([A-Z][A-Z &]+ DISTRICT)")
 
+TAIWAN_SOURCE_ID = "taiwan_mohw_aesthetic_medicine_institutions"
+TAIWAN_SOURCE_ORG = "Taiwan MOHW"
+TAIWAN_REPORT_TITLE = "Approved Medical Institutions for Specific Aesthetic Medicine Surgery"
+TAIWAN_SOURCE_URL = "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html"
+TAIWAN_SNAPSHOT_YEAR = "2025"
+TAIWAN_CITY_APPROVED_INSTITUTION_COUNTS = [
+    ("Taipei City", "TPE", "Taipei City", 151),
+    ("New Taipei City", "NWT", "New Taipei City", 18),
+    ("Taoyuan City", "TAO", "Taoyuan City", 27),
+    ("Hsinchu City", "HSZ", "Hsinchu City", 7),
+    ("Hsinchu County", "HSQ", "Hsinchu County", 12),
+    ("Miaoli County", "MIA", "Miaoli County", 2),
+    ("Taichung City", "TXG", "Taichung City", 89),
+    ("Changhua County", "CHA", "Changhua County", 7),
+    ("Yunlin County", "YUN", "Yunlin County", 2),
+    ("Chiayi County", "CYQ", "Chiayi County", 2),
+    ("Chiayi City", "CYI", "Chiayi City", 7),
+    ("Tainan City", "TNN", "Tainan City", 30),
+    ("Kaohsiung City", "KHH", "Kaohsiung City", 62),
+    ("Hualien County", "HUA", "Hualien County", 3),
+    ("Yilan County", "ILA", "Yilan County", 4),
+    ("Keelung City", "KEE", "Keelung City", 3),
+    ("Pingtung County", "PIF", "Pingtung County", 4),
+    ("Taitung County", "TTT", "Taitung County", 3),
+    ("Nantou County", "NAN", "Nantou County", 2),
+    ("Penghu County", "PEN", "Penghu County", 0),
+    ("Lienchiang County", "LIE", "Lienchiang County", 0),
+    ("Kinmen County", "KIN", "Kinmen County", 0),
+]
+
 
 def build_brazil_sbcp_rows() -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
@@ -196,8 +226,59 @@ def build_hong_kong_dh_rows() -> list[dict[str, str]]:
     return output
 
 
+def build_taiwan_mohw_rows() -> list[dict[str, str]]:
+    total = sum(row[3] for row in TAIWAN_CITY_APPROVED_INSTITUTION_COUNTS)
+    note = (
+        "MOHW PDF page 1 summary table, updated to 2025-06-30 (ROC 114-06-30). "
+        "Counts approved medical institutions for specific aesthetic medicine surgery. "
+        "Use as Taiwan city/county channel-density denominator, not treatment volume."
+    )
+    rows = [
+        {
+            "source_id": TAIWAN_SOURCE_ID,
+            "country": "Taiwan",
+            "admin_level": "country",
+            "admin_name": "Taiwan",
+            "admin_code": "",
+            "city": "",
+            "metric": "approved_aesthetic_medicine_institution_count",
+            "value": str(total),
+            "unit": "institutions",
+            "year": TAIWAN_SNAPSHOT_YEAR,
+            "source_org": TAIWAN_SOURCE_ORG,
+            "report_title": TAIWAN_REPORT_TITLE,
+            "source_url": TAIWAN_SOURCE_URL,
+            "source_page": "1",
+            "note": note,
+            "confidence": "official_government_pdf_summary_manual_qa_city_denominator",
+        }
+    ]
+    for admin_name, admin_code, city, value in TAIWAN_CITY_APPROVED_INSTITUTION_COUNTS:
+        rows.append(
+            {
+                "source_id": TAIWAN_SOURCE_ID,
+                "country": "Taiwan",
+                "admin_level": "city_county",
+                "admin_name": admin_name,
+                "admin_code": admin_code,
+                "city": city,
+                "metric": "approved_aesthetic_medicine_institution_count",
+                "value": str(value),
+                "unit": "institutions",
+                "year": TAIWAN_SNAPSHOT_YEAR,
+                "source_org": TAIWAN_SOURCE_ORG,
+                "report_title": TAIWAN_REPORT_TITLE,
+                "source_url": TAIWAN_SOURCE_URL,
+                "source_page": "1",
+                "note": note,
+                "confidence": "official_government_pdf_summary_manual_qa_city_denominator",
+            }
+        )
+    return rows
+
+
 def build_rows() -> list[dict[str, str]]:
-    return [*build_brazil_sbcp_rows(), *build_hong_kong_dh_rows()]
+    return [*build_brazil_sbcp_rows(), *build_hong_kong_dh_rows(), *build_taiwan_mohw_rows()]
 
 
 def main() -> int:

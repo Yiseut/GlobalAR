@@ -380,6 +380,11 @@ def build_completion_rows(
         for row in channel_detail_rows
         if norm(row.get("source_id")) == "hong_kong_dh_day_procedure_centres"
     ]
+    taiwan_aesthetic_institution_rows = [
+        row
+        for row in channel_detail_rows
+        if norm(row.get("source_id")) == "taiwan_mohw_aesthetic_medicine_institutions"
+    ]
     segment_gaps = sum(1 for row in revenue_rows if row.get("aesthetics_segment_status") == "needs_aesthetics_segment_or_not_disclosed_review")
     europe_promoted = [row for row in europe_rows if norm(row.get("promotion_allowed")).startswith("yes")]
     europe_status = "completed_partial_promotion" if europe_promoted else "completed_hold_unpromoted"
@@ -444,6 +449,15 @@ def build_completion_rows(
             "rows": len(hong_kong_facility_rows),
             "frontstage_label": "Hong Kong licensed facility denominator",
             "note": "Hong Kong DH Cap. 633 CSV is aggregated into country/district day-procedure-centre and private-hospital counts; contact fields are excluded.",
+            "captured_at": captured_at,
+        },
+        {
+            "workstream": "Taiwan MOHW aesthetic-institution detail",
+            "status": "completed_pdf_denominator",
+            "output": str(CHANNEL_DENSITY_DETAIL_PATH),
+            "rows": len(taiwan_aesthetic_institution_rows),
+            "frontstage_label": "Taiwan approved aesthetic institution denominator",
+            "note": "Taiwan MOHW PDF page 1 is loaded as country/city-county approved aesthetic-medicine institution counts, updated to 2025-06-30.",
             "captured_at": captured_at,
         },
         {
