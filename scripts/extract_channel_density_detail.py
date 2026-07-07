@@ -5,13 +5,18 @@ from __future__ import annotations
 
 import csv
 import re
+import zipfile
 from collections import Counter
 from pathlib import Path
+from xml.etree import ElementTree as ET
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = PROJECT_DIR / "data" / "commercial_channel_density_detail.csv"
 HK_DH_SOURCE_DIR = PROJECT_DIR / "data" / "commercial_sources" / "geo_market_sources" / "hong_kong_dh_day_procedure_centres"
+TAIWAN_MEDICAL_FACILITY_SOURCE_DIR = (
+    PROJECT_DIR / "data" / "commercial_sources" / "geo_market_sources" / "taiwan_mohw_medical_facility_open_data"
+)
 
 FIELDS = [
     "source_id",
@@ -78,6 +83,34 @@ TAIWAN_SOURCE_ORG = "Taiwan MOHW"
 TAIWAN_REPORT_TITLE = "Approved Medical Institutions for Specific Aesthetic Medicine Surgery"
 TAIWAN_SOURCE_URL = "https://www.mohw.gov.tw/dl-54656-61753779-bc51-414b-9f16-1ea8624387a8.html"
 TAIWAN_SNAPSHOT_YEAR = "2025"
+TAIWAN_CITY_CODE_NAMES = [
+    ("臺北市", "Taipei City", "TPE"),
+    ("台北市", "Taipei City", "TPE"),
+    ("新北市", "New Taipei City", "NWT"),
+    ("桃園市", "Taoyuan City", "TAO"),
+    ("新竹市", "Hsinchu City", "HSZ"),
+    ("新竹縣", "Hsinchu County", "HSQ"),
+    ("苗栗縣", "Miaoli County", "MIA"),
+    ("臺中市", "Taichung City", "TXG"),
+    ("台中市", "Taichung City", "TXG"),
+    ("彰化縣", "Changhua County", "CHA"),
+    ("雲林縣", "Yunlin County", "YUN"),
+    ("嘉義縣", "Chiayi County", "CYQ"),
+    ("嘉義市", "Chiayi City", "CYI"),
+    ("臺南市", "Tainan City", "TNN"),
+    ("台南市", "Tainan City", "TNN"),
+    ("高雄市", "Kaohsiung City", "KHH"),
+    ("花蓮縣", "Hualien County", "HUA"),
+    ("宜蘭縣", "Yilan County", "ILA"),
+    ("基隆市", "Keelung City", "KEE"),
+    ("屏東縣", "Pingtung County", "PIF"),
+    ("臺東縣", "Taitung County", "TTT"),
+    ("台東縣", "Taitung County", "TTT"),
+    ("南投縣", "Nantou County", "NAN"),
+    ("澎湖縣", "Penghu County", "PEN"),
+    ("連江縣", "Lienchiang County", "LIE"),
+    ("金門縣", "Kinmen County", "KIN"),
+]
 TAIWAN_CITY_APPROVED_INSTITUTION_COUNTS = [
     ("Taipei City", "TPE", "Taipei City", 151),
     ("New Taipei City", "NWT", "New Taipei City", 18),
@@ -102,6 +135,14 @@ TAIWAN_CITY_APPROVED_INSTITUTION_COUNTS = [
     ("Lienchiang County", "LIE", "Lienchiang County", 0),
     ("Kinmen County", "KIN", "Kinmen County", 0),
 ]
+
+TAIWAN_MEDICAL_FACILITY_SOURCE_ID = "taiwan_mohw_medical_facility_open_data"
+TAIWAN_MEDICAL_FACILITY_SOURCE_ORG = "Taiwan MOHW"
+TAIWAN_MEDICAL_FACILITY_REPORT_TITLE = "Medical Institutions and Personnel Basic Data 2024-12-31"
+TAIWAN_MEDICAL_FACILITY_SOURCE_URL = "https://www.mohw.gov.tw/dl-96581-66dbb751-f83a-416a-a998-893222e20fef.html"
+TAIWAN_MEDICAL_FACILITY_YEAR = "2024"
+ODS_TABLE_NS = "urn:oasis:names:tc:opendocument:xmlns:table:1.0"
+ODS_TEXT_NS = "urn:oasis:names:tc:opendocument:xmlns:text:1.0"
 
 JAPAN_SOURCE_ID = "japan_mhlw_aesthetic_medicine_status"
 JAPAN_SOURCE_ORG = "MHLW"
@@ -288,6 +329,147 @@ def build_taiwan_mohw_rows() -> list[dict[str, str]]:
     return rows
 
 
+def taiwan_city_from_district(value: str) -> tuple[str, str]:
+    for prefix, name, code in TAIWAN_CITY_CODE_NAMES:
+        if (value or "").startswith(prefix):
+            return name, code
+    return "", ""
+
+
+def ods_cell_text(cell: ET.Element) -> str:
+    return "".join(cell.itertext()).strip()
+
+
+def iter_ods_rows(path: Path, max_columns: int = 24):
+    table_row_tag = f"{{{ODS_TABLE_NS}}}table-row"
+    table_cell_tag = f"{{{ODS_TABLE_NS}}}table-cell"
+    repeat_rows_key = f"{{{ODS_TABLE_NS}}}number-rows-repeated"
+    repeat_cols_key = f"{{{ODS_TABLE_NS}}}number-columns-repeated"
+    with zipfile.ZipFile(path) as archive:
+        with archive.open("content.xml") as handle:
+            for _event, elem in ET.iterparse(handle, events=("end",)):
+                if elem.tag != table_row_tag:
+                    continue
+                repeat_rows = int(elem.attrib.get(repeat_rows_key, "1"))
+                values: list[str] = []
+                for cell in elem.findall(table_cell_tag):
+                    repeat_cols = int(cell.attrib.get(repeat_cols_key, "1"))
+                    value = ods_cell_text(cell)
+                    for _ in range(repeat_cols):
+                        values.append(value)
+                        if len(values) >= max_columns:
+                            break
+                    if len(values) >= max_columns:
+                        break
+                if any(values):
+                    for _ in range(min(repeat_rows, 1)):
+                        yield values
+                elem.clear()
+
+
+def read_taiwan_medical_facility_aggregates() -> tuple[Counter, Counter]:
+    candidates = sorted(TAIWAN_MEDICAL_FACILITY_SOURCE_DIR.glob("*.ods"))
+    if not candidates:
+        raise FileNotFoundError(f"Taiwan MOHW medical facility ODS not found under {TAIWAN_MEDICAL_FACILITY_SOURCE_DIR}")
+    facility_counts: Counter = Counter()
+    physician_counts: Counter = Counter()
+    header: list[str] | None = None
+    city_index = -1
+    physician_index = -1
+    code_index = -1
+    for values in iter_ods_rows(candidates[0]):
+        if header is None:
+            if "機構代碼" in values and "縣市區名" in values:
+                header = values
+                code_index = header.index("機構代碼")
+                city_index = header.index("縣市區名")
+                physician_index = header.index("A醫師")
+            continue
+        if code_index >= len(values) or not values[code_index]:
+            continue
+        city_name, city_code = taiwan_city_from_district(values[city_index] if city_index < len(values) else "")
+        if not city_name:
+            continue
+        key = (city_name, city_code)
+        facility_counts[key] += 1
+        try:
+            physician_counts[key] += int(float(values[physician_index] if physician_index < len(values) else 0))
+        except ValueError:
+            pass
+    return facility_counts, physician_counts
+
+
+def taiwan_medical_facility_row(
+    *,
+    admin_level: str,
+    admin_name: str,
+    admin_code: str,
+    metric: str,
+    value: int,
+) -> dict[str, str]:
+    return {
+        "source_id": TAIWAN_MEDICAL_FACILITY_SOURCE_ID,
+        "country": "Taiwan",
+        "admin_level": admin_level,
+        "admin_name": admin_name,
+        "admin_code": admin_code,
+        "city": admin_name if admin_level == "city_county" else "",
+        "metric": metric,
+        "value": str(value),
+        "unit": "facilities" if metric == "medical_facility_count" else "physicians",
+        "year": TAIWAN_MEDICAL_FACILITY_YEAR,
+        "source_org": TAIWAN_MEDICAL_FACILITY_SOURCE_ORG,
+        "report_title": TAIWAN_MEDICAL_FACILITY_REPORT_TITLE,
+        "source_url": TAIWAN_MEDICAL_FACILITY_SOURCE_URL,
+        "source_page": "",
+        "note": (
+            "MOHW open-data ODS snapshot 2024-12-31. Aggregated from county/district rows and excludes phone/address fields. "
+            "This is a general medical-supply denominator, not aesthetic-specific facility coverage or treatment volume."
+        ),
+        "confidence": "official_government_open_data_ods_aggregate_no_contacts",
+    }
+
+
+def build_taiwan_medical_facility_rows() -> list[dict[str, str]]:
+    facility_counts, physician_counts = read_taiwan_medical_facility_aggregates()
+    rows = [
+        taiwan_medical_facility_row(
+            admin_level="country",
+            admin_name="Taiwan",
+            admin_code="",
+            metric="medical_facility_count",
+            value=sum(facility_counts.values()),
+        ),
+        taiwan_medical_facility_row(
+            admin_level="country",
+            admin_name="Taiwan",
+            admin_code="",
+            metric="western_physician_count",
+            value=sum(physician_counts.values()),
+        ),
+    ]
+    for city_name, city_code in sorted(facility_counts.keys()):
+        rows.append(
+            taiwan_medical_facility_row(
+                admin_level="city_county",
+                admin_name=city_name,
+                admin_code=city_code,
+                metric="medical_facility_count",
+                value=facility_counts[(city_name, city_code)],
+            )
+        )
+        rows.append(
+            taiwan_medical_facility_row(
+                admin_level="city_county",
+                admin_name=city_name,
+                admin_code=city_code,
+                metric="western_physician_count",
+                value=physician_counts[(city_name, city_code)],
+            )
+        )
+    return rows
+
+
 def build_japan_mhlw_rows() -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
     note = (
@@ -328,6 +510,7 @@ def build_rows() -> list[dict[str, str]]:
         *build_brazil_sbcp_rows(),
         *build_hong_kong_dh_rows(),
         *build_taiwan_mohw_rows(),
+        *build_taiwan_medical_facility_rows(),
         *build_japan_mhlw_rows(),
     ]
 

@@ -385,6 +385,11 @@ def build_completion_rows(
         for row in channel_detail_rows
         if norm(row.get("source_id")) == "taiwan_mohw_aesthetic_medicine_institutions"
     ]
+    taiwan_medical_facility_rows = [
+        row
+        for row in channel_detail_rows
+        if norm(row.get("source_id")) == "taiwan_mohw_medical_facility_open_data"
+    ]
     japan_survey_frame_rows = [
         row
         for row in channel_detail_rows
@@ -463,6 +468,15 @@ def build_completion_rows(
             "rows": len(taiwan_aesthetic_institution_rows),
             "frontstage_label": "Taiwan approved aesthetic institution denominator",
             "note": "Taiwan MOHW PDF page 1 is loaded as country/city-county approved aesthetic-medicine institution counts, updated to 2025-06-30.",
+            "captured_at": captured_at,
+        },
+        {
+            "workstream": "Taiwan MOHW medical-supply denominator",
+            "status": "completed_ods_denominator",
+            "output": str(CHANNEL_DENSITY_DETAIL_PATH),
+            "rows": len(taiwan_medical_facility_rows),
+            "frontstage_label": "Taiwan medical facility and physician denominator",
+            "note": "Taiwan MOHW 2024-12-31 ODS is aggregated into city/county medical-facility and western-physician counts; contact/address fields are excluded.",
             "captured_at": captured_at,
         },
         {
