@@ -1,5 +1,5 @@
 window.V3_OPERATIONS_DATA = {
-  "generated_at": "2026-07-07T13:59:17+08:00",
+  "generated_at": "2026-07-07T17:23:10+08:00",
   "source": {
     "database": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\global_aesthetics.db",
     "guardrail": "E:\\shared\\Documents\\data\\global_aesthetics_dashboard\\data\\audits\\database_guardrail_validation_latest.json",
@@ -880,7 +880,7 @@ window.V3_OPERATIONS_DATA = {
     }
   },
   "build_delta": {
-    "briefing_update_candidates": 856,
+    "briefing_update_candidates": 888,
     "briefing_verified_update_events": 41,
     "briefing_fulltext_rescue": 158,
     "briefing_product_gap_candidates": 0,
