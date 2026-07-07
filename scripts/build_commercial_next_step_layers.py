@@ -26,6 +26,7 @@ ASPS_STATUS_PATH = AUDIT_DIR / "asps_official_stats_extraction_status_latest.csv
 COMPANY_FINANCIAL_PATH = DATA_DIR / "company_financial_metrics.csv"
 COMPANY_REVENUE_PLAN_PATH = AUDIT_DIR / "company_revenue_collection_plan_latest.csv"
 AESTHETICS_REVENUE_QUEUE_PATH = AUDIT_DIR / "aesthetics_revenue_pct_collection_queue_latest.csv"
+EUROPE_ASSOCIATION_MARKET_METRICS_PATH = DATA_DIR / "europe_association_market_metrics.csv"
 
 EUROPE_QA_PATH = AUDIT_DIR / "europe_metric_qa_latest.csv"
 CHANNEL_DENSITY_PATH = DATA_DIR / "commercial_channel_density_proxy.csv"
@@ -102,6 +103,8 @@ def build_europe_qa(captured_at: str) -> list[dict[str, Any]]:
     geo_rows = read_csv(GEO_DISCOVERY_PATH)
     registry = {row.get("source_id"): row for row in read_csv(SOURCE_REGISTRY_PATH)}
     backlog = {row.get("source_id"): row for row in read_csv(BACKLOG_PATH)}
+    promoted_europe_rows = read_csv(EUROPE_ASSOCIATION_MARKET_METRICS_PATH)
+    promoted_by_source = Counter(norm(row.get("source_org")).lower() for row in promoted_europe_rows)
     target_ids = [
         "germany_dgaepc_statistics",
         "spain_secpre_aesthetic_surgery_report",
@@ -144,11 +147,18 @@ def build_europe_qa(captured_at: str) -> list[dict[str, Any]]:
             decision = "hold_from_mainline"
             next_action = "Extract only explicitly count-like DGAEPC tables; keep survey rankings/shares as source-labeled proxy."
         elif source_id == "spain_secpre_aesthetic_surgery_report":
-            count_status = "candidate count-like narrative metrics"
-            share_status = "patient/demographic shares likely"
-            table_status = "official PDF acquired; first-pass table extraction did not expose stable tables"
-            decision = "hold_for_manual_text_qa"
-            next_action = "Manually mark SECPRE tables/text blocks as count, share or context before promotion."
+            if promoted_by_source.get("secpre"):
+                count_status = f"surgical intervention count table promoted ({promoted_by_source['secpre']} rows)"
+                share_status = "patient/demographic shares remain unpromoted"
+                table_status = "SECPRE Table 1 manually QA'd and loaded as Spain surgical-only procedure volume"
+                decision = "promoted_surgical_only"
+                next_action = "Keep SECPRE as Spain surgical-only association lane; do not merge silently with ISAPS total procedures."
+            else:
+                count_status = "candidate count-like narrative metrics"
+                share_status = "patient/demographic shares likely"
+                table_status = "official PDF acquired; first-pass table extraction did not expose stable tables"
+                decision = "hold_for_manual_text_qa"
+                next_action = "Manually mark SECPRE tables/text blocks as count, share or context before promotion."
         elif source_id == "italy_aicpe_observatory_statistics":
             count_status = "candidate totals on association web source"
             share_status = "unknown until source archive is captured"
@@ -179,7 +189,7 @@ def build_europe_qa(captured_at: str) -> list[dict[str, Any]]:
                 "share_status": share_status,
                 "table_status": table_status,
                 "mainline_decision": decision,
-                "promotion_allowed": "no",
+                "promotion_allowed": "yes_surgical_only" if decision == "promoted_surgical_only" else "no",
                 "source_files": "; ".join(local_paths[:5]),
                 "next_action": next_action or norm(task.get("next_action")),
                 "acceptance_check": norm(task.get("acceptance_check")),
@@ -352,6 +362,13 @@ def build_completion_rows(
     asps_row_count = sum(safe_int(row.get("rows_extracted")) for row in asps_rows)
     asps_years = sorted({part for row in asps_rows for part in norm(row.get("years_extracted")).split(";") if part})
     segment_gaps = sum(1 for row in revenue_rows if row.get("aesthetics_segment_status") == "needs_aesthetics_segment_or_not_disclosed_review")
+    europe_promoted = [row for row in europe_rows if norm(row.get("promotion_allowed")).startswith("yes")]
+    europe_status = "completed_partial_promotion" if europe_promoted else "completed_hold_unpromoted"
+    europe_note = (
+        f"{len(europe_promoted)} Europe candidate source(s) have source-labeled count rows promoted; remaining candidates stay QA-held."
+        if europe_promoted
+        else "Candidates are classified before promotion; no Europe candidate overwrites ISAPS mainline rows."
+    )
     return [
         {
             "workstream": "ASPS official US deep dive",
@@ -364,11 +381,11 @@ def build_completion_rows(
         },
         {
             "workstream": "Europe candidate QA",
-            "status": "completed_hold_unpromoted",
+            "status": europe_status,
             "output": str(EUROPE_QA_PATH),
             "rows": len(europe_rows),
             "frontstage_label": "DGAEPC / SECPRE / AICPE / SICPRE QA",
-            "note": "Candidates are classified before promotion; no Europe candidate overwrites ISAPS mainline rows.",
+            "note": europe_note,
             "captured_at": captured_at,
         },
         {

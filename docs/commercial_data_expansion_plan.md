@@ -1,6 +1,6 @@
 # 全球医美商业数据扩展计划
 
-更新时间：2026-06-20
+更新时间：2026-07-07
 
 ## 目标骨架
 
@@ -32,7 +32,7 @@
 
 - 可优先进入第一阶段候选：英国 BAAPS 2020-2025 annual audit PDF；德国 DGÄPC 2020-2025 statistics PDF，但德国需先判定每张表是 procedure count 还是 survey share。
 - 巴西 SBCP `Pesquisas` 页公开 2025 demography/censo flipbook 及历史 Censo/ISAPS 链接，先做 metric QA；如果表内是治疗量 count，可进第一阶段，否则作为外科医生/行业结构 context。
-- 西班牙 SECPRE 2022 报告已下载为第一阶段候选，下一步做 PDF 表格 QA，确认哪些是治疗数量 count，哪些只是患者/调查结构。
+- 西班牙 SECPRE 2022 报告的 2021 外科手术数量表已完成手工 QA，并以 SECPRE surgical-only source lane 接入 `data/europe_association_market_metrics.csv`；患者结构/性别年龄等仍保留为未推广背景。
 - 意大利 AICPE observatory 页给出 2020/2019 procedure totals，SICPRE 有 2023 ISAPS national commentary；先做 source-label 和方法 QA，避免覆盖 ISAPS 主干。
 - 更适合作为渠道密度 proxy：台湾 MOHW 美容医学核准机构、台湾医疗机构/人员 open data、香港 DATA.GOV.HK day procedure centre CSV、巴西 CFM 医疗人口统计、SBCP surgeon locator。
 - 日本 MHLW 美容医疗资料和医疗信息网适合做医师/机构密度 proxy；法国 CNOM atlas 和 SOFCEP 页面适合做医生/外科医生 denominator 与协会 context。
@@ -56,7 +56,7 @@
 - BAAPS Annual Audit：英国 2020-2025 美容外科 audit 口径，单独做 UK source lane。
 - DGÄPC Statistics：德国 2020-2025 统计 PDF，先做 count/share QA，再决定哪些表能进治疗量主干。
 - SBCP Pesquisas/Censo：巴西协会研究页和 2025 demography/censo flipbook，先做 count/share/demography QA。
-- SECPRE 2022：西班牙医美外科报告，先做 report/table QA。
+- SECPRE 2022：西班牙医美外科报告，Table 1 已作为 2021 surgical-only procedure volume 接入；其他患者结构与调查项暂不进治疗量主干。
 - AICPE / SICPRE：意大利协会 observatory 和 ISAPS commentary，先 source-label QA，再判断可用治疗量字段。
 
 建模原则：
@@ -129,6 +129,7 @@
 - `data/audits/commercial_data_collection_backlog_latest.csv`：采集 backlog。
 - `data/isaps_market_metrics.csv`：ISAPS 2020-2024 国家-年份-赛道治疗数量主干。
 - `data/asps_market_metrics.csv`：ASPS 2024 美国 procedure trend 主干，当前 55 行。
+- `data/europe_association_market_metrics.csv`：欧洲协会 source-labeled 指标，当前包含 SECPRE Spain 2021 surgical-only procedure volume。
 - `data/audits/commercial_phase1_official_source_inventory_latest.csv`：Scrapling 采集到的 ASPS / Aesthetic Society 官方统计来源清单。
 - `data/audits/commercial_geo_market_source_discovery_latest.csv`：Scrapling 采集到的地区级官方/协会来源发现清单。
 - `scripts/sync_isaps_market_metrics.py`：ISAPS PDF 抽取与合并脚本。
@@ -143,7 +144,7 @@
 
 1. 接 ASPS 2024 和 2020-2023 历史年份，单独作为美国 ASPS 口径。
 2. 接 The Aesthetic Society 2020 至今统计，单独作为美国私营/审美外科口径。
-3. 接 BAAPS 2020-2025 UK audit；DGÄPC、SBCP、SECPRE、AICPE 先做 metric QA，再抽可用德国/巴西/西班牙/意大利 count-like 指标。
+3. 接 BAAPS 2020-2025 UK audit；SECPRE Spain 2021 surgical-only 已接入，DGÄPC、SBCP、AICPE 继续做 metric QA，再抽可用德国/巴西/意大利 count-like 指标。
 4. 补 SEC/IR 的 aesthetic segment、region revenue、product-line revenue，避免用公司总收入替代医美收入。
 5. 设计 provider locator / enrichment 的渠道覆盖表，先做品牌-城市-机构密度 proxy，并把台湾、香港、巴西、日本、法国、瑞士、捷克、加拿大、波兰、瑞典官方机构/医师入口作为第一批国家级渠道 proxy。
 6. 韩国 MOHW/KHISS 和以色列协会/IMAJ 先作为 medical tourism、specialty demand 或 heat/context proxy，不与 ISAPS 治疗量合并。
