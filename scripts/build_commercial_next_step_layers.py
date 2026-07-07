@@ -142,11 +142,11 @@ def build_europe_qa(captured_at: str) -> list[dict[str, Any]]:
         source_name = norm(meta.get("source_name") or (source_rows[0].get("source_name") if source_rows else source_id))
 
         if source_id == "germany_dgaepc_statistics":
-            count_status = "mixed survey/count candidate"
-            share_status = "share-heavy patient survey likely"
-            table_status = "pdfs acquired; first-pass tables are noisy and need table-by-table QA"
-            decision = "hold_from_mainline"
-            next_action = "Extract only explicitly count-like DGAEPC tables; keep survey rankings/shares as source-labeled proxy."
+            count_status = "patient survey preference shares; no national procedure count denominator found"
+            share_status = "usable as treatment preference proxy only"
+            table_status = "2020-2025 PDFs inspected; methodology is a standardized patient questionnaire and percentages can exceed 100%"
+            decision = "proxy_only_do_not_promote_as_treatment_volume"
+            next_action = "Keep DGÄPC out of procedure_volume mainline; optionally extract top treatment preference shares as source-labeled demand proxy."
         elif source_id == "spain_secpre_aesthetic_surgery_report":
             if promoted_by_source.get("secpre"):
                 count_status = f"surgical intervention count table promoted ({promoted_by_source['secpre']} rows)"
