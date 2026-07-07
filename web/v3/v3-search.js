@@ -1,5 +1,5 @@
 window.V3_SEARCH_DATA = {
-  "generated_at": "2026-07-07T00:55:01+08:00",
+  "generated_at": "2026-07-07T12:01:04+08:00",
   "counts": {
     "products": 943,
     "families": 927,
@@ -16501,7 +16501,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | BHS 156 Venera / Iconyc | Body Contouring Platform | Body Contouring Platform | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | HIFU | 能量设备 > 超声 US > 聚焦超声减脂 | 聚焦超声减脂 | HIFU | HIFU | EBD, HIFU | REC_0073 | Body Health | Argentina | Other | Tigre, Argentina | Private | Manufacturer | Active | EBD | HIFU | HIFU | BHS 156 Venera / Iconyc | Product | Body Contouring Platform | True | prod_0987d06cdeff | 综合身体塑形平台。这是 Body Health 的旗舰机型。它最大的特点是集成了 HImFU (高强度多聚焦超声) 和 Dermo Health (真空负压疗法)。这台机器被设计用来先用超声波“震碎”脂肪，再用负压滚轮“排走”废物，是一套完整的溶脂+排毒方案。 | 能量设备 | 超声 US | 聚焦超声减脂 | 能量设备 > 超声 US > 聚焦超声减脂 | rule:ebd_ultrasound_body | high | auto_applied | focused ultrasound with body-contouring context | active | ebd | ebd | Body Contouring Platform | Body Health | No public official indication closure"
+      "search_text": "product | BHS 156 Venera / Iconyc | Body Contouring Platform | Body Contouring Platform | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | HIFU | 能量设备 > 超声 US > 聚焦超声减脂 | 聚焦超声减脂 | HIFU | HIFU | EBD, HIFU | REC_0073 | Body Health | Argentina | Other | Tigre, Argentina | Private | Manufacturer | Active | EBD | HIFU | HIFU | BHS 156 Venera / Iconyc | Product | Body Contouring Platform | True | prod_0987d06cdeff | 综合身体塑形平台。这是 Body Health 的旗舰机型。它最大的特点是集成了 HImFU (高强度多聚焦超声) 和 Dermo Health (真空负压疗法)。这台机器被设计用来先用超声波“震碎”脂肪，再用负压滚轮“排走”废物，是一套完整的溶脂+排毒方案。 | EBD / HIFU / Body Contouring Platform | 能量设备 | 超声 US | 聚焦超声减脂 | 能量设备 > 超声 US > 聚焦超声减脂 | rule:ebd_ultrasound_body | high | auto_applied | focused ultrasound with body-contouring context | active | ebd | ebd | Body Contouring Platform | Body Health | No public official indication closure"
     },
     {
       "type": "product",
@@ -16565,7 +16565,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | BHS 201 / Cryo-Frequency | Cryo-Radiofrequency | Cryo-Radiofrequency | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | Radiofrequency | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | 单极/双极/多极射频（无创） | Collagen | Collagen | EBD, Radiofrequency, Collagen, RF, Cryotherapy | REC_0074 | Body Health | Argentina | Other | Tigre, Argentina | Private | Manufacturer | Active | EBD | Radiofrequency | Collagen | BHS 201 / Cryo-Frequency | Product | Cryo-Radiofrequency | True | prod_3c8d61b13587 | 冷冻射频仪。Body Health 拥有独特的 Cryo-Radiofrequency 技术。不同于普通的射频（会发热），它的探头可以同时产生零下10度的冷冻和高功率射频热能。这种“冷热冲击”能让射频能量更安全地穿透深层，同时通过热休克蛋白效应刺激胶原，被称为“冰火两重天”的拉皮技术。 | 能量设备 | 射频 RF | 单极/双极/多极射频（无创） | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | rule:ebd_rf_noninvasive | high | auto_applied | RF term without microneedling context | active | ebd | ebd | Cryo-Radiofrequency | Body Health | ReFreeze EN – Body Health®"
+      "search_text": "product | BHS 201 / Cryo-Frequency | Cryo-Radiofrequency | Cryo-Radiofrequency | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | Radiofrequency | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | 单极/双极/多极射频（无创） | Collagen | Collagen | EBD, Radiofrequency, Collagen, RF, Cryotherapy | REC_0074 | Body Health | Argentina | Other | Tigre, Argentina | Private | Manufacturer | Active | EBD | Radiofrequency | Collagen | BHS 201 / Cryo-Frequency | Product | Cryo-Radiofrequency | True | prod_3c8d61b13587 | 冷冻射频仪。Body Health 拥有独特的 Cryo-Radiofrequency 技术。不同于普通的射频（会发热），它的探头可以同时产生零下10度的冷冻和高功率射频热能。这种“冷热冲击”能让射频能量更安全地穿透深层，同时通过热休克蛋白效应刺激胶原，被称为“冰火两重天”的拉皮技术。 | EBD / Radiofrequency / Cryo-Radiofrequency / Collagen | 能量设备 | 射频 RF | 单极/双极/多极射频（无创） | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | rule:ebd_rf_noninvasive | high | auto_applied | RF term without microneedling context | active | ebd | ebd | Cryo-Radiofrequency | Body Health | ReFreeze EN – Body Health®"
     },
     {
       "type": "product",
@@ -16629,7 +16629,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | BHS 202 / BHS 156 (HIMFU) | HIMFU (Body Contouring) | HIMFU (Body Contouring) | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | HIFU | 能量设备 > 超声 US > 聚焦超声减脂 | 聚焦超声减脂 | HIFU | HIFU | Patented | REC_0075 | Body Health | Argentina | Other | Buenos Aires, Argentina | Private | Manufacturer | Active | EBD | HIFU | HIFU | BHS 202 / BHS 156 (HIMFU) | Product | HIMFU (Body Contouring) | Patented | True | prod_1361974ef901 | HIMFU 高强度多聚焦超声波系统。这是 Body Health 最具辨识度的核心专利技术。不同于我们熟悉的 HIFU（高强度聚焦超声，如超声刀）只打一个个“点”，HIMFU 采用的是**“多聚焦 (Multi-Focal)”**技术。它能在皮下 2.5cm 处形成高密度的超声波能量场，瞬间产生强烈的空化效应（Cavitation）和热效应，专门用于大面积、高效率地破坏脂肪细胞（Lipolysis）。因为能量分布更广，它比传统 HIFU 更适合做大腿、腹部等大部位减脂，且不需要麻醉，被誉为“南美版酷塑”。 | 能量设备 | 超声 US | 聚焦超声减脂 | 能量设备 > 超声 US > 聚焦超声减脂 | rule:ebd_ultrasound_body | high | auto_applied | focused ultrasound with body-contouring context | active | ebd | ebd | HIMFU (Body Contouring) | Body Health | Body Health BHS 202 / BHS 156 (HIMFU)"
+      "search_text": "product | BHS 202 / BHS 156 (HIMFU) | HIMFU (Body Contouring) | HIMFU (Body Contouring) | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | HIFU | 能量设备 > 超声 US > 聚焦超声减脂 | 聚焦超声减脂 | HIFU | HIFU | Patented | REC_0075 | Body Health | Argentina | Other | Buenos Aires, Argentina | Private | Manufacturer | Active | EBD | HIFU | HIFU | BHS 202 / BHS 156 (HIMFU) | Product | HIMFU (Body Contouring) | Patented | True | prod_1361974ef901 | HIMFU 高强度多聚焦超声波系统。这是 Body Health 最具辨识度的核心专利技术。不同于我们熟悉的 HIFU（高强度聚焦超声，如超声刀）只打一个个“点”，HIMFU 采用的是**“多聚焦 (Multi-Focal)”**技术。它能在皮下 2.5cm 处形成高密度的超声波能量场，瞬间产生强烈的空化效应（Cavitation）和热效应，专门用于大面积、高效率地破坏脂肪细胞（Lipolysis）。因为能量分布更广，它比传统 HIFU 更适合做大腿、腹部等大部位减脂，且不需要麻醉，被誉为“南美版酷塑”。 | EBD / HIFU / HIMFU (Body Contouring) | 能量设备 | 超声 US | 聚焦超声减脂 | 能量设备 > 超声 US > 聚焦超声减脂 | rule:ebd_ultrasound_body | high | auto_applied | focused ultrasound with body-contouring context | active | ebd | ebd | HIMFU (Body Contouring) | Body Health | Body Health BHS 202 / BHS 156 (HIMFU)"
     },
     {
       "type": "product",
@@ -16693,7 +16693,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Cryo-Radiofrequency (Refreeze) | Cryo-Frequency | Cryo-Frequency | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | Radiofrequency | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | 单极/双极/多极射频（无创） | Collagen | Collagen | EBD, Radiofrequency, Collagen, RF, Cryotherapy | REC_0142 | Body Health | Argentina | Other | Buenos Aires, Argentina | Private | Manufacturer | Active | EBD | Radiofrequency | Collagen | Cryo-Radiofrequency (Refreeze) | Product | Cryo-Frequency | True | prod_f516b06922b2 | 冷冻射频技术。这是 Body Health 的另一大发明。传统射频（RF）最大的瓶颈是表皮怕烫，所以能量上不去。Body Health 研发了一种特殊的探头，能同时输出零下低温 (-2.5°C) 和 高频射频 (多极 RF)。这种“冰火两重天”的设计产生了巨大的热冲击 (Thermal Shock) 效应：表皮被冷冻保护，真皮层却被瞬间加热。这使得它能以极高的功率进行治疗，实现瞬间的皮肤紧致（Instant Lifting），同时刺激胶原再生，是拉美地区非常流行的身体紧致方案。 | 能量设备 | 射频 RF | 单极/双极/多极射频（无创） | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | rule:ebd_rf_noninvasive | high | auto_applied | RF term without microneedling context | active | ebd | ebd | Cryo-Frequency | Body Health | Body Health Cryo-Radiofrequency (Refreeze)"
+      "search_text": "product | Cryo-Radiofrequency (Refreeze) | Cryo-Frequency | Cryo-Frequency | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | Radiofrequency | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | 单极/双极/多极射频（无创） | Collagen | Collagen | EBD, Radiofrequency, Collagen, RF, Cryotherapy | REC_0142 | Body Health | Argentina | Other | Buenos Aires, Argentina | Private | Manufacturer | Active | EBD | Radiofrequency | Collagen | Cryo-Radiofrequency (Refreeze) | Product | Cryo-Frequency | True | prod_f516b06922b2 | 冷冻射频技术。这是 Body Health 的另一大发明。传统射频（RF）最大的瓶颈是表皮怕烫，所以能量上不去。Body Health 研发了一种特殊的探头，能同时输出零下低温 (-2.5°C) 和 高频射频 (多极 RF)。这种“冰火两重天”的设计产生了巨大的热冲击 (Thermal Shock) 效应：表皮被冷冻保护，真皮层却被瞬间加热。这使得它能以极高的功率进行治疗，实现瞬间的皮肤紧致（Instant Lifting），同时刺激胶原再生，是拉美地区非常流行的身体紧致方案。 | EBD / Radiofrequency / Cryo-Frequency / Collagen | 能量设备 | 射频 RF | 单极/双极/多极射频（无创） | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | rule:ebd_rf_noninvasive | high | auto_applied | RF term without microneedling context | active | ebd | ebd | Cryo-Frequency | Body Health | Body Health Cryo-Radiofrequency (Refreeze)"
     },
     {
       "type": "product",
@@ -16757,7 +16757,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Dermo Health (Vacuum) | Vacuum Therapy | Vacuum Therapy | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | HIFU | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | 单极/双极/多极射频（无创） | HIFU | HIFU | EBD, HIFU, RF, Cryotherapy | REC_0184 | Body Health | Argentina | Other | Buenos Aires, Argentina | Private | Manufacturer | Active | EBD | HIFU | HIFU | Dermo Health (Vacuum) | Product | Vacuum Therapy | True | prod_4f6bf13d9953 | 达尔摩负压疗法。虽然负压按摩听起来像传统的 LPG，但 Body Health 使用了更强力的涡轮机（Turbine）驱动。它通常作为 HIMFU 或冷冻射频的辅助步骤，用于加速被破坏的脂肪细胞通过淋巴系统代谢排出。这种“先溶脂、后排毒”的组合疗法（HIMFU + Dermo Health）构成了 Body Health 独特的身体管理闭环。 | 能量设备 | 射频 RF | 单极/双极/多极射频（无创） | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | rule:ebd_rf_noninvasive | high | auto_applied | RF term without microneedling context | active | ebd | ebd | Vacuum Therapy | Body Health | No public official indication closure"
+      "search_text": "product | Dermo Health (Vacuum) | Vacuum Therapy | Vacuum Therapy | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | HIFU | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | 单极/双极/多极射频（无创） | HIFU | HIFU | EBD, HIFU, RF, Cryotherapy | REC_0184 | Body Health | Argentina | Other | Buenos Aires, Argentina | Private | Manufacturer | Active | EBD | HIFU | HIFU | Dermo Health (Vacuum) | Product | Vacuum Therapy | True | prod_4f6bf13d9953 | 达尔摩负压疗法。虽然负压按摩听起来像传统的 LPG，但 Body Health 使用了更强力的涡轮机（Turbine）驱动。它通常作为 HIMFU 或冷冻射频的辅助步骤，用于加速被破坏的脂肪细胞通过淋巴系统代谢排出。这种“先溶脂、后排毒”的组合疗法（HIMFU + Dermo Health）构成了 Body Health 独特的身体管理闭环。 | EBD / HIFU / Vacuum Therapy | 能量设备 | 射频 RF | 单极/双极/多极射频（无创） | 能量设备 > 射频 RF > 单极/双极/多极射频（无创） | rule:ebd_rf_noninvasive | high | auto_applied | RF term without microneedling context | active | ebd | ebd | Vacuum Therapy | Body Health | No public official indication closure"
     },
     {
       "type": "product",
@@ -16821,7 +16821,7 @@ window.V3_SEARCH_DATA = {
           }
         ]
       },
-      "search_text": "product | Unyque / Unilift | Facial Rejuvenation | Facial Rejuvenation | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | IPL | 能量设备 > 光/IPL > LED光疗/光动力 PDT | LED光疗/光动力 PDT | LED Therapy | LED Therapy | EBD, IPL, LED Therapy, LED | REC_0726 | Body Health | Argentina | Other | Tigre, Argentina | Private | Manufacturer | Active | EBD | IPL | LED Therapy | Unyque / Unilift | Product | Facial Rejuvenation | True | prod_3ad2526a2ee8 | 面部抗衰平台。结合了微电流、电穿孔和真空负压。它利用 Dermo Health 的负压技术进行面部淋巴引流，同时配合 LED 光疗，是南美高端美容院（Esthetic Center）非常流行的“非侵入式面部管理”设备。 | 能量设备 | 光/IPL | LED光疗/光动力 PDT | 能量设备 > 光/IPL > LED光疗/光动力 PDT | rule:ebd_led_pdt | high | auto_applied | LED/PDT/light-therapy term | active | ebd | ebd | Facial Rejuvenation | Body Health | No public official indication closure"
+      "search_text": "product | Unyque / Unilift | Facial Rejuvenation | Facial Rejuvenation | Body Health | Body Health | [\"Body Health\"] | Body Health | Body Health | EBD | IPL | 能量设备 > 光/IPL > LED光疗/光动力 PDT | LED光疗/光动力 PDT | LED Therapy | LED Therapy | EBD, IPL, LED Therapy, LED | REC_0726 | Body Health | Argentina | Other | Tigre, Argentina | Private | Manufacturer | Active | EBD | IPL | LED Therapy | Unyque / Unilift | Product | Facial Rejuvenation | True | prod_3ad2526a2ee8 | 面部抗衰平台。结合了微电流、电穿孔和真空负压。它利用 Dermo Health 的负压技术进行面部淋巴引流，同时配合 LED 光疗，是南美高端美容院（Esthetic Center）非常流行的“非侵入式面部管理”设备。 | EBD / IPL / Facial Rejuvenation / LED Therapy | 能量设备 | 光/IPL | LED光疗/光动力 PDT | 能量设备 > 光/IPL > LED光疗/光动力 PDT | rule:ebd_led_pdt | high | auto_applied | LED/PDT/light-therapy term | active | ebd | ebd | Facial Rejuvenation | Body Health | No public official indication closure"
     },
     {
       "type": "product",
@@ -101870,7 +101870,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Medytox | Medytox | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086900 | Injectables | Medytox | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:086900 | 173.1 | 2025 | 57.94 | 450.54 | 2026-05-26T14:30:14+08:00 | 2.6 | 100 | 9 | 9 | Injectables | 0 | 0 | 79100.0 | KRW | -0.38 | https://finance.yahoo.com/quote/086900.KQ | 2026-07-06T08:17:24+08:00 | https://www.medytox.com/page/ir3_en?site_id=en | pending_collection | 2026-07-06T08:17:24+08:00 | K_IFRS_consolidated | Medytox"
+      "search_text": "company | Medytox | Medytox | South Korea | Asia-Pacific | Public | Manufacturer | KRX:086900 | Injectables | Medytox | South Korea | South Korea | 1 | Asia-Pacific | Cheongju, South Korea | Public | Manufacturer | Active | KRX:086900 | 167.68 | 2024 | 60.81 | 450.54 | 2026-07-07T11:54:07+08:00 | 2.6 | 100 | 9 | 9 | Injectables | 0 | 0 | 79100.0 | KRW | -0.38 | https://finance.yahoo.com/quote/086900.KQ | 2026-07-06T08:17:24+08:00 | https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250320002216&method=search | manual_verified | 2026-07-06T08:17:24+08:00 | FY2024 | 2025-03-20 | Manual IR annual report | 2026-07-07T11:54:07+08:00 | Medytox"
     },
     {
       "type": "company",
@@ -101986,7 +101986,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Caregen | Caregen | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214370 | Injectables | Caregen | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Public | Manufacturer | Active | KRX:214370 | 50.97 | 2025 | 71.75 | 3183.1 | 2026-05-26T14:30:07+08:00 | 62.45 | 100 | 9 | 9 | Injectables | 0 | 0 | 68500.0 | KRW | -6.16 | https://finance.yahoo.com/quote/214370.KQ | 2026-07-06T08:17:26+08:00 | https://www.caregen.com/en/investors | pending_collection | 2026-07-06T08:17:26+08:00 | K_IFRS_consolidated | Caregen"
+      "search_text": "company | Caregen | Caregen | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214370 | Injectables | Caregen | South Korea | South Korea | 1 | Asia-Pacific | Anyang, South Korea | Public | Manufacturer | Active | KRX:214370 | 60.57 | 2024 | 66.98 | 3183.1 | 2026-07-07T11:54:07+08:00 | 62.45 | 100 | 9 | 9 | Injectables | 0 | 0 | 68500.0 | KRW | -6.16 | https://finance.yahoo.com/quote/214370.KQ | 2026-07-06T08:17:26+08:00 | https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317001260&method=search | manual_verified | 2026-07-06T08:17:26+08:00 | FY2024 | 2025-03-17 | Manual IR annual report | 2026-07-07T11:54:07+08:00 | Caregen"
     },
     {
       "type": "company",
@@ -102249,7 +102249,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | Body Health | Body Health | Argentina | Latin America | Private | Manufacturer | EBD | Body Health | Argentina | Argentina | 1 | Other | Tigre, Argentina | Private | Manufacturer | Active | 6 | 6 | EBD | 0 | 0 | Body Health"
+      "search_text": "company | Body Health | Body Health | Argentina | Latin America | Private | Manufacturer | EBD | Body Health | Argentina | Argentina | 1 | Other | Tigre, Argentina | Private | Manufacturer | Active | 6 | 6 | EBD | 0 | 0 | HIFU 能量设备厂商 | Body Health"
     },
     {
       "type": "company",
@@ -102892,7 +102892,7 @@ window.V3_SEARCH_DATA = {
         "label": "企业主数据",
         "note": "企业结果用于定位厂家、品牌方和集团关系；产品真伪需查看产品证据。"
       },
-      "search_text": "company | PharmaResearch / PR Bio | PharmaResearch | PR Bio | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214450 | Injectables | PharmaResearch / PR Bio | South Korea | South Korea | 1 | Asia-Pacific | Gangneung, South Korea | Public | Manufacturer | Active | KRX:214450 | 375.4 | 2025 | 76.68 | 2186.08 | 2026-05-26T14:30:24+08:00 | 5.82 | 100 | 4 | 1 | Injectables | 0 | 0 | 341000.0 | KRW | -5.41 | https://finance.yahoo.com/quote/214450.KQ | 2026-07-06T08:18:30+08:00 | https://www.pharmaresearchbio.com/en/investors | pending_collection | 2026-07-06T08:18:30+08:00 | K_IFRS_consolidated | PharmaResearch / PR Bio"
+      "search_text": "company | PharmaResearch / PR Bio | PharmaResearch | PR Bio | South Korea | Asia-Pacific | Public | Manufacturer | KRX:214450 | Injectables | PharmaResearch / PR Bio | South Korea | South Korea | 1 | Asia-Pacific | Gangneung, South Korea | Public | Manufacturer | Active | KRX:214450 | 256.79 | 2024 | 71.76 | 2186.08 | 2026-07-07T11:54:07+08:00 | 5.82 | 100 | 4 | 1 | Injectables | 0 | 0 | 341000.0 | KRW | -5.41 | https://finance.yahoo.com/quote/214450.KQ | 2026-07-06T08:18:30+08:00 | https://kind.krx.co.kr/common/disclsviewer.do?acptno=20250317000988&method=search | manual_verified | 2026-07-06T08:18:30+08:00 | FY2024 | 2025-03-17 | Manual IR annual report | 2026-07-07T11:54:07+08:00 | PharmaResearch / PR Bio"
     },
     {
       "type": "company",
